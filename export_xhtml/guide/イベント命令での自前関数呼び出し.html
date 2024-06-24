@@ -6,24 +6,7 @@
 <title>guide:イベント命令での自前関数呼び出し</title>
 <meta content="DokuWiki" name="generator"/>
 <meta content="#008800" name="theme-color"/>
-<meta content="index,follow" name="robots"/>
 <meta content="guide,イベント命令での自前関数呼び出し" name="keywords"/>
-<link href="/lib/exe/opensearch.php" rel="search" title="FE改造wiki" type="application/opensearchdescription+xml"/>
-<link href="/" rel="start"/>
-<link href="/doku.php?id=guide:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4%E3%81%A7%E3%81%AE%E8%87%AA%E5%89%8D%E9%96%A2%E6%95%B0%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97&amp;do=index" rel="contents" title="サイトマップ"/>
-<link href="/lib/exe/manifest.php" rel="manifest"/>
-<link href="/feed.php" rel="alternate" title="最近の変更" type="application/rss+xml"/>
-<link href="/feed.php?mode=list&amp;ns=guide" rel="alternate" title="現在の名前空間" type="application/rss+xml"/>
-<link href="/doku.php?do=export_xhtml&amp;id=guide:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4%E3%81%A7%E3%81%AE%E8%87%AA%E5%89%8D%E9%96%A2%E6%95%B0%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97" rel="alternate" title="プレーンHTML" type="text/html"/>
-<link href="/doku.php?do=export_raw&amp;id=guide:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4%E3%81%A7%E3%81%AE%E8%87%AA%E5%89%8D%E9%96%A2%E6%95%B0%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97" rel="alternate" title="Wikiマークアップ" type="text/plain"/>
-<link href="https://dw.ngmansion.xyz/doku.php?id=guide:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4%E3%81%A7%E3%81%AE%E8%87%AA%E5%89%8D%E9%96%A2%E6%95%B0%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97" rel="canonical"/>
-<link href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" rel="stylesheet" type="text/css"/>
-<!--[if gte IE 9]><!-->
-<script type="text/javascript">/*<![CDATA[*/var NS='guide';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:\u30a4\u30d9\u30f3\u30c8\u547d\u4ee4\u3067\u306e\u81ea\u524d\u95a2\u6570\u547c\u3073\u51fa\u3057","namespace":"guide","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
-/*!]]>*/</script>
-<script charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f" type="text/javascript"></script>
-<script charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" type="text/javascript"></script>
-<!--<![endif]-->
 </head>
 <body>
 <div class="dokuwiki export">
