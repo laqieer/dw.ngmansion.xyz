@@ -4,7 +4,7 @@ import os
 
 def build_index():
     # Directory containing the HTML files
-    html_dir = 'export_xhtml'
+    html_dir = 'wiki'
 
     # List to store the files
     files = []
