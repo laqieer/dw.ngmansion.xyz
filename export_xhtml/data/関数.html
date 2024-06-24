@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-
-<html dir="ltr" lang="ja">
+<html lang="ja" dir="ltr">
 <head>
-<meta charset="utf-8"/>
-<title>data:関数</title>
-<meta content="DokuWiki" name="generator"/>
-<meta content="#008800" name="theme-color"/>
-<meta content="index,follow" name="robots"/>
-<meta content="data,関数" name="keywords"/>
-<link href="/lib/exe/opensearch.php" rel="search" title="FE改造wiki" type="application/opensearchdescription+xml"/>
-<link href="/" rel="start"/>
-<link href="/doku.php?id=data:%E9%96%A2%E6%95%B0&amp;do=index" rel="contents" title="サイトマップ"/>
-<link href="/lib/exe/manifest.php" rel="manifest"/>
-<link href="/feed.php" rel="alternate" title="最近の変更" type="application/rss+xml"/>
-<link href="/feed.php?mode=list&amp;ns=data" rel="alternate" title="現在の名前空間" type="application/rss+xml"/>
-<link href="/doku.php?do=export_xhtml&amp;id=data:%E9%96%A2%E6%95%B0" rel="alternate" title="プレーンHTML" type="text/html"/>
-<link href="/doku.php?do=export_raw&amp;id=data:%E9%96%A2%E6%95%B0" rel="alternate" title="Wikiマークアップ" type="text/plain"/>
-<link href="https://dw.ngmansion.xyz/doku.php?id=data:%E9%96%A2%E6%95%B0" rel="canonical"/>
-<link href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" rel="stylesheet" type="text/css"/>
+  <meta charset="utf-8" />
+  <title>data:関数</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="data,関数"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=data:%E9%96%A2%E6%95%B0&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=data"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=data:%E9%96%A2%E6%95%B0"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=data:%E9%96%A2%E6%95%B0"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=data:%E9%96%A2%E6%95%B0"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
 <!--[if gte IE 9]><!-->
 <script type="text/javascript">/*<![CDATA[*/var NS='data';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"data:\u95a2\u6570","namespace":"data","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
 /*!]]>*/</script>
-<script charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f" type="text/javascript"></script>
-<script charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
 <!--<![endif]-->
 </head>
 <body>
 <div class="dokuwiki export">
 <!-- TOC START -->
-<div class="dw__toc" id="dw__toc">
+<div id="dw__toc" class="dw__toc">
 <h3 class="toggle">目次</h3>
 <div>
+
 <ul class="toc">
 <li class="level1"><div class="li"><a href="#x080b9dec_売り値を求める関数">0x080B9DEC  売り値を求める関数</a></div>
 <ul class="toc">
@@ -224,26 +224,35 @@
 </div>
 </div>
 <!-- TOC END -->
+
 <p>
 FE改造で使えそうな関数があったら追記してください。<br/>
+
 </p>
+
 <h1 class="sectionedit1" id="x080b9dec_売り値を求める関数">0x080B9DEC  売り値を求める関数</h1>
 <div class="level1">
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;0x080B9DEC  \u58f2\u308a\u5024\u3092\u6c42\u3081\u308b\u95a2\u6570&quot;,&quot;hid&quot;:&quot;x080b9dec_\u58f2\u308a\u5024\u3092\u6c42\u3081\u308b\u95a2\u6570&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;79-133&quot;} -->
 <h3 class="sectionedit2" id="引数">引数</h3>
 <div class="level3">
+
 <p>
 引数 r0 に、個数 « 8 + アイテムID、として渡す。<br/>
 例:レイピア60個  0x3c09 3c=60 09=レイピアのアイテムID<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u5f15\u6570&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;134-290&quot;} -->
 <h3 class="sectionedit3" id="戻り値">戻り値</h3>
 <div class="level3">
+
 <p>
 売値が r0 で返ってくる。
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u623b\u308a\u5024&quot;,&quot;hid&quot;:&quot;\u623b\u308a\u5024&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;291-346&quot;} -->
 <h3 class="sectionedit4" id="sample">sample</h3>
@@ -258,28 +267,36 @@ mov		lr, r1
 @dcw	$F800
 
 ;r0に売値が返ってくる.</pre>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;sample&quot;,&quot;hid&quot;:&quot;sample&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;347-557&quot;} -->
 <h1 class="sectionedit5" id="x0800d340_イベント命令を動作させる関数">0x0800d340  イベント命令を動作させる関数</h1>
 <div class="level1">
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;0x0800d340  \u30a4\u30d9\u30f3\u30c8\u547d\u4ee4\u3092\u52d5\u4f5c\u3055\u305b\u308b\u95a2\u6570&quot;,&quot;hid&quot;:&quot;x0800d340_\u30a4\u30d9\u30f3\u30c8\u547d\u4ee4\u3092\u52d5\u4f5c\u3055\u305b\u308b\u95a2\u6570&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:5,&quot;range&quot;:&quot;558-627&quot;} -->
 <h3 class="sectionedit6" id="引数1">引数</h3>
 <div class="level3">
+
 <p>
 引数 r0 に、呼び出したいイベント命令のポインタを設定する。<br/>
 引数 r1 に、謎の引数を設定する1-3まであるらしい。とりあえず1推奨。<br/>
 <br/>
 注意: ポインタは mov ではなく、ldr でセットしないと値が消えて null になるよ。<br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u5f15\u65701&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:6,&quot;range&quot;:&quot;628-947&quot;} -->
 <h3 class="sectionedit7" id="戻り値1">戻り値</h3>
 <div class="level3">
+
 <p>
 不明<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u623b\u308a\u5024&quot;,&quot;hid&quot;:&quot;\u623b\u308a\u50241&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:7,&quot;range&quot;:&quot;948-977&quot;} -->
 <h3 class="sectionedit8" id="sample1">sample</h3>
@@ -290,35 +307,46 @@ mov r1,#0x1			;とりあえず1
 ldr		r2,=$0800d340	;イベント呼び出し
 mov		lr, r2
 @dcw	$F800</pre>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;sample&quot;,&quot;hid&quot;:&quot;sample1&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:8,&quot;range&quot;:&quot;978-1230&quot;} -->
 <h3 class="sectionedit9" id="注意点">注意点</h3>
 <div class="level3">
+
 <p>
 この命令を呼ぶと、イベントキューみたいなものに情報が詰まれ、<br/>
 メニュー等を閉じた時にイベントが発動するらしい？<br/>
 この命令を連続して呼ぶと、呼んだ数だけイベントが動作する。<br/>
 戦闘準備などのwindowsでいうモーダルダイアログのようなものを実行している間はイベントが発動しない。(閉じれば発動する)<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6ce8\u610f\u70b9&quot;,&quot;hid&quot;:&quot;\u6ce8\u610f\u70b9&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:9,&quot;range&quot;:&quot;1231-1682&quot;} -->
 <h1 class="sectionedit10" id="x080860a8_フラグを立てる関数">0x080860A8 フラグを立てる関数</h1>
 <div class="level1">
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;0x080860A8 \u30d5\u30e9\u30b0\u3092\u7acb\u3066\u308b\u95a2\u6570&quot;,&quot;hid&quot;:&quot;x080860a8_\u30d5\u30e9\u30b0\u3092\u7acb\u3066\u308b\u95a2\u6570&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:10,&quot;range&quot;:&quot;1683-1736&quot;} -->
 <h3 class="sectionedit11" id="引数2">引数</h3>
 <div class="level3">
+
 <p>
 引数 r0 に、立てたいフラグを番号を書く。<br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u5f15\u65702&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:11,&quot;range&quot;:&quot;1737-1818&quot;} -->
 <h3 class="sectionedit12" id="戻り値2">戻り値</h3>
 <div class="level3">
+
 <p>
 不明<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u623b\u308a\u5024&quot;,&quot;hid&quot;:&quot;\u623b\u308a\u50242&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:12,&quot;range&quot;:&quot;1819-1848&quot;} -->
 <h3 class="sectionedit13" id="sample2">sample</h3>
@@ -328,26 +356,34 @@ mov r0,#0x1   ; 立てたいフラグ番号
 ldr	r1, =$080860A8
 mov	r14, r1
 @dcw	$F800</pre>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;sample&quot;,&quot;hid&quot;:&quot;sample2&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:13,&quot;range&quot;:&quot;1849-2002&quot;} -->
 <h1 class="sectionedit14" id="x080860d0_フラグ状態確認関数">0x080860D0 フラグ状態確認関数</h1>
 <div class="level1">
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;0x080860D0 \u30d5\u30e9\u30b0\u72b6\u614b\u78ba\u8a8d\u95a2\u6570&quot;,&quot;hid&quot;:&quot;x080860d0_\u30d5\u30e9\u30b0\u72b6\u614b\u78ba\u8a8d\u95a2\u6570&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:14,&quot;range&quot;:&quot;2003-2056&quot;} -->
 <h3 class="sectionedit15" id="引数3">引数</h3>
 <div class="level3">
+
 <p>
 引数 r0 にチェックしたいフラグIDを入れる<br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u5f15\u65703&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:15,&quot;range&quot;:&quot;2057-2137&quot;} -->
 <h3 class="sectionedit16" id="戻り値3">戻り値</h3>
 <div class="level3">
+
 <p>
 r0=0 フラグがオフの状態<br/>
 r0=1 フラグがオンの状態<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u623b\u308a\u5024&quot;,&quot;hid&quot;:&quot;\u623b\u308a\u50243&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:16,&quot;range&quot;:&quot;2138-2228&quot;} -->
 <h3 class="sectionedit17" id="sample3">sample</h3>
@@ -357,25 +393,33 @@ mov	r0,#0x1   ; チェックしたいフラグ番号
 ldr	r1, =$080860D0
 mov	r14, r1
 @dcw	$F800</pre>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;sample&quot;,&quot;hid&quot;:&quot;sample3&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:17,&quot;range&quot;:&quot;2229-2403&quot;} -->
 <h1 class="sectionedit18" id="x0800d548_文字列番号の会話を表示する関数">0x0800D548 文字列番号の会話を表示する関数</h1>
 <div class="level1">
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;0x0800D548 \u6587\u5b57\u5217\u756a\u53f7\u306e\u4f1a\u8a71\u3092\u8868\u793a\u3059\u308b\u95a2\u6570&quot;,&quot;hid&quot;:&quot;x0800d548_\u6587\u5b57\u5217\u756a\u53f7\u306e\u4f1a\u8a71\u3092\u8868\u793a\u3059\u308b\u95a2\u6570&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:18,&quot;range&quot;:&quot;2404-2475&quot;} -->
 <h3 class="sectionedit19" id="引数4">引数</h3>
 <div class="level3">
+
 <p>
 引数 r0 に、文字列番号を入れる<br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u5f15\u65704&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:19,&quot;range&quot;:&quot;2476-2542&quot;} -->
 <h3 class="sectionedit20" id="戻り値4">戻り値</h3>
 <div class="level3">
+
 <p>
 不明<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u623b\u308a\u5024&quot;,&quot;hid&quot;:&quot;\u623b\u308a\u50244&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:20,&quot;range&quot;:&quot;2543-2572&quot;} -->
 <h3 class="sectionedit21" id="sample4">sample</h3>
@@ -385,32 +429,43 @@ mov     r0,#0x8D7 ;多分これでいい。ダメならldrで。
 ldr	r1, =$0800D548
 mov	r14, r1
 @dcw	$F800</pre>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;sample&quot;,&quot;hid&quot;:&quot;sample4&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:21,&quot;range&quot;:&quot;2573-2755&quot;} -->
 <h3 class="sectionedit22" id="注意">注意</h3>
 <div class="level3">
+
 <p>
 この関数はくせがあるらしく、あとの処理でwaitがかからないと、@0003が複数あるとおかしくなることがある？<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6ce8\u610f&quot;,&quot;hid&quot;:&quot;\u6ce8\u610f&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:22,&quot;range&quot;:&quot;2756-2925&quot;} -->
 <h1 class="sectionedit23" id="x080d4ef4_効果音を鳴らす関数">0x080d4ef4 効果音を鳴らす関数</h1>
 <div class="level1">
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;0x080d4ef4 \u52b9\u679c\u97f3\u3092\u9cf4\u3089\u3059\u95a2\u6570&quot;,&quot;hid&quot;:&quot;x080d4ef4_\u52b9\u679c\u97f3\u3092\u9cf4\u3089\u3059\u95a2\u6570&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:23,&quot;range&quot;:&quot;2926-2979&quot;} -->
 <h3 class="sectionedit24" id="引数5">引数</h3>
 <div class="level3">
+
 <p>
 引数 r0 に、文字列番号を入れる<br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u5f15\u65705&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:24,&quot;range&quot;:&quot;2980-3046&quot;} -->
 <h3 class="sectionedit25" id="戻り値5">戻り値</h3>
 <div class="level3">
+
 <p>
 不明<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u623b\u308a\u5024&quot;,&quot;hid&quot;:&quot;\u623b\u308a\u50245&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:25,&quot;range&quot;:&quot;3047-3076&quot;} -->
 <h3 class="sectionedit26" id="sample5">sample</h3>
@@ -420,8 +475,10 @@ mov r0,#0x6a
 ldr r2,=$080d4ef4	;効果音を鳴らす
 mov lr, r2
 @dcw	$F800</pre>
+
 <p>
 ただし、この関数は、必ず効果音を鳴らしてしまうので、設定の是非を確認する必要がある。<br/>
+
 </p>
 <pre class="code">ldr r0,=$0202bcec ;設定で効果音がONかどうか
 add r0,#0x41
@@ -436,25 +493,33 @@ mov lr, r2
 @dcw	$F800
 
 sound_skip</pre>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;sample&quot;,&quot;hid&quot;:&quot;sample5&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:26,&quot;range&quot;:&quot;3077-3575&quot;} -->
 <h1 class="sectionedit27" id="x0802cb70_経験値_10する関数">0x0802cb70 経験値+10する関数</h1>
 <div class="level1">
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;0x0802cb70 \u7d4c\u9a13\u5024+10\u3059\u308b\u95a2\u6570&quot;,&quot;hid&quot;:&quot;x0802cb70_\u7d4c\u9a13\u5024_10\u3059\u308b\u95a2\u6570&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:27,&quot;range&quot;:&quot;3576-3626&quot;} -->
 <h3 class="sectionedit28" id="引数6">引数</h3>
 <div class="level3">
+
 <p>
 引数 r0 に、経験値をあげたいキャラクタへのポインタが入る(多分)<br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u5f15\u65706&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:28,&quot;range&quot;:&quot;3627-3740&quot;} -->
 <h3 class="sectionedit29" id="戻り値6">戻り値</h3>
 <div class="level3">
+
 <p>
 不明<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u623b\u308a\u5024&quot;,&quot;hid&quot;:&quot;\u623b\u308a\u50246&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:29,&quot;range&quot;:&quot;3741-3770&quot;} -->
 <h3 class="sectionedit30" id="sample6">sample</h3>
@@ -463,32 +528,43 @@ sound_skip</pre>
 ldr	r2, =$0802cb70 ;;+10 経験値取得関数へ
 mov	r14, r2
 @dcw	$F800</pre>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;sample&quot;,&quot;hid&quot;:&quot;sample6&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:30,&quot;range&quot;:&quot;3771-3945&quot;} -->
 <h3 class="sectionedit31" id="注意1">注意</h3>
 <div class="level3">
+
 <p>
 もし、任意の経験値をあげたい場合は、怪盗パッチのasmの kaihou_ex.asm を参考にしてください。<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6ce8\u610f&quot;,&quot;hid&quot;:&quot;\u6ce8\u610f1&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:31,&quot;range&quot;:&quot;3946-4095&quot;} -->
 <h1 class="sectionedit32" id="x08034520_マップ番号から_マップ設定のポインタを返す関数">0x08034520 マップ番号から、マップ設定のポインタを返す関数</h1>
 <div class="level1">
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;0x08034520 \u30de\u30c3\u30d7\u756a\u53f7\u304b\u3089\u3001\u30de\u30c3\u30d7\u8a2d\u5b9a\u306e\u30dd\u30a4\u30f3\u30bf\u3092\u8fd4\u3059\u95a2\u6570&quot;,&quot;hid&quot;:&quot;x08034520_\u30de\u30c3\u30d7\u756a\u53f7\u304b\u3089_\u30de\u30c3\u30d7\u8a2d\u5b9a\u306e\u30dd\u30a4\u30f3\u30bf\u3092\u8fd4\u3059\u95a2\u6570&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:32,&quot;range&quot;:&quot;4096-4191&quot;} -->
 <h3 class="sectionedit33" id="引数7">引数</h3>
 <div class="level3">
+
 <p>
 引数 r0 に、マップIDを入れる<br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u5f15\u65707&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:33,&quot;range&quot;:&quot;4192-4254&quot;} -->
 <h3 class="sectionedit34" id="戻り値7">戻り値</h3>
 <div class="level3">
+
 <p>
 r0に、マップ設定のポインタが返ってくる<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u623b\u308a\u5024&quot;,&quot;hid&quot;:&quot;\u623b\u308a\u50247&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:34,&quot;range&quot;:&quot;4255-4334&quot;} -->
 <h3 class="sectionedit35" id="sample7">sample</h3>
@@ -498,25 +574,32 @@ ldr	r2, =$08034520 ;;
 mov	r14, r2
 @dcw	$F800</pre>
 <pre class="code">;;r0 にマップ設定のポインタが返ってくる</pre>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;sample&quot;,&quot;hid&quot;:&quot;sample7&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:35,&quot;range&quot;:&quot;4335-4536&quot;} -->
 <h1 class="sectionedit36" id="a8d94_クリアターンを書き込む関数">080a8d94 クリアターンを書き込む関数</h1>
 <div class="level1">
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;080a8d94 \u30af\u30ea\u30a2\u30bf\u30fc\u30f3\u3092\u66f8\u304d\u8fbc\u3080\u95a2\u6570&quot;,&quot;hid&quot;:&quot;a8d94_\u30af\u30ea\u30a2\u30bf\u30fc\u30f3\u3092\u66f8\u304d\u8fbc\u3080\u95a2\u6570&quot;,&quot;codeblockOffset&quot;:10,&quot;secid&quot;:36,&quot;range&quot;:&quot;4537-4600&quot;} -->
 <h3 class="sectionedit37" id="引数8">引数</h3>
 <div class="level3">
+
 <p>
 引数 r0 に、202bcecを入れる(固定？)<br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u5f15\u65708&quot;,&quot;codeblockOffset&quot;:10,&quot;secid&quot;:37,&quot;range&quot;:&quot;4601-4670&quot;} -->
 <h3 class="sectionedit38" id="戻り値8">戻り値</h3>
 <div class="level3">
+
 <p>
 なし
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u623b\u308a\u5024&quot;,&quot;hid&quot;:&quot;\u623b\u308a\u50248&quot;,&quot;codeblockOffset&quot;:10,&quot;secid&quot;:38,&quot;range&quot;:&quot;4671-4698&quot;} -->
 <h3 class="sectionedit39" id="sample8">sample</h3>
@@ -527,94 +610,121 @@ ldr		r0,=$202bcec
 ldr		r1,=$080a8d94
 mov		lr, r1
 @dcw	$F800</pre>
+
 <p>
-0203ECF0- からの領域に、クリアターンを書き込みます。<br/>
+0203ECF0- からの領域に、クリアターンを書き込みます。<br />
 これを使ったあとは、 #0x03フラグを降ろさないと、2度書きすることがあるので注意
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;sample&quot;,&quot;hid&quot;:&quot;sample8&quot;,&quot;codeblockOffset&quot;:10,&quot;secid&quot;:39,&quot;range&quot;:&quot;4699-5030&quot;} -->
 <h1 class="sectionedit40" id="c30_6c_structスクリプトロード">08002c30 6C Structスクリプトロード</h1>
 <div class="level1">
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;08002c30 6C Struct\u30b9\u30af\u30ea\u30d7\u30c8\u30ed\u30fc\u30c9&quot;,&quot;hid&quot;:&quot;c30_6c_struct\u30b9\u30af\u30ea\u30d7\u30c8\u30ed\u30fc\u30c9&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:40,&quot;range&quot;:&quot;5031-5088&quot;} -->
 <h3 class="sectionedit41" id="引数9">引数</h3>
 <div class="level3">
+
 <p>
 引数 r0 に、スクリプトアドレス<br/>
 引数 r1 は不明<br/>
 <br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u5f15\u65709&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:41,&quot;range&quot;:&quot;5089-5180&quot;} -->
 <h3 class="sectionedit42" id="戻り値9">戻り値</h3>
 <div class="level3">
+
 <p>
 不明
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u623b\u308a\u5024&quot;,&quot;hid&quot;:&quot;\u623b\u308a\u50249&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:42,&quot;range&quot;:&quot;5181-5209&quot;} -->
 <h1 class="sectionedit43" id="d68_パレット読込">08000d68 パレット読込</h1>
 <div class="level1">
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;08000d68 \u30d1\u30ec\u30c3\u30c8\u8aad\u8fbc&quot;,&quot;hid&quot;:&quot;d68_\u30d1\u30ec\u30c3\u30c8\u8aad\u8fbc&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:43,&quot;range&quot;:&quot;5210-5252&quot;} -->
 <h3 class="sectionedit44" id="引数10">引数</h3>
 <div class="level3">
+
 <p>
 引数 r0 に、パレットアドレス<br/>
 引数 r1 は不明<br/>
 引数 r2 は不明<br/>
 <br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u5f15\u657010&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:44,&quot;range&quot;:&quot;5253-5363&quot;} -->
 <h3 class="sectionedit45" id="戻り値10">戻り値</h3>
 <div class="level3">
+
 <p>
 不明
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u623b\u308a\u5024&quot;,&quot;hid&quot;:&quot;\u623b\u308a\u502410&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:45,&quot;range&quot;:&quot;5364-5392&quot;} -->
 <h1 class="sectionedit46" id="圧縮されているデータの解凍">08013008 圧縮されているデータの解凍</h1>
 <div class="level1">
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;08013008 \u5727\u7e2e\u3055\u308c\u3066\u3044\u308b\u30c7\u30fc\u30bf\u306e\u89e3\u51cd&quot;,&quot;hid&quot;:&quot;\u5727\u7e2e\u3055\u308c\u3066\u3044\u308b\u30c7\u30fc\u30bf\u306e\u89e3\u51cd&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:46,&quot;range&quot;:&quot;5393-5456&quot;} -->
 <h3 class="sectionedit47" id="引数11">引数</h3>
 <div class="level3">
+
 <p>
-引数 r0 に、読み込む lz77圧縮されている画像やデータ<br/>
+引数 r0 に、読み込む lz77圧縮されている画像やデータ<br />
 引数 r1 に、解凍後に配置するBGアドレスorメモリアドレス<br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u5f15\u657011&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:47,&quot;range&quot;:&quot;5457-5630&quot;} -->
 <h3 class="sectionedit48" id="戻り値11">戻り値</h3>
 <div class="level3">
+
 <p>
 不明
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u623b\u308a\u5024&quot;,&quot;hid&quot;:&quot;\u623b\u308a\u502411&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:48,&quot;range&quot;:&quot;5631-5660&quot;} -->
 <h1 class="sectionedit49" id="dc0dc_無圧縮tsa読込">080dc0dc 無圧縮TSA読込?</h1>
 <div class="level1">
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;080dc0dc \u7121\u5727\u7e2eTSA\u8aad\u8fbc?&quot;,&quot;hid&quot;:&quot;dc0dc_\u7121\u5727\u7e2etsa\u8aad\u8fbc&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:49,&quot;range&quot;:&quot;5661-5704&quot;} -->
 <h3 class="sectionedit50" id="引数12">引数</h3>
 <div class="level3">
+
 <p>
 引数 r0 は不明<br/>
 引数 r1 は無圧縮TSAアドレス<br/>
 引数 r2 は不明<br/>
 引数 r3 は不明<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u5f15\u657012&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:50,&quot;range&quot;:&quot;5705-5829&quot;} -->
 <h1 class="sectionedit51" id="会話_0080_0005で参照できるところに数字を書く">08008914 会話@0080@0005で参照できるところに数字を書く</h1>
 <div class="level1">
+
 <p>
 引数 r0 に表示したい数字<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;08008914 \u4f1a\u8a71@0080@0005\u3067\u53c2\u7167\u3067\u304d\u308b\u3068\u3053\u308d\u306b\u6570\u5b57\u3092\u66f8\u304f&quot;,&quot;hid&quot;:&quot;\u4f1a\u8a71_0080_0005\u3067\u53c2\u7167\u3067\u304d\u308b\u3068\u3053\u308d\u306b\u6570\u5b57\u3092\u66f8\u304f&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:51,&quot;range&quot;:&quot;5830-5953&quot;} -->
 <h3 class="sectionedit52" id="sample9">sample</h3>
@@ -623,63 +733,87 @@ mov		lr, r1
 ldr		r1,=$08008914
 mov		lr, r1
 @dcw	$F800</pre>
+
 <p>
 <br/>
 注意点:@0080@0005は吹きだしの会話でしか取れない。システムメッセージでは読めない。<br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;sample&quot;,&quot;hid&quot;:&quot;sample9&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:52,&quot;range&quot;:&quot;5954-6196&quot;} -->
 <h1 class="sectionedit53" id="bgmを切り替える">08002424 BGMを切り替える</h1>
 <div class="level1">
+
 <p>
 BGM入りかえの最上位関数？<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;08002424 BGM\u3092\u5207\u308a\u66ff\u3048\u308b&quot;,&quot;hid&quot;:&quot;bgm\u3092\u5207\u308a\u66ff\u3048\u308b&quot;,&quot;codeblockOffset&quot;:12,&quot;secid&quot;:53,&quot;range&quot;:&quot;6197-6281&quot;} -->
 <h3 class="sectionedit54" id="引数13">引数</h3>
 <div class="level3">
+
 <p>
 引数 r0 がBGM番号<br/>
 引数 r1 は謎、下位の080023C8のr2として渡される.<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u5f15\u657013&quot;,&quot;codeblockOffset&quot;:12,&quot;secid&quot;:54,&quot;range&quot;:&quot;6282-6391&quot;} -->
 <h1 class="sectionedit55" id="c8_bgmを切り替える">080023C8 BGMを切り替える</h1>
 <div class="level1">
+
 <p>
 現在のBGMなどを加味して、必要なら曲切り替え命令を発行する。<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;080023C8 BGM\u3092\u5207\u308a\u66ff\u3048\u308b&quot;,&quot;hid&quot;:&quot;c8_bgm\u3092\u5207\u308a\u66ff\u3048\u308b&quot;,&quot;codeblockOffset&quot;:12,&quot;secid&quot;:55,&quot;range&quot;:&quot;6392-6527&quot;} -->
 <h3 class="sectionedit56" id="引数14">引数</h3>
 <div class="level3">
+
 <p>
 引数 r0 がBGM番号<br/>
 引数 r1 は謎<br/>
 引数 r2 は謎<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u5f15\u657014&quot;,&quot;codeblockOffset&quot;:12,&quot;secid&quot;:56,&quot;range&quot;:&quot;6528-6609&quot;} -->
 <h1 class="sectionedit57" id="bgmを切り替える1">08002398 BGMを切り替える</h1>
 <div class="level1">
+
 <p>
 メモリにBGM番号を書き込みをして、BGMを切り替える。<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;08002398 BGM\u3092\u5207\u308a\u66ff\u3048\u308b&quot;,&quot;hid&quot;:&quot;bgm\u3092\u5207\u308a\u66ff\u3048\u308b1&quot;,&quot;codeblockOffset&quot;:12,&quot;secid&quot;:57,&quot;range&quot;:&quot;6610-6730&quot;} -->
 <h3 class="sectionedit58" id="引数15">引数</h3>
 <div class="level3">
+
 <p>
 引数 r0 がBGM番号<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u5f15\u657015&quot;,&quot;codeblockOffset&quot;:12,&quot;secid&quot;:58,&quot;range&quot;:&quot;6731-6774&quot;} -->
 <h1 class="sectionedit59" id="c_ステータス画面1のレイアウト処理">0808941c ステータス画面1のレイアウト処理</h1>
 <div class="level1">
+
 <p>
 文字表示、ゲージ表示、数値表示、属性アイコン表示、勝敗数表示などの処理が含まれている。<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;0808941c \u30b9\u30c6\u30fc\u30bf\u30b9\u753b\u97621\u306e\u30ec\u30a4\u30a2\u30a6\u30c8\u51e6\u7406&quot;,&quot;hid&quot;:&quot;c_\u30b9\u30c6\u30fc\u30bf\u30b9\u753b\u97621\u306e\u30ec\u30a4\u30a2\u30a6\u30c8\u51e6\u7406&quot;,&quot;codeblockOffset&quot;:12,&quot;secid&quot;:59,&quot;range&quot;:&quot;6775-6979&quot;} -->
 <h3 class="sectionedit60" id="抜粋">抜粋</h3>
@@ -699,30 +833,41 @@ BGM入りかえの最上位関数？<br/>
 0008956e 2105     	mov	r1, #5	//ゲージx座標
 00089570 2209     	mov	r2, #9	//ゲージy座標
 00089572 f7ff feef	bl	$00089354	//ゲージ表示処理</pre>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u629c\u7c8b&quot;,&quot;hid&quot;:&quot;\u629c\u7c8b&quot;,&quot;codeblockOffset&quot;:12,&quot;secid&quot;:60,&quot;range&quot;:&quot;6980-7727&quot;} -->
 <h1 class="sectionedit61" id="エイリーク編_ヴェルニ出現後_に切り替え">08088830 エイリーク編(ヴェルニ出現後)に切り替え</h1>
 <div class="level1">
+
 <p>
 主人公がエイリーク($01)になる<br/>
 <br/>
+
 </p>
 <pre class="code">400d0000 31880808</pre>
+
 <p>
 上記のようにすれば、イベント命令として章イベント中に実行できるが、本来は章分岐の関数を無理矢理呼んでいるだけなので、副作用があるかもしれない<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;08088830 \u30a8\u30a4\u30ea\u30fc\u30af\u7de8(\u30f4\u30a7\u30eb\u30cb\u51fa\u73fe\u5f8c)\u306b\u5207\u308a\u66ff\u3048&quot;,&quot;hid&quot;:&quot;\u30a8\u30a4\u30ea\u30fc\u30af\u7de8_\u30f4\u30a7\u30eb\u30cb\u51fa\u73fe\u5f8c_\u306b\u5207\u308a\u66ff\u3048&quot;,&quot;codeblockOffset&quot;:13,&quot;secid&quot;:61,&quot;range&quot;:&quot;7728-8102&quot;} -->
 <h1 class="sectionedit62" id="c_エフラム編に切り替え">0808884c エフラム編に切り替え</h1>
 <div class="level1">
+
 <p>
 主人公がエフラム($0F)になる<br/>
 <br/>
+
 </p>
 <pre class="code">400d0000 4d880808</pre>
+
 <p>
 上記のようにすれば、イベント命令として章イベント中に実行できるが、本来は章分岐の関数を無理矢理呼んでいるだけなので、副作用があるかもしれない<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;0808884c \u30a8\u30d5\u30e9\u30e0\u7de8\u306b\u5207\u308a\u66ff\u3048&quot;,&quot;hid&quot;:&quot;c_\u30a8\u30d5\u30e9\u30e0\u7de8\u306b\u5207\u308a\u66ff\u3048&quot;,&quot;codeblockOffset&quot;:14,&quot;secid&quot;:62,&quot;range&quot;:&quot;8103-&quot;} --></div>
 </body>

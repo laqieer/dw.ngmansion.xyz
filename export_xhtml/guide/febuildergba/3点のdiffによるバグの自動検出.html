@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-
-<html dir="ltr" lang="ja">
+<html lang="ja" dir="ltr">
 <head>
-<meta charset="utf-8"/>
-<title>guide:febuildergba:3点のdiffによるバグの自動検出</title>
-<meta content="DokuWiki" name="generator"/>
-<meta content="#008800" name="theme-color"/>
-<meta content="index,follow" name="robots"/>
-<meta content="guide,febuildergba,3点のdiffによるバグの自動検出" name="keywords"/>
-<link href="/lib/exe/opensearch.php" rel="search" title="FE改造wiki" type="application/opensearchdescription+xml"/>
-<link href="/" rel="start"/>
-<link href="/doku.php?id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA&amp;do=index" rel="contents" title="サイトマップ"/>
-<link href="/lib/exe/manifest.php" rel="manifest"/>
-<link href="/feed.php" rel="alternate" title="最近の変更" type="application/rss+xml"/>
-<link href="/feed.php?mode=list&amp;ns=guide:febuildergba" rel="alternate" title="現在の名前空間" type="application/rss+xml"/>
-<link href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA" rel="alternate" title="プレーンHTML" type="text/html"/>
-<link href="/doku.php?do=export_raw&amp;id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA" rel="alternate" title="Wikiマークアップ" type="text/plain"/>
-<link href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA" rel="canonical"/>
-<link href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" rel="stylesheet" type="text/css"/>
+  <meta charset="utf-8" />
+  <title>guide:febuildergba:3点のdiffによるバグの自動検出</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="guide,febuildergba,3点のdiffによるバグの自動検出"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide:febuildergba"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
 <!--[if gte IE 9]><!-->
 <script type="text/javascript">/*<![CDATA[*/var NS='guide:febuildergba';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:febuildergba:3\u70b9\u306ediff\u306b\u3088\u308b\u30d0\u30b0\u306e\u81ea\u52d5\u691c\u51fa","namespace":"guide:febuildergba","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
 /*!]]>*/</script>
-<script charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f" type="text/javascript"></script>
-<script charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
 <!--<![endif]-->
 </head>
 <body>
 <div class="dokuwiki export">
 <!-- TOC START -->
-<div class="dw__toc" id="dw__toc">
+<div id="dw__toc" class="dw__toc">
 <h3 class="toggle">目次</h3>
 <div>
+
 <ul class="toc">
 <li class="level1"><div class="li"><a href="#点のdiffによるバグの自動検出">3点のDIFFによるバグの自動検出</a></div>
 <ul class="toc">
@@ -52,8 +52,10 @@
 </div>
 </div>
 <!-- TOC END -->
+
 <h1 class="sectionedit1" id="点のdiffによるバグの自動検出">3点のDIFFによるバグの自動検出</h1>
 <div class="level1">
+
 <p>
 <br/>
 ちゃんとバックアップを取ってきた方のための機能です。<br/>
@@ -63,14 +65,18 @@
 FEBuilderGBAは、ROMを守るためにいろいろな手段を使っていますが、それでも発生しないとはいい切れません。<br/>
 この機能は、そのバグの原因を、バックアップデータとのDIFFを取ることにより、自動的に検出する機能です。<br/>
 <br/>
+
 </p>
+
 <p>
-<a class="media" href="https://i.imgur.com/PGYPMy7.jpg" title="https://i.imgur.com/PGYPMy7.jpg"><img alt="i.imgur.com_pgypmy7.jpg" class="mediacenter" src="https://i.imgur.com/PGYPMy7.jpg" title="i.imgur.com_pgypmy7.jpg"/></a>
+<a href="/lib/exe/fetch.php?tok=747158&amp;media=https%3A%2F%2Fi.imgur.com%2FPGYPMy7.jpg" class="media" title="https://i.imgur.com/PGYPMy7.jpg"><img src="/lib/exe/fetch.php?tok=747158&amp;media=https%3A%2F%2Fi.imgur.com%2FPGYPMy7.jpg" class="mediacenter" title="i.imgur.com_pgypmy7.jpg" alt="i.imgur.com_pgypmy7.jpg" /></a>
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;3\u70b9\u306eDIFF\u306b\u3088\u308b\u30d0\u30b0\u306e\u81ea\u52d5\u691c\u51fa&quot;,&quot;hid&quot;:&quot;\u70b9\u306ediff\u306b\u3088\u308b\u30d0\u30b0\u306e\u81ea\u52d5\u691c\u51fa&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-741&quot;} -->
 <h2 class="sectionedit2" id="jenkinsはいない">Jenkinsはいない</h2>
 <div class="level2">
+
 <p>
 FEはSRPGです。最初から通しプレーをするには時間がかかるゲームです。<br/>
 中盤のステージを作ってると、序盤のステージのテストプレイがおろそかになります。<br/>
@@ -78,80 +84,95 @@ FEはSRPGです。最初から通しプレーをするには時間がかかる�
 残念ながらGBAFEには、CIのJenkinsのようなものはまだ存在しません。<br/>
 壊したことが気が付かずに、しばらく経ってからの通しプレーでバグに気がつくというのがよくあるケースです。<br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Jenkins\u306f\u3044\u306a\u3044&quot;,&quot;hid&quot;:&quot;jenkins\u306f\u3044\u306a\u3044&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;742-1383&quot;} -->
 <h2 class="sectionedit3" id="エミュレータでバグが再現するところまで進める">エミュレータでバグが再現するところまで進める</h2>
 <div class="level2">
+
 <p>
-<a class="media" href="https://i.imgur.com/PGYPMy7.jpg" title="https://i.imgur.com/PGYPMy7.jpg"><img alt="i.imgur.com_pgypmy7.jpg" class="mediacenter" src="https://i.imgur.com/PGYPMy7.jpg" title="i.imgur.com_pgypmy7.jpg"/></a> <br/>
+<a href="/lib/exe/fetch.php?tok=747158&amp;media=https%3A%2F%2Fi.imgur.com%2FPGYPMy7.jpg" class="media" title="https://i.imgur.com/PGYPMy7.jpg"><img src="/lib/exe/fetch.php?tok=747158&amp;media=https%3A%2F%2Fi.imgur.com%2FPGYPMy7.jpg" class="mediacenter" title="i.imgur.com_pgypmy7.jpg" alt="i.imgur.com_pgypmy7.jpg" /></a> <br/>
 まずは、バグが再現するところまで、エミュレータでゲームを進めてください。<br/>
 バグが再現する所まで来たら、このツールの出番です。<br/>
 (このツールを起動する前に、書き込んでいないデータがあったら保存してください。)<br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a8\u30df\u30e5\u30ec\u30fc\u30bf\u3067\u30d0\u30b0\u304c\u518d\u73fe\u3059\u308b\u3068\u3053\u308d\u307e\u3067\u9032\u3081\u308b&quot;,&quot;hid&quot;:&quot;\u30a8\u30df\u30e5\u30ec\u30fc\u30bf\u3067\u30d0\u30b0\u304c\u518d\u73fe\u3059\u308b\u3068\u3053\u308d\u307e\u3067\u9032\u3081\u308b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;1384-1816&quot;} -->
 <h2 class="sectionedit4" id="比較デバッグツールの起動">比較デバッグツールの起動</h2>
 <div class="level2">
+
 <p>
-<a class="media" href="https://i.imgur.com/e6HNTl2.jpg" title="https://i.imgur.com/e6HNTl2.jpg"><img alt="i.imgur.com_e6hntl2.jpg" class="mediacenter" src="https://i.imgur.com/e6HNTl2.jpg" title="i.imgur.com_e6hntl2.jpg"/></a> <br/>
-メニューから、ツール→比較デバッグツールを選択してください。<br/>
+<a href="/lib/exe/fetch.php?tok=873677&amp;media=https%3A%2F%2Fi.imgur.com%2Fe6HNTl2.jpg" class="media" title="https://i.imgur.com/e6HNTl2.jpg"><img src="/lib/exe/fetch.php?tok=873677&amp;media=https%3A%2F%2Fi.imgur.com%2Fe6HNTl2.jpg" class="mediacenter" title="i.imgur.com_e6hntl2.jpg" alt="i.imgur.com_e6hntl2.jpg" /></a> <br/>
+メニューから、ツール→比較デバッグツールを選択してください。<br />
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6bd4\u8f03\u30c7\u30d0\u30c3\u30b0\u30c4\u30fc\u30eb\u306e\u8d77\u52d5&quot;,&quot;hid&quot;:&quot;\u6bd4\u8f03\u30c7\u30d0\u30c3\u30b0\u30c4\u30fc\u30eb\u306e\u8d77\u52d5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1817-2000&quot;} -->
 <h2 class="sectionedit5" id="画面説明">画面説明</h2>
 <div class="level2">
+
 <p>
-<a class="media" href="https://i.imgur.com/2QhvUMl.jpg" title="https://i.imgur.com/2QhvUMl.jpg"><img alt="i.imgur.com_2qhvuml.jpg" class="mediacenter" src="https://i.imgur.com/2QhvUMl.jpg" title="i.imgur.com_2qhvuml.jpg"/></a> <br/>
+<a href="/lib/exe/fetch.php?tok=d0aa6d&amp;media=https%3A%2F%2Fi.imgur.com%2F2QhvUMl.jpg" class="media" title="https://i.imgur.com/2QhvUMl.jpg"><img src="/lib/exe/fetch.php?tok=d0aa6d&amp;media=https%3A%2F%2Fi.imgur.com%2F2QhvUMl.jpg" class="mediacenter" title="i.imgur.com_2qhvuml.jpg" alt="i.imgur.com_2qhvuml.jpg" /></a> <br/>
 このツールを起動すると、バックアップデータが日付順に表示されます。<br/>
 リストの上のデータが新しく、下に行くほど古いデータです。<br/>
 リストをダブルクリックすると、エミュレータが自動的に起動します。<br/>
 7z圧縮やupsなども自動的にgba romへ変更されエミュレータが起動します。<br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u753b\u9762\u8aac\u660e&quot;,&quot;hid&quot;:&quot;\u753b\u9762\u8aac\u660e&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2001-2457&quot;} -->
 <h2 class="sectionedit6" id="最後に正しく動作したromを探す">最後に正しく動作したROMを探す</h2>
 <div class="level2">
+
 <p>
 バックアップのリストから、「バグが発生しない最も日付が新しいバックアップ」を探してください。<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6700\u5f8c\u306b\u6b63\u3057\u304f\u52d5\u4f5c\u3057\u305fROM\u3092\u63a2\u3059&quot;,&quot;hid&quot;:&quot;\u6700\u5f8c\u306b\u6b63\u3057\u304f\u52d5\u4f5c\u3057\u305from\u3092\u63a2\u3059&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;2458-2655&quot;} -->
 <h3 class="sectionedit7" id="実際にやってみる">実際にやってみる</h3>
 <div class="level3">
+
 <p>
 今回は、テストなので3つしかデータを用意していません。<br/>
 実際にはたくさんのデータが並んでいるものと思います。<br/>
 <br/>
-<a class="media" href="https://i.imgur.com/EFTRkm6.jpg" title="https://i.imgur.com/EFTRkm6.jpg"><img alt="i.imgur.com_eftrkm6.jpg" class="mediacenter" src="https://i.imgur.com/EFTRkm6.jpg" title="i.imgur.com_eftrkm6.jpg"/></a> <br/>
+<a href="/lib/exe/fetch.php?tok=18118e&amp;media=https%3A%2F%2Fi.imgur.com%2FEFTRkm6.jpg" class="media" title="https://i.imgur.com/EFTRkm6.jpg"><img src="/lib/exe/fetch.php?tok=18118e&amp;media=https%3A%2F%2Fi.imgur.com%2FEFTRkm6.jpg" class="mediacenter" title="i.imgur.com_eftrkm6.jpg" alt="i.imgur.com_eftrkm6.jpg" /></a> <br/>
 とりあえず、リストの一番下にある一番古いバックアップを見てみましょう。<br/>
 リストの項目をダブルクリックすると、エミュレータが起動します。<br/>
 <br/>
-<a class="media" href="https://i.imgur.com/VLWGWt0.jpg" title="https://i.imgur.com/VLWGWt0.jpg"><img alt="i.imgur.com_vlwgwt0.jpg" class="mediacenter" src="https://i.imgur.com/VLWGWt0.jpg" title="i.imgur.com_vlwgwt0.jpg"/></a> <br/>
+<a href="/lib/exe/fetch.php?tok=46ed80&amp;media=https%3A%2F%2Fi.imgur.com%2FVLWGWt0.jpg" class="media" title="https://i.imgur.com/VLWGWt0.jpg"><img src="/lib/exe/fetch.php?tok=46ed80&amp;media=https%3A%2F%2Fi.imgur.com%2FVLWGWt0.jpg" class="mediacenter" title="i.imgur.com_vlwgwt0.jpg" alt="i.imgur.com_vlwgwt0.jpg" /></a> <br/>
 普通に動作しました。<br/>
 これは正しいデータのようです。 <br/>
 エミュレータを閉じて、次のデータを見てみましょう。<br/>
 <br/>
-<a class="media" href="https://i.imgur.com/XbUPwzZ.jpg" title="https://i.imgur.com/XbUPwzZ.jpg"><img alt="i.imgur.com_xbupwzz.jpg" class="mediacenter" src="https://i.imgur.com/XbUPwzZ.jpg" title="i.imgur.com_xbupwzz.jpg"/></a> <br/>
+<a href="/lib/exe/fetch.php?tok=ab7e91&amp;media=https%3A%2F%2Fi.imgur.com%2FXbUPwzZ.jpg" class="media" title="https://i.imgur.com/XbUPwzZ.jpg"><img src="/lib/exe/fetch.php?tok=ab7e91&amp;media=https%3A%2F%2Fi.imgur.com%2FXbUPwzZ.jpg" class="mediacenter" title="i.imgur.com_xbupwzz.jpg" alt="i.imgur.com_xbupwzz.jpg" /></a> <br/>
 真ん中にあるデータを見てみましょう。<br/>
 同様に、リストの項目をダブルクリックしてエミュレータを起動させてください。<br/>
 <br/>
-<a class="media" href="https://i.imgur.com/cb9XbcE.jpg" title="https://i.imgur.com/cb9XbcE.jpg"><img alt="i.imgur.com_cb9xbce.jpg" class="mediacenter" src="https://i.imgur.com/cb9XbcE.jpg" title="i.imgur.com_cb9xbce.jpg"/></a> <br/>
+<a href="/lib/exe/fetch.php?tok=9d8d77&amp;media=https%3A%2F%2Fi.imgur.com%2Fcb9XbcE.jpg" class="media" title="https://i.imgur.com/cb9XbcE.jpg"><img src="/lib/exe/fetch.php?tok=9d8d77&amp;media=https%3A%2F%2Fi.imgur.com%2Fcb9XbcE.jpg" class="mediacenter" title="i.imgur.com_cb9xbce.jpg" alt="i.imgur.com_cb9xbce.jpg" /></a> <br/>
 これも普通に動作しました。<br/>
 これは正しいデータのようです。 <br/>
 <br/>
-<a class="media" href="https://i.imgur.com/i307yPF.jpg" title="https://i.imgur.com/i307yPF.jpg"><img alt="i.imgur.com_i307ypf.jpg" class="mediacenter" src="https://i.imgur.com/i307yPF.jpg" title="i.imgur.com_i307ypf.jpg"/></a> <br/>
+<a href="/lib/exe/fetch.php?tok=b0943d&amp;media=https%3A%2F%2Fi.imgur.com%2Fi307yPF.jpg" class="media" title="https://i.imgur.com/i307yPF.jpg"><img src="/lib/exe/fetch.php?tok=b0943d&amp;media=https%3A%2F%2Fi.imgur.com%2Fi307yPF.jpg" class="mediacenter" title="i.imgur.com_i307ypf.jpg" alt="i.imgur.com_i307ypf.jpg" /></a> <br/>
 では、リストの一番上にあるバックアップはどうでしょうか？<br/>
 リストの項目をダブルクリックしてエミュレータを起動させてください。<br/>
 <br/>
-<a class="media" href="https://i.imgur.com/JWFnDWg.jpg" title="https://i.imgur.com/JWFnDWg.jpg"><img alt="i.imgur.com_jwfndwg.jpg" class="mediacenter" src="https://i.imgur.com/JWFnDWg.jpg" title="i.imgur.com_jwfndwg.jpg"/></a> <br/>
+<a href="/lib/exe/fetch.php?tok=048f20&amp;media=https%3A%2F%2Fi.imgur.com%2FJWFnDWg.jpg" class="media" title="https://i.imgur.com/JWFnDWg.jpg"><img src="/lib/exe/fetch.php?tok=048f20&amp;media=https%3A%2F%2Fi.imgur.com%2FJWFnDWg.jpg" class="mediacenter" title="i.imgur.com_jwfndwg.jpg" alt="i.imgur.com_jwfndwg.jpg" /></a> <br/>
 バグが再現しました。<br/>
 このデータは壊れているようです。<br/>
 <br/>
-<a class="media" href="https://i.imgur.com/ktDH4IY.jpg" title="https://i.imgur.com/ktDH4IY.jpg"><img alt="i.imgur.com_ktdh4iy.jpg" class="mediacenter" src="https://i.imgur.com/ktDH4IY.jpg" title="i.imgur.com_ktdh4iy.jpg"/></a> <br/>
+<a href="/lib/exe/fetch.php?tok=244497&amp;media=https%3A%2F%2Fi.imgur.com%2FktDH4IY.jpg" class="media" title="https://i.imgur.com/ktDH4IY.jpg"><img src="/lib/exe/fetch.php?tok=244497&amp;media=https%3A%2F%2Fi.imgur.com%2FktDH4IY.jpg" class="mediacenter" title="i.imgur.com_ktdh4iy.jpg" alt="i.imgur.com_ktdh4iy.jpg" /></a> <br/>
 では、正しく動く、最新のバックアップデータはどれですか？<br/>
 それは、真ん中のデータです。<br/>
 <br/>
@@ -166,14 +187,17 @@ FEはSRPGです。最初から通しプレーをするには時間がかかる�
 正しく動く最新のデータは、2番目のデータです。<br/>
 これは重要なポイントです。<br/>
 <br/>
-<a class="media" href="https://i.imgur.com/tHtzvji.jpg" title="https://i.imgur.com/tHtzvji.jpg"><img alt="i.imgur.com_thtzvji.jpg" class="mediacenter" src="https://i.imgur.com/tHtzvji.jpg" title="i.imgur.com_thtzvji.jpg"/></a><br/>
+<a href="/lib/exe/fetch.php?tok=72ca12&amp;media=https%3A%2F%2Fi.imgur.com%2FtHtzvji.jpg" class="media" title="https://i.imgur.com/tHtzvji.jpg"><img src="/lib/exe/fetch.php?tok=72ca12&amp;media=https%3A%2F%2Fi.imgur.com%2FtHtzvji.jpg" class="mediacenter" title="i.imgur.com_thtzvji.jpg" alt="i.imgur.com_thtzvji.jpg" /></a><br />
 正しく動く最新のデータを見つけたら、右下にあるボタンを押して、3点DIFFを取得します。<br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5b9f\u969b\u306b\u3084\u3063\u3066\u307f\u308b&quot;,&quot;hid&quot;:&quot;\u5b9f\u969b\u306b\u3084\u3063\u3066\u307f\u308b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;2656-5008&quot;} -->
 <h2 class="sectionedit8" id="正しく動く最新のデータの重要性について">正しく動く最新のデータの重要性について</h2>
 <div class="level2">
+
 <p>
 正しく動く最新のデータはとても重要です。<br/>
 <br/>
@@ -211,17 +235,20 @@ OK ROMにはあって、 NG ROMにないもの。<br/>
 この3つの条件を満たすデータを、3点DIFFを使い求めます。<br/>
 ボタンを押してください。<br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6b63\u3057\u304f\u52d5\u304f\u6700\u65b0\u306e\u30c7\u30fc\u30bf\u306e\u91cd\u8981\u6027\u306b\u3064\u3044\u3066&quot;,&quot;hid&quot;:&quot;\u6b63\u3057\u304f\u52d5\u304f\u6700\u65b0\u306e\u30c7\u30fc\u30bf\u306e\u91cd\u8981\u6027\u306b\u3064\u3044\u3066&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;5009-7296&quot;} -->
 <h2 class="sectionedit9" id="比較方法選択">比較方法選択</h2>
 <div class="level2">
+
 <p>
-<a class="media" href="https://i.imgur.com/HnUzcYl.jpg" title="https://i.imgur.com/HnUzcYl.jpg"><img alt="i.imgur.com_hnuzcyl.jpg" class="mediacenter" src="https://i.imgur.com/HnUzcYl.jpg" title="i.imgur.com_hnuzcyl.jpg"/></a> <br/>
+<a href="/lib/exe/fetch.php?tok=d2d9e7&amp;media=https%3A%2F%2Fi.imgur.com%2FHnUzcYl.jpg" class="media" title="https://i.imgur.com/HnUzcYl.jpg"><img src="/lib/exe/fetch.php?tok=d2d9e7&amp;media=https%3A%2F%2Fi.imgur.com%2FHnUzcYl.jpg" class="mediacenter" title="i.imgur.com_hnuzcyl.jpg" alt="i.imgur.com_hnuzcyl.jpg" /></a> <br/>
 比較方法が出てきますが、一番上の方法を選びます。(これが先ほど説明した条件です)<br/>
 そうすると、計算が行われ、3点DIFFの結果がリストに表示されます。<br/>
 <br/>
-<a class="media" href="https://i.imgur.com/UxGB3MA.jpg" title="https://i.imgur.com/UxGB3MA.jpg"><img alt="i.imgur.com_uxgb3ma.jpg" class="mediacenter" src="https://i.imgur.com/UxGB3MA.jpg" title="i.imgur.com_uxgb3ma.jpg"/></a> <br/>
+<a href="/lib/exe/fetch.php?tok=2c5f58&amp;media=https%3A%2F%2Fi.imgur.com%2FUxGB3MA.jpg" class="media" title="https://i.imgur.com/UxGB3MA.jpg"><img src="/lib/exe/fetch.php?tok=2c5f58&amp;media=https%3A%2F%2Fi.imgur.com%2FUxGB3MA.jpg" class="mediacenter" title="i.imgur.com_uxgb3ma.jpg" alt="i.imgur.com_uxgb3ma.jpg" /></a> <br/>
 <br/>
 この中にバグを発生させているデータがあります。<br/>
 見つけ出しましょう。<br/>
@@ -233,7 +260,7 @@ OK ROMにはあって、 NG ROMにないもの。<br/>
 3キーを押すと、CURRENTのデータを書き込みます。<br/>
 0キーを押すと、CURRENTのデータを書き込みマークを解除します。<br/>
 <br/>
-<a class="media" href="https://i.imgur.com/hu9XD8i.jpg" title="https://i.imgur.com/hu9XD8i.jpg"><img alt="i.imgur.com_hu9xd8i.jpg" class="mediacenter" src="https://i.imgur.com/hu9XD8i.jpg" title="i.imgur.com_hu9xd8i.jpg"/></a> <br/>
+<a href="/lib/exe/fetch.php?tok=a1e873&amp;media=https%3A%2F%2Fi.imgur.com%2Fhu9XD8i.jpg" class="media" title="https://i.imgur.com/hu9XD8i.jpg"><img src="/lib/exe/fetch.php?tok=a1e873&amp;media=https%3A%2F%2Fi.imgur.com%2Fhu9XD8i.jpg" class="mediacenter" title="i.imgur.com_hu9xd8i.jpg" alt="i.imgur.com_hu9xd8i.jpg" /></a> <br/>
 基本的に、1キーを押してデータを書き込んでください。<br/>
 データを書き込んだから、F5キーを押してエミュレータを起動してください。<br/>
 バグは解決されましたか？<br/>
@@ -246,7 +273,7 @@ OK ROMにはあって、 NG ROMにないもの。<br/>
 <br/>
 こうやって、差分をマージしていきましょう。<br/>
 <br/>
-<a class="media" href="https://i.imgur.com/DZmH9nF.jpg" title="https://i.imgur.com/DZmH9nF.jpg"><img alt="i.imgur.com_dzmh9nf.jpg" class="mediacenter" src="https://i.imgur.com/DZmH9nF.jpg" title="i.imgur.com_dzmh9nf.jpg"/></a> <br/>
+<a href="/lib/exe/fetch.php?tok=9685a7&amp;media=https%3A%2F%2Fi.imgur.com%2FDZmH9nF.jpg" class="media" title="https://i.imgur.com/DZmH9nF.jpg"><img src="/lib/exe/fetch.php?tok=9685a7&amp;media=https%3A%2F%2Fi.imgur.com%2FDZmH9nF.jpg" class="mediacenter" title="i.imgur.com_dzmh9nf.jpg" alt="i.imgur.com_dzmh9nf.jpg" /></a> <br/>
 もし、バグが解決されたとしたら、それがバグを引き起こしているデータです。<br/>
 そのデータのアドレスと、書き込まれた内容から、原因を推測しましょう。<br/>
 <br/>
@@ -263,18 +290,21 @@ OK ROMにはあって、 NG ROMにないもの。<br/>
 <br/>
 今回は、マップ設定で、誤ったマップオブジェクトを指定していましました。<br/>
 本来0x01 を指定しないといけないのに、 0x02を指定していたため、画面が壊れてしまいました。<br/>
-<a class="media" href="https://i.imgur.com/RxFJoU8.jpg" title="https://i.imgur.com/RxFJoU8.jpg"><img alt="i.imgur.com_rxfjou8.jpg" class="mediacenter" src="https://i.imgur.com/RxFJoU8.jpg" title="i.imgur.com_rxfjou8.jpg"/></a> <br/>
+<a href="/lib/exe/fetch.php?tok=c5244e&amp;media=https%3A%2F%2Fi.imgur.com%2FRxFJoU8.jpg" class="media" title="https://i.imgur.com/RxFJoU8.jpg"><img src="/lib/exe/fetch.php?tok=c5244e&amp;media=https%3A%2F%2Fi.imgur.com%2FRxFJoU8.jpg" class="mediacenter" title="i.imgur.com_rxfjou8.jpg" alt="i.imgur.com_rxfjou8.jpg" /></a> <br/>
 <br/>
 <br/>
 この方法を利用すると、大抵の不可解なバグを1時間ぐらいで修正することが出来ます。<br/>
 どうしても、原因がわからないバグが発生したら、この方法でバグデータを探してみるといいかもしれません。<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6bd4\u8f03\u65b9\u6cd5\u9078\u629e&quot;,&quot;hid&quot;:&quot;\u6bd4\u8f03\u65b9\u6cd5\u9078\u629e&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;7297-10608&quot;} -->
 <h2 class="sectionedit10" id="補助機能">補助機能</h2>
 <div class="level2">
+
 <p>
-<a class="media" href="https://i.imgur.com/UxGB3MA.jpg" title="https://i.imgur.com/UxGB3MA.jpg"><img alt="i.imgur.com_uxgb3ma.jpg" class="mediacenter" src="https://i.imgur.com/UxGB3MA.jpg" title="i.imgur.com_uxgb3ma.jpg"/></a> <br/>
+<a href="/lib/exe/fetch.php?tok=2c5f58&amp;media=https%3A%2F%2Fi.imgur.com%2FUxGB3MA.jpg" class="media" title="https://i.imgur.com/UxGB3MA.jpg"><img src="/lib/exe/fetch.php?tok=2c5f58&amp;media=https%3A%2F%2Fi.imgur.com%2FUxGB3MA.jpg" class="mediacenter" title="i.imgur.com_uxgb3ma.jpg" alt="i.imgur.com_uxgb3ma.jpg" /></a> <br/>
 データのマージをしていて、訳がわからない状態になったら、右下のボタンを押してください。<br/>
 「変更をすべてキャンセル」します。<br/>
 マージを開始する直前のデータにデータをすべて巻き戻します。<br/>
@@ -285,17 +315,21 @@ OK ROMにはあって、 NG ROMにないもの。<br/>
 データを書き込んで次のデータへフォーカスを自動的に移動します。<br/>
 キーをずっと押しっぱなしにすると、どんどん書き込みを続けます。<br/>
 半分ぐらいマージしてから動作を確認するという二分探索のようなことをしてもいいかもしれません。<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u88dc\u52a9\u6a5f\u80fd&quot;,&quot;hid&quot;:&quot;\u88dc\u52a9\u6a5f\u80fd&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;10609-11537&quot;} -->
 <h2 class="sectionedit11" id="元ネタ">元ネタ</h2>
 <div class="level2">
+
 <p>
 この機能は、私が昔書いた、バイナリ比較でバグ修正を簡易化したものです。<br/>
 バイナリ比較ツールなどで2点マージでは面倒なので、3点マージにして、変更点を絞り込み、楽にマージできるようになっています。<br/>
 <br/>
-<a class="urlextern" href="http://ngmansion.xyz/wiki/hackfe/index.php?cmd=read&amp;page=%E8%A7%A3%E8%AA%AC%2F%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3" rel="nofollow" title="http://ngmansion.xyz/wiki/hackfe/index.php?cmd=read&amp;page=%E8%A7%A3%E8%AA%AC%2F%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3">http://ngmansion.xyz/wiki/hackfe/index.php?cmd=read&amp;page=%E8%A7%A3%E8%AA%AC%2F%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3</a>
+<a href="http://ngmansion.xyz/wiki/hackfe/index.php?cmd=read&amp;page=%E8%A7%A3%E8%AA%AC%2F%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3" class="urlextern" title="http://ngmansion.xyz/wiki/hackfe/index.php?cmd=read&amp;page=%E8%A7%A3%E8%AA%AC%2F%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3" rel="nofollow">http://ngmansion.xyz/wiki/hackfe/index.php?cmd=read&amp;page=%E8%A7%A3%E8%AA%AC%2F%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3</a>
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5143\u30cd\u30bf&quot;,&quot;hid&quot;:&quot;\u5143\u30cd\u30bf&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;11538-&quot;} --></div>
 </body>

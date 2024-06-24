@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-
-<html dir="ltr" lang="ja">
+<html lang="ja" dir="ltr">
 <head>
-<meta charset="utf-8"/>
-<title>guide:febuildergba:逆アセンブラ_jp</title>
-<meta content="DokuWiki" name="generator"/>
-<meta content="#008800" name="theme-color"/>
-<meta content="index,follow" name="robots"/>
-<meta content="guide,febuildergba,逆アセンブラ_jp" name="keywords"/>
-<link href="/lib/exe/opensearch.php" rel="search" title="FE改造wiki" type="application/opensearchdescription+xml"/>
-<link href="/" rel="start"/>
-<link href="/doku.php?id=guide:febuildergba:%E9%80%86%E3%82%A2%E3%82%BB%E3%83%B3%E3%83%96%E3%83%A9_jp&amp;do=index" rel="contents" title="サイトマップ"/>
-<link href="/lib/exe/manifest.php" rel="manifest"/>
-<link href="/feed.php" rel="alternate" title="最近の変更" type="application/rss+xml"/>
-<link href="/feed.php?mode=list&amp;ns=guide:febuildergba" rel="alternate" title="現在の名前空間" type="application/rss+xml"/>
-<link href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:%E9%80%86%E3%82%A2%E3%82%BB%E3%83%B3%E3%83%96%E3%83%A9_jp" rel="alternate" title="プレーンHTML" type="text/html"/>
-<link href="/doku.php?do=export_raw&amp;id=guide:febuildergba:%E9%80%86%E3%82%A2%E3%82%BB%E3%83%B3%E3%83%96%E3%83%A9_jp" rel="alternate" title="Wikiマークアップ" type="text/plain"/>
-<link href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:%E9%80%86%E3%82%A2%E3%82%BB%E3%83%B3%E3%83%96%E3%83%A9_jp" rel="canonical"/>
-<link href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" rel="stylesheet" type="text/css"/>
+  <meta charset="utf-8" />
+  <title>guide:febuildergba:逆アセンブラ_jp</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="guide,febuildergba,逆アセンブラ_jp"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=guide:febuildergba:%E9%80%86%E3%82%A2%E3%82%BB%E3%83%B3%E3%83%96%E3%83%A9_jp&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide:febuildergba"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:%E9%80%86%E3%82%A2%E3%82%BB%E3%83%B3%E3%83%96%E3%83%A9_jp"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:febuildergba:%E9%80%86%E3%82%A2%E3%82%BB%E3%83%B3%E3%83%96%E3%83%A9_jp"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:%E9%80%86%E3%82%A2%E3%82%BB%E3%83%B3%E3%83%96%E3%83%A9_jp"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
 <!--[if gte IE 9]><!-->
 <script type="text/javascript">/*<![CDATA[*/var NS='guide:febuildergba';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:febuildergba:\u9006\u30a2\u30bb\u30f3\u30d6\u30e9_jp","namespace":"guide:febuildergba","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
 /*!]]>*/</script>
-<script charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f" type="text/javascript"></script>
-<script charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
 <!--<![endif]-->
 </head>
 <body>
 <div class="dokuwiki export">
 <!-- TOC START -->
-<div class="dw__toc" id="dw__toc">
+<div id="dw__toc" class="dw__toc">
 <h3 class="toggle">目次</h3>
 <div>
+
 <ul class="toc">
 <li class="level1"><div class="li"><a href="#逆アセンブラ_febuildergbaを利用したrom解析_hacker用">逆アセンブラ FEBuilderGBAを利用したROM解析(hacker用)</a></div></li>
 <li class="level1"><div class="li"><a href="#逆アセンブラ">逆アセンブラ</a></div>
@@ -47,8 +47,10 @@
 </div>
 </div>
 <!-- TOC END -->
+
 <h1 class="sectionedit1" id="逆アセンブラ_febuildergbaを利用したrom解析_hacker用">逆アセンブラ FEBuilderGBAを利用したROM解析(hacker用)</h1>
 <div class="level1">
+
 <p>
 FEBuilderGBAはGBAFEを簡単に改造するためのツールですが、<br/>
 本格的にコードを解析したい方を手助けすることもできます。<br/>
@@ -56,15 +58,18 @@ FEBuilderGBAはGBAFEを簡単に改造するためのツールですが、<br/>
 今回は、解析の基礎となる逆アセンブラとマップファイルを紹介します。<br/>
 <br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u9006\u30a2\u30bb\u30f3\u30d6\u30e9 FEBuilderGBA\u3092\u5229\u7528\u3057\u305fROM\u89e3\u6790(hacker\u7528)&quot;,&quot;hid&quot;:&quot;\u9006\u30a2\u30bb\u30f3\u30d6\u30e9_febuildergba\u3092\u5229\u7528\u3057\u305from\u89e3\u6790_hacker\u7528&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-357&quot;} -->
 <h1 class="sectionedit2" id="逆アセンブラ">逆アセンブラ</h1>
 <div class="level1">
+
 <p>
 FEBuilderGBAは独自の逆アセンブラルーチンと、マップファイル生成ルーチンを搭載しています。<br/>
 これを利用すると、コメントが自動的に挿入された asmソースコードを取得することができます。<br/>
-<br/>
+<br />
 こういうソースコードが生成されます。
 </p>
 <pre class="code">08E4F6E0 B500   push {, lr}
@@ -84,18 +89,22 @@ FEBuilderGBAは独自の逆アセンブラルーチンと、マップファイ�
 08E4F6FC BCF4 0202   //LDRDATA
 08E4F700 C350 0000   //LDRDATA
 08E4F704 04B0 0300   //LDRDATA</pre>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u9006\u30a2\u30bb\u30f3\u30d6\u30e9&quot;,&quot;hid&quot;:&quot;\u9006\u30a2\u30bb\u30f3\u30d6\u30e9&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;358-1469&quot;} -->
 <h2 class="sectionedit3" id="stepa01">StepA01</h2>
 <div class="level2">
+
 <p>
 メニューから、ツール→逆アセンブラ を選択してください。<br/>
-<a class="media" href="https://i.imgur.com/Y0oSzvT.jpg" title="https://i.imgur.com/Y0oSzvT.jpg"><img alt="i.imgur.com_y0oszvt.jpg" class="mediacenter" src="https://i.imgur.com/Y0oSzvT.jpg" title="i.imgur.com_y0oszvt.jpg"/></a>
+<a href="/lib/exe/fetch.php?tok=53f426&amp;media=https%3A%2F%2Fi.imgur.com%2FY0oSzvT.jpg" class="media" title="https://i.imgur.com/Y0oSzvT.jpg"><img src="/lib/exe/fetch.php?tok=53f426&amp;media=https%3A%2F%2Fi.imgur.com%2FY0oSzvT.jpg" class="mediacenter" title="i.imgur.com_y0oszvt.jpg" alt="i.imgur.com_y0oszvt.jpg" /></a>
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA01&quot;,&quot;hid&quot;:&quot;stepa01&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:3,&quot;range&quot;:&quot;1470-1614&quot;} -->
 <h2 class="sectionedit4" id="stepa02">StepA02</h2>
 <div class="level2">
+
 <p>
 逆アセンブラをみたい関数のアドレスを入れれば、その内容が表示されます。<br/>
 <br/>
@@ -103,35 +112,42 @@ FEBuilderGBAは独自の逆アセンブラルーチンと、マップファイ�
 ここでは、すべてのソースコードを取得してみましょう。<br/>
 <br/>
 「全部ファイルに出力する」を選択してください。<br/>
-<a class="media" href="https://i.imgur.com/FqhJSoD.jpg" title="https://i.imgur.com/FqhJSoD.jpg"><img alt="i.imgur.com_fqhjsod.jpg" class="mediacenter" src="https://i.imgur.com/FqhJSoD.jpg" title="i.imgur.com_fqhjsod.jpg"/></a>
+<a href="/lib/exe/fetch.php?tok=11f4a2&amp;media=https%3A%2F%2Fi.imgur.com%2FFqhJSoD.jpg" class="media" title="https://i.imgur.com/FqhJSoD.jpg"><img src="/lib/exe/fetch.php?tok=11f4a2&amp;media=https%3A%2F%2Fi.imgur.com%2FFqhJSoD.jpg" class="mediacenter" title="i.imgur.com_fqhjsod.jpg" alt="i.imgur.com_fqhjsod.jpg" /></a>
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA02&quot;,&quot;hid&quot;:&quot;stepa02&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;1615-2011&quot;} -->
 <h2 class="sectionedit5" id="stepa03">StepA03</h2>
 <div class="level2">
+
 <p>
 ASMソースコードを出力するか、IDAにimportするmapfileを作成するか選択することができます。<br/>
 最新版では、no$gba debugger用の symファイルも作成できます。<br/>
 <br/>
 とりあえず、今回は、ASMソースコードを生成します。<br/>
 ASMソースコードを生成するには、1時間ほど時間がかかるので、寝る前に実行することをお勧めします。<br/>
-<a class="media" href="https://i.imgur.com/fxIsbFe.jpg" title="https://i.imgur.com/fxIsbFe.jpg"><img alt="i.imgur.com_fxisbfe.jpg" class="mediacenter" src="https://i.imgur.com/fxIsbFe.jpg" title="i.imgur.com_fxisbfe.jpg"/></a>
+<a href="/lib/exe/fetch.php?tok=895a74&amp;media=https%3A%2F%2Fi.imgur.com%2FfxIsbFe.jpg" class="media" title="https://i.imgur.com/fxIsbFe.jpg"><img src="/lib/exe/fetch.php?tok=895a74&amp;media=https%3A%2F%2Fi.imgur.com%2FfxIsbFe.jpg" class="mediacenter" title="i.imgur.com_fxisbfe.jpg" alt="i.imgur.com_fxisbfe.jpg" /></a>
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA03&quot;,&quot;hid&quot;:&quot;stepa03&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:5,&quot;range&quot;:&quot;2012-2497&quot;} -->
 <h2 class="sectionedit6" id="stepa04">StepA04</h2>
 <div class="level2">
+
 <p>
 指定したファイルにasmが延々と出力されます。<br/>
 だいたい1時間かかります。<br/>
-<a class="media" href="https://i.imgur.com/16fcu45.jpg" title="https://i.imgur.com/16fcu45.jpg"><img alt="i.imgur.com_16fcu45.jpg" class="mediacenter" src="https://i.imgur.com/16fcu45.jpg" title="i.imgur.com_16fcu45.jpg"/></a>
+<a href="/lib/exe/fetch.php?tok=25a834&amp;media=https%3A%2F%2Fi.imgur.com%2F16fcu45.jpg" class="media" title="https://i.imgur.com/16fcu45.jpg"><img src="/lib/exe/fetch.php?tok=25a834&amp;media=https%3A%2F%2Fi.imgur.com%2F16fcu45.jpg" class="mediacenter" title="i.imgur.com_16fcu45.jpg" alt="i.imgur.com_16fcu45.jpg" /></a>
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA04&quot;,&quot;hid&quot;:&quot;stepa04&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:6,&quot;range&quot;:&quot;2498-2663&quot;} -->
 <h1 class="sectionedit7" id="disarmとの違い">disarmとの違い</h1>
 <div class="level1">
+
 <p>
 FEBuilderGBAは、disarmと違い以下の機能を持ちます<br/>
+
 </p>
 <ol>
 <li class="level1"><div class="li"> すべてのLDR先のポインタをトレースできます。</div>
@@ -143,6 +159,7 @@ FEBuilderGBAは、disarmと違い以下の機能を持ちます<br/>
 <li class="level1"><div class="li"> 数字はすべて #0x1234 と、16進数表記で出力されます。 </div>
 </li>
 </ol>
+
 <p>
 ただし、以下の制限があります。
 </p>
@@ -150,10 +167,12 @@ FEBuilderGBAは、disarmと違い以下の機能を持ちます<br/>
 <li class="level1"><div class="li"> thumbモードにしか対応していません。</div>
 </li>
 </ol>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;disarm\u3068\u306e\u9055\u3044&quot;,&quot;hid&quot;:&quot;disarm\u3068\u306e\u9055\u3044&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:7,&quot;range&quot;:&quot;2664-3217&quot;} -->
 <h1 class="sectionedit8" id="mapfileについて">mapfileについて</h1>
 <div class="level1">
+
 <p>
 FEBuilderGBAが知っているすべての情報が mapfileに出力されます。
 </p>
@@ -171,12 +190,14 @@ FEBuilderGBAが知っているすべての情報が mapfileに出力されます
 <li class="level1"><div class="li"> 判明している関数とデータ領域の情報 /config/data/asmmap*.txt</div>
 </li>
 </ol>
+
 <p>
-しかし、まだまだ情報が足りません。<br/>
-不明な関数について情報を知っている方は教えてください。<br/>
-また、FEBuilderGBAが知っている構造体や、パッチなどの情報も逆アセンブラのmapfileとして利用するので、<br/>
+しかし、まだまだ情報が足りません。<br />
+不明な関数について情報を知っている方は教えてください。<br />
+また、FEBuilderGBAが知っている構造体や、パッチなどの情報も逆アセンブラのmapfileとして利用するので、<br />
 パッチなどをあなたが投稿すればするほど、逆アセンブラも自動的に賢くなります。
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;mapfile\u306b\u3064\u3044\u3066&quot;,&quot;hid&quot;:&quot;mapfile\u306b\u3064\u3044\u3066&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:8,&quot;range&quot;:&quot;3218-&quot;} --></div>
 </body>

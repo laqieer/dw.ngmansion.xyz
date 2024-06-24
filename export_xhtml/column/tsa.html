@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-
-<html dir="ltr" lang="ja">
+<html lang="ja" dir="ltr">
 <head>
-<meta charset="utf-8"/>
-<title>column:tsa</title>
-<meta content="DokuWiki" name="generator"/>
-<meta content="#008800" name="theme-color"/>
-<meta content="index,follow" name="robots"/>
-<meta content="column,tsa" name="keywords"/>
-<link href="/lib/exe/opensearch.php" rel="search" title="FE改造wiki" type="application/opensearchdescription+xml"/>
-<link href="/" rel="start"/>
-<link href="/doku.php?id=column:tsa&amp;do=index" rel="contents" title="サイトマップ"/>
-<link href="/lib/exe/manifest.php" rel="manifest"/>
-<link href="/feed.php" rel="alternate" title="最近の変更" type="application/rss+xml"/>
-<link href="/feed.php?mode=list&amp;ns=column" rel="alternate" title="現在の名前空間" type="application/rss+xml"/>
-<link href="/doku.php?do=export_xhtml&amp;id=column:tsa" rel="alternate" title="プレーンHTML" type="text/html"/>
-<link href="/doku.php?do=export_raw&amp;id=column:tsa" rel="alternate" title="Wikiマークアップ" type="text/plain"/>
-<link href="https://dw.ngmansion.xyz/doku.php?id=column:tsa" rel="canonical"/>
-<link href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" rel="stylesheet" type="text/css"/>
+  <meta charset="utf-8" />
+  <title>column:tsa</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="column,tsa"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=column:tsa&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=column"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=column:tsa"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=column:tsa"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=column:tsa"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
 <!--[if gte IE 9]><!-->
 <script type="text/javascript">/*<![CDATA[*/var NS='column';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"column:tsa","namespace":"column","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
 /*!]]>*/</script>
-<script charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f" type="text/javascript"></script>
-<script charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
 <!--<![endif]-->
 </head>
 <body>
 <div class="dokuwiki export">
 <!-- TOC START -->
-<div class="dw__toc" id="dw__toc">
+<div id="dw__toc" class="dw__toc">
 <h3 class="toggle">目次</h3>
 <div>
+
 <ul class="toc">
 <li class="level1"><div class="li"><a href="#tsaのデータ構造">TSAのデータ構造</a></div></li>
 <li class="level1"><div class="li"><a href="#tsaをguiで作る方法">TSAをGUIで作る方法</a></div>
@@ -46,21 +46,26 @@
 </div>
 </div>
 <!-- TOC END -->
+
 <p>
 GBAでは、大きな画像を8*8のタイルに分けて管理します。<br/>
 そのタイルをどうやって表示するか決めるのがTSAデータです。<br/>
 小さい画像ではTSA不要のものが多いですが、CGなどの大きな画像を操作しようとするとTSAの問題にぶつかります。<br/>
 TSAを活用すると、8*8のタイルごとにパレットを切替たりして16色以上の絵が出せたりしますが、使いこなすのがとてつもなく難しいです。<br/>
+
 </p>
+
 <h1 class="sectionedit1" id="tsaのデータ構造">TSAのデータ構造</h1>
 <div class="level1">
+
 <p>
-<a class="media" href="column:tsa:tile2.png" title="column:tsa:tile2.png"><img alt="" class="media" src="column:tsa:tile2.png"/></a><br/>
+<a href="/lib/exe/detail.php?id=column%3Atsa&amp;media=column:tsa:tile2.png" class="media" title="column:tsa:tile2.png"><img src="/lib/exe/fetch.php?media=column:tsa:tile2.png" class="media" alt="" /></a><br/>
 1つのタイルは8*8ピクセルからなります。<br/>
 タイル番号は左上を0番としてスタートします。<br/>
 1つのデータはu16のデータです。(リトルエンディアン)<br/>
 <br/>
 C言語で表現するとこのようなデータ構造です。<br/>
+
 </p>
 <pre class="code">uint max = (width / 8)  * (height / 8);
 for(uint i = 0 ; i &lt; max ; i ++ )
@@ -70,8 +75,10 @@ for(uint i = 0 ; i &lt; max ; i ++ )
     bool isVerticalFlip   = data[i] &amp; 0x0800; //縦反転するか
     u8  pallet            = (data[i] &gt;&gt; 12) &amp; 0xf; //利用するパレット0-15個
 }</pre>
+
 <p>
 ビット列に対して、このようになります。<br/>
+
 </p>
 <pre class="code">FE DC BA 98 76 54 32 10
 11 11 11 11 11 11 11 11
@@ -80,68 +87,82 @@ for(uint i = 0 ; i &lt; max ; i ++ )
        |-&gt; 横(Horizontal )反転するかどうか？ 0=しない 1=する
       |--&gt; 縦(Vertical )反転するかどうか？   0=しない 1=する
 |---| ---&gt; パレット 0-15</pre>
+
 <p>
 こちらに詳しい解説があります。<br/>
 gbatek LCD VRAM BG Screen Data Format (BG Map)<br/>
-<a class="urlextern" href="http://problemkaputt.de/gbatek.htm#lcdvrambgscreendataformatbgmap" rel="nofollow" title="http://problemkaputt.de/gbatek.htm#lcdvrambgscreendataformatbgmap">http://problemkaputt.de/gbatek.htm#lcdvrambgscreendataformatbgmap</a> <br/>
-<br/>
+<a href="http://problemkaputt.de/gbatek.htm#lcdvrambgscreendataformatbgmap" class="urlextern" title="http://problemkaputt.de/gbatek.htm#lcdvrambgscreendataformatbgmap" rel="nofollow">http://problemkaputt.de/gbatek.htm#lcdvrambgscreendataformatbgmap</a> <br/>
+<br />
 [FE7] World Map! + TSA Tips<br/>
-<a class="urlextern" href="http://feuniverse.us/t/fe7-world-map-tsa-tips/165" rel="nofollow" title="http://feuniverse.us/t/fe7-world-map-tsa-tips/165">http://feuniverse.us/t/fe7-world-map-tsa-tips/165</a> <br/>
+<a href="http://feuniverse.us/t/fe7-world-map-tsa-tips/165" class="urlextern" title="http://feuniverse.us/t/fe7-world-map-tsa-tips/165" rel="nofollow">http://feuniverse.us/t/fe7-world-map-tsa-tips/165</a> <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;TSA\u306e\u30c7\u30fc\u30bf\u69cb\u9020&quot;,&quot;hid&quot;:&quot;tsa\u306e\u30c7\u30fc\u30bf\u69cb\u9020&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;510-1867&quot;} -->
 <h1 class="sectionedit2" id="tsaをguiで作る方法">TSAをGUIで作る方法</h1>
 <div class="level1">
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;TSA\u3092GUI\u3067\u4f5c\u308b\u65b9\u6cd5&quot;,&quot;hid&quot;:&quot;tsa\u3092gui\u3067\u4f5c\u308b\u65b9\u6cd5&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:2,&quot;range&quot;:&quot;1868-1907&quot;} -->
 <h2 class="sectionedit3" id="step_a01">step_a01</h2>
 <div class="level2">
+
 <p>
 GBA Graphics Editor で生成できます。<br/>
 GBA Graphics Editorを立ち上げて、romを読み込み、<br/>
 Window→Control を表示してください。<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a01&quot;,&quot;hid&quot;:&quot;step_a01&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:3,&quot;range&quot;:&quot;1908-2090&quot;} -->
 <h2 class="sectionedit4" id="step_a02">step_a02</h2>
 <div class="level2">
+
 <p>
 Use TSA にチェックを入れます。<br/>
 TSAのアドレスを入れます。<br/>
 もし、TSAが圧縮されているならば、「Compressed」をチェックします。<br/>
 <br/>
 これでTSAを利用した画像が見れます。<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a02&quot;,&quot;hid&quot;:&quot;step_a02&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:4,&quot;range&quot;:&quot;2091-2347&quot;} -->
 <h2 class="sectionedit5" id="step_a03">step_a03</h2>
 <div class="level2">
+
 <p>
 例えば、OPデモのワールドマップは、このような感じです。<br/>
+
 </p>
 <div class="table sectionedit6"><table class="inline">
-<tr class="row0">
-<td class="col0">画像アドレス</td><td class="col1">0xB4BBA0</td>
-</tr>
-<tr class="row1">
-<td class="col0">パレット</td><td class="col1">0xB4FCD4</td>
-</tr>
-<tr class="row2">
-<td class="col0">TSA</td><td class="col1">0xB4F758</td>
-</tr>
+	<tr class="row0">
+		<td class="col0">画像アドレス</td><td class="col1">0xB4BBA0</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">パレット</td><td class="col1">0xB4FCD4</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">TSA</td><td class="col1">0xB4F758</td>
+	</tr>
 </table></div>
 <!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:6,&quot;range&quot;:&quot;2454-2522&quot;} -->
 <p>
 TSAを設定しない時<br/>
-<a class="media" href="column:tsa:no_tsa.png" title="column:tsa:no_tsa.png"><img alt="" class="media" src="column:tsa:no_tsa.png"/></a><br/>
+<a href="/lib/exe/detail.php?id=column%3Atsa&amp;media=column:tsa:no_tsa.png" class="media" title="column:tsa:no_tsa.png"><img src="/lib/exe/fetch.php?media=column:tsa:no_tsa.png" class="media" alt="" /></a><br />
 <br/>
 TSAを設定した時<br/>
-<a class="media" href="column:tsa:use_tsa.png" title="column:tsa:use_tsa.png"><img alt="" class="media" src="column:tsa:use_tsa.png"/></a>
+<a href="/lib/exe/detail.php?id=column%3Atsa&amp;media=column:tsa:use_tsa.png" class="media" title="column:tsa:use_tsa.png"><img src="/lib/exe/fetch.php?media=column:tsa:use_tsa.png" class="media" alt="" /></a>
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a03&quot;,&quot;hid&quot;:&quot;step_a03&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:5,&quot;range&quot;:&quot;2348-2632&quot;} -->
 <h2 class="sectionedit7" id="step_a04">step_a04</h2>
 <div class="level2">
+
 <p>
 TSAを変更した場合、Tileの項目で変更できます。<br/>
 注意!<br/>
@@ -149,13 +170,14 @@ TSAを変更した場合、Tileの項目で変更できます。<br/>
 圧縮TSAの場合、サイズが可変長になるので、後ろのデータを壊すことがあります。<br/>
 必ずバックアップをとってください。<br/>
 <br/>
-<a class="media" href="column:tsa:edit_tsa.png" title="column:tsa:edit_tsa.png"><img alt="" class="media" src="column:tsa:edit_tsa.png"/></a><br/>
+<a href="/lib/exe/detail.php?id=column%3Atsa&amp;media=column:tsa:edit_tsa.png" class="media" title="column:tsa:edit_tsa.png"><img src="/lib/exe/fetch.php?media=column:tsa:edit_tsa.png" class="media" alt="" /></a><br />
 <br/>
 <br/>
 いちいち変更しなくてはいけないのは変動なので、<br/>
 キーボード操作自動化ソフトとかを使ってマクロを作るといいです。<br/>
 OPデモのワールドマップは、HiMacroExで以下のように定義して、一気に作成させました。<br/>
 <br/>
+
 </p>
 <pre class="code">W WindowsForms10.Window.8.app.0.33c0d9d,Tile Control
 LCtrl Down
@@ -179,20 +201,26 @@ LShift Down
 Tab
 LShift Up
 ↑</pre>
+
 <p>
 <br/>
 <br/>
 圧縮解凍はlz77ですので、Nintenlords Compressorなどを使ってください。<br/>
 <br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a04&quot;,&quot;hid&quot;:&quot;step_a04&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:7,&quot;range&quot;:&quot;2633-3588&quot;} -->
 <h1 class="sectionedit8" id="背景用に240x160_16色の画像を表示する無圧縮tsa">背景用に240x160 16色の画像を表示する無圧縮TSA</h1>
 <div class="level1">
+
 <p>
-背景用に240×160の16色を表示する無圧縮TSAが、ROM内に 0xAA7330 として定義されています。<br/>
+背景用に240&times;160の16色を表示する無圧縮TSAが、ROM内に 0xAA7330 として定義されています。<br/>
 このTSAで動くものについては、何もせずにこれを指定するだけで利用できます。<br/>
+
 </p>
+
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u80cc\u666f\u7528\u306b240x160 16\u8272\u306e\u753b\u50cf\u3092\u8868\u793a\u3059\u308b\u7121\u5727\u7e2eTSA&quot;,&quot;hid&quot;:&quot;\u80cc\u666f\u7528\u306b240x160_16\u8272\u306e\u753b\u50cf\u3092\u8868\u793a\u3059\u308b\u7121\u5727\u7e2etsa&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:8,&quot;range&quot;:&quot;3589-&quot;} --></div>
 </body>

@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-
-<html dir="ltr" lang="ja">
+<html lang="ja" dir="ltr">
 <head>
-<meta charset="utf-8"/>
-<title>guide:バイナリ比較でバグ修正</title>
-<meta content="DokuWiki" name="generator"/>
-<meta content="#008800" name="theme-color"/>
-<meta content="index,follow" name="robots"/>
-<meta content="guide,バイナリ比較でバグ修正" name="keywords"/>
-<link href="/lib/exe/opensearch.php" rel="search" title="FE改造wiki" type="application/opensearchdescription+xml"/>
-<link href="/" rel="start"/>
-<link href="/doku.php?id=guide:%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3&amp;do=index" rel="contents" title="サイトマップ"/>
-<link href="/lib/exe/manifest.php" rel="manifest"/>
-<link href="/feed.php" rel="alternate" title="最近の変更" type="application/rss+xml"/>
-<link href="/feed.php?mode=list&amp;ns=guide" rel="alternate" title="現在の名前空間" type="application/rss+xml"/>
-<link href="/doku.php?do=export_xhtml&amp;id=guide:%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3" rel="alternate" title="プレーンHTML" type="text/html"/>
-<link href="/doku.php?do=export_raw&amp;id=guide:%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3" rel="alternate" title="Wikiマークアップ" type="text/plain"/>
-<link href="https://dw.ngmansion.xyz/doku.php?id=guide:%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3" rel="canonical"/>
-<link href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" rel="stylesheet" type="text/css"/>
+  <meta charset="utf-8" />
+  <title>guide:バイナリ比較でバグ修正</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="guide,バイナリ比較でバグ修正"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=guide:%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
 <!--[if gte IE 9]><!-->
 <script type="text/javascript">/*<![CDATA[*/var NS='guide';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:\u30d0\u30a4\u30ca\u30ea\u6bd4\u8f03\u3067\u30d0\u30b0\u4fee\u6b63","namespace":"guide","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
 /*!]]>*/</script>
-<script charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f" type="text/javascript"></script>
-<script charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
 <!--<![endif]-->
 </head>
 <body>
 <div class="dokuwiki export">
+
 <h1 class="sectionedit1" id="改造feでどんなバグも数時間で直せるかもしれないデバッグ方法">改造FEでどんなバグも数時間で直せるかもしれないデバッグ方法</h1>
 <div class="level1">
+
 <p>
 改造feを作っていく時に、<br/>
 過去ロムのバックアップをちゃんと取っていれば、<br/>
@@ -88,7 +89,9 @@ No<br/>
 こんな感じでやれば、プログラムとか一切関係無しに<br/>
 だいたい数時間ぐらいあれば、<br/>
 たいていのバグは直せます。<br/>
+
 </p>
+
 </div>
 </div>
 </body>
