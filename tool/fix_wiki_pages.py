@@ -21,6 +21,8 @@ for root, dirs, filenames in os.walk(folder_path):
             # Remove all link tags and script tags in head part
             head = soup.find('head')
             if head:
+                if not head.find('link'):
+                    continue
                 for link in head.find_all('link'):
                     link.decompose()
                 for script in head.find_all('script'):

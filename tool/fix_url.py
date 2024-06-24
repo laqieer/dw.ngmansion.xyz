@@ -49,14 +49,14 @@ def fix_url(folder_path, file_path, url):
     if url.startswith("/doku.php?"):
         if "idx" in url:
             # extract folder name
-            url = url.split("idx=")[-1]
+            url = url.split("idx=")[-1].split("&")[0]
             # link to index.html in folder
-            url = unquote(url).replace(":", "/") + "/index.html"
+            url = unquote(url).replace(":", "/")
             url = calculate_relative_path(file_path, os.path.join(folder_path, url))
             return url
         if "id" in url:
             # extract page name
-            url = url.split("id=")[-1]
+            url = url.split("id=")[-1].split("&")[0]
             # link to page in the same wiki
             url = unquote(url).replace(":", "/") + ".html"
             url = calculate_relative_path(file_path, os.path.join(folder_path, url))
