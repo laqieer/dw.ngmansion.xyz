@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>zh:guide:febuildergba:3点diff错误的自动检测_zh [FE改造wiki]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="zh,guide,febuildergba,3点diff错误的自动检测_zh"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=zh:guide:febuildergba:3%E7%82%B9diff%E9%94%99%E8%AF%AF%E7%9A%84%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B_zh&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=zh:guide:febuildergba"/>
+<link rel="edit" title="文書の編集" href="/doku.php?id=zh:guide:febuildergba:3%E7%82%B9diff%E9%94%99%E8%AF%AF%E7%9A%84%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B_zh&amp;do=edit"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=zh:guide:febuildergba:3%E7%82%B9diff%E9%94%99%E8%AF%AF%E7%9A%84%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B_zh"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=zh:guide:febuildergba:3%E7%82%B9diff%E9%94%99%E8%AF%AF%E7%9A%84%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B_zh"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=zh:guide:febuildergba:3%E7%82%B9diff%E9%94%99%E8%AF%AF%E7%9A%84%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B_zh"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='zh:guide:febuildergba';var JSINFO = {"toc":{"initial_state":1},"isadmin":0,"isauth":0,"move_renameokay":false,"id":"zh:guide:febuildergba:3\u70b9diff\u9519\u8bef\u7684\u81ea\u52a8\u68c0\u6d4b_zh","namespace":"zh:guide:febuildergba","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="/lib/tpl/dokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/dokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki    showSidebar hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">内容へ移動</a></li>
+        </ul>
+
+        <h1><a href="/doku.php?id=start"  accesskey="h" title="[H]"><img src="/lib/tpl/dokuwiki/images/logo.png" width="64" height="64" alt="" /> <span>FE改造wiki</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">ユーザ用ツール</h3>
+                <ul>
+                    <li class="action register"><a href="/doku.php?id=zh:guide:febuildergba:3%E7%82%B9diff%E9%94%99%E8%AF%AF%E7%9A%84%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B_zh&amp;do=register" title="ユーザー登録" rel="nofollow"><span>ユーザー登録</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4z"/></svg></a></li><li class="action login"><a href="/doku.php?id=zh:guide:febuildergba:3%E7%82%B9diff%E9%94%99%E8%AF%AF%E7%9A%84%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B_zh&amp;do=login&amp;sectok=" title="ログイン" rel="nofollow"><span>ログイン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">サイト用ツール</h3>
+            <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="zh:guide:febuildergba:3点diff错误的自动检测_zh" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="検索" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="検索">検索</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="zh:guide:febuildergba:3点diff错误的自动检测_zh" /><select name="do" class="edit quickselect" title="ツール"><option value="">ツール</option><optgroup label="ページ用ツール"><option value="edit">文書の編集</option><option value="revisions">以前のリビジョン</option><option value="backlink">バックリンク</option></optgroup><optgroup label="サイト用ツール"><option value="recent">最近の変更</option><option value="media">メディアマネージャー</option><option value="index">サイトマップ</option></optgroup><optgroup label="ユーザ用ツール"><option value="register">ユーザー登録</option><option value="login">ログイン</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="/doku.php?id=zh:guide:febuildergba:3%E7%82%B9diff%E9%94%99%E8%AF%AF%E7%9A%84%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B_zh&amp;do=recent" title="最近の変更 [r]" rel="nofollow" accesskey="r">最近の変更</a></li><li class="action media"><a href="/doku.php?id=zh:guide:febuildergba:3%E7%82%B9diff%E9%94%99%E8%AF%AF%E7%9A%84%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B_zh&amp;do=media&amp;ns=zh%3Aguide%3Afebuildergba" title="メディアマネージャー" rel="nofollow">メディアマネージャー</a></li><li class="action index"><a href="/doku.php?id=zh:guide:febuildergba:3%E7%82%B9diff%E9%94%99%E8%AF%AF%E7%9A%84%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B_zh&amp;do=index" title="サイトマップ [x]" rel="nofollow" accesskey="x">サイトマップ</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">トレース:</span> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=data:start"  class="breadcrumbs" title="data:start">data</a></bdi> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:%E9%9F%B3%E4%B9%90_zh"  class="breadcrumbs" title="zh:guide:febuildergba:音乐_zh">音乐_zh</a></bdi> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:%E5%A2%97%E6%8F%B4_zh"  class="breadcrumbs" title="zh:guide:febuildergba:増援_zh">増援_zh</a></bdi> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:%E6%9D%91%E5%BA%84%E8%AE%BF%E9%97%AE%E5%92%8C%E6%9D%91%E5%BA%84%E7%A0%B4%E5%9D%8F_zh"  class="breadcrumbs" title="zh:guide:febuildergba:村庄访问和村庄破坏_zh">村庄访问和村庄破坏_zh</a></bdi> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php?id=zh:guide:febuildergba:3%E7%82%B9diff%E9%94%99%E8%AF%AF%E7%9A%84%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B_zh"  class="breadcrumbs" title="zh:guide:febuildergba:3点diff错误的自动检测_zh">3点diff错误的自动检测_zh</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+                            <!-- ********** ASIDE ********** -->
+                <div id="dokuwiki__aside"><div class="pad aside include group">
+                    <h3 class="toggle">サイドバー</h3>
+                    <div class="content"><div class="group">
+                                                                        <ul>
+<li class="level1"><div class="li"> <a href="/doku.php?id=qa" class="wikilink1" title="qa">QA</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=guide:start" class="wikilink1" title="guide:start">GUIDE</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=dictionary:start" class="wikilink1" title="dictionary:start">DICTIONARY</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=column:start" class="wikilink1" title="column:start">COLUMN</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=data:start" class="wikilink1" title="data:start">DATA</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<a href="/doku.php?id=en:start" class="wikilink1" title="en:start">English</a><br />
+<a href="/doku.php?id=zh:start" class="wikilink1" title="zh:start">中文</a>
+</p>
+
+<p>
+<span class="wrap_hi wrap_center wrap_centeralign ">最新の10件</span>
+</p>
+<div class="table">
+<table class="inline">
+	<tr>
+		<th class="page">ページ</th><th class="date">日付</th>
+	</tr>
+	<tr>
+		<td class="page"><a href="/doku.php?id=column:fe%E3%81%A7%E5%AD%A6%E3%81%B6%E8%8B%B1%E8%AA%9E" class="wikilink1" title="column:feで学ぶ英語">column:feで学ぶ英語</a></td>
+		<td class="date">2018/11/12 08:10</td>
+	</tr>
+</table>
+</div>
+                                            </div></div>
+                </div></div><!-- /aside -->
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>zh:guide:febuildergba:3点diff错误的自动检测_zh</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#通过3点diff自动检测错误">通过3点DIFF自动检测错误</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#没有jenkins">没有Jenkins</a></div></li>
+<li class="level2"><div class="li"><a href="#进入到模拟器中重现错误">进入到模拟器中重现错误</a></div></li>
+<li class="level2"><div class="li"><a href="#启动差异调试工具">启动差异调试工具</a></div></li>
+<li class="level2"><div class="li"><a href="#屏幕说明">屏幕说明</a></div></li>
+<li class="level2"><div class="li"><a href="#寻找_最后工作的rom">寻找“最后工作的ROM”</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#我会尝试">我会尝试</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#section"></a></div></li>
+<li class="level2"><div class="li"><a href="#比较方法选择">比较方法选择</a></div></li>
+<li class="level2"><div class="li"><a href="#辅助功能">辅助功能</a></div></li>
+<li class="level2"><div class="li"><a href="#基本的想法">基本的想法</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="通过3点diff自动检测错误">通过3点DIFF自动检测错误</h1>
+<div class="level1">
+
+<p>
+<a href="/lib/exe/fetch.php?tok=747158&amp;media=https%3A%2F%2Fi.imgur.com%2FPGYPMy7.jpg" class="media" title="https://i.imgur.com/PGYPMy7.jpg"><img src="/lib/exe/fetch.php?tok=747158&amp;media=https%3A%2F%2Fi.imgur.com%2FPGYPMy7.jpg" class="mediacenter" title="i.imgur.com_pgypmy7.jpg" alt="i.imgur.com_pgypmy7.jpg" /></a><br />
+<br/>
+它是一种工具，当ROM中出现无法解决的错误时，通过使用备份数据自动检测导致错误的数据。<br/>
+<br/>
+假设你的ROM中有一个未知的错误。<br/>
+这个错误是一个很难修复的错误，比如多次检查设置，但是为什么游戏结冰并且根本不工作。<br/>
+FEBuilderGBA使用各种手段来保护ROM，但仍然不能没有发生。<br/>
+此功能是通过将备份数据带入DIFF来自动检测错误的原因。<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697349" /><input type="hidden" name="summary" value="[通过3点DIFF自动检测错误] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="通过3点diff自动检测错误" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1-553" /><input type="hidden" name="id" value="zh:guide:febuildergba:3点diff错误的自动检测_zh" /><button type="submit" title="通过3点DIFF自动检测错误">編集</button></div></form></div>
+<h2 class="sectionedit2" id="没有jenkins">没有Jenkins</h2>
+<div class="level2">
+
+<p>
+FE是SRPG.从一开始就需要时间来玩。<br/>
+如果你在中间阶段进入舞台，你会忽略早期阶段的测试。<br/>
+当你在中间阶段建立舞台时，即使你摧毁了早期的场地，你也不会注意到它。<br/>
+不幸的是，对于GBAFE来说，还没有像CI Jenkins那样的东西。<br/>
+通常情况下，您会在一段时间后发现游戏中的错误，但不会注意到它已被破坏。<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697349" /><input type="hidden" name="summary" value="[没有Jenkins] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="没有jenkins" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="554-1002" /><input type="hidden" name="id" value="zh:guide:febuildergba:3点diff错误的自动检测_zh" /><button type="submit" title="没有Jenkins">編集</button></div></form></div>
+<h2 class="sectionedit3" id="进入到模拟器中重现错误">进入到模拟器中重现错误</h2>
+<div class="level2">
+
+<p>
+[#k1030f7f]
+</p>
+
+<p>
+<a href="/lib/exe/fetch.php?tok=747158&amp;media=https%3A%2F%2Fi.imgur.com%2FPGYPMy7.jpg" class="media" title="https://i.imgur.com/PGYPMy7.jpg"><img src="/lib/exe/fetch.php?tok=747158&amp;media=https%3A%2F%2Fi.imgur.com%2FPGYPMy7.jpg" class="mediacenter" title="i.imgur.com_pgypmy7.jpg" alt="i.imgur.com_pgypmy7.jpg" /></a> <br/>
+首先，用模拟器推进游戏，直到错误再现。<br/>
+当错误出现在它重现的地方时，这个工具就会出现。<br/>
+（在启动此工具之前，请保存所有未写入的数据）<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697349" /><input type="hidden" name="summary" value="[进入到模拟器中重现错误] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="进入到模拟器中重现错误" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1003-1307" /><input type="hidden" name="id" value="zh:guide:febuildergba:3点diff错误的自动检测_zh" /><button type="submit" title="进入到模拟器中重现错误">編集</button></div></form></div>
+<h2 class="sectionedit4" id="启动差异调试工具">启动差异调试工具</h2>
+<div class="level2">
+
+<p>
+<a href="/lib/exe/fetch.php?tok=873677&amp;media=https%3A%2F%2Fi.imgur.com%2Fe6HNTl2.jpg" class="media" title="https://i.imgur.com/e6HNTl2.jpg"><img src="/lib/exe/fetch.php?tok=873677&amp;media=https%3A%2F%2Fi.imgur.com%2Fe6HNTl2.jpg" class="mediacenter" title="i.imgur.com_e6hntl2.jpg" alt="i.imgur.com_e6hntl2.jpg" /></a> <br/>
+从菜单中选择工具 →差异调试工具。
+</p>
+
+<p>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697349" /><input type="hidden" name="summary" value="[启动差异调试工具] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="启动差异调试工具" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1308-1440" /><input type="hidden" name="id" value="zh:guide:febuildergba:3点diff错误的自动检测_zh" /><button type="submit" title="启动差异调试工具">編集</button></div></form></div>
+<h2 class="sectionedit5" id="屏幕说明">屏幕说明</h2>
+<div class="level2">
+
+<p>
+<a href="/lib/exe/fetch.php?tok=d0aa6d&amp;media=https%3A%2F%2Fi.imgur.com%2F2QhvUMl.jpg" class="media" title="https://i.imgur.com/2QhvUMl.jpg"><img src="/lib/exe/fetch.php?tok=d0aa6d&amp;media=https%3A%2F%2Fi.imgur.com%2F2QhvUMl.jpg" class="mediacenter" title="i.imgur.com_2qhvuml.jpg" alt="i.imgur.com_2qhvuml.jpg" /></a> <br/>
+当您启动该工具时，备份数据按日期顺序显示。<br />
+<br/>
+列表上方的数据是新的，数据越多，数据越旧。<br/>
+双击列表，模拟器将自动启动。<br/>
+7z压缩和ups等自动更改为gba rom并启动模拟器。<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697349" /><input type="hidden" name="summary" value="[屏幕说明] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="屏幕说明" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1441-1751" /><input type="hidden" name="id" value="zh:guide:febuildergba:3点diff错误的自动检测_zh" /><button type="submit" title="屏幕说明">編集</button></div></form></div>
+<h2 class="sectionedit6" id="寻找_最后工作的rom">寻找“最后工作的ROM”</h2>
+<div class="level2">
+
+<p>
+从备份列表中查找“没有错误的最新日期”。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697349" /><input type="hidden" name="summary" value="[寻找“最后工作的ROM”] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="寻找_最后工作的rom" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1752-1859" /><input type="hidden" name="id" value="zh:guide:febuildergba:3点diff错误的自动检测_zh" /><button type="submit" title="寻找“最后工作的ROM”">編集</button></div></form></div>
+<h3 class="sectionedit7" id="我会尝试">我会尝试</h3>
+<div class="level3">
+
+<p>
+这次是测试，所以我们只有三个数据。<br/>
+我认为有很多数据实际排列在一起。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=18118e&amp;media=https%3A%2F%2Fi.imgur.com%2FEFTRkm6.jpg" class="media" title="https://i.imgur.com/EFTRkm6.jpg"><img src="/lib/exe/fetch.php?tok=18118e&amp;media=https%3A%2F%2Fi.imgur.com%2FEFTRkm6.jpg" class="mediacenter" title="i.imgur.com_eftrkm6.jpg" alt="i.imgur.com_eftrkm6.jpg" /></a> <br/>
+首先，让我们看看列表底部最旧的备份。<br />
+<br/>
+双击列表中的项目以启动模拟器。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=46ed80&amp;media=https%3A%2F%2Fi.imgur.com%2FVLWGWt0.jpg" class="media" title="https://i.imgur.com/VLWGWt0.jpg"><img src="/lib/exe/fetch.php?tok=46ed80&amp;media=https%3A%2F%2Fi.imgur.com%2FVLWGWt0.jpg" class="mediacenter" title="i.imgur.com_vlwgwt0.jpg" alt="i.imgur.com_vlwgwt0.jpg" /></a> <br/>
+它正常工作。<br/>
+这似乎是正确的数据。<br/>
+关闭模拟器并查看下一个数据。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=ab7e91&amp;media=https%3A%2F%2Fi.imgur.com%2FXbUPwzZ.jpg" class="media" title="https://i.imgur.com/XbUPwzZ.jpg"><img src="/lib/exe/fetch.php?tok=ab7e91&amp;media=https%3A%2F%2Fi.imgur.com%2FXbUPwzZ.jpg" class="mediacenter" title="i.imgur.com_xbupwzz.jpg" alt="i.imgur.com_xbupwzz.jpg" /></a> <br/>
+让我们看看中间的数据。<br/>
+同样，双击列表中的项目来启动模拟器。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=9d8d77&amp;media=https%3A%2F%2Fi.imgur.com%2Fcb9XbcE.jpg" class="media" title="https://i.imgur.com/cb9XbcE.jpg"><img src="/lib/exe/fetch.php?tok=9d8d77&amp;media=https%3A%2F%2Fi.imgur.com%2Fcb9XbcE.jpg" class="mediacenter" title="i.imgur.com_cb9xbce.jpg" alt="i.imgur.com_cb9xbce.jpg" /></a> <br/>
+这也正常工作。<br/>
+这似乎是正确的数据。 <br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=b0943d&amp;media=https%3A%2F%2Fi.imgur.com%2Fi307yPF.jpg" class="media" title="https://i.imgur.com/i307yPF.jpg"><img src="/lib/exe/fetch.php?tok=b0943d&amp;media=https%3A%2F%2Fi.imgur.com%2Fi307yPF.jpg" class="mediacenter" title="i.imgur.com_i307ypf.jpg" alt="i.imgur.com_i307ypf.jpg" /></a> <br/>
+那么，如何在列表顶部的备份? <br/>
+双击列表中的项目以启动模拟器。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=048f20&amp;media=https%3A%2F%2Fi.imgur.com%2FJWFnDWg.jpg" class="media" title="https://i.imgur.com/JWFnDWg.jpg"><img src="/lib/exe/fetch.php?tok=048f20&amp;media=https%3A%2F%2Fi.imgur.com%2FJWFnDWg.jpg" class="mediacenter" title="i.imgur.com_jwfndwg.jpg" alt="i.imgur.com_jwfndwg.jpg" /></a> <br/>
+一个错误已被复制。<br/>
+这个数据似乎被打破了。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=244497&amp;media=https%3A%2F%2Fi.imgur.com%2FktDH4IY.jpg" class="media" title="https://i.imgur.com/ktDH4IY.jpg"><img src="/lib/exe/fetch.php?tok=244497&amp;media=https%3A%2F%2Fi.imgur.com%2FktDH4IY.jpg" class="mediacenter" title="i.imgur.com_ktdh4iy.jpg" alt="i.imgur.com_ktdh4iy.jpg" /></a><br />
+那么，哪些是可以正常工作的最新备份数据? <br/>
+这是中间数据。<br/>
+<br/>
+顶部的最新备份数据被破坏。<br/>
+因此，正确运行的最后一个数据是第二个数据。<br/>
+<br/>
+请注意不要在这里犯错。<br/>
+我正在寻找可正常工作的最新备份数据，而不是损坏的数据。<br/>
+当然，这不是底部。<br/>
+底部正常工作，但它不是最新的数据工作正常。<br/>
+<br/>
+正确运行的最新数据是第二个数据。<br/>
+这是重要的一点。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=72ca12&amp;media=https%3A%2F%2Fi.imgur.com%2FtHtzvji.jpg" class="media" title="https://i.imgur.com/tHtzvji.jpg"><img src="/lib/exe/fetch.php?tok=72ca12&amp;media=https%3A%2F%2Fi.imgur.com%2FtHtzvji.jpg" class="mediacenter" title="i.imgur.com_thtzvji.jpg" alt="i.imgur.com_thtzvji.jpg" /></a><br />
+当您找到可正常工作的最新数据时，按下右下方的按钮可获得3点DIFF。<br/>
+<br/>
+
+</p>
+
+</div>
+<div class="level2">
+
+<p>
+关于正确工作的最新数据的重要性。<br/>
+<br />
+正确工作的最新数据非常重要。<br/>
+<br/>
+请务必查找“不会导致错误的最新日期备份”。<br/>
+<br/>
+不会导致错误的最新备份的下一代备份数据是。<br/>
+<br/>
+这是导致错误的最旧的备份数据。<br/>
+<br/>
+换句话说，两者之间的区别在于生成错误的数据。<br/>
+<br/>
+该程序并不完全符合您的想法，它只能以书面形式运行。<br/>
+发生错误是因为我们错误地写了一些东西。<br/>
+因此，错误总是隐藏在两个ROM之间的差异中。<br/>
+<br/>
+罪魁祸首当然是在这个区别。让我们找出来。<br/>
+<br/>
+但是，如果您进行各种更改，则会有更多更改。<br/>
+那么，很难找出答案。<br/>
+因此，我们通过考虑与当前ROM数据的差异来缩小范围。<br/>
+<br/>
+因为错误也出现在当前的ROM中。<br/>
+当前ROM中类似的错误也意味着当前ROM中有类似的数据。<br/>
+<br/>
+在它们之间的差异中，当前ROM中的数据是导致错误的数据。<br/>
+<br/>
+随着名字变长，我们使用这个工具来调用它，如下所示。<br/>
+最新的不会导致错误的备份称为OK ROM。<br/>
+导致错误的最老的备份称为NG ROM。<br/>
+当前的ROM被称为CURRENT。<br/>
+<br/>
+它在OK ROM中，不在NG ROM中。<br/>
+它在OK ROM中，它不在CURRENT中。<br/>
+此外，它存在于NG ROM和CURRENT中。<br/>
+<br/>
+我们将使用三点DIFF来满足这三个条件的数据。<br/>
+按按钮。<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697349" /><input type="hidden" name="summary" value="[我会尝试] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="我会尝试" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1860-4903" /><input type="hidden" name="id" value="zh:guide:febuildergba:3点diff错误的自动检测_zh" /><button type="submit" title="我会尝试">編集</button></div></form></div>
+<h2 class="sectionedit8" id="比较方法选择">比较方法选择</h2>
+<div class="level2">
+
+<p>
+<a href="/lib/exe/fetch.php?tok=d2d9e7&amp;media=https%3A%2F%2Fi.imgur.com%2FHnUzcYl.jpg" class="media" title="https://i.imgur.com/HnUzcYl.jpg"><img src="/lib/exe/fetch.php?tok=d2d9e7&amp;media=https%3A%2F%2Fi.imgur.com%2FHnUzcYl.jpg" class="mediacenter" title="i.imgur.com_hnuzcyl.jpg" alt="i.imgur.com_hnuzcyl.jpg" /></a> <br/>
+比较方法会出来，但选择最上面的方法。<br/>
+（这是前面解释的条件）<br/>
+<br/>
+然后计算完成，并在列表中显示3点DIFF的结果。<br/>
+<br />
+<br/>
+<a href="/lib/exe/fetch.php?tok=2c5f58&amp;media=https%3A%2F%2Fi.imgur.com%2FUxGB3MA.jpg" class="media" title="https://i.imgur.com/UxGB3MA.jpg"><img src="/lib/exe/fetch.php?tok=2c5f58&amp;media=https%3A%2F%2Fi.imgur.com%2FUxGB3MA.jpg" class="mediacenter" title="i.imgur.com_uxgb3ma.jpg" alt="i.imgur.com_uxgb3ma.jpg" /></a> <br/>
+<br/>
+有数据导致此错误。<br/>
+让我们来找出答案。<br/>
+（这次只有一个）<br />
+<br/>
+让我们适当调整列出的差异。<br/>
+按1键写入OK ROM的数据。<br/>
+按2键写入NG ROM的数据。<br/>
+按3键写入CURRENT的数据。<br/>
+按0键写入CURRENT的数据并清除写入标记。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=a1e873&amp;media=https%3A%2F%2Fi.imgur.com%2Fhu9XD8i.jpg" class="media" title="https://i.imgur.com/hu9XD8i.jpg"><img src="/lib/exe/fetch.php?tok=a1e873&amp;media=https%3A%2F%2Fi.imgur.com%2Fhu9XD8i.jpg" class="mediacenter" title="i.imgur.com_hu9xd8i.jpg" alt="i.imgur.com_hu9xd8i.jpg" /></a> <br/>
+基本上，请按1键写入数据。<br/>
+写入数据后，请按F5键启动模拟器。<br/>
+请检查操作。<br/>
+该错误是否已解决？<br/>
+<br/>
+如果这个错误还没有解决，看起来这个数据不是。<br/>
+我们来写下面的数据。<br/>
+<br/>
+当然，由于差分数据被强制写入，所以游戏可能不起作用。<br/>
+在这种情况下，按3键恢复CURRENT数据。<br/>
+<br/>
+让我们像这样合并差异。~<br/>
+<a href="/lib/exe/fetch.php?tok=9685a7&amp;media=https%3A%2F%2Fi.imgur.com%2FDZmH9nF.jpg" class="media" title="https://i.imgur.com/DZmH9nF.jpg"><img src="/lib/exe/fetch.php?tok=9685a7&amp;media=https%3A%2F%2Fi.imgur.com%2FDZmH9nF.jpg" class="mediacenter" title="i.imgur.com_dzmh9nf.jpg" alt="i.imgur.com_dzmh9nf.jpg" /></a> <br/>
+<br/>
+如果错误得到解决，那就是造成错误的数据。<br/>
+我们从数据地址和书面内容估计原因。<br/>
+<br/>
+当您找到解决该错误的地址时，似乎除了该数据以外的数据是无关的，所以让我们按3键返回CURRENT。<br/>
+同样在这个时候，我会检查错误是否会在返回数据时再次发生。<br/>
+也许，肇事者可能不是一个人，而是多个肇事者。 让我们小心。<br/>
+<br/>
+<br/>
+那么通过合并数据，问题就解决了。<br/>
+如果通过合并差异来解决问题，那很好。<br/>
+如果是这样，让我们来调查数据写入地址的内容。<br/>
+我们设置一个中断点，并使用调试器观察行为。<br/>
+奇怪的东西应该在那里。<br/>
+<br/>
+这一次，我在地图设置中指定了错误的地图对象。<br/>
+最初我必须指定0x01，但由于指定了0x02，因此屏幕被破坏。<br/>
+<a href="/lib/exe/fetch.php?tok=c5244e&amp;media=https%3A%2F%2Fi.imgur.com%2FRxFJoU8.jpg" class="media" title="https://i.imgur.com/RxFJoU8.jpg"><img src="/lib/exe/fetch.php?tok=c5244e&amp;media=https%3A%2F%2Fi.imgur.com%2FRxFJoU8.jpg" class="mediacenter" title="i.imgur.com_rxfjou8.jpg" alt="i.imgur.com_rxfjou8.jpg" /></a> <br/>
+<br/>
+<br/>
+使用这种方法，我们可以在一个小时左右修复神秘的错误。 <br/>
+无论如何，如果你得到一个你不知道原因的错误，你可能想要以这种方式探索错误数据。 <br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697349" /><input type="hidden" name="summary" value="[比较方法选择] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="比较方法选择" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4904-7105" /><input type="hidden" name="id" value="zh:guide:febuildergba:3点diff错误的自动检测_zh" /><button type="submit" title="比较方法选择">編集</button></div></form></div>
+<h2 class="sectionedit9" id="辅助功能">辅助功能</h2>
+<div class="level2">
+
+<p>
+<a href="/lib/exe/fetch.php?tok=2c5f58&amp;media=https%3A%2F%2Fi.imgur.com%2FUxGB3MA.jpg" class="media" title="https://i.imgur.com/UxGB3MA.jpg"><img src="/lib/exe/fetch.php?tok=2c5f58&amp;media=https%3A%2F%2Fi.imgur.com%2FUxGB3MA.jpg" class="mediacenter" title="i.imgur.com_uxgb3ma.jpg" alt="i.imgur.com_uxgb3ma.jpg" /></a> <br/>
+如果您正在合并数据并且您不理解，请按下右下方的按钮。 <br/>
+“取消所有更改”。 <br/>
+在开始合并之前将所有数据覆盖到数据。 <br/>
+有了这个，你可以一次又一次地合并。 <br/>
+<br/>
+让我们放松一下，因为您习惯使用该工具。 <br/>
+如果有大量数据，请按住SHIFT键并按1键。 <br/>
+它通过写入数据自动将焦点移动到下一个数据。 <br/>
+一直按住键，文字越来越多。 <br/>
+在大约一半的合并之后执行诸如二进制搜索来检查操作可能是好的。 <br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697349" /><input type="hidden" name="summary" value="[辅助功能] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="辅助功能" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="7106-7722" /><input type="hidden" name="id" value="zh:guide:febuildergba:3点diff错误的自动检测_zh" /><button type="submit" title="辅助功能">編集</button></div></form></div>
+<h2 class="sectionedit10" id="基本的想法">基本的想法</h2>
+<div class="level2">
+
+<p>
+此功能通过二进制比较简化了错误修复，这是我很久以前写的。 <br/>
+使用二进制比较工具合并两点是很麻烦的，因此可以轻松地与3点合并进行合并，从而缩小这些改变。<br/>
+<br/>
+<a href="http://ngmansion.xyz/wiki/hackfe/index.php?cmd=read&amp;page=%E8%A7%A3%E8%AA%AC%2F%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3" class="urlextern" title="http://ngmansion.xyz/wiki/hackfe/index.php?cmd=read&amp;page=%E8%A7%A3%E8%AA%AC%2F%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3" rel="nofollow">http://ngmansion.xyz/wiki/hackfe/index.php?cmd=read&amp;page=%E8%A7%A3%E8%AA%AC%2F%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697349" /><input type="hidden" name="summary" value="[基本的想法] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="基本的想法" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="7723-" /><input type="hidden" name="id" value="zh:guide:febuildergba:3点diff错误的自动检测_zh" /><button type="submit" title="基本的想法">編集</button></div></form></div>
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>zh/guide/febuildergba/3点diff错误的自动检测_zh.txt</bdi> · 最終更新: 2018/09/23 19:09 by <bdi>211.14.62.193</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">ページ用ツール</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="/doku.php?id=zh:guide:febuildergba:3%E7%82%B9diff%E9%94%99%E8%AF%AF%E7%9A%84%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B_zh&amp;do=edit" title="文書の編集 [e]" rel="nofollow" accesskey="e"><span>文書の編集</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="/doku.php?id=zh:guide:febuildergba:3%E7%82%B9diff%E9%94%99%E8%AF%AF%E7%9A%84%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B_zh&amp;do=revisions" title="以前のリビジョン [o]" rel="nofollow" accesskey="o"><span>以前のリビジョン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="/doku.php?id=zh:guide:febuildergba:3%E7%82%B9diff%E9%94%99%E8%AF%AF%E7%9A%84%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B_zh&amp;do=backlink" title="バックリンク" rel="nofollow"><span>バックリンク</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="top"><a href="#dokuwiki__top" title="文書の先頭へ [t]" rel="nofollow" accesskey="t"><span>文書の先頭へ</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
+            src="/lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" ><img
+            src="/lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="//validator.w3.org/check/referer" title="Valid HTML5" ><img
+            src="/lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="//jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
+            src="/lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="/lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="/lib/exe/indexer.php?id=zh%3Aguide%3Afebuildergba%3A3%E7%82%B9diff%E9%94%99%E8%AF%AF%E7%9A%84%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B_zh&amp;1542024595" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>

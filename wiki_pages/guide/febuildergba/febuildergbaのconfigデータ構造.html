@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>guide:febuildergba:febuildergbaのconfigデータ構造 [FE改造wiki]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="guide,febuildergba,febuildergbaのconfigデータ構造"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide:febuildergba"/>
+<link rel="edit" title="文書の編集" href="/doku.php?id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0&amp;do=edit"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='guide:febuildergba';var JSINFO = {"toc":{"initial_state":1},"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:febuildergba:febuildergba\u306econfig\u30c7\u30fc\u30bf\u69cb\u9020","namespace":"guide:febuildergba","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="/lib/tpl/dokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/dokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki    showSidebar hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">内容へ移動</a></li>
+        </ul>
+
+        <h1><a href="/doku.php?id=start"  accesskey="h" title="[H]"><img src="/lib/tpl/dokuwiki/images/logo.png" width="64" height="64" alt="" /> <span>FE改造wiki</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">ユーザ用ツール</h3>
+                <ul>
+                    <li class="action register"><a href="/doku.php?id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0&amp;do=register" title="ユーザー登録" rel="nofollow"><span>ユーザー登録</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4z"/></svg></a></li><li class="action login"><a href="/doku.php?id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0&amp;do=login&amp;sectok=" title="ログイン" rel="nofollow"><span>ログイン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">サイト用ツール</h3>
+            <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="検索" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="検索">検索</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><select name="do" class="edit quickselect" title="ツール"><option value="">ツール</option><optgroup label="ページ用ツール"><option value="edit">文書の編集</option><option value="revisions">以前のリビジョン</option><option value="backlink">バックリンク</option></optgroup><optgroup label="サイト用ツール"><option value="recent">最近の変更</option><option value="media">メディアマネージャー</option><option value="index">サイトマップ</option></optgroup><optgroup label="ユーザ用ツール"><option value="register">ユーザー登録</option><option value="login">ログイン</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="/doku.php?id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0&amp;do=recent" title="最近の変更 [r]" rel="nofollow" accesskey="r">最近の変更</a></li><li class="action media"><a href="/doku.php?id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0&amp;do=media&amp;ns=guide%3Afebuildergba" title="メディアマネージャー" rel="nofollow">メディアマネージャー</a></li><li class="action index"><a href="/doku.php?id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0&amp;do=index" title="サイトマップ [x]" rel="nofollow" accesskey="x">サイトマップ</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">トレース:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php?id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0"  class="breadcrumbs" title="guide:febuildergba:febuildergbaのconfigデータ構造">febuildergbaのconfigデータ構造</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+                            <!-- ********** ASIDE ********** -->
+                <div id="dokuwiki__aside"><div class="pad aside include group">
+                    <h3 class="toggle">サイドバー</h3>
+                    <div class="content"><div class="group">
+                                                                        <ul>
+<li class="level1"><div class="li"> <a href="/doku.php?id=qa" class="wikilink1" title="qa">QA</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=guide:start" class="wikilink1" title="guide:start">GUIDE</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=dictionary:start" class="wikilink1" title="dictionary:start">DICTIONARY</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=column:start" class="wikilink1" title="column:start">COLUMN</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=data:start" class="wikilink1" title="data:start">DATA</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<a href="/doku.php?id=en:start" class="wikilink1" title="en:start">English</a><br />
+<a href="/doku.php?id=zh:start" class="wikilink1" title="zh:start">中文</a>
+</p>
+
+<p>
+<span class="wrap_hi wrap_center wrap_centeralign ">最新の10件</span>
+</p>
+                                            </div></div>
+                </div></div><!-- /aside -->
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>guide:febuildergba:febuildergbaのconfigデータ構造</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#設定ファイルのルール">設定ファイルのルール</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#config_configxml">/config/config.xml</a></div></li>
+<li class="level2"><div class="li"><a href="#config_translate">/config/translate/</a></div></li>
+<li class="level2"><div class="li"><a href="#config_data">/config/data/</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#ファイル適合ルール">ファイル適合ルール</a></div></li>
+<li class="level3"><div class="li"><a href="#例">例.</a></div></li>
+<li class="level3"><div class="li"><a href="#一覧">一覧</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#config_patch">/config/patch/</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#パッチ形式">パッチ形式</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#共通項">共通項</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#マルチ言語">マルチ言語</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#パッチの種類_addrパッチ">パッチの種類 ADDRパッチ</a></div></li>
+<li class="level2"><div class="li"><a href="#マルチバイト">マルチバイト</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#datasize">DATASIZE</a></div></li>
+<li class="level3"><div class="li"><a href="#addressの同時指定">ADDRESSの同時指定</a></div></li>
+<li class="level3"><div class="li"><a href="#hex">HEX</a></div></li>
+<li class="level3"><div class="li"><a href="#address_type">ADDRESS_TYPE</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#パッチの種類_imageパッチ">パッチの種類 IMAGEパッチ</a></div></li>
+<li class="level2"><div class="li"><a href="#パッチの種類_structパッチ">パッチの種類 STRUCTパッチ</a></div></li>
+<li class="level2"><div class="li"><a href="#パッチの種類_binパッチ">パッチの種類 BINパッチ</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#オフセット追加">オフセット追加</a></div></li>
+<li class="level3"><div class="li"><a href="#直値_none">直値 $NONE</a></div></li>
+<li class="level3"><div class="li"><a href="#b_ジャンプ生成">B ジャンプ生成</a></div></li>
+<li class="level3"><div class="li"><a href="#bl_ジャンプ生成">BL ジャンプ生成</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#テキスト拡張命令">テキスト拡張命令</a></div></li>
+<li class="level2"><div class="li"><a href="#パッチの種類_eaパッチ">パッチの種類 EAパッチ</a></div></li>
+<li class="level2"><div class="li"><a href="#パッチの種類_switchパッチ">パッチの種類 SWITCHパッチ</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#mod">MOD</a></div></li>
+<li class="level1"><div class="li"><a href="#febuildergbaの起動引数">FEBuilderGBAの起動引数</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#rom">[ROM]</a></div></li>
+<li class="level2"><div class="li"><a href="#rom_filename">--rom=filename</a></div></li>
+<li class="level2"><div class="li"><a href="#lastrom">--lastrom</a></div></li>
+<li class="level2"><div class="li"><a href="#force-version_ver">--force-version=ver</a></div></li>
+<li class="level2"><div class="li"><a href="#force-detail">--force-detail</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#febuildergba_複雑な引数">FEBuilderGBA 複雑な引数</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#lint">--lint</a></div></li>
+<li class="level2"><div class="li"><a href="#makeups">--makeups</a></div></li>
+<li class="level2"><div class="li"><a href="#translate_--text">--translate --text</a></div></li>
+<li class="level2"><div class="li"><a href="#translate_--importfont">--translate --importfont</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+FEBuilderGBAのconfigディレクトリ内のデータ構造について説明します。<br/>
+<br/>
+
+</p>
+
+<h1 class="sectionedit1" id="設定ファイルのルール">設定ファイルのルール</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[設定ファイルのルール] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="設定ファイルのルール" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="97-142" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="設定ファイルのルール">編集</button></div></form></div>
+<h2 class="sectionedit2" id="config_configxml">/config/config.xml</h2>
+<div class="level2">
+
+<p>
+このツールの設定が格納されます。 <br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[/config/config.xml] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="config_configxml" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="143-232" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="/config/config.xml">編集</button></div></form></div>
+<h2 class="sectionedit3" id="config_translate">/config/translate/</h2>
+<div class="level2">
+
+<p>
+このツールが利用する翻訳リソースです。 <br/>
+GNU GetTextみたいな考え方をもとにした、KEY:\r\nVALUE形式です。<br/>
+<br/>
+
+</p>
+<pre class="code">:元文字列
+翻訳文字列</pre>
+
+<p>
+<br/>
+<a href="/lib/exe/fetch.php?tok=ea8e3c&amp;media=https%3A%2F%2Fi.imgur.com%2FiPFRtmE.jpg" class="media" title="https://i.imgur.com/iPFRtmE.jpg"><img src="/lib/exe/fetch.php?tok=ea8e3c&amp;media=https%3A%2F%2Fi.imgur.com%2FiPFRtmE.jpg" class="mediacenter" title="i.imgur.com_ipfrtme.jpg" alt="i.imgur.com_ipfrtme.jpg" /></a><br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[/config/translate/] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="config_translate" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="233-503" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="/config/translate/">編集</button></div></form></div>
+<h2 class="sectionedit4" id="config_data">/config/data/</h2>
+<div class="level2">
+
+<p>
+このツールが利用する、ゲーム内での設定データがあります。<br/>
+項目が長くなったり、外部リソースとして切り出した方が拡張性が高くなると判断したデータが入っています。<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[/config/data/] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="config_data" /><input type="hidden" name="codeblockOffset" value="1" /><input type="hidden" name="range" value="504-776" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="/config/data/">編集</button></div></form></div>
+<h3 class="sectionedit5" id="ファイル適合ルール">ファイル適合ルール</h3>
+<div class="level3">
+
+<p>
+設定ファイルは、以下の順番で探索されます。<br/>
+langには、選択されている言語入ります。en=英語 ,zh=中国語。<br/>
+file_VERSION.lang.txt<br/>
+file_VERSION.txt<br/>
+file_ALL.lang.txt<br/>
+file_ALL.txt<br/>
+<br/>
+また、ファイル内にも、{J} {U} で切り替わるものが有ります。<br/>
+例えば、ポインタ値は、FE8J FE8Uで違いますので、この切替に利用されます。<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[ファイル適合ルール] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="ファイル適合ルール" /><input type="hidden" name="codeblockOffset" value="1" /><input type="hidden" name="range" value="777-1240" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="ファイル適合ルール">編集</button></div></form></div>
+<h3 class="sectionedit6" id="例">例.</h3>
+<div class="level3">
+<div class="table sectionedit7"><table class="inline">
+	<tr class="row0">
+		<td class="col0">search</td><td class="col1">“foo”</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">game</td><td class="col1">FE8</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">lang</td><td class="col1">en</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">type</td><td class="col1">FE8U</td>
+	</tr>
+</table></div>
+<pre class="code">if ( Exists(&quot;config/data/foo_FE8.en.txt&quot;) )
+{
+   return found;
+}
+if ( Exists(&quot;config/data/foo_FE8.txt&quot;) )
+{
+   return found;
+}
+if ( Exists(&quot;config/data/foo_ALL.en.txt&quot;) )
+{
+   return found;
+}
+if ( Exists(&quot;config/data/foo_ALL.txt&quot;) )
+{
+   return found;
+}
+return NOT_FOUND;</pre>
+
+<p>
+<br/>
+仮に、foo_ALL.txt が見つかったとします。<br/>
+<br/>
+foo_ALL.txtの中身が以下のように書かれていたと仮定します。<br/>
+
+</p>
+<pre class="code">TEST1=A
+TEST2=B	{U}
+TEST3=C	{J}</pre>
+
+<p>
+<br/>
+探索命令でtype==FE8U と指定したため、以下の内容が取得されます。<br/>
+
+</p>
+<pre class="code">TEST1=A
+TEST2=B</pre>
+
+<p>
+<br/>
+もし、探索命令で type==FE8J であった場合、以下の内容が取得されます。<br/>
+
+</p>
+<pre class="code">TEST1=A
+TEST3=C</pre>
+
+<p>
+すべてのファイルは タブ区切りのTSV形式です。<br/>
+文字コードはUTF-8で統一です。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[例.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="例" /><input type="hidden" name="codeblockOffset" value="1" /><input type="hidden" name="range" value="1241-2157" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="例.">編集</button></div></form></div>
+<h3 class="sectionedit8" id="一覧">一覧</h3>
+<div class="level3">
+<div class="table sectionedit9"><table class="inline">
+	<tr class="row0">
+		<td class="col0">ai1</td><td class="col1">ユニット配置のAI1の一覧を定義します</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">ai2</td><td class="col1">ユニット配置のAI2の一覧を定義します</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">aiscript</td><td class="col1">aiscript命令を定義します</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">asmmap</td><td class="col1">関数マップ 逆アセンブラ時にヒントを表示します</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">base_rom_info</td><td class="col1">無改造ROMの容量とCRCを定義します</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">battleanime_85command</td><td class="col1">戦闘アニメのC85コマンド一覧を定義します</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">battleanime_auto_recolor</td><td class="col1">戦闘アニメで敵配色を決定するのに利用します</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0">battleanime_mode</td><td class="col1">戦闘アニメの種類を定義します</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0">event</td><td class="col1">イベント命令を定義します</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0">eventcond</td><td class="col1">イベント条件の種類を定義します</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0">func_lang</td><td class="col1">FEBuilderGBAで利用できる言語の一覧を定義します</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0">item_anime_effect</td><td class="col1">武器アニメエフェクトの一覧を定義します</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0">item_staff_use_effect</td><td class="col1">アイテムを利用した場合の効果を定義します</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0">item_weapon_effect</td><td class="col1">武器の追加効果を定義します</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0">item_usability_array_</td><td class="col1">アイテムを利用できるか判定する</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0">item_effect_array_</td><td class="col1">アイテムを利用した場合の効果を定義する</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0">item_promotion1_array_</td><td class="col1">CCアイテムを使った場合の処理を定義する</td>
+	</tr>
+	<tr class="row17">
+		<td class="col0">item_promotion2_array_</td><td class="col1">CCアイテムかどうかを定義する(FE7のみ)</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0">item_staff1_array_</td><td class="col1">アイテムのターゲット選択の方法を定義する(多分)</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0">item_staff2_array_</td><td class="col1">杖の種類を定義する</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0">item_statbooster1_array_</td><td class="col1">ドーピングアイテムを利用した時のメッセージを定義する</td>
+	</tr>
+	<tr class="row21">
+		<td class="col0">item_statbooster2_array_</td><td class="col1">ドーピングアイテムとCCアイテムかどうかを定義する</td>
+	</tr>
+	<tr class="row22">
+		<td class="col0">magic_command</td><td class="col1">魔法拡張のコマンドを定義します</td>
+	</tr>
+	<tr class="row23">
+		<td class="col0">magic_csa_spell_table</td><td class="col1">魔法拡張の魔法アニメーションを定義するCSATABLEを検索する条件を定義します</td>
+	</tr>
+	<tr class="row24">
+		<td class="col0">magic_extends</td><td class="col1">魔法拡張の是非を判定する方法を定義します</td>
+	</tr>
+	<tr class="row25">
+		<td class="col0">mappointer</td><td class="col1">マップポインタ名を定義します</td>
+	</tr>
+	<tr class="row26">
+		<td class="col0">mapstyle</td><td class="col1">マップスタイル一覧を定義します</td>
+	</tr>
+	<tr class="row27">
+		<td class="col0">other_text</td><td class="col1">C言語の文字列直値が埋め込まれているアドレス一覧を定義します</td>
+	</tr>
+	<tr class="row28">
+		<td class="col0">skill_extends</td><td class="col1">スキル拡張の是非を判定する方法を定義します</td>
+	</tr>
+	<tr class="row29">
+		<td class="col0">skill_extends_*</td><td class="col1">スキル拡張別に、スキルIDを定義します</td>
+	</tr>
+	<tr class="row30">
+		<td class="col0">song_instrument</td><td class="col1">楽器情報をMD5化し、楽器アドレスに楽器名を振ります</td>
+	</tr>
+	<tr class="row31">
+		<td class="col0">song_instrumentset</td><td class="col1">NIMAPの是非を判定する方法を定義します</td>
+	</tr>
+	<tr class="row32">
+		<td class="col0">sound</td><td class="col1">効果音名を定義します</td>
+	</tr>
+	<tr class="row33">
+		<td class="col0">sound_foot_steps</td><td class="col1">足音を定義します FE8のみ</td>
+	</tr>
+	<tr class="row34">
+		<td class="col0">tbl_cond</td><td class="col1">tblを利用するべきかどうかを定義します</td>
+	</tr>
+	<tr class="row35">
+		<td class="col0">translate_textid</td><td class="col1">翻訳のために日米のROMでの文字列IDの対応表を作ります</td>
+	</tr>
+	<tr class="row36">
+		<td class="col0">updater.bat.txt</td><td class="col1">設定ファイルではない。 自動アップデートのバッチファイルです。</td>
+	</tr>
+</table></div>
+
+<p>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[一覧] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="一覧" /><input type="hidden" name="codeblockOffset" value="5" /><input type="hidden" name="range" value="2158-4937" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="一覧">編集</button></div></form></div>
+<h2 class="sectionedit10" id="config_patch">/config/patch/</h2>
+<div class="level2">
+
+<p>
+細かい設定がパッチとして切り出されています。<br/>
+メニューの 機能→パッチ管理 からアクセスできます。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=a10481&amp;media=https%3A%2F%2Fi.imgur.com%2F59gvcy9.jpg" class="media" title="https://i.imgur.com/59gvcy9.jpg"><img src="/lib/exe/fetch.php?tok=a10481&amp;media=https%3A%2F%2Fi.imgur.com%2F59gvcy9.jpg" class="mediacenter" title="i.imgur.com_59gvcy9.jpg" alt="i.imgur.com_59gvcy9.jpg" /></a><br />
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[/config/patch/] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="config_patch" /><input type="hidden" name="codeblockOffset" value="5" /><input type="hidden" name="range" value="4938-5155" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="/config/patch/">編集</button></div></form></div>
+<h1 class="sectionedit11" id="パッチ形式">パッチ形式</h1>
+<div class="level1">
+
+<p>
+パッチファイルは、 KEY=VALUE 形式です。<br/>
+// # ; はコメントになります。<br/>
+数字データは 0xをつけると16進数になります。何も付けないと10進数です。<br/>
+
+</p>
+<pre class="code">+0x08000000 GBAポインタにしてもしなくても、どちらでも問題ありません。~</pre>
+
+<p>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[パッチ形式] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="パッチ形式" /><input type="hidden" name="codeblockOffset" value="5" /><input type="hidden" name="range" value="5156-5508" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="パッチ形式">編集</button></div></form></div>
+<h2 class="sectionedit12" id="共通項">共通項</h2>
+<div class="level2">
+<pre class="code">NAME=名前</pre>
+
+<p>
+パッチの名前を定義します。<br/>
+未定義の場合、パッチのファイル名になります。<br/>
+<br/>
+
+</p>
+<pre class="code">TYPE=IMAGE TYPE=ADDR TYPE=STRUCT TYPE=BIN TYPE=EA TYPE=SWITCH</pre>
+
+<p>
+パッチの種類を定義します。6つの種類があります。<br/>
+詳しくは後で説明します。<br/>
+<br/>
+
+</p>
+<pre class="code">INFO=詳しい情報を書きます。\r\n可能であれば説明を書いてください。</pre>
+
+<p>
+詳しい情報を書きます。 改行は\r\nにしてください。<br/>
+<br/>
+<br/>
+
+</p>
+<pre class="code">IF:0xEE594=0x4B 0xFA 0x2F 0x59 0x7E 0x19</pre>
+
+<p>
+パッチが利用できるかどうかを定義します。<br/>
+この例では、ROM内 0xEE594 が 0x4B 0xFA 0x2F 0x59 0x7E 0x19 となっているかどうかを見ています。<br/>
+もし、 0xEE594 が 0x4B 0xFA 0x2F 0x59 0x7E 0x19 であれば、このパッチを利用できます。<br/>
+<br/>
+
+</p>
+<pre class="code">IF_NOT:0xEE594=0x4B 0xFA 0x2F 0x59 0x7E 0x19</pre>
+
+<p>
+パッチが利用できるかどうかを定義します。<br/>
+先ほどとは逆に、ROM内 0xEE594 が 0x4B 0xFA 0x2F 0x59 0x7E 0x19 で、なければ、利用可能になります。<br/>
+<br/>
+
+</p>
+<pre class="code">PATCHED_IF:0x080bb182=0x45 0x46 0xE0 0xB4
+PATCHED_IF_NOT:0x080bb182=0x45 0x46 0xE0 0xB4</pre>
+
+<p>
+既にパッチが適合されたかどうかを定義します。<br/>
+2回パッチを当てるとまずい BINパッチで主に使われます。<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[共通項] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="共通項" /><input type="hidden" name="codeblockOffset" value="6" /><input type="hidden" name="range" value="5509-6913" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="共通項">編集</button></div></form></div>
+<h3 class="sectionedit13" id="マルチ言語">マルチ言語</h3>
+<div class="level3">
+
+<p>
+英語名を記述するには、 .en をつけます。<br/>
+中国名を記述するには、 .zh をつけます。<br/>
+<br/>
+NAME=日本語名<br/>
+NAME.en=English<br/>
+NAME.zh=中国語<br/>
+<br/>
+ver20171211から、すべてのパラメータに対して、 AAAA.en などの言語指定ができるようになりました。<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[マルチ言語] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="マルチ言語" /><input type="hidden" name="codeblockOffset" value="12" /><input type="hidden" name="range" value="6914-7259" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="マルチ言語">編集</button></div></form></div>
+<h2 class="sectionedit14" id="パッチの種類_addrパッチ">パッチの種類 ADDRパッチ</h2>
+<div class="level2">
+<pre class="code">NAME=きずぐすりの回復量
+NAME.en=Recovery amount of Vulnerary
+NAME.zh=责骂的回收量
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+
+ADDRESS=0x2fe16
+
+AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a
+AUTHOR.zh=来源：从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a
+AUTHOR.en=Source: From aera&#039;s data\r\http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a</pre>
+
+<p>
+<br/>
+FE8Jの傷薬の回復量は0x2fe16に格納されています。<br/>
+これは、それを変更するパッチです。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=8ea8cb&amp;media=https%3A%2F%2Fi.imgur.com%2FYLOE1U7.jpg" class="media" title="https://i.imgur.com/YLOE1U7.jpg"><img src="/lib/exe/fetch.php?tok=8ea8cb&amp;media=https%3A%2F%2Fi.imgur.com%2FYLOE1U7.jpg" class="mediacenter" title="i.imgur.com_yloe1u7.jpg" alt="i.imgur.com_yloe1u7.jpg" /></a><br />
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[パッチの種類 ADDRパッチ] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="パッチの種類_addrパッチ" /><input type="hidden" name="codeblockOffset" value="12" /><input type="hidden" name="range" value="7260-8022" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="パッチの種類 ADDRパッチ">編集</button></div></form></div>
+<h2 class="sectionedit15" id="マルチバイト">マルチバイト</h2>
+<div class="level2">
+
+<p>
+ADDRは、基本的に1バイトの変更のみですが、コンボボックス形式にすると、長いバイト数を扱うことができます<br/>
+
+</p>
+<pre class="code">NAME=フリーマップから入らないとフリーズする制約を消す
+NAME.en=Eliminate the constraint of freezing unless it enters from the world map.
+NAME.zh=消除冻结的限制，除非从免费地图进入
+
+//Implement as an address patch.
+TYPE=ADDR
+
+ADDRESS=0xc1e7c
+COMBO=default|0x47 0x2D|fix|0xB8 0xE0</pre>
+
+<p>
+<br/>
+<a href="/lib/exe/fetch.php?tok=c1ceb0&amp;media=https%3A%2F%2Fi.imgur.com%2FvRuzDeu.jpg" class="media" title="https://i.imgur.com/vRuzDeu.jpg"><img src="/lib/exe/fetch.php?tok=c1ceb0&amp;media=https%3A%2F%2Fi.imgur.com%2FvRuzDeu.jpg" class="mediacenter" title="i.imgur.com_vruzdeu.jpg" alt="i.imgur.com_vruzdeu.jpg" /></a><br />
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[マルチバイト] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="マルチバイト" /><input type="hidden" name="codeblockOffset" value="13" /><input type="hidden" name="range" value="8023-8585" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="マルチバイト">編集</button></div></form></div>
+<h3 class="sectionedit16" id="datasize">DATASIZE</h3>
+<div class="level3">
+
+<p>
+新たに、 DATASIZE 指定がサポートされました。<br/>
+DATASIZE=4 とすると、4バイト(データはGBAなのでリトルエンディアンで書き込まれます)として動作します。<br/>
+<br/>
+互換性のため、何も指定しないと、DATASIZE=1 として1バイトになります。<br/>
+また、COMBO指定があると、DATASIZE指定は無視され、COMBO指定が優先されます。<br/>
+<br/>
+<br />
+例: FE7でMODE SELECTのリンの顔を変更する
+</p>
+<pre class="code">NAME=MODE SELECT 顔画像 リン編
+NAME.en=MODE SELECT Portrait of the Lyn Editing
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+
+ADDRESS=0x4393D8
+ADDRESS_TYPE=PORTRAIT
+DATASIZE=4         //MODE SELECTの顔画像IDは、なぜか 4バイト DWORDで格納される</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[DATASIZE] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="datasize" /><input type="hidden" name="codeblockOffset" value="14" /><input type="hidden" name="range" value="8586-9373" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="DATASIZE">編集</button></div></form></div>
+<h3 class="sectionedit17" id="addressの同時指定">ADDRESSの同時指定</h3>
+<div class="level3">
+
+<p>
+ADRESSに、スペース区切りで、複数のアドレスを書くことができます。<br/>
+それぞれに同じ値が設定されます。<br/>
+いろいろな場所を同時に変えないといけない場合に利用します。<br/>
+<br/>
+
+</p>
+<pre class="code">NAME=幸運上限
+NAME.en=Upper limit of lucky
+NAME.zh=运气最大
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+
+ADDRESS=0x80CA0 0x29f0e 0x29f12 0x180d8 0x180dc 0x95694 0x95694 0x9585C</pre>
+
+<p>
+例えば、幸運上限はいろいろな場所に設定が点在してハードコーディングされているので、<br/>
+上記のように記述して、一気に値を変えてしまいます。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[ADDRESSの同時指定] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="addressの同時指定" /><input type="hidden" name="codeblockOffset" value="15" /><input type="hidden" name="range" value="9374-10069" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="ADDRESSの同時指定">編集</button></div></form></div>
+<h3 class="sectionedit18" id="hex">HEX</h3>
+<div class="level3">
+
+<p>
+UIに表示する数字を10進数にしたい場合は、 HEX=FALSE を利用してください。
+</p>
+<pre class="code">NAME=最大レベル
+NAME.en=Max Level
+NAME.zh=最高级别
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+
+ADDRESS=0x25132
+HEX=false //レベルなので10進数で表示します.</pre>
+
+<p>
+<br/>
+<a href="/lib/exe/fetch.php?tok=d8d357&amp;media=https%3A%2F%2Fi.imgur.com%2FcRQavFM.jpg" class="media" title="https://i.imgur.com/cRQavFM.jpg"><img src="/lib/exe/fetch.php?tok=d8d357&amp;media=https%3A%2F%2Fi.imgur.com%2FcRQavFM.jpg" class="mediacenter" title="i.imgur.com_crqavfm.jpg" alt="i.imgur.com_crqavfm.jpg" /></a><br />
+~ 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[HEX] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="hex" /><input type="hidden" name="codeblockOffset" value="16" /><input type="hidden" name="range" value="10070-10438" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="HEX">編集</button></div></form></div>
+<h3 class="sectionedit19" id="address_type">ADDRESS_TYPE</h3>
+<div class="level3">
+
+<p>
+値に関連付けたいものがある場合 ADDRESS_TYPE を利用してください。<br/>
+<br/>
+
+</p>
+<pre class="code">ADDRESS_TYPE=UNIT //ユニットIDとして扱います
+ADDRESS_TYPE=ITEM //アイテムIDとして扱います
+ADDRESS_TYPE=CLASS //クラスIDとして扱います
+ADDRESS_TYPE=SONG //音楽IDとして扱います</pre>
+<pre class="code">NAME=進撃準備
+NAME.en=MUSIC_Preparation
+NAME.zh=MUSIC_提前准备
+//アドレスパッチとして実装します
+TYPE=ADDR
+
+ADDRESS=0x080495cc 0x080af17e 0x08031654 0x08090048 0x080960b4 0x0809b880 0x0809c7f6
+ADDRESS_TYPE=SONG //進撃準備BGMを変更するので音楽IDとして扱います</pre>
+
+<p>
+<br/>
+<a href="/lib/exe/fetch.php?tok=cc91b7&amp;media=https%3A%2F%2Fi.imgur.com%2Fgen0Pz4.jpg" class="media" title="https://i.imgur.com/gen0Pz4.jpg"><img src="/lib/exe/fetch.php?tok=cc91b7&amp;media=https%3A%2F%2Fi.imgur.com%2Fgen0Pz4.jpg" class="mediacenter" title="i.imgur.com_gen0pz4.jpg" alt="i.imgur.com_gen0pz4.jpg" /></a><br />
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[ADDRESS_TYPE] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="address_type" /><input type="hidden" name="codeblockOffset" value="17" /><input type="hidden" name="range" value="10439-11151" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="ADDRESS_TYPE">編集</button></div></form></div>
+<h2 class="sectionedit20" id="パッチの種類_imageパッチ">パッチの種類 IMAGEパッチ</h2>
+<div class="level2">
+
+<p>
+<br/>
+
+</p>
+<pre class="code">TYPE=IMAGE</pre>
+
+<p>
+画像を変更するパッチを定義します。<br/>
+このパッチは、画像アドレスではなく、ポインタで書く必要があります。<br/>
+なぜなら、画像は可変長なので、画像アドレスが変更される可能性があるためです。<br/>
+<br/>
+以下は、FE8Jの FIN を変更するパッチです。<br/>
+
+</p>
+<pre class="code">NAME=SYSTEM_FIN
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=1
+
+//圧縮画像
+ZIMAGE_POINTER=0xBBF48
+//非圧縮ヘッダー付きTSA
+HEADERTSA_POINTER=0xBBF54
+//非圧縮パレット
+PALETTE_POINTER=0xBBF44</pre>
+
+<p>
+<br/>
+<a href="/lib/exe/fetch.php?tok=01cc6c&amp;media=https%3A%2F%2Fi.imgur.com%2FoEtDONy.jpg" class="media" title="https://i.imgur.com/oEtDONy.jpg"><img src="/lib/exe/fetch.php?tok=01cc6c&amp;media=https%3A%2F%2Fi.imgur.com%2FoEtDONy.jpg" class="mediacenter" title="i.imgur.com_oetdony.jpg" alt="i.imgur.com_oetdony.jpg" /></a><br />
+<br/>
+<br/>
+無圧縮の画像<br/>
+IMAGE_POINTER<br/>
+<br/>
+圧縮された画像<br/>
+ZIMAGE_POINTER<br/>
+<br/>
+圧縮TSAを利用する<br/>
+ZTSA_POINTER<br/>
+<br/>
+圧縮ヘッダー付きTSAを利用する<br/>
+ZHEADERTSA_POINTER<br/>
+<br/>
+無圧縮ヘッダー付きTSAを利用する<br/>
+HEADERTSA_POINTER<br/>
+<br/>
+無圧縮パレットを利用する<br/>
+PALETTE_POINTER<br/>
+<br/>
+画像の表示とインポート時に使われます。<br/>
+以下の例だと、256&times;160の大きさの画像で、16色のパレット1種類を保持していることが条件になります。<br/>
+
+</p>
+<pre class="code">WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=1</pre>
+
+<p>
+<br/>
+画像パッチを書くのは大変なので、自動的に生成することができます。<br/>
+メニュー→ツール→グラフィックツール で、画像を探して、TSA等を探り当てたのち、右下のPatch Makerボタンをクリックすると、全自動でパッチを作ってくれます。<br/>
+いちいち、ポインターを手で計算する必要はありません。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=29ec89&amp;media=https%3A%2F%2Fi.imgur.com%2FWHG6zIQ.jpg" class="media" title="https://i.imgur.com/WHG6zIQ.jpg"><img src="/lib/exe/fetch.php?tok=29ec89&amp;media=https%3A%2F%2Fi.imgur.com%2FWHG6zIQ.jpg" class="mediacenter" title="i.imgur.com_whg6ziq.jpg" alt="i.imgur.com_whg6ziq.jpg" /></a><br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=c4b0f5&amp;media=https%3A%2F%2Fi.imgur.com%2FLTklo5l.jpg" class="media" title="https://i.imgur.com/LTklo5l.jpg"><img src="/lib/exe/fetch.php?tok=c4b0f5&amp;media=https%3A%2F%2Fi.imgur.com%2FLTklo5l.jpg" class="mediacenter" title="i.imgur.com_ltklo5l.jpg" alt="i.imgur.com_ltklo5l.jpg" /></a><br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=706cf5&amp;media=https%3A%2F%2Fi.imgur.com%2FQj0vh2c.jpg" class="media" title="https://i.imgur.com/Qj0vh2c.jpg"><img src="/lib/exe/fetch.php?tok=706cf5&amp;media=https%3A%2F%2Fi.imgur.com%2FQj0vh2c.jpg" class="mediacenter" title="i.imgur.com_qj0vh2c.jpg" alt="i.imgur.com_qj0vh2c.jpg" /></a><br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[パッチの種類 IMAGEパッチ] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="パッチの種類_imageパッチ" /><input type="hidden" name="codeblockOffset" value="19" /><input type="hidden" name="range" value="11152-12991" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="パッチの種類 IMAGEパッチ">編集</button></div></form></div>
+<h2 class="sectionedit21" id="パッチの種類_structパッチ">パッチの種類 STRUCTパッチ</h2>
+<div class="level2">
+<pre class="code">TYPE=STRUCT</pre>
+
+<p>
+構造体パッチ<br/>
+<br/>
+構造体のようにデータを変更したい場合使います。<br/>
+ただし、ツール本体でやっているような高度なことはできません。<br/>
+難しいものを作りたく、それが汎用化できる場合、ツール本体側で作るべきです。<br/>
+<br/>
+
+</p>
+<pre class="code">//STRUCTパッチとして実装します
+TYPE=STRUCT
+
+//データへのポインタ
+POINTER=$GREP4END 0x00 0xB5 0xC0 0x46 0x06 0x48 0xC0 0x46 0x06 0x49 0x89 0x7B 0x89 0x00 0x40 0x58 0x01 0x21 0x00 0xF0 0x02 0xF8 0x17 0x20 0x00 0xBD 0xC0 0x46 0x02 0x4B 0x9F 0x46
+
+//ユニット クラス 0x00 0x00 アニメ設定ポインタ
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数(10進数)
+DATACOUNT=12
+
+//データを定義します
+//P0 ポインタ が 0バイトからあります
+//その型は EVENT 
+//名前は、イベントポインタとしました。
+B0:UNIT=ユニット
+B1:CLASS=クラス
+B2=00
+B3=00
+P4:BATTLEANIMENAME=アニメ設定</pre>
+
+<p>
+<br/>
+<a href="/lib/exe/fetch.php?tok=852716&amp;media=https%3A%2F%2Fi.imgur.com%2FNOQORUH.jpg" class="media" title="https://i.imgur.com/NOQORUH.jpg"><img src="/lib/exe/fetch.php?tok=852716&amp;media=https%3A%2F%2Fi.imgur.com%2FNOQORUH.jpg" class="mediacenter" title="i.imgur.com_noqoruh.jpg" alt="i.imgur.com_noqoruh.jpg" /></a><br/>
+<br/>
+FE8ユグドラパッチの個別アニメを設定するパッチです。<br/>
+怪盗パッチには追加構造体がないので、ユグドラを例に説明します。<br/>
+<br/>
+
+</p>
+<pre class="code">B0:UNIT=ユニット
+B1:CLASS=クラス
+B2=00
+B3=00
+P4:BATTLEANIMENAME=アニメ設定
+
+↓↓↓↓↓
+
+struct 
+{
+	byte	unit;			// +0
+	byte	class;			// +1
+	byte	zero1;			// +2
+	byte	zero2;			// +3
+	void*	battleanime;	// +4
+};</pre>
+
+<p>
+<br/>
+<br/>
+
+</p>
+<pre class="code">b	sbyte( char )	-128 ～ 127
+B	byte			0 ～ 255
+W	word			0 ～ 65535
+D	dword			0 ～ 4294836225
+P	dword			0 ～ 4294836225</pre>
+
+<p>
+<br/>
+D と P の違いについて<br/>
+Pの場合、必ずポインタとして記録されます。<br/>
+ユーザが、 0x123 と入れた場合、 Dでは 0x123 と記録しますが、 Pだと、 0x08000123 として記録します。<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[パッチの種類 STRUCTパッチ] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="パッチの種類_structパッチ" /><input type="hidden" name="codeblockOffset" value="22" /><input type="hidden" name="range" value="12992-14895" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="パッチの種類 STRUCTパッチ">編集</button></div></form></div>
+<h2 class="sectionedit22" id="パッチの種類_binパッチ">パッチの種類 BINパッチ</h2>
+<div class="level2">
+
+<p>
+type=BIN<br/>
+バイナリデータとソースコード<br/>
+<br/>
+
+</p>
+<pre class="code">NAME=SOUND_NIMAP(Native Instrument Map)
+
+TYPE=BIN
+
+PATCHED_IFNOT:$GREP4 0x00 0x3C 0x00 0x00 0x68 0x27 0x50 0x08 0xFF 0xFA 0x00 0xCC 0x00 0x3C 0x00 0x00 0x18 0x7D 0x29 0x08 0xFF 0xFA 0x00 0xCC 0x00 0x3C 0x00 0x00 0x3C 0x8E 0x28 0x08 0xFF 0xF9 0x00 0xA5 0x01 0x3C 0x00 0x00 0x02 0x00 0x00 0x00 0x00 0x00 0x0F 0x00=0x00 0x3C 0x00 0x00</pre>
+<pre class="code">BIN:$FREEAREA=JAPFE8_NI_Map.bin
+INFO=Midi Instrument Map</pre>
+
+<p>
+<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=389216&amp;media=https%3A%2F%2Fi.imgur.com%2FoB9KLti.jpg" class="media" title="https://i.imgur.com/oB9KLti.jpg"><img src="/lib/exe/fetch.php?tok=389216&amp;media=https%3A%2F%2Fi.imgur.com%2FoB9KLti.jpg" class="mediacenter" title="i.imgur.com_ob9klti.jpg" alt="i.imgur.com_ob9klti.jpg" /></a><br/>
+<br/>
+JAPFE8_NI_Map.bin を、適当な $FREEAREAに貼り付けます。<br/>
+2回貼り付けるとまずいので、 $GREP4 で、適応しているかどうか調べています。<br/>
+<br/>
+
+</p>
+<pre class="code">マクロ
+$FREEAREA	フリーエリア
+$GREP4		バイト列を検索 ただし4バイト単位(高速)
+$GREP1		バイト列を検索 ただし1バイト単位(低速)
+$GREP4_NOT	バイト列を検索して見つからないこと
+$GREP1_NOT	バイト列を検索して見つからないこと</pre>
+
+<p>
+<br/>
+<br/>
+<br/>
+
+</p>
+<pre class="code">NAME=10分割CG表示
+
+//BINパッチとして実装します
+TYPE=BIN
+
+//パッチ適応条件
+PATCHED_IF:0x080bb182=0x45 0x46 0xE0 0xB4
+
+BIN:$FREEAREA=show_10split_image.bin
+
+//10分割画像表示ルーチンを入れたところに飛ばす
+JUMP:0x080bb182:$r4=show_10split_image.bin
+
+INFO=10分割CGを表示できるようにします</pre>
+
+<p>
+<br/>
+<a href="/lib/exe/fetch.php?tok=a92ff9&amp;media=https%3A%2F%2Fi.imgur.com%2F41kVbuk.jpg" class="media" title="https://i.imgur.com/41kVbuk.jpg"><img src="/lib/exe/fetch.php?tok=a92ff9&amp;media=https%3A%2F%2Fi.imgur.com%2F41kVbuk.jpg" class="mediacenter" title="i.imgur.com_41kvbuk.jpg" alt="i.imgur.com_41kvbuk.jpg" /></a><br/>
+<br/>
+show_10split_image.binを、フリーエリアに貼り付ける。<br/>
+貼り付けた、データに対して、飛ばすコードを生成する。この時、r4レジスタを利用する。<br/>
+<br/>
+ジャンプするコードは、以下のようなコードが生成されます。<br/>
+
+</p>
+<pre class="code">アドレスが4バイトで割り切れる場合 (addr%4 == 0)
+ldr r4,[JUMP ADDR]		//+0
+mov pc,r4;				//+2
+JUMP ADDR				//+4  --&gt;合計 8バイト</pre>
+
+<p>
+ただし、2バイトで割り切れる場合 NOPが差し込まれます。
+</p>
+<pre class="code">NOP						//+0
+ldr r4,[JUMP ADDR]		//+2
+mov pc,r4;				//+4
+JUMP ADDR				//+6  --&gt;合計 10バイト</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[パッチの種類 BINパッチ] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="パッチの種類_binパッチ" /><input type="hidden" name="codeblockOffset" value="26" /><input type="hidden" name="range" value="14896-17012" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="パッチの種類 BINパッチ">編集</button></div></form></div>
+<h3 class="sectionedit23" id="オフセット追加">オフセット追加</h3>
+<div class="level3">
+<pre class="code">JUMP:0x080bb182:$r4:+2=show_10split_image.bin</pre>
+
+<p>
+<br/>
+こうすると、 show_10split_image.bin の設置場所+2 のアドレスへジャンプできます。<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[オフセット追加] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="オフセット追加" /><input type="hidden" name="codeblockOffset" value="32" /><input type="hidden" name="range" value="17013-17223" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="オフセット追加">編集</button></div></form></div>
+<h3 class="sectionedit24" id="直値_none">直値 $NONE</h3>
+<div class="level3">
+<pre class="code">JUMP:0x080bb182:$NONE=show_10split_image.bin</pre>
+
+<p>
+<br/>
+ジャンプコードを生成せずに、 show_10split_image.bin を設置したアドレスをそのまま書き込みます。<br/>
+アドレスなので4バイト消費します。書き込むアドレスはリトルエンディアン形式です。<br/>
+<br/>
+実用的な使い方としては、設定からコードへ飛ばすところで使うと思います。<br/>
+<br/>
+
+</p>
+<pre class="code">//メニュー効果に、指南プログラムのアドレスを書き入れます.
+//直値を入れるので、レジスタ関係ないので $NONE
+//直値の場合 アドレス+1 にしないといけないので、 +1 
+JUMP:0x5C53A8:$NONE:+1=main指南本体.bin</pre>
+
+<p>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[直値 $NONE] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="直値_none" /><input type="hidden" name="codeblockOffset" value="33" /><input type="hidden" name="range" value="17224-17964" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="直値 $NONE">編集</button></div></form></div>
+<h3 class="sectionedit25" id="b_ジャンプ生成">B ジャンプ生成</h3>
+<div class="level3">
+<pre class="code">JUMP:0x988c6:$B=0x9893a</pre>
+
+<p>
+<br/>
+0x988c6 のアドレスに、 b 0x9893a のASMオペコードを生成します。<br/>
+b ジャンプなので、あまり遠くへは飛べません。<br/>
+b ジャンプなので2バイト消費します。<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_25'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[B ジャンプ生成] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="b_ジャンプ生成" /><input type="hidden" name="codeblockOffset" value="35" /><input type="hidden" name="range" value="17965-18251" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="B ジャンプ生成">編集</button></div></form></div>
+<h3 class="sectionedit26" id="bl_ジャンプ生成">BL ジャンプ生成</h3>
+<div class="level3">
+<pre class="code">JUMP:0x340cc:$BL=0x988c8</pre>
+
+<p>
+<br/>
+0x340cc のアドレスに、 bl 0x988c8 のASMオペコードを生成します。<br/>
+bl ジャンプなので、あまり遠くへは飛べません。<br/>
+bl ジャンプなので4バイト消費します。<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_26'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[BL ジャンプ生成] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="bl_ジャンプ生成" /><input type="hidden" name="codeblockOffset" value="36" /><input type="hidden" name="range" value="18252-18543" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="BL ジャンプ生成">編集</button></div></form></div>
+<h2 class="sectionedit27" id="テキスト拡張命令">テキスト拡張命令</h2>
+<div class="level2">
+<pre class="code">EXTENDS:0xe30=TEXT    //テキストテーブルを 0xe30 まで拡張します
+TEXT:0x0e01=0x0e01.txt  //テキスト 0xe01 に 0x0e01.txt の内容を書き込みます.
+TEXT:0x0e02=0x0e02.txt
+TEXT:0x0e00=0x0e00.txt</pre>
+
+<p>
+<br/>
+テキストテーブルの拡張と書き込みをサポートしています。<br/>
+ただし、今のところ、他のテーブルの拡張はできません。<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_27'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[テキスト拡張命令] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="テキスト拡張命令" /><input type="hidden" name="codeblockOffset" value="37" /><input type="hidden" name="range" value="18544-18986" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="テキスト拡張命令">編集</button></div></form></div>
+<h2 class="sectionedit28" id="パッチの種類_eaパッチ">パッチの種類 EAパッチ</h2>
+<div class="level2">
+<pre class="code">TYPE=EA
+
+EA=ea.event</pre>
+
+<p>
+<br/>
+<a href="/lib/exe/fetch.php?tok=892639&amp;media=https%3A%2F%2Fi.imgur.com%2FWaVR6Ro.jpg" class="media" title="https://i.imgur.com/WaVR6Ro.jpg"><img src="/lib/exe/fetch.php?tok=892639&amp;media=https%3A%2F%2Fi.imgur.com%2FWaVR6Ro.jpg" class="mediacenter" title="i.imgur.com_wavr6ro.jpg" alt="i.imgur.com_wavr6ro.jpg" /></a><br/>
+<br/>
+Event Assemblerを利用して、データを追加します。<br/>
+現在のROMに、EAで指定した、Event Assembler scriptの内容を追加します。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_28'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[パッチの種類 EAパッチ] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="パッチの種類_eaパッチ" /><input type="hidden" name="codeblockOffset" value="38" /><input type="hidden" name="range" value="18987-19272" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="パッチの種類 EAパッチ">編集</button></div></form></div>
+<h2 class="sectionedit29" id="パッチの種類_switchパッチ">パッチの種類 SWITCHパッチ</h2>
+<div class="level2">
+<pre class="code">NAME=CC時に武器表示無し
+TYPE=SWITCH
+
+COMBO=武器なし|ONN|武器あり|OFF
+
+ONN:0x0802F5C0=0x00 0x20 0x00 0x20
+ONN:0x080D1DE2=0x00 0x20 0x00 0x20
+
+OFF:0x0802F5C0=0xE7 0xF7 0x86 0xF9
+OFF:0x080D1DE2=0x44 0xF7 0x75 0xFD</pre>
+
+<p>
+“SWITCHパッチ”は、addrパッチの発展系です。<br/>
+複数のアドレスに対して、異なる値で書き込みをしなければならない場合に利用します。<br/>
+BINやEAパッチとの違いとして、数バイト程度のより小さいデータを扱います。<br/>
+<br/>
+この例では、 ONとOFFの選択肢を表示し、<br/>
+ONの場合は、  ONNで定義した内容をアドレスに書き込みます。<br/>
+OFFの場合は、 OFFで定義した内容をアドレスに書き込みます。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_29'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[パッチの種類 SWITCHパッチ] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="パッチの種類_switchパッチ" /><input type="hidden" name="codeblockOffset" value="39" /><input type="hidden" name="range" value="19273-20085" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="パッチの種類 SWITCHパッチ">編集</button></div></form></div>
+<h1 class="sectionedit30" id="mod">MOD</h1>
+<div class="level1">
+
+<p>
+パッチのパラメータとして、構造体の未使用領域を利用したいときがあります。<br/>
+FEBuilderGBAでは、patchディレクトリ内にMOD_*.txtを作成すると利用できます。<br/>
+<br/>
+
+</p>
+<pre class="code">IF:0x89268=0x00 0x4B 0x9F 0x46</pre>
+<pre class="code">FORM=UnitForm   //UnitForm(FE8用)で動作します
+J_38=スキル1
+J_39=スキル2
+J_49=個人スキル
+J_38:NAME=J_38_SKILLASSIGNMENT_SCROLL1_B39
+J_39:NAME=J_39_SKILLASSIGNMENT_SCROLL2_B38
+J_49:NAME=J_49_SKILLASSIGNMENT_MASTERY</pre>
+
+<p>
+<br/>
+ただし、MODに設定するパラメータは、FEBuilderGBAのC#内に使われているラベル名になりますので、ソースコードを理解する必要があります。<br/>
+また、欧米の改造では、未使用領域ではなく、独自に構造体を作ってしまうことが多いように思います。<br/>
+そう考えると、MODは日本の改造で多く使われる機能かもしれませんね。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_30'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[MOD] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="mod" /><input type="hidden" name="codeblockOffset" value="40" /><input type="hidden" name="range" value="20086-21047" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="MOD">編集</button></div></form></div>
+<h1 class="sectionedit31" id="febuildergbaの起動引数">FEBuilderGBAの起動引数</h1>
+<div class="level1">
+<pre class="code">FEBuilderGBA.exe [ROM] [--options=value]</pre>
+
+<p>
+FEBuilderGBAは、何もオプションを指定しないと、welcome画面を表示します。<br/>
+いつかのオプションを指定することで、これを変更することが出来ます。<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_31'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[FEBuilderGBAの起動引数] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="febuildergbaの起動引数" /><input type="hidden" name="codeblockOffset" value="42" /><input type="hidden" name="range" value="21048-21357" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="FEBuilderGBAの起動引数">編集</button></div></form></div>
+<h2 class="sectionedit32" id="rom">[ROM]</h2>
+<div class="level2">
+
+<p>
+指定されたROMファイル名を開きます。<br/>
+ファイル名が指定されない場合、またはファイルが読み込めなかった場合は、Welcome画面が表示されます。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_32'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[[ROM]] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="rom" /><input type="hidden" name="codeblockOffset" value="43" /><input type="hidden" name="range" value="21358-21575" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="[ROM]">編集</button></div></form></div>
+<h2 class="sectionedit33" id="rom_filename">--rom=filename</h2>
+<div class="level2">
+
+<p>
+[ROM]と同じです。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_33'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[--rom=filename] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="rom_filename" /><input type="hidden" name="codeblockOffset" value="43" /><input type="hidden" name="range" value="21576-21630" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="--rom=filename">編集</button></div></form></div>
+<h2 class="sectionedit34" id="lastrom">--lastrom</h2>
+<div class="level2">
+
+<p>
+最後に開いたROMを開きます。<br/>
+最後に開いたROMは、FEBuilderGBAを終了させたときに、開いていたROMになります。<br/>
+(プロセス終了時に、現在開いているファイル名を記録します。)<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_34'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[--lastrom] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="lastrom" /><input type="hidden" name="codeblockOffset" value="43" /><input type="hidden" name="range" value="21631-21893" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="--lastrom">編集</button></div></form></div>
+<h2 class="sectionedit35" id="force-version_ver">--force-version=ver</h2>
+<div class="level2">
+
+<p>
+強制的に、特定のバージョンとしてROMを開きます。<br/>
+通常は、ROMのヘッダでバージョンを判別しますが、強制的に特定のバージョンで開かせたい場合に利用します。<br/>
+何かの理由でROMヘッダが破損している場合や、デバッグ用に別のGBAゲームをロードしたい場合に利用します。<br/>
+通常利用する必要はありません。<br/>
+
+</p>
+<div class="table sectionedit36"><table class="inline">
+	<tr class="row0">
+		<td class="col0">バージョン表記一覧</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">FE8JP</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">FE7JP</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">FE6</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">FE8U</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">FE7U</td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_35'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[--force-version=ver] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="force-version_ver" /><input type="hidden" name="codeblockOffset" value="43" /><input type="hidden" name="range" value="21894-22418" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="--force-version=ver">編集</button></div></form></div>
+<h2 class="sectionedit37" id="force-detail">--force-detail</h2>
+<div class="level2">
+
+<p>
+強制的に、詳細メニュー画面からスタートします。<br/>
+何か特別な理由があり、簡易画面メニューをスキップしたいときに利用します。<br/>
+通常は利用する必要はありません。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_37'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[--force-detail] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="force-detail" /><input type="hidden" name="codeblockOffset" value="43" /><input type="hidden" name="range" value="22419-22682" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="--force-detail">編集</button></div></form></div>
+<h1 class="sectionedit38" id="febuildergba_複雑な引数">FEBuilderGBA 複雑な引数</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_38'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[FEBuilderGBA 複雑な引数] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="febuildergba_複雑な引数" /><input type="hidden" name="codeblockOffset" value="43" /><input type="hidden" name="range" value="22683-22726" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="FEBuilderGBA 複雑な引数">編集</button></div></form></div>
+<h2 class="sectionedit39" id="lint">--lint</h2>
+<div class="level2">
+<pre class="code">FEBuilderGBA.exe --lint mygame.gba</pre>
+
+<p>
+FELintを実行します。<br />
+間違がなければ、All Green と表示されます。<br />
+また、戻り値に0が返されます。
+</p>
+
+<p>
+エラーがあれば、その内容が表示されます。<br />
+また、戻り値に0以外が返されます。
+</p>
+
+<p>
+これを利用したエラーチェックの例
+</p>
+<pre class="code">start /w FEBuilderGBA.exe --lint fe8kaitou.en.gba
+if NOT %ERRORLEVEL%==0 GOTO ERROR
+:OK
+
+:ERROR
+pause</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_39'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[--lint] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="lint" /><input type="hidden" name="codeblockOffset" value="43" /><input type="hidden" name="range" value="22727-23208" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="--lint">編集</button></div></form></div>
+<h2 class="sectionedit40" id="makeups">--makeups</h2>
+<div class="level2">
+<pre class="code">FEBuilderGBA.exe --makeups=save.ups mygame.gba</pre>
+
+<p>
+UPSを作成します。
+</p>
+
+<p>
+UPSの対象となるROMは自動的に推薦されますが、targetプションで指定することもできます。
+</p>
+<pre class="code">FEBuilderGBA.exe --makeups=save.ups --target=FE8J.gba mygame.gba</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_40'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[--makeups] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="makeups" /><input type="hidden" name="codeblockOffset" value="45" /><input type="hidden" name="range" value="23209-23521" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="--makeups">編集</button></div></form></div>
+<h2 class="sectionedit41" id="translate_--text">--translate --text</h2>
+<div class="level2">
+<pre class="code">FEBuilderGBA.exe --translate --fromrom=fe8j.gba --torom=fe8u.gba --text=fe8kaitou.en_fixed_only.txt fe8kaitou.en.gba</pre>
+
+<p>
+ROMを翻訳して、そのまま上書きします。<br />
+このコマンドでは、ROMが上書きされるので、必ずコピーを作ってください。
+</p>
+
+<p>
+–textで翻訳リソースのテキストファイルを指定します。<br />
+これはFEBuilderGBAのText Exportのデータと同一のものです。
+</p>
+
+<p>
+翻訳のリソースを取り込み、翻訳パッチを適応し、不足しているFONTの取り込みも行います。
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_41'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[--translate --text] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="translate_--text" /><input type="hidden" name="codeblockOffset" value="47" /><input type="hidden" name="range" value="23522-24121" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="--translate --text">編集</button></div></form></div>
+<h2 class="sectionedit42" id="translate_--importfont">--translate --importfont</h2>
+<div class="level2">
+<pre class="code">FEBuilderGBA.exe --translate --fromrom=fe8j.gba --torom=fe8u.gba --importfont fe8kaitou.en.gba</pre>
+
+<p>
+ROMに不足しているFONTを取り込んで、そのまま上書きします。<br />
+このコマンドでは、ROMが上書きされるので、必ずコピーを作ってください。
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_42'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1567774273" /><input type="hidden" name="summary" value="[--translate --importfont] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="translate_--importfont" /><input type="hidden" name="codeblockOffset" value="48" /><input type="hidden" name="range" value="24122-" /><input type="hidden" name="id" value="guide:febuildergba:febuildergbaのconfigデータ構造" /><button type="submit" title="--translate --importfont">編集</button></div></form></div>
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>guide/febuildergba/febuildergbaのconfigデータ構造.txt</bdi> · 最終更新: 2019/09/06 21:51 by <bdi>211.14.39.225</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">ページ用ツール</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="/doku.php?id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0&amp;do=edit" title="文書の編集 [e]" rel="nofollow" accesskey="e"><span>文書の編集</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="/doku.php?id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0&amp;do=revisions" title="以前のリビジョン [o]" rel="nofollow" accesskey="o"><span>以前のリビジョン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="/doku.php?id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0&amp;do=backlink" title="バックリンク" rel="nofollow"><span>バックリンク</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="top"><a href="#dokuwiki__top" title="文書の先頭へ [t]" rel="nofollow" accesskey="t"><span>文書の先頭へ</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
+            src="/lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" ><img
+            src="/lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="//validator.w3.org/check/referer" title="Valid HTML5" ><img
+            src="/lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="//jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
+            src="/lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="/lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="/lib/exe/indexer.php?id=guide%3Afebuildergba%3Afebuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0&amp;1695574539" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>

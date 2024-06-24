@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>guide:戦闘アニメの追加 [FE改造wiki]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="guide,戦闘アニメの追加"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=guide:%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%81%AE%E8%BF%BD%E5%8A%A0&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide"/>
+<link rel="edit" title="文書の編集" href="/doku.php?id=guide:%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%81%AE%E8%BF%BD%E5%8A%A0&amp;do=edit"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%81%AE%E8%BF%BD%E5%8A%A0"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%81%AE%E8%BF%BD%E5%8A%A0"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%81%AE%E8%BF%BD%E5%8A%A0"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='guide';var JSINFO = {"toc":{"initial_state":1},"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:\u6226\u95d8\u30a2\u30cb\u30e1\u306e\u8ffd\u52a0","namespace":"guide","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="/lib/tpl/dokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/dokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki    showSidebar hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">内容へ移動</a></li>
+        </ul>
+
+        <h1><a href="/doku.php?id=start"  accesskey="h" title="[H]"><img src="/lib/tpl/dokuwiki/images/logo.png" width="64" height="64" alt="" /> <span>FE改造wiki</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">ユーザ用ツール</h3>
+                <ul>
+                    <li class="action register"><a href="/doku.php?id=guide:%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%81%AE%E8%BF%BD%E5%8A%A0&amp;do=register" title="ユーザー登録" rel="nofollow"><span>ユーザー登録</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4z"/></svg></a></li><li class="action login"><a href="/doku.php?id=guide:%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%81%AE%E8%BF%BD%E5%8A%A0&amp;do=login&amp;sectok=" title="ログイン" rel="nofollow"><span>ログイン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">サイト用ツール</h3>
+            <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="検索" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="検索">検索</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><select name="do" class="edit quickselect" title="ツール"><option value="">ツール</option><optgroup label="ページ用ツール"><option value="edit">文書の編集</option><option value="revisions">以前のリビジョン</option><option value="backlink">バックリンク</option></optgroup><optgroup label="サイト用ツール"><option value="recent">最近の変更</option><option value="media">メディアマネージャー</option><option value="index">サイトマップ</option></optgroup><optgroup label="ユーザ用ツール"><option value="register">ユーザー登録</option><option value="login">ログイン</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="/doku.php?id=guide:%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%81%AE%E8%BF%BD%E5%8A%A0&amp;do=recent" title="最近の変更 [r]" rel="nofollow" accesskey="r">最近の変更</a></li><li class="action media"><a href="/doku.php?id=guide:%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%81%AE%E8%BF%BD%E5%8A%A0&amp;do=media&amp;ns=guide" title="メディアマネージャー" rel="nofollow">メディアマネージャー</a></li><li class="action index"><a href="/doku.php?id=guide:%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%81%AE%E8%BF%BD%E5%8A%A0&amp;do=index" title="サイトマップ [x]" rel="nofollow" accesskey="x">サイトマップ</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">トレース:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php?id=guide:%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%81%AE%E8%BF%BD%E5%8A%A0"  class="breadcrumbs" title="guide:戦闘アニメの追加">戦闘アニメの追加</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+                            <!-- ********** ASIDE ********** -->
+                <div id="dokuwiki__aside"><div class="pad aside include group">
+                    <h3 class="toggle">サイドバー</h3>
+                    <div class="content"><div class="group">
+                                                                        <ul>
+<li class="level1"><div class="li"> <a href="/doku.php?id=qa" class="wikilink1" title="qa">QA</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=guide:start" class="wikilink1" title="guide:start">GUIDE</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=dictionary:start" class="wikilink1" title="dictionary:start">DICTIONARY</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=column:start" class="wikilink1" title="column:start">COLUMN</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=data:start" class="wikilink1" title="data:start">DATA</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<a href="/doku.php?id=en:start" class="wikilink1" title="en:start">English</a><br />
+<a href="/doku.php?id=zh:start" class="wikilink1" title="zh:start">中文</a>
+</p>
+
+<p>
+<span class="wrap_hi wrap_center wrap_centeralign ">最新の10件</span>
+</p>
+<div class="table">
+<table class="inline">
+	<tr>
+		<th class="page">ページ</th><th class="date">日付</th>
+	</tr>
+	<tr>
+		<td class="page"><a href="/doku.php?id=en:guid:febuildergba:work_support" class="wikilink1" title="en:guid:febuildergba:work_support">en:guid:febuildergba:work_support</a></td>
+		<td class="date">2023/06/08 20:25</td>
+	</tr>
+	<tr>
+		<td class="page"><a href="/doku.php?id=guide:febuildergba:%E4%BD%9C%E5%93%81%E6%94%AF%E6%8F%B4" class="wikilink1" title="guide:febuildergba:作品支援">guide:febuildergba:作品支援</a></td>
+		<td class="date">2023/06/08 20:24</td>
+	</tr>
+</table>
+</div>
+                                            </div></div>
+                </div></div><!-- /aside -->
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>guide:戦闘アニメの追加</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#用意するもの">用意するもの</a></div></li>
+<li class="level1"><div class="li"><a href="#二つの道">二つの道</a></div></li>
+<li class="level1"><div class="li"><a href="#手順_スクリプトと絵から読み込んで_シートへ変換する場合">手順　スクリプトと絵から読み込んで、シートへ変換する場合</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#step_a1">step a1.</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a2">step a2.</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a3">step a3.</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a4">step a4</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a5">step a5.</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a6">step a6.</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#手順_シートから_読み込んで戦闘アニメを書き換える場合">手順　シートから、読み込んで戦闘アニメを書き換える場合</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#step_b1">step b1.</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b2">step b2.</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b3">step b3.</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b4">step b4.</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b5">step b5.</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b6">step b6.</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b7">step b7.</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b8">step b8.</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b9">step b9.</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#別feからの移植方法">別FEからの移植方法</a></div></li>
+<li class="level1"><div class="li"><a href="#パッチ">パッチ</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#animation_command_48_hack">Animation_command_48_hack</a></div></li>
+<li class="level3"><div class="li"><a href="#animation_command_01_hack">Animation_command_01_hack</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#戦闘アニメのスクリプトの書き方">戦闘アニメのスクリプトの書き方</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+FE GBAの戦闘アニメを差し替える方法について解説します。<br/>
+
+</p>
+
+<h1 class="sectionedit1" id="用意するもの">用意するもの</h1>
+<div class="level1">
+
+<p>
+FEditor Adv 7743 ver 5 で説明します。<br/>
+<a href="http://ux.getuploader.com/FE4/download/244/FEditor+Adv+7743.05.7z" class="urlextern" title="http://ux.getuploader.com/FE4/download/244/FEditor+Adv+7743.05.7z" rel="nofollow">http://ux.getuploader.com/FE4/download/244/FEditor+Adv+7743.05.7z</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[用意するもの] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="用意するもの" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="83-232" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="用意するもの">編集</button></div></form></div>
+<h1 class="sectionedit2" id="二つの道">二つの道</h1>
+<div class="level1">
+
+<p>
+戦闘アニメを変更する方法は2つにわかれます。<br/>
+<br/>
+スクリプトと絵から読み込んで、シートへ変換する場合と、<br/>
+シートから、読み込んで戦闘アニメを書き換える場合です。<br/>
+<br/>
+配布されているものに *.dmp というファイルが有れば、シートです。<br/>
+.dmpがなければ、スクリプトです。スクリプトは、*.txtという名前がつけられることが多いです。<br/>
+<br/>
+シートの画像はpng形式ですが、直接変更するとエラーになることがあるので推奨しません。<br/>
+シートが気に食わない場合は、シートではなく、スクリプトと絵をなおし、シートへ変換することをおすすめします。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[二つの道] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="二つの道" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="233-1020" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="二つの道">編集</button></div></form></div>
+<h1 class="sectionedit3" id="手順_スクリプトと絵から読み込んで_シートへ変換する場合">手順　スクリプトと絵から読み込んで、シートへ変換する場合</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[手順　スクリプトと絵から読み込んで、シートへ変換する場合] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="手順_スクリプトと絵から読み込んで_シートへ変換する場合" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1021-1120" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="手順　スクリプトと絵から読み込んで、シートへ変換する場合">編集</button></div></form></div>
+<h2 class="sectionedit4" id="step_a1">step a1.</h2>
+<div class="level2">
+
+<p>
+戦闘アニメを作るには、絵とスクリプトが必要です。<br/>
+サンプル例として「アサシン弓」を見てみましょう。<br/>
+アサシン弓は、 jpdoc_説明書\JP_ANIMATION_INSERT_戦闘アニメの追加\asasinyumi です。<br/>
+(アサシン弓は、FEditor Adv 7743 ver 5の中に付属しています)<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[step a1.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_a1" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1121-1478" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="step a1.">編集</button></div></form></div>
+<h2 class="sectionedit5" id="step_a2">step a2.</h2>
+<div class="level2">
+
+<p>
+メニューから tool → class animation creator… を選択します。<br/>
+<a href="/lib/exe/fetch.php?tok=a51dc4&amp;media=https%3A%2F%2Fi.imgur.com%2FcdSbGi9.jpg" class="media" title="https://i.imgur.com/cdSbGi9.jpg"><img src="/lib/exe/fetch.php?tok=a51dc4&amp;media=https%3A%2F%2Fi.imgur.com%2FcdSbGi9.jpg" class="mediacenter" title="i.imgur.com_cdsbgi9.jpg" alt="i.imgur.com_cdsbgi9.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[step a2.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_a2" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1479-1617" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="step a2.">編集</button></div></form></div>
+<h2 class="sectionedit6" id="step_a3">step a3.</h2>
+<div class="level2">
+
+<p>
+Load From Script を選択し、スクリプトを開きます。<br/>
+<a href="/lib/exe/fetch.php?tok=26d66a&amp;media=https%3A%2F%2Fi.imgur.com%2FtsUgIA5.jpg" class="media" title="https://i.imgur.com/tsUgIA5.jpg"><img src="/lib/exe/fetch.php?tok=26d66a&amp;media=https%3A%2F%2Fi.imgur.com%2FtsUgIA5.jpg" class="mediacenter" title="i.imgur.com_tsugia5.jpg" alt="i.imgur.com_tsugia5.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[step a3.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_a3" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1618-1746" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="step a3.">編集</button></div></form></div>
+<h2 class="sectionedit7" id="step_a4">step a4</h2>
+<div class="level2">
+
+<p>
+今回はサンプルの「アサシン弓」を開きます。<br/>
+<a href="/lib/exe/fetch.php?tok=5956f5&amp;media=https%3A%2F%2Fi.imgur.com%2Ffb016tF.jpg" class="media" title="https://i.imgur.com/fb016tF.jpg"><img src="/lib/exe/fetch.php?tok=5956f5&amp;media=https%3A%2F%2Fi.imgur.com%2Ffb016tF.jpg" class="mediacenter" title="i.imgur.com_fb016tf.jpg" alt="i.imgur.com_fb016tf.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[step a4] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_a4" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1747-1872" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="step a4">編集</button></div></form></div>
+<h2 class="sectionedit8" id="step_a5">step a5.</h2>
+<div class="level2">
+
+<p>
+正しく読み込めたら、 Save To File でシートとしてファイルに保存します。<br/>
+<a href="/lib/exe/fetch.php?tok=140ae8&amp;media=https%3A%2F%2Fi.imgur.com%2F0xL8KXu.jpg" class="media" title="https://i.imgur.com/0xL8KXu.jpg"><img src="/lib/exe/fetch.php?tok=140ae8&amp;media=https%3A%2F%2Fi.imgur.com%2F0xL8KXu.jpg" class="mediacenter" title="i.imgur.com_0xl8kxu.jpg" alt="i.imgur.com_0xl8kxu.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[step a5.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_a5" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1873-2034" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="step a5.">編集</button></div></form></div>
+<h2 class="sectionedit9" id="step_a6">step a6.</h2>
+<div class="level2">
+
+<p>
+スクリプトから、シートに変換し、ファイルに保存できました。<br/>
+「戦闘アニメ_シートから、読み込んで戦闘アニメを書き換える場合」に続きます。<br />
+<a href="/lib/exe/fetch.php?tok=8f17b5&amp;media=https%3A%2F%2Fi.imgur.com%2FEJJYW9F.jpg" class="media" title="https://i.imgur.com/EJJYW9F.jpg"><img src="/lib/exe/fetch.php?tok=8f17b5&amp;media=https%3A%2F%2Fi.imgur.com%2FEJJYW9F.jpg" class="mediacenter" title="i.imgur.com_ejjyw9f.jpg" alt="i.imgur.com_ejjyw9f.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[step a6.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_a6" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2035-2299" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="step a6.">編集</button></div></form></div>
+<h1 class="sectionedit10" id="手順_シートから_読み込んで戦闘アニメを書き換える場合">手順　シートから、読み込んで戦闘アニメを書き換える場合</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[手順　シートから、読み込んで戦闘アニメを書き換える場合] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="手順_シートから_読み込んで戦闘アニメを書き換える場合" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2300-2396" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="手順　シートから、読み込んで戦闘アニメを書き換える場合">編集</button></div></form></div>
+<h2 class="sectionedit11" id="step_b1">step b1.</h2>
+<div class="level2">
+
+<p>
+シートを用意します。<br/>
+ダウンロードするなり、他のFEからexportするなり、スクリプトと絵から読み込んで生成するなりして、<br/>
+用意してください。<br/>
+シートには、拡張子がないファイル(これが重要)と、*.dmp というファイルが必ずあります。<br/>
+これがあることをまず確認してください。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[step b1.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b1" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2397-2807" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="step b1.">編集</button></div></form></div>
+<h2 class="sectionedit12" id="step_b2">step b2.</h2>
+<div class="level2">
+
+<p>
+Tool → Class Animation Manager を選択します。<br/>
+<a href="/lib/exe/fetch.php?tok=3ded22&amp;media=https%3A%2F%2Fi.imgur.com%2FSIiPN1i.jpg" class="media" title="https://i.imgur.com/SIiPN1i.jpg"><img src="/lib/exe/fetch.php?tok=3ded22&amp;media=https%3A%2F%2Fi.imgur.com%2FSIiPN1i.jpg" class="mediacenter" title="i.imgur.com_siipn1i.jpg" alt="i.imgur.com_siipn1i.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[step b2.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b2" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2808-2924" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="step b2.">編集</button></div></form></div>
+<h2 class="sectionedit13" id="step_b3">step b3.</h2>
+<div class="level2">
+
+<p>
+Input index を変更して、変えたいアニメを選択します。<br/>
+<a href="/lib/exe/fetch.php?tok=eb4c9c&amp;media=https%3A%2F%2Fi.imgur.com%2FnME2xCB.jpg" class="media" title="https://i.imgur.com/nME2xCB.jpg"><img src="/lib/exe/fetch.php?tok=eb4c9c&amp;media=https%3A%2F%2Fi.imgur.com%2FnME2xCB.jpg" class="mediacenter" title="i.imgur.com_nme2xcb.jpg" alt="i.imgur.com_nme2xcb.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[step b3.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b3" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2925-3060" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="step b3.">編集</button></div></form></div>
+<h2 class="sectionedit14" id="step_b4">step b4.</h2>
+<div class="level2">
+
+<p>
+変えたいアニメにたどり着いたら、<br/>
+Insert をクリックします。<br/>
+<a href="/lib/exe/fetch.php?tok=a2b6c1&amp;media=https%3A%2F%2Fi.imgur.com%2FiZgI8O5.jpg" class="media" title="https://i.imgur.com/iZgI8O5.jpg"><img src="/lib/exe/fetch.php?tok=a2b6c1&amp;media=https%3A%2F%2Fi.imgur.com%2FiZgI8O5.jpg" class="mediacenter" title="i.imgur.com_izgi8o5.jpg" alt="i.imgur.com_izgi8o5.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[step b4.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b4" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3061-3209" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="step b4.">編集</button></div></form></div>
+<h2 class="sectionedit15" id="step_b5">step b5.</h2>
+<div class="level2">
+
+<p>
+シートの中にある拡張子がないファイルを選択します。<br/>
+<a href="/lib/exe/fetch.php?tok=c7353d&amp;media=https%3A%2F%2Fi.imgur.com%2F8mlaIyu.jpg" class="media" title="https://i.imgur.com/8mlaIyu.jpg"><img src="/lib/exe/fetch.php?tok=c7353d&amp;media=https%3A%2F%2Fi.imgur.com%2F8mlaIyu.jpg" class="mediacenter" title="i.imgur.com_8mlaiyu.jpg" alt="i.imgur.com_8mlaiyu.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[step b5.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b5" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3210-3348" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="step b5.">編集</button></div></form></div>
+<h2 class="sectionedit16" id="step_b6">step b6.</h2>
+<div class="level2">
+
+<p>
+無事置き換わりました。<br/>
+<a href="/lib/exe/fetch.php?tok=4b99eb&amp;media=https%3A%2F%2Fi.imgur.com%2FGhcNcus.jpg" class="media" title="https://i.imgur.com/GhcNcus.jpg"><img src="/lib/exe/fetch.php?tok=4b99eb&amp;media=https%3A%2F%2Fi.imgur.com%2FGhcNcus.jpg" class="mediacenter" title="i.imgur.com_ghcncus.jpg" alt="i.imgur.com_ghcncus.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[step b6.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b6" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3349-3445" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="step b6.">編集</button></div></form></div>
+<h2 class="sectionedit17" id="step_b7">step b7.</h2>
+<div class="level2">
+
+<p>
+ただ、名前が空白になったので、せっかくだらわかり易い名前をつけます。<br/>
+半角で8文字ぐらいで入力してください。<br/>
+ここでは「mytest01」と入力し、SetNameで確定します。<br/>
+<a href="/lib/exe/fetch.php?tok=7c96fe&amp;media=https%3A%2F%2Fi.imgur.com%2FG3kVNK9.jpg" class="media" title="https://i.imgur.com/G3kVNK9.jpg"><img src="/lib/exe/fetch.php?tok=7c96fe&amp;media=https%3A%2F%2Fi.imgur.com%2FG3kVNK9.jpg" class="mediacenter" title="i.imgur.com_g3kvnk9.jpg" alt="i.imgur.com_g3kvnk9.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[step b7.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b7" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3446-3741" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="step b7.">編集</button></div></form></div>
+<h2 class="sectionedit18" id="step_b8">step b8.</h2>
+<div class="level2">
+
+<p>
+File → Save で結果をROMに書き込みます。<br/>
+(保存する前にかならずバックアップを取ってください)<br/>
+<a href="/lib/exe/fetch.php?tok=231fac&amp;media=https%3A%2F%2Fi.imgur.com%2FPlEbmD1.jpg" class="media" title="https://i.imgur.com/PlEbmD1.jpg"><img src="/lib/exe/fetch.php?tok=231fac&amp;media=https%3A%2F%2Fi.imgur.com%2FPlEbmD1.jpg" class="mediacenter" title="i.imgur.com_plebmd1.jpg" alt="i.imgur.com_plebmd1.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[step b8.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b8" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3742-3934" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="step b8.">編集</button></div></form></div>
+<h2 class="sectionedit19" id="step_b9">step b9.</h2>
+<div class="level2">
+
+<p>
+ProjectFEGBAで入れたアニメを見ると、このように表示されます。<br/>
+赤枠のところに入れた名前がはいっていますよね。<br/>
+アニメIDは番号になります。<br/>
+<br/>
+緑枠のクラスのアニメ番号に、アニメIDを設定することで、<br/>
+そのアニメを呼び出すことが出来ます。<br/>
+<a href="/lib/exe/fetch.php?tok=f52fc3&amp;media=https%3A%2F%2Fi.imgur.com%2FnpdgeCO.jpg" class="media" title="https://i.imgur.com/npdgeCO.jpg"><img src="/lib/exe/fetch.php?tok=f52fc3&amp;media=https%3A%2F%2Fi.imgur.com%2FnpdgeCO.jpg" class="mediacenter" title="i.imgur.com_npdgeco.jpg" alt="i.imgur.com_npdgeco.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[step b9.] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b9" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3935-4339" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="step b9.">編集</button></div></form></div>
+<h1 class="sectionedit20" id="別feからの移植方法">別FEからの移植方法</h1>
+<div class="level1">
+
+<p>
+Tool → Class Animation Managerで、Dumpボタンを押すと、<br/>
+データシートを取り出して保存することが出来ます。<br/>
+他FEから移植する場合に便利です。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[別FEからの移植方法] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="別feからの移植方法" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4340-4576" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="別FEからの移植方法">編集</button></div></form></div>
+<h1 class="sectionedit21" id="パッチ">パッチ</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[パッチ] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="パッチ" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4577-4601" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="パッチ">編集</button></div></form></div>
+<h3 class="sectionedit22" id="animation_command_48_hack">Animation_command_48_hack</h3>
+<div class="level3">
+
+<p>
+Sxxxx で、効果音を出すようにするパッチです。<br/>
+このパッチを当てていないで、これを使うと背景音が消えます。<br/>
+英語版はFeditor advを使うと自動で適応されますが、日本語版は別途当てないといけません。<br/>
+パッチはこちらです。<br/>
+<a href="http://ux.getuploader.com/FE4/download/246/Animation_command_48_hack.7z" class="urlextern" title="http://ux.getuploader.com/FE4/download/246/Animation_command_48_hack.7z" rel="nofollow">http://ux.getuploader.com/FE4/download/246/Animation_command_48_hack.7z</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[Animation_command_48_hack] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="animation_command_48_hack" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4602-5025" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="Animation_command_48_hack">編集</button></div></form></div>
+<h3 class="sectionedit23" id="animation_command_01_hack">Animation_command_01_hack</h3>
+<div class="level3">
+
+<p>
+魔道士が攻撃している間マントをひらひらさせるパッチです。<br/>
+このパッチを当てていないと、魔法を売っても魔道士のマントがひらひらしません。<br/>
+英語版はFeditor advを使うと自動で適応されますが、日本語版は別途当てないといけません。<br/>
+(パッチはどこから落とすんだろう?)<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[Animation_command_01_hack] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="animation_command_01_hack" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5026-5444" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="Animation_command_01_hack">編集</button></div></form></div>
+<h1 class="sectionedit24" id="戦闘アニメのスクリプトの書き方">戦闘アニメのスクリプトの書き方</h1>
+<div class="level1">
+
+<p>
+戦闘アニメ_スクリプトの書き方は、シーコクの家とかを見てください。<br/>
+<a href="http://dfdedd.blog.fc2.com/blog-entry-9.html" class="urlextern" title="http://dfdedd.blog.fc2.com/blog-entry-9.html" rel="nofollow">http://dfdedd.blog.fc2.com/blog-entry-9.html</a> <br/>
+<a href="http://dfdedd.blog.fc2.com/blog-entry-10.html" class="urlextern" title="http://dfdedd.blog.fc2.com/blog-entry-10.html" rel="nofollow">http://dfdedd.blog.fc2.com/blog-entry-10.html</a> <br/>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> アニメーションをROMの特定のアドレスの一箇所にまとめたい場合は切り貼りが必要です。別にそんなの関係ないしという場合だったら不要です。 – <a href="/doku.php?id=7743" class="wikilink2" title="7743" rel="nofollow">7743</a> &amp;new{2016-08-18 (木) 15:07:46};</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://ngmansion.webcrow.jp/wp/2015/02/22/%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%82%92%E7%A7%BB%E6%A4%8D%E3%81%99%E3%82%8B/" class="urlextern" title="http://ngmansion.webcrow.jp/wp/2015/02/22/%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%82%92%E7%A7%BB%E6%A4%8D%E3%81%99%E3%82%8B/" rel="nofollow">http://ngmansion.webcrow.jp/wp/2015/02/22/%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%82%92%E7%A7%BB%E6%A4%8D%E3%81%99%E3%82%8B/</a>　ここにあるようなROMのコピーだったり最後のバイナリの貼り付けはしなくても良いんでしょうか？ –  &amp;new{2016-08-18 (木) 06:07:33};</div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696872" /><input type="hidden" name="summary" value="[戦闘アニメのスクリプトの書き方] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="戦闘アニメのスクリプトの書き方" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5445-" /><input type="hidden" name="id" value="guide:戦闘アニメの追加" /><button type="submit" title="戦闘アニメのスクリプトの書き方">編集</button></div></form></div>
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>guide/戦闘アニメの追加.txt</bdi> · 最終更新: 2018/09/23 19:01 by <bdi>211.14.62.193</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">ページ用ツール</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="/doku.php?id=guide:%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%81%AE%E8%BF%BD%E5%8A%A0&amp;do=edit" title="文書の編集 [e]" rel="nofollow" accesskey="e"><span>文書の編集</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="/doku.php?id=guide:%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%81%AE%E8%BF%BD%E5%8A%A0&amp;do=revisions" title="以前のリビジョン [o]" rel="nofollow" accesskey="o"><span>以前のリビジョン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="/doku.php?id=guide:%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%81%AE%E8%BF%BD%E5%8A%A0&amp;do=backlink" title="バックリンク" rel="nofollow"><span>バックリンク</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="top"><a href="#dokuwiki__top" title="文書の先頭へ [t]" rel="nofollow" accesskey="t"><span>文書の先頭へ</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
+            src="/lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" ><img
+            src="/lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="//validator.w3.org/check/referer" title="Valid HTML5" ><img
+            src="/lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="//jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
+            src="/lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="/lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="/lib/exe/indexer.php?id=guide%3A%E6%88%A6%E9%97%98%E3%82%A2%E3%83%8B%E3%83%A1%E3%81%AE%E8%BF%BD%E5%8A%A0&amp;1686428836" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>

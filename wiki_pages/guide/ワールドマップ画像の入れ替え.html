@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>guide:ワールドマップ画像の入れ替え [FE改造wiki]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="guide,ワールドマップ画像の入れ替え"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide"/>
+<link rel="edit" title="文書の編集" href="/doku.php?id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88&amp;do=edit"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='guide';var JSINFO = {"toc":{"initial_state":1},"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7\u753b\u50cf\u306e\u5165\u308c\u66ff\u3048","namespace":"guide","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="/lib/tpl/dokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/dokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki    showSidebar hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">内容へ移動</a></li>
+        </ul>
+
+        <h1><a href="/doku.php?id=start"  accesskey="h" title="[H]"><img src="/lib/tpl/dokuwiki/images/logo.png" width="64" height="64" alt="" /> <span>FE改造wiki</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">ユーザ用ツール</h3>
+                <ul>
+                    <li class="action register"><a href="/doku.php?id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88&amp;do=register" title="ユーザー登録" rel="nofollow"><span>ユーザー登録</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4z"/></svg></a></li><li class="action login"><a href="/doku.php?id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88&amp;do=login&amp;sectok=" title="ログイン" rel="nofollow"><span>ログイン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">サイト用ツール</h3>
+            <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="検索" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="検索">検索</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><select name="do" class="edit quickselect" title="ツール"><option value="">ツール</option><optgroup label="ページ用ツール"><option value="edit">文書の編集</option><option value="revisions">以前のリビジョン</option><option value="backlink">バックリンク</option></optgroup><optgroup label="サイト用ツール"><option value="recent">最近の変更</option><option value="media">メディアマネージャー</option><option value="index">サイトマップ</option></optgroup><optgroup label="ユーザ用ツール"><option value="register">ユーザー登録</option><option value="login">ログイン</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="/doku.php?id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88&amp;do=recent" title="最近の変更 [r]" rel="nofollow" accesskey="r">最近の変更</a></li><li class="action media"><a href="/doku.php?id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88&amp;do=media&amp;ns=guide" title="メディアマネージャー" rel="nofollow">メディアマネージャー</a></li><li class="action index"><a href="/doku.php?id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88&amp;do=index" title="サイトマップ [x]" rel="nofollow" accesskey="x">サイトマップ</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">トレース:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php?id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88"  class="breadcrumbs" title="guide:ワールドマップ画像の入れ替え">ワールドマップ画像の入れ替え</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+                            <!-- ********** ASIDE ********** -->
+                <div id="dokuwiki__aside"><div class="pad aside include group">
+                    <h3 class="toggle">サイドバー</h3>
+                    <div class="content"><div class="group">
+                                                                        <ul>
+<li class="level1"><div class="li"> <a href="/doku.php?id=qa" class="wikilink1" title="qa">QA</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=guide:start" class="wikilink1" title="guide:start">GUIDE</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=dictionary:start" class="wikilink1" title="dictionary:start">DICTIONARY</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=column:start" class="wikilink1" title="column:start">COLUMN</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=data:start" class="wikilink1" title="data:start">DATA</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<a href="/doku.php?id=en:start" class="wikilink1" title="en:start">English</a><br />
+<a href="/doku.php?id=zh:start" class="wikilink1" title="zh:start">中文</a>
+</p>
+
+<p>
+<span class="wrap_hi wrap_center wrap_centeralign ">最新の10件</span>
+</p>
+<div class="table">
+<table class="inline">
+	<tr>
+		<th class="page">ページ</th><th class="date">日付</th>
+	</tr>
+	<tr>
+		<td class="page"><a href="/doku.php?id=en:guid:febuildergba:work_support" class="wikilink1" title="en:guid:febuildergba:work_support">en:guid:febuildergba:work_support</a></td>
+		<td class="date">2023/06/08 20:25</td>
+	</tr>
+	<tr>
+		<td class="page"><a href="/doku.php?id=guide:febuildergba:%E4%BD%9C%E5%93%81%E6%94%AF%E6%8F%B4" class="wikilink1" title="guide:febuildergba:作品支援">guide:febuildergba:作品支援</a></td>
+		<td class="date">2023/06/08 20:24</td>
+	</tr>
+</table>
+</div>
+                                            </div></div>
+                </div></div><!-- /aside -->
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>guide:ワールドマップ画像の入れ替え</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#概要">概要</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#ワールドマップは4つある">ワールドマップは4つある</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#ゲーム中に下の方に表示されるminimap">ゲーム中に下の方に表示されるminimap</a></div></li>
+<li class="level3"><div class="li"><a href="#ゲーム中のフィールドとなるワールドマップ">ゲーム中のフィールドとなるワールドマップ</a></div></li>
+<li class="level3"><div class="li"><a href="#イベント等_序章のプロローグで表示されるワールドマップ">イベント等、序章のプロローグで表示されるワールドマップ</a></div></li>
+<li class="level3"><div class="li"><a href="#ゲームopで表示されるワールドマップ">ゲームOPで表示されるワールドマップ</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#色限定で話をします">16色限定で話をします。</a></div></li>
+<li class="level2"><div class="li"><a href="#ワールドマップのデータはどこにあるの">ワールドマップのデータはどこにあるの？</a></div></li>
+<li class="level2"><div class="li"><a href="#用意するもの">用意するもの</a></div></li>
+<li class="level2"><div class="li"><a href="#参考例">参考例</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#minimapを入れ替える">minimapを入れ替える</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#step_a01">step_a01</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a02">step_a02</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a03">step_a03</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a04">step_a04</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a05">step_a05</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a06">step_a06</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a07">step_a07</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a08">step_a08</a></div></li>
+<li class="level2"><div class="li"><a href="#トラブルシューティング">トラブルシューティング</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#qnlz-gba_advanceが動かない">Q:NLZ-GBA Advanceが動かない</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#ゲーム中のフィールドとなるワールドマップを入れ替える">ゲーム中のフィールドとなるワールドマップを入れ替える。</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#step_b01">step_b01</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b02">step_b02</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b03">step_b03</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b04">step_b04</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b05">step_b05</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b06">step_b06</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b07">step_b07</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b08">step_b08</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b09">step_b09</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b10">step_b10</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b11">step_b11</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b12">step_b12</a></div></li>
+<li class="level2"><div class="li"><a href="#トラブルシューティング1">トラブルシューティング</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#q画像にブロックノイズみたいなのが乗った">Q:画像にブロックノイズみたいなのが乗った。</a></div></li>
+<li class="level3"><div class="li"><a href="#q16色以上のワールドマップを作りたい">Q:16色以上のワールドマップを作りたい</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#イベント等_序章のプロローグで表示されるワールドマップを入れ替える">イベント等、序章のプロローグで表示されるワールドマップを入れ替える</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#step_c01">step_c01</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c02">step_c02</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c03">step_c03</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c04">step_c04</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c05">step_c05</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c06">step_c06</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c07">step_c07</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c08">step_c08</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c09">step_c09</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c10">step_c10</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c11">step_c11</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c12">step_c12</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c13">step_c13</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c14">step_c14</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c15">step_c15</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c16">step_c16</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c17">step_c17</a></div></li>
+<li class="level2"><div class="li"><a href="#トラブルシューティング2">トラブルシューティング</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#q画像がしましまになった">Q:画像がしましまになった。</a></div></li>
+<li class="level3"><div class="li"><a href="#q画面が淡色になりました">Q:画面が淡色になりました。</a></div></li>
+<li class="level3"><div class="li"><a href="#q16色を超える色を扱いたいです">Q:16色を超える色を扱いたいです。</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#ゲームopで表示されるワールドマップを入れ替える">ゲームOPで表示されるワールドマップを入れ替える</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#step_d01">step_d01</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d02">step_d02</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d03">step_d03</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d04">step_d04</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d05">step_d05</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d06">step_d06</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d07">step_d07</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d08">step_d08</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d09">step_d09</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d10">step_d10</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d11">step_d11</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d12">step_d12</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d13">step_d13</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b14">step_b14</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b15">step_b15</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d16">step_d16</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d17">step_d17</a></div></li>
+<li class="level2"><div class="li"><a href="#トラブルシューティング3">トラブルシューティング</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#q引き裂かれて崩れた画像が表示されました">Q:引き裂かれて崩れた画像が表示されました。</a></div></li>
+<li class="level3"><div class="li"><a href="#qリセットがかかって進まない">Q:リセットがかかって進まない</a></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+FE8ワールドマップの入れ替える方法について説明します。<br/>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="#la01d402" title="guide:ワールドマップ画像の入れ替え ↵" class="wikilink1">miniマップ</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#n521188d" title="guide:ワールドマップ画像の入れ替え ↵" class="wikilink1">フィールドマップ</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#ia724e5c" title="guide:ワールドマップ画像の入れ替え ↵" class="wikilink1">大陸全体マップ</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#b4332fd2" title="guide:ワールドマップ画像の入れ替え ↵" class="wikilink1">オープニングのマップ</a></div>
+</li>
+</ul>
+
+<p>
+マップ作成支援ツール<br/>
+<a href="http://fantasynamegenerators.com/map-creator.php#.VeI8cpdCYnI" class="urlextern" title="http://fantasynamegenerators.com/map-creator.php#.VeI8cpdCYnI" rel="nofollow">Map creator</a>
+</p>
+
+<h1 class="sectionedit1" id="概要">概要</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[概要] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="概要" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="360-381" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="概要">編集</button></div></form></div>
+<h2 class="sectionedit2" id="ワールドマップは4つある">ワールドマップは4つある</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[ワールドマップは4つある] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="ワールドマップは4つある" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="382-429" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="ワールドマップは4つある">編集</button></div></form></div>
+<h3 class="sectionedit3" id="ゲーム中に下の方に表示されるminimap">ゲーム中に下の方に表示されるminimap</h3>
+<div class="level3">
+<div class="table sectionedit4"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">64&times;64</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">画像アドレス</td><td class="col1">0xB26A6C (圧縮)</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">パレット</td><td class="col1">0xB2715C</td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[ゲーム中に下の方に表示されるminimap] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="ゲーム中に下の方に表示されるminimap" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="430-573" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="ゲーム中に下の方に表示されるminimap">編集</button></div></form></div>
+<h3 class="sectionedit5" id="ゲーム中のフィールドとなるワールドマップ">ゲーム中のフィールドとなるワールドマップ</h3>
+<div class="level3">
+<div class="table sectionedit6"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">480&times;320</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">画像アドレス</td><td class="col1">0xB085F8 (無圧縮)</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">パレット</td><td class="col1">0xB1B278,B1B298,B1B2B8,B1B2D8</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">暗パレット</td><td class="col1">0xB1B1F8,0xB1B218,0xB1B238,0xB1B258</td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[ゲーム中のフィールドとなるワールドマップ] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="ゲーム中のフィールドとなるワールドマップ" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="574-808" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="ゲーム中のフィールドとなるワールドマップ">編集</button></div></form></div>
+<h3 class="sectionedit7" id="イベント等_序章のプロローグで表示されるワールドマップ">イベント等、序章のプロローグで表示されるワールドマップ</h3>
+<div class="level3">
+<div class="table sectionedit8"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">240&times;160</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">画像アドレス</td><td class="col1">0xB1E9B8 圧縮されてる</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">パレット</td><td class="col1">0xB23D3C,B23D5C,B23D7C,B23D9C</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">TSA</td><td class="col1">0xB237EC 圧縮されている</td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[イベント等、序章のプロローグで表示されるワールドマップ] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="イベント等_序章のプロローグで表示されるワールドマップ" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="809-1054" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="イベント等、序章のプロローグで表示されるワールドマップ">編集</button></div></form></div>
+<h3 class="sectionedit9" id="ゲームopで表示されるワールドマップ">ゲームOPで表示されるワールドマップ</h3>
+<div class="level3">
+<div class="table sectionedit10"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">240&times;160</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">画像アドレス</td><td class="col1">0xB4BBA0 圧縮されている</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">パレット</td><td class="col1">0xB4FCD4</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">TSA</td><td class="col1">0xB4F758 圧縮されている</td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[ゲームOPで表示されるワールドマップ] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="ゲームopで表示されるワールドマップ" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1055-1252" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="ゲームOPで表示されるワールドマップ">編集</button></div></form></div>
+<h2 class="sectionedit11" id="色限定で話をします">16色限定で話をします。</h2>
+<div class="level2">
+
+<p>
+FE8ではTSA等を利用して、16色以上色を作ることが出来ます。<br/>
+具体的には、GBAは、8*8のタイルから構成されたタイルデータを持ち、<br/>
+そのタイルごとにパレットを切り替えて、16色を超える画像を出せます。<br/>
+ただ、これはとても難しく、データを用意するのも大変なので、今回は利用しません。<br/>
+今回は、すべて16色に限定して、楽にワールドマップを定義する方法について説明します。<br/>
+(0番目を透過色にしないことをおすすめします。)<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[16色限定で話をします。] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="色限定で話をします" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1253-1894" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="16色限定で話をします。">編集</button></div></form></div>
+<h2 class="sectionedit12" id="ワールドマップのデータはどこにあるの">ワールドマップのデータはどこにあるの？</h2>
+<div class="level2">
+
+<p>
+laqieerさんの解析資料を見てください。<br/>
+アドレスとかいろいろ掲載されています。<br/>
+彼の解析のおかげで、いろいろな事実が判明しました。<br/>
+<br />
+[FE8] World Map Graphic Insertion<br/>
+<a href="http://feuniverse.us/t/fe8-world-map-graphic-insertion/1738/1" class="urlextern" title="http://feuniverse.us/t/fe8-world-map-graphic-insertion/1738/1" rel="nofollow">http://feuniverse.us/t/fe8-world-map-graphic-insertion/1738/1</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[ワールドマップのデータはどこにあるの？] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="ワールドマップのデータはどこにあるの" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1895-2258" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="ワールドマップのデータはどこにあるの？">編集</button></div></form></div>
+<h2 class="sectionedit13" id="用意するもの">用意するもの</h2>
+<div class="level2">
+
+<p>
+バイナリエディタ<br/>
+<a href="http://www.vector.co.jp/soft/win95/util/se079072.html" class="urlextern" title="http://www.vector.co.jp/soft/win95/util/se079072.html" rel="nofollow">http://www.vector.co.jp/soft/win95/util/se079072.html</a> <br/>
+<br/>
+NLZ-GBA Advance (または GBA Graphics Editor)<br/>
+<a href="http://www.romhacking.net/utilities/529/" class="urlextern" title="http://www.romhacking.net/utilities/529/" rel="nofollow">http://www.romhacking.net/utilities/529/</a> <br/>
+<br/>
+edge<br/>
+<a href="http://takabosoft.com/edge" class="urlextern" title="http://takabosoft.com/edge" rel="nofollow">http://takabosoft.com/edge</a> <br/>
+<br/>
+ワールドマップにしたいデータ<br/>
+今回は、wikipediaにあるオーストラリ大陸の画像を入れてみます。<br/>
+<a href="https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%BC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%AA%E3%82%A2#/media/File:Australia_satellite_plane.jpg" class="urlextern" title="https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%BC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%AA%E3%82%A2#/media/File:Australia_satellite_plane.jpg" rel="nofollow">https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%BC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%AA%E3%82%A2#/media/File:Australia_satellite_plane.jpg</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[用意するもの] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="用意するもの" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2259-2786" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="用意するもの">編集</button></div></form></div>
+<h2 class="sectionedit14" id="参考例">参考例</h2>
+<div class="level2">
+
+<p>
+FE8_AU_PATCH 大陸を全部AUに置き換えただけのパッチです。<br/>
+参考にしてください。<br/>
+<a href="http://ux.getuploader.com/FE4/download/243/FE8_AU_PATCH.7z" class="urlextern" title="http://ux.getuploader.com/FE4/download/243/FE8_AU_PATCH.7z" rel="nofollow">http://ux.getuploader.com/FE4/download/243/FE8_AU_PATCH.7z</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[参考例] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="参考例" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2787-2981" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="参考例">編集</button></div></form></div>
+<h1 class="sectionedit15" id="minimapを入れ替える">minimapを入れ替える</h1>
+<div class="level1">
+
+<p>
+一番簡単なものからいきます。<br/>
+ゲーム中に下の方に表示されるminimapを入れ替えてみます。<br/>
+
+</p>
+<div class="table sectionedit16"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">64&times;64</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">画像アドレス</td><td class="col1">0xB26A6C (圧縮)</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">パレット</td><td class="col1">0xB2715C</td>
+	</tr>
+</table></div>
+
+<p>
+サイズ 64&times;64の 16色 png画像を用意してください。<br/>
+今回はこの画像に差し替えてみます。<br/>
+<a href="https://i.imgur.com/qNopQuX.png" class="urlextern" title="https://i.imgur.com/qNopQuX.png" rel="nofollow">https://i.imgur.com/qNopQuX.png</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[minimapを入れ替える] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="minimapを入れ替える" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2982-3388" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="minimapを入れ替える">編集</button></div></form></div>
+<h2 class="sectionedit17" id="step_a01">step_a01</h2>
+<div class="level2">
+
+<p>
+NLZ-GBA Advance を立ち上げて、<br/>
+左上の File handling をクリックし、<br/>
+Load Rom で FE8聖魔のrom を読み込みます。<br/>
+<a href="/lib/exe/fetch.php?tok=48026e&amp;media=https%3A%2F%2Fi.imgur.com%2FpylinxN.jpg" class="media" title="https://i.imgur.com/pylinxN.jpg"><img src="/lib/exe/fetch.php?tok=48026e&amp;media=https%3A%2F%2Fi.imgur.com%2FpylinxN.jpg" class="mediacenter" title="i.imgur.com_pylinxn.jpg" alt="i.imgur.com_pylinxn.jpg" /></a>
+</p>
+
+<p>
+新規にromを読み込んだ場合は、<br />
+romをスキャンしてもいいかと聞かれるので、OKと答えます。<br/>
+ROMと同じ場所に romの名前.nlzというキャッシュが作られます。<br/>
+<a href="/lib/exe/fetch.php?tok=a53222&amp;media=https%3A%2F%2Fi.imgur.com%2FpHidTn5.jpg" class="media" title="https://i.imgur.com/pHidTn5.jpg"><img src="/lib/exe/fetch.php?tok=a53222&amp;media=https%3A%2F%2Fi.imgur.com%2FpHidTn5.jpg" class="mediacenter" title="i.imgur.com_phidtn5.jpg" alt="i.imgur.com_phidtn5.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_a01] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_a01" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3389-3844" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_a01">編集</button></div></form></div>
+<h2 class="sectionedit18" id="step_a02">step_a02</h2>
+<div class="level2">
+
+<p>
+romを読み込んだから、このような画面になります。<br/>
+<a href="/lib/exe/fetch.php?tok=19c475&amp;media=https%3A%2F%2Fi.imgur.com%2FrTvuIi0.jpg" class="media" title="https://i.imgur.com/rTvuIi0.jpg"><img src="/lib/exe/fetch.php?tok=19c475&amp;media=https%3A%2F%2Fi.imgur.com%2FrTvuIi0.jpg" class="mediacenter" title="i.imgur.com_rtvuii0.jpg" alt="i.imgur.com_rtvuii0.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_a02] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_a02" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3845-3977" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_a02">編集</button></div></form></div>
+<h2 class="sectionedit19" id="step_a03">step_a03</h2>
+<div class="level2">
+
+<p>
+赤枠で囲った Compressed graphics にチェックが入っていることを確認してください。<br/>
+緑枠で囲った Width に、8 と入力します。<br/>
+青枠で囲った Offset に、B26A6C と入力します。<br/>
+紫枠で囲った ROM Pallet offset に、 B2715C と入力します。<br/>
+そうすると、ウィンドウに minimapが表示されます。<br/>
+<a href="/lib/exe/fetch.php?tok=7e194c&amp;media=https%3A%2F%2Fi.imgur.com%2FIBHV3Lv.jpg" class="media" title="https://i.imgur.com/IBHV3Lv.jpg"><img src="/lib/exe/fetch.php?tok=7e194c&amp;media=https%3A%2F%2Fi.imgur.com%2FIBHV3Lv.jpg" class="mediacenter" title="i.imgur.com_ibhv3lv.jpg" alt="i.imgur.com_ibhv3lv.jpg" /></a>
+</p>
+
+<p>
+これらの設定は、変更するものの設定からきています。<br/>
+
+</p>
+<div class="table sectionedit20"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">64&times;64 → 64 / 8ドット単位 = 8</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">パレット</td><td class="col1">0xB2715C → 0xというのは16進数というマークなのでそれ以降を入れる</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">画像アドレス</td><td class="col1">0xB26A6C 圧縮 → 圧縮されているのでCompressed graphicsを有効にします</td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_a03] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_a03" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3978-4759" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_a03">編集</button></div></form></div>
+<h2 class="sectionedit21" id="step_a04">step_a04</h2>
+<div class="level2">
+
+<p>
+Import a bitmapボタンをクリックします。<br/>
+<a href="/lib/exe/fetch.php?tok=3b2c6d&amp;media=https%3A%2F%2Fi.imgur.com%2FfUKIslr.jpg" class="media" title="https://i.imgur.com/fUKIslr.jpg"><img src="/lib/exe/fetch.php?tok=3b2c6d&amp;media=https%3A%2F%2Fi.imgur.com%2FfUKIslr.jpg" class="mediacenter" title="i.imgur.com_fukislr.jpg" alt="i.imgur.com_fukislr.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_a04] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_a04" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4760-4874" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_a04">編集</button></div></form></div>
+<h2 class="sectionedit22" id="step_a05">step_a05</h2>
+<div class="level2">
+
+<p>
+パレットも設定するので Import palette to ROM にチェックを付けてください。<br/>
+OKを押して次へ進みます。<br/>
+<a href="/lib/exe/fetch.php?tok=b2086d&amp;media=https%3A%2F%2Fi.imgur.com%2Fr3EI0QI.jpg" class="media" title="https://i.imgur.com/r3EI0QI.jpg"><img src="/lib/exe/fetch.php?tok=b2086d&amp;media=https%3A%2F%2Fi.imgur.com%2Fr3EI0QI.jpg" class="mediacenter" title="i.imgur.com_r3ei0qi.jpg" alt="i.imgur.com_r3ei0qi.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_a05] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_a05" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4875-5074" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_a05">編集</button></div></form></div>
+<h2 class="sectionedit23" id="step_a06">step_a06</h2>
+<div class="level2">
+
+<p>
+minimapが置き換わるはずです。<br/>
+<a href="/lib/exe/fetch.php?tok=41ea44&amp;media=https%3A%2F%2Fi.imgur.com%2F73NxyMa.jpg" class="media" title="https://i.imgur.com/73NxyMa.jpg"><img src="/lib/exe/fetch.php?tok=41ea44&amp;media=https%3A%2F%2Fi.imgur.com%2F73NxyMa.jpg" class="mediacenter" title="i.imgur.com_73nxyma.jpg" alt="i.imgur.com_73nxyma.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_a06] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_a06" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5075-5178" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_a06">編集</button></div></form></div>
+<h2 class="sectionedit24" id="step_a07">step_a07</h2>
+<div class="level2">
+
+<p>
+Write to ROM で結果をROMに保存します。<br/>
+保存する前にromのバックアップは忘れずに<br/>
+<a href="/lib/exe/fetch.php?tok=fee230&amp;media=https%3A%2F%2Fi.imgur.com%2FSfIiwGP.jpg" class="media" title="https://i.imgur.com/SfIiwGP.jpg"><img src="/lib/exe/fetch.php?tok=fee230&amp;media=https%3A%2F%2Fi.imgur.com%2FSfIiwGP.jpg" class="mediacenter" title="i.imgur.com_sfiiwgp.jpg" alt="i.imgur.com_sfiiwgp.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_a07] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_a07" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5179-5352" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_a07">編集</button></div></form></div>
+<h2 class="sectionedit25" id="step_a08">step_a08</h2>
+<div class="level2">
+
+<p>
+改造したromを読み込んでゲームを進めてみてください。<br/>
+minimapがオーストラリアになっているはずです。<br/>
+<br/>
+(長くなるので、次から一部説明を省きます。)<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=1a0e5a&amp;media=https%3A%2F%2Fi.imgur.com%2F4o1KlLU.jpg" class="media" title="https://i.imgur.com/4o1KlLU.jpg"><img src="/lib/exe/fetch.php?tok=1a0e5a&amp;media=https%3A%2F%2Fi.imgur.com%2F4o1KlLU.jpg" class="mediacenter" title="i.imgur.com_4o1kllu.jpg" alt="i.imgur.com_4o1kllu.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_25'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_a08] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_a08" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5353-5628" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_a08">編集</button></div></form></div>
+<h2 class="sectionedit26" id="トラブルシューティング">トラブルシューティング</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_26'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[トラブルシューティング] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="トラブルシューティング" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5629-5675" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="トラブルシューティング">編集</button></div></form></div>
+<h3 class="sectionedit27" id="qnlz-gba_advanceが動かない">Q:NLZ-GBA Advanceが動かない</h3>
+<div class="level3">
+
+<p>
+A:romと同名.nlz ファイルがあれば削除してみてください。<br/>
+<a href="/lib/exe/fetch.php?tok=e834e5&amp;media=https%3A%2F%2Fi.imgur.com%2FmAVhU8g.jpg" class="media" title="https://i.imgur.com/mAVhU8g.jpg"><img src="/lib/exe/fetch.php?tok=e834e5&amp;media=https%3A%2F%2Fi.imgur.com%2FmAVhU8g.jpg" class="mediacenter" title="i.imgur.com_mavhu8g.jpg" alt="i.imgur.com_mavhu8g.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_27'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[Q:NLZ-GBA Advanceが動かない] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="qnlz-gba_advanceが動かない" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5676-5839" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="Q:NLZ-GBA Advanceが動かない">編集</button></div></form></div>
+<h1 class="sectionedit28" id="ゲーム中のフィールドとなるワールドマップを入れ替える">ゲーム中のフィールドとなるワールドマップを入れ替える。</h1>
+<div class="level1">
+
+<p>
+ゲーム中に操作することになるフィールドマップを入れ替えてみます。<br/>
+フィールドマップは pallet map構造になっており、<br/>
+4つのパレットを8*8タイルごとに切り替えて表示することができます。<br/>
+が、そうすると話がややこしくなるので、ここでは 16色限定で話をします。<br/>
+
+</p>
+<div class="table sectionedit29"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">480&times;320</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">画像アドレス</td><td class="col1">0xB085F8 (無圧縮)</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">パレット</td><td class="col1">0xB1B278 -</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">暗パレット</td><td class="col1">0xB1B1F8 -</td>
+	</tr>
+</table></div>
+
+<p>
+サイズ 480&times;320の 16色 png画像を用意してください。<br/>
+注意:パレット 0番目の色を透過色にしてはいけません。絶対にダメです。<br/>
+注意:パレット 0番目に何を指定しても黒(RGB(0,0,0))になります。<br/>
+<br />
+今回は、この画像におきかえてみます。<br />
+<a href="https://i.imgur.com/nBlcdtE.png" class="urlextern" title="https://i.imgur.com/nBlcdtE.png" rel="nofollow">https://i.imgur.com/nBlcdtE.png</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_28'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[ゲーム中のフィールドとなるワールドマップを入れ替える。] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="ゲーム中のフィールドとなるワールドマップを入れ替える" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5840-6772" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="ゲーム中のフィールドとなるワールドマップを入れ替える。">編集</button></div></form></div>
+<h2 class="sectionedit30" id="step_b01">step_b01</h2>
+<div class="level2">
+
+<p>
+NLZ-GBA Advance を立ち上げて、<br/>
+左上の File handling をクリックし、<br/>
+Load Rom で FE8聖魔のrom を読み込みます。<br/>
+<br/>
+赤枠で囲った Compressed graphics のチェックをオフにしてください。<br/>
+緑枠で囲った Width に、60 と入力します。<br/>
+青枠で囲った Offset に、B085F8 と入力します。<br/>
+紫枠で囲った ROM Pallet offset に、 B1B278 と入力します。<br/>
+そうすると、ウィンドウに ワールドマップが表示されます。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=1ecef8&amp;media=https%3A%2F%2Fi.imgur.com%2FgbFAqdK.jpg" class="media" title="https://i.imgur.com/gbFAqdK.jpg"><img src="/lib/exe/fetch.php?tok=1ecef8&amp;media=https%3A%2F%2Fi.imgur.com%2FgbFAqdK.jpg" class="mediacenter" title="i.imgur.com_gbfaqdk.jpg" alt="i.imgur.com_gbfaqdk.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_30'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_b01] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b01" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="6773-7352" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_b01">編集</button></div></form></div>
+<h2 class="sectionedit31" id="step_b02">step_b02</h2>
+<div class="level2">
+
+<p>
+Import a bitmapをクリックします。<br/>
+<a href="/lib/exe/fetch.php?tok=bd5d54&amp;media=https%3A%2F%2Fi.imgur.com%2FbmTqUYC.jpg" class="media" title="https://i.imgur.com/bmTqUYC.jpg"><img src="/lib/exe/fetch.php?tok=bd5d54&amp;media=https%3A%2F%2Fi.imgur.com%2FbmTqUYC.jpg" class="mediacenter" title="i.imgur.com_bmtquyc.jpg" alt="i.imgur.com_bmtquyc.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_31'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_b02] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b02" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="7353-7458" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_b02">編集</button></div></form></div>
+<h2 class="sectionedit32" id="step_b03">step_b03</h2>
+<div class="level2">
+
+<p>
+パレットも設定するので Import palette to ROM にチェックを付けてください。<br/>
+OKを押して次へ進みます。<br/>
+<a href="/lib/exe/fetch.php?tok=a70698&amp;media=https%3A%2F%2Fi.imgur.com%2FaJg9nV8.jpg" class="media" title="https://i.imgur.com/aJg9nV8.jpg"><img src="/lib/exe/fetch.php?tok=a70698&amp;media=https%3A%2F%2Fi.imgur.com%2FaJg9nV8.jpg" class="mediacenter" title="i.imgur.com_ajg9nv8.jpg" alt="i.imgur.com_ajg9nv8.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_32'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_b03] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b03" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="7459-7658" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_b03">編集</button></div></form></div>
+<h2 class="sectionedit33" id="step_b04">step_b04</h2>
+<div class="level2">
+
+<p>
+ワールドマップが、置き換わっているはずです。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=1811b3&amp;media=https%3A%2F%2Fi.imgur.com%2F7jo0Wth.jpg" class="media" title="https://i.imgur.com/7jo0Wth.jpg"><img src="/lib/exe/fetch.php?tok=1811b3&amp;media=https%3A%2F%2Fi.imgur.com%2F7jo0Wth.jpg" class="mediacenter" title="i.imgur.com_7jo0wth.jpg" alt="i.imgur.com_7jo0wth.jpg" /></a>
+</p>
+
+<p>
+ここで、セーブ・・・するまえに、やることがあります。<br/>
+ワールドマップは、8*8のタイルで4つのパレットを切り替えることで16色を超える色がだせるのですが、<br/>
+今回これを利用しません。<br/>
+どのタイルが、どの色を使うのかをpallet mapというデータで定義されていますが、<br/>
+これを変更するのは少々やっかいなので、<br/>
+代わりに、4つのパレットを全部同じ色にすることで、この問題を強引に解決します。<br/>
+<br/>
+パレットは、0xB1B278 から、 0x20バイトずつ、4つあります。<br/>
+今回、0xB1B278を設定したので、残りの3つを設定します。<br/>
+
+</p>
+<div class="table sectionedit34"><table class="inline">
+	<tr class="row0">
+		<td class="col0">パレット一覧</td><td class="col1"></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">B1B278</td><td class="col1">(これはもう設定済み)</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">B1B298</td><td class="col1">これから設定する</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">B1B2B8</td><td class="col1">↓</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">B1B2D8</td><td class="col1">↓</td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_33'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_b04] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b04" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="7659-8626" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_b04">編集</button></div></form></div>
+<h2 class="sectionedit35" id="step_b05">step_b05</h2>
+<div class="level2">
+
+<p>
+ROM Pallet offset を B1B2B8 に設定し、<br/>
+Import a bitmapをクリックします。<br/>
+<a href="/lib/exe/fetch.php?tok=47a5a3&amp;media=https%3A%2F%2Fi.imgur.com%2FwVtAVLe.jpg" class="media" title="https://i.imgur.com/wVtAVLe.jpg"><img src="/lib/exe/fetch.php?tok=47a5a3&amp;media=https%3A%2F%2Fi.imgur.com%2FwVtAVLe.jpg" class="mediacenter" title="i.imgur.com_wvtavle.jpg" alt="i.imgur.com_wvtavle.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_35'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_b05] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b05" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="8627-8779" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_b05">編集</button></div></form></div>
+<h2 class="sectionedit36" id="step_b06">step_b06</h2>
+<div class="level2">
+
+<p>
+パレットも設定するので Import palette to ROM にチェックを付けてください。<br/>
+OKを押して次へ進みます。<br/>
+同様に、設定してください。<br/>
+<a href="/lib/exe/fetch.php?tok=358b0e&amp;media=https%3A%2F%2Fi.imgur.com%2Fssi0SgA.jpg" class="media" title="https://i.imgur.com/ssi0SgA.jpg"><img src="/lib/exe/fetch.php?tok=358b0e&amp;media=https%3A%2F%2Fi.imgur.com%2Fssi0SgA.jpg" class="mediacenter" title="i.imgur.com_ssi0sga.jpg" alt="i.imgur.com_ssi0sga.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_36'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_b06] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b06" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="8780-9021" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_b06">編集</button></div></form></div>
+<h2 class="sectionedit37" id="step_b07">step_b07</h2>
+<div class="level2">
+
+<p>
+パレット B1B298 を設定できました。<br/>
+<a href="/lib/exe/fetch.php?tok=e6a19c&amp;media=https%3A%2F%2Fi.imgur.com%2FEWizrlk.jpg" class="media" title="https://i.imgur.com/EWizrlk.jpg"><img src="/lib/exe/fetch.php?tok=e6a19c&amp;media=https%3A%2F%2Fi.imgur.com%2FEWizrlk.jpg" class="mediacenter" title="i.imgur.com_ewizrlk.jpg" alt="i.imgur.com_ewizrlk.jpg" /></a>
+</p>
+
+<p>
+どうように、パレット B1B2B8 と B1B2D8も設定してください。<br/>
+<br/>
+
+</p>
+<div class="table sectionedit38"><table class="inline">
+	<tr class="row0">
+		<td class="col0">パレット一覧</td><td class="col1"></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">B1B278</td><td class="col1">(これはもう設定済み)</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">B1B298</td><td class="col1">(これはもう設定済み)</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">B1B2B8</td><td class="col1">これから設定する</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">B1B2D8</td><td class="col1">↓</td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_37'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_b07] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b07" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="9022-9366" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_b07">編集</button></div></form></div>
+<h2 class="sectionedit39" id="step_b08">step_b08</h2>
+<div class="level2">
+
+<p>
+パレット B1B2B8 を設定します。<br/>
+<a href="/lib/exe/fetch.php?tok=efe456&amp;media=https%3A%2F%2Fi.imgur.com%2FDLFUp0O.jpg" class="media" title="https://i.imgur.com/DLFUp0O.jpg"><img src="/lib/exe/fetch.php?tok=efe456&amp;media=https%3A%2F%2Fi.imgur.com%2FDLFUp0O.jpg" class="mediacenter" title="i.imgur.com_dlfup0o.jpg" alt="i.imgur.com_dlfup0o.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_39'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_b08] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b08" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="9367-9472" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_b08">編集</button></div></form></div>
+<h2 class="sectionedit40" id="step_b09">step_b09</h2>
+<div class="level2">
+
+<p>
+パレット B1B2D8 を設定します。<br/>
+<a href="/lib/exe/fetch.php?tok=b12024&amp;media=https%3A%2F%2Fi.imgur.com%2FdYHp7Gd.jpg" class="media" title="https://i.imgur.com/dYHp7Gd.jpg"><img src="/lib/exe/fetch.php?tok=b12024&amp;media=https%3A%2F%2Fi.imgur.com%2FdYHp7Gd.jpg" class="mediacenter" title="i.imgur.com_dyhp7gd.jpg" alt="i.imgur.com_dyhp7gd.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_40'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_b09] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b09" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="9473-9578" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_b09">編集</button></div></form></div>
+<h2 class="sectionedit41" id="step_b10">step_b10</h2>
+<div class="level2">
+
+<p>
+4つのパレットを設定し終わったら、<br/>
+File → Save で結果をROMに保存します。<br/>
+保存する前にromのバックアップは忘れずに。<br/>
+<a href="/lib/exe/fetch.php?tok=c7bf3c&amp;media=https%3A%2F%2Fi.imgur.com%2F9vQyUk0.jpg" class="media" title="https://i.imgur.com/9vQyUk0.jpg"><img src="/lib/exe/fetch.php?tok=c7bf3c&amp;media=https%3A%2F%2Fi.imgur.com%2F9vQyUk0.jpg" class="mediacenter" title="i.imgur.com_9vqyuk0.jpg" alt="i.imgur.com_9vqyuk0.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_41'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_b10] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b10" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="9579-9807" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_b10">編集</button></div></form></div>
+<h2 class="sectionedit42" id="step_b11">step_b11</h2>
+<div class="level2">
+
+<p>
+改造したromを読み込んでゲームを進めてみてください。<br/>
+ワールドマップが、オーストラリアになっているはずです。<br/>
+<a href="/lib/exe/fetch.php?tok=895cfd&amp;media=https%3A%2F%2Fi.imgur.com%2FdPrqkSe.jpg" class="media" title="https://i.imgur.com/dPrqkSe.jpg"><img src="/lib/exe/fetch.php?tok=895cfd&amp;media=https%3A%2F%2Fi.imgur.com%2FdPrqkSe.jpg" class="mediacenter" title="i.imgur.com_dprqkse.jpg" alt="i.imgur.com_dprqkse.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_42'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_b11] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b11" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="9808-10030" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_b11">編集</button></div></form></div>
+<h2 class="sectionedit43" id="step_b12">step_b12</h2>
+<div class="level2">
+
+<p>
+追記<br />
+これ以外にもパレットがあるらしいです。<br/>
+拠点を選択した時、ワールドマップが少し暗くなって、<br/>
+台詞が始まりますが、このパレットは別の位置にあります。<br/>
+
+</p>
+<div class="table sectionedit44"><table class="inline">
+	<tr class="row0">
+		<td class="col0">暗くなるパレット一覧</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">B1B1F8</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">B1B218</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">B1B238</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">B1B258</td>
+	</tr>
+</table></div>
+
+<p>
+これらにも、値を設定してあげてください。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=4c23d1&amp;media=https%3A%2F%2Fi.imgur.com%2FhwdCFOd.jpg" class="media" title="https://i.imgur.com/hwdCFOd.jpg"><img src="/lib/exe/fetch.php?tok=4c23d1&amp;media=https%3A%2F%2Fi.imgur.com%2FhwdCFOd.jpg" class="mediacenter" title="i.imgur.com_hwdcfod.jpg" alt="i.imgur.com_hwdcfod.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_43'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_b12] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b12" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="10031-10457" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_b12">編集</button></div></form></div>
+<h2 class="sectionedit45" id="トラブルシューティング1">トラブルシューティング</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_45'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[トラブルシューティング] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="トラブルシューティング1" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="10458-10504" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="トラブルシューティング">編集</button></div></form></div>
+<h3 class="sectionedit46" id="q画像にブロックノイズみたいなのが乗った">Q:画像にブロックノイズみたいなのが乗った。</h3>
+<div class="level3">
+
+<p>
+A:パレットを4種類同一にしましたか？<br/>
+step_b05あたりを見直してください。<br/>
+<a href="/lib/exe/fetch.php?tok=21b905&amp;media=https%3A%2F%2Fi.imgur.com%2FsKKKanD.jpg" class="media" title="https://i.imgur.com/sKKKanD.jpg"><img src="/lib/exe/fetch.php?tok=21b905&amp;media=https%3A%2F%2Fi.imgur.com%2FsKKKanD.jpg" class="mediacenter" title="i.imgur.com_skkkand.jpg" alt="i.imgur.com_skkkand.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_46'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[Q:画像にブロックノイズみたいなのが乗った。] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="q画像にブロックノイズみたいなのが乗った" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="10505-10721" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="Q:画像にブロックノイズみたいなのが乗った。">編集</button></div></form></div>
+<h3 class="sectionedit47" id="q16色以上のワールドマップを作りたい">Q:16色以上のワールドマップを作りたい</h3>
+<div class="level3">
+
+<p>
+A:pallet mapを指定してください。<br />
+pallet mapは、lz77で圧縮されているので、解凍してください。<br/>
+解凍すると、 1200バイトのデータになります。<br/>
+<br/>
+解凍後の pallet map をバイナリエディタで開いて書き換えてください。<br/>
+mapを8*8のタイルに分割し、そのタイルが何番目のパレットを使うかを格納していきます。<br/>
+<br/>
+1バイトに2タイルの情報がはいっています。<br/>
+0x33 だった場合、 <br/>
+0x33 &amp; 0xf      == 1つ目のタイルは 0x3(つまり4番目のパレットを使う)<br/>
+(0x33»8) &amp; 0xf == 2つ目のタイルは 0x3(つまり4番目のパレットを使う)<br/>
+<br/>
+これを1200バイト定義することで、すべてのタイルのパレット割り当てを定義してます。<br/>
+1200バイト*2タイル=2400タイル <br/>
+(480&times;320 は、 (480/8)*(320/8)=2400タイル)<br/>
+<br/>
+修正後は、lz77で圧縮しromに書き戻してください。<br/>
+このとき、サイズが超えてしまう場合は、移さないとだめでしょうね。<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_47'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[Q:16色以上のワールドマップを作りたい] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="q16色以上のワールドマップを作りたい" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="10722-11862" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="Q:16色以上のワールドマップを作りたい">編集</button></div></form></div>
+<h1 class="sectionedit48" id="イベント等_序章のプロローグで表示されるワールドマップを入れ替える">イベント等、序章のプロローグで表示されるワールドマップを入れ替える</h1>
+<div class="level1">
+
+<p>
+イベント等、序章のプロローグなどの、イベントで表示されるワールドマップを入れ替えます。<br/>
+このマップも、8*8タイルごとで4つのパレットを切り替えて表示していますが、<br/>
+フィールドのワールドマップとは違いTSAという方法で、切り替えを行っています。<br/>
+<br/>
+TSAを操作すると、話がとてもややこしくなるので、<br/>
+ここでも、4つとも同じパレットを設定することで話を進めます。<br/>
+
+</p>
+<div class="table sectionedit49"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">240&times;160</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">画像アドレス</td><td class="col1">0xB1E9B8 圧縮されてる</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">パレット</td><td class="col1">0xB23D3C -</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">TSA</td><td class="col1">0xB237EC 圧縮されている</td>
+	</tr>
+</table></div>
+
+<p>
+240&times;160の16色pngを用意してください。<br/>
+(注意:パレット 0番目の色を透過色にしてはいけません。絶対にダメです。)<br/>
+<br />
+今回はこの画像に置き換えます。<br />
+<a href="https://i.imgur.com/4RM8NNO.png" class="urlextern" title="https://i.imgur.com/4RM8NNO.png" rel="nofollow">https://i.imgur.com/4RM8NNO.png</a>
+</p>
+
+<p>
+step_c01からstep_c06でやる加工前の元画像<br />
+<a href="https://i.imgur.com/tJSkuTa.png" class="urlextern" title="https://i.imgur.com/tJSkuTa.png" rel="nofollow">https://i.imgur.com/tJSkuTa.png</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_48'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[イベント等、序章のプロローグで表示されるワールドマップを入れ替える] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="イベント等_序章のプロローグで表示されるワールドマップを入れ替える" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="11863-12956" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="イベント等、序章のプロローグで表示されるワールドマップを入れ替える">編集</button></div></form></div>
+<h2 class="sectionedit50" id="step_c01">step_c01</h2>
+<div class="level2">
+
+<p>
+まず最初にしないといけないことが一つあります。<br/>
+イベント等、序章のプロローグで表示されるワールドマップは、 240&times;160なのですが、<br/>
+そのまま、この画像を使うことができません。<br/>
+以下のように、先頭8&times;8のタイルを後方に移動しなくてはいません。<br/>
+そして、先頭の8&times;8をパレット0番で塗らないといけません。<br/>
+<a href="/lib/exe/fetch.php?tok=cb0476&amp;media=https%3A%2F%2Fi.imgur.com%2FwNLl7fX.jpg" class="media" title="https://i.imgur.com/wNLl7fX.jpg"><img src="/lib/exe/fetch.php?tok=cb0476&amp;media=https%3A%2F%2Fi.imgur.com%2FwNLl7fX.jpg" class="mediacenter" title="i.imgur.com_wnll7fx.jpg" alt="i.imgur.com_wnll7fx.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_50'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c01] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c01" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="12957-13447" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c01">編集</button></div></form></div>
+<h2 class="sectionedit51" id="step_c02">step_c02</h2>
+<div class="level2">
+
+<p>
+画像の加工には、edgeを使います。<br/>
+edgeを立ち上げて、240&times;160の画像を読み込みます。<br/>
+<a href="/lib/exe/fetch.php?tok=5557c6&amp;media=https%3A%2F%2Fi.imgur.com%2FUQwSWNc.jpg" class="media" title="https://i.imgur.com/UQwSWNc.jpg"><img src="/lib/exe/fetch.php?tok=5557c6&amp;media=https%3A%2F%2Fi.imgur.com%2FUQwSWNc.jpg" class="mediacenter" title="i.imgur.com_uqwswnc.jpg" alt="i.imgur.com_uqwswnc.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_51'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c02] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c02" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="13448-13625" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c02">編集</button></div></form></div>
+<h2 class="sectionedit52" id="step_c03">step_c03</h2>
+<div class="level2">
+
+<p>
+メニューから、<br/>
+設定 → キャンバスの大きさ変更 を選択します。<br/>
+<a href="/lib/exe/fetch.php?tok=d5844e&amp;media=https%3A%2F%2Fi.imgur.com%2FKJzwXjN.jpg" class="media" title="https://i.imgur.com/KJzwXjN.jpg"><img src="/lib/exe/fetch.php?tok=d5844e&amp;media=https%3A%2F%2Fi.imgur.com%2FKJzwXjN.jpg" class="mediacenter" title="i.imgur.com_kjzwxjn.jpg" alt="i.imgur.com_kjzwxjn.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_52'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c03] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c03" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="13626-13778" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c03">編集</button></div></form></div>
+<h2 class="sectionedit53" id="step_c04">step_c04</h2>
+<div class="level2">
+
+<p>
+240&times;160 から、高さを増やして、 <br/>
+240&times;168 に、変更します。<br/>
+<a href="/lib/exe/fetch.php?tok=1196a8&amp;media=https%3A%2F%2Fi.imgur.com%2FqDLEYX7.jpg" class="media" title="https://i.imgur.com/qDLEYX7.jpg"><img src="/lib/exe/fetch.php?tok=1196a8&amp;media=https%3A%2F%2Fi.imgur.com%2FqDLEYX7.jpg" class="mediacenter" title="i.imgur.com_qdleyx7.jpg" alt="i.imgur.com_qdleyx7.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_53'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c04] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c04" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="13779-13919" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c04">編集</button></div></form></div>
+<h2 class="sectionedit54" id="step_c05">step_c05</h2>
+<div class="level2">
+
+<p>
+拡大などをうまく使い、<br/>
+先頭の 8&times;8 ピクセルを切り取り・・・・<br/>
+<a href="/lib/exe/fetch.php?tok=99c054&amp;media=https%3A%2F%2Fi.imgur.com%2FEpGZrp8.jpg" class="media" title="https://i.imgur.com/EpGZrp8.jpg"><img src="/lib/exe/fetch.php?tok=99c054&amp;media=https%3A%2F%2Fi.imgur.com%2FEpGZrp8.jpg" class="mediacenter" title="i.imgur.com_epgzrp8.jpg" alt="i.imgur.com_epgzrp8.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_54'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c05] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c05" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="13920-14072" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c05">編集</button></div></form></div>
+<h2 class="sectionedit55" id="step_c06">step_c06</h2>
+<div class="level2">
+
+<p>
+ファイル最後の行に移動させます。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=732243&amp;media=https%3A%2F%2Fi.imgur.com%2FR8tidLe.jpg" class="media" title="https://i.imgur.com/R8tidLe.jpg"><img src="/lib/exe/fetch.php?tok=732243&amp;media=https%3A%2F%2Fi.imgur.com%2FR8tidLe.jpg" class="mediacenter" title="i.imgur.com_r8tidle.jpg" alt="i.imgur.com_r8tidle.jpg" /></a>
+</p>
+
+<p>
+必ず、先頭 8&times;8の部分が、<br/>
+パレット0番の色で塗られていることを確認してください。<br/>
+<br/>
+以上の処理をした画像をこれです。<br/>
+もし、動作しない場合は、この画像と見比べてください。<br/>
+<br/>
+画像ができたら、<br/>
+次は、今までと同じように、NLZ-GBA Advanceで画像を入れます。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_55'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c06] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c06" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="14073-14555" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c06">編集</button></div></form></div>
+<h2 class="sectionedit56" id="step_c07">step_c07</h2>
+<div class="level2">
+
+<p>
+NLZ-GBA Advance を立ち上げて、<br/>
+左上の File handling をクリックし、<br/>
+Load Rom で FE8聖魔のrom を読み込みます。<br/>
+<br/>
+赤枠で囲った Compressed graphics にチェックが入っていることを確認してください。<br/>
+緑枠で囲った Width に、30 と入力します。<br/>
+青枠で囲った Offset に、B1E9B8 と入力します。<br/>
+紫枠で囲った ROM Pallet offset に、 B23D3C と入力します。<br/>
+そうすると、ウィンドウに <br/>
+イベント等、序章のプロローグなどのイベントで表示されるワールドマップが表示されます。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=114fdd&amp;media=https%3A%2F%2Fi.imgur.com%2FbRmzce8.jpg" class="media" title="https://i.imgur.com/bRmzce8.jpg"><img src="/lib/exe/fetch.php?tok=114fdd&amp;media=https%3A%2F%2Fi.imgur.com%2FbRmzce8.jpg" class="mediacenter" title="i.imgur.com_brmzce8.jpg" alt="i.imgur.com_brmzce8.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_56'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c07] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c07" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="14556-15240" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c07">編集</button></div></form></div>
+<h2 class="sectionedit57" id="step_c08">step_c08</h2>
+<div class="level2">
+
+<p>
+Import a bitmapをクリックします。<br/>
+<a href="/lib/exe/fetch.php?tok=1a2fd9&amp;media=https%3A%2F%2Fi.imgur.com%2FgqBofDf.jpg" class="media" title="https://i.imgur.com/gqBofDf.jpg"><img src="/lib/exe/fetch.php?tok=1a2fd9&amp;media=https%3A%2F%2Fi.imgur.com%2FgqBofDf.jpg" class="mediacenter" title="i.imgur.com_gqbofdf.jpg" alt="i.imgur.com_gqbofdf.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_57'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c08] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c08" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="15241-15346" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c08">編集</button></div></form></div>
+<h2 class="sectionedit58" id="step_c09">step_c09</h2>
+<div class="level2">
+
+<p>
+パレットも設定するので Import palette to ROM にチェックを付けてください。<br/>
+OKを押して次へ進みます。<br/>
+<a href="/lib/exe/fetch.php?tok=84856d&amp;media=https%3A%2F%2Fi.imgur.com%2FliOvGhe.jpg" class="media" title="https://i.imgur.com/liOvGhe.jpg"><img src="/lib/exe/fetch.php?tok=84856d&amp;media=https%3A%2F%2Fi.imgur.com%2FliOvGhe.jpg" class="mediacenter" title="i.imgur.com_liovghe.jpg" alt="i.imgur.com_liovghe.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_58'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c09] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c09" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="15347-15546" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c09">編集</button></div></form></div>
+<h2 class="sectionedit59" id="step_c10">step_c10</h2>
+<div class="level2">
+
+<p>
+画像が変更できました。<br/>
+<a href="/lib/exe/fetch.php?tok=250307&amp;media=https%3A%2F%2Fi.imgur.com%2FMemV39C.jpg" class="media" title="https://i.imgur.com/MemV39C.jpg"><img src="/lib/exe/fetch.php?tok=250307&amp;media=https%3A%2F%2Fi.imgur.com%2FMemV39C.jpg" class="mediacenter" title="i.imgur.com_memv39c.jpg" alt="i.imgur.com_memv39c.jpg" /></a>
+</p>
+
+<p>
+ここで・・・保存するまえに、やることがあります。<br/>
+<br/>
+イベント等、序章のプロローグなどのイベントで表示されるワールドマップは、<br/>
+TSAで、4つのパレットを8*8のタイルで切り替えて表示させています。<br/>
+TSAの変更はいろいろと大変なので、4つのパレットをすべて同じ色にすることで対応します。<br/>
+<br/>
+パレットは、0xB23D3C から、 0x20バイトずつ、4つあります。<br/>
+今回、0xB23D3Cを設定したので、残りの3つを設定します。<br/>
+
+</p>
+<div class="table sectionedit60"><table class="inline">
+	<tr class="row0">
+		<td class="col0">パレット一覧</td><td class="col1"></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">B23D3C</td><td class="col1">(これはもう設定済み)</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">B23D5C</td><td class="col1">これから設定する</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">B23D7C</td><td class="col1">↓</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">B23D9C</td><td class="col1">↓</td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_59'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c10] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c10" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="15547-16338" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c10">編集</button></div></form></div>
+<h2 class="sectionedit61" id="step_c11">step_c11</h2>
+<div class="level2">
+
+<p>
+ROM Pallet offset を B23D5C に設定し、<br/>
+Import a bitmapをクリックします。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=cbac3e&amp;media=https%3A%2F%2Fi.imgur.com%2FzD10wjB.jpg" class="media" title="https://i.imgur.com/zD10wjB.jpg"><img src="/lib/exe/fetch.php?tok=cbac3e&amp;media=https%3A%2F%2Fi.imgur.com%2FzD10wjB.jpg" class="mediacenter" title="i.imgur.com_zd10wjb.jpg" alt="i.imgur.com_zd10wjb.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_61'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c11] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c11" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="16339-16492" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c11">編集</button></div></form></div>
+<h2 class="sectionedit62" id="step_c12">step_c12</h2>
+<div class="level2">
+
+<p>
+パレットも設定するので Import palette to ROM にチェックを付けてください。<br/>
+OKを押して次へ進みます。<br/>
+同様に、設定してください。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=b07cba&amp;media=https%3A%2F%2Fi.imgur.com%2FYMac00k.jpg" class="media" title="https://i.imgur.com/YMac00k.jpg"><img src="/lib/exe/fetch.php?tok=b07cba&amp;media=https%3A%2F%2Fi.imgur.com%2FYMac00k.jpg" class="mediacenter" title="i.imgur.com_ymac00k.jpg" alt="i.imgur.com_ymac00k.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_62'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c12] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c12" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="16493-16735" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c12">編集</button></div></form></div>
+<h2 class="sectionedit63" id="step_c13">step_c13</h2>
+<div class="level2">
+
+<p>
+パレット B23D5C を設定できました。<br/>
+<a href="/lib/exe/fetch.php?tok=3d9fd0&amp;media=https%3A%2F%2Fi.imgur.com%2FtsDjUiz.jpg" class="media" title="https://i.imgur.com/tsDjUiz.jpg"><img src="/lib/exe/fetch.php?tok=3d9fd0&amp;media=https%3A%2F%2Fi.imgur.com%2FtsDjUiz.jpg" class="mediacenter" title="i.imgur.com_tsdjuiz.jpg" alt="i.imgur.com_tsdjuiz.jpg" /></a>
+</p>
+
+<p>
+<br/>
+どうように、パレット B23D7C と B23D9Cも設定してください。<br/>
+
+</p>
+<div class="table sectionedit64"><table class="inline">
+	<tr class="row0">
+		<td class="col0">パレット一覧</td><td class="col1"></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">B23D3C</td><td class="col1">(これはもう設定済み)</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">B23D5C</td><td class="col1">(これはもう設定済み)</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">B23D7C</td><td class="col1">これから設定する</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">B23D9C</td><td class="col1">↓</td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_63'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c13] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c13" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="16736-17080" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c13">編集</button></div></form></div>
+<h2 class="sectionedit65" id="step_c14">step_c14</h2>
+<div class="level2">
+
+<p>
+パレット B23D7C を設定します。<br/>
+<a href="/lib/exe/fetch.php?tok=f69c91&amp;media=https%3A%2F%2Fi.imgur.com%2FNJIeKgw.jpg" class="media" title="https://i.imgur.com/NJIeKgw.jpg"><img src="/lib/exe/fetch.php?tok=f69c91&amp;media=https%3A%2F%2Fi.imgur.com%2FNJIeKgw.jpg" class="mediacenter" title="i.imgur.com_njiekgw.jpg" alt="i.imgur.com_njiekgw.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_65'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c14] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c14" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="17081-17185" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c14">編集</button></div></form></div>
+<h2 class="sectionedit66" id="step_c15">step_c15</h2>
+<div class="level2">
+
+<p>
+パレット B23D9C を設定します。<br/>
+<a href="/lib/exe/fetch.php?tok=3d4808&amp;media=https%3A%2F%2Fi.imgur.com%2FoihEbcg.jpg" class="media" title="https://i.imgur.com/oihEbcg.jpg"><img src="/lib/exe/fetch.php?tok=3d4808&amp;media=https%3A%2F%2Fi.imgur.com%2FoihEbcg.jpg" class="mediacenter" title="i.imgur.com_oihebcg.jpg" alt="i.imgur.com_oihebcg.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_66'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c15] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c15" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="17186-17290" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c15">編集</button></div></form></div>
+<h2 class="sectionedit67" id="step_c16">step_c16</h2>
+<div class="level2">
+
+<p>
+4つのパレットを設定し終わったら、<br/>
+Write to ROM で結果をROMに保存します。<br/>
+保存する前にromのバックアップは忘れずに。<br/>
+<a href="/lib/exe/fetch.php?tok=7ade21&amp;media=https%3A%2F%2Fi.imgur.com%2FhywGWOb.jpg" class="media" title="https://i.imgur.com/hywGWOb.jpg"><img src="/lib/exe/fetch.php?tok=7ade21&amp;media=https%3A%2F%2Fi.imgur.com%2FhywGWOb.jpg" class="mediacenter" title="i.imgur.com_hywgwob.jpg" alt="i.imgur.com_hywgwob.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_67'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c16] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c16" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="17291-17518" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c16">編集</button></div></form></div>
+<h2 class="sectionedit68" id="step_c17">step_c17</h2>
+<div class="level2">
+
+<p>
+改造したromを読み込んでゲームを進めてみてください。<br/>
+イベント等、序章のプロローグなどのイベントのワールドマップが、<br/>
+オーストラリアになっているはずです。<br/>
+<a href="/lib/exe/fetch.php?tok=53d4dd&amp;media=https%3A%2F%2Fi.imgur.com%2FihoWIxi.jpg" class="media" title="https://i.imgur.com/ihoWIxi.jpg"><img src="/lib/exe/fetch.php?tok=53d4dd&amp;media=https%3A%2F%2Fi.imgur.com%2FihoWIxi.jpg" class="mediacenter" title="i.imgur.com_ihowixi.jpg" alt="i.imgur.com_ihowixi.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_68'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_c17] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_c17" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="17519-17811" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_c17">編集</button></div></form></div>
+<h2 class="sectionedit69" id="トラブルシューティング2">トラブルシューティング</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_69'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[トラブルシューティング] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="トラブルシューティング2" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="17812-17858" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="トラブルシューティング">編集</button></div></form></div>
+<h3 class="sectionedit70" id="q画像がしましまになった">Q:画像がしましまになった。</h3>
+<div class="level3">
+
+<p>
+A:パレットを4種類同一にしましたか？<br/>
+step_c10あたりを見直してください。<br/>
+<a href="/lib/exe/fetch.php?tok=d4e4cf&amp;media=https%3A%2F%2Fi.imgur.com%2FsCc82cH.jpg" class="media" title="https://i.imgur.com/sCc82cH.jpg"><img src="/lib/exe/fetch.php?tok=d4e4cf&amp;media=https%3A%2F%2Fi.imgur.com%2FsCc82cH.jpg" class="mediacenter" title="i.imgur.com_scc82ch.jpg" alt="i.imgur.com_scc82ch.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_70'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[Q:画像がしましまになった。] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="q画像がしましまになった" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="17859-18051" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="Q:画像がしましまになった。">編集</button></div></form></div>
+<h3 class="sectionedit71" id="q画面が淡色になりました">Q:画面が淡色になりました。</h3>
+<div class="level3">
+
+<p>
+A:先頭の8&times;8タイルを開け、パレット0番で塗っていますか？<br/>
+step_c01あたりからやり直してください<br/>
+<a href="/lib/exe/fetch.php?tok=d1b534&amp;media=https%3A%2F%2Fi.imgur.com%2FnSE360w.jpg" class="media" title="https://i.imgur.com/nSE360w.jpg"><img src="/lib/exe/fetch.php?tok=d1b534&amp;media=https%3A%2F%2Fi.imgur.com%2FnSE360w.jpg" class="mediacenter" title="i.imgur.com_nse360w.jpg" alt="i.imgur.com_nse360w.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_71'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[Q:画面が淡色になりました。] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="q画面が淡色になりました" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="18052-18274" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="Q:画面が淡色になりました。">編集</button></div></form></div>
+<h3 class="sectionedit72" id="q16色を超える色を扱いたいです">Q:16色を超える色を扱いたいです。</h3>
+<div class="level3">
+
+<p>
+A:がんばって、TSAを設定してください。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_72'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[Q:16色を超える色を扱いたいです。] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="q16色を超える色を扱いたいです" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="18275-18390" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="Q:16色を超える色を扱いたいです。">編集</button></div></form></div>
+<h1 class="sectionedit73" id="ゲームopで表示されるワールドマップを入れ替える">ゲームOPで表示されるワールドマップを入れ替える</h1>
+<div class="level1">
+
+<p>
+ゲームOPで一瞬だけ登場するワールドマップを入れ替えます。<br/>
+この変更が一番ややこしいです。<br/>
+難しい理由は、TSAを変更なくてはいけないためです。<br/>
+そして、このTSAは圧縮されています。<br/>
+<br/>
+OPをカットするパッチを使い、OPを消す予定の方は、<br/>
+どうせ表示されないので無理して変更する必要はありません。<br/>
+<br/>
+あえて、困難に挑みたい方は、がんばりましょう。<br/>
+
+</p>
+<div class="table sectionedit74"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">240&times;160</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">画像アドレス</td><td class="col1">0xB4BBA0 圧縮されている</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">パレット</td><td class="col1">0xB4FCD4</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">TSA</td><td class="col1">0xB4F758 圧縮されている</td>
+	</tr>
+</table></div>
+
+<p>
+今回は、この画像に置き換えます。<br/>
+<a href="https://i.imgur.com/DW4i8QL.png" class="urlextern" title="https://i.imgur.com/DW4i8QL.png" rel="nofollow">https://i.imgur.com/DW4i8QL.png</a>
+</p>
+
+<p>
+step_d01-step_d04でやる加工前の元画像<br/>
+<a href="https://i.imgur.com/I0qC9T5.png" class="urlextern" title="https://i.imgur.com/I0qC9T5.png" rel="nofollow">https://i.imgur.com/I0qC9T5.png</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_73'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[ゲームOPで表示されるワールドマップを入れ替える] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="ゲームopで表示されるワールドマップを入れ替える" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="18391-19280" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="ゲームOPで表示されるワールドマップを入れ替える">編集</button></div></form></div>
+<h2 class="sectionedit75" id="step_d01">step_d01</h2>
+<div class="level2">
+
+<p>
+OPのマップは240&times;160の画像で表示されますが、<br/>
+インポートする画像は、 240&times;160ではダメです。<br/>
+今回は、幅を+16した、  256&times;160の画像が必要です。<br/>
+<a href="/lib/exe/fetch.php?tok=d3d8b8&amp;media=https%3A%2F%2Fi.imgur.com%2FhFztzRm.jpg" class="media" title="https://i.imgur.com/hFztzRm.jpg"><img src="/lib/exe/fetch.php?tok=d3d8b8&amp;media=https%3A%2F%2Fi.imgur.com%2FhFztzRm.jpg" class="mediacenter" title="i.imgur.com_hfztzrm.jpg" alt="i.imgur.com_hfztzrm.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_75'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_d01] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_d01" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="19281-19538" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_d01">編集</button></div></form></div>
+<h2 class="sectionedit76" id="step_d02">step_d02</h2>
+<div class="level2">
+
+<p>
+edgeを立ちあがて、メニューから、<br/>
+設定 → キャンバスの大きさ変更<br/>
+を選択します。<br/>
+<a href="/lib/exe/fetch.php?tok=b6f3c9&amp;media=https%3A%2F%2Fi.imgur.com%2FgydeIxw.jpg" class="media" title="https://i.imgur.com/gydeIxw.jpg"><img src="/lib/exe/fetch.php?tok=b6f3c9&amp;media=https%3A%2F%2Fi.imgur.com%2FgydeIxw.jpg" class="mediacenter" title="i.imgur.com_gydeixw.jpg" alt="i.imgur.com_gydeixw.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_76'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_d02] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_d02" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="19539-19718" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_d02">編集</button></div></form></div>
+<h2 class="sectionedit77" id="step_d03">step_d03</h2>
+<div class="level2">
+
+<p>
+幅を +16 して、<br/>
+256&times;160 とします。<br/>
+<a href="/lib/exe/fetch.php?tok=2a9003&amp;media=https%3A%2F%2Fi.imgur.com%2FSwjTQ7P.jpg" class="media" title="https://i.imgur.com/SwjTQ7P.jpg"><img src="/lib/exe/fetch.php?tok=2a9003&amp;media=https%3A%2F%2Fi.imgur.com%2FSwjTQ7P.jpg" class="mediacenter" title="i.imgur.com_swjtq7p.jpg" alt="i.imgur.com_swjtq7p.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_77'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_d03] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_d03" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="19719-19828" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_d03">編集</button></div></form></div>
+<h2 class="sectionedit78" id="step_d04">step_d04</h2>
+<div class="level2">
+
+<p>
+幅を追加したら、そのまま何もせずに、<br/>
+保存して、edgeを終了します。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_78'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_d04] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_d04" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="19829-19951" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_d04">編集</button></div></form></div>
+<h2 class="sectionedit79" id="step_d05">step_d05</h2>
+<div class="level2">
+
+<p>
+画像を追加する前に、まだやることがあります。<br/>
+TSAデータを更新する必要があります。<br/>
+このまま画像を追加しても、TSAによって崩れた画像になってしまいます。<br/>
+TSAには、8*8のタイルに画像を分割し、そのタイルがどこの位置で、どのパレットを利用しているか、反転などの操作をするかなどのい情報が格納されています。<br/>
+今回の利用するTSAはさらにそのデータがlz77で圧縮されているのでとてもやっかいです。<br/>
+私の方で、普通の画像を正しく表示する圧縮されたTSAを作成しておきましたので、これをご利用ください。<br/>
+<br/>
+これどう使うのか？<br/>
+バイナリエディタで、romに追加します。<br/>
+TSAは0xB4F758なので、この領域に上書きすればいい・・・というわけではありません。<br/>
+<br/>
+TSAデータは圧縮に不向きなデータ構造をしており、<br/>
+圧縮すると逆にデータ容量が増えてしまうことがあります。<br/>
+そして、今回作成したTSAは、運が悪いことに、もともとのTSAより大きいデータです。<br/>
+そのため、元の領域にいれてしまうと、romが壊れます。<br/>
+<br/>
+仕方ないので、romの末尾に追加します。<br/>
+今回は、無改造romなので、 0x01000000 に追加します。<br/>
+やり方を次に説明します。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_79'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_d05] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_d05" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="19952-21417" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_d05">編集</button></div></form></div>
+<h2 class="sectionedit80" id="step_d06">step_d06</h2>
+<div class="level2">
+
+<p>
+tsa.lz77.bin をバイナリエディタで開き、<br/>
+全選択します。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=80540e&amp;media=https%3A%2F%2Fi.imgur.com%2Ftt4AKS7.jpg" class="media" title="https://i.imgur.com/tt4AKS7.jpg"><img src="/lib/exe/fetch.php?tok=80540e&amp;media=https%3A%2F%2Fi.imgur.com%2Ftt4AKS7.jpg" class="mediacenter" title="i.imgur.com_tt4aks7.jpg" alt="i.imgur.com_tt4aks7.jpg" /></a>
+</p>
+
+<p>
+tsa.lz77.bin は、FE8_AU_PATCHの中にはいっています。<br/>
+<a href="http://ux.getuploader.com/FE4/download/243/FE8_AU_PATCH.7z" class="urlextern" title="http://ux.getuploader.com/FE4/download/243/FE8_AU_PATCH.7z" rel="nofollow">http://ux.getuploader.com/FE4/download/243/FE8_AU_PATCH.7z</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_80'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_d06] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_d06" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="21418-21689" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_d06">編集</button></div></form></div>
+<h2 class="sectionedit81" id="step_d07">step_d07</h2>
+<div class="level2">
+
+<p>
+改造しているromの末尾 0x01000000 へコピーして追加しましょう。<br/>
+Ctrl + C / Ctrl + V が使えます。<br/>
+<a href="/lib/exe/fetch.php?tok=739ecd&amp;media=https%3A%2F%2Fi.imgur.com%2Fta7h4c4.jpg" class="media" title="https://i.imgur.com/ta7h4c4.jpg"><img src="/lib/exe/fetch.php?tok=739ecd&amp;media=https%3A%2F%2Fi.imgur.com%2Fta7h4c4.jpg" class="mediacenter" title="i.imgur.com_ta7h4c4.jpg" alt="i.imgur.com_ta7h4c4.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_81'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_d07] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_d07" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="21690-21878" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_d07">編集</button></div></form></div>
+<h2 class="sectionedit82" id="step_d08">step_d08</h2>
+<div class="level2">
+
+<p>
+コピーできました。<br/>
+<a href="/lib/exe/fetch.php?tok=9600c2&amp;media=https%3A%2F%2Fi.imgur.com%2FR8FEDLs.jpg" class="media" title="https://i.imgur.com/R8FEDLs.jpg"><img src="/lib/exe/fetch.php?tok=9600c2&amp;media=https%3A%2F%2Fi.imgur.com%2FR8FEDLs.jpg" class="mediacenter" title="i.imgur.com_r8fedls.jpg" alt="i.imgur.com_r8fedls.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_82'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_d08] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_d08" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="21879-21969" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_d08">編集</button></div></form></div>
+<h2 class="sectionedit83" id="step_d09">step_d09</h2>
+<div class="level2">
+
+<p>
+そして、追加したTSAを参照するように、プログラムを直します。<br/>
+TSAは0xB4F758ですので、<br/>
+これを参照している場所を探します。<br/>
+<br/>
+0xB4F758はポインタです。<br/>
+GBAはROMは0x08000000 以降に配置されるので、ポインタにするには 0x08000000 を足さないといけません。<br/>
+<br/>
+TSA 0xB4F758 + 0x08000000 = 0x08B4F758<br/>
+<br/>
+そして、GBAは、PCと同じく、リトルエンディアンなので、<br/>
+2バイトずつ逆順に記述しないといけません。<br/>
+
+</p>
+<pre class="code">0x08B4F758
+↓
+0x08 B4 F7 58
+↓
+0x58 
+0x58 F7
+0x58 F7 B4
+0x58 F7 B4 08
+↓
+0x58F7B408</pre>
+
+<p>
+よって、TSA 0xB4F758を参照するとき、<br/>
+0x58F7B408 という値を利用します。<br/>
+<br/>
+この値をromから検索してみると・・・<br/>
+<a href="/lib/exe/fetch.php?tok=7200c5&amp;media=https%3A%2F%2Fi.imgur.com%2FXXYhvRM.jpg" class="media" title="https://i.imgur.com/XXYhvRM.jpg"><img src="/lib/exe/fetch.php?tok=7200c5&amp;media=https%3A%2F%2Fi.imgur.com%2FXXYhvRM.jpg" class="mediacenter" title="i.imgur.com_xxyhvrm.jpg" alt="i.imgur.com_xxyhvrm.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_83'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_d09] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_d09" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="21970-22828" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_d09">編集</button></div></form></div>
+<h2 class="sectionedit84" id="step_d10">step_d10</h2>
+<div class="level2">
+
+<p>
+見つかりました。<br/>
+0xCBCFC : 58 F7 B4 08 ここが、TSAの値です。<br/>
+これをROM末尾に増設した TSA のアドレスに置き換えます。<br/>
+<a href="/lib/exe/fetch.php?tok=9ba207&amp;media=https%3A%2F%2Fi.imgur.com%2FbMFh6eP.jpg" class="media" title="https://i.imgur.com/bMFh6eP.jpg"><img src="/lib/exe/fetch.php?tok=9ba207&amp;media=https%3A%2F%2Fi.imgur.com%2FbMFh6eP.jpg" class="mediacenter" title="i.imgur.com_bmfh6ep.jpg" alt="i.imgur.com_bmfh6ep.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_84'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_d10] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_d10" /><input type="hidden" name="codeblockOffset" value="1" /><input type="hidden" name="range" value="22829-23051" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_d10">編集</button></div></form></div>
+<h2 class="sectionedit85" id="step_d11">step_d11</h2>
+<div class="level2">
+
+<p>
+ROM末尾のアドレスは、 0x01000000 です。<br/>
+ですが、参照するとは、ポインタにしないといけないので、<br/>
+0x08000000 を足して、0x09000000になります 。<br/>
+0x01000000 + 0x08000000 = 0x09000000<br/>
+<br />
+GBAは、リトルエンディアンなので、0x09000000を変換します。<br/>
+
+</p>
+<pre class="code">0x09000000
+↓
+0x00
+0x00 00
+0x00 00 00
+0x00 00 00 09
+↓
+0x00000009</pre>
+
+<p>
+このようになります。<br/>
+<br/>
+0xCBCFC を、58 F7 B4 08 から、 00 00 00 09 に変更します。<br/>
+<a href="/lib/exe/fetch.php?tok=089045&amp;media=https%3A%2F%2Fi.imgur.com%2FIn2Qmqy.jpg" class="media" title="https://i.imgur.com/In2Qmqy.jpg"><img src="/lib/exe/fetch.php?tok=089045&amp;media=https%3A%2F%2Fi.imgur.com%2FIn2Qmqy.jpg" class="mediacenter" title="i.imgur.com_in2qmqy.jpg" alt="i.imgur.com_in2qmqy.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_85'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_d11] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_d11" /><input type="hidden" name="codeblockOffset" value="1" /><input type="hidden" name="range" value="23052-23621" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_d11">編集</button></div></form></div>
+<h2 class="sectionedit86" id="step_d12">step_d12</h2>
+<div class="level2">
+
+<p>
+TSAの追加と、参照の変更をしたら、一度ROMを保存します。<br/>
+(保存する前にバックアップを忘れずに。)<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_86'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_d12] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_d12" /><input type="hidden" name="codeblockOffset" value="2" /><input type="hidden" name="range" value="23622-23785" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_d12">編集</button></div></form></div>
+<h2 class="sectionedit87" id="step_d13">step_d13</h2>
+<div class="level2">
+
+<p>
+やっと、画像を登録する準備ができした。<br/>
+<br/>
+NLZ-GBA Advance を立ち上げて、<br/>
+左上の File handling をクリックし、<br/>
+Load Rom で FE8聖魔のrom を読み込みます。<br/>
+<br/>
+赤枠で囲った Compressed graphics にチェックが入っていることを確認してください。<br/>
+緑枠で囲った Width に、32 と入力します。(256/8=32)<br/>
+青枠で囲った Offset に、B4BBA0 と入力します。<br/>
+紫枠で囲った ROM Pallet offset に、 B4FCD4 と入力します。<br/>
+そうすると、ウィンドウに<br/>
+かなり崩れていますがワールドマップぽいのが表示されます。<br/>
+崩れているのは、TSAを正しく設定していないためです。<br/>
+<a href="/lib/exe/fetch.php?tok=f12239&amp;media=https%3A%2F%2Fi.imgur.com%2FKhcYvF4.jpg" class="media" title="https://i.imgur.com/KhcYvF4.jpg"><img src="/lib/exe/fetch.php?tok=f12239&amp;media=https%3A%2F%2Fi.imgur.com%2FKhcYvF4.jpg" class="mediacenter" title="i.imgur.com_khcyvf4.jpg" alt="i.imgur.com_khcyvf4.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_87'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_d13] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_d13" /><input type="hidden" name="codeblockOffset" value="2" /><input type="hidden" name="range" value="23786-24577" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_d13">編集</button></div></form></div>
+<h2 class="sectionedit88" id="step_b14">step_b14</h2>
+<div class="level2">
+
+<p>
+Import a bitmapをクリックします。<br/>
+<a href="/lib/exe/fetch.php?tok=7198b8&amp;media=https%3A%2F%2Fi.imgur.com%2FHBe1Uns.jpg" class="media" title="https://i.imgur.com/HBe1Uns.jpg"><img src="/lib/exe/fetch.php?tok=7198b8&amp;media=https%3A%2F%2Fi.imgur.com%2FHBe1Uns.jpg" class="mediacenter" title="i.imgur.com_hbe1uns.jpg" alt="i.imgur.com_hbe1uns.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_88'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_b14] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b14" /><input type="hidden" name="codeblockOffset" value="2" /><input type="hidden" name="range" value="24578-24683" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_b14">編集</button></div></form></div>
+<h2 class="sectionedit89" id="step_b15">step_b15</h2>
+<div class="level2">
+
+<p>
+パレットも設定するので Import palette to ROM にチェックを付けてください。<br/>
+OKを押して次へ進みます。<br/>
+<a href="/lib/exe/fetch.php?tok=0cec32&amp;media=https%3A%2F%2Fi.imgur.com%2Fq1GrUk5.jpg" class="media" title="https://i.imgur.com/q1GrUk5.jpg"><img src="/lib/exe/fetch.php?tok=0cec32&amp;media=https%3A%2F%2Fi.imgur.com%2Fq1GrUk5.jpg" class="mediacenter" title="i.imgur.com_q1gruk5.jpg" alt="i.imgur.com_q1gruk5.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_89'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_b15] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_b15" /><input type="hidden" name="codeblockOffset" value="2" /><input type="hidden" name="range" value="24684-24883" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_b15">編集</button></div></form></div>
+<h2 class="sectionedit90" id="step_d16">step_d16</h2>
+<div class="level2">
+
+<p>
+画像が変更できました。<br/>
+ROMを保存します。<br/>
+(保存する前にバックアップを忘れずに。)<br/>
+<a href="/lib/exe/fetch.php?tok=df7d99&amp;media=https%3A%2F%2Fi.imgur.com%2F5HZT8sP.jpg" class="media" title="https://i.imgur.com/5HZT8sP.jpg"><img src="/lib/exe/fetch.php?tok=df7d99&amp;media=https%3A%2F%2Fi.imgur.com%2F5HZT8sP.jpg" class="mediacenter" title="i.imgur.com_5hzt8sp.jpg" alt="i.imgur.com_5hzt8sp.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_90'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_d16] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_d16" /><input type="hidden" name="codeblockOffset" value="2" /><input type="hidden" name="range" value="24884-25066" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_d16">編集</button></div></form></div>
+<h2 class="sectionedit91" id="step_d17">step_d17</h2>
+<div class="level2">
+
+<p>
+ROMを読み込んで実行すると、<br/>
+OPデモの最初に変更したオーストラリアが表示されます。<br/>
+<a href="/lib/exe/fetch.php?tok=eb32dd&amp;media=https%3A%2F%2Fi.imgur.com%2FYMBFFO5.jpg" class="media" title="https://i.imgur.com/YMBFFO5.jpg"><img src="/lib/exe/fetch.php?tok=eb32dd&amp;media=https%3A%2F%2Fi.imgur.com%2FYMBFFO5.jpg" class="mediacenter" title="i.imgur.com_ymbffo5.jpg" alt="i.imgur.com_ymbffo5.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_91'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[step_d17] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="step_d17" /><input type="hidden" name="codeblockOffset" value="2" /><input type="hidden" name="range" value="25067-25249" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="step_d17">編集</button></div></form></div>
+<h2 class="sectionedit92" id="トラブルシューティング3">トラブルシューティング</h2>
+<div class="level2">
+
+</div>
+<div class='secedit editbutton_section editbutton_92'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[トラブルシューティング] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="トラブルシューティング3" /><input type="hidden" name="codeblockOffset" value="2" /><input type="hidden" name="range" value="25250-25296" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="トラブルシューティング">編集</button></div></form></div>
+<h3 class="sectionedit93" id="q引き裂かれて崩れた画像が表示されました">Q:引き裂かれて崩れた画像が表示されました。</h3>
+<div class="level3">
+
+<p>
+A:TSAデータを更新しましたか？<br/>
+step_d05当たりをよく確認してください。<br/>
+<a href="/lib/exe/fetch.php?tok=d551c4&amp;media=https%3A%2F%2Fi.imgur.com%2Fkn4H4UA.jpg" class="media" title="https://i.imgur.com/kn4H4UA.jpg"><img src="/lib/exe/fetch.php?tok=d551c4&amp;media=https%3A%2F%2Fi.imgur.com%2Fkn4H4UA.jpg" class="mediacenter" title="i.imgur.com_kn4h4ua.jpg" alt="i.imgur.com_kn4h4ua.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_93'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[Q:引き裂かれて崩れた画像が表示されました。] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="q引き裂かれて崩れた画像が表示されました" /><input type="hidden" name="codeblockOffset" value="2" /><input type="hidden" name="range" value="25297-25509" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="Q:引き裂かれて崩れた画像が表示されました。">編集</button></div></form></div>
+<h3 class="sectionedit94" id="qリセットがかかって進まない">Q:リセットがかかって進まない</h3>
+<div class="level3">
+
+<p>
+A:正しいTSAデータを参照するようにしていますか？<br/>
+step_d05当たりをよく確認してください。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_94'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537696756" /><input type="hidden" name="summary" value="[Q:リセットがかかって進まない] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="qリセットがかかって進まない" /><input type="hidden" name="codeblockOffset" value="2" /><input type="hidden" name="range" value="25510-" /><input type="hidden" name="id" value="guide:ワールドマップ画像の入れ替え" /><button type="submit" title="Q:リセットがかかって進まない">編集</button></div></form></div>
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>guide/ワールドマップ画像の入れ替え.txt</bdi> · 最終更新: 2018/09/23 18:59 by <bdi>211.14.62.193</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">ページ用ツール</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="/doku.php?id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88&amp;do=edit" title="文書の編集 [e]" rel="nofollow" accesskey="e"><span>文書の編集</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="/doku.php?id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88&amp;do=revisions" title="以前のリビジョン [o]" rel="nofollow" accesskey="o"><span>以前のリビジョン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="/doku.php?id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88&amp;do=backlink" title="バックリンク" rel="nofollow"><span>バックリンク</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="top"><a href="#dokuwiki__top" title="文書の先頭へ [t]" rel="nofollow" accesskey="t"><span>文書の先頭へ</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
+            src="/lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" ><img
+            src="/lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="//validator.w3.org/check/referer" title="Valid HTML5" ><img
+            src="/lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="//jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
+            src="/lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="/lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="/lib/exe/indexer.php?id=guide%3A%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88&amp;1686430056" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>

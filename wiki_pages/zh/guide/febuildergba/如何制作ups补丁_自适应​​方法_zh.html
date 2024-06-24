@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>zh:guide:febuildergba:如何制作ups补丁_自适应​​方法_zh [FE改造wiki]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="zh,guide,febuildergba,如何制作ups补丁_自适应​​方法_zh"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=zh:guide:febuildergba:%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9Cups%E8%A1%A5%E4%B8%81_%E8%87%AA%E9%80%82%E5%BA%94%E2%80%8B%E2%80%8B%E6%96%B9%E6%B3%95_zh&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=zh:guide:febuildergba"/>
+<link rel="edit" title="文書の編集" href="/doku.php?id=zh:guide:febuildergba:%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9Cups%E8%A1%A5%E4%B8%81_%E8%87%AA%E9%80%82%E5%BA%94%E2%80%8B%E2%80%8B%E6%96%B9%E6%B3%95_zh&amp;do=edit"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=zh:guide:febuildergba:%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9Cups%E8%A1%A5%E4%B8%81_%E8%87%AA%E9%80%82%E5%BA%94%E2%80%8B%E2%80%8B%E6%96%B9%E6%B3%95_zh"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=zh:guide:febuildergba:%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9Cups%E8%A1%A5%E4%B8%81_%E8%87%AA%E9%80%82%E5%BA%94%E2%80%8B%E2%80%8B%E6%96%B9%E6%B3%95_zh"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=zh:guide:febuildergba:%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9Cups%E8%A1%A5%E4%B8%81_%E8%87%AA%E9%80%82%E5%BA%94%E2%80%8B%E2%80%8B%E6%96%B9%E6%B3%95_zh"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='zh:guide:febuildergba';var JSINFO = {"toc":{"initial_state":1},"isadmin":0,"isauth":0,"move_renameokay":false,"id":"zh:guide:febuildergba:\u5982\u4f55\u5236\u4f5cups\u8865\u4e01_\u81ea\u9002\u5e94\u200b\u200b\u65b9\u6cd5_zh","namespace":"zh:guide:febuildergba","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="/lib/tpl/dokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/dokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki    showSidebar hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">内容へ移動</a></li>
+        </ul>
+
+        <h1><a href="/doku.php?id=start"  accesskey="h" title="[H]"><img src="/lib/tpl/dokuwiki/images/logo.png" width="64" height="64" alt="" /> <span>FE改造wiki</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">ユーザ用ツール</h3>
+                <ul>
+                    <li class="action register"><a href="/doku.php?id=zh:guide:febuildergba:%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9Cups%E8%A1%A5%E4%B8%81_%E8%87%AA%E9%80%82%E5%BA%94%E2%80%8B%E2%80%8B%E6%96%B9%E6%B3%95_zh&amp;do=register" title="ユーザー登録" rel="nofollow"><span>ユーザー登録</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4z"/></svg></a></li><li class="action login"><a href="/doku.php?id=zh:guide:febuildergba:%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9Cups%E8%A1%A5%E4%B8%81_%E8%87%AA%E9%80%82%E5%BA%94%E2%80%8B%E2%80%8B%E6%96%B9%E6%B3%95_zh&amp;do=login&amp;sectok=" title="ログイン" rel="nofollow"><span>ログイン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">サイト用ツール</h3>
+            <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="zh:guide:febuildergba:如何制作ups补丁_自适应​​方法_zh" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="検索" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="検索">検索</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="zh:guide:febuildergba:如何制作ups补丁_自适应​​方法_zh" /><select name="do" class="edit quickselect" title="ツール"><option value="">ツール</option><optgroup label="ページ用ツール"><option value="edit">文書の編集</option><option value="revisions">以前のリビジョン</option><option value="backlink">バックリンク</option></optgroup><optgroup label="サイト用ツール"><option value="recent">最近の変更</option><option value="media">メディアマネージャー</option><option value="index">サイトマップ</option></optgroup><optgroup label="ユーザ用ツール"><option value="register">ユーザー登録</option><option value="login">ログイン</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="/doku.php?id=zh:guide:febuildergba:%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9Cups%E8%A1%A5%E4%B8%81_%E8%87%AA%E9%80%82%E5%BA%94%E2%80%8B%E2%80%8B%E6%96%B9%E6%B3%95_zh&amp;do=recent" title="最近の変更 [r]" rel="nofollow" accesskey="r">最近の変更</a></li><li class="action media"><a href="/doku.php?id=zh:guide:febuildergba:%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9Cups%E8%A1%A5%E4%B8%81_%E8%87%AA%E9%80%82%E5%BA%94%E2%80%8B%E2%80%8B%E6%96%B9%E6%B3%95_zh&amp;do=media&amp;ns=zh%3Aguide%3Afebuildergba" title="メディアマネージャー" rel="nofollow">メディアマネージャー</a></li><li class="action index"><a href="/doku.php?id=zh:guide:febuildergba:%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9Cups%E8%A1%A5%E4%B8%81_%E8%87%AA%E9%80%82%E5%BA%94%E2%80%8B%E2%80%8B%E6%96%B9%E6%B3%95_zh&amp;do=index" title="サイトマップ [x]" rel="nofollow" accesskey="x">サイトマップ</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">トレース:</span> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:febuildergba%E7%9A%84%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_zh"  class="breadcrumbs" title="zh:guide:febuildergba:febuildergba的配置数据结构_zh">febuildergba的配置数据结构_zh</a></bdi> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDfebuildergba_zh"  class="breadcrumbs" title="zh:guide:febuildergba:如何下载febuildergba_zh">如何下载febuildergba_zh</a></bdi> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:%E5%8F%8D%E6%B1%87%E7%BC%96_zh"  class="breadcrumbs" title="zh:guide:febuildergba:反汇编_zh">反汇编_zh</a></bdi> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:%E9%81%93%E5%85%B7%E7%89%B9%E6%80%A7_zh"  class="breadcrumbs" title="zh:guide:febuildergba:道具特性_zh">道具特性_zh</a></bdi> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php?id=zh:guide:febuildergba:%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9Cups%E8%A1%A5%E4%B8%81_%E8%87%AA%E9%80%82%E5%BA%94%E2%80%8B%E2%80%8B%E6%96%B9%E6%B3%95_zh"  class="breadcrumbs" title="zh:guide:febuildergba:如何制作ups补丁_自适应​​方法_zh">如何制作ups补丁_自适应​​方法_zh</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+                            <!-- ********** ASIDE ********** -->
+                <div id="dokuwiki__aside"><div class="pad aside include group">
+                    <h3 class="toggle">サイドバー</h3>
+                    <div class="content"><div class="group">
+                                                                        <ul>
+<li class="level1"><div class="li"> <a href="/doku.php?id=qa" class="wikilink1" title="qa">QA</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=guide:start" class="wikilink1" title="guide:start">GUIDE</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=dictionary:start" class="wikilink1" title="dictionary:start">DICTIONARY</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=column:start" class="wikilink1" title="column:start">COLUMN</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=data:start" class="wikilink1" title="data:start">DATA</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<a href="/doku.php?id=en:start" class="wikilink1" title="en:start">English</a><br />
+<a href="/doku.php?id=zh:start" class="wikilink1" title="zh:start">中文</a>
+</p>
+
+<p>
+<span class="wrap_hi wrap_center wrap_centeralign ">最新の10件</span>
+</p>
+<div class="table">
+<table class="inline">
+	<tr>
+		<th class="page">ページ</th><th class="date">日付</th>
+	</tr>
+	<tr>
+		<td class="page"><a href="/doku.php?id=column:fe%E3%81%A7%E5%AD%A6%E3%81%B6%E8%8B%B1%E8%AA%9E" class="wikilink1" title="column:feで学ぶ英語">column:feで学ぶ英語</a></td>
+		<td class="date">2018/11/12 08:10</td>
+	</tr>
+</table>
+</div>
+                                            </div></div>
+                </div></div><!-- /aside -->
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>zh:guide:febuildergba:如何制作ups补丁_自适应​​方法_zh</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#如何使ups补丁">如何使UPS补丁</a></div></li>
+<li class="level3"><div class="li"><a href="#stepa2">StepA2</a></div></li>
+<li class="level3"><div class="li"><a href="#stepa3">StepA3</a></div></li>
+<li class="level3"><div class="li"><a href="#stepa4">StepA4</a></div></li>
+<li class="level3"><div class="li"><a href="#stepa5">StepA5</a></div></li>
+<li class="level3"><div class="li"><a href="#stepb1">StepB1</a></div></li>
+<li class="level3"><div class="li"><a href="#stepb2">StepB2</a></div></li>
+<li class="level3"><div class="li"><a href="#stepb3">StepB3</a></div></li>
+<li class="level3"><div class="li"><a href="#stepb4">StepB4</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h4 id="如何制作ups补丁_自适应​​方法">如何制作UPS补丁，自适应​​方法</h4>
+<div class="level4">
+
+<p>
+出版ROM在很多国家都是非法的。 <br />
+因此，当你发布你的重塑，你必须做一个ups补丁，只是提取你的重塑。 <br />
+通过使用FEBuilderGBA，您可以轻松创建UPS补丁。 
+</p>
+
+</div>
+
+<h3 class="sectionedit1" id="如何使ups补丁">如何使UPS补丁</h3>
+<div class="level3">
+
+<p>
+**StepA1 [#a196ac18]<br />
+首先，请阅读您所修改的ROM。
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537889477" /><input type="hidden" name="summary" value="[如何使UPS补丁] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="如何使ups补丁" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="258-348" /><input type="hidden" name="id" value="zh:guide:febuildergba:如何制作ups补丁_自适应​​方法_zh" /><button type="submit" title="如何使UPS补丁">編集</button></div></form></div>
+<h3 class="sectionedit2" id="stepa2">StepA2</h3>
+<div class="level3">
+
+<p>
+请在菜单中选择“文件” - &gt;“另存为UPS差异”。 <br />
+<a href="/lib/exe/fetch.php?tok=185507&amp;media=https%3A%2F%2Fi.imgur.com%2F6JvzhzP.jpg" class="media" title="https://i.imgur.com/6JvzhzP.jpg"><img src="/lib/exe/fetch.php?tok=185507&amp;media=https%3A%2F%2Fi.imgur.com%2F6JvzhzP.jpg" class="mediacenter" title="i.imgur.com_6jvzhzp.jpg" alt="i.imgur.com_6jvzhzp.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537889477" /><input type="hidden" name="summary" value="[StepA2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa2" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="349-470" /><input type="hidden" name="id" value="zh:guide:febuildergba:如何制作ups补丁_自适应​​方法_zh" /><button type="submit" title="StepA2">編集</button></div></form></div>
+<h3 class="sectionedit3" id="stepa3">StepA3</h3>
+<div class="level3">
+
+<p>
+请指定未修改的ROM以获得差异。 <br />
+如果当前目录中没有改造的ROM，FEBuilderGBA自动推荐。 <br />
+因此，大多数情况下你不需要做任何事情。 <br />
+<a href="/lib/exe/fetch.php?tok=25fbc3&amp;media=https%3A%2F%2Fi.imgur.com%2FrYBZ2am.jpg" class="media" title="https://i.imgur.com/rYBZ2am.jpg"><img src="/lib/exe/fetch.php?tok=25fbc3&amp;media=https%3A%2F%2Fi.imgur.com%2FrYBZ2am.jpg" class="mediacenter" title="i.imgur.com_rybz2am.jpg" alt="i.imgur.com_rybz2am.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537889477" /><input type="hidden" name="summary" value="[StepA3] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa3" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="471-700" /><input type="hidden" name="id" value="zh:guide:febuildergba:如何制作ups补丁_自适应​​方法_zh" /><button type="submit" title="StepA3">編集</button></div></form></div>
+<h3 class="sectionedit4" id="stepa4">StepA4</h3>
+<div class="level3">
+
+<p>
+按“作为UPS补丁创建差异”按钮以保存UPS差异。 <br />
+<a href="/lib/exe/fetch.php?tok=3775a0&amp;media=https%3A%2F%2Fi.imgur.com%2F96P1elo.jpg" class="media" title="https://i.imgur.com/96P1elo.jpg"><img src="/lib/exe/fetch.php?tok=3775a0&amp;media=https%3A%2F%2Fi.imgur.com%2F96P1elo.jpg" class="mediacenter" title="i.imgur.com_96p1elo.jpg" alt="i.imgur.com_96p1elo.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537889477" /><input type="hidden" name="summary" value="[StepA4] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa4" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="701-821" /><input type="hidden" name="id" value="zh:guide:febuildergba:如何制作ups补丁_自适应​​方法_zh" /><button type="submit" title="StepA4">編集</button></div></form></div>
+<h3 class="sectionedit5" id="stepa5">StepA5</h3>
+<div class="level3">
+
+<p>
+超过。 <br />
+UPS文件已创建。<br />
+<a href="/lib/exe/fetch.php?tok=23624d&amp;media=https%3A%2F%2Fi.imgur.com%2FjPViO6B.jpg" class="media" title="https://i.imgur.com/jPViO6B.jpg"><img src="/lib/exe/fetch.php?tok=23624d&amp;media=https%3A%2F%2Fi.imgur.com%2FjPViO6B.jpg" class="mediacenter" title="i.imgur.com_jpvio6b.jpg" alt="i.imgur.com_jpvio6b.jpg" /></a>
+</p>
+
+<p>
+很简单。 
+</p>
+
+</div>
+
+<h4 id="ups补丁的适应方法">UPS补丁的适应方法</h4>
+<div class="level4">
+
+<p>
+我将解释如何调整由您制作的UPS或其他人制作的UPS文件。 <br />
+这很容易。
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537889477" /><input type="hidden" name="summary" value="[StepA5] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa5" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="822-1054" /><input type="hidden" name="id" value="zh:guide:febuildergba:如何制作ups补丁_自适应​​方法_zh" /><button type="submit" title="StepA5">編集</button></div></form></div>
+<h3 class="sectionedit6" id="stepb1">StepB1</h3>
+<div class="level3">
+
+<p>
+用FEBuilderGBA打开ROM时，请选择ups文件。 <br />
+<a href="/lib/exe/fetch.php?tok=6234f7&amp;media=https%3A%2F%2Fi.imgur.com%2FqTZjl5z.jpg" class="media" title="https://i.imgur.com/qTZjl5z.jpg"><img src="/lib/exe/fetch.php?tok=6234f7&amp;media=https%3A%2F%2Fi.imgur.com%2FqTZjl5z.jpg" class="mediacenter" title="i.imgur.com_qtzjl5z.jpg" alt="i.imgur.com_qtzjl5z.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537889477" /><input type="hidden" name="summary" value="[StepB1] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb1" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1055-1163" /><input type="hidden" name="id" value="zh:guide:febuildergba:如何制作ups补丁_自适应​​方法_zh" /><button type="submit" title="StepB1">編集</button></div></form></div>
+<h3 class="sectionedit7" id="stepb2">StepB2</h3>
+<div class="level3">
+
+<p>
+请放置一个未修改的ROM以适应差异。 <br />
+如果当前目录中没有改造的ROM，FEBuilderGBA自动推荐。 <br />
+因此，大多数情况下你不需要做任何事情。 <br />
+<a href="/lib/exe/fetch.php?tok=ede7c9&amp;media=https%3A%2F%2Fi.imgur.com%2Foqqz1D8.jpg" class="media" title="https://i.imgur.com/oqqz1D8.jpg"><img src="/lib/exe/fetch.php?tok=ede7c9&amp;media=https%3A%2F%2Fi.imgur.com%2Foqqz1D8.jpg" class="mediacenter" title="i.imgur.com_oqqz1d8.jpg" alt="i.imgur.com_oqqz1d8.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537889477" /><input type="hidden" name="summary" value="[StepB2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb2" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1164-1399" /><input type="hidden" name="id" value="zh:guide:febuildergba:如何制作ups补丁_自适应​​方法_zh" /><button type="submit" title="StepB2">編集</button></div></form></div>
+<h3 class="sectionedit8" id="stepb3">StepB3</h3>
+<div class="level3">
+
+<p>
+请按“打开UPS补丁”按钮。<br />
+<a href="/lib/exe/fetch.php?tok=a2b351&amp;media=https%3A%2F%2Fi.imgur.com%2FHWf3iyX.jpg" class="media" title="https://i.imgur.com/HWf3iyX.jpg"><img src="/lib/exe/fetch.php?tok=a2b351&amp;media=https%3A%2F%2Fi.imgur.com%2FHWf3iyX.jpg" class="mediacenter" title="i.imgur.com_hwf3iyx.jpg" alt="i.imgur.com_hwf3iyx.jpg" /></a>
+</p>
+
+<p>
+如果您没有清除“将UPS补丁适配的ROM作为UPS文件名称.gba”<br />
+UPS补丁应用内容作为UPS文件名.Gba保存在UPS补丁所在的目录中。 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537889477" /><input type="hidden" name="summary" value="[StepB3] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb3" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1400-1654" /><input type="hidden" name="id" value="zh:guide:febuildergba:如何制作ups补丁_自适应​​方法_zh" /><button type="submit" title="StepB3">編集</button></div></form></div>
+<h3 class="sectionedit9" id="stepb4">StepB4</h3>
+<div class="level3">
+
+<p>
+补丁已被应用。 <br />
+<a href="/lib/exe/fetch.php?tok=df65d8&amp;media=https%3A%2F%2Fi.imgur.com%2F5VOgeuH.jpg" class="media" title="https://i.imgur.com/5VOgeuH.jpg"><img src="/lib/exe/fetch.php?tok=df65d8&amp;media=https%3A%2F%2Fi.imgur.com%2F5VOgeuH.jpg" class="mediacenter" title="i.imgur.com_5vogeuh.jpg" alt="i.imgur.com_5vogeuh.jpg" /></a>
+</p>
+
+<p>
+这很简单。 
+</p>
+
+</div>
+
+<h4 id="ups_patch的适应方法2">UPS Patch的适应方法2</h4>
+<div class="level4">
+
+<p>
+还有其他方法。 <br />
+您只能通过D＆D UPS文件打开它。 
+</p>
+
+<p>
+D＆D UPS文件到FEBuilderGBA.exe。 <br />
+D＆D UPS文件在FEBuilderGBA的欢迎屏幕上。 
+</p>
+
+<p>
+无论哪种方式，您都可以使用FEBuilderGBA轻松制作UPS。 
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537889477" /><input type="hidden" name="summary" value="[StepB4] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb4" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1655-" /><input type="hidden" name="id" value="zh:guide:febuildergba:如何制作ups补丁_自适应​​方法_zh" /><button type="submit" title="StepB4">編集</button></div></form></div>
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>zh/guide/febuildergba/如何制作ups补丁_自适应​​方法_zh.txt</bdi> · 最終更新: 2018/09/26 00:31 by <bdi>211.14.62.193</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">ページ用ツール</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="/doku.php?id=zh:guide:febuildergba:%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9Cups%E8%A1%A5%E4%B8%81_%E8%87%AA%E9%80%82%E5%BA%94%E2%80%8B%E2%80%8B%E6%96%B9%E6%B3%95_zh&amp;do=edit" title="文書の編集 [e]" rel="nofollow" accesskey="e"><span>文書の編集</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="/doku.php?id=zh:guide:febuildergba:%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9Cups%E8%A1%A5%E4%B8%81_%E8%87%AA%E9%80%82%E5%BA%94%E2%80%8B%E2%80%8B%E6%96%B9%E6%B3%95_zh&amp;do=revisions" title="以前のリビジョン [o]" rel="nofollow" accesskey="o"><span>以前のリビジョン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="/doku.php?id=zh:guide:febuildergba:%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9Cups%E8%A1%A5%E4%B8%81_%E8%87%AA%E9%80%82%E5%BA%94%E2%80%8B%E2%80%8B%E6%96%B9%E6%B3%95_zh&amp;do=backlink" title="バックリンク" rel="nofollow"><span>バックリンク</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="top"><a href="#dokuwiki__top" title="文書の先頭へ [t]" rel="nofollow" accesskey="t"><span>文書の先頭へ</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
+            src="/lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" ><img
+            src="/lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="//validator.w3.org/check/referer" title="Valid HTML5" ><img
+            src="/lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="//jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
+            src="/lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="/lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="/lib/exe/indexer.php?id=zh%3Aguide%3Afebuildergba%3A%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9Cups%E8%A1%A5%E4%B8%81_%E8%87%AA%E9%80%82%E5%BA%94%E2%80%8B%E2%80%8B%E6%96%B9%E6%B3%95_zh&amp;1542024616" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>

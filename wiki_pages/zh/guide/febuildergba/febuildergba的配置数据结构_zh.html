@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>zh:guide:febuildergba:febuildergba的配置数据结构_zh [FE改造wiki]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="zh,guide,febuildergba,febuildergba的配置数据结构_zh"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=zh:guide:febuildergba:febuildergba%E7%9A%84%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_zh&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=zh:guide:febuildergba"/>
+<link rel="edit" title="文書の編集" href="/doku.php?id=zh:guide:febuildergba:febuildergba%E7%9A%84%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_zh&amp;do=edit"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=zh:guide:febuildergba:febuildergba%E7%9A%84%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_zh"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=zh:guide:febuildergba:febuildergba%E7%9A%84%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_zh"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=zh:guide:febuildergba:febuildergba%E7%9A%84%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_zh"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='zh:guide:febuildergba';var JSINFO = {"toc":{"initial_state":1},"isadmin":0,"isauth":0,"move_renameokay":false,"id":"zh:guide:febuildergba:febuildergba\u7684\u914d\u7f6e\u6570\u636e\u7ed3\u6784_zh","namespace":"zh:guide:febuildergba","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="/lib/tpl/dokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/dokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki    showSidebar hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">内容へ移動</a></li>
+        </ul>
+
+        <h1><a href="/doku.php?id=start"  accesskey="h" title="[H]"><img src="/lib/tpl/dokuwiki/images/logo.png" width="64" height="64" alt="" /> <span>FE改造wiki</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">ユーザ用ツール</h3>
+                <ul>
+                    <li class="action register"><a href="/doku.php?id=zh:guide:febuildergba:febuildergba%E7%9A%84%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_zh&amp;do=register" title="ユーザー登録" rel="nofollow"><span>ユーザー登録</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4z"/></svg></a></li><li class="action login"><a href="/doku.php?id=zh:guide:febuildergba:febuildergba%E7%9A%84%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_zh&amp;do=login&amp;sectok=" title="ログイン" rel="nofollow"><span>ログイン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">サイト用ツール</h3>
+            <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="検索" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="検索">検索</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><select name="do" class="edit quickselect" title="ツール"><option value="">ツール</option><optgroup label="ページ用ツール"><option value="edit">文書の編集</option><option value="revisions">以前のリビジョン</option><option value="backlink">バックリンク</option></optgroup><optgroup label="サイト用ツール"><option value="recent">最近の変更</option><option value="media">メディアマネージャー</option><option value="index">サイトマップ</option></optgroup><optgroup label="ユーザ用ツール"><option value="register">ユーザー登録</option><option value="login">ログイン</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="/doku.php?id=zh:guide:febuildergba:febuildergba%E7%9A%84%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_zh&amp;do=recent" title="最近の変更 [r]" rel="nofollow" accesskey="r">最近の変更</a></li><li class="action media"><a href="/doku.php?id=zh:guide:febuildergba:febuildergba%E7%9A%84%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_zh&amp;do=media&amp;ns=zh%3Aguide%3Afebuildergba" title="メディアマネージャー" rel="nofollow">メディアマネージャー</a></li><li class="action index"><a href="/doku.php?id=zh:guide:febuildergba:febuildergba%E7%9A%84%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_zh&amp;do=index" title="サイトマップ [x]" rel="nofollow" accesskey="x">サイトマップ</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">トレース:</span> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:fe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh"  class="breadcrumbs" title="zh:guide:febuildergba:fe7琳移植到fe8_zh">fe7琳移植到fe8_zh</a></bdi> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:%E5%AF%B9%E8%AF%9D%E5%8F%98%E6%9B%B4_zh"  class="breadcrumbs" title="zh:guide:febuildergba:对话变更_zh">对话变更_zh</a></bdi> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:%E8%83%8C%E6%99%AF%E5%92%8Ccg%E7%9A%84%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95_zh"  class="breadcrumbs" title="zh:guide:febuildergba:背景和cg的变更方法_zh">背景和cg的变更方法_zh</a></bdi> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:%E4%BD%BF%E7%94%A8%E5%87%8F%E8%89%B2%E5%B7%A5%E5%85%B7%E8%AE%BE%E5%AE%9A%E8%83%8C%E6%99%AF_zh"  class="breadcrumbs" title="zh:guide:febuildergba:使用减色工具设定背景_zh">使用减色工具设定背景_zh</a></bdi> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php?id=zh:guide:febuildergba:febuildergba%E7%9A%84%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_zh"  class="breadcrumbs" title="zh:guide:febuildergba:febuildergba的配置数据结构_zh">febuildergba的配置数据结构_zh</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+                            <!-- ********** ASIDE ********** -->
+                <div id="dokuwiki__aside"><div class="pad aside include group">
+                    <h3 class="toggle">サイドバー</h3>
+                    <div class="content"><div class="group">
+                                                                        <ul>
+<li class="level1"><div class="li"> <a href="/doku.php?id=qa" class="wikilink1" title="qa">QA</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=guide:start" class="wikilink1" title="guide:start">GUIDE</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=dictionary:start" class="wikilink1" title="dictionary:start">DICTIONARY</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=column:start" class="wikilink1" title="column:start">COLUMN</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=data:start" class="wikilink1" title="data:start">DATA</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<a href="/doku.php?id=en:start" class="wikilink1" title="en:start">English</a><br />
+<a href="/doku.php?id=zh:start" class="wikilink1" title="zh:start">中文</a>
+</p>
+
+<p>
+<span class="wrap_hi wrap_center wrap_centeralign ">最新の10件</span>
+</p>
+<div class="table">
+<table class="inline">
+	<tr>
+		<th class="page">ページ</th><th class="date">日付</th>
+	</tr>
+	<tr>
+		<td class="page"><a href="/doku.php?id=column:fe%E3%81%A7%E5%AD%A6%E3%81%B6%E8%8B%B1%E8%AA%9E" class="wikilink1" title="column:feで学ぶ英語">column:feで学ぶ英語</a></td>
+		<td class="date">2018/11/12 08:10</td>
+	</tr>
+</table>
+</div>
+                                            </div></div>
+                </div></div><!-- /aside -->
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>zh:guide:febuildergba:febuildergba的配置数据结构_zh</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#配置文件的规则">配置文件的规则</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#config_configxml">/config/config.xml</a></div></li>
+<li class="level2"><div class="li"><a href="#config_translate">/config/translate/</a></div></li>
+<li class="level2"><div class="li"><a href="#config_data">/config/data/</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#搜索规则">搜索规则</a></div></li>
+<li class="level3"><div class="li"><a href="#例">例</a></div></li>
+<li class="level3"><div class="li"><a href="#列表中">列表中</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#config_patch">/config/patch/</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#补丁格式">补丁格式</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#普通物品">普通物品</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#多种语言">多种语言</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#补丁类型addr补丁">补丁类型ADDR补丁</a></div></li>
+<li class="level2"><div class="li"><a href="#多字节">多字节</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#数据尺寸">数据尺寸</a></div></li>
+<li class="level3"><div class="li"><a href="#同时指定地址">同时指定地址</a></div></li>
+<li class="level3"><div class="li"><a href="#hex">HEX</a></div></li>
+<li class="level3"><div class="li"><a href="#地址类型">地址类型</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#补丁类型image补丁">补丁类型IMAGE补丁。</a></div></li>
+<li class="level2"><div class="li"><a href="#补丁类型struct补丁">补丁类型STRUCT补丁</a></div></li>
+<li class="level2"><div class="li"><a href="#补丁类型bin补丁">补丁类型BIN补丁</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#加入偏移">加入偏移</a></div></li>
+<li class="level3"><div class="li"><a href="#直接值_none">直接值 $NONE</a></div></li>
+<li class="level3"><div class="li"><a href="#b跳代">B跳代</a></div></li>
+<li class="level3"><div class="li"><a href="#bl跳转生成">BL跳转生成</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#文本表扩展指令">文本表扩展指令</a></div></li>
+<li class="level2"><div class="li"><a href="#补丁类型ea补丁">补丁类型EA补丁</a></div></li>
+<li class="level2"><div class="li"><a href="#补丁的种类">补丁的种类</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#mod">MOD</a></div></li>
+<li class="level1"><div class="li"><a href="#febuildergba启动的参数">FEBuilderGBA启动的参数</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#rom">[ROM]</a></div></li>
+<li class="level2"><div class="li"><a href="#rom_文件名">--rom=文件名</a></div></li>
+<li class="level2"><div class="li"><a href="#最后一个rom">--最后一个ROM</a></div></li>
+<li class="level2"><div class="li"><a href="#强制版本_版本">--强制版本=版本</a></div></li>
+<li class="level2"><div class="li"><a href="#强制细节">--强制细节</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="配置文件的规则">配置文件的规则</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[配置文件的规则] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="配置文件的规则" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1-37" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="配置文件的规则">編集</button></div></form></div>
+<h2 class="sectionedit2" id="config_configxml">/config/config.xml</h2>
+<div class="level2">
+
+<p>
+这个工具的设置被存储。 <br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[/config/config.xml] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="config_configxml" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="38-112" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="/config/config.xml">編集</button></div></form></div>
+<h2 class="sectionedit3" id="config_translate">/config/translate/</h2>
+<div class="level2">
+
+<p>
+这是该工具使用的翻译资源。<br/>
+<br />
+它是 KEY:\\r\\nVALUE 格式，基于像GNU GetText这样的想法。<br/>
+<br/>
+
+</p>
+<pre class="code">:原始字符串
+翻译字符串</pre>
+
+<p>
+<br/>
+<a href="/lib/exe/fetch.php?tok=ea8e3c&amp;media=https%3A%2F%2Fi.imgur.com%2FiPFRtmE.jpg" class="media" title="https://i.imgur.com/iPFRtmE.jpg"><img src="/lib/exe/fetch.php?tok=ea8e3c&amp;media=https%3A%2F%2Fi.imgur.com%2FiPFRtmE.jpg" class="mediacenter" title="i.imgur.com_ipfrtme.jpg" alt="i.imgur.com_ipfrtme.jpg" /></a><br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[/config/translate/] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="config_translate" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="113-357" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="/config/translate/">編集</button></div></form></div>
+<h2 class="sectionedit4" id="config_data">/config/data/</h2>
+<div class="level2">
+
+<p>
+该工具使用的游戏中有设置数据。<br/>
+如果将数据提取为外部资源，则包含似乎更具可扩展性的数据。<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[/config/data/] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="config_data" /><input type="hidden" name="codeblockOffset" value="1" /><input type="hidden" name="range" value="358-525" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="/config/data/">編集</button></div></form></div>
+<h3 class="sectionedit5" id="搜索规则">搜索规则</h3>
+<div class="level3">
+
+<p>
+文件按以下顺序搜索。<br/>
+XX包含所选语言。 en=英文, zh=中文.<br/>
+file_VERSION.XX.txt<br/>
+file_VERSION.txt<br/>
+file_ALL.XX.txt<br/>
+file_ALL.txt<br/>
+<br/>
+同样在文件中，有些东西会打开 {J} {U}.<br/>
+例如，由于FE8J FE8U中的指针值不同，因此用于此切换。<br/>
+<br/>
+所有文件格式都是制表符分隔的TSV格式。<br/>
+字符代码在UTF-8中统一。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[搜索规则] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="搜索规则" /><input type="hidden" name="codeblockOffset" value="1" /><input type="hidden" name="range" value="526-933" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="搜索规则">編集</button></div></form></div>
+<h3 class="sectionedit6" id="例">例</h3>
+<div class="level3">
+<div class="table sectionedit7"><table class="inline">
+	<tr class="row0">
+		<td class="col0">搜索“foo”</td><td class="col1"></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">游戏</td><td class="col1">FE8</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">XX</td><td class="col1">EN</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">类型</td><td class="col1">FE8U</td>
+	</tr>
+</table></div>
+<pre class="code">if ( Exists(&quot;config/data/foo_FE8.en.txt&quot;) )
+{
+   return found;
+}
+if ( Exists(&quot;config/data/foo_FE8.txt&quot;) )
+{
+   return found;
+}
+if ( Exists(&quot;config/data/foo_ALL.en.txt&quot;) )
+{
+   return found;
+}
+if ( Exists(&quot;config/data/foo_ALL.txt&quot;) )
+{
+   return found;
+}
+return NOT_FOUND;</pre>
+
+<p>
+<br/>
+假设找到了 foo_ALL.txt 。<br/>
+<br/>
+假定foo_ALL.txt的内容如下所示。<br/>
+
+</p>
+<pre class="code">TEST1=A
+TEST2=B	{U}
+TEST3=C	{J}</pre>
+
+<p>
+由于在搜索指令中指定了类型== FE8U，因此获取以下内容。<br/>
+
+</p>
+<pre class="code">TEST1=A
+TEST2=B</pre>
+
+<p>
+如果搜索命令是类型== FE8J，则获取以下内容。<br/>
+
+</p>
+<pre class="code">TEST1=A
+TEST3=C</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[例] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="例" /><input type="hidden" name="codeblockOffset" value="1" /><input type="hidden" name="range" value="934-1632" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="例">編集</button></div></form></div>
+<h3 class="sectionedit8" id="列表中">列表中</h3>
+<div class="level3">
+<div class="table sectionedit9"><table class="inline">
+	<tr class="row0">
+		<td class="col0">ai1</td><td class="col1">Define the list of unit Placer AI1.</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">ai2</td><td class="col1">Define the list of unit Placer AI2.</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">aiscript</td><td class="col1">Define the aiscript command</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">asmmap</td><td class="col1">Function map. Displays hints during function map disassembly.</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">base_rom_info</td><td class="col1">Define the capacity and CRC of unmodified ROM.</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">battleanime_85command</td><td class="col1">Define C85 command list of battle animation.</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">battleanime_auto_recolor</td><td class="col1">It is used to decide enemy color scheme with battle animation.</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0">battleanime_mode</td><td class="col1">Define the type of battle animation.</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0">event</td><td class="col1">Define the event instruction.</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0">eventcond</td><td class="col1">Define the type of event condition.</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0">func_lang</td><td class="col1">Define the languages available in FEBuilderGBA.</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0">item_anime_effect</td><td class="col1">Define a list of weapon animation effects.</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0">item_staff_use_effect</td><td class="col1">Define the effect of using items.</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0">item_weapon_effect</td><td class="col1">Define the additional effect of the weapon.</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0">item_usability_array_</td><td class="col1">Determine whether items can be used.</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0">item_effect_array_</td><td class="col1">Define the effect of using items.</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0">item_promotion1_array_</td><td class="col1">Define processing when using Promotion Item.</td>
+	</tr>
+	<tr class="row17">
+		<td class="col0">item_promotion2_array_</td><td class="col1">Define whether it is a Promotion Item (FE 7 only).</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0">item_staff1_array_</td><td class="col1">Define the method of target selection of items (maybe).</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0">item_staff2_array_</td><td class="col1">Define the type of Staff.</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0">item_statbooster1_array_</td><td class="col1">Define a message when using stat booster.</td>
+	</tr>
+	<tr class="row21">
+		<td class="col0">item_statbooster2_array_</td><td class="col1">Define Stat Booster and whether it is a Promotion Item.</td>
+	</tr>
+	<tr class="row22">
+		<td class="col0">magic_command</td><td class="col1">Define the command of magic extension.</td>
+	</tr>
+	<tr class="row23">
+		<td class="col0">magic_csa_spell_table</td><td class="col1">Define the condition to search for CSATABLE which defines magic animation of magic extension.</td>
+	</tr>
+	<tr class="row24">
+		<td class="col0">magic_extends</td><td class="col1">Define how to judge whether magic expansion is appropriate or not.</td>
+	</tr>
+	<tr class="row25">
+		<td class="col0">mappointer</td><td class="col1">Define the map pointer name.</td>
+	</tr>
+	<tr class="row26">
+		<td class="col0">mapstyle</td><td class="col1">Define map style list.</td>
+	</tr>
+	<tr class="row27">
+		<td class="col0">other_text</td><td class="col1">Defines an address list in which character string direct value of C language is embedded.</td>
+	</tr>
+	<tr class="row28">
+		<td class="col0">skill_extends</td><td class="col1">Define how to judge whether skill extension is appropriate or not.</td>
+	</tr>
+	<tr class="row29">
+		<td class="col0">skill_extends_*</td><td class="col1">For each skill extends, define the skill ID.</td>
+	</tr>
+	<tr class="row30">
+		<td class="col0">song_instrument</td><td class="col1">Make the instrument information MD5 and assign the instrument name to the instrument address.</td>
+	</tr>
+	<tr class="row31">
+		<td class="col0">song_instrumentset</td><td class="col1">Define how to judge whether NIMAP is right or wrong.</td>
+	</tr>
+	<tr class="row32">
+		<td class="col0">sound</td><td class="col1">Define the name of the sound effect.</td>
+	</tr>
+	<tr class="row33">
+		<td class="col0">sound_foot_steps</td><td class="col1">Define footsteps. FE8 only.</td>
+	</tr>
+	<tr class="row34">
+		<td class="col0">tbl_cond</td><td class="col1">Define whether to use tbl or not.</td>
+	</tr>
+	<tr class="row35">
+		<td class="col0">translate_textid</td><td class="col1">For translation, correspondence table of string IDs in ROMs of US and Japan.</td>
+	</tr>
+	<tr class="row36">
+		<td class="col0">updater.bat.txt</td><td class="col1">It is not a configuration file. It is a batch file of automatic update.</td>
+	</tr>
+</table></div>
+
+<p>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[列表中] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="列表中" /><input type="hidden" name="codeblockOffset" value="5" /><input type="hidden" name="range" value="1633-4093" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="列表中">編集</button></div></form></div>
+<h2 class="sectionedit10" id="config_patch">/config/patch/</h2>
+<div class="level2">
+
+<p>
+详细设置patch→补丁。<br />
+您可以从菜单工具 → patch中访问它。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=a10481&amp;media=https%3A%2F%2Fi.imgur.com%2F59gvcy9.jpg" class="media" title="https://i.imgur.com/59gvcy9.jpg"><img src="/lib/exe/fetch.php?tok=a10481&amp;media=https%3A%2F%2Fi.imgur.com%2F59gvcy9.jpg" class="mediacenter" title="i.imgur.com_59gvcy9.jpg" alt="i.imgur.com_59gvcy9.jpg" /></a><br />
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[/config/patch/] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="config_patch" /><input type="hidden" name="codeblockOffset" value="5" /><input type="hidden" name="range" value="4094-4245" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="/config/patch/">編集</button></div></form></div>
+<h1 class="sectionedit11" id="补丁格式">补丁格式</h1>
+<div class="level1">
+
+<p>
+补丁文件是key = value的格式。<br/>
+// #; 是一条注释。<br/>
+附加0x时，数字数据变为十六进制。<br/>
+如果你不添加任何东西，它是一个十进制数字。<br/>
+  - 0x08000000有或没有GBA指针，这两种情况都没有问题。<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[补丁格式] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="补丁格式" /><input type="hidden" name="codeblockOffset" value="5" /><input type="hidden" name="range" value="4246-4538" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="补丁格式">編集</button></div></form></div>
+<h2 class="sectionedit12" id="普通物品">普通物品</h2>
+<div class="level2">
+<pre class="code">NAME=补丁名称</pre>
+
+<p>
+<br/>
+定义补丁的名称。<br/>
+如果未定义，它将成为补丁的文件名。<br/>
+<br/>
+
+</p>
+<pre class="code">TYPE=IMAGE TYPE=ADDR TYPE=STRUCT TYPE=BIN TYPE=EA TYPE=SWITCH</pre>
+
+<p>
+<br/>
+定义补丁的类型。<br/>
+有6种类型。<br/>
+详情将在稍后解释。<br/>
+<br />
+<br/>
+
+</p>
+<pre class="code">INFO=写更多信息\\r\\n 请尽可能描述。</pre>
+
+<p>
+<br/>
+写更多信息，请换行\\r\\n <br/>
+<br/>
+<br/>
+
+</p>
+<pre class="code">IF:0xEE594=0x4B 0xFA 0x2F 0x59 0x7E 0x19</pre>
+
+<p>
+<br/>
+定义补丁是否可用。<br/>
+在这个例子中，我们正在检查 ROM 0xEE594 是 0x4B 0xFA 0x2F 0x59 0x7E 0x19。<br/>
+如果 0xEE594 是 0x4B 0xFA 0x2F 0x59 0x7E 0x19, 则可以使用此补丁。<br/>
+<br/>
+
+</p>
+<pre class="code">IF_NOT:0xEE594=0x4B 0xFA 0x2F 0x59 0x7E 0x19</pre>
+
+<p>
+定义补丁是否可用。<br/>
+相反，在ROM中，0xEE594将可用，除非它是 0x4B 0xFA 0x2F 0x59 0x7E 0x19.<br/>
+<br/>
+
+</p>
+<pre class="code">PATCHED_IF:0x080bb182=0x45 0x46 0xE0 0xB4
+PATCHED_IF_NOT:0x080bb182=0x45 0x46 0xE0 0xB4</pre>
+
+<p>
+它定义了补丁是否已被修改。<br/>
+如果我们修补两次，它将主要用于坏BIN补丁。<br/>
+<br />
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[普通物品] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="普通物品" /><input type="hidden" name="codeblockOffset" value="5" /><input type="hidden" name="range" value="4539-5608" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="普通物品">編集</button></div></form></div>
+<h3 class="sectionedit13" id="多种语言">多种语言</h3>
+<div class="level3">
+
+<p>
+要编写英文名称，请添加 .en<br/>
+要编写中文名称，请添加 .zh<br/>
+<br/>
+NAME=Japanese name<br/>
+NAME.en=英文<br/>
+NAME.zh=中文<br/>
+<br/>
+从ver20171211开始，现在可以为所有参数指定诸如AAAA.en之类的语言。<br/>
+<br/>
+<br />
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[多种语言] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="多种语言" /><input type="hidden" name="codeblockOffset" value="11" /><input type="hidden" name="range" value="5609-5870" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="多种语言">編集</button></div></form></div>
+<h2 class="sectionedit14" id="补丁类型addr补丁">补丁类型ADDR补丁</h2>
+<div class="level2">
+<pre class="code">NAME=きずぐすりの回復量
+NAME.en=Recovery amount of Vulnerary
+NAME.zh=回复杖的回复量
+
+TYPE=ADDR
+
+ADDRESS=0x2fe16
+
+AUTHOR=出典:aeraさんの資料より\r\n</pre>
+
+<p>
+<a href="http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a" class="urlextern" title="http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a" rel="nofollow">http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a</a>
+</p>
+<pre class="code">AUTHOR.zh=来源：从aera的数据\r\n</pre>
+
+<p>
+<a href="http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a" class="urlextern" title="http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a" rel="nofollow">http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a</a>
+</p>
+<pre class="code">AUTHOR.en=Source: From aera&#039;s data\r\n</pre>
+
+<p>
+<a href="http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a" class="urlextern" title="http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a" rel="nofollow">http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a</a><br />
+~<br/>
+FE8J的伤药恢复量存储在0x2fe16中。<br/>
+这是一个修改它的补丁。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=8ea8cb&amp;media=https%3A%2F%2Fi.imgur.com%2FYLOE1U7.jpg" class="media" title="https://i.imgur.com/YLOE1U7.jpg"><img src="/lib/exe/fetch.php?tok=8ea8cb&amp;media=https%3A%2F%2Fi.imgur.com%2FYLOE1U7.jpg" class="mediacenter" title="i.imgur.com_yloe1u7.jpg" alt="i.imgur.com_yloe1u7.jpg" /></a><br />
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[补丁类型ADDR补丁] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="补丁类型addr补丁" /><input type="hidden" name="codeblockOffset" value="11" /><input type="hidden" name="range" value="5871-6574" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="补丁类型ADDR补丁">編集</button></div></form></div>
+<h2 class="sectionedit15" id="多字节">多字节</h2>
+<div class="level2">
+
+<p>
+虽然ADDR基本上只有1个字节的变化，<br/>
+但可以使用组合框格式使用长字节。<br/>
+<br/>
+
+</p>
+<pre class="code">NAME=フリーマップから入らないとフリーズする制約を消す
+NAME.en=Eliminate the constraint of freezing unless it enters from the world map.
+NAME.zh=消除冻结的限制，除非从免费地图进入
+
+//作为地址补丁实施。
+TYPE=ADDR
+
+ADDRESS=0xc1e7c
+COMBO=默认|0x47 0x2D|fix|0xB8 0xE0</pre>
+
+<p>
+<br/>
+<a href="/lib/exe/fetch.php?tok=c1ceb0&amp;media=https%3A%2F%2Fi.imgur.com%2FvRuzDeu.jpg" class="media" title="https://i.imgur.com/vRuzDeu.jpg"><img src="/lib/exe/fetch.php?tok=c1ceb0&amp;media=https%3A%2F%2Fi.imgur.com%2FvRuzDeu.jpg" class="mediacenter" title="i.imgur.com_vruzdeu.jpg" alt="i.imgur.com_vruzdeu.jpg" /></a><br />
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[多字节] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="多字节" /><input type="hidden" name="codeblockOffset" value="14" /><input type="hidden" name="range" value="6575-7075" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="多字节">編集</button></div></form></div>
+<h3 class="sectionedit16" id="数据尺寸">数据尺寸</h3>
+<div class="level3">
+
+<p>
+最新支持DATA SIZE规格。<br/>
+当DATASIZE=4，它操作为4个字节（由于它是GBA，所以数据以小端编写）。<br/>
+<br/>
+为了兼容性，如果没有指定，它变成1个字节 DATASIZE=1。<br/>
+如果指定了COMBO，则会忽略DATASIZE规范，并且COMBO规范优先。<br/>
+<br/>
+例: 通过模式选择上FE7更改肖像的琳<br/>
+
+</p>
+<pre class="code">NAME=MODE SELECT 顔画像 リン編
+NAME.en=MODE SELECT Portrait of the Lyn Editing
+NAME.en=头像琳
+
+TYPE=ADDR
+
+ADDRESS=0x4393D8
+ADDRESS_TYPE=头像
+DATASIZE=4         //出于某种原因，MODE SELECT的肖像ID由4个字节的DWORD存储</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[数据尺寸] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="数据尺寸" /><input type="hidden" name="codeblockOffset" value="15" /><input type="hidden" name="range" value="7076-7699" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="数据尺寸">編集</button></div></form></div>
+<h3 class="sectionedit17" id="同时指定地址">同时指定地址</h3>
+<div class="level3">
+
+<p>
+可以使用空格分隔符将多个地址写入<br/>
+每个值都设置相同的值。<br/>
+当你需要同时更改不同的地方时使用它。<br/>
+<br />
+<br/>
+
+</p>
+<pre class="code">NAME=幸運上限
+NAME.en=Upper limit of lucky
+NAME.zh=幸运上限
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+
+ADDRESS=0x80CA0 0x29f0e 0x29f12 0x180d8 0x180dc 0x95694 0x95694 0x9585C</pre>
+
+<p>
+例如，由于幸运限制是在各地分散设置的硬编码，<br />
+如上所述，它会立即改变数值。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[同时指定地址] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="同时指定地址" /><input type="hidden" name="codeblockOffset" value="16" /><input type="hidden" name="range" value="7700-8207" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="同时指定地址">編集</button></div></form></div>
+<h3 class="sectionedit18" id="hex">HEX</h3>
+<div class="level3">
+
+<p>
+使用 HEX=false 如果您想要将用户界面上显示的数字显示为十进制数字。
+</p>
+<pre class="code">NAME=最大レベル
+NAME.en=Max Level
+NAME.zh=最高级别
+
+//作为地址补丁实施。
+TYPE=ADDR
+
+ADDRESS=0x25132
+HEX=false //它以十进制数显示它</pre>
+
+<p>
+<a href="/lib/exe/fetch.php?tok=d8d357&amp;media=https%3A%2F%2Fi.imgur.com%2FcRQavFM.jpg" class="media" title="https://i.imgur.com/cRQavFM.jpg"><img src="/lib/exe/fetch.php?tok=d8d357&amp;media=https%3A%2F%2Fi.imgur.com%2FcRQavFM.jpg" class="mediacenter" title="i.imgur.com_crqavfm.jpg" alt="i.imgur.com_crqavfm.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[HEX] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="hex" /><input type="hidden" name="codeblockOffset" value="17" /><input type="hidden" name="range" value="8208-8530" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="HEX">編集</button></div></form></div>
+<h3 class="sectionedit19" id="地址类型">地址类型</h3>
+<div class="level3">
+
+<p>
+请使用地址类型，如果有要与值关联的东西。<br/>
+<br/>
+
+</p>
+<pre class="code">ADDRESS_TYPE = UNIT //将其视为人物ID（字符ID）
+ADDRESS_TYPE = ITEM //将其视为道具ID。
+ADDRESS_TYPE = CLASS //将其视为职业ID
+ADDRESS_TYPE = SONG //将其视为音乐ID（歌曲ID）</pre>
+
+<p>
+For example.<br/>
+
+</p>
+<pre class="code">NAME=進撃準備
+NAME.en=MUSIC_Preparation
+NAME.zh=音乐_进击准备
+//作为地址补丁实施。
+TYPE=ADDR
+
+ADDRESS=0x080495cc 0x080af17e 0x08031654 0x08090048 0x080960b4 0x0809b880 0x0809c7f6
+ADDRESS_TYPE=SONG //准备BGM被改变，它被视为音乐ID。</pre>
+
+<p>
+<a href="/lib/exe/fetch.php?tok=cc91b7&amp;media=https%3A%2F%2Fi.imgur.com%2Fgen0Pz4.jpg" class="media" title="https://i.imgur.com/gen0Pz4.jpg"><img src="/lib/exe/fetch.php?tok=cc91b7&amp;media=https%3A%2F%2Fi.imgur.com%2Fgen0Pz4.jpg" class="mediacenter" title="i.imgur.com_gen0pz4.jpg" alt="i.imgur.com_gen0pz4.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[地址类型] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="地址类型" /><input type="hidden" name="codeblockOffset" value="18" /><input type="hidden" name="range" value="8531-9174" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="地址类型">編集</button></div></form></div>
+<h2 class="sectionedit20" id="补丁类型image补丁">补丁类型IMAGE补丁。</h2>
+<div class="level2">
+
+<p>
+<br/>
+
+</p>
+<pre class="code">TYPE=IMAGE</pre>
+
+<p>
+<br/>
+定义补丁来改变形象。<br/>
+这个补丁需要用指针写入，而不是图像地址。<br/>
+这是因为图像长度可变，所以图像地址可能会改变。<br/>
+<br />
+<br/>
+以下是修改FE8J FIN的补丁。<br/>
+
+</p>
+<pre class="code">NAME=系统_FIN
+
+TYPE=图片
+
+WIDTH=256
+HEIGHT=160
+//使用的调色板数量。
+PALETTE=1
+
+//压缩的图像。
+ZIMAGE_POINTER=0xBBF48
+//TSA与未压缩的标题。
+HEADERTSA_POINTER=0xBBF54
+//未压缩的调色板。
+PALETTE_POINTER=0xBBF44</pre>
+
+<p>
+<br/>
+<a href="/lib/exe/fetch.php?tok=01cc6c&amp;media=https%3A%2F%2Fi.imgur.com%2FoEtDONy.jpg" class="media" title="https://i.imgur.com/oEtDONy.jpg"><img src="/lib/exe/fetch.php?tok=01cc6c&amp;media=https%3A%2F%2Fi.imgur.com%2FoEtDONy.jpg" class="mediacenter" title="i.imgur.com_oetdony.jpg" alt="i.imgur.com_oetdony.jpg" /></a><br />
+<br/>
+未压缩的图像。<br/>
+IMAGE_POINTER<br/>
+<br/>
+压缩的图像。<br/>
+ZIMAGE_POINTER<br/>
+<br/>
+使用压缩的TSA。<br/>
+ZTSA_POINTER<br/>
+<br/>
+使用带压缩标题的TSA。<br/>
+ZHEADERTSA_POINTER<br/>
+<br/>
+将TSA与未压缩的标题一起使用。<br/>
+HEADERTSA_POINTER<br/>
+<br/>
+使用未压缩的调色板。<br/>
+PALETTE_POINTER<br/>
+<br/>
+它用于显示和导入图像。<br/>
+在下面的例子中，它是一种条件，它拥有一种具有256&times;160尺寸图像的16色调色板。<br/>
+
+</p>
+<pre class="code">WIDTH=256
+HEIGHT=160
+//使用的调色板数量。
+PALETTE=1</pre>
+
+<p>
+<br/>
+手工编写图像补丁很难，因此您可以自动生成图像补丁。<br/>
+<br/>
+在菜单 →工具 →图形工具中，找到图像，找到TSA等，然后单击右下角的补丁制作工具按钮。<br/>
+自动制作补丁。<br/>
+没有必要每次手工计算指针。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=29ec89&amp;media=https%3A%2F%2Fi.imgur.com%2FWHG6zIQ.jpg" class="media" title="https://i.imgur.com/WHG6zIQ.jpg"><img src="/lib/exe/fetch.php?tok=29ec89&amp;media=https%3A%2F%2Fi.imgur.com%2FWHG6zIQ.jpg" class="mediacenter" title="i.imgur.com_whg6ziq.jpg" alt="i.imgur.com_whg6ziq.jpg" /></a><br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=c4b0f5&amp;media=https%3A%2F%2Fi.imgur.com%2FLTklo5l.jpg" class="media" title="https://i.imgur.com/LTklo5l.jpg"><img src="/lib/exe/fetch.php?tok=c4b0f5&amp;media=https%3A%2F%2Fi.imgur.com%2FLTklo5l.jpg" class="mediacenter" title="i.imgur.com_ltklo5l.jpg" alt="i.imgur.com_ltklo5l.jpg" /></a><br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=706cf5&amp;media=https%3A%2F%2Fi.imgur.com%2FQj0vh2c.jpg" class="media" title="https://i.imgur.com/Qj0vh2c.jpg"><img src="/lib/exe/fetch.php?tok=706cf5&amp;media=https%3A%2F%2Fi.imgur.com%2FQj0vh2c.jpg" class="mediacenter" title="i.imgur.com_qj0vh2c.jpg" alt="i.imgur.com_qj0vh2c.jpg" /></a><br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[补丁类型IMAGE补丁。] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="补丁类型image补丁" /><input type="hidden" name="codeblockOffset" value="20" /><input type="hidden" name="range" value="9175-10692" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="补丁类型IMAGE补丁。">編集</button></div></form></div>
+<h2 class="sectionedit21" id="补丁类型struct补丁">补丁类型STRUCT补丁</h2>
+<div class="level2">
+<pre class="code">TYPE=STRUCT</pre>
+
+<p>
+结构补丁 <br/>
+<br/>
+当你想改变结构等数据时使用它。<br/>
+但是，使用工具主体这样复杂的事情是不可能完成的。<br/>
+如果你想做出困难的事情，如果它可以被概括，你应该在工具主体一侧。<br/>
+<br />
+<br/>
+
+</p>
+<pre class="code">//实现它作为一个结构补丁。
+TYPE=STRUCT
+
+//指向数据的指针。
+POINTER=$GREP4END 0x00 0xB5 0xC0 0x46 0x06 0x48 0xC0 0x46 0x06 0x49 0x89 0x7B 0x89 0x00 0x40 0x58 0x01 0x21 0x00 0xF0 0x02 0xF8 0x17 0x20 0x00 0xBD 0xC0 0x46 0x02 0x4B 0x9F 0x46
+
+//单位等级0x00 0x00 [动画设置指针] = 8个字节
+//数据大小（十进制数）。
+DATASIZE=8
+
+//数据的数量（十进制数）。
+DATACOUNT=12
+
+//定义数据。
+B0:UNIT=人物
+B1:CLASS=职业
+B2=00
+B3=00
+P4:BATTLEANIMENAME=动画设定</pre>
+
+<p>
+<br/>
+<a href="/lib/exe/fetch.php?tok=852716&amp;media=https%3A%2F%2Fi.imgur.com%2FNOQORUH.jpg" class="media" title="https://i.imgur.com/NOQORUH.jpg"><img src="/lib/exe/fetch.php?tok=852716&amp;media=https%3A%2F%2Fi.imgur.com%2FNOQORUH.jpg" class="mediacenter" title="i.imgur.com_noqoruh.jpg" alt="i.imgur.com_noqoruh.jpg" /></a><br />
+<br/>
+FE 8补丁来设置Yugdra补丁的单个动画。<br/>
+在怪盗补丁中没有额外的结构，因此我将以Yugdra为例进行说明。<br/>
+<br/>
+
+</p>
+<pre class="code">B0:UNIT=人物
+B1:CLASS=职业
+B2=00
+B3=00
+P4:BATTLEANIMENAME=动画设定
+
+↓↓↓↓↓
+
+struct 
+{
+	byte	unit;			// +0
+	byte	class;			// +1
+	byte	zero1;			// +2
+	byte	zero2;			// +3
+	void*	battleanime;	// +4
+};</pre>
+
+<p>
+<br/>
+<br/>
+
+</p>
+<pre class="code">b	sbyte( char )	-128 ～ 127
+B	byte			0 ～ 255
+W	word			0 ～ 65535
+D	dword			0 ～ 4294836225
+P	dword			0 ～ 4294836225</pre>
+
+<p>
+<br/>
+关于D和P之间的区别 <br/>
+在P的情况下，它总是被记录为指针。<br/>
+当用户输入0x123时，D中记录0x123，但如果是P，则记录为0x08000123。<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[补丁类型STRUCT补丁] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="补丁类型struct补丁" /><input type="hidden" name="codeblockOffset" value="23" /><input type="hidden" name="range" value="10693-12266" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="补丁类型STRUCT补丁">編集</button></div></form></div>
+<h2 class="sectionedit22" id="补丁类型bin补丁">补丁类型BIN补丁</h2>
+<div class="level2">
+
+<p>
+type=BIN<br/>
+二进制数据和源代码 <br/>
+<br/>
+
+</p>
+<pre class="code">NAME=SOUND_NIMAP(本地乐器图)
+
+TYPE=BIN
+
+PATCHED_IFNOT:$GREP4 0x00 0x3C 0x00 0x00 0x68 0x27 0x50 0x08 0xFF 0xFA 0x00 0xCC 0x00 0x3C 0x00 0x00 0x18 0x7D 0x29 0x08 0xFF 0xFA 0x00 0xCC 0x00 0x3C 0x00 0x00 0x3C 0x8E 0x28 0x08 0xFF 0xF9 0x00 0xA5 0x01 0x3C 0x00 0x00 0x02 0x00 0x00 0x00 0x00 0x00 0x0F 0x00=0x00 0x3C 0x00 0x00</pre>
+<pre class="code">BIN:$FREEAREA=JAPFE8_NI_Map.bin
+INFO=MIDI乐器图</pre>
+
+<p>
+<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=389216&amp;media=https%3A%2F%2Fi.imgur.com%2FoB9KLti.jpg" class="media" title="https://i.imgur.com/oB9KLti.jpg"><img src="/lib/exe/fetch.php?tok=389216&amp;media=https%3A%2F%2Fi.imgur.com%2FoB9KLti.jpg" class="mediacenter" title="i.imgur.com_ob9klti.jpg" alt="i.imgur.com_ob9klti.jpg" /></a><br />
+<br/>
+在这个例子中，将JAPFE8_NI_Map.bin粘贴到适当的$ FREEAREA中。<br/>
+由于两次粘贴时存在问题，因此$ GREP4正在调查它是否适用。<br/>
+<br/>
+<br/>
+
+</p>
+<pre class="code">宏
+$FREEAREA自由区域（分配ROM中的可用空间）
+$GREP4		搜索字节字符串，但以4字节为单位（高速）。</pre>
+<pre class="code">$GREP1		搜索字节字符串，但是1个字节单位（低速）。</pre>
+<pre class="code">$GREP4_NOT	它是有条件的，它不能通过搜索字节字符串找到。
+$GREP1_NOT	它是有条件的，它不能通过搜索字节字符串找到。</pre>
+
+<p>
+<br/>
+<br/>
+<br/>
+
+</p>
+<pre class="code">NAME=10分割CG表示
+
+//作为BIN补丁实施。
+TYPE=BIN
+
+//补丁适应条件。
+PATCHED_IF:0x080bb182=0x45 0x46 0xE0 0xB4
+
+BIN:$FREEAREA=show_10split_image.bin
+
+//跳转到插入10格图像显示程序的地方。
+JUMP:0x080bb182:$r4=show_10split_image.asm
+
+INFO=10分割CGを表示できるようにします
+INFO.zh=它可以显示10个分割的CG
+INFO.en=It makes it possible to display 10 divided CG.</pre>
+
+<p>
+<a href="/lib/exe/fetch.php?tok=a92ff9&amp;media=https%3A%2F%2Fi.imgur.com%2F41kVbuk.jpg" class="media" title="https://i.imgur.com/41kVbuk.jpg"><img src="/lib/exe/fetch.php?tok=a92ff9&amp;media=https%3A%2F%2Fi.imgur.com%2F41kVbuk.jpg" class="mediacenter" title="i.imgur.com_41kvbuk.jpg" alt="i.imgur.com_41kvbuk.jpg" /></a><br />
+<br/>
+在空闲区域粘贴show_10split_image.bin。<br/>
+为粘贴的数据生成跳转代码。<br/>
+r4寄存器用于跳转代码。<br/>
+<br/>
+要跳转的代码，将生成以下代码。<br/>
+
+</p>
+<pre class="code">当地址可以被4个字节整除时。
+(addr%4 == 0)
+ldr r4,[JUMP ADDR]		//+0
+mov pc,r4;				//+2
+JUMP ADDR				//+4  --&gt;共8个字节。</pre>
+
+<p>
+但是，如果它可以被2个字节整除，则插入NOP。
+</p>
+<pre class="code">NOP					//+0
+ldr r4,[JUMP ADDR]		//+2
+mov pc,r4;				//+4
+JUMP ADDR				//+6  --&gt;共有10个字节。</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[补丁类型BIN补丁] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="补丁类型bin补丁" /><input type="hidden" name="codeblockOffset" value="27" /><input type="hidden" name="range" value="12267-14360" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="补丁类型BIN补丁">編集</button></div></form></div>
+<h3 class="sectionedit23" id="加入偏移">加入偏移</h3>
+<div class="level3">
+<pre class="code">JUMP:0x080bb182:$r4:+2=show_10split_image.bin</pre>
+
+<p>
+<br/>
+这样，您可以跳转到show_10split_image.bin安装位置+ 2的位置。<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[加入偏移] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="加入偏移" /><input type="hidden" name="codeblockOffset" value="35" /><input type="hidden" name="range" value="14361-14535" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="加入偏移">編集</button></div></form></div>
+<h3 class="sectionedit24" id="直接值_none">直接值 $NONE</h3>
+<div class="level3">
+<pre class="code">JUMP:0x080bb182:$NONE=show_10split_image.bin</pre>
+
+<p>
+<br/>
+写入show_10split_image.bin的安装地址，而不是生成跳转代码。<br/>
+由于它是一个地址，它消耗4个字节<br />
+要写入的地址是小尾数格式。<br/>
+<br/>
+作为一种实用的使用方式，我认为我使用它从设置跳转到代码
+</p>
+
+<p>
+<br/>
+
+</p>
+<pre class="code"> //在菜单效果中，输入GNP程序的地址。
+ //因为它提供了直接值，所以没有寄存器关系，所以$ NONE。
+ //如果是直接值，则需要将其设置为地址+1，因此+1。
+JUMP:0x5C53A8:$NONE:+1=main指南本体.bin</pre>
+
+<p>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[直接值 $NONE] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="直接值_none" /><input type="hidden" name="codeblockOffset" value="36" /><input type="hidden" name="range" value="14536-15146" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="直接值 $NONE">編集</button></div></form></div>
+<h3 class="sectionedit25" id="b跳代">B跳代</h3>
+<div class="level3">
+<pre class="code">JUMP:0x988c6:$B=0x9893a</pre>
+
+<p>
+<br/>
+在地址0x988c6处生成b 0x9893a的ASM操作码。<br/>
+b因为是跳跃，所以我不能飞得太远。<br/>
+b它消耗2个字节，因为它是跳转。<br/>
+<br />
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_25'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[B跳代] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="b跳代" /><input type="hidden" name="codeblockOffset" value="38" /><input type="hidden" name="range" value="15147-15368" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="B跳代">編集</button></div></form></div>
+<h3 class="sectionedit26" id="bl跳转生成">BL跳转生成</h3>
+<div class="level3">
+<pre class="code">JUMP:0x340cc:$BL=0x988c8</pre>
+
+<p>
+<br/>
+在地址0x340cc处生成bl 0x988c8的ASM操作码。<br/>
+因为这是跳跃，所以不能飞得太远。<br/>
+它消耗4个字节，因为它是一个bl跳转。<br/>
+<br />
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_26'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[BL跳转生成] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="bl跳转生成" /><input type="hidden" name="codeblockOffset" value="39" /><input type="hidden" name="range" value="15369-15605" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="BL跳转生成">編集</button></div></form></div>
+<h2 class="sectionedit27" id="文本表扩展指令">文本表扩展指令</h2>
+<div class="level2">
+<pre class="code">EXTENDS:0xe30=TEXT      //将文本表扩展为0xe30。
+TEXT:0x0e01=0x0e01.txt  //将0x0e01.txt的内容写入文本ID 0xe01 
+TEXT:0x0e02=0x0e02.txt
+TEXT:0x0e00=0x0e00.txt</pre>
+
+<p>
+<br/>
+支持文本表扩展和写入。<br/>
+但是，截至目前，我们无法扩展其他表格。<br/>
+<br />
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_27'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[文本表扩展指令] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="文本表扩展指令" /><input type="hidden" name="codeblockOffset" value="40" /><input type="hidden" name="range" value="15606-15931" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="文本表扩展指令">編集</button></div></form></div>
+<h2 class="sectionedit28" id="补丁类型ea补丁">补丁类型EA补丁</h2>
+<div class="level2">
+<pre class="code">TYPE=EA
+EA=ea.event</pre>
+
+<p>
+<br/>
+<a href="/lib/exe/fetch.php?tok=892639&amp;media=https%3A%2F%2Fi.imgur.com%2FWaVR6Ro.jpg" class="media" title="https://i.imgur.com/WaVR6Ro.jpg"><img src="/lib/exe/fetch.php?tok=892639&amp;media=https%3A%2F%2Fi.imgur.com%2FWaVR6Ro.jpg" class="mediacenter" title="i.imgur.com_wavr6ro.jpg" alt="i.imgur.com_wavr6ro.jpg" /></a><br />
+<br/>
+使用添加数据 Event Assembler.<br/>
+将EA中指定的Event Assembler脚本的内容添加到当前ROM中。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_28'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[补丁类型EA补丁] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="补丁类型ea补丁" /><input type="hidden" name="codeblockOffset" value="41" /><input type="hidden" name="range" value="15932-16158" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="补丁类型EA补丁">編集</button></div></form></div>
+<h2 class="sectionedit29" id="补丁的种类">补丁的种类</h2>
+<div class="level2">
+<pre class="code">NAME=没有武器显示
+TYPE=SWITCH
+
+COMBO.en=no weapons|ONN|with weapons|OFF
+
+ONN:0x0802F5C0=0x00 0x20 0x00 0x20
+ONN:0x080D1DE2=0x00 0x20 0x00 0x20
+
+OFF:0x0802F5C0=0xE7 0xF7 0x86 0xF9
+OFF:0x080D1DE2=0x44 0xF7 0x75 0xFD</pre>
+
+<p>
+“SWITCH补丁”是addr补丁的进一步发展<br/>
+<br/>
+当需要使用不同的值写入不同的地址时使用它。<br/>
+与BIN或EA补丁不同的是，我们处理大约几个字节的较小数据<br/>
+<br/>
+在这个例子中，显示ON和OFF选项，<br/>
+如果是ON，则将ONN定义的内容写入地址<br/>
+如果为OFF，则将由OFF定义的内容写入地址<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_29'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[补丁的种类] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="补丁的种类" /><input type="hidden" name="codeblockOffset" value="42" /><input type="hidden" name="range" value="16159-16787" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="补丁的种类">編集</button></div></form></div>
+<h1 class="sectionedit30" id="mod">MOD</h1>
+<div class="level1">
+
+<p>
+您可能希望将结构的未使用区域用作补丁的参数<br/>
+在FEBuilderGBA中，它可以通过在patch目录中创建MOD _ *。txt来使用<br/>
+<br />
+<br/>
+
+</p>
+<pre class="code">IF:0x89268=0x00 0x4B 0x9F 0x46</pre>
+<pre class="code">FORM=UnitForm   //它适用于UnitForm（FE 8）
+J_38=技能1
+J_39=技能2
+J_49=个人技能
+J_38:NAME=J_38_SKILLASSIGNMENT_SCROLL1_B39
+J_39:NAME=J_39_SKILLASSIGNMENT_SCROLL2_B38
+J_49:NAME=J_49_SKILLASSIGNMENT_MASTERY</pre>
+
+<p>
+<br/>
+但是，由于要设置为MOD的参数是FEBuilderGBA的C＃中使用的标签名称，因此有必要了解源代码。<br/>
+而且，在欧美的改造中，我认为它不是经常使用的地方，而是经常创造出自己的结构。<br/>
+如果你这么认为，MOD可能是日本重塑中经常使用的一个特征。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_30'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[MOD] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="mod" /><input type="hidden" name="codeblockOffset" value="43" /><input type="hidden" name="range" value="16788-17569" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="MOD">編集</button></div></form></div>
+<h1 class="sectionedit31" id="febuildergba启动的参数">FEBuilderGBA启动的参数</h1>
+<div class="level1">
+<pre class="code">FEBuilderGBA.exe [ROM] [--选项=值]</pre>
+
+<p>
+除非您指定了任何选项，否则FEBuilderGBA将显示欢迎屏幕。<br/>
+你可以通过指定其中一个选项来改变它。<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_31'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[FEBuilderGBA启动的参数] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="febuildergba启动的参数" /><input type="hidden" name="codeblockOffset" value="45" /><input type="hidden" name="range" value="17570-17810" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="FEBuilderGBA启动的参数">編集</button></div></form></div>
+<h2 class="sectionedit32" id="rom">[ROM]</h2>
+<div class="level2">
+
+<p>
+打开指定的ROM文件名称。<br/>
+如果未指定文件名或者无法读取文件，则会显示“欢迎”屏幕。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_32'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[[ROM]] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="rom" /><input type="hidden" name="codeblockOffset" value="46" /><input type="hidden" name="range" value="17811-17953" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="[ROM]">編集</button></div></form></div>
+<h2 class="sectionedit33" id="rom_文件名">--rom=文件名</h2>
+<div class="level2">
+
+<p>
+这是一样的 [ROM]。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_33'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[--rom=文件名] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="rom_文件名" /><input type="hidden" name="codeblockOffset" value="46" /><input type="hidden" name="range" value="17954-18010" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="--rom=文件名">編集</button></div></form></div>
+<h2 class="sectionedit34" id="最后一个rom">--最后一个ROM</h2>
+<div class="level2">
+
+<p>
+打开上次打开的ROM。<br/>
+最后一个ROM将是您退出FEBuilderGBA时打开的ROM。<br/>
+（在过程结束时，记录当前打开的文件名）
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_34'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[--最后一个ROM] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="最后一个rom" /><input type="hidden" name="codeblockOffset" value="46" /><input type="hidden" name="range" value="18011-18193" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="--最后一个ROM">編集</button></div></form></div>
+<h2 class="sectionedit35" id="强制版本_版本">--强制版本=版本</h2>
+<div class="level2">
+
+<p>
+强制将ROM作为特定版本打开。<br/>
+通常情况下，版本与ROM的标题区分开来，但是当您想用特定版本强制打开它时会使用它。<br/>
+当ROM标头由于某种原因被损坏或者当你想要加载另一个GBA游戏进行调试时使用它<br />
+通常你不需要使用它。<br/>
+
+</p>
+<div class="table sectionedit36"><table class="inline">
+	<tr class="row0">
+		<td class="col0">版本列表</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">FE8JP</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">FE7JP</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">FE6</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">FE8U</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">FE7U</td>
+	</tr>
+</table></div>
+
+</div>
+<div class='secedit editbutton_section editbutton_35'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[--强制版本=版本] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="强制版本_版本" /><input type="hidden" name="codeblockOffset" value="46" /><input type="hidden" name="range" value="18194-18583" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="--强制版本=版本">編集</button></div></form></div>
+<h2 class="sectionedit37" id="强制细节">--强制细节</h2>
+<div class="level2">
+
+<p>
+强制从详细菜单屏幕开始。<br/>
+有一些特殊的原因，当你想跳过简单的屏幕菜单时使用它。<br/>
+通常你不需要使用它。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_37'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697381" /><input type="hidden" name="summary" value="[--强制细节] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="强制细节" /><input type="hidden" name="codeblockOffset" value="46" /><input type="hidden" name="range" value="18584-" /><input type="hidden" name="id" value="zh:guide:febuildergba:febuildergba的配置数据结构_zh" /><button type="submit" title="--强制细节">編集</button></div></form></div>
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>zh/guide/febuildergba/febuildergba的配置数据结构_zh.txt</bdi> · 最終更新: 2018/09/23 19:09 by <bdi>211.14.62.193</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">ページ用ツール</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="/doku.php?id=zh:guide:febuildergba:febuildergba%E7%9A%84%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_zh&amp;do=edit" title="文書の編集 [e]" rel="nofollow" accesskey="e"><span>文書の編集</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="/doku.php?id=zh:guide:febuildergba:febuildergba%E7%9A%84%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_zh&amp;do=revisions" title="以前のリビジョン [o]" rel="nofollow" accesskey="o"><span>以前のリビジョン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="/doku.php?id=zh:guide:febuildergba:febuildergba%E7%9A%84%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_zh&amp;do=backlink" title="バックリンク" rel="nofollow"><span>バックリンク</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="top"><a href="#dokuwiki__top" title="文書の先頭へ [t]" rel="nofollow" accesskey="t"><span>文書の先頭へ</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
+            src="/lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" ><img
+            src="/lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="//validator.w3.org/check/referer" title="Valid HTML5" ><img
+            src="/lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="//jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
+            src="/lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="/lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="/lib/exe/indexer.php?id=zh%3Aguide%3Afebuildergba%3Afebuildergba%E7%9A%84%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_zh&amp;1542024607" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>

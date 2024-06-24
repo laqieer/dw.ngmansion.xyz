@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>data:イベント命令 [FE改造wiki]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="data,イベント命令"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=data:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=data"/>
+<link rel="edit" title="文書の編集" href="/doku.php?id=data:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4&amp;do=edit"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=data:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=data:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=data:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='data';var JSINFO = {"toc":{"initial_state":1},"isadmin":0,"isauth":0,"move_renameokay":false,"id":"data:\u30a4\u30d9\u30f3\u30c8\u547d\u4ee4","namespace":"data","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="/lib/tpl/dokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/dokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki    showSidebar hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">内容へ移動</a></li>
+        </ul>
+
+        <h1><a href="/doku.php?id=start"  accesskey="h" title="[H]"><img src="/lib/tpl/dokuwiki/images/logo.png" width="64" height="64" alt="" /> <span>FE改造wiki</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">ユーザ用ツール</h3>
+                <ul>
+                    <li class="action register"><a href="/doku.php?id=data:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4&amp;do=register" title="ユーザー登録" rel="nofollow"><span>ユーザー登録</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4z"/></svg></a></li><li class="action login"><a href="/doku.php?id=data:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4&amp;do=login&amp;sectok=" title="ログイン" rel="nofollow"><span>ログイン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">サイト用ツール</h3>
+            <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="data:イベント命令" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="検索" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="検索">検索</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="data:イベント命令" /><select name="do" class="edit quickselect" title="ツール"><option value="">ツール</option><optgroup label="ページ用ツール"><option value="edit">文書の編集</option><option value="revisions">以前のリビジョン</option><option value="backlink">バックリンク</option></optgroup><optgroup label="サイト用ツール"><option value="recent">最近の変更</option><option value="media">メディアマネージャー</option><option value="index">サイトマップ</option></optgroup><optgroup label="ユーザ用ツール"><option value="register">ユーザー登録</option><option value="login">ログイン</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="/doku.php?id=data:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4&amp;do=recent" title="最近の変更 [r]" rel="nofollow" accesskey="r">最近の変更</a></li><li class="action media"><a href="/doku.php?id=data:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4&amp;do=media&amp;ns=data" title="メディアマネージャー" rel="nofollow">メディアマネージャー</a></li><li class="action index"><a href="/doku.php?id=data:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4&amp;do=index" title="サイトマップ [x]" rel="nofollow" accesskey="x">サイトマップ</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">トレース:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php?id=data:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4"  class="breadcrumbs" title="data:イベント命令">イベント命令</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+                            <!-- ********** ASIDE ********** -->
+                <div id="dokuwiki__aside"><div class="pad aside include group">
+                    <h3 class="toggle">サイドバー</h3>
+                    <div class="content"><div class="group">
+                                                                        <ul>
+<li class="level1"><div class="li"> <a href="/doku.php?id=qa" class="wikilink1" title="qa">QA</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=guide:start" class="wikilink1" title="guide:start">GUIDE</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=dictionary:start" class="wikilink1" title="dictionary:start">DICTIONARY</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=column:start" class="wikilink1" title="column:start">COLUMN</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=data:start" class="wikilink1" title="data:start">DATA</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<a href="/doku.php?id=en:start" class="wikilink1" title="en:start">English</a><br />
+<a href="/doku.php?id=zh:start" class="wikilink1" title="zh:start">中文</a>
+</p>
+
+<p>
+<span class="wrap_hi wrap_center wrap_centeralign ">最新の10件</span>
+</p>
+<div class="table">
+<table class="inline">
+	<tr>
+		<th class="page">ページ</th><th class="date">日付</th>
+	</tr>
+	<tr>
+		<td class="page"><a href="/doku.php?id=en:guid:febuildergba:work_support" class="wikilink1" title="en:guid:febuildergba:work_support">en:guid:febuildergba:work_support</a></td>
+		<td class="date">2023/06/08 20:25</td>
+	</tr>
+	<tr>
+		<td class="page"><a href="/doku.php?id=guide:febuildergba:%E4%BD%9C%E5%93%81%E6%94%AF%E6%8F%B4" class="wikilink1" title="guide:febuildergba:作品支援">guide:febuildergba:作品支援</a></td>
+		<td class="date">2023/06/08 20:24</td>
+	</tr>
+</table>
+</div>
+                                            </div></div>
+                </div></div><!-- /aside -->
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>data:イベント命令</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#実用系イベント">実用系イベント</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#ターン条件">ターン条件</a></div></li>
+<li class="level2"><div class="li"><a href="#オブジェクト指定">オブジェクト指定</a></div></li>
+<li class="level2"><div class="li"><a href="#会話条件">会話条件</a></div></li>
+<li class="level2"><div class="li"><a href="#範囲条件">範囲条件</a></div></li>
+<li class="level2"><div class="li"><a href="#分岐条件">分岐条件</a></div></li>
+<li class="level2"><div class="li"><a href="#特殊">特殊</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#演出系イベント">演出系イベント</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#映像効果">映像効果</a></div></li>
+<li class="level2"><div class="li"><a href="#ユニット効果">ユニット効果</a></div></li>
+<li class="level2"><div class="li"><a href="#マップ効果">マップ効果</a></div></li>
+<li class="level2"><div class="li"><a href="#開始終了イベント">開始終了イベント</a></div></li>
+<li class="level2"><div class="li"><a href="#不明">不明</a></div></li>
+<li class="level2"><div class="li"><a href="#自前asm関数呼び出し">自前asm関数呼び出し</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="/doku.php?id=data:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A42" class="wikilink1" title="data:イベント命令2">Event Assmelber版はこちら</a><br/>
+別項目で命令がある程度被っても構いません 使いやすさ命<br />
+<a href="/doku.php?id=data:asm" class="wikilink1" title="data:asm">asm</a><br/>
+■終了
+</p>
+<pre class="code">20010000 &#039;&#039;リターン命令
+28020700 20010000 &#039;&#039;イベント終了命令</pre>
+
+<h1 class="sectionedit1" id="実用系イベント">実用系イベント</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1542300038" /><input type="hidden" name="summary" value="[実用系イベント] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="実用系イベント" /><input type="hidden" name="codeblockOffset" value="1" /><input type="hidden" name="range" value="248-284" /><input type="hidden" name="id" value="data:イベント命令" /><button type="submit" title="実用系イベント">編集</button></div></form></div>
+<h2 class="sectionedit2" id="ターン条件">ターン条件</h2>
+<div class="level2">
+
+<p>
+■増援
+</p>
+<pre class="code">40050200 XXXXXXXX 400A0000 AC03A608 &#039;&#039;出現時にカメラ移動
+40050200 XXXXXXXX 400A0000 D403A608 &#039;&#039;出現時にカメラ移動有り(ハードのみ増援)
+402C0100 XXXXXXXX 20300000 &#039;&#039;カメラ移動無しでユニット出現</pre>
+
+<p>
+■AI変化
+</p>
+<pre class="code">40050100 XXYY0000 2039ZZ00 &#039;&#039;[ZZ]のAIを[XX、YY]に変更</pre>
+
+<p>
+XXがAI-1、YYがAI-2<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1542300038" /><input type="hidden" name="summary" value="[ターン条件] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="ターン条件" /><input type="hidden" name="codeblockOffset" value="1" /><input type="hidden" name="range" value="285-683" /><input type="hidden" name="id" value="data:イベント命令" /><button type="submit" title="ターン条件">編集</button></div></form></div>
+<h2 class="sectionedit3" id="オブジェクト指定">オブジェクト指定</h2>
+<div class="level2">
+
+<p>
+■民家
+</p>
+<pre class="code">20150000 40050200 XX000000 40050300 YYYY0000 400A0000 4804A608 21150000 28020700 20010000 &#039;&#039;背景[XX]会話[YYYY]</pre>
+
+<p>
+最近絶滅した情報だけの家<br/>
+<br />
+■訪問村
+</p>
+<pre class="code">20150000 40050200 XX000000 40050300 YYYY0000 400A0000 4804A608 21150000 400A0000 249D5B08 40050300 ZZ000000 2037FFFF 28020700 20010000 &#039;&#039;背景[XX]会話[YYYY]報酬[ZZ]
+20150000 40050200 XX000000 40050300 YYYY0000 400A0000 4804A608 400A0000 249D5B08 40050300 ZZZZ0000 21370000 21150000 28020700 20010000 &#039;&#039;背景[XX]会話[YYYY]報酬額[ZZZZ]</pre>
+
+<p>
+■マップ変化
+</p>
+<pre class="code">2027XX00 &#039;&#039;[XX]部分ﾏｯﾌﾟ変更を実行
+2016XX00 &#039;&#039;効果音XXを鳴らす</pre>
+
+<p>
+マップ変化IDはTiledなどで確認<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1542300038" /><input type="hidden" name="summary" value="[オブジェクト指定] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="オブジェクト指定" /><input type="hidden" name="codeblockOffset" value="3" /><input type="hidden" name="range" value="684-1438" /><input type="hidden" name="id" value="data:イベント命令" /><button type="submit" title="オブジェクト指定">編集</button></div></form></div>
+<h2 class="sectionedit4" id="会話条件">会話条件</h2>
+<div class="level2">
+
+<p>
+■テンプレ
+</p>
+<pre class="code">20150000 201A0000 201BXXXX 201D0000 221B0000 21150000 28020700 20010000 &#039;&#039;会話XX
+2014XX00 200E2100 201A0000 201BYYYY 201D0000 221B0000 21140200 28020700 20010000 &#039;&#039;曲XXで会話YY</pre>
+
+<p>
+■会話中イベント
+</p>
+<pre class="code">201C0000 201D0000 &#039;@0004実行時ここまで
+2014XX00 200E2100 201C0000 201D0000 &#039;&#039;会話中のBGMチェンジ</pre>
+
+<p>
+■所属変更
+</p>
+<pre class="code">2234XX00 28020700 20010000 &#039;&#039;XXを自軍に加入</pre>
+
+<p>
+会話の最後をこれにする<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1542300038" /><input type="hidden" name="summary" value="[会話条件] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="会話条件" /><input type="hidden" name="codeblockOffset" value="6" /><input type="hidden" name="range" value="1439-1951" /><input type="hidden" name="id" value="data:イベント命令" /><button type="submit" title="会話条件">編集</button></div></form></div>
+<h2 class="sectionedit5" id="範囲条件">範囲条件</h2>
+<div class="level2">
+
+<p>
+■ユニット進入
+</p>
+<pre class="code">40050200 XX000000 400A0000 D402A608 &#039;&#039;XXが進入したら</pre>
+<pre class="code">40050200 XX000000 400A0000 D402A608 400A0000 E89E5B08 28020700 20010000 &#039;&#039;XXが進入したらゲームオーバー</pre>
+
+<p>
+■自軍進入
+</p>
+<pre class="code">40050200 00000000 400A0000 F002A608 &#039;&#039;自軍なら誰が通過しても</pre>
+<pre class="code">40050200 00000000 400A0000 F002A608 2102XX00 28020700 20010000 &#039;&#039;自軍が通過したらフラグ[XX]OFFにして終了
+40050200 00000000 400A0000 F002A608 40050100 XXYY0000 2039ZZ00 28020700 20010000 &#039;&#039;自軍が通過で[ZZ]のAIを[XX、YY]終了</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1542300038" /><input type="hidden" name="summary" value="[範囲条件] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="範囲条件" /><input type="hidden" name="codeblockOffset" value="9" /><input type="hidden" name="range" value="1952-2575" /><input type="hidden" name="id" value="data:イベント命令" /><button type="submit" title="範囲条件">編集</button></div></form></div>
+<h2 class="sectionedit6" id="分岐条件">分岐条件</h2>
+<div class="level2">
+
+<p>
+<a href="/doku.php?id=%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4:%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB" class="wikilink2" title="イベント命令:サンプル" rel="nofollow">サンプル</a>
+</p>
+
+<p>
+■ジャンプ(命令無視)
+</p>
+<pre class="code">2009XX00 &#039;&#039;2008XX00までジャンプ
+2008XX00 </pre>
+
+<p>
+分岐を使うなら20080000を分岐終了にするのがスマート<br/>
+2008XX00命令は、同階層のイベント中に同一のIDで二度出すことは不可能<br/>
+<br />
+■フラグ分岐
+</p>
+<pre class="code">2902XX00 &#039;&#039;[XX]ﾌﾗｸﾞON
+2102XX00 &#039;&#039;[XX]ﾌﾗｸﾞOFF</pre>
+<pre class="code">2103XX00 &#039;&#039;フラグ条件
+400CXX00 0C000000 &#039;&#039;オフの場合、2008XX00までジャンプ
+410CXX00 0C000000 &#039;&#039;オンの場合、2008XX00までジャンプ</pre>
+
+<p>
+■生存ユニット分岐
+</p>
+<pre class="code">2233XX00 &#039;&#039;ユニットXX生存条件
+400CXX00 0C000000 &#039;&#039;死亡の場合2008XX00までジャンプ
+410CXX00 0C000000 &#039;&#039;生存の場合2008XX00までジャンプ</pre>
+
+<p>
+■選択中ユニット分岐
+</p>
+<pre class="code">212E0000 4005??00 XX000000 &#039;&#039;XXとユニットID照合
+400CXX00 0C00??00 &#039;&#039;合った場合、2008XX00までジャンプ
+410CXX00 0C00??00 &#039;&#039;違った場合、2008XX00までジャンプ</pre>
+
+<p>
+??は01や07。要統一
+</p>
+
+<p>
+■会話グループ分岐
+</p>
+<pre class="code">212E0000 2133FFFF 4005??00 XX000000 &#039;&#039;選択中ユニットが会話グループ[XX]かを照合
+400CXX00 0C00??00 &#039;&#039;合った場合、2008XX00までジャンプ
+410CXX00 0C00??00 &#039;&#039;違った場合、2008XX00までジャンプ</pre>
+
+<p>
+??は01とか07とか。要統一<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1542300038" /><input type="hidden" name="summary" value="[分岐条件] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="分岐条件" /><input type="hidden" name="codeblockOffset" value="13" /><input type="hidden" name="range" value="2576-3943" /><input type="hidden" name="id" value="data:イベント命令" /><button type="submit" title="分岐条件">編集</button></div></form></div>
+<h2 class="sectionedit7" id="特殊">特殊</h2>
+<div class="level2">
+
+<p>
+■離脱と復帰
+</p>
+<pre class="code">2034XX00 &#039;&#039;離脱フラグオン（データは残るがゲーム上では見えなくなる）
+2134XX00 &#039;&#039;離脱フラグオフ（ゲーム上で見えるようになる）</pre>
+
+<p>
+新たなる旅立ちで違う方の主人公を消す命令
+</p>
+
+<p>
+■天候
+</p>
+<pre class="code">2028XX00 &#039;&#039;天気を変更する 00:晴れ 01:雪 02:吹雪 04:雨 05:マグマ 06:砂嵐
+2029XX00 &#039;&#039;霧の濃さを調整 00:霧無し FFFF:ﾏｯﾌﾟ初期値</pre>
+
+<p>
+■マップ切り替え
+</p>
+<pre class="code">2025XX00 &#039;&#039;[XX]座標指定されていればその座標にｶﾒﾗ移動</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1542300038" /><input type="hidden" name="summary" value="[特殊] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="特殊" /><input type="hidden" name="codeblockOffset" value="19" /><input type="hidden" name="range" value="3944-4540" /><input type="hidden" name="id" value="data:イベント命令" /><button type="submit" title="特殊">編集</button></div></form></div>
+<h1 class="sectionedit8" id="演出系イベント">演出系イベント</h1>
+<div class="level1">
+
+<p>
+■待機
+</p>
+<pre class="code">200EXX00 &#039;&#039;3Cで1秒</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1542300038" /><input type="hidden" name="summary" value="[演出系イベント] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="演出系イベント" /><input type="hidden" name="codeblockOffset" value="22" /><input type="hidden" name="range" value="4541-4624" /><input type="hidden" name="id" value="data:イベント命令" /><button type="submit" title="演出系イベント">編集</button></div></form></div>
+<h2 class="sectionedit9" id="映像効果">映像効果</h2>
+<div class="level2">
+
+<p>
+■明暗転
+</p>
+<pre class="code">2017XX00 &#039;&#039;[XX]の速さで画面を明るく
+2117XX00 &#039;&#039;[XX]の速さで画面を暗く</pre>
+
+<p>
+01遅い↔一瞬10　01は本当に遅い。せめて02<br/>
+<br />
+■背景変更
+</p>
+<pre class="code">40050200 XX000000 400A0000 2004A608 &#039;&#039;マップを消して背景表示
+400A0000 FC03A608 &#039;&#039;背景を消去してマップに戻る</pre>
+
+<p>
+（普通は不要な分解版　暗転中に仕込む命令）<br/>
+
+</p>
+<pre class="code">211A0000 &#039;&#039;マップ消去
+4021XX00 00000000 &#039;&#039;背景XXを表示
+20220000 &#039;&#039;背景画像消滅（マップに戻る場合に使用）</pre>
+
+<p>
+■会話
+</p>
+<pre class="code">201BXXXX 201D0000 &#039;&#039;会話イベント
+201C0000 201D0000 &#039;&#039;会話中イベント
+2014XX00 200E2100 201C0000 201D0000 &#039;&#039;会話中のBGMチェンジ
+221B0000 &#039;&#039;会話終了</pre>
+
+<p>
+■BGM関連
+</p>
+<pre class="code">2012XX00 &#039;&#039;BGM変更
+2413FF7F &#039;&#039;BGM消去</pre>
+
+<p>
+■効果音を鳴らす
+</p>
+<pre class="code">2016XX00</pre>
+
+<p>
+■斬撃エフェクト
+</p>
+<pre class="code">20430000 &#039;&#039;画面全体を被うエフェクト表示</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1542300038" /><input type="hidden" name="summary" value="[映像効果] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="映像効果" /><input type="hidden" name="codeblockOffset" value="23" /><input type="hidden" name="range" value="4625-5619" /><input type="hidden" name="id" value="data:イベント命令" /><button type="submit" title="映像効果">編集</button></div></form></div>
+<h2 class="sectionedit10" id="ユニット効果">ユニット効果</h2>
+<div class="level2">
+
+<p>
+■ユニットXX消滅<br />
+メモリ上から完全に抹消する
+</p>
+<pre class="code">2F34XX00</pre>
+
+<p>
+■ユニット読み込み
+</p>
+<pre class="code">402C0100 XXXXXXXX 20300000 &#039;&#039;ユニット読み込み1　特に特徴がないのが特徴
+412C0100 XXXXXXXX 20300000 &#039;&#039;ユニット読み込み2　味方を読んでも加入しない。未加入ユニットを読んだ場合はイベント終了時に即消滅する。死亡ユニットは出現しない
+422C0000 XXXXXXXX 20300000 &#039;&#039;ユニット読み込み3　ユニットIDを無視して、出撃表順に読み込む</pre>
+
+<p>
+■ユニット移動
+</p>
+<pre class="code">402F0000 ZZ00XXYY 20300000 &#039;&#039;[ZZ]を[XX、YY]に移動(敵はスルーして移動)
+412FZZ00 XX00YY00 20300000 &#039;&#039;[ZZ]速さ(通常00)で[XX]を[YY]のﾕﾆｯﾄまで移動
+422FZZ00 XX00YY00 &#039;&#039;[ZZ]速さ(通常00)[XX]が[YY]方向(00:← 01:→ 02:↓ 03↑)で1ﾏｽ移動</pre>
+
+<p>
+■ユニット戦闘設定
+</p>
+<pre class="code">40050D00 00000000 &#039;&#039;イベント戦闘情報リセット
+40050100 XX00YY00 21070000 &#039;&#039;[XX]00:攻撃側が 01:反撃側が [YY]00:当てる 01:必殺 02:外す</pre>
+
+<p>
+後付すれば好きなだけ追加が可能&amp;br&#039;
+</p>
+
+<p>
+■戦闘開始
+</p>
+<pre class="code">412FXX00 ZZ00WW00 20300000 &#039;&#039;[XX]速さ?で[ZZ]を[WW]のﾕﾆｯﾄまで移動設定
+403FXX00 YY00ZZ00 &#039;戦闘画面有ｲﾍﾞﾝﾄ戦闘[XX]が[YY]に攻撃[ZZ]武器固定 00:現在の装備???
+413FXX00 YY00ZZ00 &#039;戦闘画面無ｲﾍﾞﾝﾄ戦闘[XX]が[YY]に攻撃[ZZ]武器固定 00:現在の装備???</pre>
+<pre class="code">40050B00 XX00YY00 &#039;座標取得
+403FXX00 FFFFZZ00 &#039;戦闘画面有ｲﾍﾞﾝﾄ戦闘[XX]が[取得座標]に攻撃[ZZ]武器固定 00:現在の装備???
+413FXX00 FFFFZZ00 &#039;戦闘画面無ｲﾍﾞﾝﾄ戦闘[XX]が[取得座標]に攻撃[ZZ]武器固定 00:現在の装備???</pre>
+
+<p>
+イベント戦闘ではHP残量や生死には反映されない<br/>
+戦闘・死亡セリフには関わる
+</p>
+
+<p>
+■ユニット死亡消滅
+</p>
+<pre class="code">40050B00 XX00YY00 2D34FEFF 2E34FEFF &#039;&#039;XXYYの座標のユニット死亡消滅</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1542300038" /><input type="hidden" name="summary" value="[ユニット効果] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="ユニット効果" /><input type="hidden" name="codeblockOffset" value="30" /><input type="hidden" name="range" value="5620-7653" /><input type="hidden" name="id" value="data:イベント命令" /><button type="submit" title="ユニット効果">編集</button></div></form></div>
+<h2 class="sectionedit11" id="マップ効果">マップ効果</h2>
+<div class="level2">
+
+<p>
+■ユニットカメラ
+</p>
+<pre class="code">2126ZZ00 &#039;&#039;[ZZ]ﾕﾆｯﾄに画面瞬間移動(画面隅ok)
+2926ZZ00 &#039;&#039;[ZZ]ﾕﾆｯﾄに画面瞬間移動(画面隅は危険？)</pre>
+
+<p>
+■座標カメラ移動
+</p>
+<pre class="code">2026XXYY &#039;&#039;[XX、YY]へ指定座標ｶﾒﾗ位置変更(画面隅指定でもOK ただし中心ではない模様)
+2826XXYY &#039;&#039;[XX、YY]を中心に移動(画面隅指定は危険)</pre>
+
+<p>
+■ユニットに[]枠
+</p>
+<pre class="code">213BXX00 200E3C00 223B0000 &#039;&#039;XX=ユニットID</pre>
+
+<p>
+枠&gt;待機&gt;枠消滅<br/>
+■座標[]枠
+</p>
+<pre class="code">203BXXYY 200E3C00 223B0000 &#039;&#039;[XX、YY]に[]枠が点滅</pre>
+
+<p>
+■カメラ追従
+</p>
+<pre class="code">28020900 &#039;&#039;主人公にカメラが追従
+20020900 &#039;&#039;解除</pre>
+
+<p>
+■現在地表示
+</p>
+<pre class="code">413AXXYY 08000800 &#039;&#039;[YYXX]MAP左上にﾃｷｽﾄ表示</pre>
+
+<p>
+会話背景中でも可能<br/>
+<br />
+■地震
+</p>
+<pre class="code">2042XX01 &#039;&#039;画面を揺らす(地震) 00=横揺 01=縦揺???
+2F420000 &#039;&#039;画面を揺らす(地震)解除???</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1542300038" /><input type="hidden" name="summary" value="[マップ効果] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="マップ効果" /><input type="hidden" name="codeblockOffset" value="37" /><input type="hidden" name="range" value="7654-8627" /><input type="hidden" name="id" value="data:イベント命令" /><button type="submit" title="マップ効果">編集</button></div></form></div>
+<h2 class="sectionedit12" id="開始終了イベント">開始終了イベント</h2>
+<div class="level2">
+
+<p>
+開始や終了イベントほぼピンポ<br/>
+<br />
+■消去<br/>
+自軍の場合は表示を消すだけ。他は完全消去
+</p>
+<pre class="code">2A340000 &#039;&#039;自軍全消去
+2B340000 &#039;&#039;友軍全消去
+2C340000 &#039;&#039;敵軍全消去</pre>
+
+<p>
+■進撃準備
+</p>
+<pre class="code">402C0100XXXXXXXX20300000 &#039;&#039;敵をロード
+400A0000BC9D5B08 &#039;&#039;進撃準備呼び出し
+2826XXYY &#039;&#039;[XX、YY]を中心に移動(画面隅指定は危険)
+2902XX00 &#039;&#039;[XX]ﾌﾗｸﾞON
+20010000 &#039;&#039;終了</pre>
+
+<p>
+■マップ切り替え
+</p>
+<pre class="code">2025XX00&#039;&#039;[XX]座標指定されていればその座標にｶﾒﾗ移動</pre>
+
+<p>
+■次のマップへ
+</p>
+<pre class="code">212AXX00 &#039;&#039;ﾜｰﾙﾄﾞﾏｯﾌﾟ有次のﾏｯﾌﾟ
+222AXX00 &#039;&#039;ﾜｰﾙﾄﾞﾏｯﾌﾟ無次のﾏｯﾌﾟ
+232AXX00 &#039;&#039;次のマップ(Exマップ用)</pre>
+
+<p>
+■ワールドマップで指定した拠点へワープする命令<br />
+MNCH (212AXX00 <code>ﾜｰﾙﾄﾞﾏｯﾌﾟ有次のﾏｯﾌﾟ)を実行する前に利用してください。<br />
+次のWM拠点に移動させます。 (WM_SETNEXTLOCATION)<br />
+40A600000000XX00 XXは拠点IDです。<br />
+<br />
+<br />
+====== その他  ======<br />
+作中1回くらいレベルの命令<br/>
+<br />
+■エンディング総ターン表示<br />
+&lt;code&gt;<br />
+400D000041D00B08 </code>ｴﾝﾃﾞｨﾝｸﾞの総ﾀｰﾝ数表示???<br />
+20220000 <code>背景をクリア (総ターン数のあとに、背景を出してイベントを作りたい場合、一度クリアしないと真っ黒のままになる)<br />
+&lt;/code&gt;<br />
+<br />
+<br />
+■ED一枚絵の表示<br />
+&lt;code&gt;<br />
+221A0000 </code>不明(絵を表示するためには必須命令)<br />
+4221000000000200 <code>ｴﾝﾃﾞｨﾝｸﾞのｴﾌﾗﾑ,ｴｲﾘｰｸ,ﾘｵﾝ一枚絵表示 (この絵以外の表示方法は不明)<br />
+&lt;/code&gt;<br />
+<br />
+<br />
+■強制CCイベント<br />
+&lt;code&gt;<br />
+20100000</code>不明<br />
+4040XX00ZZ00YY00<code>[XX]ユニットIDが[YY]CCアイテムIDで(表示のみ)[ZZ]クラスIDへ強制ｸﾗｽﾁｪﾝｼﾞ<br />
+20100400</code>不明<br />
+&lt;/code&gt;
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1542300038" /><input type="hidden" name="summary" value="[開始終了イベント] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="開始終了イベント" /><input type="hidden" name="codeblockOffset" value="44" /><input type="hidden" name="range" value="8628-10526" /><input type="hidden" name="id" value="data:イベント命令" /><button type="submit" title="開始終了イベント">編集</button></div></form></div>
+<h2 class="sectionedit13" id="不明">不明</h2>
+<div class="level2">
+
+<p>
+不明は、どこで見かけた命令かを補足してください<br/>
+<br />
+■リグバルド要塞
+</p>
+<pre class="code">230FXX00 &#039;&#039;[XX]???連連続増援に使用???
+200FXX00 &#039;&#039;[XX]???連連続増援に使用???
+201FXXYY &#039;&#039;[YY]回???[XX]???連続増援に使用???
+210FXXYY &#039;&#039;[YY]回???[XX]???連続増援に使用???</pre>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1542300038" /><input type="hidden" name="summary" value="[不明] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="不明" /><input type="hidden" name="codeblockOffset" value="48" /><input type="hidden" name="range" value="10527-10858" /><input type="hidden" name="id" value="data:イベント命令" /><button type="submit" title="不明">編集</button></div></form></div>
+<h2 class="sectionedit14" id="自前asm関数呼び出し">自前asm関数呼び出し</h2>
+<div class="level2">
+
+<p>
+■自分でasmで作った関数を呼び出す<br />
+イベント命令から自前のasm関数呼ぶことができる。<br />
+40 0D 00 00 アドレス+1
+</p>
+
+<p>
+例:
+</p>
+<pre class="code">40 0D 00 00 81 F6 E4 08</pre>
+
+<p>
+これで、 0x08E4F680 に設置した関数を呼び出すことができる。<br />
+詳しくは、<a href="/doku.php?id=%E8%A7%A3%E8%AA%AC:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4%E3%81%A7%E3%81%AE%E8%87%AA%E5%89%8D%E9%96%A2%E6%95%B0%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97" class="wikilink2" title="解説:イベント命令での自前関数呼び出し" rel="nofollow">イベント命令での自前関数呼び出し</a> 参照。
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1542300038" /><input type="hidden" name="summary" value="[自前asm関数呼び出し] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="自前asm関数呼び出し" /><input type="hidden" name="codeblockOffset" value="49" /><input type="hidden" name="range" value="10859-" /><input type="hidden" name="id" value="data:イベント命令" /><button type="submit" title="自前asm関数呼び出し">編集</button></div></form></div>
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>data/イベント命令.txt</bdi> · 最終更新: 2018/11/16 01:40 by <bdi>211.14.62.193</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">ページ用ツール</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="/doku.php?id=data:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4&amp;do=edit" title="文書の編集 [e]" rel="nofollow" accesskey="e"><span>文書の編集</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="/doku.php?id=data:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4&amp;do=revisions" title="以前のリビジョン [o]" rel="nofollow" accesskey="o"><span>以前のリビジョン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="/doku.php?id=data:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4&amp;do=backlink" title="バックリンク" rel="nofollow"><span>バックリンク</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="top"><a href="#dokuwiki__top" title="文書の先頭へ [t]" rel="nofollow" accesskey="t"><span>文書の先頭へ</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
+            src="/lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" ><img
+            src="/lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="//validator.w3.org/check/referer" title="Valid HTML5" ><img
+            src="/lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="//jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
+            src="/lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="/lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="/lib/exe/indexer.php?id=data%3A%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4&amp;1686430466" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>

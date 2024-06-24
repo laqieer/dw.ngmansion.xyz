@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>zh:guide:febuildergba:fe7琳移植到fe8_zh [FE改造wiki]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="zh,guide,febuildergba,fe7琳移植到fe8_zh"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=zh:guide:febuildergba:fe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=zh:guide:febuildergba"/>
+<link rel="edit" title="文書の編集" href="/doku.php?id=zh:guide:febuildergba:fe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh&amp;do=edit"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=zh:guide:febuildergba:fe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=zh:guide:febuildergba:fe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=zh:guide:febuildergba:fe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='zh:guide:febuildergba';var JSINFO = {"toc":{"initial_state":1},"isadmin":0,"isauth":0,"move_renameokay":false,"id":"zh:guide:febuildergba:fe7\u7433\u79fb\u690d\u5230fe8_zh","namespace":"zh:guide:febuildergba","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="/lib/tpl/dokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/dokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki    showSidebar hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">内容へ移動</a></li>
+        </ul>
+
+        <h1><a href="/doku.php?id=start"  accesskey="h" title="[H]"><img src="/lib/tpl/dokuwiki/images/logo.png" width="64" height="64" alt="" /> <span>FE改造wiki</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">ユーザ用ツール</h3>
+                <ul>
+                    <li class="action register"><a href="/doku.php?id=zh:guide:febuildergba:fe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh&amp;do=register" title="ユーザー登録" rel="nofollow"><span>ユーザー登録</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4z"/></svg></a></li><li class="action login"><a href="/doku.php?id=zh:guide:febuildergba:fe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh&amp;do=login&amp;sectok=" title="ログイン" rel="nofollow"><span>ログイン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">サイト用ツール</h3>
+            <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="検索" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="検索">検索</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><select name="do" class="edit quickselect" title="ツール"><option value="">ツール</option><optgroup label="ページ用ツール"><option value="edit">文書の編集</option><option value="revisions">以前のリビジョン</option><option value="backlink">バックリンク</option></optgroup><optgroup label="サイト用ツール"><option value="recent">最近の変更</option><option value="media">メディアマネージャー</option><option value="index">サイトマップ</option></optgroup><optgroup label="ユーザ用ツール"><option value="register">ユーザー登録</option><option value="login">ログイン</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="/doku.php?id=zh:guide:febuildergba:fe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh&amp;do=recent" title="最近の変更 [r]" rel="nofollow" accesskey="r">最近の変更</a></li><li class="action media"><a href="/doku.php?id=zh:guide:febuildergba:fe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh&amp;do=media&amp;ns=zh%3Aguide%3Afebuildergba" title="メディアマネージャー" rel="nofollow">メディアマネージャー</a></li><li class="action index"><a href="/doku.php?id=zh:guide:febuildergba:fe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh&amp;do=index" title="サイトマップ [x]" rel="nofollow" accesskey="x">サイトマップ</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">トレース:</span> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:%E6%9D%91%E5%BA%84%E8%AE%BF%E9%97%AE%E5%92%8C%E6%9D%91%E5%BA%84%E7%A0%B4%E5%9D%8F_zh"  class="breadcrumbs" title="zh:guide:febuildergba:村庄访问和村庄破坏_zh">村庄访问和村庄破坏_zh</a></bdi> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:3%E7%82%B9diff%E9%94%99%E8%AF%AF%E7%9A%84%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B_zh"  class="breadcrumbs" title="zh:guide:febuildergba:3点diff错误的自动检测_zh">3点diff错误的自动检测_zh</a></bdi> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:%E6%8C%87%E9%92%88%E8%87%AA%E5%8A%A8%E8%AE%A1%E7%AE%97%E5%8A%9F%E8%83%BD_zh"  class="breadcrumbs" title="zh:guide:febuildergba:指针自动计算功能_zh">指针自动计算功能_zh</a></bdi> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:%E8%BF%BD%E5%8A%A0%E9%AD%94%E6%B3%95_zh"  class="breadcrumbs" title="zh:guide:febuildergba:追加魔法_zh">追加魔法_zh</a></bdi> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php?id=zh:guide:febuildergba:fe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh"  class="breadcrumbs" title="zh:guide:febuildergba:fe7琳移植到fe8_zh">fe7琳移植到fe8_zh</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+                            <!-- ********** ASIDE ********** -->
+                <div id="dokuwiki__aside"><div class="pad aside include group">
+                    <h3 class="toggle">サイドバー</h3>
+                    <div class="content"><div class="group">
+                                                                        <ul>
+<li class="level1"><div class="li"> <a href="/doku.php?id=qa" class="wikilink1" title="qa">QA</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=guide:start" class="wikilink1" title="guide:start">GUIDE</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=dictionary:start" class="wikilink1" title="dictionary:start">DICTIONARY</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=column:start" class="wikilink1" title="column:start">COLUMN</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=data:start" class="wikilink1" title="data:start">DATA</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<a href="/doku.php?id=en:start" class="wikilink1" title="en:start">English</a><br />
+<a href="/doku.php?id=zh:start" class="wikilink1" title="zh:start">中文</a>
+</p>
+
+<p>
+<span class="wrap_hi wrap_center wrap_centeralign ">最新の10件</span>
+</p>
+<div class="table">
+<table class="inline">
+	<tr>
+		<th class="page">ページ</th><th class="date">日付</th>
+	</tr>
+	<tr>
+		<td class="page"><a href="/doku.php?id=column:fe%E3%81%A7%E5%AD%A6%E3%81%B6%E8%8B%B1%E8%AA%9E" class="wikilink1" title="column:feで学ぶ英語">column:feで学ぶ英語</a></td>
+		<td class="date">2018/11/12 08:10</td>
+	</tr>
+</table>
+</div>
+                                            </div></div>
+                </div></div><!-- /aside -->
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>zh:guide:febuildergba:fe7琳移植到fe8_zh</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#待机移植">待机移植</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepa1">StepA1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa2">StepA2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa3">StepA3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa4">StepA4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa5">StepA5</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa6">StepA6</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa7">StepA7</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa8">StepA8</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa9">StepA9</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa10">StepA10</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#移植移动图标">移植移动图标</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepb1">StepB1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb2">StepB2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb3">StepB3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb4">StepB4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb5">StepB5</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb6">StepB6</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb7">StepB7</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb8">StepB8</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb9">StepB9</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb10">StepB10</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#移植头像">移植头像</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepc1">StepC1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc2">StepC2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc3">StepC3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc4">StepC4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc5">StepC5</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc6">StepC6</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc7">StepC7</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc8">StepC8</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc9">StepC9</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc10">StepC10</a></div></li>
+<li class="level2"><div class="li"><a href="#头像调色板">头像调色板</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#移植战斗动画">移植战斗动画</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepd1">StepD1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd2">StepD2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd3">StepD3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd4">StepD4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd5">StepD5</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd6">StepD6</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd7">StepD7</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd8">StepD8</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd9">StepD9</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd10">StepD10</a></div></li>
+<li class="level2"><div class="li"><a href="#额外的战斗动画和武器">额外的战斗动画和武器</a></div></li>
+<li class="level2"><div class="li"><a href="#战斗动画调色板">战斗动画调色板</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+将FE 7琳移植到FE 8，说明待机图标、移动图标、脸部图像、战斗动画的追加方法。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=215e01&amp;media=https%3A%2F%2Fi.imgur.com%2Fzl2M2gc.jpg" class="media" title="https://i.imgur.com/zl2M2gc.jpg"><img src="/lib/exe/fetch.php?tok=215e01&amp;media=https%3A%2F%2Fi.imgur.com%2Fzl2M2gc.jpg" class="mediacenter" title="i.imgur.com_zl2m2gc.jpg" alt="i.imgur.com_zl2m2gc.jpg" /></a>
+</p>
+
+<h1 class="sectionedit1" id="待机移植">待机移植</h1>
+<div class="level1">
+
+<p>
+让我们开始两个FEBuilderGBA，一边是FE7，另一边是FE8。<br/>
+从FE7开始，将琳的数据带入FE8。<br/>
+<br/>
+从FE 7，拿出待机图标。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[待机移植] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="待机移植" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="153-335" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="待机移植">編集</button></div></form></div>
+<h2 class="sectionedit2" id="stepa1">StepA1</h2>
+<div class="level2">
+
+<p>
+对于FE7，请选择主菜单的“画像设定”。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=338f10&amp;media=https%3A%2F%2Fi.imgur.com%2FLK3jQJ7.jpg" class="media" title="https://i.imgur.com/LK3jQJ7.jpg"><img src="/lib/exe/fetch.php?tok=338f10&amp;media=https%3A%2F%2Fi.imgur.com%2FLK3jQJ7.jpg" class="mediacenter" title="i.imgur.com_lk3jqj7.jpg" alt="i.imgur.com_lk3jqj7.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepA1] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa1" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="336-452" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepA1">編集</button></div></form></div>
+<h2 class="sectionedit3" id="stepa2">StepA2</h2>
+<div class="level2">
+
+<p>
+从画像设定中选择“待机图标”。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=6c5007&amp;media=https%3A%2F%2Fi.imgur.com%2F9BbS00j.jpg" class="media" title="https://i.imgur.com/9BbS00j.jpg"><img src="/lib/exe/fetch.php?tok=6c5007&amp;media=https%3A%2F%2Fi.imgur.com%2F9BbS00j.jpg" class="mediacenter" title="i.imgur.com_9bbs00j.jpg" alt="i.imgur.com_9bbs00j.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepA2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa2" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="453-560" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepA2">編集</button></div></form></div>
+<h2 class="sectionedit4" id="stepa3">StepA3</h2>
+<div class="level2">
+
+<p>
+当显示待机图标屏幕时，请选择琳 ID：0x01。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=c5638b&amp;media=https%3A%2F%2Fi.imgur.com%2FIMc2emo.jpg" class="media" title="https://i.imgur.com/IMc2emo.jpg"><img src="/lib/exe/fetch.php?tok=c5638b&amp;media=https%3A%2F%2Fi.imgur.com%2FIMc2emo.jpg" class="mediacenter" title="i.imgur.com_imc2emo.jpg" alt="i.imgur.com_imc2emo.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepA3] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa3" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="561-681" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepA3">編集</button></div></form></div>
+<h2 class="sectionedit5" id="stepa4">StepA4</h2>
+<div class="level2">
+
+<p>
+选择琳后，按下“导出图像”按钮并将图标保存为图像文件。
+</p>
+
+<p>
+<a href="/lib/exe/fetch.php?tok=25d17d&amp;media=https%3A%2F%2Fi.imgur.com%2F42XqGaO.jpg" class="media" title="https://i.imgur.com/42XqGaO.jpg"><img src="/lib/exe/fetch.php?tok=25d17d&amp;media=https%3A%2F%2Fi.imgur.com%2F42XqGaO.jpg" class="mediacenter" title="i.imgur.com_42xqgao.jpg" alt="i.imgur.com_42xqgao.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepA4] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa4" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="682-823" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepA4">編集</button></div></form></div>
+<h2 class="sectionedit6" id="stepa5">StepA5</h2>
+<div class="level2">
+
+<p>
+请切换到FE8。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepA5] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa5" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="824-866" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepA5">編集</button></div></form></div>
+<h2 class="sectionedit7" id="stepa6">StepA6</h2>
+<div class="level2">
+
+<p>
+请点击“画像设定”按钮。<br/>
+<a href="/lib/exe/fetch.php?tok=7a754f&amp;media=https%3A%2F%2Fi.imgur.com%2FSv1Iye0.jpg" class="media" title="https://i.imgur.com/Sv1Iye0.jpg"><img src="/lib/exe/fetch.php?tok=7a754f&amp;media=https%3A%2F%2Fi.imgur.com%2FSv1Iye0.jpg" class="mediacenter" title="i.imgur.com_sv1iye0.jpg" alt="i.imgur.com_sv1iye0.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepA6] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa6" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="867-964" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepA6">編集</button></div></form></div>
+<h2 class="sectionedit8" id="stepa7">StepA7</h2>
+<div class="level2">
+
+<p>
+从画像设定中选择“待机图标”。<br/>
+<a href="/lib/exe/fetch.php?tok=60d33c&amp;media=https%3A%2F%2Fi.imgur.com%2FRjroCd8.jpg" class="media" title="https://i.imgur.com/RjroCd8.jpg"><img src="/lib/exe/fetch.php?tok=60d33c&amp;media=https%3A%2F%2Fi.imgur.com%2FRjroCd8.jpg" class="mediacenter" title="i.imgur.com_rjrocd8.jpg" alt="i.imgur.com_rjrocd8.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepA7] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa7" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="965-1071" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepA7">編集</button></div></form></div>
+<h2 class="sectionedit9" id="stepa8">StepA8</h2>
+<div class="level2">
+
+<p>
+请选择其中一个来设置琳人物图标。<br/>
+为了便于说明，我将在此改变艾瑞克的图标。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=c3dffc&amp;media=https%3A%2F%2Fi.imgur.com%2FmGHThGV.jpg" class="media" title="https://i.imgur.com/mGHThGV.jpg"><img src="/lib/exe/fetch.php?tok=c3dffc&amp;media=https%3A%2F%2Fi.imgur.com%2FmGHThGV.jpg" class="mediacenter" title="i.imgur.com_mghthgv.jpg" alt="i.imgur.com_mghthgv.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepA8] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa8" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1072-1247" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepA8">編集</button></div></form></div>
+<h2 class="sectionedit10" id="stepa9">StepA9</h2>
+<div class="level2">
+
+<p>
+请使用“导入图像”按钮加载先前保存的琳的待机图标。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=60ccf9&amp;media=https%3A%2F%2Fi.imgur.com%2F1ioyiqR.jpg" class="media" title="https://i.imgur.com/1ioyiqR.jpg"><img src="/lib/exe/fetch.php?tok=60ccf9&amp;media=https%3A%2F%2Fi.imgur.com%2F1ioyiqR.jpg" class="mediacenter" title="i.imgur.com_1ioyiqr.jpg" alt="i.imgur.com_1ioyiqr.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepA9] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa9" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1248-1385" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepA9">編集</button></div></form></div>
+<h2 class="sectionedit11" id="stepa10">StepA10</h2>
+<div class="level2">
+
+<p>
+完成。<br/>
+<a href="/lib/exe/fetch.php?tok=423919&amp;media=https%3A%2F%2Fi.imgur.com%2FyEilGVz.jpg" class="media" title="https://i.imgur.com/yEilGVz.jpg"><img src="/lib/exe/fetch.php?tok=423919&amp;media=https%3A%2F%2Fi.imgur.com%2FyEilGVz.jpg" class="mediacenter" title="i.imgur.com_yeilgvz.jpg" alt="i.imgur.com_yeilgvz.jpg" /></a><br />
+<br/>
+让我们用F5键启动模拟器并检查操作。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=83b7f0&amp;media=https%3A%2F%2Fi.imgur.com%2FgftEt6W.jpg" class="media" title="https://i.imgur.com/gftEt6W.jpg"><img src="/lib/exe/fetch.php?tok=83b7f0&amp;media=https%3A%2F%2Fi.imgur.com%2FgftEt6W.jpg" class="mediacenter" title="i.imgur.com_gftet6w.jpg" alt="i.imgur.com_gftet6w.jpg" /></a><br />
+<br/>
+显示琳图标。<br/>
+<br/>
+<br/>
+<br/>
+但是，如果将光标移动到移动模式，您将返回到艾瑞克的图标。<br/>
+这是因为我们还没有移植移动图标。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=fc4b15&amp;media=https%3A%2F%2Fi.imgur.com%2FyTP5v7E.jpg" class="media" title="https://i.imgur.com/yTP5v7E.jpg"><img src="/lib/exe/fetch.php?tok=fc4b15&amp;media=https%3A%2F%2Fi.imgur.com%2FyTP5v7E.jpg" class="mediacenter" title="i.imgur.com_ytp5v7e.jpg" alt="i.imgur.com_ytp5v7e.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepA10] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa10" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1386-1763" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepA10">編集</button></div></form></div>
+<h1 class="sectionedit12" id="移植移动图标">移植移动图标</h1>
+<div class="level1">
+
+<p>
+与之前一样，从FE7开始，输出琳的数据并将其输入FE8。<br/>
+从FE7导出移动图标。<br/>
+<a href="/lib/exe/fetch.php?tok=34882a&amp;media=https%3A%2F%2Fi.imgur.com%2F7bUa2XA.jpg" class="media" title="https://i.imgur.com/7bUa2XA.jpg"><img src="/lib/exe/fetch.php?tok=34882a&amp;media=https%3A%2F%2Fi.imgur.com%2F7bUa2XA.jpg" class="mediacenter" title="i.imgur.com_7bua2xa.jpg" alt="i.imgur.com_7bua2xa.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[移植移动图标] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="移植移动图标" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1764-1941" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="移植移动图标">編集</button></div></form></div>
+<h2 class="sectionedit13" id="stepb1">StepB1</h2>
+<div class="level2">
+
+<p>
+对于FE7，请选择主菜单的“画像设定”。<br/>
+<a href="/lib/exe/fetch.php?tok=338f10&amp;media=https%3A%2F%2Fi.imgur.com%2FLK3jQJ7.jpg" class="media" title="https://i.imgur.com/LK3jQJ7.jpg"><img src="/lib/exe/fetch.php?tok=338f10&amp;media=https%3A%2F%2Fi.imgur.com%2FLK3jQJ7.jpg" class="mediacenter" title="i.imgur.com_lk3jqj7.jpg" alt="i.imgur.com_lk3jqj7.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepB1] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb1" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1942-2057" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepB1">編集</button></div></form></div>
+<h2 class="sectionedit14" id="stepb2">StepB2</h2>
+<div class="level2">
+
+<p>
+在画像设定中，请选择“移动图标”。<br/>
+<a href="/lib/exe/fetch.php?tok=fbac6b&amp;media=https%3A%2F%2Fi.imgur.com%2FJT0jXe6.jpg" class="media" title="https://i.imgur.com/JT0jXe6.jpg"><img src="/lib/exe/fetch.php?tok=fbac6b&amp;media=https%3A%2F%2Fi.imgur.com%2FJT0jXe6.jpg" class="mediacenter" title="i.imgur.com_jt0jxe6.jpg" alt="i.imgur.com_jt0jxe6.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepB2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb2" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2058-2170" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepB2">編集</button></div></form></div>
+<h2 class="sectionedit15" id="stepb3">StepB3</h2>
+<div class="level2">
+
+<p>
+当移动图标屏幕时，请选择琳 ID：0x01。<br/>
+<a href="/lib/exe/fetch.php?tok=2e33e5&amp;media=https%3A%2F%2Fi.imgur.com%2F6zwlZB3.jpg" class="media" title="https://i.imgur.com/6zwlZB3.jpg"><img src="/lib/exe/fetch.php?tok=2e33e5&amp;media=https%3A%2F%2Fi.imgur.com%2F6zwlZB3.jpg" class="mediacenter" title="i.imgur.com_6zwlzb3.jpg" alt="i.imgur.com_6zwlzb3.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepB3] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb3" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2171-2284" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepB3">編集</button></div></form></div>
+<h2 class="sectionedit16" id="stepb4">StepB4</h2>
+<div class="level2">
+
+<p>
+选择琳之后，按下“导出图像”按钮并将图标保存为图像文件。<br/>
+<a href="/lib/exe/fetch.php?tok=750b40&amp;media=https%3A%2F%2Fi.imgur.com%2Fi0HIr9R.jpg" class="media" title="https://i.imgur.com/i0HIr9R.jpg"><img src="/lib/exe/fetch.php?tok=750b40&amp;media=https%3A%2F%2Fi.imgur.com%2Fi0HIr9R.jpg" class="mediacenter" title="i.imgur.com_i0hir9r.jpg" alt="i.imgur.com_i0hir9r.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepB4] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb4" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2285-2430" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepB4">編集</button></div></form></div>
+<h2 class="sectionedit17" id="stepb5">StepB5</h2>
+<div class="level2">
+
+<p>
+切换到FE8。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepB5] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb5" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2431-2469" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepB5">編集</button></div></form></div>
+<h2 class="sectionedit18" id="stepb6">StepB6</h2>
+<div class="level2">
+
+<p>
+请点击“画像设定”按钮。<br />
+<a href="/lib/exe/fetch.php?tok=7a754f&amp;media=https%3A%2F%2Fi.imgur.com%2FSv1Iye0.jpg" class="media" title="https://i.imgur.com/Sv1Iye0.jpg"><img src="/lib/exe/fetch.php?tok=7a754f&amp;media=https%3A%2F%2Fi.imgur.com%2FSv1Iye0.jpg" class="mediacenter" title="i.imgur.com_sv1iye0.jpg" alt="i.imgur.com_sv1iye0.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepB6] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb6" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2470-2565" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepB6">編集</button></div></form></div>
+<h2 class="sectionedit19" id="stepb7">StepB7</h2>
+<div class="level2">
+
+<p>
+在画像设定中，请选择“移动图标”。<br/>
+<a href="/lib/exe/fetch.php?tok=9e2207&amp;media=https%3A%2F%2Fi.imgur.com%2FRyvYJje.jpg" class="media" title="https://i.imgur.com/RyvYJje.jpg"><img src="/lib/exe/fetch.php?tok=9e2207&amp;media=https%3A%2F%2Fi.imgur.com%2FRyvYJje.jpg" class="mediacenter" title="i.imgur.com_ryvyjje.jpg" alt="i.imgur.com_ryvyjje.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepB7] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb7" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2566-2678" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepB7">編集</button></div></form></div>
+<h2 class="sectionedit20" id="stepb8">StepB8</h2>
+<div class="level2">
+
+<p>
+请选择其中一个来设置琳的人物图标。<br/>
+一样，我将在此改变艾瑞克图标。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=e9f5a5&amp;media=https%3A%2F%2Fi.imgur.com%2F72iAtNp.jpg" class="media" title="https://i.imgur.com/72iAtNp.jpg"><img src="/lib/exe/fetch.php?tok=e9f5a5&amp;media=https%3A%2F%2Fi.imgur.com%2F72iAtNp.jpg" class="mediacenter" title="i.imgur.com_72iatnp.jpg" alt="i.imgur.com_72iatnp.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepB8] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb8" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2679-2842" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepB8">編集</button></div></form></div>
+<h2 class="sectionedit21" id="stepb9">StepB9</h2>
+<div class="level2">
+
+<p>
+请使用“导入图像”按钮来加载已保存琳的已移动图标图像。<br/>
+<a href="/lib/exe/fetch.php?tok=d33b23&amp;media=https%3A%2F%2Fi.imgur.com%2FYnFbXtL.jpg" class="media" title="https://i.imgur.com/YnFbXtL.jpg"><img src="/lib/exe/fetch.php?tok=d33b23&amp;media=https%3A%2F%2Fi.imgur.com%2FYnFbXtL.jpg" class="mediacenter" title="i.imgur.com_ynfbxtl.jpg" alt="i.imgur.com_ynfbxtl.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepB9] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb9" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2843-2985" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepB9">編集</button></div></form></div>
+<h2 class="sectionedit22" id="stepb10">StepB10</h2>
+<div class="level2">
+
+<p>
+完成<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=76090a&amp;media=https%3A%2F%2Fi.imgur.com%2FgGjgOiH.jpg" class="media" title="https://i.imgur.com/gGjgOiH.jpg"><img src="/lib/exe/fetch.php?tok=76090a&amp;media=https%3A%2F%2Fi.imgur.com%2FgGjgOiH.jpg" class="mediacenter" title="i.imgur.com_ggjgoih.jpg" alt="i.imgur.com_ggjgoih.jpg" /></a><br />
+<br/>
+<br/>
+让我们用F5键启动模拟器并检查操作。<br/>
+<a href="/lib/exe/fetch.php?tok=34882a&amp;media=https%3A%2F%2Fi.imgur.com%2F7bUa2XA.jpg" class="media" title="https://i.imgur.com/7bUa2XA.jpg"><img src="/lib/exe/fetch.php?tok=34882a&amp;media=https%3A%2F%2Fi.imgur.com%2F7bUa2XA.jpg" class="mediacenter" title="i.imgur.com_7bua2xa.jpg" alt="i.imgur.com_7bua2xa.jpg" /></a><br />
+<br/>
+它成了琳的图标。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepB10] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb10" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2986-3182" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepB10">編集</button></div></form></div>
+<h1 class="sectionedit23" id="移植头像">移植头像</h1>
+<div class="level1">
+
+<p>
+与之前一样，从FE7开始，输出琳的数据并将其输入FE8。<br/>
+<a href="/lib/exe/fetch.php?tok=3fb42f&amp;media=https%3A%2F%2Fi.imgur.com%2F5Xr3woP.jpg" class="media" title="https://i.imgur.com/5Xr3woP.jpg"><img src="/lib/exe/fetch.php?tok=3fb42f&amp;media=https%3A%2F%2Fi.imgur.com%2F5Xr3woP.jpg" class="mediacenter" title="i.imgur.com_5xr3wop.jpg" alt="i.imgur.com_5xr3wop.jpg" /></a><br />
+<br/>
+从FE7导出头像。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[移植头像] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="移植头像" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3183-3351" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="移植头像">編集</button></div></form></div>
+<h2 class="sectionedit24" id="stepc1">StepC1</h2>
+<div class="level2">
+
+<p>
+对于FE7，请选择主菜单的“画像设定”。<br/>
+<a href="/lib/exe/fetch.php?tok=338f10&amp;media=https%3A%2F%2Fi.imgur.com%2FLK3jQJ7.jpg" class="media" title="https://i.imgur.com/LK3jQJ7.jpg"><img src="/lib/exe/fetch.php?tok=338f10&amp;media=https%3A%2F%2Fi.imgur.com%2FLK3jQJ7.jpg" class="mediacenter" title="i.imgur.com_lk3jqj7.jpg" alt="i.imgur.com_lk3jqj7.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepC1] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc1" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3352-3467" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepC1">編集</button></div></form></div>
+<h2 class="sectionedit25" id="stepc2">StepC2</h2>
+<div class="level2">
+
+<p>
+请从画像设定中选择“头像”。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=5ad2f8&amp;media=https%3A%2F%2Fi.imgur.com%2FyFArLeW.jpg" class="media" title="https://i.imgur.com/yFArLeW.jpg"><img src="/lib/exe/fetch.php?tok=5ad2f8&amp;media=https%3A%2F%2Fi.imgur.com%2FyFArLeW.jpg" class="mediacenter" title="i.imgur.com_yfarlew.jpg" alt="i.imgur.com_yfarlew.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_25'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepC2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc2" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3468-3572" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepC2">編集</button></div></form></div>
+<h2 class="sectionedit26" id="stepc3">StepC3</h2>
+<div class="level2">
+
+<p>
+当显示头像屏幕时，请选择琳 ID：0x16。<br/>
+<a href="/lib/exe/fetch.php?tok=c022b9&amp;media=https%3A%2F%2Fi.imgur.com%2F4SYrJZH.jpg" class="media" title="https://i.imgur.com/4SYrJZH.jpg"><img src="/lib/exe/fetch.php?tok=c022b9&amp;media=https%3A%2F%2Fi.imgur.com%2F4SYrJZH.jpg" class="mediacenter" title="i.imgur.com_4syrjzh.jpg" alt="i.imgur.com_4syrjzh.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_26'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepC3] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc3" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3573-3686" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepC3">編集</button></div></form></div>
+<h2 class="sectionedit27" id="stepc4">StepC4</h2>
+<div class="level2">
+
+<p>
+选择琳后，请按下“导出图像”按钮并将头像保存为图像文件。<br/>
+<a href="/lib/exe/fetch.php?tok=e61505&amp;media=https%3A%2F%2Fi.imgur.com%2FmI2FLmT.jpg" class="media" title="https://i.imgur.com/mI2FLmT.jpg"><img src="/lib/exe/fetch.php?tok=e61505&amp;media=https%3A%2F%2Fi.imgur.com%2FmI2FLmT.jpg" class="mediacenter" title="i.imgur.com_mi2flmt.jpg" alt="i.imgur.com_mi2flmt.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_27'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepC4] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc4" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3687-3832" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepC4">編集</button></div></form></div>
+<h2 class="sectionedit28" id="stepc5">StepC5</h2>
+<div class="level2">
+
+<p>
+切换到 FE8.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_28'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepC5] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc5" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3833-3868" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepC5">編集</button></div></form></div>
+<h2 class="sectionedit29" id="stepc6">StepC6</h2>
+<div class="level2">
+
+<p>
+请点击“画像设定”按钮。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=7a754f&amp;media=https%3A%2F%2Fi.imgur.com%2FSv1Iye0.jpg" class="media" title="https://i.imgur.com/Sv1Iye0.jpg"><img src="/lib/exe/fetch.php?tok=7a754f&amp;media=https%3A%2F%2Fi.imgur.com%2FSv1Iye0.jpg" class="mediacenter" title="i.imgur.com_sv1iye0.jpg" alt="i.imgur.com_sv1iye0.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_29'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepC6] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc6" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3869-3967" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepC6">編集</button></div></form></div>
+<h2 class="sectionedit30" id="stepc7">StepC7</h2>
+<div class="level2">
+
+<p>
+请从画像设定中选择“头像”。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=62a6ef&amp;media=https%3A%2F%2Fi.imgur.com%2Fv3QfcJM.jpg" class="media" title="https://i.imgur.com/v3QfcJM.jpg"><img src="/lib/exe/fetch.php?tok=62a6ef&amp;media=https%3A%2F%2Fi.imgur.com%2Fv3QfcJM.jpg" class="mediacenter" title="i.imgur.com_v3qfcjm.jpg" alt="i.imgur.com_v3qfcjm.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_30'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepC7] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc7" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3968-4072" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepC7">編集</button></div></form></div>
+<h2 class="sectionedit31" id="stepc8">StepC8</h2>
+<div class="level2">
+
+<p>
+请选择一个角色来设置琳的头像。<br/>
+为了便于说明，我将覆盖艾瑞克的头像（ID：0x02）。<br/>
+<br/>
+请选择艾瑞克的头像图像。<br/>
+<a href="/lib/exe/fetch.php?tok=b6f932&amp;media=https%3A%2F%2Fi.imgur.com%2F51TrKZf.jpg" class="media" title="https://i.imgur.com/51TrKZf.jpg"><img src="/lib/exe/fetch.php?tok=b6f932&amp;media=https%3A%2F%2Fi.imgur.com%2F51TrKZf.jpg" class="mediacenter" title="i.imgur.com_51trkzf.jpg" alt="i.imgur.com_51trkzf.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_31'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepC8] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc8" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4073-4293" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepC8">編集</button></div></form></div>
+<h2 class="sectionedit32" id="stepc9">StepC9</h2>
+<div class="level2">
+
+<p>
+请使用“导入图像”按钮加载之前保存的琳的头像。<br/>
+<a href="/lib/exe/fetch.php?tok=b36c0e&amp;media=https%3A%2F%2Fi.imgur.com%2F0T6KQ8o.jpg" class="media" title="https://i.imgur.com/0T6KQ8o.jpg"><img src="/lib/exe/fetch.php?tok=b36c0e&amp;media=https%3A%2F%2Fi.imgur.com%2F0T6KQ8o.jpg" class="mediacenter" title="i.imgur.com_0t6kq8o.jpg" alt="i.imgur.com_0t6kq8o.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_32'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepC9] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc9" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4294-4424" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepC9">編集</button></div></form></div>
+<h2 class="sectionedit33" id="stepc10">StepC10</h2>
+<div class="level2">
+
+<p>
+完成。<br/>
+<a href="/lib/exe/fetch.php?tok=9c84bc&amp;media=https%3A%2F%2Fi.imgur.com%2Fyyu7OjM.jpg" class="media" title="https://i.imgur.com/yyu7OjM.jpg"><img src="/lib/exe/fetch.php?tok=9c84bc&amp;media=https%3A%2F%2Fi.imgur.com%2Fyyu7OjM.jpg" class="mediacenter" title="i.imgur.com_yyu7ojm.jpg" alt="i.imgur.com_yyu7ojm.jpg" /></a><br />
+<br/>
+让我们用F5键启动模拟器并检查操作。<br/>
+<br/>
+它变成了琳的头像。\r\n<br />
+<a href="/lib/exe/fetch.php?tok=3fb42f&amp;media=https%3A%2F%2Fi.imgur.com%2F5Xr3woP.jpg" class="media" title="https://i.imgur.com/5Xr3woP.jpg"><img src="/lib/exe/fetch.php?tok=3fb42f&amp;media=https%3A%2F%2Fi.imgur.com%2F5Xr3woP.jpg" class="mediacenter" title="i.imgur.com_5xr3wop.jpg" alt="i.imgur.com_5xr3wop.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_33'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepC10] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc10" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4425-4625" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepC10">編集</button></div></form></div>
+<h2 class="sectionedit34" id="头像调色板">头像调色板</h2>
+<div class="level2">
+
+<p>
+对于头像，您可以为每个角色设置15种颜色+1种颜色（透明色）的调色板。 <br/>
+<br/>
+更改调色板时，请使用图形软件等更改导出图像的调色板。<br/>
+导入图像时按使用导入图像的调色板。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_34'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[头像调色板] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="头像调色板" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4626-4894" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="头像调色板">編集</button></div></form></div>
+<h1 class="sectionedit35" id="移植战斗动画">移植战斗动画</h1>
+<div class="level1">
+
+<p>
+像往常一样，从FE7开始，把琳的数据放在FE8中。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=e99796&amp;media=https%3A%2F%2Fi.imgur.com%2FstGeXNR.jpg" class="media" title="https://i.imgur.com/stGeXNR.jpg"><img src="/lib/exe/fetch.php?tok=e99796&amp;media=https%3A%2F%2Fi.imgur.com%2FstGeXNR.jpg" class="mediacenter" title="i.imgur.com_stgexnr.jpg" alt="i.imgur.com_stgexnr.jpg" /></a><br />
+<br/>
+从FE 7导出战斗动画。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_35'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[移植战斗动画] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="移植战斗动画" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4895-5068" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="移植战斗动画">編集</button></div></form></div>
+<h2 class="sectionedit36" id="stepd1">StepD1</h2>
+<div class="level2">
+
+<p>
+对于FE7，请选择主菜单的“画像设定”。<br/>
+<a href="/lib/exe/fetch.php?tok=338f10&amp;media=https%3A%2F%2Fi.imgur.com%2FLK3jQJ7.jpg" class="media" title="https://i.imgur.com/LK3jQJ7.jpg"><img src="/lib/exe/fetch.php?tok=338f10&amp;media=https%3A%2F%2Fi.imgur.com%2FLK3jQJ7.jpg" class="mediacenter" title="i.imgur.com_lk3jqj7.jpg" alt="i.imgur.com_lk3jqj7.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_36'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepD1] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepd1" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5069-5184" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepD1">編集</button></div></form></div>
+<h2 class="sectionedit37" id="stepd2">StepD2</h2>
+<div class="level2">
+
+<p>
+请从画像设定中选择“战斗动画”。<br/>
+<a href="/lib/exe/fetch.php?tok=652c5d&amp;media=https%3A%2F%2Fi.imgur.com%2F40KuaJB.jpg" class="media" title="https://i.imgur.com/40KuaJB.jpg"><img src="/lib/exe/fetch.php?tok=652c5d&amp;media=https%3A%2F%2Fi.imgur.com%2F40KuaJB.jpg" class="mediacenter" title="i.imgur.com_40kuajb.jpg" alt="i.imgur.com_40kuajb.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_37'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepD2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepd2" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5185-5294" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepD2">編集</button></div></form></div>
+<h2 class="sectionedit38" id="stepd3">StepD3</h2>
+<div class="level2">
+
+<p>
+当显示到战斗动画屏幕时，请选择琳 ID：0x0F。<br/>
+<a href="/lib/exe/fetch.php?tok=512132&amp;media=https%3A%2F%2Fi.imgur.com%2FWYIvzm2.jpg" class="media" title="https://i.imgur.com/WYIvzm2.jpg"><img src="/lib/exe/fetch.php?tok=512132&amp;media=https%3A%2F%2Fi.imgur.com%2FWYIvzm2.jpg" class="mediacenter" title="i.imgur.com_wyivzm2.jpg" alt="i.imgur.com_wyivzm2.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_38'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepD3] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepd3" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5295-5417" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepD3">編集</button></div></form></div>
+<h2 class="sectionedit39" id="stepd4">StepD4</h2>
+<div class="level2">
+
+<p>
+选择琳之后，请按下“导出战斗动画”按钮并将战斗动画保存为文件。<br/>
+<a href="/lib/exe/fetch.php?tok=0c05b1&amp;media=https%3A%2F%2Fi.imgur.com%2FeSjiEAw.jpg" class="media" title="https://i.imgur.com/eSjiEAw.jpg"><img src="/lib/exe/fetch.php?tok=0c05b1&amp;media=https%3A%2F%2Fi.imgur.com%2FeSjiEAw.jpg" class="mediacenter" title="i.imgur.com_esjieaw.jpg" alt="i.imgur.com_esjieaw.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_39'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepD4] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepd4" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5418-5572" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepD4">編集</button></div></form></div>
+<h2 class="sectionedit40" id="stepd5">StepD5</h2>
+<div class="level2">
+
+<p>
+切换到 FE8。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_40'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepD5] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepd5" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5573-5613" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepD5">編集</button></div></form></div>
+<h2 class="sectionedit41" id="stepd6">StepD6</h2>
+<div class="level2">
+
+<p>
+请点击“画像设定”按钮。<br/>
+<a href="/lib/exe/fetch.php?tok=7a754f&amp;media=https%3A%2F%2Fi.imgur.com%2FSv1Iye0.jpg" class="media" title="https://i.imgur.com/Sv1Iye0.jpg"><img src="/lib/exe/fetch.php?tok=7a754f&amp;media=https%3A%2F%2Fi.imgur.com%2FSv1Iye0.jpg" class="mediacenter" title="i.imgur.com_sv1iye0.jpg" alt="i.imgur.com_sv1iye0.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_41'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepD6] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepd6" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5614-5711" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepD6">編集</button></div></form></div>
+<h2 class="sectionedit42" id="stepd7">StepD7</h2>
+<div class="level2">
+
+<p>
+请从画像设定中选择“战斗动画”。<br/>
+<a href="/lib/exe/fetch.php?tok=f0acaa&amp;media=https%3A%2F%2Fi.imgur.com%2FYawQDcT.jpg" class="media" title="https://i.imgur.com/YawQDcT.jpg"><img src="/lib/exe/fetch.php?tok=f0acaa&amp;media=https%3A%2F%2Fi.imgur.com%2FYawQDcT.jpg" class="mediacenter" title="i.imgur.com_yawqdct.jpg" alt="i.imgur.com_yawqdct.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_42'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepD7] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepd7" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5712-5821" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepD7">編集</button></div></form></div>
+<h2 class="sectionedit43" id="stepd8">StepD8</h2>
+<div class="level2">
+
+<p>
+请选择一个角色来设置琳的战斗动画。<br/>
+为了便于说明，我会替换艾瑞克的战斗动画。 <br/>
+<br/>
+请选择艾瑞克的战斗动画ID：0x03。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=920832&amp;media=https%3A%2F%2Fi.imgur.com%2FyjbatGF.jpg" class="media" title="https://i.imgur.com/yjbatGF.jpg"><img src="/lib/exe/fetch.php?tok=920832&amp;media=https%3A%2F%2Fi.imgur.com%2FyjbatGF.jpg" class="mediacenter" title="i.imgur.com_yjbatgf.jpg" alt="i.imgur.com_yjbatgf.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_43'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepD8] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepd8" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5822-6050" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepD8">編集</button></div></form></div>
+<h2 class="sectionedit44" id="stepd9">StepD9</h2>
+<div class="level2">
+
+<p>
+请使用“导入战斗动画”按钮加载之前保存的琳的战斗动画。<br/>
+<a href="/lib/exe/fetch.php?tok=754eea&amp;media=https%3A%2F%2Fi.imgur.com%2FKygHHM3.jpg" class="media" title="https://i.imgur.com/KygHHM3.jpg"><img src="/lib/exe/fetch.php?tok=754eea&amp;media=https%3A%2F%2Fi.imgur.com%2FKygHHM3.jpg" class="mediacenter" title="i.imgur.com_kyghhm3.jpg" alt="i.imgur.com_kyghhm3.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_44'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepD9] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepd9" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="6051-6193" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepD9">編集</button></div></form></div>
+<h2 class="sectionedit45" id="stepd10">StepD10</h2>
+<div class="level2">
+
+<p>
+完成。<br/>
+<a href="/lib/exe/fetch.php?tok=b68747&amp;media=https%3A%2F%2Fi.imgur.com%2FoJPRTuL.jpg" class="media" title="https://i.imgur.com/oJPRTuL.jpg"><img src="/lib/exe/fetch.php?tok=b68747&amp;media=https%3A%2F%2Fi.imgur.com%2FoJPRTuL.jpg" class="mediacenter" title="i.imgur.com_ojprtul.jpg" alt="i.imgur.com_ojprtul.jpg" /></a><br />
+<br/>
+让我们用F5键启动模拟器并检查操作。<br/>
+<a href="/lib/exe/fetch.php?tok=e99796&amp;media=https%3A%2F%2Fi.imgur.com%2FstGeXNR.jpg" class="media" title="https://i.imgur.com/stGeXNR.jpg"><img src="/lib/exe/fetch.php?tok=e99796&amp;media=https%3A%2F%2Fi.imgur.com%2FstGeXNR.jpg" class="mediacenter" title="i.imgur.com_stgexnr.jpg" alt="i.imgur.com_stgexnr.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_45'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[StepD10] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepd10" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="6194-6359" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="StepD10">編集</button></div></form></div>
+<h2 class="sectionedit46" id="额外的战斗动画和武器">额外的战斗动画和武器</h2>
+<div class="level2">
+
+<p>
+战斗动画有几种模式。<br/>
+这一次，用剑攻击的攻击ID是0x03， <br/>
+但是，还有另一个动作ID：空手 0x04。<br/>
+<br/>
+如果你追求完美，你也可以在这里移植。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=78ce80&amp;media=https%3A%2F%2Fi.imgur.com%2FvL6AclG.jpg" class="media" title="https://i.imgur.com/vL6AclG.jpg"><img src="/lib/exe/fetch.php?tok=78ce80&amp;media=https%3A%2F%2Fi.imgur.com%2FvL6AclG.jpg" class="mediacenter" title="i.imgur.com_vl6aclg.jpg" alt="i.imgur.com_vl6aclg.jpg" /></a>
+</p>
+
+<p>
+基本上有六个动作。<br/>
+<br/>
+
+</p>
+<div class="table sectionedit47"><table class="inline">
+	<tr class="row0">
+		<td class="col0">剑</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">枪</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">斧</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">弓</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">魔法</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">道具或空手</td>
+	</tr>
+</table></div>
+
+<p>
+<br/>
+但是，除了这些，还有飞斧。<br/>
+对于飞斧，您必须为每件物品设置飞斧动画。<br/>
+<br/>
+如果你忘记了这一点，装备一把飞斧进入战斗动画，游戏就会冻结。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=567a04&amp;media=https%3A%2F%2Fi.imgur.com%2FfGLDVUo.jpg" class="media" title="https://i.imgur.com/fGLDVUo.jpg"><img src="/lib/exe/fetch.php?tok=567a04&amp;media=https%3A%2F%2Fi.imgur.com%2FfGLDVUo.jpg" class="mediacenter" title="i.imgur.com_fgldvuo.jpg" alt="i.imgur.com_fgldvuo.jpg" /></a><br />
+<br/>
+<br/>
+在地图战斗中，它不会冻结，所以我经常忘记它。<br/>
+如果您添加飞斧道具或添加斧头，请确保设置飞斧动画设置。 <br/>
+<br />
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_46'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[额外的战斗动画和武器] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="额外的战斗动画和武器" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="6360-7129" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="额外的战斗动画和武器">編集</button></div></form></div>
+<h2 class="sectionedit48" id="战斗动画调色板">战斗动画调色板</h2>
+<div class="level2">
+
+<p>
+如果你想改变每个职业的颜色，你可以从角色调色板中做到。 <br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=9168c3&amp;media=https%3A%2F%2Fi.imgur.com%2Fh5olpGZ.jpg" class="media" title="https://i.imgur.com/h5olpGZ.jpg"><img src="/lib/exe/fetch.php?tok=9168c3&amp;media=https%3A%2F%2Fi.imgur.com%2Fh5olpGZ.jpg" class="mediacenter" title="i.imgur.com_h5olpgz.jpg" alt="i.imgur.com_h5olpgz.jpg" /></a><br />
+<a href="/lib/exe/fetch.php?tok=36ed0f&amp;media=https%3A%2F%2Fi.imgur.com%2Ff4MV7zy.jpg" class="media" title="https://i.imgur.com/f4MV7zy.jpg"><img src="/lib/exe/fetch.php?tok=36ed0f&amp;media=https%3A%2F%2Fi.imgur.com%2Ff4MV7zy.jpg" class="mediacenter" title="i.imgur.com_f4mv7zy.jpg" alt="i.imgur.com_f4mv7zy.jpg" /></a><br />
+<br/>
+<br/>
+当通用目标敌人的颜色（红色）时，可以从战斗动画的调色板中进行。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=f8f42d&amp;media=https%3A%2F%2Fi.imgur.com%2FWu6xepV.jpg" class="media" title="https://i.imgur.com/Wu6xepV.jpg"><img src="/lib/exe/fetch.php?tok=f8f42d&amp;media=https%3A%2F%2Fi.imgur.com%2FWu6xepV.jpg" class="mediacenter" title="i.imgur.com_wu6xepv.jpg" alt="i.imgur.com_wu6xepv.jpg" /></a><br />
+<a href="/lib/exe/fetch.php?tok=a94deb&amp;media=https%3A%2F%2Fi.imgur.com%2FX0BqiI8.jpg" class="media" title="https://i.imgur.com/X0BqiI8.jpg"><img src="/lib/exe/fetch.php?tok=a94deb&amp;media=https%3A%2F%2Fi.imgur.com%2FX0BqiI8.jpg" class="mediacenter" title="i.imgur.com_x0bqii8.jpg" alt="i.imgur.com_x0bqii8.jpg" /></a><br />
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_48'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697365" /><input type="hidden" name="summary" value="[战斗动画调色板] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="战斗动画调色板" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="7130-" /><input type="hidden" name="id" value="zh:guide:febuildergba:fe7琳移植到fe8_zh" /><button type="submit" title="战斗动画调色板">編集</button></div></form></div>
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>zh/guide/febuildergba/fe7琳移植到fe8_zh.txt</bdi> · 最終更新: 2018/09/23 19:09 by <bdi>211.14.62.193</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">ページ用ツール</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="/doku.php?id=zh:guide:febuildergba:fe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh&amp;do=edit" title="文書の編集 [e]" rel="nofollow" accesskey="e"><span>文書の編集</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="/doku.php?id=zh:guide:febuildergba:fe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh&amp;do=revisions" title="以前のリビジョン [o]" rel="nofollow" accesskey="o"><span>以前のリビジョン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="/doku.php?id=zh:guide:febuildergba:fe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh&amp;do=backlink" title="バックリンク" rel="nofollow"><span>バックリンク</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="top"><a href="#dokuwiki__top" title="文書の先頭へ [t]" rel="nofollow" accesskey="t"><span>文書の先頭へ</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
+            src="/lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" ><img
+            src="/lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="//validator.w3.org/check/referer" title="Valid HTML5" ><img
+            src="/lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="//jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
+            src="/lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="/lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="/lib/exe/indexer.php?id=zh%3Aguide%3Afebuildergba%3Afe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh&amp;1542024601" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>

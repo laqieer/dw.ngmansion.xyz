@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>zh:guide:febuildergba:背景和cg的变更方法_zh [FE改造wiki]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="zh,guide,febuildergba,背景和cg的变更方法_zh"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=zh:guide:febuildergba:%E8%83%8C%E6%99%AF%E5%92%8Ccg%E7%9A%84%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95_zh&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=zh:guide:febuildergba"/>
+<link rel="edit" title="文書の編集" href="/doku.php?id=zh:guide:febuildergba:%E8%83%8C%E6%99%AF%E5%92%8Ccg%E7%9A%84%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95_zh&amp;do=edit"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=zh:guide:febuildergba:%E8%83%8C%E6%99%AF%E5%92%8Ccg%E7%9A%84%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95_zh"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=zh:guide:febuildergba:%E8%83%8C%E6%99%AF%E5%92%8Ccg%E7%9A%84%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95_zh"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=zh:guide:febuildergba:%E8%83%8C%E6%99%AF%E5%92%8Ccg%E7%9A%84%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95_zh"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='zh:guide:febuildergba';var JSINFO = {"toc":{"initial_state":1},"isadmin":0,"isauth":0,"move_renameokay":false,"id":"zh:guide:febuildergba:\u80cc\u666f\u548ccg\u7684\u53d8\u66f4\u65b9\u6cd5_zh","namespace":"zh:guide:febuildergba","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="/lib/tpl/dokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/dokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki    showSidebar hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">内容へ移動</a></li>
+        </ul>
+
+        <h1><a href="/doku.php?id=start"  accesskey="h" title="[H]"><img src="/lib/tpl/dokuwiki/images/logo.png" width="64" height="64" alt="" /> <span>FE改造wiki</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">ユーザ用ツール</h3>
+                <ul>
+                    <li class="action register"><a href="/doku.php?id=zh:guide:febuildergba:%E8%83%8C%E6%99%AF%E5%92%8Ccg%E7%9A%84%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95_zh&amp;do=register" title="ユーザー登録" rel="nofollow"><span>ユーザー登録</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4z"/></svg></a></li><li class="action login"><a href="/doku.php?id=zh:guide:febuildergba:%E8%83%8C%E6%99%AF%E5%92%8Ccg%E7%9A%84%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95_zh&amp;do=login&amp;sectok=" title="ログイン" rel="nofollow"><span>ログイン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">サイト用ツール</h3>
+            <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="検索" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="検索">検索</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><select name="do" class="edit quickselect" title="ツール"><option value="">ツール</option><optgroup label="ページ用ツール"><option value="edit">文書の編集</option><option value="revisions">以前のリビジョン</option><option value="backlink">バックリンク</option></optgroup><optgroup label="サイト用ツール"><option value="recent">最近の変更</option><option value="media">メディアマネージャー</option><option value="index">サイトマップ</option></optgroup><optgroup label="ユーザ用ツール"><option value="register">ユーザー登録</option><option value="login">ログイン</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="/doku.php?id=zh:guide:febuildergba:%E8%83%8C%E6%99%AF%E5%92%8Ccg%E7%9A%84%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95_zh&amp;do=recent" title="最近の変更 [r]" rel="nofollow" accesskey="r">最近の変更</a></li><li class="action media"><a href="/doku.php?id=zh:guide:febuildergba:%E8%83%8C%E6%99%AF%E5%92%8Ccg%E7%9A%84%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95_zh&amp;do=media&amp;ns=zh%3Aguide%3Afebuildergba" title="メディアマネージャー" rel="nofollow">メディアマネージャー</a></li><li class="action index"><a href="/doku.php?id=zh:guide:febuildergba:%E8%83%8C%E6%99%AF%E5%92%8Ccg%E7%9A%84%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95_zh&amp;do=index" title="サイトマップ [x]" rel="nofollow" accesskey="x">サイトマップ</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">トレース:</span> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:%E6%8C%87%E9%92%88%E8%87%AA%E5%8A%A8%E8%AE%A1%E7%AE%97%E5%8A%9F%E8%83%BD_zh"  class="breadcrumbs" title="zh:guide:febuildergba:指针自动计算功能_zh">指针自动计算功能_zh</a></bdi> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:%E8%BF%BD%E5%8A%A0%E9%AD%94%E6%B3%95_zh"  class="breadcrumbs" title="zh:guide:febuildergba:追加魔法_zh">追加魔法_zh</a></bdi> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:fe7%E7%90%B3%E7%A7%BB%E6%A4%8D%E5%88%B0fe8_zh"  class="breadcrumbs" title="zh:guide:febuildergba:fe7琳移植到fe8_zh">fe7琳移植到fe8_zh</a></bdi> <span class="bcsep">•</span> <bdi><a href="/doku.php?id=zh:guide:febuildergba:%E5%AF%B9%E8%AF%9D%E5%8F%98%E6%9B%B4_zh"  class="breadcrumbs" title="zh:guide:febuildergba:对话变更_zh">对话变更_zh</a></bdi> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php?id=zh:guide:febuildergba:%E8%83%8C%E6%99%AF%E5%92%8Ccg%E7%9A%84%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95_zh"  class="breadcrumbs" title="zh:guide:febuildergba:背景和cg的变更方法_zh">背景和cg的变更方法_zh</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+                            <!-- ********** ASIDE ********** -->
+                <div id="dokuwiki__aside"><div class="pad aside include group">
+                    <h3 class="toggle">サイドバー</h3>
+                    <div class="content"><div class="group">
+                                                                        <ul>
+<li class="level1"><div class="li"> <a href="/doku.php?id=qa" class="wikilink1" title="qa">QA</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=guide:start" class="wikilink1" title="guide:start">GUIDE</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=dictionary:start" class="wikilink1" title="dictionary:start">DICTIONARY</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=column:start" class="wikilink1" title="column:start">COLUMN</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=data:start" class="wikilink1" title="data:start">DATA</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<a href="/doku.php?id=en:start" class="wikilink1" title="en:start">English</a><br />
+<a href="/doku.php?id=zh:start" class="wikilink1" title="zh:start">中文</a>
+</p>
+
+<p>
+<span class="wrap_hi wrap_center wrap_centeralign ">最新の10件</span>
+</p>
+<div class="table">
+<table class="inline">
+	<tr>
+		<th class="page">ページ</th><th class="date">日付</th>
+	</tr>
+	<tr>
+		<td class="page"><a href="/doku.php?id=column:fe%E3%81%A7%E5%AD%A6%E3%81%B6%E8%8B%B1%E8%AA%9E" class="wikilink1" title="column:feで学ぶ英語">column:feで学ぶ英語</a></td>
+		<td class="date">2018/11/12 08:10</td>
+	</tr>
+</table>
+</div>
+                                            </div></div>
+                </div></div><!-- /aside -->
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>zh:guide:febuildergba:背景和cg的变更方法_zh</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#背景">背景</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepa1">StepA1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa2">StepA2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa3">StepA3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa4">StepA4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa5">StepA5</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa6">StepA6</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa7">StepA7</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa8">StepA8</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa9">StepA9</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa10">StepA10</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa11">StepA11</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#cg">CG</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepb1">StepB1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb2">StepB2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb3">StepB3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb4">StepB4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb5">StepB5</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb6">StepB6</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb7">StepB7</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb8">StepB8</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb9">StepB9</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb10">StepB10</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb11">StepB11</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb12">StepB12</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb13">StepB13</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb14">StepB14</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb15">StepB15</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb16">StepB16</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb17">StepB17</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb18">StepB18</a></div></li>
+<li class="level2"><div class="li"><a href="#注意1">注意1</a></div></li>
+<li class="level2"><div class="li"><a href="#注意2">注意2</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#任意的cg表示">任意的CG表示</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepc1">StepC1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc2">StepC2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc3">StepC3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc4">StepC4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc5">StepC5</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc6">StepC6</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc7">StepC7</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc8">StepC8</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc9">StepC9</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc10">StepC10</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc11">StepC11</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc12">StepC12</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#扩大背景时的注意事项">扩大背景时的注意事项</a></div></li>
+<li class="level1"><div class="li"><a href="#关于tsa">关于TSA</a></div></li>
+<li class="level1"><div class="li"><a href="#update">UPDATE</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+FE的背景和CG的变更方法说明。。<br/>
+<br/>
+对FE 8的背景和CG进行说明。<br/>
+FE 7，FE 6也基本上考虑的方式是一样的。<br/>
+<br/>
+这个例子是，FE 7的青空背景FE 8移植。。<br/>
+<br/>
+
+</p>
+
+<h1 class="sectionedit1" id="背景">背景</h1>
+<div class="level1">
+
+<p>
+FE 7的背景FE 8移植。。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[背景] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="背景" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="207-261" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="背景">編集</button></div></form></div>
+<h2 class="sectionedit2" id="stepa1">StepA1</h2>
+<div class="level2">
+
+<p>
+首先，FE 7的ROM请打开。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepA1] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa1" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="262-316" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepA1">編集</button></div></form></div>
+<h2 class="sectionedit3" id="stepa2">StepA2</h2>
+<div class="level2">
+
+<p>
+「画像設定」请选择。<br/>
+<a href="/lib/exe/fetch.php?tok=342670&amp;media=https%3A%2F%2Fi.imgur.com%2FrqdFCKC.jpg" class="media" title="https://i.imgur.com/rqdFCKC.jpg"><img src="/lib/exe/fetch.php?tok=342670&amp;media=https%3A%2F%2Fi.imgur.com%2FrqdFCKC.jpg" class="mediacenter" title="i.imgur.com_rqdfckc.jpg" alt="i.imgur.com_rqdfckc.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepA2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa2" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="317-409" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepA2">編集</button></div></form></div>
+<h2 class="sectionedit4" id="stepa3">StepA3</h2>
+<div class="level2">
+
+<p>
+「背景」请选择。<br/>
+<a href="/lib/exe/fetch.php?tok=ccb883&amp;media=https%3A%2F%2Fi.imgur.com%2FvgZp70x.jpg" class="media" title="https://i.imgur.com/vgZp70x.jpg"><img src="/lib/exe/fetch.php?tok=ccb883&amp;media=https%3A%2F%2Fi.imgur.com%2FvgZp70x.jpg" class="mediacenter" title="i.imgur.com_vgzp70x.jpg" alt="i.imgur.com_vgzp70x.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepA3] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa3" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="410-495" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepA3">編集</button></div></form></div>
+<h2 class="sectionedit5" id="stepa4">StepA4</h2>
+<div class="level2">
+
+<p>
+FE 7 J是青空0 x 59。。<br/>
+<a href="/lib/exe/fetch.php?tok=a294e5&amp;media=https%3A%2F%2Fi.imgur.com%2FKMs8gjI.jpg" class="media" title="https://i.imgur.com/KMs8gjI.jpg"><img src="/lib/exe/fetch.php?tok=a294e5&amp;media=https%3A%2F%2Fi.imgur.com%2FKMs8gjI.jpg" class="mediacenter" title="i.imgur.com_kms8gji.jpg" alt="i.imgur.com_kms8gji.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepA4] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa4" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="496-584" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepA4">編集</button></div></form></div>
+<h2 class="sectionedit6" id="stepa5">StepA5</h2>
+<div class="level2">
+
+<p>
+「画像取出」按下按钮，图像png形式保存。。<br/>
+<a href="/lib/exe/fetch.php?tok=418d4d&amp;media=https%3A%2F%2Fi.imgur.com%2Fin13YGe.jpg" class="media" title="https://i.imgur.com/in13YGe.jpg"><img src="/lib/exe/fetch.php?tok=418d4d&amp;media=https%3A%2F%2Fi.imgur.com%2Fin13YGe.jpg" class="mediacenter" title="i.imgur.com_in13yge.jpg" alt="i.imgur.com_in13yge.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepA5] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa5" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="585-706" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepA5">編集</button></div></form></div>
+<h2 class="sectionedit7" id="stepa6">StepA6</h2>
+<div class="level2">
+
+<p>
+下次请打开FE 8的ROM。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepA6] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa6" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="707-758" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepA6">編集</button></div></form></div>
+<h2 class="sectionedit8" id="stepa7">StepA7</h2>
+<div class="level2">
+
+<p>
+像刚才一样、「画像設定」请选择。<br/>
+<a href="/lib/exe/fetch.php?tok=63ff0a&amp;media=https%3A%2F%2Fi.imgur.com%2FmVwXHS2.jpg" class="media" title="https://i.imgur.com/mVwXHS2.jpg"><img src="/lib/exe/fetch.php?tok=63ff0a&amp;media=https%3A%2F%2Fi.imgur.com%2FmVwXHS2.jpg" class="mediacenter" title="i.imgur.com_mvwxhs2.jpg" alt="i.imgur.com_mvwxhs2.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepA7] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa7" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="759-868" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepA7">編集</button></div></form></div>
+<h2 class="sectionedit9" id="stepa8">StepA8</h2>
+<div class="level2">
+
+<p>
+「背景」请选择。<br/>
+<a href="/lib/exe/fetch.php?tok=2e4671&amp;media=https%3A%2F%2Fi.imgur.com%2FFvN8pOi.jpg" class="media" title="https://i.imgur.com/FvN8pOi.jpg"><img src="/lib/exe/fetch.php?tok=2e4671&amp;media=https%3A%2F%2Fi.imgur.com%2FFvN8pOi.jpg" class="mediacenter" title="i.imgur.com_fvn8poi.jpg" alt="i.imgur.com_fvn8poi.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepA8] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa8" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="869-954" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepA8">編集</button></div></form></div>
+<h2 class="sectionedit10" id="stepa9">StepA9</h2>
+<div class="level2">
+
+<p>
+这次，试着覆盖在OP中显示的草原（ID : 0x25）。<br/>
+(注意：FE 8U的编号不一样)<br/>
+<a href="/lib/exe/fetch.php?tok=db7454&amp;media=https%3A%2F%2Fi.imgur.com%2FXXAaAhh.jpg" class="media" title="https://i.imgur.com/XXAaAhh.jpg"><img src="/lib/exe/fetch.php?tok=db7454&amp;media=https%3A%2F%2Fi.imgur.com%2FXXAaAhh.jpg" class="mediacenter" title="i.imgur.com_xxaaahh.jpg" alt="i.imgur.com_xxaaahh.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepA9] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa9" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="955-1115" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepA9">編集</button></div></form></div>
+<h2 class="sectionedit11" id="stepa10">StepA10</h2>
+<div class="level2">
+
+<p>
+「画像导入」按钮，请把刚才保存的蓝天的图像导入。<br />
+<br/>
+<a href="/lib/exe/fetch.php?tok=65209e&amp;media=https%3A%2F%2Fi.imgur.com%2FUAwh8JE.jpg" class="media" title="https://i.imgur.com/UAwh8JE.jpg"><img src="/lib/exe/fetch.php?tok=65209e&amp;media=https%3A%2F%2Fi.imgur.com%2FUAwh8JE.jpg" class="mediacenter" title="i.imgur.com_uawh8je.jpg" alt="i.imgur.com_uawh8je.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepA10] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa10" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1116-1251" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepA10">編集</button></div></form></div>
+<h2 class="sectionedit12" id="stepa11">StepA11</h2>
+<div class="level2">
+
+<p>
+这样就完成了。<br/>
+<a href="/lib/exe/fetch.php?tok=c6b745&amp;media=https%3A%2F%2Fi.imgur.com%2FbilmrF3.jpg" class="media" title="https://i.imgur.com/bilmrF3.jpg"><img src="/lib/exe/fetch.php?tok=c6b745&amp;media=https%3A%2F%2Fi.imgur.com%2FbilmrF3.jpg" class="mediacenter" title="i.imgur.com_bilmrf3.jpg" alt="i.imgur.com_bilmrf3.jpg" /></a><br />
+<br/>
+请按F5键，然后确认一下动作。。<br/>
+<a href="/lib/exe/fetch.php?tok=79c0a4&amp;media=https%3A%2F%2Fi.imgur.com%2FphdYZl7.jpg" class="media" title="https://i.imgur.com/phdYZl7.jpg"><img src="/lib/exe/fetch.php?tok=79c0a4&amp;media=https%3A%2F%2Fi.imgur.com%2FphdYZl7.jpg" class="mediacenter" title="i.imgur.com_phdyzl7.jpg" alt="i.imgur.com_phdyzl7.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepA11] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepa11" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1252-1423" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepA11">編集</button></div></form></div>
+<h1 class="sectionedit13" id="cg">CG</h1>
+<div class="level1">
+
+<p>
+试着将FE 7的琳的CG移植到FE 8。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[CG] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="cg" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1424-1485" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="CG">編集</button></div></form></div>
+<h2 class="sectionedit14" id="stepb1">StepB1</h2>
+<div class="level2">
+
+<p>
+请先打开FE 7的ROM。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_14'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB1] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb1" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1486-1534" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB1">編集</button></div></form></div>
+<h2 class="sectionedit15" id="stepb2">StepB2</h2>
+<div class="level2">
+
+<p>
+「画像設定」请选择。<br/>
+<a href="/lib/exe/fetch.php?tok=342670&amp;media=https%3A%2F%2Fi.imgur.com%2FrqdFCKC.jpg" class="media" title="https://i.imgur.com/rqdFCKC.jpg"><img src="/lib/exe/fetch.php?tok=342670&amp;media=https%3A%2F%2Fi.imgur.com%2FrqdFCKC.jpg" class="mediacenter" title="i.imgur.com_rqdfckc.jpg" alt="i.imgur.com_rqdfckc.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb2" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1535-1626" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB2">編集</button></div></form></div>
+<h2 class="sectionedit16" id="stepb3">StepB3</h2>
+<div class="level2">
+
+<p>
+「CG」请选择。<br/>
+<a href="/lib/exe/fetch.php?tok=e6f5c3&amp;media=https%3A%2F%2Fi.imgur.com%2F65ij9wH.jpg" class="media" title="https://i.imgur.com/65ij9wH.jpg"><img src="/lib/exe/fetch.php?tok=e6f5c3&amp;media=https%3A%2F%2Fi.imgur.com%2F65ij9wH.jpg" class="mediacenter" title="i.imgur.com_65ij9wh.jpg" alt="i.imgur.com_65ij9wh.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_16'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB3] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb3" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1627-1708" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB3">編集</button></div></form></div>
+<h2 class="sectionedit17" id="stepb4">StepB4</h2>
+<div class="level2">
+
+<p>
+FE 7 J琳的可爱的CG，0 x 00。。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_17'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB4] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb4" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1709-1770" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB4">編集</button></div></form></div>
+<h2 class="sectionedit18" id="stepb5">StepB5</h2>
+<div class="level2">
+
+<p>
+「画像取出」按钮，用png形式保存图像。<br/>
+<a href="/lib/exe/fetch.php?tok=da4fc6&amp;media=https%3A%2F%2Fi.imgur.com%2FYmt9MF1.jpg" class="media" title="https://i.imgur.com/Ymt9MF1.jpg"><img src="/lib/exe/fetch.php?tok=da4fc6&amp;media=https%3A%2F%2Fi.imgur.com%2FYmt9MF1.jpg" class="mediacenter" title="i.imgur.com_ymt9mf1.jpg" alt="i.imgur.com_ymt9mf1.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_18'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB5] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb5" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1771-1887" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB5">編集</button></div></form></div>
+<h2 class="sectionedit19" id="stepb6">StepB6</h2>
+<div class="level2">
+
+<p>
+下次请打开FE 8的ROM。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_19'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB6] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb6" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1888-1939" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB6">編集</button></div></form></div>
+<h2 class="sectionedit20" id="stepb7">StepB7</h2>
+<div class="level2">
+
+<p>
+像刚才一样、「画像設定」请选择。<br/>
+<a href="/lib/exe/fetch.php?tok=63ff0a&amp;media=https%3A%2F%2Fi.imgur.com%2FmVwXHS2.jpg" class="media" title="https://i.imgur.com/mVwXHS2.jpg"><img src="/lib/exe/fetch.php?tok=63ff0a&amp;media=https%3A%2F%2Fi.imgur.com%2FmVwXHS2.jpg" class="mediacenter" title="i.imgur.com_mvwxhs2.jpg" alt="i.imgur.com_mvwxhs2.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB7] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb7" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1940-2049" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB7">編集</button></div></form></div>
+<h2 class="sectionedit21" id="stepb8">StepB8</h2>
+<div class="level2">
+
+<p>
+「CG」请选择。<br/>
+<a href="/lib/exe/fetch.php?tok=b76e8b&amp;media=https%3A%2F%2Fi.imgur.com%2FxyPrJlv.jpg" class="media" title="https://i.imgur.com/xyPrJlv.jpg"><img src="/lib/exe/fetch.php?tok=b76e8b&amp;media=https%3A%2F%2Fi.imgur.com%2FxyPrJlv.jpg" class="mediacenter" title="i.imgur.com_xyprjlv.jpg" alt="i.imgur.com_xyprjlv.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB8] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb8" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2050-2131" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB8">編集</button></div></form></div>
+<h2 class="sectionedit22" id="stepb9">StepB9</h2>
+<div class="level2">
+
+<p>
+覆盖在ED中显示的3人组的CG（0x00）。。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_22'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB9] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb9" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2132-2206" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB9">編集</button></div></form></div>
+<h2 class="sectionedit23" id="stepb10">StepB10</h2>
+<div class="level2">
+
+<p>
+「画像导入」按下按钮，刚才保存的琳的图像，请导入。<br />
+<br/>
+<a href="/lib/exe/fetch.php?tok=9eb676&amp;media=https%3A%2F%2Fi.imgur.com%2Fp102ds8.jpg" class="media" title="https://i.imgur.com/p102ds8.jpg"><img src="/lib/exe/fetch.php?tok=9eb676&amp;media=https%3A%2F%2Fi.imgur.com%2Fp102ds8.jpg" class="mediacenter" title="i.imgur.com_p102ds8.jpg" alt="i.imgur.com_p102ds8.jpg" /></a><br />
+<br/>
+<a href="/lib/exe/fetch.php?tok=0c0b5c&amp;media=https%3A%2F%2Fi.imgur.com%2FFBHuCta.jpg" class="media" title="https://i.imgur.com/FBHuCta.jpg"><img src="/lib/exe/fetch.php?tok=0c0b5c&amp;media=https%3A%2F%2Fi.imgur.com%2FFBHuCta.jpg" class="mediacenter" title="i.imgur.com_fbhucta.jpg" alt="i.imgur.com_fbhucta.jpg" /></a><br />
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_23'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB10] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb10" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2207-2388" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB10">編集</button></div></form></div>
+<h2 class="sectionedit24" id="stepb11">StepB11</h2>
+<div class="level2">
+
+<p>
+这样就把图像插入了。<br/>
+但是，要出图像的话，必须去结尾。<br/>
+这是一件麻烦事。<br/>
+因此，在序章中加入出CG的代码。<br/>
+<br/>
+开始事件，请点击。<br/>
+<a href="/lib/exe/fetch.php?tok=0d202d&amp;media=https%3A%2F%2Fi.imgur.com%2FZn812m0.jpg" class="media" title="https://i.imgur.com/Zn812m0.jpg"><img src="/lib/exe/fetch.php?tok=0d202d&amp;media=https%3A%2F%2Fi.imgur.com%2FZn812m0.jpg" class="mediacenter" title="i.imgur.com_zn812m0.jpg" alt="i.imgur.com_zn812m0.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_24'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB11] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb11" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2389-2639" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB11">編集</button></div></form></div>
+<h2 class="sectionedit25" id="stepb12">StepB12</h2>
+<div class="level2">
+
+<p>
+这次，教程分歧的命令消磨改写。。<br/>
+双击教程分支。<br/>
+<a href="/lib/exe/fetch.php?tok=dc3a13&amp;media=https%3A%2F%2Fi.imgur.com%2FLDtSCHW.jpg" class="media" title="https://i.imgur.com/LDtSCHW.jpg"><img src="/lib/exe/fetch.php?tok=dc3a13&amp;media=https%3A%2F%2Fi.imgur.com%2FLDtSCHW.jpg" class="mediacenter" title="i.imgur.com_ldtschw.jpg" alt="i.imgur.com_ldtschw.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_25'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB12] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb12" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2640-2774" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB12">編集</button></div></form></div>
+<h2 class="sectionedit26" id="stepb13">StepB13</h2>
+<div class="level2">
+
+<p>
+请按命令变更按钮。<br/>
+<a href="/lib/exe/fetch.php?tok=a992eb&amp;media=https%3A%2F%2Fi.imgur.com%2Fz9VcXKf.jpg" class="media" title="https://i.imgur.com/z9VcXKf.jpg"><img src="/lib/exe/fetch.php?tok=a992eb&amp;media=https%3A%2F%2Fi.imgur.com%2Fz9VcXKf.jpg" class="mediacenter" title="i.imgur.com_z9vcxkf.jpg" alt="i.imgur.com_z9vcxkf.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_26'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB13] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb13" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2775-2864" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB13">編集</button></div></form></div>
+<h2 class="sectionedit27" id="stepb14">StepB14</h2>
+<div class="level2">
+
+<p>
+请从类别中选择“背景”。<br/>
+<a href="/lib/exe/fetch.php?tok=31c5de&amp;media=https%3A%2F%2Fi.imgur.com%2Flv4jNuF.jpg" class="media" title="https://i.imgur.com/lv4jNuF.jpg"><img src="/lib/exe/fetch.php?tok=31c5de&amp;media=https%3A%2F%2Fi.imgur.com%2Flv4jNuF.jpg" class="mediacenter" title="i.imgur.com_lv4jnuf.jpg" alt="i.imgur.com_lv4jnuf.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_27'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB14] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb14" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2865-2963" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB14">編集</button></div></form></div>
+<h2 class="sectionedit28" id="stepb15">StepB15</h2>
+<div class="level2">
+
+<p>
+请选择“伊弗列姆、艾瑞克、利昂的照片”。<br/>
+<a href="/lib/exe/fetch.php?tok=a86e16&amp;media=https%3A%2F%2Fi.imgur.com%2F0yrSUOt.jpg" class="media" title="https://i.imgur.com/0yrSUOt.jpg"><img src="/lib/exe/fetch.php?tok=a86e16&amp;media=https%3A%2F%2Fi.imgur.com%2F0yrSUOt.jpg" class="mediacenter" title="i.imgur.com_0yrsuot.jpg" alt="i.imgur.com_0yrsuot.jpg" /></a><br />
+<br/>
+这是，CG 0 x 00显示命令。<br/>
+在FE 8中，没有指示任何CG的命令。<br/>
+但是，通过应用扩展补丁，您可以显示任意CG。<br/>
+关于这以后的说明。。<br/>
+这次，请选择在0 x00中的CG，所以请选择“伊弗列姆、艾瑞克、利昂的一张画”。<br />
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_28'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB15] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb15" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2964-3381" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB15">編集</button></div></form></div>
+<h2 class="sectionedit29" id="stepb16">StepB16</h2>
+<div class="level2">
+
+<p>
+变更请按按钮。<br/>
+<a href="/lib/exe/fetch.php?tok=d17779&amp;media=https%3A%2F%2Fi.imgur.com%2F5XhHP5H.jpg" class="media" title="https://i.imgur.com/5XhHP5H.jpg"><img src="/lib/exe/fetch.php?tok=d17779&amp;media=https%3A%2F%2Fi.imgur.com%2F5XhHP5H.jpg" class="mediacenter" title="i.imgur.com_5xhhp5h.jpg" alt="i.imgur.com_5xhhp5h.jpg" /></a><br />
+<br/>
+命令将被安装。<br/>
+<a href="/lib/exe/fetch.php?tok=5e0396&amp;media=https%3A%2F%2Fi.imgur.com%2FIHxICwZ.jpg" class="media" title="https://i.imgur.com/IHxICwZ.jpg"><img src="/lib/exe/fetch.php?tok=5e0396&amp;media=https%3A%2F%2Fi.imgur.com%2FIHxICwZ.jpg" class="mediacenter" title="i.imgur.com_ihxicwz.jpg" alt="i.imgur.com_ihxicwz.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_29'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB16] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb16" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3382-3530" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB16">編集</button></div></form></div>
+<h2 class="sectionedit30" id="stepb17">StepB17</h2>
+<div class="level2">
+
+<p>
+请按下写入按钮，确定结果。<br/>
+<a href="/lib/exe/fetch.php?tok=5e7e99&amp;media=https%3A%2F%2Fi.imgur.com%2F2GEVo16.jpg" class="media" title="https://i.imgur.com/2GEVo16.jpg"><img src="/lib/exe/fetch.php?tok=5e7e99&amp;media=https%3A%2F%2Fi.imgur.com%2F2GEVo16.jpg" class="mediacenter" title="i.imgur.com_2gevo16.jpg" alt="i.imgur.com_2gevo16.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_30'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB17] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb17" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3531-3632" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB17">編集</button></div></form></div>
+<h2 class="sectionedit31" id="stepb18">StepB18</h2>
+<div class="level2">
+
+<p>
+请按F5键，然后确认一下动作。。<br/>
+图画被表示了吧？<br/>
+(表示场所是艾瑞克和塞思逃跑的地方，受到了沃尔塔的伤害。 这是之前的场景。)<br />
+<br/>
+<a href="/lib/exe/fetch.php?tok=e9348c&amp;media=https%3A%2F%2Fi.imgur.com%2FcdkT1Gy.jpg" class="media" title="https://i.imgur.com/cdkT1Gy.jpg"><img src="/lib/exe/fetch.php?tok=e9348c&amp;media=https%3A%2F%2Fi.imgur.com%2FcdkT1Gy.jpg" class="mediacenter" title="i.imgur.com_cdkt1gy.jpg" alt="i.imgur.com_cdkt1gy.jpg" /></a><br />
+<br/>
+加入会话等的话。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_31'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepB18] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepb18" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3633-3908" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepB18">編集</button></div></form></div>
+<h2 class="sectionedit32" id="注意1">注意1</h2>
+<div class="level2">
+
+<p>
+显示CG后，屏幕可能会失真。<br/>
+在这种情况下，请显示另一张背景图片。<br/>
+给你收拾干净。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_32'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[注意1] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="注意1" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3909-4052" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="注意1">編集</button></div></form></div>
+<h2 class="sectionedit33" id="注意2">注意2</h2>
+<div class="level2">
+
+<p>
+河等瓷砖动画有地图CG显示，奇怪。<br />
+<br/>
+请在没有动画的区域显示。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_33'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[注意2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="注意2" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4053-4165" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="注意2">編集</button></div></form></div>
+<h1 class="sectionedit34" id="任意的cg表示">任意的CG表示</h1>
+<div class="level1">
+
+<p>
+CG ID：不仅仅是0x00，说明ID : 0x01等喜欢的CG的方法。<br />
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_34'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[任意的CG表示] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="任意的cg表示" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4166-4271" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="任意的CG表示">編集</button></div></form></div>
+<h2 class="sectionedit35" id="stepc1">StepC1</h2>
+<div class="level2">
+
+<p>
+菜单的工具→补丁请选择。<br/>
+<a href="/lib/exe/fetch.php?tok=ec4661&amp;media=https%3A%2F%2Fi.imgur.com%2FnLJzwkX.jpg" class="media" title="https://i.imgur.com/nLJzwkX.jpg"><img src="/lib/exe/fetch.php?tok=ec4661&amp;media=https%3A%2F%2Fi.imgur.com%2FnLJzwkX.jpg" class="mediacenter" title="i.imgur.com_nljzwkx.jpg" alt="i.imgur.com_nljzwkx.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_35'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepC1] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc1" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4272-4368" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepC1">編集</button></div></form></div>
+<h2 class="sectionedit36" id="stepc2">StepC2</h2>
+<div class="level2">
+
+<p>
+「10分割CG表示」请选择。<br/>
+<a href="/lib/exe/fetch.php?tok=d255d2&amp;media=https%3A%2F%2Fi.imgur.com%2FyNLxFSK.jpg" class="media" title="https://i.imgur.com/yNLxFSK.jpg"><img src="/lib/exe/fetch.php?tok=d255d2&amp;media=https%3A%2F%2Fi.imgur.com%2FyNLxFSK.jpg" class="mediacenter" title="i.imgur.com_ynlxfsk.jpg" alt="i.imgur.com_ynlxfsk.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_36'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepC2] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc2" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4369-4464" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepC2">編集</button></div></form></div>
+<h2 class="sectionedit37" id="stepc3">StepC3</h2>
+<div class="level2">
+
+<p>
+用写入写入。<br/>
+这样就加入了补丁。<br/>
+<a href="/lib/exe/fetch.php?tok=00d223&amp;media=https%3A%2F%2Fi.imgur.com%2FNSwgqUw.jpg" class="media" title="https://i.imgur.com/NSwgqUw.jpg"><img src="/lib/exe/fetch.php?tok=00d223&amp;media=https%3A%2F%2Fi.imgur.com%2FNSwgqUw.jpg" class="mediacenter" title="i.imgur.com_nswgquw.jpg" alt="i.imgur.com_nswgquw.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_37'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepC3] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc3" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4465-4574" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepC3">編集</button></div></form></div>
+<h2 class="sectionedit38" id="stepc4">StepC4</h2>
+<div class="level2">
+
+<p>
+下面，表示命令的写入。<br/>
+刚才，“伊弗列姆、艾瑞克、利昂的画”设定的命令改写，CG 0 x 01表示一下吧。<br />
+<br/>
+<br/>
+和刚才一样，请选择开始事件。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_38'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepC4] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc4" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4575-4788" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepC4">編集</button></div></form></div>
+<h2 class="sectionedit39" id="stepc5">StepC5</h2>
+<div class="level2">
+
+<p>
+刚才，请双击“伊弗列姆、艾瑞克、利昂的画”，然后拿出控制面板。<br />
+<br/>
+<a href="/lib/exe/fetch.php?tok=f1771d&amp;media=https%3A%2F%2Fi.imgur.com%2F0wU4GIg.jpg" class="media" title="https://i.imgur.com/0wU4GIg.jpg"><img src="/lib/exe/fetch.php?tok=f1771d&amp;media=https%3A%2F%2Fi.imgur.com%2F0wU4GIg.jpg" class="mediacenter" title="i.imgur.com_0wu4gig.jpg" alt="i.imgur.com_0wu4gig.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_39'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepC5] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc5" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4789-4944" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepC5">編集</button></div></form></div>
+<h2 class="sectionedit40" id="stepc6">StepC6</h2>
+<div class="level2">
+
+<p>
+命令变更请按按钮。<br/>
+<a href="/lib/exe/fetch.php?tok=47d770&amp;media=https%3A%2F%2Fi.imgur.com%2FLQLyWR0.jpg" class="media" title="https://i.imgur.com/LQLyWR0.jpg"><img src="/lib/exe/fetch.php?tok=47d770&amp;media=https%3A%2F%2Fi.imgur.com%2FLQLyWR0.jpg" class="mediacenter" title="i.imgur.com_lqlywr0.jpg" alt="i.imgur.com_lqlywr0.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_40'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepC6] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc6" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4945-5033" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepC6">編集</button></div></form></div>
+<h2 class="sectionedit41" id="stepc7">StepC7</h2>
+<div class="level2">
+
+<p>
+请从类别中选择“背景”。<br/>
+<a href="/lib/exe/fetch.php?tok=58eb72&amp;media=https%3A%2F%2Fi.imgur.com%2FjISB5dC.jpg" class="media" title="https://i.imgur.com/jISB5dC.jpg"><img src="/lib/exe/fetch.php?tok=58eb72&amp;media=https%3A%2F%2Fi.imgur.com%2FjISB5dC.jpg" class="mediacenter" title="i.imgur.com_jisb5dc.jpg" alt="i.imgur.com_jisb5dc.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_41'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepC7] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc7" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5034-5131" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepC7">編集</button></div></form></div>
+<h2 class="sectionedit42" id="stepc8">StepC8</h2>
+<div class="level2">
+
+<p>
+「[XX:CG:CG]点击显示一张图片的补丁时请显示图片。<br />
+<br/>
+<a href="/lib/exe/fetch.php?tok=814db0&amp;media=https%3A%2F%2Fi.imgur.com%2Fj5AXATW.jpg" class="media" title="https://i.imgur.com/j5AXATW.jpg"><img src="/lib/exe/fetch.php?tok=814db0&amp;media=https%3A%2F%2Fi.imgur.com%2Fj5AXATW.jpg" class="mediacenter" title="i.imgur.com_j5axatw.jpg" alt="i.imgur.com_j5axatw.jpg" /></a><br />
+<br/>
+<a href="/lib/exe/fetch.php?tok=136e97&amp;media=https%3A%2F%2Fi.imgur.com%2FND0OODM.jpg" class="media" title="https://i.imgur.com/ND0OODM.jpg"><img src="/lib/exe/fetch.php?tok=136e97&amp;media=https%3A%2F%2Fi.imgur.com%2FND0OODM.jpg" class="mediacenter" title="i.imgur.com_nd0oodm.jpg" alt="i.imgur.com_nd0oodm.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_42'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepC8] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc8" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5132-5302" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepC8">編集</button></div></form></div>
+<h2 class="sectionedit43" id="stepc9">StepC9</h2>
+<div class="level2">
+
+<p>
+参数设定处0 x 01请设定。<br/>
+<a href="/lib/exe/fetch.php?tok=9c95cf&amp;media=https%3A%2F%2Fi.imgur.com%2FV3qq4eK.jpg" class="media" title="https://i.imgur.com/V3qq4eK.jpg"><img src="/lib/exe/fetch.php?tok=9c95cf&amp;media=https%3A%2F%2Fi.imgur.com%2FV3qq4eK.jpg" class="mediacenter" title="i.imgur.com_v3qq4ek.jpg" alt="i.imgur.com_v3qq4ek.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_43'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepC9] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc9" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5303-5397" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepC9">編集</button></div></form></div>
+<h2 class="sectionedit44" id="stepc10">StepC10</h2>
+<div class="level2">
+
+<p>
+请按变更按钮。<br/>
+<a href="/lib/exe/fetch.php?tok=615fec&amp;media=https%3A%2F%2Fi.imgur.com%2FLHJoWGG.jpg" class="media" title="https://i.imgur.com/LHJoWGG.jpg"><img src="/lib/exe/fetch.php?tok=615fec&amp;media=https%3A%2F%2Fi.imgur.com%2FLHJoWGG.jpg" class="mediacenter" title="i.imgur.com_lhjowgg.jpg" alt="i.imgur.com_lhjowgg.jpg" /></a><br />
+<br/>
+命令被写入。<br />
+<a href="/lib/exe/fetch.php?tok=932f15&amp;media=https%3A%2F%2Fi.imgur.com%2FewUAVkg.jpg" class="media" title="https://i.imgur.com/ewUAVkg.jpg"><img src="/lib/exe/fetch.php?tok=932f15&amp;media=https%3A%2F%2Fi.imgur.com%2FewUAVkg.jpg" class="mediacenter" title="i.imgur.com_ewuavkg.jpg" alt="i.imgur.com_ewuavkg.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_44'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepC10] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc10" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5398-5540" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepC10">編集</button></div></form></div>
+<h2 class="sectionedit45" id="stepc11">StepC11</h2>
+<div class="level2">
+
+<p>
+请按下写入按钮，确定结果。<br/>
+<a href="/lib/exe/fetch.php?tok=99826c&amp;media=https%3A%2F%2Fi.imgur.com%2F1gShHAg.jpg" class="media" title="https://i.imgur.com/1gShHAg.jpg"><img src="/lib/exe/fetch.php?tok=99826c&amp;media=https%3A%2F%2Fi.imgur.com%2F1gShHAg.jpg" class="mediacenter" title="i.imgur.com_1gshhag.jpg" alt="i.imgur.com_1gshhag.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_45'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepC11] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc11" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5541-5642" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepC11">編集</button></div></form></div>
+<h2 class="sectionedit46" id="stepc12">StepC12</h2>
+<div class="level2">
+
+<p>
+请按F5键，然后确认一下动作。。<br/>
+CG ID:0x01的画被显示了吗？<br/>
+<a href="/lib/exe/fetch.php?tok=460af0&amp;media=https%3A%2F%2Fi.imgur.com%2Fg7Fn4fd.jpg" class="media" title="https://i.imgur.com/g7Fn4fd.jpg"><img src="/lib/exe/fetch.php?tok=460af0&amp;media=https%3A%2F%2Fi.imgur.com%2Fg7Fn4fd.jpg" class="mediacenter" title="i.imgur.com_g7fn4fd.jpg" alt="i.imgur.com_g7fn4fd.jpg" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_46'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[StepC12] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="stepc12" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5643-5786" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="StepC12">編集</button></div></form></div>
+<h1 class="sectionedit47" id="扩大背景时的注意事项">扩大背景时的注意事项</h1>
+<div class="level1">
+
+<p>
+背景情况，列表想增加扩张。。<br/>
+但是，一些FE 8缺少具有特定编号的CG。<br/>
+<br/>
+如果是FE 8J的话，第0x51是缺号。<br/>
+解决这个问题，工具→补丁，“SYSTEM _背景0 x 51号解放”补丁适应。<br />
+<br/>
+0x51都能利用。。<br/>
+<br/>
+FE 8 E的情况，0x37也许有缺号。<br/>
+现在没有解决的方法。<br/>
+请利用这个以外的地方。<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_47'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[扩大背景时的注意事项] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="扩大背景时的注意事项" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5787-6213" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="扩大背景时的注意事项">編集</button></div></form></div>
+<h1 class="sectionedit48" id="关于tsa">关于TSA</h1>
+<div class="level1">
+
+<p>
+TSA的技术性的规定，请看这边。 <a href="/doku.php?id=%E8%A7%A3%E8%AA%AC:tsa" class="wikilink2" title="解説:tsa" rel="nofollow">TSA</a> <br/>
+在这里，TSA对应了的图像，怎么做或者进行说明。。<br/>
+<br/>
+在GBA，通过利用TSA的结构，可以显示16色以上的颜色。<br />
+<br/>
+具体来说，在CG 6托盘（6 *的16色)、BG 8托盘（8 *的16色）可以利用。<br />
+<br/>
+但是，TSA有条件。<br/>
+<br/>
+这意味着在8 x 8瓦片中只有一个调色板可用。<br/>
+<br/>
+我会将图像分成8 x 8瓦片。<br/>
+每个图块中只有一个调色板可用。<br/>
+<br/>
+<a href="http://ngmansion.xyz/wiki/hackfe/index.php?plugin=attach&amp;refer=%E8%A7%A3%E8%AA%AC%2FTSA&amp;openfile=tile2.png" class="urlextern" title="http://ngmansion.xyz/wiki/hackfe/index.php?plugin=attach&amp;refer=%E8%A7%A3%E8%AA%AC%2FTSA&amp;openfile=tile2.png" rel="nofollow">http://ngmansion.xyz/wiki/hackfe/index.php?plugin=attach&amp;refer=%E8%A7%A3%E8%AA%AC%2FTSA&amp;openfile=tile2.png</a><br />
+<br/>
+例如，在瓦片0中，使用了调色板0的16种颜色<br/>
+对于1个瓷砖，使用调色板1的16种颜色<br/>
+对于2个瓷砖，使用调色板0的16种颜色<br/>
+对于3个瓷砖，使用调色板4的16种颜色<br/>
+…<br/>
+通过这种方式，这是一种切换每个8&times;8拼贴的调色板的机制。<br/>
+<a href="https://i.imgur.com/2P6fR3c.png" class="urlextern" title="https://i.imgur.com/2P6fR3c.png" rel="nofollow">https://i.imgur.com/2P6fR3c.png</a><br />
+<br/>
+为此，在简单地进行减色处理的图像中，它偏离了TSA规则。<br/>
+根据TSA规则制作图像是必要的。<br/>
+<br/>
+作为制作图像的诀窍、<br/>
+首先，创建一个只有16种颜色的图像，并根据TSA规则指定颜色，仅用于要添加颜色的图块。<br/>
+如果这样做，您将能够充分利用TSA规则。<br/>
+<br/>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_48'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[关于TSA] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="关于tsa" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="6214-7519" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="关于TSA">編集</button></div></form></div>
+<h1 class="sectionedit49" id="update">UPDATE</h1>
+<div class="level1">
+
+<p>
+FEBuilderGBA有一个减少TSA的颜色缩减工具。<br />
+您可以从菜单“工具” →“减色工具”。
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_49'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1537697559" /><input type="hidden" name="summary" value="[UPDATE] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="update" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="7520-" /><input type="hidden" name="id" value="zh:guide:febuildergba:背景和cg的变更方法_zh" /><button type="submit" title="UPDATE">編集</button></div></form></div>
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>zh/guide/febuildergba/背景和cg的变更方法_zh.txt</bdi> · 最終更新: 2018/09/23 19:12 by <bdi>211.14.62.193</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">ページ用ツール</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="/doku.php?id=zh:guide:febuildergba:%E8%83%8C%E6%99%AF%E5%92%8Ccg%E7%9A%84%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95_zh&amp;do=edit" title="文書の編集 [e]" rel="nofollow" accesskey="e"><span>文書の編集</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="/doku.php?id=zh:guide:febuildergba:%E8%83%8C%E6%99%AF%E5%92%8Ccg%E7%9A%84%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95_zh&amp;do=revisions" title="以前のリビジョン [o]" rel="nofollow" accesskey="o"><span>以前のリビジョン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="/doku.php?id=zh:guide:febuildergba:%E8%83%8C%E6%99%AF%E5%92%8Ccg%E7%9A%84%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95_zh&amp;do=backlink" title="バックリンク" rel="nofollow"><span>バックリンク</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="top"><a href="#dokuwiki__top" title="文書の先頭へ [t]" rel="nofollow" accesskey="t"><span>文書の先頭へ</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
+            src="/lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" ><img
+            src="/lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="//validator.w3.org/check/referer" title="Valid HTML5" ><img
+            src="/lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="//jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
+            src="/lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="/lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="/lib/exe/indexer.php?id=zh%3Aguide%3Afebuildergba%3A%E8%83%8C%E6%99%AF%E5%92%8Ccg%E7%9A%84%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95_zh&amp;1542024603" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>
