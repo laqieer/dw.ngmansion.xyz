@@ -8,7 +8,7 @@ def rename_files():
         if os.path.isfile(file_path):
             s = filename.split(r'media%3d')[-1]
             new_name = s.replace(r'%3a', '\\')
-            new_file_path = os.path.join('export_xhtml', new_name)
+            new_file_path = os.path.join('wiki_pages', new_name)
             if os.path.exists(new_file_path):
                 continue
             if not os.path.exists(os.path.dirname(new_file_path)):
