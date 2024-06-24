@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="ja" dir="ltr">
+
+<html dir="ltr" lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <title>guide:febuildergba:febuildergbaのconfigデータ構造</title>
-<meta name="generator" content="DokuWiki"/>
-<meta name="theme-color" content="#008800"/>
-<meta name="robots" content="index,follow"/>
-<meta name="keywords" content="guide,febuildergba,febuildergbaのconfigデータ構造"/>
-<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
-<link rel="start" href="/"/>
-<link rel="contents" href="/doku.php?id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0&amp;do=index" title="サイトマップ"/>
-<link rel="manifest" href="/lib/exe/manifest.php"/>
-<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
-<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide:febuildergba"/>
-<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0"/>
-<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0"/>
-<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0"/>
-<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<meta charset="utf-8"/>
+<title>guide:febuildergba:febuildergbaのconfigデータ構造</title>
+<meta content="DokuWiki" name="generator"/>
+<meta content="#008800" name="theme-color"/>
+<meta content="index,follow" name="robots"/>
+<meta content="guide,febuildergba,febuildergbaのconfigデータ構造" name="keywords"/>
+<link href="/lib/exe/opensearch.php" rel="search" title="FE改造wiki" type="application/opensearchdescription+xml"/>
+<link href="/" rel="start"/>
+<link href="/doku.php?id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0&amp;do=index" rel="contents" title="サイトマップ"/>
+<link href="/lib/exe/manifest.php" rel="manifest"/>
+<link href="/feed.php" rel="alternate" title="最近の変更" type="application/rss+xml"/>
+<link href="/feed.php?mode=list&amp;ns=guide:febuildergba" rel="alternate" title="現在の名前空間" type="application/rss+xml"/>
+<link href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0" rel="alternate" title="プレーンHTML" type="text/html"/>
+<link href="/doku.php?do=export_raw&amp;id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0" rel="alternate" title="Wikiマークアップ" type="text/plain"/>
+<link href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:febuildergba%E3%81%AEconfig%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0" rel="canonical"/>
+<link href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" rel="stylesheet" type="text/css"/>
 <!--[if gte IE 9]><!-->
 <script type="text/javascript">/*<![CDATA[*/var NS='guide:febuildergba';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:febuildergba:febuildergba\u306econfig\u30c7\u30fc\u30bf\u69cb\u9020","namespace":"guide:febuildergba","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
 /*!]]>*/</script>
-<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
-<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<script charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f" type="text/javascript"></script>
+<script charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" type="text/javascript"></script>
 <!--<![endif]-->
 </head>
 <body>
 <div class="dokuwiki export">
 <!-- TOC START -->
-<div id="dw__toc" class="dw__toc">
+<div class="dw__toc" id="dw__toc">
 <h3 class="toggle">目次</h3>
 <div>
-
 <ul class="toc">
 <li class="level1"><div class="li"><a href="#設定ファイルのルール">設定ファイルのルール</a></div>
 <ul class="toc">
@@ -90,67 +90,51 @@
 </div>
 </div>
 <!-- TOC END -->
-
 <p>
 FEBuilderGBAのconfigディレクトリ内のデータ構造について説明します。<br/>
 <br/>
-
 </p>
-
 <h1 class="sectionedit1" id="設定ファイルのルール">設定ファイルのルール</h1>
 <div class="level1">
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u8a2d\u5b9a\u30d5\u30a1\u30a4\u30eb\u306e\u30eb\u30fc\u30eb&quot;,&quot;hid&quot;:&quot;\u8a2d\u5b9a\u30d5\u30a1\u30a4\u30eb\u306e\u30eb\u30fc\u30eb&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;97-142&quot;} -->
 <h2 class="sectionedit2" id="config_configxml">/config/config.xml</h2>
 <div class="level2">
-
 <p>
 このツールの設定が格納されます。 <br/>
 <br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\/config\/config.xml&quot;,&quot;hid&quot;:&quot;config_configxml&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;143-232&quot;} -->
 <h2 class="sectionedit3" id="config_translate">/config/translate/</h2>
 <div class="level2">
-
 <p>
 このツールが利用する翻訳リソースです。 <br/>
 GNU GetTextみたいな考え方をもとにした、KEY:\r\nVALUE形式です。<br/>
 <br/>
-
 </p>
 <pre class="code">:元文字列
 翻訳文字列</pre>
-
 <p>
 <br/>
-<a href="/lib/exe/fetch.php?tok=ea8e3c&amp;media=https%3A%2F%2Fi.imgur.com%2FiPFRtmE.jpg" class="media" title="https://i.imgur.com/iPFRtmE.jpg"><img src="/lib/exe/fetch.php?tok=ea8e3c&amp;media=https%3A%2F%2Fi.imgur.com%2FiPFRtmE.jpg" class="mediacenter" title="i.imgur.com_ipfrtme.jpg" alt="i.imgur.com_ipfrtme.jpg" /></a><br/>
+<a class="media" href="https://i.imgur.com/iPFRtmE.jpg" title="https://i.imgur.com/iPFRtmE.jpg"><img alt="i.imgur.com_ipfrtme.jpg" class="mediacenter" src="https://i.imgur.com/iPFRtmE.jpg" title="i.imgur.com_ipfrtme.jpg"/></a><br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\/config\/translate\/&quot;,&quot;hid&quot;:&quot;config_translate&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;233-503&quot;} -->
 <h2 class="sectionedit4" id="config_data">/config/data/</h2>
 <div class="level2">
-
 <p>
 このツールが利用する、ゲーム内での設定データがあります。<br/>
 項目が長くなったり、外部リソースとして切り出した方が拡張性が高くなると判断したデータが入っています。<br/>
 <br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\/config\/data\/&quot;,&quot;hid&quot;:&quot;config_data&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;504-776&quot;} -->
 <h3 class="sectionedit5" id="ファイル適合ルール">ファイル適合ルール</h3>
 <div class="level3">
-
 <p>
 設定ファイルは、以下の順番で探索されます。<br/>
 langには、選択されている言語入ります。en=英語 ,zh=中国語。<br/>
@@ -162,294 +146,259 @@ file_ALL.txt<br/>
 また、ファイル内にも、{J} {U} で切り替わるものが有ります。<br/>
 例えば、ポインタ値は、FE8J FE8Uで違いますので、この切替に利用されます。<br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30d5\u30a1\u30a4\u30eb\u9069\u5408\u30eb\u30fc\u30eb&quot;,&quot;hid&quot;:&quot;\u30d5\u30a1\u30a4\u30eb\u9069\u5408\u30eb\u30fc\u30eb&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:5,&quot;range&quot;:&quot;777-1240&quot;} -->
 <h3 class="sectionedit6" id="例">例.</h3>
 <div class="level3">
 <div class="table sectionedit7"><table class="inline">
-	<tr class="row0">
-		<td class="col0">search</td><td class="col1">“foo”</td>
-	</tr>
-	<tr class="row1">
-		<td class="col0">game</td><td class="col1">FE8</td>
-	</tr>
-	<tr class="row2">
-		<td class="col0">lang</td><td class="col1">en</td>
-	</tr>
-	<tr class="row3">
-		<td class="col0">type</td><td class="col1">FE8U</td>
-	</tr>
+<tr class="row0">
+<td class="col0">search</td><td class="col1">“foo”</td>
+</tr>
+<tr class="row1">
+<td class="col0">game</td><td class="col1">FE8</td>
+</tr>
+<tr class="row2">
+<td class="col0">lang</td><td class="col1">en</td>
+</tr>
+<tr class="row3">
+<td class="col0">type</td><td class="col1">FE8U</td>
+</tr>
 </table></div>
-<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:7,&quot;range&quot;:&quot;1258-1305&quot;} --><pre class="code">if ( Exists(&quot;config/data/foo_FE8.en.txt&quot;) )
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:7,&quot;range&quot;:&quot;1258-1305&quot;} --><pre class="code">if ( Exists("config/data/foo_FE8.en.txt") )
 {
    return found;
 }
-if ( Exists(&quot;config/data/foo_FE8.txt&quot;) )
+if ( Exists("config/data/foo_FE8.txt") )
 {
    return found;
 }
-if ( Exists(&quot;config/data/foo_ALL.en.txt&quot;) )
+if ( Exists("config/data/foo_ALL.en.txt") )
 {
    return found;
 }
-if ( Exists(&quot;config/data/foo_ALL.txt&quot;) )
+if ( Exists("config/data/foo_ALL.txt") )
 {
    return found;
 }
 return NOT_FOUND;</pre>
-
 <p>
 <br/>
 仮に、foo_ALL.txt が見つかったとします。<br/>
 <br/>
 foo_ALL.txtの中身が以下のように書かれていたと仮定します。<br/>
-
 </p>
 <pre class="code">TEST1=A
 TEST2=B	{U}
 TEST3=C	{J}</pre>
-
 <p>
 <br/>
 探索命令でtype==FE8U と指定したため、以下の内容が取得されます。<br/>
-
 </p>
 <pre class="code">TEST1=A
 TEST2=B</pre>
-
 <p>
 <br/>
 もし、探索命令で type==FE8J であった場合、以下の内容が取得されます。<br/>
-
 </p>
 <pre class="code">TEST1=A
 TEST3=C</pre>
-
 <p>
 すべてのファイルは タブ区切りのTSV形式です。<br/>
 文字コードはUTF-8で統一です。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u4f8b.&quot;,&quot;hid&quot;:&quot;\u4f8b&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:6,&quot;range&quot;:&quot;1241-2157&quot;} -->
 <h3 class="sectionedit8" id="一覧">一覧</h3>
 <div class="level3">
 <div class="table sectionedit9"><table class="inline">
-	<tr class="row0">
-		<td class="col0">ai1</td><td class="col1">ユニット配置のAI1の一覧を定義します</td>
-	</tr>
-	<tr class="row1">
-		<td class="col0">ai2</td><td class="col1">ユニット配置のAI2の一覧を定義します</td>
-	</tr>
-	<tr class="row2">
-		<td class="col0">aiscript</td><td class="col1">aiscript命令を定義します</td>
-	</tr>
-	<tr class="row3">
-		<td class="col0">asmmap</td><td class="col1">関数マップ 逆アセンブラ時にヒントを表示します</td>
-	</tr>
-	<tr class="row4">
-		<td class="col0">base_rom_info</td><td class="col1">無改造ROMの容量とCRCを定義します</td>
-	</tr>
-	<tr class="row5">
-		<td class="col0">battleanime_85command</td><td class="col1">戦闘アニメのC85コマンド一覧を定義します</td>
-	</tr>
-	<tr class="row6">
-		<td class="col0">battleanime_auto_recolor</td><td class="col1">戦闘アニメで敵配色を決定するのに利用します</td>
-	</tr>
-	<tr class="row7">
-		<td class="col0">battleanime_mode</td><td class="col1">戦闘アニメの種類を定義します</td>
-	</tr>
-	<tr class="row8">
-		<td class="col0">event</td><td class="col1">イベント命令を定義します</td>
-	</tr>
-	<tr class="row9">
-		<td class="col0">eventcond</td><td class="col1">イベント条件の種類を定義します</td>
-	</tr>
-	<tr class="row10">
-		<td class="col0">func_lang</td><td class="col1">FEBuilderGBAで利用できる言語の一覧を定義します</td>
-	</tr>
-	<tr class="row11">
-		<td class="col0">item_anime_effect</td><td class="col1">武器アニメエフェクトの一覧を定義します</td>
-	</tr>
-	<tr class="row12">
-		<td class="col0">item_staff_use_effect</td><td class="col1">アイテムを利用した場合の効果を定義します</td>
-	</tr>
-	<tr class="row13">
-		<td class="col0">item_weapon_effect</td><td class="col1">武器の追加効果を定義します</td>
-	</tr>
-	<tr class="row14">
-		<td class="col0">item_usability_array_</td><td class="col1">アイテムを利用できるか判定する</td>
-	</tr>
-	<tr class="row15">
-		<td class="col0">item_effect_array_</td><td class="col1">アイテムを利用した場合の効果を定義する</td>
-	</tr>
-	<tr class="row16">
-		<td class="col0">item_promotion1_array_</td><td class="col1">CCアイテムを使った場合の処理を定義する</td>
-	</tr>
-	<tr class="row17">
-		<td class="col0">item_promotion2_array_</td><td class="col1">CCアイテムかどうかを定義する(FE7のみ)</td>
-	</tr>
-	<tr class="row18">
-		<td class="col0">item_staff1_array_</td><td class="col1">アイテムのターゲット選択の方法を定義する(多分)</td>
-	</tr>
-	<tr class="row19">
-		<td class="col0">item_staff2_array_</td><td class="col1">杖の種類を定義する</td>
-	</tr>
-	<tr class="row20">
-		<td class="col0">item_statbooster1_array_</td><td class="col1">ドーピングアイテムを利用した時のメッセージを定義する</td>
-	</tr>
-	<tr class="row21">
-		<td class="col0">item_statbooster2_array_</td><td class="col1">ドーピングアイテムとCCアイテムかどうかを定義する</td>
-	</tr>
-	<tr class="row22">
-		<td class="col0">magic_command</td><td class="col1">魔法拡張のコマンドを定義します</td>
-	</tr>
-	<tr class="row23">
-		<td class="col0">magic_csa_spell_table</td><td class="col1">魔法拡張の魔法アニメーションを定義するCSATABLEを検索する条件を定義します</td>
-	</tr>
-	<tr class="row24">
-		<td class="col0">magic_extends</td><td class="col1">魔法拡張の是非を判定する方法を定義します</td>
-	</tr>
-	<tr class="row25">
-		<td class="col0">mappointer</td><td class="col1">マップポインタ名を定義します</td>
-	</tr>
-	<tr class="row26">
-		<td class="col0">mapstyle</td><td class="col1">マップスタイル一覧を定義します</td>
-	</tr>
-	<tr class="row27">
-		<td class="col0">other_text</td><td class="col1">C言語の文字列直値が埋め込まれているアドレス一覧を定義します</td>
-	</tr>
-	<tr class="row28">
-		<td class="col0">skill_extends</td><td class="col1">スキル拡張の是非を判定する方法を定義します</td>
-	</tr>
-	<tr class="row29">
-		<td class="col0">skill_extends_*</td><td class="col1">スキル拡張別に、スキルIDを定義します</td>
-	</tr>
-	<tr class="row30">
-		<td class="col0">song_instrument</td><td class="col1">楽器情報をMD5化し、楽器アドレスに楽器名を振ります</td>
-	</tr>
-	<tr class="row31">
-		<td class="col0">song_instrumentset</td><td class="col1">NIMAPの是非を判定する方法を定義します</td>
-	</tr>
-	<tr class="row32">
-		<td class="col0">sound</td><td class="col1">効果音名を定義します</td>
-	</tr>
-	<tr class="row33">
-		<td class="col0">sound_foot_steps</td><td class="col1">足音を定義します FE8のみ</td>
-	</tr>
-	<tr class="row34">
-		<td class="col0">tbl_cond</td><td class="col1">tblを利用するべきかどうかを定義します</td>
-	</tr>
-	<tr class="row35">
-		<td class="col0">translate_textid</td><td class="col1">翻訳のために日米のROMでの文字列IDの対応表を作ります</td>
-	</tr>
-	<tr class="row36">
-		<td class="col0">updater.bat.txt</td><td class="col1">設定ファイルではない。 自動アップデートのバッチファイルです。</td>
-	</tr>
+<tr class="row0">
+<td class="col0">ai1</td><td class="col1">ユニット配置のAI1の一覧を定義します</td>
+</tr>
+<tr class="row1">
+<td class="col0">ai2</td><td class="col1">ユニット配置のAI2の一覧を定義します</td>
+</tr>
+<tr class="row2">
+<td class="col0">aiscript</td><td class="col1">aiscript命令を定義します</td>
+</tr>
+<tr class="row3">
+<td class="col0">asmmap</td><td class="col1">関数マップ 逆アセンブラ時にヒントを表示します</td>
+</tr>
+<tr class="row4">
+<td class="col0">base_rom_info</td><td class="col1">無改造ROMの容量とCRCを定義します</td>
+</tr>
+<tr class="row5">
+<td class="col0">battleanime_85command</td><td class="col1">戦闘アニメのC85コマンド一覧を定義します</td>
+</tr>
+<tr class="row6">
+<td class="col0">battleanime_auto_recolor</td><td class="col1">戦闘アニメで敵配色を決定するのに利用します</td>
+</tr>
+<tr class="row7">
+<td class="col0">battleanime_mode</td><td class="col1">戦闘アニメの種類を定義します</td>
+</tr>
+<tr class="row8">
+<td class="col0">event</td><td class="col1">イベント命令を定義します</td>
+</tr>
+<tr class="row9">
+<td class="col0">eventcond</td><td class="col1">イベント条件の種類を定義します</td>
+</tr>
+<tr class="row10">
+<td class="col0">func_lang</td><td class="col1">FEBuilderGBAで利用できる言語の一覧を定義します</td>
+</tr>
+<tr class="row11">
+<td class="col0">item_anime_effect</td><td class="col1">武器アニメエフェクトの一覧を定義します</td>
+</tr>
+<tr class="row12">
+<td class="col0">item_staff_use_effect</td><td class="col1">アイテムを利用した場合の効果を定義します</td>
+</tr>
+<tr class="row13">
+<td class="col0">item_weapon_effect</td><td class="col1">武器の追加効果を定義します</td>
+</tr>
+<tr class="row14">
+<td class="col0">item_usability_array_</td><td class="col1">アイテムを利用できるか判定する</td>
+</tr>
+<tr class="row15">
+<td class="col0">item_effect_array_</td><td class="col1">アイテムを利用した場合の効果を定義する</td>
+</tr>
+<tr class="row16">
+<td class="col0">item_promotion1_array_</td><td class="col1">CCアイテムを使った場合の処理を定義する</td>
+</tr>
+<tr class="row17">
+<td class="col0">item_promotion2_array_</td><td class="col1">CCアイテムかどうかを定義する(FE7のみ)</td>
+</tr>
+<tr class="row18">
+<td class="col0">item_staff1_array_</td><td class="col1">アイテムのターゲット選択の方法を定義する(多分)</td>
+</tr>
+<tr class="row19">
+<td class="col0">item_staff2_array_</td><td class="col1">杖の種類を定義する</td>
+</tr>
+<tr class="row20">
+<td class="col0">item_statbooster1_array_</td><td class="col1">ドーピングアイテムを利用した時のメッセージを定義する</td>
+</tr>
+<tr class="row21">
+<td class="col0">item_statbooster2_array_</td><td class="col1">ドーピングアイテムとCCアイテムかどうかを定義する</td>
+</tr>
+<tr class="row22">
+<td class="col0">magic_command</td><td class="col1">魔法拡張のコマンドを定義します</td>
+</tr>
+<tr class="row23">
+<td class="col0">magic_csa_spell_table</td><td class="col1">魔法拡張の魔法アニメーションを定義するCSATABLEを検索する条件を定義します</td>
+</tr>
+<tr class="row24">
+<td class="col0">magic_extends</td><td class="col1">魔法拡張の是非を判定する方法を定義します</td>
+</tr>
+<tr class="row25">
+<td class="col0">mappointer</td><td class="col1">マップポインタ名を定義します</td>
+</tr>
+<tr class="row26">
+<td class="col0">mapstyle</td><td class="col1">マップスタイル一覧を定義します</td>
+</tr>
+<tr class="row27">
+<td class="col0">other_text</td><td class="col1">C言語の文字列直値が埋め込まれているアドレス一覧を定義します</td>
+</tr>
+<tr class="row28">
+<td class="col0">skill_extends</td><td class="col1">スキル拡張の是非を判定する方法を定義します</td>
+</tr>
+<tr class="row29">
+<td class="col0">skill_extends_*</td><td class="col1">スキル拡張別に、スキルIDを定義します</td>
+</tr>
+<tr class="row30">
+<td class="col0">song_instrument</td><td class="col1">楽器情報をMD5化し、楽器アドレスに楽器名を振ります</td>
+</tr>
+<tr class="row31">
+<td class="col0">song_instrumentset</td><td class="col1">NIMAPの是非を判定する方法を定義します</td>
+</tr>
+<tr class="row32">
+<td class="col0">sound</td><td class="col1">効果音名を定義します</td>
+</tr>
+<tr class="row33">
+<td class="col0">sound_foot_steps</td><td class="col1">足音を定義します FE8のみ</td>
+</tr>
+<tr class="row34">
+<td class="col0">tbl_cond</td><td class="col1">tblを利用するべきかどうかを定義します</td>
+</tr>
+<tr class="row35">
+<td class="col0">translate_textid</td><td class="col1">翻訳のために日米のROMでの文字列IDの対応表を作ります</td>
+</tr>
+<tr class="row36">
+<td class="col0">updater.bat.txt</td><td class="col1">設定ファイルではない。 自動アップデートのバッチファイルです。</td>
+</tr>
 </table></div>
 <!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table1&quot;,&quot;secid&quot;:9,&quot;range&quot;:&quot;2177-4930&quot;} -->
 <p>
 <br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u4e00\u89a7&quot;,&quot;hid&quot;:&quot;\u4e00\u89a7&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:8,&quot;range&quot;:&quot;2158-4937&quot;} -->
 <h2 class="sectionedit10" id="config_patch">/config/patch/</h2>
 <div class="level2">
-
 <p>
 細かい設定がパッチとして切り出されています。<br/>
 メニューの 機能→パッチ管理 からアクセスできます。<br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=a10481&amp;media=https%3A%2F%2Fi.imgur.com%2F59gvcy9.jpg" class="media" title="https://i.imgur.com/59gvcy9.jpg"><img src="/lib/exe/fetch.php?tok=a10481&amp;media=https%3A%2F%2Fi.imgur.com%2F59gvcy9.jpg" class="mediacenter" title="i.imgur.com_59gvcy9.jpg" alt="i.imgur.com_59gvcy9.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/59gvcy9.jpg" title="https://i.imgur.com/59gvcy9.jpg"><img alt="i.imgur.com_59gvcy9.jpg" class="mediacenter" src="https://i.imgur.com/59gvcy9.jpg" title="i.imgur.com_59gvcy9.jpg"/></a><br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\/config\/patch\/&quot;,&quot;hid&quot;:&quot;config_patch&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:10,&quot;range&quot;:&quot;4938-5155&quot;} -->
 <h1 class="sectionedit11" id="パッチ形式">パッチ形式</h1>
 <div class="level1">
-
 <p>
 パッチファイルは、 KEY=VALUE 形式です。<br/>
 // # ; はコメントになります。<br/>
 数字データは 0xをつけると16進数になります。何も付けないと10進数です。<br/>
-
 </p>
 <pre class="code">+0x08000000 GBAポインタにしてもしなくても、どちらでも問題ありません。~</pre>
-
 <p>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30d1\u30c3\u30c1\u5f62\u5f0f&quot;,&quot;hid&quot;:&quot;\u30d1\u30c3\u30c1\u5f62\u5f0f&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:11,&quot;range&quot;:&quot;5156-5508&quot;} -->
 <h2 class="sectionedit12" id="共通項">共通項</h2>
 <div class="level2">
 <pre class="code">NAME=名前</pre>
-
 <p>
 パッチの名前を定義します。<br/>
 未定義の場合、パッチのファイル名になります。<br/>
 <br/>
-
 </p>
 <pre class="code">TYPE=IMAGE TYPE=ADDR TYPE=STRUCT TYPE=BIN TYPE=EA TYPE=SWITCH</pre>
-
 <p>
 パッチの種類を定義します。6つの種類があります。<br/>
 詳しくは後で説明します。<br/>
 <br/>
-
 </p>
 <pre class="code">INFO=詳しい情報を書きます。\r\n可能であれば説明を書いてください。</pre>
-
 <p>
 詳しい情報を書きます。 改行は\r\nにしてください。<br/>
 <br/>
 <br/>
-
 </p>
 <pre class="code">IF:0xEE594=0x4B 0xFA 0x2F 0x59 0x7E 0x19</pre>
-
 <p>
 パッチが利用できるかどうかを定義します。<br/>
 この例では、ROM内 0xEE594 が 0x4B 0xFA 0x2F 0x59 0x7E 0x19 となっているかどうかを見ています。<br/>
 もし、 0xEE594 が 0x4B 0xFA 0x2F 0x59 0x7E 0x19 であれば、このパッチを利用できます。<br/>
 <br/>
-
 </p>
 <pre class="code">IF_NOT:0xEE594=0x4B 0xFA 0x2F 0x59 0x7E 0x19</pre>
-
 <p>
 パッチが利用できるかどうかを定義します。<br/>
 先ほどとは逆に、ROM内 0xEE594 が 0x4B 0xFA 0x2F 0x59 0x7E 0x19 で、なければ、利用可能になります。<br/>
 <br/>
-
 </p>
 <pre class="code">PATCHED_IF:0x080bb182=0x45 0x46 0xE0 0xB4
 PATCHED_IF_NOT:0x080bb182=0x45 0x46 0xE0 0xB4</pre>
-
 <p>
 既にパッチが適合されたかどうかを定義します。<br/>
 2回パッチを当てるとまずい BINパッチで主に使われます。<br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5171\u901a\u9805&quot;,&quot;hid&quot;:&quot;\u5171\u901a\u9805&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:12,&quot;range&quot;:&quot;5509-6913&quot;} -->
 <h3 class="sectionedit13" id="マルチ言語">マルチ言語</h3>
 <div class="level3">
-
 <p>
 英語名を記述するには、 .en をつけます。<br/>
 中国名を記述するには、 .zh をつけます。<br/>
@@ -460,9 +409,7 @@ NAME.zh=中国語<br/>
 <br/>
 ver20171211から、すべてのパラメータに対して、 AAAA.en などの言語指定ができるようになりました。<br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30de\u30eb\u30c1\u8a00\u8a9e&quot;,&quot;hid&quot;:&quot;\u30de\u30eb\u30c1\u8a00\u8a9e&quot;,&quot;codeblockOffset&quot;:12,&quot;secid&quot;:13,&quot;range&quot;:&quot;6914-7259&quot;} -->
 <h2 class="sectionedit14" id="パッチの種類_addrパッチ">パッチの種類 ADDRパッチ</h2>
@@ -478,26 +425,21 @@ ADDRESS=0x2fe16
 
 AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a
 AUTHOR.zh=来源：从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a
-AUTHOR.en=Source: From aera&#039;s data\r\http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a</pre>
-
+AUTHOR.en=Source: From aera's data\r\http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a</pre>
 <p>
 <br/>
 FE8Jの傷薬の回復量は0x2fe16に格納されています。<br/>
 これは、それを変更するパッチです。<br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=8ea8cb&amp;media=https%3A%2F%2Fi.imgur.com%2FYLOE1U7.jpg" class="media" title="https://i.imgur.com/YLOE1U7.jpg"><img src="/lib/exe/fetch.php?tok=8ea8cb&amp;media=https%3A%2F%2Fi.imgur.com%2FYLOE1U7.jpg" class="mediacenter" title="i.imgur.com_yloe1u7.jpg" alt="i.imgur.com_yloe1u7.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/YLOE1U7.jpg" title="https://i.imgur.com/YLOE1U7.jpg"><img alt="i.imgur.com_yloe1u7.jpg" class="mediacenter" src="https://i.imgur.com/YLOE1U7.jpg" title="i.imgur.com_yloe1u7.jpg"/></a><br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30d1\u30c3\u30c1\u306e\u7a2e\u985e ADDR\u30d1\u30c3\u30c1&quot;,&quot;hid&quot;:&quot;\u30d1\u30c3\u30c1\u306e\u7a2e\u985e_addr\u30d1\u30c3\u30c1&quot;,&quot;codeblockOffset&quot;:12,&quot;secid&quot;:14,&quot;range&quot;:&quot;7260-8022&quot;} -->
 <h2 class="sectionedit15" id="マルチバイト">マルチバイト</h2>
 <div class="level2">
-
 <p>
 ADDRは、基本的に1バイトの変更のみですが、コンボボックス形式にすると、長いバイト数を扱うことができます<br/>
-
 </p>
 <pre class="code">NAME=フリーマップから入らないとフリーズする制約を消す
 NAME.en=Eliminate the constraint of freezing unless it enters from the world map.
@@ -508,19 +450,15 @@ TYPE=ADDR
 
 ADDRESS=0xc1e7c
 COMBO=default|0x47 0x2D|fix|0xB8 0xE0</pre>
-
 <p>
 <br/>
-<a href="/lib/exe/fetch.php?tok=c1ceb0&amp;media=https%3A%2F%2Fi.imgur.com%2FvRuzDeu.jpg" class="media" title="https://i.imgur.com/vRuzDeu.jpg"><img src="/lib/exe/fetch.php?tok=c1ceb0&amp;media=https%3A%2F%2Fi.imgur.com%2FvRuzDeu.jpg" class="mediacenter" title="i.imgur.com_vruzdeu.jpg" alt="i.imgur.com_vruzdeu.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/vRuzDeu.jpg" title="https://i.imgur.com/vRuzDeu.jpg"><img alt="i.imgur.com_vruzdeu.jpg" class="mediacenter" src="https://i.imgur.com/vRuzDeu.jpg" title="i.imgur.com_vruzdeu.jpg"/></a><br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30de\u30eb\u30c1\u30d0\u30a4\u30c8&quot;,&quot;hid&quot;:&quot;\u30de\u30eb\u30c1\u30d0\u30a4\u30c8&quot;,&quot;codeblockOffset&quot;:13,&quot;secid&quot;:15,&quot;range&quot;:&quot;8023-8585&quot;} -->
 <h3 class="sectionedit16" id="datasize">DATASIZE</h3>
 <div class="level3">
-
 <p>
 新たに、 DATASIZE 指定がサポートされました。<br/>
 DATASIZE=4 とすると、4バイト(データはGBAなのでリトルエンディアンで書き込まれます)として動作します。<br/>
@@ -528,7 +466,7 @@ DATASIZE=4 とすると、4バイト(データはGBAなのでリトルエンデ�
 互換性のため、何も指定しないと、DATASIZE=1 として1バイトになります。<br/>
 また、COMBO指定があると、DATASIZE指定は無視され、COMBO指定が優先されます。<br/>
 <br/>
-<br />
+<br/>
 例: FE7でMODE SELECTのリンの顔を変更する
 </p>
 <pre class="code">NAME=MODE SELECT 顔画像 リン編
@@ -540,18 +478,15 @@ TYPE=ADDR
 ADDRESS=0x4393D8
 ADDRESS_TYPE=PORTRAIT
 DATASIZE=4         //MODE SELECTの顔画像IDは、なぜか 4バイト DWORDで格納される</pre>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;DATASIZE&quot;,&quot;hid&quot;:&quot;datasize&quot;,&quot;codeblockOffset&quot;:14,&quot;secid&quot;:16,&quot;range&quot;:&quot;8586-9373&quot;} -->
 <h3 class="sectionedit17" id="addressの同時指定">ADDRESSの同時指定</h3>
 <div class="level3">
-
 <p>
 ADRESSに、スペース区切りで、複数のアドレスを書くことができます。<br/>
 それぞれに同じ値が設定されます。<br/>
 いろいろな場所を同時に変えないといけない場合に利用します。<br/>
 <br/>
-
 </p>
 <pre class="code">NAME=幸運上限
 NAME.en=Upper limit of lucky
@@ -561,18 +496,14 @@ NAME.zh=运气最大
 TYPE=ADDR
 
 ADDRESS=0x80CA0 0x29f0e 0x29f12 0x180d8 0x180dc 0x95694 0x95694 0x9585C</pre>
-
 <p>
 例えば、幸運上限はいろいろな場所に設定が点在してハードコーディングされているので、<br/>
 上記のように記述して、一気に値を変えてしまいます。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;ADDRESS\u306e\u540c\u6642\u6307\u5b9a&quot;,&quot;hid&quot;:&quot;address\u306e\u540c\u6642\u6307\u5b9a&quot;,&quot;codeblockOffset&quot;:15,&quot;secid&quot;:17,&quot;range&quot;:&quot;9374-10069&quot;} -->
 <h3 class="sectionedit18" id="hex">HEX</h3>
 <div class="level3">
-
 <p>
 UIに表示する数字を10進数にしたい場合は、 HEX=FALSE を利用してください。
 </p>
@@ -585,22 +516,18 @@ TYPE=ADDR
 
 ADDRESS=0x25132
 HEX=false //レベルなので10進数で表示します.</pre>
-
 <p>
 <br/>
-<a href="/lib/exe/fetch.php?tok=d8d357&amp;media=https%3A%2F%2Fi.imgur.com%2FcRQavFM.jpg" class="media" title="https://i.imgur.com/cRQavFM.jpg"><img src="/lib/exe/fetch.php?tok=d8d357&amp;media=https%3A%2F%2Fi.imgur.com%2FcRQavFM.jpg" class="mediacenter" title="i.imgur.com_crqavfm.jpg" alt="i.imgur.com_crqavfm.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/cRQavFM.jpg" title="https://i.imgur.com/cRQavFM.jpg"><img alt="i.imgur.com_crqavfm.jpg" class="mediacenter" src="https://i.imgur.com/cRQavFM.jpg" title="i.imgur.com_crqavfm.jpg"/></a><br/>
 ~ 
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;HEX&quot;,&quot;hid&quot;:&quot;hex&quot;,&quot;codeblockOffset&quot;:16,&quot;secid&quot;:18,&quot;range&quot;:&quot;10070-10438&quot;} -->
 <h3 class="sectionedit19" id="address_type">ADDRESS_TYPE</h3>
 <div class="level3">
-
 <p>
 値に関連付けたいものがある場合 ADDRESS_TYPE を利用してください。<br/>
 <br/>
-
 </p>
 <pre class="code">ADDRESS_TYPE=UNIT //ユニットIDとして扱います
 ADDRESS_TYPE=ITEM //アイテムIDとして扱います
@@ -614,32 +541,25 @@ TYPE=ADDR
 
 ADDRESS=0x080495cc 0x080af17e 0x08031654 0x08090048 0x080960b4 0x0809b880 0x0809c7f6
 ADDRESS_TYPE=SONG //進撃準備BGMを変更するので音楽IDとして扱います</pre>
-
 <p>
 <br/>
-<a href="/lib/exe/fetch.php?tok=cc91b7&amp;media=https%3A%2F%2Fi.imgur.com%2Fgen0Pz4.jpg" class="media" title="https://i.imgur.com/gen0Pz4.jpg"><img src="/lib/exe/fetch.php?tok=cc91b7&amp;media=https%3A%2F%2Fi.imgur.com%2Fgen0Pz4.jpg" class="mediacenter" title="i.imgur.com_gen0pz4.jpg" alt="i.imgur.com_gen0pz4.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/gen0Pz4.jpg" title="https://i.imgur.com/gen0Pz4.jpg"><img alt="i.imgur.com_gen0pz4.jpg" class="mediacenter" src="https://i.imgur.com/gen0Pz4.jpg" title="i.imgur.com_gen0pz4.jpg"/></a><br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;ADDRESS_TYPE&quot;,&quot;hid&quot;:&quot;address_type&quot;,&quot;codeblockOffset&quot;:17,&quot;secid&quot;:19,&quot;range&quot;:&quot;10439-11151&quot;} -->
 <h2 class="sectionedit20" id="パッチの種類_imageパッチ">パッチの種類 IMAGEパッチ</h2>
 <div class="level2">
-
 <p>
 <br/>
-
 </p>
 <pre class="code">TYPE=IMAGE</pre>
-
 <p>
 画像を変更するパッチを定義します。<br/>
 このパッチは、画像アドレスではなく、ポインタで書く必要があります。<br/>
 なぜなら、画像は可変長なので、画像アドレスが変更される可能性があるためです。<br/>
 <br/>
 以下は、FE8Jの FIN を変更するパッチです。<br/>
-
 </p>
 <pre class="code">NAME=SYSTEM_FIN
 
@@ -656,10 +576,9 @@ ZIMAGE_POINTER=0xBBF48
 HEADERTSA_POINTER=0xBBF54
 //非圧縮パレット
 PALETTE_POINTER=0xBBF44</pre>
-
 <p>
 <br/>
-<a href="/lib/exe/fetch.php?tok=01cc6c&amp;media=https%3A%2F%2Fi.imgur.com%2FoEtDONy.jpg" class="media" title="https://i.imgur.com/oEtDONy.jpg"><img src="/lib/exe/fetch.php?tok=01cc6c&amp;media=https%3A%2F%2Fi.imgur.com%2FoEtDONy.jpg" class="mediacenter" title="i.imgur.com_oetdony.jpg" alt="i.imgur.com_oetdony.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/oEtDONy.jpg" title="https://i.imgur.com/oEtDONy.jpg"><img alt="i.imgur.com_oetdony.jpg" class="mediacenter" src="https://i.imgur.com/oEtDONy.jpg" title="i.imgur.com_oetdony.jpg"/></a><br/>
 <br/>
 <br/>
 無圧縮の画像<br/>
@@ -681,36 +600,31 @@ HEADERTSA_POINTER<br/>
 PALETTE_POINTER<br/>
 <br/>
 画像の表示とインポート時に使われます。<br/>
-以下の例だと、256&times;160の大きさの画像で、16色のパレット1種類を保持していることが条件になります。<br/>
-
+以下の例だと、256×160の大きさの画像で、16色のパレット1種類を保持していることが条件になります。<br/>
 </p>
 <pre class="code">WIDTH=256
 HEIGHT=160
 //利用パレット数
 PALETTE=1</pre>
-
 <p>
 <br/>
 画像パッチを書くのは大変なので、自動的に生成することができます。<br/>
 メニュー→ツール→グラフィックツール で、画像を探して、TSA等を探り当てたのち、右下のPatch Makerボタンをクリックすると、全自動でパッチを作ってくれます。<br/>
 いちいち、ポインターを手で計算する必要はありません。<br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=29ec89&amp;media=https%3A%2F%2Fi.imgur.com%2FWHG6zIQ.jpg" class="media" title="https://i.imgur.com/WHG6zIQ.jpg"><img src="/lib/exe/fetch.php?tok=29ec89&amp;media=https%3A%2F%2Fi.imgur.com%2FWHG6zIQ.jpg" class="mediacenter" title="i.imgur.com_whg6ziq.jpg" alt="i.imgur.com_whg6ziq.jpg" /></a><br/>
+<a class="media" href="https://i.imgur.com/WHG6zIQ.jpg" title="https://i.imgur.com/WHG6zIQ.jpg"><img alt="i.imgur.com_whg6ziq.jpg" class="mediacenter" src="https://i.imgur.com/WHG6zIQ.jpg" title="i.imgur.com_whg6ziq.jpg"/></a><br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=c4b0f5&amp;media=https%3A%2F%2Fi.imgur.com%2FLTklo5l.jpg" class="media" title="https://i.imgur.com/LTklo5l.jpg"><img src="/lib/exe/fetch.php?tok=c4b0f5&amp;media=https%3A%2F%2Fi.imgur.com%2FLTklo5l.jpg" class="mediacenter" title="i.imgur.com_ltklo5l.jpg" alt="i.imgur.com_ltklo5l.jpg" /></a><br/>
+<a class="media" href="https://i.imgur.com/LTklo5l.jpg" title="https://i.imgur.com/LTklo5l.jpg"><img alt="i.imgur.com_ltklo5l.jpg" class="mediacenter" src="https://i.imgur.com/LTklo5l.jpg" title="i.imgur.com_ltklo5l.jpg"/></a><br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=706cf5&amp;media=https%3A%2F%2Fi.imgur.com%2FQj0vh2c.jpg" class="media" title="https://i.imgur.com/Qj0vh2c.jpg"><img src="/lib/exe/fetch.php?tok=706cf5&amp;media=https%3A%2F%2Fi.imgur.com%2FQj0vh2c.jpg" class="mediacenter" title="i.imgur.com_qj0vh2c.jpg" alt="i.imgur.com_qj0vh2c.jpg" /></a><br/>
+<a class="media" href="https://i.imgur.com/Qj0vh2c.jpg" title="https://i.imgur.com/Qj0vh2c.jpg"><img alt="i.imgur.com_qj0vh2c.jpg" class="mediacenter" src="https://i.imgur.com/Qj0vh2c.jpg" title="i.imgur.com_qj0vh2c.jpg"/></a><br/>
 <br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30d1\u30c3\u30c1\u306e\u7a2e\u985e IMAGE\u30d1\u30c3\u30c1&quot;,&quot;hid&quot;:&quot;\u30d1\u30c3\u30c1\u306e\u7a2e\u985e_image\u30d1\u30c3\u30c1&quot;,&quot;codeblockOffset&quot;:19,&quot;secid&quot;:20,&quot;range&quot;:&quot;11152-12991&quot;} -->
 <h2 class="sectionedit21" id="パッチの種類_structパッチ">パッチの種類 STRUCTパッチ</h2>
 <div class="level2">
 <pre class="code">TYPE=STRUCT</pre>
-
 <p>
 構造体パッチ<br/>
 <br/>
@@ -718,7 +632,6 @@ PALETTE=1</pre>
 ただし、ツール本体でやっているような高度なことはできません。<br/>
 難しいものを作りたく、それが汎用化できる場合、ツール本体側で作るべきです。<br/>
 <br/>
-
 </p>
 <pre class="code">//STRUCTパッチとして実装します
 TYPE=STRUCT
@@ -742,15 +655,13 @@ B1:CLASS=クラス
 B2=00
 B3=00
 P4:BATTLEANIMENAME=アニメ設定</pre>
-
 <p>
 <br/>
-<a href="/lib/exe/fetch.php?tok=852716&amp;media=https%3A%2F%2Fi.imgur.com%2FNOQORUH.jpg" class="media" title="https://i.imgur.com/NOQORUH.jpg"><img src="/lib/exe/fetch.php?tok=852716&amp;media=https%3A%2F%2Fi.imgur.com%2FNOQORUH.jpg" class="mediacenter" title="i.imgur.com_noqoruh.jpg" alt="i.imgur.com_noqoruh.jpg" /></a><br/>
+<a class="media" href="https://i.imgur.com/NOQORUH.jpg" title="https://i.imgur.com/NOQORUH.jpg"><img alt="i.imgur.com_noqoruh.jpg" class="mediacenter" src="https://i.imgur.com/NOQORUH.jpg" title="i.imgur.com_noqoruh.jpg"/></a><br/>
 <br/>
 FE8ユグドラパッチの個別アニメを設定するパッチです。<br/>
 怪盗パッチには追加構造体がないので、ユグドラを例に説明します。<br/>
 <br/>
-
 </p>
 <pre class="code">B0:UNIT=ユニット
 B1:CLASS=クラス
@@ -768,18 +679,15 @@ struct
 	byte	zero2;			// +3
 	void*	battleanime;	// +4
 };</pre>
-
 <p>
 <br/>
 <br/>
-
 </p>
 <pre class="code">b	sbyte( char )	-128 ～ 127
 B	byte			0 ～ 255
 W	word			0 ～ 65535
 D	dword			0 ～ 4294836225
 P	dword			0 ～ 4294836225</pre>
-
 <p>
 <br/>
 D と P の違いについて<br/>
@@ -787,19 +695,15 @@ Pの場合、必ずポインタとして記録されます。<br/>
 ユーザが、 0x123 と入れた場合、 Dでは 0x123 と記録しますが、 Pだと、 0x08000123 として記録します。<br/>
 <br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30d1\u30c3\u30c1\u306e\u7a2e\u985e STRUCT\u30d1\u30c3\u30c1&quot;,&quot;hid&quot;:&quot;\u30d1\u30c3\u30c1\u306e\u7a2e\u985e_struct\u30d1\u30c3\u30c1&quot;,&quot;codeblockOffset&quot;:22,&quot;secid&quot;:21,&quot;range&quot;:&quot;12992-14895&quot;} -->
 <h2 class="sectionedit22" id="パッチの種類_binパッチ">パッチの種類 BINパッチ</h2>
 <div class="level2">
-
 <p>
 type=BIN<br/>
 バイナリデータとソースコード<br/>
 <br/>
-
 </p>
 <pre class="code">NAME=SOUND_NIMAP(Native Instrument Map)
 
@@ -808,16 +712,14 @@ TYPE=BIN
 PATCHED_IFNOT:$GREP4 0x00 0x3C 0x00 0x00 0x68 0x27 0x50 0x08 0xFF 0xFA 0x00 0xCC 0x00 0x3C 0x00 0x00 0x18 0x7D 0x29 0x08 0xFF 0xFA 0x00 0xCC 0x00 0x3C 0x00 0x00 0x3C 0x8E 0x28 0x08 0xFF 0xF9 0x00 0xA5 0x01 0x3C 0x00 0x00 0x02 0x00 0x00 0x00 0x00 0x00 0x0F 0x00=0x00 0x3C 0x00 0x00</pre>
 <pre class="code">BIN:$FREEAREA=JAPFE8_NI_Map.bin
 INFO=Midi Instrument Map</pre>
-
 <p>
 <br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=389216&amp;media=https%3A%2F%2Fi.imgur.com%2FoB9KLti.jpg" class="media" title="https://i.imgur.com/oB9KLti.jpg"><img src="/lib/exe/fetch.php?tok=389216&amp;media=https%3A%2F%2Fi.imgur.com%2FoB9KLti.jpg" class="mediacenter" title="i.imgur.com_ob9klti.jpg" alt="i.imgur.com_ob9klti.jpg" /></a><br/>
+<a class="media" href="https://i.imgur.com/oB9KLti.jpg" title="https://i.imgur.com/oB9KLti.jpg"><img alt="i.imgur.com_ob9klti.jpg" class="mediacenter" src="https://i.imgur.com/oB9KLti.jpg" title="i.imgur.com_ob9klti.jpg"/></a><br/>
 <br/>
 JAPFE8_NI_Map.bin を、適当な $FREEAREAに貼り付けます。<br/>
 2回貼り付けるとまずいので、 $GREP4 で、適応しているかどうか調べています。<br/>
 <br/>
-
 </p>
 <pre class="code">マクロ
 $FREEAREA	フリーエリア
@@ -825,12 +727,10 @@ $GREP4		バイト列を検索 ただし4バイト単位(高速)
 $GREP1		バイト列を検索 ただし1バイト単位(低速)
 $GREP4_NOT	バイト列を検索して見つからないこと
 $GREP1_NOT	バイト列を検索して見つからないこと</pre>
-
 <p>
 <br/>
 <br/>
 <br/>
-
 </p>
 <pre class="code">NAME=10分割CG表示
 
@@ -846,22 +746,19 @@ BIN:$FREEAREA=show_10split_image.bin
 JUMP:0x080bb182:$r4=show_10split_image.bin
 
 INFO=10分割CGを表示できるようにします</pre>
-
 <p>
 <br/>
-<a href="/lib/exe/fetch.php?tok=a92ff9&amp;media=https%3A%2F%2Fi.imgur.com%2F41kVbuk.jpg" class="media" title="https://i.imgur.com/41kVbuk.jpg"><img src="/lib/exe/fetch.php?tok=a92ff9&amp;media=https%3A%2F%2Fi.imgur.com%2F41kVbuk.jpg" class="mediacenter" title="i.imgur.com_41kvbuk.jpg" alt="i.imgur.com_41kvbuk.jpg" /></a><br/>
+<a class="media" href="https://i.imgur.com/41kVbuk.jpg" title="https://i.imgur.com/41kVbuk.jpg"><img alt="i.imgur.com_41kvbuk.jpg" class="mediacenter" src="https://i.imgur.com/41kVbuk.jpg" title="i.imgur.com_41kvbuk.jpg"/></a><br/>
 <br/>
 show_10split_image.binを、フリーエリアに貼り付ける。<br/>
 貼り付けた、データに対して、飛ばすコードを生成する。この時、r4レジスタを利用する。<br/>
 <br/>
 ジャンプするコードは、以下のようなコードが生成されます。<br/>
-
 </p>
 <pre class="code">アドレスが4バイトで割り切れる場合 (addr%4 == 0)
 ldr r4,[JUMP ADDR]		//+0
 mov pc,r4;				//+2
 JUMP ADDR				//+4  --&gt;合計 8バイト</pre>
-
 <p>
 ただし、2バイトで割り切れる場合 NOPが差し込まれます。
 </p>
@@ -869,27 +766,22 @@ JUMP ADDR				//+4  --&gt;合計 8バイト</pre>
 ldr r4,[JUMP ADDR]		//+2
 mov pc,r4;				//+4
 JUMP ADDR				//+6  --&gt;合計 10バイト</pre>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30d1\u30c3\u30c1\u306e\u7a2e\u985e BIN\u30d1\u30c3\u30c1&quot;,&quot;hid&quot;:&quot;\u30d1\u30c3\u30c1\u306e\u7a2e\u985e_bin\u30d1\u30c3\u30c1&quot;,&quot;codeblockOffset&quot;:26,&quot;secid&quot;:22,&quot;range&quot;:&quot;14896-17012&quot;} -->
 <h3 class="sectionedit23" id="オフセット追加">オフセット追加</h3>
 <div class="level3">
 <pre class="code">JUMP:0x080bb182:$r4:+2=show_10split_image.bin</pre>
-
 <p>
 <br/>
 こうすると、 show_10split_image.bin の設置場所+2 のアドレスへジャンプできます。<br/>
 <br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30aa\u30d5\u30bb\u30c3\u30c8\u8ffd\u52a0&quot;,&quot;hid&quot;:&quot;\u30aa\u30d5\u30bb\u30c3\u30c8\u8ffd\u52a0&quot;,&quot;codeblockOffset&quot;:32,&quot;secid&quot;:23,&quot;range&quot;:&quot;17013-17223&quot;} -->
 <h3 class="sectionedit24" id="直値_none">直値 $NONE</h3>
 <div class="level3">
 <pre class="code">JUMP:0x080bb182:$NONE=show_10split_image.bin</pre>
-
 <p>
 <br/>
 ジャンプコードを生成せずに、 show_10split_image.bin を設置したアドレスをそのまま書き込みます。<br/>
@@ -897,24 +789,19 @@ JUMP ADDR				//+6  --&gt;合計 10バイト</pre>
 <br/>
 実用的な使い方としては、設定からコードへ飛ばすところで使うと思います。<br/>
 <br/>
-
 </p>
 <pre class="code">//メニュー効果に、指南プログラムのアドレスを書き入れます.
 //直値を入れるので、レジスタ関係ないので $NONE
 //直値の場合 アドレス+1 にしないといけないので、 +1 
 JUMP:0x5C53A8:$NONE:+1=main指南本体.bin</pre>
-
 <p>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u76f4\u5024 $NONE&quot;,&quot;hid&quot;:&quot;\u76f4\u5024_none&quot;,&quot;codeblockOffset&quot;:33,&quot;secid&quot;:24,&quot;range&quot;:&quot;17224-17964&quot;} -->
 <h3 class="sectionedit25" id="b_ジャンプ生成">B ジャンプ生成</h3>
 <div class="level3">
 <pre class="code">JUMP:0x988c6:$B=0x9893a</pre>
-
 <p>
 <br/>
 0x988c6 のアドレスに、 b 0x9893a のASMオペコードを生成します。<br/>
@@ -922,15 +809,12 @@ b ジャンプなので、あまり遠くへは飛べません。<br/>
 b ジャンプなので2バイト消費します。<br/>
 <br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;B \u30b8\u30e3\u30f3\u30d7\u751f\u6210&quot;,&quot;hid&quot;:&quot;b_\u30b8\u30e3\u30f3\u30d7\u751f\u6210&quot;,&quot;codeblockOffset&quot;:35,&quot;secid&quot;:25,&quot;range&quot;:&quot;17965-18251&quot;} -->
 <h3 class="sectionedit26" id="bl_ジャンプ生成">BL ジャンプ生成</h3>
 <div class="level3">
 <pre class="code">JUMP:0x340cc:$BL=0x988c8</pre>
-
 <p>
 <br/>
 0x340cc のアドレスに、 bl 0x988c8 のASMオペコードを生成します。<br/>
@@ -938,9 +822,7 @@ bl ジャンプなので、あまり遠くへは飛べません。<br/>
 bl ジャンプなので4バイト消費します。<br/>
 <br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;BL \u30b8\u30e3\u30f3\u30d7\u751f\u6210&quot;,&quot;hid&quot;:&quot;bl_\u30b8\u30e3\u30f3\u30d7\u751f\u6210&quot;,&quot;codeblockOffset&quot;:36,&quot;secid&quot;:26,&quot;range&quot;:&quot;18252-18543&quot;} -->
 <h2 class="sectionedit27" id="テキスト拡張命令">テキスト拡張命令</h2>
@@ -949,15 +831,12 @@ bl ジャンプなので4バイト消費します。<br/>
 TEXT:0x0e01=0x0e01.txt  //テキスト 0xe01 に 0x0e01.txt の内容を書き込みます.
 TEXT:0x0e02=0x0e02.txt
 TEXT:0x0e00=0x0e00.txt</pre>
-
 <p>
 <br/>
 テキストテーブルの拡張と書き込みをサポートしています。<br/>
 ただし、今のところ、他のテーブルの拡張はできません。<br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30c6\u30ad\u30b9\u30c8\u62e1\u5f35\u547d\u4ee4&quot;,&quot;hid&quot;:&quot;\u30c6\u30ad\u30b9\u30c8\u62e1\u5f35\u547d\u4ee4&quot;,&quot;codeblockOffset&quot;:37,&quot;secid&quot;:27,&quot;range&quot;:&quot;18544-18986&quot;} -->
 <h2 class="sectionedit28" id="パッチの種類_eaパッチ">パッチの種類 EAパッチ</h2>
@@ -965,16 +844,13 @@ TEXT:0x0e00=0x0e00.txt</pre>
 <pre class="code">TYPE=EA
 
 EA=ea.event</pre>
-
 <p>
 <br/>
-<a href="/lib/exe/fetch.php?tok=892639&amp;media=https%3A%2F%2Fi.imgur.com%2FWaVR6Ro.jpg" class="media" title="https://i.imgur.com/WaVR6Ro.jpg"><img src="/lib/exe/fetch.php?tok=892639&amp;media=https%3A%2F%2Fi.imgur.com%2FWaVR6Ro.jpg" class="mediacenter" title="i.imgur.com_wavr6ro.jpg" alt="i.imgur.com_wavr6ro.jpg" /></a><br/>
+<a class="media" href="https://i.imgur.com/WaVR6Ro.jpg" title="https://i.imgur.com/WaVR6Ro.jpg"><img alt="i.imgur.com_wavr6ro.jpg" class="mediacenter" src="https://i.imgur.com/WaVR6Ro.jpg" title="i.imgur.com_wavr6ro.jpg"/></a><br/>
 <br/>
 Event Assemblerを利用して、データを追加します。<br/>
 現在のROMに、EAで指定した、Event Assembler scriptの内容を追加します。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30d1\u30c3\u30c1\u306e\u7a2e\u985e EA\u30d1\u30c3\u30c1&quot;,&quot;hid&quot;:&quot;\u30d1\u30c3\u30c1\u306e\u7a2e\u985e_ea\u30d1\u30c3\u30c1&quot;,&quot;codeblockOffset&quot;:38,&quot;secid&quot;:28,&quot;range&quot;:&quot;18987-19272&quot;} -->
 <h2 class="sectionedit29" id="パッチの種類_switchパッチ">パッチの種類 SWITCHパッチ</h2>
@@ -989,7 +865,6 @@ ONN:0x080D1DE2=0x00 0x20 0x00 0x20
 
 OFF:0x0802F5C0=0xE7 0xF7 0x86 0xF9
 OFF:0x080D1DE2=0x44 0xF7 0x75 0xFD</pre>
-
 <p>
 “SWITCHパッチ”は、addrパッチの発展系です。<br/>
 複数のアドレスに対して、異なる値で書き込みをしなければならない場合に利用します。<br/>
@@ -998,19 +873,15 @@ BINやEAパッチとの違いとして、数バイト程度のより小さいデ
 この例では、 ONとOFFの選択肢を表示し、<br/>
 ONの場合は、  ONNで定義した内容をアドレスに書き込みます。<br/>
 OFFの場合は、 OFFで定義した内容をアドレスに書き込みます。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30d1\u30c3\u30c1\u306e\u7a2e\u985e SWITCH\u30d1\u30c3\u30c1&quot;,&quot;hid&quot;:&quot;\u30d1\u30c3\u30c1\u306e\u7a2e\u985e_switch\u30d1\u30c3\u30c1&quot;,&quot;codeblockOffset&quot;:39,&quot;secid&quot;:29,&quot;range&quot;:&quot;19273-20085&quot;} -->
 <h1 class="sectionedit30" id="mod">MOD</h1>
 <div class="level1">
-
 <p>
 パッチのパラメータとして、構造体の未使用領域を利用したいときがあります。<br/>
 FEBuilderGBAでは、patchディレクトリ内にMOD_*.txtを作成すると利用できます。<br/>
 <br/>
-
 </p>
 <pre class="code">IF:0x89268=0x00 0x4B 0x9F 0x46</pre>
 <pre class="code">FORM=UnitForm   //UnitForm(FE8用)で動作します
@@ -1020,107 +891,87 @@ J_49=個人スキル
 J_38:NAME=J_38_SKILLASSIGNMENT_SCROLL1_B39
 J_39:NAME=J_39_SKILLASSIGNMENT_SCROLL2_B38
 J_49:NAME=J_49_SKILLASSIGNMENT_MASTERY</pre>
-
 <p>
 <br/>
 ただし、MODに設定するパラメータは、FEBuilderGBAのC#内に使われているラベル名になりますので、ソースコードを理解する必要があります。<br/>
 また、欧米の改造では、未使用領域ではなく、独自に構造体を作ってしまうことが多いように思います。<br/>
 そう考えると、MODは日本の改造で多く使われる機能かもしれませんね。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;MOD&quot;,&quot;hid&quot;:&quot;mod&quot;,&quot;codeblockOffset&quot;:40,&quot;secid&quot;:30,&quot;range&quot;:&quot;20086-21047&quot;} -->
 <h1 class="sectionedit31" id="febuildergbaの起動引数">FEBuilderGBAの起動引数</h1>
 <div class="level1">
 <pre class="code">FEBuilderGBA.exe [ROM] [--options=value]</pre>
-
 <p>
 FEBuilderGBAは、何もオプションを指定しないと、welcome画面を表示します。<br/>
 いつかのオプションを指定することで、これを変更することが出来ます。<br/>
 <br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FEBuilderGBA\u306e\u8d77\u52d5\u5f15\u6570&quot;,&quot;hid&quot;:&quot;febuildergba\u306e\u8d77\u52d5\u5f15\u6570&quot;,&quot;codeblockOffset&quot;:42,&quot;secid&quot;:31,&quot;range&quot;:&quot;21048-21357&quot;} -->
 <h2 class="sectionedit32" id="rom">[ROM]</h2>
 <div class="level2">
-
 <p>
 指定されたROMファイル名を開きます。<br/>
 ファイル名が指定されない場合、またはファイルが読み込めなかった場合は、Welcome画面が表示されます。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;[ROM]&quot;,&quot;hid&quot;:&quot;rom&quot;,&quot;codeblockOffset&quot;:43,&quot;secid&quot;:32,&quot;range&quot;:&quot;21358-21575&quot;} -->
 <h2 class="sectionedit33" id="rom_filename">--rom=filename</h2>
 <div class="level2">
-
 <p>
 [ROM]と同じです。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;--rom=filename&quot;,&quot;hid&quot;:&quot;rom_filename&quot;,&quot;codeblockOffset&quot;:43,&quot;secid&quot;:33,&quot;range&quot;:&quot;21576-21630&quot;} -->
 <h2 class="sectionedit34" id="lastrom">--lastrom</h2>
 <div class="level2">
-
 <p>
 最後に開いたROMを開きます。<br/>
 最後に開いたROMは、FEBuilderGBAを終了させたときに、開いていたROMになります。<br/>
 (プロセス終了時に、現在開いているファイル名を記録します。)<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;--lastrom&quot;,&quot;hid&quot;:&quot;lastrom&quot;,&quot;codeblockOffset&quot;:43,&quot;secid&quot;:34,&quot;range&quot;:&quot;21631-21893&quot;} -->
 <h2 class="sectionedit35" id="force-version_ver">--force-version=ver</h2>
 <div class="level2">
-
 <p>
 強制的に、特定のバージョンとしてROMを開きます。<br/>
 通常は、ROMのヘッダでバージョンを判別しますが、強制的に特定のバージョンで開かせたい場合に利用します。<br/>
 何かの理由でROMヘッダが破損している場合や、デバッグ用に別のGBAゲームをロードしたい場合に利用します。<br/>
 通常利用する必要はありません。<br/>
-
 </p>
 <div class="table sectionedit36"><table class="inline">
-	<tr class="row0">
-		<td class="col0">バージョン表記一覧</td>
-	</tr>
-	<tr class="row1">
-		<td class="col0">FE8JP</td>
-	</tr>
-	<tr class="row2">
-		<td class="col0">FE7JP</td>
-	</tr>
-	<tr class="row3">
-		<td class="col0">FE6</td>
-	</tr>
-	<tr class="row4">
-		<td class="col0">FE8U</td>
-	</tr>
-	<tr class="row5">
-		<td class="col0">FE7U</td>
-	</tr>
+<tr class="row0">
+<td class="col0">バージョン表記一覧</td>
+</tr>
+<tr class="row1">
+<td class="col0">FE8JP</td>
+</tr>
+<tr class="row2">
+<td class="col0">FE7JP</td>
+</tr>
+<tr class="row3">
+<td class="col0">FE6</td>
+</tr>
+<tr class="row4">
+<td class="col0">FE8U</td>
+</tr>
+<tr class="row5">
+<td class="col0">FE7U</td>
+</tr>
 </table></div>
 <!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table2&quot;,&quot;secid&quot;:36,&quot;range&quot;:&quot;22352-22417&quot;} -->
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;--force-version=ver&quot;,&quot;hid&quot;:&quot;force-version_ver&quot;,&quot;codeblockOffset&quot;:43,&quot;secid&quot;:35,&quot;range&quot;:&quot;21894-22418&quot;} -->
 <h2 class="sectionedit37" id="force-detail">--force-detail</h2>
 <div class="level2">
-
 <p>
 強制的に、詳細メニュー画面からスタートします。<br/>
 何か特別な理由があり、簡易画面メニューをスキップしたいときに利用します。<br/>
 通常は利用する必要はありません。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;--force-detail&quot;,&quot;hid&quot;:&quot;force-detail&quot;,&quot;codeblockOffset&quot;:43,&quot;secid&quot;:37,&quot;range&quot;:&quot;22419-&quot;} --></div>
 </body>

@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="ja" dir="ltr">
+
+<html dir="ltr" lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <title>guide:フォント改造</title>
-<meta name="generator" content="DokuWiki"/>
-<meta name="theme-color" content="#008800"/>
-<meta name="robots" content="index,follow"/>
-<meta name="keywords" content="guide,フォント改造"/>
-<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
-<link rel="start" href="/"/>
-<link rel="contents" href="/doku.php?id=guide:%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88%E6%94%B9%E9%80%A0&amp;do=index" title="サイトマップ"/>
-<link rel="manifest" href="/lib/exe/manifest.php"/>
-<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
-<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide"/>
-<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88%E6%94%B9%E9%80%A0"/>
-<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88%E6%94%B9%E9%80%A0"/>
-<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88%E6%94%B9%E9%80%A0"/>
-<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<meta charset="utf-8"/>
+<title>guide:フォント改造</title>
+<meta content="DokuWiki" name="generator"/>
+<meta content="#008800" name="theme-color"/>
+<meta content="index,follow" name="robots"/>
+<meta content="guide,フォント改造" name="keywords"/>
+<link href="/lib/exe/opensearch.php" rel="search" title="FE改造wiki" type="application/opensearchdescription+xml"/>
+<link href="/" rel="start"/>
+<link href="/doku.php?id=guide:%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88%E6%94%B9%E9%80%A0&amp;do=index" rel="contents" title="サイトマップ"/>
+<link href="/lib/exe/manifest.php" rel="manifest"/>
+<link href="/feed.php" rel="alternate" title="最近の変更" type="application/rss+xml"/>
+<link href="/feed.php?mode=list&amp;ns=guide" rel="alternate" title="現在の名前空間" type="application/rss+xml"/>
+<link href="/doku.php?do=export_xhtml&amp;id=guide:%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88%E6%94%B9%E9%80%A0" rel="alternate" title="プレーンHTML" type="text/html"/>
+<link href="/doku.php?do=export_raw&amp;id=guide:%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88%E6%94%B9%E9%80%A0" rel="alternate" title="Wikiマークアップ" type="text/plain"/>
+<link href="https://dw.ngmansion.xyz/doku.php?id=guide:%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88%E6%94%B9%E9%80%A0" rel="canonical"/>
+<link href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" rel="stylesheet" type="text/css"/>
 <!--[if gte IE 9]><!-->
 <script type="text/javascript">/*<![CDATA[*/var NS='guide';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:\u30d5\u30a9\u30f3\u30c8\u6539\u9020","namespace":"guide","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
 /*!]]>*/</script>
-<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
-<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<script charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f" type="text/javascript"></script>
+<script charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" type="text/javascript"></script>
 <!--<![endif]-->
 </head>
 <body>
 <div class="dokuwiki export">
 <!-- TOC START -->
-<div id="dw__toc" class="dw__toc">
+<div class="dw__toc" id="dw__toc">
 <h3 class="toggle">目次</h3>
 <div>
-
 <ul class="toc">
 <li class="level2"><div class="li"><a href="#用意するもの">用意するもの</a></div></li>
 <li class="level2"><div class="li"><a href="#feのフォントは2つあります">FEのフォントは2つあります。</a></div></li>
@@ -82,239 +82,193 @@
 </div>
 </div>
 <!-- TOC END -->
-
 <p>
 FE8でフォントがない文字を表示させると、ハートマークになります。<br/>
 ハートマークではなく、好きな文字を出せるようにする方法について説明します。<br/>
-<a href="/lib/exe/fetch.php?tok=424420&amp;media=http%3A%2F%2Fi.imgur.com%2F9iILbuU.jpg" class="media" title="http://i.imgur.com/9iILbuU.jpg"><img src="/lib/exe/fetch.php?tok=424420&amp;media=http%3A%2F%2Fi.imgur.com%2F9iILbuU.jpg" class="mediacenter" title="i.imgur.com_9iilbuu.jpg" alt="i.imgur.com_9iilbuu.jpg" /></a><br />
-<a href="/lib/exe/fetch.php?tok=f4ab8e&amp;media=http%3A%2F%2Fi.imgur.com%2FGpwfsFE.jpg" class="media" title="http://i.imgur.com/GpwfsFE.jpg"><img src="/lib/exe/fetch.php?tok=f4ab8e&amp;media=http%3A%2F%2Fi.imgur.com%2FGpwfsFE.jpg" class="mediacenter" title="i.imgur.com_gpwfsfe.jpg" alt="i.imgur.com_gpwfsfe.jpg" /></a>
+<a class="media" href="../http///i.imgur.com/9iILbuU.jpg" title="http://i.imgur.com/9iILbuU.jpg"><img alt="i.imgur.com_9iilbuu.jpg" class="mediacenter" src="../http///i.imgur.com/9iILbuU.jpg" title="i.imgur.com_9iilbuu.jpg"/></a><br/>
+<a class="media" href="../http///i.imgur.com/GpwfsFE.jpg" title="http://i.imgur.com/GpwfsFE.jpg"><img alt="i.imgur.com_gpwfsfe.jpg" class="mediacenter" src="../http///i.imgur.com/GpwfsFE.jpg" title="i.imgur.com_gpwfsfe.jpg"/></a>
 </p>
-
 <h2 class="sectionedit1" id="用意するもの">用意するもの</h2>
 <div class="level2">
-
 <p>
 fefont<br/>
-<a href="http://ux.getuploader.com/FE4/download/192/FeFont.zip" class="urlextern" title="http://ux.getuploader.com/FE4/download/192/FeFont.zip" rel="nofollow">http://ux.getuploader.com/FE4/download/192/FeFont.zip</a><br />
+<a class="urlextern" href="http://ux.getuploader.com/FE4/download/192/FeFont.zip" rel="nofollow" title="http://ux.getuploader.com/FE4/download/192/FeFont.zip">http://ux.getuploader.com/FE4/download/192/FeFont.zip</a><br/>
 <br/>
 edge<br/>
-<a href="http://takabosoft.com/edge" class="urlextern" title="http://takabosoft.com/edge" rel="nofollow">http://takabosoft.com/edge</a>
+<a class="urlextern" href="http://takabosoft.com/edge" rel="nofollow" title="http://takabosoft.com/edge">http://takabosoft.com/edge</a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u7528\u610f\u3059\u308b\u3082\u306e&quot;,&quot;hid&quot;:&quot;\u7528\u610f\u3059\u308b\u3082\u306e&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;286-418&quot;} -->
 <h2 class="sectionedit2" id="feのフォントは2つあります">FEのフォントは2つあります。</h2>
 <div class="level2">
-
 <p>
 武器名などを表示するフォントと、台詞をしゃべるためのフォントは別物です。<br/>
 まずは、どちらのフォントを改造したいのか、確認する必要があります。<br/>
 <br/>
 どちらのフォントにせよ、デザインが違うだけで、基本的にやり方は同じです。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE\u306e\u30d5\u30a9\u30f3\u30c8\u306f2\u3064\u3042\u308a\u307e\u3059\u3002&quot;,&quot;hid&quot;:&quot;fe\u306e\u30d5\u30a9\u30f3\u30c8\u306f2\u3064\u3042\u308a\u307e\u3059&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;419-799&quot;} -->
 <h1 class="sectionedit3" id="武器フォント_てつのけんを鉄の剣にしよう">武器フォント　てつのけんを鉄の剣にしよう。</h1>
 <div class="level1">
-
 <p>
 FE8には、武器フォントで鉄というフォントがなぜありません。<br/>
 鉄の剣とすると、♡の剣になります。<br/>
-<a href="/lib/exe/fetch.php?tok=f631af&amp;media=https%3A%2F%2Fi.imgur.com%2F9iILbuU.jpg" class="media" title="https://i.imgur.com/9iILbuU.jpg"><img src="/lib/exe/fetch.php?tok=f631af&amp;media=https%3A%2F%2Fi.imgur.com%2F9iILbuU.jpg" class="mediacenter" title="i.imgur.com_9iilbuu.jpg" alt="i.imgur.com_9iilbuu.jpg" /></a>
+<a class="media" href="https://i.imgur.com/9iILbuU.jpg" title="https://i.imgur.com/9iILbuU.jpg"><img alt="i.imgur.com_9iilbuu.jpg" class="mediacenter" src="https://i.imgur.com/9iILbuU.jpg" title="i.imgur.com_9iilbuu.jpg"/></a>
 </p>
-
 <p>
 step_a00<br/>
 FE8にはありませんが、FE7には、鉄の剣というアイテムが有り、鉄という武器フォントが存在します。<br/>
 もし、貴方がFE7をもっているならば、そこからフォントを頂いてくることが出来ます。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6b66\u5668\u30d5\u30a9\u30f3\u30c8\u3000\u3066\u3064\u306e\u3051\u3093\u3092\u9244\u306e\u5263\u306b\u3057\u3088\u3046\u3002&quot;,&quot;hid&quot;:&quot;\u6b66\u5668\u30d5\u30a9\u30f3\u30c8_\u3066\u3064\u306e\u3051\u3093\u3092\u9244\u306e\u5263\u306b\u3057\u3088\u3046&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;800-1330&quot;} -->
 <h2 class="sectionedit4" id="step_a01">step_a01</h2>
 <div class="level2">
-
 <p>
 fefontを起動します。<br/>
-<a href="/lib/exe/fetch.php?tok=9c11db&amp;media=https%3A%2F%2Fi.imgur.com%2FrMotXPp.jpg" class="media" title="https://i.imgur.com/rMotXPp.jpg"><img src="/lib/exe/fetch.php?tok=9c11db&amp;media=https%3A%2F%2Fi.imgur.com%2FrMotXPp.jpg" class="mediacenter" title="i.imgur.com_rmotxpp.jpg" alt="i.imgur.com_rmotxpp.jpg" /></a>
+<a class="media" href="https://i.imgur.com/rMotXPp.jpg" title="https://i.imgur.com/rMotXPp.jpg"><img alt="i.imgur.com_rmotxpp.jpg" class="mediacenter" src="https://i.imgur.com/rMotXPp.jpg" title="i.imgur.com_rmotxpp.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a01&quot;,&quot;hid&quot;:&quot;step_a01&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1331-1421&quot;} -->
 <h2 class="sectionedit5" id="step_a02">step_a02</h2>
 <div class="level2">
-
 <p>
 Load ROMで fe7 をロードします。<br/>
-<a href="/lib/exe/fetch.php?tok=e10346&amp;media=https%3A%2F%2Fi.imgur.com%2FL3bbQXE.jpg" class="media" title="https://i.imgur.com/L3bbQXE.jpg"><img src="/lib/exe/fetch.php?tok=e10346&amp;media=https%3A%2F%2Fi.imgur.com%2FL3bbQXE.jpg" class="mediacenter" title="i.imgur.com_l3bbqxe.jpg" alt="i.imgur.com_l3bbqxe.jpg" /></a>
+<a class="media" href="https://i.imgur.com/L3bbQXE.jpg" title="https://i.imgur.com/L3bbQXE.jpg"><img alt="i.imgur.com_l3bbqxe.jpg" class="mediacenter" src="https://i.imgur.com/L3bbQXE.jpg" title="i.imgur.com_l3bbqxe.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a02&quot;,&quot;hid&quot;:&quot;step_a02&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;1422-1525&quot;} -->
 <h2 class="sectionedit6" id="step_a03">step_a03</h2>
 <div class="level2">
-
 <p>
 FE7の武器のフォントを参照したいので、コンボボックスから、<br/>
 FE7烈火 武器文字　を選択します。<br/>
-<a href="/lib/exe/fetch.php?tok=880d13&amp;media=https%3A%2F%2Fi.imgur.com%2FxRlHO8Z.jpg" class="media" title="https://i.imgur.com/xRlHO8Z.jpg"><img src="/lib/exe/fetch.php?tok=880d13&amp;media=https%3A%2F%2Fi.imgur.com%2FxRlHO8Z.jpg" class="mediacenter" title="i.imgur.com_xrlho8z.jpg" alt="i.imgur.com_xrlho8z.jpg" /></a>
+<a class="media" href="https://i.imgur.com/xRlHO8Z.jpg" title="https://i.imgur.com/xRlHO8Z.jpg"><img alt="i.imgur.com_xrlho8z.jpg" class="mediacenter" src="https://i.imgur.com/xRlHO8Z.jpg" title="i.imgur.com_xrlho8z.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a03&quot;,&quot;hid&quot;:&quot;step_a03&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1526-1722&quot;} -->
 <h2 class="sectionedit7" id="step_a04">step_a04</h2>
 <div class="level2">
-
 <p>
 参照したいのは、「鉄」ですので、<br/>
 文字に「鉄」と入れます。<br/>
-<a href="/lib/exe/fetch.php?tok=9fd91b&amp;media=https%3A%2F%2Fi.imgur.com%2FwDD0yMT.jpg" class="media" title="https://i.imgur.com/wDD0yMT.jpg"><img src="/lib/exe/fetch.php?tok=9fd91b&amp;media=https%3A%2F%2Fi.imgur.com%2FwDD0yMT.jpg" class="mediacenter" title="i.imgur.com_wdd0ymt.jpg" alt="i.imgur.com_wdd0ymt.jpg" /></a>
+<a class="media" href="https://i.imgur.com/wDD0yMT.jpg" title="https://i.imgur.com/wDD0yMT.jpg"><img alt="i.imgur.com_wdd0ymt.jpg" class="mediacenter" src="https://i.imgur.com/wDD0yMT.jpg" title="i.imgur.com_wdd0ymt.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a04&quot;,&quot;hid&quot;:&quot;step_a04&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;1723-1873&quot;} -->
 <h2 class="sectionedit8" id="step_a05">step_a05</h2>
 <div class="level2">
-
 <p>
 検索ボタンを押して、文字を探します。<br/>
-<a href="/lib/exe/fetch.php?tok=947659&amp;media=https%3A%2F%2Fi.imgur.com%2FcwwsOJN.jpg" class="media" title="https://i.imgur.com/cwwsOJN.jpg"><img src="/lib/exe/fetch.php?tok=947659&amp;media=https%3A%2F%2Fi.imgur.com%2FcwwsOJN.jpg" class="mediacenter" title="i.imgur.com_cwwsojn.jpg" alt="i.imgur.com_cwwsojn.jpg" /></a>
+<a class="media" href="https://i.imgur.com/cwwsOJN.jpg" title="https://i.imgur.com/cwwsOJN.jpg"><img alt="i.imgur.com_cwwsojn.jpg" class="mediacenter" src="https://i.imgur.com/cwwsOJN.jpg" title="i.imgur.com_cwwsojn.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a05&quot;,&quot;hid&quot;:&quot;step_a05&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;1874-1991&quot;} -->
 <h2 class="sectionedit9" id="step_a06">step_a06</h2>
 <div class="level2">
-
 <p>
 文字が見つかりました。<br/>
-<a href="/lib/exe/fetch.php?tok=4a1475&amp;media=https%3A%2F%2Fi.imgur.com%2FnJaMvTz.jpg" class="media" title="https://i.imgur.com/nJaMvTz.jpg"><img src="/lib/exe/fetch.php?tok=4a1475&amp;media=https%3A%2F%2Fi.imgur.com%2FnJaMvTz.jpg" class="mediacenter" title="i.imgur.com_njamvtz.jpg" alt="i.imgur.com_njamvtz.jpg" /></a>
+<a class="media" href="https://i.imgur.com/nJaMvTz.jpg" title="https://i.imgur.com/nJaMvTz.jpg"><img alt="i.imgur.com_njamvtz.jpg" class="mediacenter" src="https://i.imgur.com/nJaMvTz.jpg" title="i.imgur.com_njamvtz.jpg"/></a>
 </p>
-
 <p>
 「あ鉄うえ」と表示されているのは、フォントサンプルを描画しているためです。<br/>
 後で説明します。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a06&quot;,&quot;hid&quot;:&quot;step_a06&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;1992-2230&quot;} -->
 <h2 class="sectionedit10" id="step_a07">step_a07</h2>
 <div class="level2">
-
 <p>
 文字が出たので、画像エクスポートボタンでpng画像として保存してください。<br/>
 次は、このフォントをFE8に移植します。<br/>
-<a href="/lib/exe/fetch.php?tok=9056b7&amp;media=https%3A%2F%2Fi.imgur.com%2FsaJJ5sM.jpg" class="media" title="https://i.imgur.com/saJJ5sM.jpg"><img src="/lib/exe/fetch.php?tok=9056b7&amp;media=https%3A%2F%2Fi.imgur.com%2FsaJJ5sM.jpg" class="mediacenter" title="i.imgur.com_sajj5sm.jpg" alt="i.imgur.com_sajj5sm.jpg" /></a>
+<a class="media" href="https://i.imgur.com/saJJ5sM.jpg" title="https://i.imgur.com/saJJ5sM.jpg"><img alt="i.imgur.com_sajj5sm.jpg" class="mediacenter" src="https://i.imgur.com/saJJ5sM.jpg" title="i.imgur.com_sajj5sm.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a07&quot;,&quot;hid&quot;:&quot;step_a07&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;2231-2456&quot;} -->
 <h2 class="sectionedit11" id="step_a08">step_a08</h2>
 <div class="level2">
-
 <p>
 とりあえず、FE FONTを一度終了して、再度立ち上げ直してください。<br/>
-<a href="/lib/exe/fetch.php?tok=c734a1&amp;media=https%3A%2F%2Fi.imgur.com%2FSN13XBp.jpg" class="media" title="https://i.imgur.com/SN13XBp.jpg"><img src="/lib/exe/fetch.php?tok=c734a1&amp;media=https%3A%2F%2Fi.imgur.com%2FSN13XBp.jpg" class="mediacenter" title="i.imgur.com_sn13xbp.jpg" alt="i.imgur.com_sn13xbp.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/SN13XBp.jpg" title="https://i.imgur.com/SN13XBp.jpg"><img alt="i.imgur.com_sn13xbp.jpg" class="mediacenter" src="https://i.imgur.com/SN13XBp.jpg" title="i.imgur.com_sn13xbp.jpg"/></a><br/>
 <br/>
 立ち上げたら、 Load ROM を選択して FE8を開いてください。<br/>
-<a href="/lib/exe/fetch.php?tok=99611e&amp;media=https%3A%2F%2Fi.imgur.com%2FR3Pj7NA.jpg" class="media" title="https://i.imgur.com/R3Pj7NA.jpg"><img src="/lib/exe/fetch.php?tok=99611e&amp;media=https%3A%2F%2Fi.imgur.com%2FR3Pj7NA.jpg" class="mediacenter" title="i.imgur.com_r3pj7na.jpg" alt="i.imgur.com_r3pj7na.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/R3Pj7NA.jpg" title="https://i.imgur.com/R3Pj7NA.jpg"><img alt="i.imgur.com_r3pj7na.jpg" class="mediacenter" src="https://i.imgur.com/R3Pj7NA.jpg" title="i.imgur.com_r3pj7na.jpg"/></a><br/>
 <br/>
 (もちろん、FE7を立ち上げぱなしにしたり、設定を変えて再利用してもいいです。)<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a08&quot;,&quot;hid&quot;:&quot;step_a08&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;2457-2849&quot;} -->
 <h2 class="sectionedit12" id="step_a09">step_a09</h2>
 <div class="level2">
-
 <p>
 FE8聖魔の武器文字に、フォントを追加するので、<br/>
 一番上の「FE8聖魔 武器文字」を選択します。<br/>
-<a href="/lib/exe/fetch.php?tok=5a6e9c&amp;media=https%3A%2F%2Fi.imgur.com%2FNYcXb0D.jpg" class="media" title="https://i.imgur.com/NYcXb0D.jpg"><img src="/lib/exe/fetch.php?tok=5a6e9c&amp;media=https%3A%2F%2Fi.imgur.com%2FNYcXb0D.jpg" class="mediacenter" title="i.imgur.com_nycxb0d.jpg" alt="i.imgur.com_nycxb0d.jpg" /></a>
+<a class="media" href="https://i.imgur.com/NYcXb0D.jpg" title="https://i.imgur.com/NYcXb0D.jpg"><img alt="i.imgur.com_nycxb0d.jpg" class="mediacenter" src="https://i.imgur.com/NYcXb0D.jpg" title="i.imgur.com_nycxb0d.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a09&quot;,&quot;hid&quot;:&quot;step_a09&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:12,&quot;range&quot;:&quot;2850-3044&quot;} -->
 <h2 class="sectionedit13" id="step_a10">step_a10</h2>
 <div class="level2">
-
 <p>
 FE8のROMから、該当文字を探すので、<br/>
 文字に「鉄」と入れ、検索ボタンを押してください。<br/>
-<a href="/lib/exe/fetch.php?tok=29a3cc&amp;media=https%3A%2F%2Fi.imgur.com%2FoGruQWY.jpg" class="media" title="https://i.imgur.com/oGruQWY.jpg"><img src="/lib/exe/fetch.php?tok=29a3cc&amp;media=https%3A%2F%2Fi.imgur.com%2FoGruQWY.jpg" class="mediacenter" title="i.imgur.com_ogruqwy.jpg" alt="i.imgur.com_ogruqwy.jpg" /></a>
+<a class="media" href="https://i.imgur.com/oGruQWY.jpg" title="https://i.imgur.com/oGruQWY.jpg"><img alt="i.imgur.com_ogruqwy.jpg" class="mediacenter" src="https://i.imgur.com/oGruQWY.jpg" title="i.imgur.com_ogruqwy.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a10&quot;,&quot;hid&quot;:&quot;step_a10&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:13,&quot;range&quot;:&quot;3045-3232&quot;} -->
 <h2 class="sectionedit14" id="step_a11">step_a11</h2>
 <div class="level2">
-
 <p>
 FE8には、「鉄」という武器文字フォントがないので、該当するフォントはありませんとエラーが表示されました。<br/>
 とりあえず、OKを押します。<br/>
-<a href="/lib/exe/fetch.php?tok=6f2f37&amp;media=https%3A%2F%2Fi.imgur.com%2FzOg6eST.jpg" class="media" title="https://i.imgur.com/zOg6eST.jpg"><img src="/lib/exe/fetch.php?tok=6f2f37&amp;media=https%3A%2F%2Fi.imgur.com%2FzOg6eST.jpg" class="mediacenter" title="i.imgur.com_zog6est.jpg" alt="i.imgur.com_zog6est.jpg" /></a>
+<a class="media" href="https://i.imgur.com/zOg6eST.jpg" title="https://i.imgur.com/zOg6eST.jpg"><img alt="i.imgur.com_zog6est.jpg" class="mediacenter" src="https://i.imgur.com/zOg6eST.jpg" title="i.imgur.com_zog6est.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a11&quot;,&quot;hid&quot;:&quot;step_a11&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:14,&quot;range&quot;:&quot;3233-3490&quot;} -->
 <h2 class="sectionedit15" id="step_a12">step_a12</h2>
 <div class="level2">
-
 <p>
 新規にフォントを追加するので、ROMの末尾にポインタが移動されました。<br/>
 この領域に鉄という武器文字フォントを差し込みます。<br/>
 (フォントはどこの領域にでも設定できるので、ほかに割り当てたい領域があればアドレスを移動してください。)<br/>
-<a href="/lib/exe/fetch.php?tok=d9d8e3&amp;media=https%3A%2F%2Fi.imgur.com%2FOzM5ffH.jpg" class="media" title="https://i.imgur.com/OzM5ffH.jpg"><img src="/lib/exe/fetch.php?tok=d9d8e3&amp;media=https%3A%2F%2Fi.imgur.com%2FOzM5ffH.jpg" class="mediacenter" title="i.imgur.com_ozm5ffh.jpg" alt="i.imgur.com_ozm5ffh.jpg" /></a>
+<a class="media" href="https://i.imgur.com/OzM5ffH.jpg" title="https://i.imgur.com/OzM5ffH.jpg"><img alt="i.imgur.com_ozm5ffh.jpg" class="mediacenter" src="https://i.imgur.com/OzM5ffH.jpg" title="i.imgur.com_ozm5ffh.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a12&quot;,&quot;hid&quot;:&quot;step_a12&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:15,&quot;range&quot;:&quot;3491-3886&quot;} -->
 <h2 class="sectionedit16" id="step_a13">step_a13</h2>
 <div class="level2">
-
 <p>
 画像インポートを選択し、先ほどもってきた「鉄」という武器文字フォント画像を指定します。<br/>
-<a href="/lib/exe/fetch.php?tok=e1477e&amp;media=https%3A%2F%2Fi.imgur.com%2FfE3lvjG.jpg" class="media" title="https://i.imgur.com/fE3lvjG.jpg"><img src="/lib/exe/fetch.php?tok=e1477e&amp;media=https%3A%2F%2Fi.imgur.com%2FfE3lvjG.jpg" class="mediacenter" title="i.imgur.com_fe3lvjg.jpg" alt="i.imgur.com_fe3lvjg.jpg" /></a>
+<a class="media" href="https://i.imgur.com/fE3lvjG.jpg" title="https://i.imgur.com/fE3lvjG.jpg"><img alt="i.imgur.com_fe3lvjg.jpg" class="mediacenter" src="https://i.imgur.com/fE3lvjG.jpg" title="i.imgur.com_fe3lvjg.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a13&quot;,&quot;hid&quot;:&quot;step_a13&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:16,&quot;range&quot;:&quot;3887-4079&quot;} -->
 <h2 class="sectionedit17" id="step_a14">step_a14</h2>
 <div class="level2">
-
 <p>
 インポートできました。<br/>
 (まだ結果は確定していません。)<br/>
-<a href="/lib/exe/fetch.php?tok=2aa4e4&amp;media=https%3A%2F%2Fi.imgur.com%2FBWm0qis.jpg" class="media" title="https://i.imgur.com/BWm0qis.jpg"><img src="/lib/exe/fetch.php?tok=2aa4e4&amp;media=https%3A%2F%2Fi.imgur.com%2FBWm0qis.jpg" class="mediacenter" title="i.imgur.com_bwm0qis.jpg" alt="i.imgur.com_bwm0qis.jpg" /></a>
+<a class="media" href="https://i.imgur.com/BWm0qis.jpg" title="https://i.imgur.com/BWm0qis.jpg"><img alt="i.imgur.com_bwm0qis.jpg" class="mediacenter" src="https://i.imgur.com/BWm0qis.jpg" title="i.imgur.com_bwm0qis.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a14&quot;,&quot;hid&quot;:&quot;step_a14&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:17,&quot;range&quot;:&quot;4080-4223&quot;} -->
 <h2 class="sectionedit18" id="step_a15">step_a15</h2>
 <div class="level2">
-
 <p>
 文字幅があっていないので、文字幅を調整して、<br/>
 後ろの文字がいい感じの位置に来るようにしてください。<br/>
-<a href="/lib/exe/fetch.php?tok=93159c&amp;media=http%3A%2F%2Fi.imgur.com%2FCJbms5t.jpg" class="media" title="http://i.imgur.com/CJbms5t.jpg"><img src="/lib/exe/fetch.php?tok=93159c&amp;media=http%3A%2F%2Fi.imgur.com%2FCJbms5t.jpg" class="mediacenter" title="i.imgur.com_cjbms5t.jpg" alt="i.imgur.com_cjbms5t.jpg" /></a>
+<a class="media" href="../http///i.imgur.com/CJbms5t.jpg" title="http://i.imgur.com/CJbms5t.jpg"><img alt="i.imgur.com_cjbms5t.jpg" class="mediacenter" src="../http///i.imgur.com/CJbms5t.jpg" title="i.imgur.com_cjbms5t.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a15&quot;,&quot;hid&quot;:&quot;step_a15&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:18,&quot;range&quot;:&quot;4224-4433&quot;} -->
 <h2 class="sectionedit19" id="step_a16">step_a16</h2>
 <div class="level2">
-
 <p>
 位置を調整する時は、サンプル倍率で変更すると、<br/>
 フォントを拡大してみることができるので便利です。<br/>
-<a href="/lib/exe/fetch.php?tok=6f5eed&amp;media=http%3A%2F%2Fi.imgur.com%2FXzvstoO.jpg" class="media" title="http://i.imgur.com/XzvstoO.jpg"><img src="/lib/exe/fetch.php?tok=6f5eed&amp;media=http%3A%2F%2Fi.imgur.com%2FXzvstoO.jpg" class="mediacenter" title="i.imgur.com_xzvstoo.jpg" alt="i.imgur.com_xzvstoo.jpg" /></a>
+<a class="media" href="../http///i.imgur.com/XzvstoO.jpg" title="http://i.imgur.com/XzvstoO.jpg"><img alt="i.imgur.com_xzvstoo.jpg" class="mediacenter" src="../http///i.imgur.com/XzvstoO.jpg" title="i.imgur.com_xzvstoo.jpg"/></a>
 </p>
-
 <p>
 サンプルとなっているものは、フォントを設定しやすくするための便利機能です。<br/>
 ここでどんな設定をしても、設定には影響しません。<br/>
@@ -326,140 +280,114 @@ FE8には、「鉄」という武器文字フォントがないので、該当�
 <br/>
 武器文字は、ステータス画面や、メニュー等で使われるので、<br/>
 サンプル背景色を変えて、どう見えるのか確認しましょう。<br/>
-<a href="/lib/exe/fetch.php?tok=de4a3d&amp;media=https%3A%2F%2Fi.imgur.com%2FF9OMiVD.jpg" class="media" title="https://i.imgur.com/F9OMiVD.jpg"><img src="/lib/exe/fetch.php?tok=de4a3d&amp;media=https%3A%2F%2Fi.imgur.com%2FF9OMiVD.jpg" class="mediacenter" title="i.imgur.com_f9omivd.jpg" alt="i.imgur.com_f9omivd.jpg" /></a>
+<a class="media" href="https://i.imgur.com/F9OMiVD.jpg" title="https://i.imgur.com/F9OMiVD.jpg"><img alt="i.imgur.com_f9omivd.jpg" class="mediacenter" src="https://i.imgur.com/F9OMiVD.jpg" title="i.imgur.com_f9omivd.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a16&quot;,&quot;hid&quot;:&quot;step_a16&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:19,&quot;range&quot;:&quot;4434-5587&quot;} -->
 <h2 class="sectionedit20" id="step_a17">step_a17</h2>
 <div class="level2">
-
 <p>
 ここまで確認して、問題なさそうであれば、<br/>
 Write ROM ボタンで、ROMに焼きこみます。<br/>
-<a href="/lib/exe/fetch.php?tok=0df3b7&amp;media=http%3A%2F%2Fi.imgur.com%2FT3Fpl3W.jpg" class="media" title="http://i.imgur.com/T3Fpl3W.jpg"><img src="/lib/exe/fetch.php?tok=0df3b7&amp;media=http%3A%2F%2Fi.imgur.com%2FT3Fpl3W.jpg" class="mediacenter" title="i.imgur.com_t3fpl3w.jpg" alt="i.imgur.com_t3fpl3w.jpg" /></a>
+<a class="media" href="../http///i.imgur.com/T3Fpl3W.jpg" title="http://i.imgur.com/T3Fpl3W.jpg"><img alt="i.imgur.com_t3fpl3w.jpg" class="mediacenter" src="../http///i.imgur.com/T3Fpl3W.jpg" title="i.imgur.com_t3fpl3w.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a17&quot;,&quot;hid&quot;:&quot;step_a17&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:20,&quot;range&quot;:&quot;5588-5765&quot;} -->
 <h2 class="sectionedit21" id="step_a18">step_a18</h2>
 <div class="level2">
-
 <p>
 早速ゲームを開始してみましょう。<br/>
 先ほど差し込んだフォントによって、鉄の剣と、正しく表示されているはずです。<br/>
-<a href="/lib/exe/fetch.php?tok=678c81&amp;media=http%3A%2F%2Fi.imgur.com%2FGbNYQA3.jpg" class="media" title="http://i.imgur.com/GbNYQA3.jpg"><img src="/lib/exe/fetch.php?tok=678c81&amp;media=http%3A%2F%2Fi.imgur.com%2FGbNYQA3.jpg" class="mediacenter" title="i.imgur.com_gbnyqa3.jpg" alt="i.imgur.com_gbnyqa3.jpg" /></a>
+<a class="media" href="../http///i.imgur.com/GbNYQA3.jpg" title="http://i.imgur.com/GbNYQA3.jpg"><img alt="i.imgur.com_gbnyqa3.jpg" class="mediacenter" src="../http///i.imgur.com/GbNYQA3.jpg" title="i.imgur.com_gbnyqa3.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a18&quot;,&quot;hid&quot;:&quot;step_a18&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:21,&quot;range&quot;:&quot;5766-5991&quot;} -->
 <h1 class="sectionedit22" id="台詞フォントにない文字を作ろう">台詞フォントにない文字を作ろう</h1>
 <div class="level1">
-
 <p>
 これは明らかに矛盾しています。という時の「矛」という台詞フォントがFE8にはありません。<br/>
 今度は、矛というフォントを作ってみましょう。<br/>
-<a href="/lib/exe/fetch.php?tok=a61835&amp;media=https%3A%2F%2Fi.imgur.com%2FGpwfsFE.jpg" class="media" title="https://i.imgur.com/GpwfsFE.jpg"><img src="/lib/exe/fetch.php?tok=a61835&amp;media=https%3A%2F%2Fi.imgur.com%2FGpwfsFE.jpg" class="mediacenter" title="i.imgur.com_gpwfsfe.jpg" alt="i.imgur.com_gpwfsfe.jpg" /></a>
+<a class="media" href="https://i.imgur.com/GpwfsFE.jpg" title="https://i.imgur.com/GpwfsFE.jpg"><img alt="i.imgur.com_gpwfsfe.jpg" class="mediacenter" src="https://i.imgur.com/GpwfsFE.jpg" title="i.imgur.com_gpwfsfe.jpg"/></a>
 </p>
-
 <p>
 鉄という武器フォントは、FE7にありましたが、<br/>
 今回は多分ないと思うので、自分で書かなければいけません。<br/>
 いちから書いてもいいのですが、何か参考になる物があったほうがいいです。<br/>
 矛という字に似ている字で、FE8にあるとすれば、予という字でしょう。<br/>
 予という字を取り出して、それを元に矛という字にしてみましょう。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u53f0\u8a5e\u30d5\u30a9\u30f3\u30c8\u306b\u306a\u3044\u6587\u5b57\u3092\u4f5c\u308d\u3046&quot;,&quot;hid&quot;:&quot;\u53f0\u8a5e\u30d5\u30a9\u30f3\u30c8\u306b\u306a\u3044\u6587\u5b57\u3092\u4f5c\u308d\u3046&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:22,&quot;range&quot;:&quot;5992-6748&quot;} -->
 <h2 class="sectionedit23" id="step_b01">step_b01</h2>
 <div class="level2">
-
 <p>
 Load ROM で FE8 の ROMを読み込みます。<br/>
-<a href="/lib/exe/fetch.php?tok=99611e&amp;media=https%3A%2F%2Fi.imgur.com%2FR3Pj7NA.jpg" class="media" title="https://i.imgur.com/R3Pj7NA.jpg"><img src="/lib/exe/fetch.php?tok=99611e&amp;media=https%3A%2F%2Fi.imgur.com%2FR3Pj7NA.jpg" class="mediacenter" title="i.imgur.com_r3pj7na.jpg" alt="i.imgur.com_r3pj7na.jpg" /></a>
+<a class="media" href="https://i.imgur.com/R3Pj7NA.jpg" title="https://i.imgur.com/R3Pj7NA.jpg"><img alt="i.imgur.com_r3pj7na.jpg" class="mediacenter" src="https://i.imgur.com/R3Pj7NA.jpg" title="i.imgur.com_r3pj7na.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b01&quot;,&quot;hid&quot;:&quot;step_b01&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:23,&quot;range&quot;:&quot;6749-6860&quot;} -->
 <h2 class="sectionedit24" id="step_b02">step_b02</h2>
 <div class="level2">
-
 <p>
 FE8聖魔 セリフ文字を選択します。<br/>
-<a href="/lib/exe/fetch.php?tok=8fd8aa&amp;media=https%3A%2F%2Fi.imgur.com%2F29XExYd.jpg" class="media" title="https://i.imgur.com/29XExYd.jpg"><img src="/lib/exe/fetch.php?tok=8fd8aa&amp;media=https%3A%2F%2Fi.imgur.com%2F29XExYd.jpg" class="mediacenter" title="i.imgur.com_29xexyd.jpg" alt="i.imgur.com_29xexyd.jpg" /></a>
+<a class="media" href="https://i.imgur.com/29XExYd.jpg" title="https://i.imgur.com/29XExYd.jpg"><img alt="i.imgur.com_29xexyd.jpg" class="mediacenter" src="https://i.imgur.com/29XExYd.jpg" title="i.imgur.com_29xexyd.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b02&quot;,&quot;hid&quot;:&quot;step_b02&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:24,&quot;range&quot;:&quot;6861-6970&quot;} -->
 <h2 class="sectionedit25" id="step_b03">step_b03</h2>
 <div class="level2">
-
 <p>
 いきなり、矛をつくるとつらいので似ている文字として、<br/>
 予を取得します。<br/>
 <br/>
 文字に「予」と入れ、検索ボタンを押してください。<br/>
-<a href="/lib/exe/fetch.php?tok=929da7&amp;media=https%3A%2F%2Fi.imgur.com%2FrxSoCgp.jpg" class="media" title="https://i.imgur.com/rxSoCgp.jpg"><img src="/lib/exe/fetch.php?tok=929da7&amp;media=https%3A%2F%2Fi.imgur.com%2FrxSoCgp.jpg" class="mediacenter" title="i.imgur.com_rxsocgp.jpg" alt="i.imgur.com_rxsocgp.jpg" /></a>
+<a class="media" href="https://i.imgur.com/rxSoCgp.jpg" title="https://i.imgur.com/rxSoCgp.jpg"><img alt="i.imgur.com_rxsocgp.jpg" class="mediacenter" src="https://i.imgur.com/rxSoCgp.jpg" title="i.imgur.com_rxsocgp.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b03&quot;,&quot;hid&quot;:&quot;step_b03&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:25,&quot;range&quot;:&quot;6971-7217&quot;} -->
 <h2 class="sectionedit26" id="step_b04">step_b04</h2>
 <div class="level2">
-
 <p>
 予というフォントがあったので表示されました。<br/>
-<a href="/lib/exe/fetch.php?tok=a70f58&amp;media=https%3A%2F%2Fi.imgur.com%2FHWOf8yO.jpg" class="media" title="https://i.imgur.com/HWOf8yO.jpg"><img src="/lib/exe/fetch.php?tok=a70f58&amp;media=https%3A%2F%2Fi.imgur.com%2FHWOf8yO.jpg" class="mediacenter" title="i.imgur.com_hwof8yo.jpg" alt="i.imgur.com_hwof8yo.jpg" /></a>
+<a class="media" href="https://i.imgur.com/HWOf8yO.jpg" title="https://i.imgur.com/HWOf8yO.jpg"><img alt="i.imgur.com_hwof8yo.jpg" class="mediacenter" src="https://i.imgur.com/HWOf8yO.jpg" title="i.imgur.com_hwof8yo.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b04&quot;,&quot;hid&quot;:&quot;step_b04&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:26,&quot;range&quot;:&quot;7218-7348&quot;} -->
 <h2 class="sectionedit27" id="step_b05">step_b05</h2>
 <div class="level2">
-
 <p>
 背景色がちょっと読みづらいので変更しましょう。<br/>
-<a href="/lib/exe/fetch.php?tok=e3f890&amp;media=https%3A%2F%2Fi.imgur.com%2FXhjSqZ9.jpg" class="media" title="https://i.imgur.com/XhjSqZ9.jpg"><img src="/lib/exe/fetch.php?tok=e3f890&amp;media=https%3A%2F%2Fi.imgur.com%2FXhjSqZ9.jpg" class="mediacenter" title="i.imgur.com_xhjsqz9.jpg" alt="i.imgur.com_xhjsqz9.jpg" /></a>
+<a class="media" href="https://i.imgur.com/XhjSqZ9.jpg" title="https://i.imgur.com/XhjSqZ9.jpg"><img alt="i.imgur.com_xhjsqz9.jpg" class="mediacenter" src="https://i.imgur.com/XhjSqZ9.jpg" title="i.imgur.com_xhjsqz9.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b05&quot;,&quot;hid&quot;:&quot;step_b05&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:27,&quot;range&quot;:&quot;7349-7481&quot;} -->
 <h2 class="sectionedit28" id="step_b06">step_b06</h2>
 <div class="level2">
-
 <p>
 セリフの吹き出しと同じ色にしてみました。<br/>
-<a href="/lib/exe/fetch.php?tok=f73868&amp;media=https%3A%2F%2Fi.imgur.com%2FIe1Bzcm.jpg" class="media" title="https://i.imgur.com/Ie1Bzcm.jpg"><img src="/lib/exe/fetch.php?tok=f73868&amp;media=https%3A%2F%2Fi.imgur.com%2FIe1Bzcm.jpg" class="mediacenter" title="i.imgur.com_ie1bzcm.jpg" alt="i.imgur.com_ie1bzcm.jpg" /></a>
+<a class="media" href="https://i.imgur.com/Ie1Bzcm.jpg" title="https://i.imgur.com/Ie1Bzcm.jpg"><img alt="i.imgur.com_ie1bzcm.jpg" class="mediacenter" src="https://i.imgur.com/Ie1Bzcm.jpg" title="i.imgur.com_ie1bzcm.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b06&quot;,&quot;hid&quot;:&quot;step_b06&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:28,&quot;range&quot;:&quot;7482-7605&quot;} -->
 <h2 class="sectionedit29" id="step_b07">step_b07</h2>
 <div class="level2">
-
 <p>
 この、予という字をもとに、矛というフォントを作ります。<br/>
 画像エクスポートで png画像として取り出します。<br/>
-<a href="/lib/exe/fetch.php?tok=eb4648&amp;media=https%3A%2F%2Fi.imgur.com%2FIVDn5JG.jpg" class="media" title="https://i.imgur.com/IVDn5JG.jpg"><img src="/lib/exe/fetch.php?tok=eb4648&amp;media=https%3A%2F%2Fi.imgur.com%2FIVDn5JG.jpg" class="mediacenter" title="i.imgur.com_ivdn5jg.jpg" alt="i.imgur.com_ivdn5jg.jpg" /></a>
+<a class="media" href="https://i.imgur.com/IVDn5JG.jpg" title="https://i.imgur.com/IVDn5JG.jpg"><img alt="i.imgur.com_ivdn5jg.jpg" class="mediacenter" src="https://i.imgur.com/IVDn5JG.jpg" title="i.imgur.com_ivdn5jg.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b07&quot;,&quot;hid&quot;:&quot;step_b07&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:29,&quot;range&quot;:&quot;7606-7820&quot;} -->
 <h2 class="sectionedit30" id="step_b08">step_b08</h2>
 <div class="level2">
-
 <p>
 edge取り出した画像を edge で開いてください。<br/>
-<a href="/lib/exe/fetch.php?tok=58e93d&amp;media=https%3A%2F%2Fi.imgur.com%2FJLcTiGd.jpg" class="media" title="https://i.imgur.com/JLcTiGd.jpg"><img src="/lib/exe/fetch.php?tok=58e93d&amp;media=https%3A%2F%2Fi.imgur.com%2FJLcTiGd.jpg" class="mediacenter" title="i.imgur.com_jlctigd.jpg" alt="i.imgur.com_jlctigd.jpg" /></a>
+<a class="media" href="https://i.imgur.com/JLcTiGd.jpg" title="https://i.imgur.com/JLcTiGd.jpg"><img alt="i.imgur.com_jlctigd.jpg" class="mediacenter" src="https://i.imgur.com/JLcTiGd.jpg" title="i.imgur.com_jlctigd.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b08&quot;,&quot;hid&quot;:&quot;step_b08&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:30,&quot;range&quot;:&quot;7821-7945&quot;} -->
 <h2 class="sectionedit31" id="step_b09">step_b09</h2>
 <div class="level2">
-
 <p>
 変更する前に、パレットの解説をします。<br/>
 すべてのフォントは、4色の画像です。(4色無圧縮画像としてrom内に保存されています)<br/>
@@ -467,227 +395,190 @@ edge取り出した画像を edge で開いてください。<br/>
 利用できるのは、左上の4つのパレットだけです。<br/>
 そして、一番左上の0番パレットは背景色となります。<br/>
 実質3色で書く必要があります。<br/>
-<a href="/lib/exe/fetch.php?tok=5b9266&amp;media=http%3A%2F%2Fi.imgur.com%2F16iZyjU.jpg" class="media" title="http://i.imgur.com/16iZyjU.jpg"><img src="/lib/exe/fetch.php?tok=5b9266&amp;media=http%3A%2F%2Fi.imgur.com%2F16iZyjU.jpg" class="mediacenter" title="i.imgur.com_16izyju.jpg" alt="i.imgur.com_16izyju.jpg" /></a>
+<a class="media" href="../http///i.imgur.com/16iZyjU.jpg" title="http://i.imgur.com/16iZyjU.jpg"><img alt="i.imgur.com_16izyju.jpg" class="mediacenter" src="../http///i.imgur.com/16iZyjU.jpg" title="i.imgur.com_16izyju.jpg"/></a>
 </p>
-
 <p>
 また、フォントのパレットは予め決まっています。<br/>
 パレットの色を変更してもフォントの色としては反映されません。<br/>
 パレットは以下のようになります。<br/>
-
 </p>
 <div class="table sectionedit32"><table class="inline">
-	<tr class="row0">
-		<td class="col0">0番</td><td class="col1">透明色</td>
-	</tr>
-	<tr class="row1">
-		<td class="col0">1番</td><td class="col1">中間色</td>
-	</tr>
-	<tr class="row2">
-		<td class="col0">2番</td><td class="col1">白色</td>
-	</tr>
-	<tr class="row3">
-		<td class="col0">3番</td><td class="col1">黒色</td>
-	</tr>
+<tr class="row0">
+<td class="col0">0番</td><td class="col1">透明色</td>
+</tr>
+<tr class="row1">
+<td class="col0">1番</td><td class="col1">中間色</td>
+</tr>
+<tr class="row2">
+<td class="col0">2番</td><td class="col1">白色</td>
+</tr>
+<tr class="row3">
+<td class="col0">3番</td><td class="col1">黒色</td>
+</tr>
 </table></div>
 <!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:32,&quot;range&quot;:&quot;8680-8741&quot;} -->
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b09&quot;,&quot;hid&quot;:&quot;step_b09&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:31,&quot;range&quot;:&quot;7946-8743&quot;} -->
 <h2 class="sectionedit33" id="step_b10">step_b10</h2>
 <div class="level2">
-
 <p>
 予に書き足して、矛にしてみました。<br/>
 簡単な修正ですが、それっぽく見えますでしょうか？<br/>
-<br />
-<a href="/lib/exe/fetch.php?tok=508b7e&amp;media=https%3A%2F%2Fi.imgur.com%2FJEXibWK.jpg" class="media" title="https://i.imgur.com/JEXibWK.jpg"><img src="/lib/exe/fetch.php?tok=508b7e&amp;media=https%3A%2F%2Fi.imgur.com%2FJEXibWK.jpg" class="mediacenter" title="i.imgur.com_jexibwk.jpg" alt="i.imgur.com_jexibwk.jpg" /></a><br />
+<br/>
+<a class="media" href="https://i.imgur.com/JEXibWK.jpg" title="https://i.imgur.com/JEXibWK.jpg"><img alt="i.imgur.com_jexibwk.jpg" class="mediacenter" src="https://i.imgur.com/JEXibWK.jpg" title="i.imgur.com_jexibwk.jpg"/></a><br/>
 <br/>
 満足のいくものができたら、入れ込み作業を行います。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b10&quot;,&quot;hid&quot;:&quot;step_b10&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:33,&quot;range&quot;:&quot;8744-9015&quot;} -->
 <h2 class="sectionedit34" id="step_b11">step_b11</h2>
 <div class="level2">
-
 <p>
 FE Fontで、<br/>
 文字を「矛」にして検索ボタンを押します。<br/>
-<a href="/lib/exe/fetch.php?tok=a33b55&amp;media=http%3A%2F%2Fi.imgur.com%2Fo43bSbv.jpg" class="media" title="http://i.imgur.com/o43bSbv.jpg"><img src="/lib/exe/fetch.php?tok=a33b55&amp;media=http%3A%2F%2Fi.imgur.com%2Fo43bSbv.jpg" class="mediacenter" title="i.imgur.com_o43bsbv.jpg" alt="i.imgur.com_o43bsbv.jpg" /></a>
+<a class="media" href="../http///i.imgur.com/o43bSbv.jpg" title="http://i.imgur.com/o43bSbv.jpg"><img alt="i.imgur.com_o43bsbv.jpg" class="mediacenter" src="../http///i.imgur.com/o43bSbv.jpg" title="i.imgur.com_o43bsbv.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b11&quot;,&quot;hid&quot;:&quot;step_b11&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:34,&quot;range&quot;:&quot;9016-9154&quot;} -->
 <h2 class="sectionedit35" id="step_b12">step_b12</h2>
 <div class="level2">
-
 <p>
 「矛」という文字はないので、エラーが表示されますが、<br/>
 OKボタンを押してそのまま進みます。<br/>
-<a href="/lib/exe/fetch.php?tok=70e40f&amp;media=http%3A%2F%2Fi.imgur.com%2FUNolpL3.jpg" class="media" title="http://i.imgur.com/UNolpL3.jpg"><img src="/lib/exe/fetch.php?tok=70e40f&amp;media=http%3A%2F%2Fi.imgur.com%2FUNolpL3.jpg" class="mediacenter" title="i.imgur.com_unolpl3.jpg" alt="i.imgur.com_unolpl3.jpg" /></a>
+<a class="media" href="../http///i.imgur.com/UNolpL3.jpg" title="http://i.imgur.com/UNolpL3.jpg"><img alt="i.imgur.com_unolpl3.jpg" class="mediacenter" src="../http///i.imgur.com/UNolpL3.jpg" title="i.imgur.com_unolpl3.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b12&quot;,&quot;hid&quot;:&quot;step_b12&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:35,&quot;range&quot;:&quot;9155-9348&quot;} -->
 <h2 class="sectionedit36" id="step_b13">step_b13</h2>
 <div class="level2">
-
 <p>
 武器フォントの時にも説明しましたが、フォントはどこのアドレスにでも置けるので、好きな空き領域に配置してください。<br/>
 (何も設定しないと、ROM末尾に追加になります。)<br/>
-<a href="/lib/exe/fetch.php?tok=adafaf&amp;media=http%3A%2F%2Fi.imgur.com%2FL6iqdMq.jpg" class="media" title="http://i.imgur.com/L6iqdMq.jpg"><img src="/lib/exe/fetch.php?tok=adafaf&amp;media=http%3A%2F%2Fi.imgur.com%2FL6iqdMq.jpg" class="mediacenter" title="i.imgur.com_l6iqdmq.jpg" alt="i.imgur.com_l6iqdmq.jpg" /></a>
+<a class="media" href="../http///i.imgur.com/L6iqdMq.jpg" title="http://i.imgur.com/L6iqdMq.jpg"><img alt="i.imgur.com_l6iqdmq.jpg" class="mediacenter" src="../http///i.imgur.com/L6iqdMq.jpg" title="i.imgur.com_l6iqdmq.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b13&quot;,&quot;hid&quot;:&quot;step_b13&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:36,&quot;range&quot;:&quot;9349-9647&quot;} -->
 <h2 class="sectionedit37" id="step_b14">step_b14</h2>
 <div class="level2">
-
 <p>
 画像インポートで、先ほど作った「矛」というpng画像を読み込みます。<br/>
-<a href="/lib/exe/fetch.php?tok=f717a7&amp;media=http%3A%2F%2Fi.imgur.com%2Fac4UugQ.jpg" class="media" title="http://i.imgur.com/ac4UugQ.jpg"><img src="/lib/exe/fetch.php?tok=f717a7&amp;media=http%3A%2F%2Fi.imgur.com%2Fac4UugQ.jpg" class="mediacenter" title="i.imgur.com_ac4uugq.jpg" alt="i.imgur.com_ac4uugq.jpg" /></a>
+<a class="media" href="../http///i.imgur.com/ac4UugQ.jpg" title="http://i.imgur.com/ac4UugQ.jpg"><img alt="i.imgur.com_ac4uugq.jpg" class="mediacenter" src="../http///i.imgur.com/ac4UugQ.jpg" title="i.imgur.com_ac4uugq.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b14&quot;,&quot;hid&quot;:&quot;step_b14&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:37,&quot;range&quot;:&quot;9648-9806&quot;} -->
 <h2 class="sectionedit38" id="step_b15">step_b15</h2>
 <div class="level2">
-
 <p>
 読み込めました。<br/>
-<a href="/lib/exe/fetch.php?tok=efe156&amp;media=http%3A%2F%2Fi.imgur.com%2FxHBABIs.jpg" class="media" title="http://i.imgur.com/xHBABIs.jpg"><img src="/lib/exe/fetch.php?tok=efe156&amp;media=http%3A%2F%2Fi.imgur.com%2FxHBABIs.jpg" class="mediacenter" title="i.imgur.com_xhbabis.jpg" alt="i.imgur.com_xhbabis.jpg" /></a>
+<a class="media" href="../http///i.imgur.com/xHBABIs.jpg" title="http://i.imgur.com/xHBABIs.jpg"><img alt="i.imgur.com_xhbabis.jpg" class="mediacenter" src="../http///i.imgur.com/xHBABIs.jpg" title="i.imgur.com_xhbabis.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b15&quot;,&quot;hid&quot;:&quot;step_b15&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:38,&quot;range&quot;:&quot;9807-9893&quot;} -->
 <h2 class="sectionedit39" id="step_b16">step_b16</h2>
 <div class="level2">
-
 <p>
 漢字とひらがなだと高さがちょっと違うので、<br/>
 漢字同士並べた時の動作を確認したいものです。<br/>
 <br/>
 こういうときには、サンプル文字列を利用します。<br/>
 「これは○盾してる」などといれると、○の部分が変更したいフォントになります。<br/>
-<a href="/lib/exe/fetch.php?tok=84f38f&amp;media=http%3A%2F%2Fi.imgur.com%2F59b6o7j.jpg" class="media" title="http://i.imgur.com/59b6o7j.jpg"><img src="/lib/exe/fetch.php?tok=84f38f&amp;media=http%3A%2F%2Fi.imgur.com%2F59b6o7j.jpg" class="mediacenter" title="i.imgur.com_59b6o7j.jpg" alt="i.imgur.com_59b6o7j.jpg" /></a>
+<a class="media" href="../http///i.imgur.com/59b6o7j.jpg" title="http://i.imgur.com/59b6o7j.jpg"><img alt="i.imgur.com_59b6o7j.jpg" class="mediacenter" src="../http///i.imgur.com/59b6o7j.jpg" title="i.imgur.com_59b6o7j.jpg"/></a>
 </p>
-
 <p>
 サンプル倍率を変えれば、拡大もできます。<br/>
 サンプルという名前の項目を変更しても、保存されるデータには一切関与しないので、見やすいように調整してください。<br/>
-<a href="/lib/exe/fetch.php?tok=7afa5f&amp;media=http%3A%2F%2Fi.imgur.com%2FdDm4ZSv.jpg" class="media" title="http://i.imgur.com/dDm4ZSv.jpg"><img src="/lib/exe/fetch.php?tok=7afa5f&amp;media=http%3A%2F%2Fi.imgur.com%2FdDm4ZSv.jpg" class="mediacenter" title="i.imgur.com_ddm4zsv.jpg" alt="i.imgur.com_ddm4zsv.jpg" /></a>
+<a class="media" href="../http///i.imgur.com/dDm4ZSv.jpg" title="http://i.imgur.com/dDm4ZSv.jpg"><img alt="i.imgur.com_ddm4zsv.jpg" class="mediacenter" src="../http///i.imgur.com/dDm4ZSv.jpg" title="i.imgur.com_ddm4zsv.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b16&quot;,&quot;hid&quot;:&quot;step_b16&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:39,&quot;range&quot;:&quot;9894-10551&quot;} -->
 <h2 class="sectionedit40" id="step_b17">step_b17</h2>
 <div class="level2">
-
 <p>
 フォントの字幅を調整してください。<br/>
 そして、満足いくのができたら、 Write ROMで保存してください。<br/>
-<a href="/lib/exe/fetch.php?tok=b22bfb&amp;media=http%3A%2F%2Fi.imgur.com%2FC4z02WA.jpg" class="media" title="http://i.imgur.com/C4z02WA.jpg"><img src="/lib/exe/fetch.php?tok=b22bfb&amp;media=http%3A%2F%2Fi.imgur.com%2FC4z02WA.jpg" class="mediacenter" title="i.imgur.com_c4z02wa.jpg" alt="i.imgur.com_c4z02wa.jpg" /></a>
+<a class="media" href="../http///i.imgur.com/C4z02WA.jpg" title="http://i.imgur.com/C4z02WA.jpg"><img alt="i.imgur.com_c4z02wa.jpg" class="mediacenter" src="../http///i.imgur.com/C4z02WA.jpg" title="i.imgur.com_c4z02wa.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b17&quot;,&quot;hid&quot;:&quot;step_b17&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:40,&quot;range&quot;:&quot;10552-10753&quot;} -->
 <h2 class="sectionedit41" id="step_b18">step_b18</h2>
 <div class="level2">
-
 <p>
 さっそくゲームを開始して、入れたフォントを確認してみましょう。<br/>
 先ほど差し込んだフォントによって、矛盾と表示されていますね。<br/>
-<a href="https://i.imgur.com/WVOPce2.png" class="urlextern" title="https://i.imgur.com/WVOPce2.png" rel="nofollow">https://i.imgur.com/WVOPce2.png</a>
+<a class="urlextern" href="https://i.imgur.com/WVOPce2.png" rel="nofollow" title="https://i.imgur.com/WVOPce2.png">https://i.imgur.com/WVOPce2.png</a>
 </p>
-
 <p>
 <br/>
 以上で、武器とセリフのフォントの改造方法<br/>
 移植する時と、似ているフォントから作成する方法についての解説を終わります。<br/>
 これでどんな文字でも作れるようになりました。<br/>
 面白い物語を作ってくださいね。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b18&quot;,&quot;hid&quot;:&quot;step_b18&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:41,&quot;range&quot;:&quot;10754-11295&quot;} -->
 <h1 class="sectionedit42" id="トラブルシューティング">トラブルシューティング</h1>
 <div class="level1">
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30c8\u30e9\u30d6\u30eb\u30b7\u30e5\u30fc\u30c6\u30a3\u30f3\u30b0&quot;,&quot;hid&quot;:&quot;\u30c8\u30e9\u30d6\u30eb\u30b7\u30e5\u30fc\u30c6\u30a3\u30f3\u30b0&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:42,&quot;range&quot;:&quot;11296-11344&quot;} -->
 <h2 class="sectionedit43" id="qインポートしたフォントが何かおかしい">Q:インポートしたフォントが何かおかしい</h2>
 <div class="level2">
-
 <p>
 A.左上の4色だけで書いていますか？<br/>
 4番目の黒色と間違えて、5番目以降の黒色で書いていることが有ります。<br/>
 ちゃんと、左上の4つの色だけで書いているか確認してください。<br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=5b9266&amp;media=http%3A%2F%2Fi.imgur.com%2F16iZyjU.jpg" class="media" title="http://i.imgur.com/16iZyjU.jpg"><img src="/lib/exe/fetch.php?tok=5b9266&amp;media=http%3A%2F%2Fi.imgur.com%2F16iZyjU.jpg" class="mediacenter" title="i.imgur.com_16izyju.jpg" alt="i.imgur.com_16izyju.jpg" /></a>
+<a class="media" href="../http///i.imgur.com/16iZyjU.jpg" title="http://i.imgur.com/16iZyjU.jpg"><img alt="i.imgur.com_16izyju.jpg" class="mediacenter" src="../http///i.imgur.com/16iZyjU.jpg" title="i.imgur.com_16izyju.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Q:\u30a4\u30f3\u30dd\u30fc\u30c8\u3057\u305f\u30d5\u30a9\u30f3\u30c8\u304c\u4f55\u304b\u304a\u304b\u3057\u3044&quot;,&quot;hid&quot;:&quot;q\u30a4\u30f3\u30dd\u30fc\u30c8\u3057\u305f\u30d5\u30a9\u30f3\u30c8\u304c\u4f55\u304b\u304a\u304b\u3057\u3044&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:43,&quot;range&quot;:&quot;11345-11699&quot;} -->
 <h1 class="sectionedit44" id="技術資料">技術資料</h1>
 <div class="level1">
-
 <p>
 此処から先はフォント構造がどうやって作られているのかという解析資料です。<br/>
 特に読む必要はありませんが、詳しく知りたい方はどうぞ。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6280\u8853\u8cc7\u6599&quot;,&quot;hid&quot;:&quot;\u6280\u8853\u8cc7\u6599&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:44,&quot;range&quot;:&quot;11700-11924&quot;} -->
 <h2 class="sectionedit45" id="アルゴリズム">アルゴリズム</h2>
 <div class="level2">
-
 <p>
 フォントはハッシュとリスト形式で管理されています。<br/>
-
 </p>
 <div class="table sectionedit46"><table class="inline">
-	<tr class="row0">
-		<td class="col0">聖魔武器フォントリストスタート</td><td class="col1">0x57994c</td>
-	</tr>
-	<tr class="row1">
-		<td class="col0">聖魔セリフフォントリストスタート</td><td class="col1">0x593f74</td>
-	</tr>
-	<tr class="row2">
-		<td class="col0">烈火武器フォントリストスタート</td><td class="col1">0xbc1fec</td>
-	</tr>
-	<tr class="row3">
-		<td class="col0">烈火セリフフォントリストスタート</td><td class="col1">0xbdc1e0</td>
-	</tr>
-	<tr class="row4">
-		<td class="col0">封印武器フォントリストスタート</td><td class="col1">0x59027c</td>
-	</tr>
-	<tr class="row5">
-		<td class="col0">封印セリフフォントリストスタート</td><td class="col1">0x5a82b0</td>
-	</tr>
+<tr class="row0">
+<td class="col0">聖魔武器フォントリストスタート</td><td class="col1">0x57994c</td>
+</tr>
+<tr class="row1">
+<td class="col0">聖魔セリフフォントリストスタート</td><td class="col1">0x593f74</td>
+</tr>
+<tr class="row2">
+<td class="col0">烈火武器フォントリストスタート</td><td class="col1">0xbc1fec</td>
+</tr>
+<tr class="row3">
+<td class="col0">烈火セリフフォントリストスタート</td><td class="col1">0xbdc1e0</td>
+</tr>
+<tr class="row4">
+<td class="col0">封印武器フォントリストスタート</td><td class="col1">0x59027c</td>
+</tr>
+<tr class="row5">
+<td class="col0">封印セリフフォントリストスタート</td><td class="col1">0x5a82b0</td>
+</tr>
 </table></div>
 <!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table1&quot;,&quot;secid&quot;:46,&quot;range&quot;:&quot;12037-12387&quot;} -->
 <p>
 (海外版FEはアルゴリズムが違うような気がするので未対応。)
 </p>
-
 <p>
 フォントリストスタートから、たくさんのフォントリストのポインタが伸びています。<br/>
 どのフォントリストを使うかは、SJISの1バイト目を利用して以下の計算式で決定します。<br/>
-
 </p>
 <pre class="code">探索するリスト=フォントリストスタート + (SJIS1バイト目 &lt;&lt; 2) - 0x100</pre>
-
 <p>
 <br/>
 例えば、聖魔武器フォントで、紋SJIS(0xE496)だと、<br/>
-
 </p>
 <pre class="code">例:紋 SJIS(0xE496)
 0x57994c + (0xE4 &lt;&lt; 2) - 0x100 = 0x579BDC</pre>
-
 <p>
 <br/>
 よって、0x579BDCから、0xE4?? フォントリストがスタートします。<br/>
@@ -696,9 +587,7 @@ A.左上の4色だけで書いていますか？<br/>
 0x579BDCから fontlist→next と、線形にたどります。<br/>
 そして、 fontlist→SJIS2 == 0x96 のを見つけたら、<br/>
 それが「紋」のフォントのデータということになります。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0&quot;,&quot;hid&quot;:&quot;\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:45,&quot;range&quot;:&quot;11925-13346&quot;} -->
 <h2 class="sectionedit47" id="フォント構造体">フォント構造体</h2>
@@ -711,7 +600,6 @@ A.左上の4色だけで書いていますか？<br/>
 8バイト目は謎
 以下 64バイト(0x40)の4bit無圧縮ビットマップデータです。
 </pre>
-
 <p>
 //フォント構造について、Cで書くと、こういうリスト構造だと思われる.
 </p>
@@ -737,7 +625,6 @@ A.左上の4色だけで書いていますか？<br/>
     			//64バイト/4=16 なので、 横 16ドット  縦 16ドットなはず・・・
     			//ただ、64バイト 0xFFで埋めると、正方形ではなく横長の長方形っぽい絵になるので、違うのかもしれない
 };</pre>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30d5\u30a9\u30f3\u30c8\u69cb\u9020\u4f53&quot;,&quot;hid&quot;:&quot;\u30d5\u30a9\u30f3\u30c8\u69cb\u9020\u4f53&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:47,&quot;range&quot;:&quot;13347-15486&quot;} -->
 <h2 class="sectionedit48" id="擬似コード">擬似コード</h2>
@@ -760,7 +647,6 @@ while(*p)
 	//次のリストへ
 	p = p-&gt;next;
 }</pre>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u64ec\u4f3c\u30b3\u30fc\u30c9&quot;,&quot;hid&quot;:&quot;\u64ec\u4f3c\u30b3\u30fc\u30c9&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:48,&quot;range&quot;:&quot;15487-&quot;} --></div>
 </body>
