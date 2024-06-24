@@ -1,123 +1,33 @@
 <!DOCTYPE html>
-<html lang="ja" dir="ltr" class="no-js">
+
+<html class="no-js" dir="ltr" lang="ja">
 <head>
-    <meta charset="utf-8" />
-    <title>guide:febuildergba:3点のdiffによるバグの自動検出 [FE改造wiki]</title>
-    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
-    <meta name="generator" content="DokuWiki"/>
-<meta name="theme-color" content="#008800"/>
-<meta name="robots" content="index,follow"/>
-<meta name="keywords" content="guide,febuildergba,3点のdiffによるバグの自動検出"/>
-<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
-<link rel="start" href="/"/>
-<link rel="contents" href="/doku.php?id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA&amp;do=index" title="サイトマップ"/>
-<link rel="manifest" href="/lib/exe/manifest.php"/>
-<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
-<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide:febuildergba"/>
-<link rel="edit" title="文書の編集" href="/doku.php?id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA&amp;do=edit"/>
-<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA"/>
-<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA"/>
-<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA"/>
-<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<meta charset="utf-8"/>
+<title>guide:febuildergba:3点のdiffによるバグの自動検出 [FE改造wiki]</title>
+<meta content="DokuWiki" name="generator"/>
+<meta content="#008800" name="theme-color"/>
+<meta content="index,follow" name="robots"/>
+<meta content="guide,febuildergba,3点のdiffによるバグの自動検出" name="keywords"/>
 <!--[if gte IE 9]><!-->
-<script type="text/javascript">/*<![CDATA[*/var NS='guide:febuildergba';var JSINFO = {"toc":{"initial_state":1},"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:febuildergba:3\u70b9\u306ediff\u306b\u3088\u308b\u30d0\u30b0\u306e\u81ea\u52d5\u691c\u51fa","namespace":"guide:febuildergba","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
-/*!]]>*/</script>
-<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
-<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
 <!--<![endif]-->
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="shortcut icon" href="/lib/tpl/dokuwiki/images/favicon.ico" />
-<link rel="apple-touch-icon" href="/lib/tpl/dokuwiki/images/apple-touch-icon.png" />
-    </head>
-
-<body>
-    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki    showSidebar hasSidebar">
-
-        
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+</head>
+<body><a href="../../../export_xhtml/guide/febuildergba/3点のdiffによるバグの自動検出.html">プレーンHTML</a> | <a href="../../../export_raw/guide/febuildergba/3点のdiffによるバグの自動検出.txt">Wikiマークアップ</a><br/>
+<div id="dokuwiki__site"><div class="site dokuwiki mode_show tpl_dokuwiki showSidebar hasSidebar" id="dokuwiki__top">
 <!-- ********** HEADER ********** -->
-<div id="dokuwiki__header"><div class="pad group">
-
-    
-    <div class="headings group">
-        <ul class="a11y skip">
-            <li><a href="#dokuwiki__content">内容へ移動</a></li>
-        </ul>
-
-        <h1><a href="/doku.php?id=start"  accesskey="h" title="[H]"><img src="/lib/tpl/dokuwiki/images/logo.png" width="64" height="64" alt="" /> <span>FE改造wiki</span></a></h1>
-            </div>
-
-    <div class="tools group">
-        <!-- USER TOOLS -->
-                    <div id="dokuwiki__usertools">
-                <h3 class="a11y">ユーザ用ツール</h3>
-                <ul>
-                    <li class="action register"><a href="/doku.php?id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA&amp;do=register" title="ユーザー登録" rel="nofollow"><span>ユーザー登録</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4z"/></svg></a></li><li class="action login"><a href="/doku.php?id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA&amp;do=login&amp;sectok=" title="ログイン" rel="nofollow"><span>ログイン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></a></li>                </ul>
-            </div>
-        
-        <!-- SITE TOOLS -->
-        <div id="dokuwiki__sitetools">
-            <h3 class="a11y">サイト用ツール</h3>
-            <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="guide:febuildergba:3点のdiffによるバグの自動検出" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="検索" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="検索">検索</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
-                <form action="/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="guide:febuildergba:3点のdiffによるバグの自動検出" /><select name="do" class="edit quickselect" title="ツール"><option value="">ツール</option><optgroup label="ページ用ツール"><option value="edit">文書の編集</option><option value="revisions">以前のリビジョン</option><option value="backlink">バックリンク</option></optgroup><optgroup label="サイト用ツール"><option value="recent">最近の変更</option><option value="media">メディアマネージャー</option><option value="index">サイトマップ</option></optgroup><optgroup label="ユーザ用ツール"><option value="register">ユーザー登録</option><option value="login">ログイン</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
-            <ul>
-                <li class="action recent"><a href="/doku.php?id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA&amp;do=recent" title="最近の変更 [r]" rel="nofollow" accesskey="r">最近の変更</a></li><li class="action media"><a href="/doku.php?id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA&amp;do=media&amp;ns=guide%3Afebuildergba" title="メディアマネージャー" rel="nofollow">メディアマネージャー</a></li><li class="action index"><a href="/doku.php?id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA&amp;do=index" title="サイトマップ [x]" rel="nofollow" accesskey="x">サイトマップ</a></li>            </ul>
-        </div>
-
-    </div>
-
-    <!-- BREADCRUMBS -->
-            <div class="breadcrumbs">
-                                        <div class="trace"><span class="bchead">トレース:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php?id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA"  class="breadcrumbs" title="guide:febuildergba:3点のdiffによるバグの自動検出">3点のdiffによるバグの自動検出</a></bdi></span></div>
-                    </div>
-    
-
-
-    <hr class="a11y" />
-</div></div><!-- /header -->
-
-        <div class="wrapper group">
-
-                            <!-- ********** ASIDE ********** -->
-                <div id="dokuwiki__aside"><div class="pad aside include group">
-                    <h3 class="toggle">サイドバー</h3>
-                    <div class="content"><div class="group">
-                                                                        <ul>
-<li class="level1"><div class="li"> <a href="/doku.php?id=qa" class="wikilink1" title="qa">QA</a></div>
-</li>
-<li class="level1"><div class="li"> <a href="/doku.php?id=guide:start" class="wikilink1" title="guide:start">GUIDE</a></div>
-</li>
-<li class="level1"><div class="li"> <a href="/doku.php?id=dictionary:start" class="wikilink1" title="dictionary:start">DICTIONARY</a></div>
-</li>
-<li class="level1"><div class="li"> <a href="/doku.php?id=column:start" class="wikilink1" title="column:start">COLUMN</a></div>
-</li>
-<li class="level1"><div class="li"> <a href="/doku.php?id=data:start" class="wikilink1" title="data:start">DATA</a></div>
-</li>
-</ul>
-<hr />
-
-<p>
-<a href="/doku.php?id=en:start" class="wikilink1" title="en:start">English</a><br />
-<a href="/doku.php?id=zh:start" class="wikilink1" title="zh:start">中文</a>
-</p>
-
-<p>
-<span class="wrap_hi wrap_center wrap_centeralign ">最新の10件</span>
-</p>
-                                            </div></div>
-                </div></div><!-- /aside -->
-            
-            <!-- ********** CONTENT ********** -->
-            <div id="dokuwiki__content"><div class="pad group">
-                
-                <div class="pageId"><span>guide:febuildergba:3点のdiffによるバグの自動検出</span></div>
-
-                <div class="page group">
-                                                            <!-- wikipage start -->
-                    <!-- TOC START -->
-<div id="dw__toc" class="dw__toc">
+<!-- /header -->
+<div class="wrapper group">
+<!-- ********** ASIDE ********** -->
+<!-- /aside -->
+<!-- ********** CONTENT ********** -->
+<div id="dokuwiki__content"><div class="pad group">
+<div class="pageId"><span>guide:febuildergba:3点のdiffによるバグの自動検出</span></div>
+<div class="page group">
+<!-- wikipage start -->
+<!-- TOC START -->
+<div class="dw__toc" id="dw__toc">
 <h3 class="toggle">目次</h3>
 <div>
-
 <ul class="toc">
 <li class="level1"><div class="li"><a href="#video_how_to_use_diff_debug_tool">Video (How to use Diff debug tool</a></div></li>
 <li class="level1"><div class="li"><a href="#点のdiffによるバグの自動検出">3点のDIFFによるバグの自動検出</a></div>
@@ -139,19 +49,15 @@
 </div>
 </div>
 <!-- TOC END -->
-
 <h1 class="sectionedit1" id="video_how_to_use_diff_debug_tool">Video (How to use Diff debug tool</h1>
 <div class="level1">
-
 <p>
-<a href="https://www.youtube.com/watch?v=ZQ1cX5RbTbY" class="urlextern" title="https://www.youtube.com/watch?v=ZQ1cX5RbTbY" rel="nofollow">https://www.youtube.com/watch?v=ZQ1cX5RbTbY</a>
+<a class="urlextern" href="https://www.youtube.com/watch?v=ZQ1cX5RbTbY" rel="nofollow" title="https://www.youtube.com/watch?v=ZQ1cX5RbTbY">https://www.youtube.com/watch?v=ZQ1cX5RbTbY</a>
 </p>
-
 </div>
-<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1620069131" /><input type="hidden" name="summary" value="[Video (How to use Diff debug tool] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="video_how_to_use_diff_debug_tool" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1-94" /><input type="hidden" name="id" value="guide:febuildergba:3点のdiffによるバグの自動検出" /><button type="submit" title="Video (How to use Diff debug tool">編集</button></div></form></div>
+<div class="secedit editbutton_section editbutton_1"></div>
 <h1 class="sectionedit2" id="点のdiffによるバグの自動検出">3点のDIFFによるバグの自動検出</h1>
 <div class="level1">
-
 <p>
 <br/>
 ちゃんとバックアップを取ってきた方のための機能です。<br/>
@@ -161,105 +67,87 @@
 FEBuilderGBAは、ROMを守るためにいろいろな手段を使っていますが、それでも発生しないとはいい切れません。<br/>
 この機能は、そのバグの原因を、バックアップデータとのDIFFを取ることにより、自動的に検出する機能です。<br/>
 <br/>
-
 </p>
-
 <p>
-<a href="/lib/exe/fetch.php?tok=747158&amp;media=https%3A%2F%2Fi.imgur.com%2FPGYPMy7.jpg" class="media" title="https://i.imgur.com/PGYPMy7.jpg"><img src="/lib/exe/fetch.php?tok=747158&amp;media=https%3A%2F%2Fi.imgur.com%2FPGYPMy7.jpg" class="mediacenter" title="i.imgur.com_pgypmy7.jpg" alt="i.imgur.com_pgypmy7.jpg" /></a>
+<a class="media" href="https://i.imgur.com/PGYPMy7.jpg" title="https://i.imgur.com/PGYPMy7.jpg"><img alt="i.imgur.com_pgypmy7.jpg" class="mediacenter" src="https://i.imgur.com/PGYPMy7.jpg" title="i.imgur.com_pgypmy7.jpg"/></a>
 </p>
-
 <p>
 <br/>
 <br/>
-
 </p>
-
 </div>
-<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1620069131" /><input type="hidden" name="summary" value="[3点のDIFFによるバグの自動検出] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="点のdiffによるバグの自動検出" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="95-841" /><input type="hidden" name="id" value="guide:febuildergba:3点のdiffによるバグの自動検出" /><button type="submit" title="3点のDIFFによるバグの自動検出">編集</button></div></form></div>
+<div class="secedit editbutton_section editbutton_2"></div>
 <h2 class="sectionedit3" id="エミュレータでバグが再現するところまで進める">エミュレータでバグが再現するところまで進める</h2>
 <div class="level2">
-
 <p>
-<a href="/lib/exe/fetch.php?tok=747158&amp;media=https%3A%2F%2Fi.imgur.com%2FPGYPMy7.jpg" class="media" title="https://i.imgur.com/PGYPMy7.jpg"><img src="/lib/exe/fetch.php?tok=747158&amp;media=https%3A%2F%2Fi.imgur.com%2FPGYPMy7.jpg" class="mediacenter" title="i.imgur.com_pgypmy7.jpg" alt="i.imgur.com_pgypmy7.jpg" /></a> <br/>
+<a class="media" href="https://i.imgur.com/PGYPMy7.jpg" title="https://i.imgur.com/PGYPMy7.jpg"><img alt="i.imgur.com_pgypmy7.jpg" class="mediacenter" src="https://i.imgur.com/PGYPMy7.jpg" title="i.imgur.com_pgypmy7.jpg"/></a> <br/>
 まずは、バグが再現するところまで、エミュレータでゲームを進めてください。<br/>
 バグが再現する所まで来たら、このツールの出番です。<br/>
 (このツールを起動する前に、書き込んでいないデータがあったら保存してください。)<br/>
 <br/>
-
 </p>
-
 </div>
-<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1620069131" /><input type="hidden" name="summary" value="[エミュレータでバグが再現するところまで進める] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="エミュレータでバグが再現するところまで進める" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="842-1274" /><input type="hidden" name="id" value="guide:febuildergba:3点のdiffによるバグの自動検出" /><button type="submit" title="エミュレータでバグが再現するところまで進める">編集</button></div></form></div>
+<div class="secedit editbutton_section editbutton_3"></div>
 <h2 class="sectionedit4" id="比較デバッグツールの起動">比較デバッグツールの起動</h2>
 <div class="level2">
-
 <p>
-<a href="/lib/exe/fetch.php?tok=873677&amp;media=https%3A%2F%2Fi.imgur.com%2Fe6HNTl2.jpg" class="media" title="https://i.imgur.com/e6HNTl2.jpg"><img src="/lib/exe/fetch.php?tok=873677&amp;media=https%3A%2F%2Fi.imgur.com%2Fe6HNTl2.jpg" class="mediacenter" title="i.imgur.com_e6hntl2.jpg" alt="i.imgur.com_e6hntl2.jpg" /></a> <br/>
-メニューから、ツール→比較デバッグツールを選択してください。<br />
+<a class="media" href="https://i.imgur.com/e6HNTl2.jpg" title="https://i.imgur.com/e6HNTl2.jpg"><img alt="i.imgur.com_e6hntl2.jpg" class="mediacenter" src="https://i.imgur.com/e6HNTl2.jpg" title="i.imgur.com_e6hntl2.jpg"/></a> <br/>
+メニューから、ツール→比較デバッグツールを選択してください。<br/>
 <br/>
-
 </p>
-
 </div>
-<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1620069131" /><input type="hidden" name="summary" value="[比較デバッグツールの起動] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="比較デバッグツールの起動" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1275-1458" /><input type="hidden" name="id" value="guide:febuildergba:3点のdiffによるバグの自動検出" /><button type="submit" title="比較デバッグツールの起動">編集</button></div></form></div>
+<div class="secedit editbutton_section editbutton_4"></div>
 <h2 class="sectionedit5" id="画面説明">画面説明</h2>
 <div class="level2">
-
 <p>
-<a href="/lib/exe/fetch.php?tok=d0aa6d&amp;media=https%3A%2F%2Fi.imgur.com%2F2QhvUMl.jpg" class="media" title="https://i.imgur.com/2QhvUMl.jpg"><img src="/lib/exe/fetch.php?tok=d0aa6d&amp;media=https%3A%2F%2Fi.imgur.com%2F2QhvUMl.jpg" class="mediacenter" title="i.imgur.com_2qhvuml.jpg" alt="i.imgur.com_2qhvuml.jpg" /></a> <br/>
+<a class="media" href="https://i.imgur.com/2QhvUMl.jpg" title="https://i.imgur.com/2QhvUMl.jpg"><img alt="i.imgur.com_2qhvuml.jpg" class="mediacenter" src="https://i.imgur.com/2QhvUMl.jpg" title="i.imgur.com_2qhvuml.jpg"/></a> <br/>
 このツールを起動すると、バックアップデータが日付順に表示されます。<br/>
 リストの上のデータが新しく、下に行くほど古いデータです。<br/>
 リストをダブルクリックすると、エミュレータが自動的に起動します。<br/>
 7z圧縮やupsなども自動的にgba romへ変更されエミュレータが起動します。<br/>
 <br/>
-
 </p>
-
 </div>
-<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1620069131" /><input type="hidden" name="summary" value="[画面説明] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="画面説明" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1459-1915" /><input type="hidden" name="id" value="guide:febuildergba:3点のdiffによるバグの自動検出" /><button type="submit" title="画面説明">編集</button></div></form></div>
+<div class="secedit editbutton_section editbutton_5"></div>
 <h2 class="sectionedit6" id="最後に正しく動作したromを探す">最後に正しく動作したROMを探す</h2>
 <div class="level2">
-
 <p>
 バックアップのリストから、「バグが発生しない最も日付が新しいバックアップ」を探してください。<br/>
-
 </p>
-
 </div>
-<div class='secedit editbutton_section editbutton_6'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1620069131" /><input type="hidden" name="summary" value="[最後に正しく動作したROMを探す] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="最後に正しく動作したromを探す" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1916-2113" /><input type="hidden" name="id" value="guide:febuildergba:3点のdiffによるバグの自動検出" /><button type="submit" title="最後に正しく動作したROMを探す">編集</button></div></form></div>
+<div class="secedit editbutton_section editbutton_6"></div>
 <h3 class="sectionedit7" id="実際にやってみる">実際にやってみる</h3>
 <div class="level3">
-
 <p>
 今回は、テストなので3つしかデータを用意していません。<br/>
 実際にはたくさんのデータが並んでいるものと思います。<br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=18118e&amp;media=https%3A%2F%2Fi.imgur.com%2FEFTRkm6.jpg" class="media" title="https://i.imgur.com/EFTRkm6.jpg"><img src="/lib/exe/fetch.php?tok=18118e&amp;media=https%3A%2F%2Fi.imgur.com%2FEFTRkm6.jpg" class="mediacenter" title="i.imgur.com_eftrkm6.jpg" alt="i.imgur.com_eftrkm6.jpg" /></a> <br/>
+<a class="media" href="https://i.imgur.com/EFTRkm6.jpg" title="https://i.imgur.com/EFTRkm6.jpg"><img alt="i.imgur.com_eftrkm6.jpg" class="mediacenter" src="https://i.imgur.com/EFTRkm6.jpg" title="i.imgur.com_eftrkm6.jpg"/></a> <br/>
 とりあえず、リストの一番下にある一番古いバックアップを見てみましょう。<br/>
 リストの項目をダブルクリックすると、エミュレータが起動します。<br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=46ed80&amp;media=https%3A%2F%2Fi.imgur.com%2FVLWGWt0.jpg" class="media" title="https://i.imgur.com/VLWGWt0.jpg"><img src="/lib/exe/fetch.php?tok=46ed80&amp;media=https%3A%2F%2Fi.imgur.com%2FVLWGWt0.jpg" class="mediacenter" title="i.imgur.com_vlwgwt0.jpg" alt="i.imgur.com_vlwgwt0.jpg" /></a> <br/>
+<a class="media" href="https://i.imgur.com/VLWGWt0.jpg" title="https://i.imgur.com/VLWGWt0.jpg"><img alt="i.imgur.com_vlwgwt0.jpg" class="mediacenter" src="https://i.imgur.com/VLWGWt0.jpg" title="i.imgur.com_vlwgwt0.jpg"/></a> <br/>
 普通に動作しました。<br/>
 これは正しいデータのようです。 <br/>
 エミュレータを閉じて、次のデータを見てみましょう。<br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=ab7e91&amp;media=https%3A%2F%2Fi.imgur.com%2FXbUPwzZ.jpg" class="media" title="https://i.imgur.com/XbUPwzZ.jpg"><img src="/lib/exe/fetch.php?tok=ab7e91&amp;media=https%3A%2F%2Fi.imgur.com%2FXbUPwzZ.jpg" class="mediacenter" title="i.imgur.com_xbupwzz.jpg" alt="i.imgur.com_xbupwzz.jpg" /></a> <br/>
+<a class="media" href="https://i.imgur.com/XbUPwzZ.jpg" title="https://i.imgur.com/XbUPwzZ.jpg"><img alt="i.imgur.com_xbupwzz.jpg" class="mediacenter" src="https://i.imgur.com/XbUPwzZ.jpg" title="i.imgur.com_xbupwzz.jpg"/></a> <br/>
 真ん中にあるデータを見てみましょう。<br/>
 同様に、リストの項目をダブルクリックしてエミュレータを起動させてください。<br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=9d8d77&amp;media=https%3A%2F%2Fi.imgur.com%2Fcb9XbcE.jpg" class="media" title="https://i.imgur.com/cb9XbcE.jpg"><img src="/lib/exe/fetch.php?tok=9d8d77&amp;media=https%3A%2F%2Fi.imgur.com%2Fcb9XbcE.jpg" class="mediacenter" title="i.imgur.com_cb9xbce.jpg" alt="i.imgur.com_cb9xbce.jpg" /></a> <br/>
+<a class="media" href="https://i.imgur.com/cb9XbcE.jpg" title="https://i.imgur.com/cb9XbcE.jpg"><img alt="i.imgur.com_cb9xbce.jpg" class="mediacenter" src="https://i.imgur.com/cb9XbcE.jpg" title="i.imgur.com_cb9xbce.jpg"/></a> <br/>
 これも普通に動作しました。<br/>
 これは正しいデータのようです。 <br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=b0943d&amp;media=https%3A%2F%2Fi.imgur.com%2Fi307yPF.jpg" class="media" title="https://i.imgur.com/i307yPF.jpg"><img src="/lib/exe/fetch.php?tok=b0943d&amp;media=https%3A%2F%2Fi.imgur.com%2Fi307yPF.jpg" class="mediacenter" title="i.imgur.com_i307ypf.jpg" alt="i.imgur.com_i307ypf.jpg" /></a> <br/>
+<a class="media" href="https://i.imgur.com/i307yPF.jpg" title="https://i.imgur.com/i307yPF.jpg"><img alt="i.imgur.com_i307ypf.jpg" class="mediacenter" src="https://i.imgur.com/i307yPF.jpg" title="i.imgur.com_i307ypf.jpg"/></a> <br/>
 では、リストの一番上にあるバックアップはどうでしょうか？<br/>
 リストの項目をダブルクリックしてエミュレータを起動させてください。<br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=048f20&amp;media=https%3A%2F%2Fi.imgur.com%2FJWFnDWg.jpg" class="media" title="https://i.imgur.com/JWFnDWg.jpg"><img src="/lib/exe/fetch.php?tok=048f20&amp;media=https%3A%2F%2Fi.imgur.com%2FJWFnDWg.jpg" class="mediacenter" title="i.imgur.com_jwfndwg.jpg" alt="i.imgur.com_jwfndwg.jpg" /></a> <br/>
+<a class="media" href="https://i.imgur.com/JWFnDWg.jpg" title="https://i.imgur.com/JWFnDWg.jpg"><img alt="i.imgur.com_jwfndwg.jpg" class="mediacenter" src="https://i.imgur.com/JWFnDWg.jpg" title="i.imgur.com_jwfndwg.jpg"/></a> <br/>
 バグが再現しました。<br/>
 このデータは壊れているようです。<br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=244497&amp;media=https%3A%2F%2Fi.imgur.com%2FktDH4IY.jpg" class="media" title="https://i.imgur.com/ktDH4IY.jpg"><img src="/lib/exe/fetch.php?tok=244497&amp;media=https%3A%2F%2Fi.imgur.com%2FktDH4IY.jpg" class="mediacenter" title="i.imgur.com_ktdh4iy.jpg" alt="i.imgur.com_ktdh4iy.jpg" /></a> <br/>
+<a class="media" href="https://i.imgur.com/ktDH4IY.jpg" title="https://i.imgur.com/ktDH4IY.jpg"><img alt="i.imgur.com_ktdh4iy.jpg" class="mediacenter" src="https://i.imgur.com/ktDH4IY.jpg" title="i.imgur.com_ktdh4iy.jpg"/></a> <br/>
 では、正しく動く、最新のバックアップデータはどれですか？<br/>
 それは、真ん中のデータです。<br/>
 <br/>
@@ -274,17 +162,14 @@ FEBuilderGBAは、ROMを守るためにいろいろな手段を使っていま�
 正しく動く最新のデータは、2番目のデータです。<br/>
 これは重要なポイントです。<br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=72ca12&amp;media=https%3A%2F%2Fi.imgur.com%2FtHtzvji.jpg" class="media" title="https://i.imgur.com/tHtzvji.jpg"><img src="/lib/exe/fetch.php?tok=72ca12&amp;media=https%3A%2F%2Fi.imgur.com%2FtHtzvji.jpg" class="mediacenter" title="i.imgur.com_thtzvji.jpg" alt="i.imgur.com_thtzvji.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/tHtzvji.jpg" title="https://i.imgur.com/tHtzvji.jpg"><img alt="i.imgur.com_thtzvji.jpg" class="mediacenter" src="https://i.imgur.com/tHtzvji.jpg" title="i.imgur.com_thtzvji.jpg"/></a><br/>
 正しく動く最新のデータを見つけたら、右下にあるボタンを押して、3点DIFFを取得します。<br/>
 <br/>
-
 </p>
-
 </div>
-<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1620069131" /><input type="hidden" name="summary" value="[実際にやってみる] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="実際にやってみる" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2114-4466" /><input type="hidden" name="id" value="guide:febuildergba:3点のdiffによるバグの自動検出" /><button type="submit" title="実際にやってみる">編集</button></div></form></div>
+<div class="secedit editbutton_section editbutton_7"></div>
 <h2 class="sectionedit8" id="正しく動く最新のデータの重要性について">正しく動く最新のデータの重要性について</h2>
 <div class="level2">
-
 <p>
 正しく動く最新のデータはとても重要です。<br/>
 <br/>
@@ -322,20 +207,17 @@ OK ROMにはあって、 NG ROMにないもの。<br/>
 この3つの条件を満たすデータを、3点DIFFを使い求めます。<br/>
 ボタンを押してください。<br/>
 <br/>
-
 </p>
-
 </div>
-<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1620069131" /><input type="hidden" name="summary" value="[正しく動く最新のデータの重要性について] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="正しく動く最新のデータの重要性について" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="4467-6754" /><input type="hidden" name="id" value="guide:febuildergba:3点のdiffによるバグの自動検出" /><button type="submit" title="正しく動く最新のデータの重要性について">編集</button></div></form></div>
+<div class="secedit editbutton_section editbutton_8"></div>
 <h2 class="sectionedit9" id="比較方法選択">比較方法選択</h2>
 <div class="level2">
-
 <p>
-<a href="/lib/exe/fetch.php?tok=d2d9e7&amp;media=https%3A%2F%2Fi.imgur.com%2FHnUzcYl.jpg" class="media" title="https://i.imgur.com/HnUzcYl.jpg"><img src="/lib/exe/fetch.php?tok=d2d9e7&amp;media=https%3A%2F%2Fi.imgur.com%2FHnUzcYl.jpg" class="mediacenter" title="i.imgur.com_hnuzcyl.jpg" alt="i.imgur.com_hnuzcyl.jpg" /></a> <br/>
+<a class="media" href="https://i.imgur.com/HnUzcYl.jpg" title="https://i.imgur.com/HnUzcYl.jpg"><img alt="i.imgur.com_hnuzcyl.jpg" class="mediacenter" src="https://i.imgur.com/HnUzcYl.jpg" title="i.imgur.com_hnuzcyl.jpg"/></a> <br/>
 比較方法が出てきますが、一番上の方法を選びます。(これが先ほど説明した条件です)<br/>
 そうすると、計算が行われ、3点DIFFの結果がリストに表示されます。<br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=2c5f58&amp;media=https%3A%2F%2Fi.imgur.com%2FUxGB3MA.jpg" class="media" title="https://i.imgur.com/UxGB3MA.jpg"><img src="/lib/exe/fetch.php?tok=2c5f58&amp;media=https%3A%2F%2Fi.imgur.com%2FUxGB3MA.jpg" class="mediacenter" title="i.imgur.com_uxgb3ma.jpg" alt="i.imgur.com_uxgb3ma.jpg" /></a> <br/>
+<a class="media" href="https://i.imgur.com/UxGB3MA.jpg" title="https://i.imgur.com/UxGB3MA.jpg"><img alt="i.imgur.com_uxgb3ma.jpg" class="mediacenter" src="https://i.imgur.com/UxGB3MA.jpg" title="i.imgur.com_uxgb3ma.jpg"/></a> <br/>
 <br/>
 この中にバグを発生させているデータがあります。<br/>
 見つけ出しましょう。<br/>
@@ -347,7 +229,7 @@ OK ROMにはあって、 NG ROMにないもの。<br/>
 3キーを押すと、CURRENTのデータを書き込みます。<br/>
 0キーを押すと、CURRENTのデータを書き込みマークを解除します。<br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=a1e873&amp;media=https%3A%2F%2Fi.imgur.com%2Fhu9XD8i.jpg" class="media" title="https://i.imgur.com/hu9XD8i.jpg"><img src="/lib/exe/fetch.php?tok=a1e873&amp;media=https%3A%2F%2Fi.imgur.com%2Fhu9XD8i.jpg" class="mediacenter" title="i.imgur.com_hu9xd8i.jpg" alt="i.imgur.com_hu9xd8i.jpg" /></a> <br/>
+<a class="media" href="https://i.imgur.com/hu9XD8i.jpg" title="https://i.imgur.com/hu9XD8i.jpg"><img alt="i.imgur.com_hu9xd8i.jpg" class="mediacenter" src="https://i.imgur.com/hu9XD8i.jpg" title="i.imgur.com_hu9xd8i.jpg"/></a> <br/>
 基本的に、1キーを押してデータを書き込んでください。<br/>
 データを書き込んだから、F5キーを押してエミュレータを起動してください。<br/>
 バグは解決されましたか？<br/>
@@ -360,7 +242,7 @@ OK ROMにはあって、 NG ROMにないもの。<br/>
 <br/>
 こうやって、差分をマージしていきましょう。<br/>
 <br/>
-<a href="/lib/exe/fetch.php?tok=9685a7&amp;media=https%3A%2F%2Fi.imgur.com%2FDZmH9nF.jpg" class="media" title="https://i.imgur.com/DZmH9nF.jpg"><img src="/lib/exe/fetch.php?tok=9685a7&amp;media=https%3A%2F%2Fi.imgur.com%2FDZmH9nF.jpg" class="mediacenter" title="i.imgur.com_dzmh9nf.jpg" alt="i.imgur.com_dzmh9nf.jpg" /></a> <br/>
+<a class="media" href="https://i.imgur.com/DZmH9nF.jpg" title="https://i.imgur.com/DZmH9nF.jpg"><img alt="i.imgur.com_dzmh9nf.jpg" class="mediacenter" src="https://i.imgur.com/DZmH9nF.jpg" title="i.imgur.com_dzmh9nf.jpg"/></a> <br/>
 もし、バグが解決されたとしたら、それがバグを引き起こしているデータです。<br/>
 そのデータのアドレスと、書き込まれた内容から、原因を推測しましょう。<br/>
 <br/>
@@ -377,21 +259,18 @@ OK ROMにはあって、 NG ROMにないもの。<br/>
 <br/>
 今回は、マップ設定で、誤ったマップオブジェクトを指定していましました。<br/>
 本来0x01 を指定しないといけないのに、 0x02を指定していたため、画面が壊れてしまいました。<br/>
-<a href="/lib/exe/fetch.php?tok=c5244e&amp;media=https%3A%2F%2Fi.imgur.com%2FRxFJoU8.jpg" class="media" title="https://i.imgur.com/RxFJoU8.jpg"><img src="/lib/exe/fetch.php?tok=c5244e&amp;media=https%3A%2F%2Fi.imgur.com%2FRxFJoU8.jpg" class="mediacenter" title="i.imgur.com_rxfjou8.jpg" alt="i.imgur.com_rxfjou8.jpg" /></a> <br/>
+<a class="media" href="https://i.imgur.com/RxFJoU8.jpg" title="https://i.imgur.com/RxFJoU8.jpg"><img alt="i.imgur.com_rxfjou8.jpg" class="mediacenter" src="https://i.imgur.com/RxFJoU8.jpg" title="i.imgur.com_rxfjou8.jpg"/></a> <br/>
 <br/>
 <br/>
 この方法を利用すると、大抵の不可解なバグを1時間ぐらいで修正することが出来ます。<br/>
 どうしても、原因がわからないバグが発生したら、この方法でバグデータを探してみるといいかもしれません。<br/>
-
 </p>
-
 </div>
-<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1620069131" /><input type="hidden" name="summary" value="[比較方法選択] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="比較方法選択" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="6755-10066" /><input type="hidden" name="id" value="guide:febuildergba:3点のdiffによるバグの自動検出" /><button type="submit" title="比較方法選択">編集</button></div></form></div>
+<div class="secedit editbutton_section editbutton_9"></div>
 <h2 class="sectionedit10" id="補助機能">補助機能</h2>
 <div class="level2">
-
 <p>
-<a href="/lib/exe/fetch.php?tok=2c5f58&amp;media=https%3A%2F%2Fi.imgur.com%2FUxGB3MA.jpg" class="media" title="https://i.imgur.com/UxGB3MA.jpg"><img src="/lib/exe/fetch.php?tok=2c5f58&amp;media=https%3A%2F%2Fi.imgur.com%2FUxGB3MA.jpg" class="mediacenter" title="i.imgur.com_uxgb3ma.jpg" alt="i.imgur.com_uxgb3ma.jpg" /></a> <br/>
+<a class="media" href="https://i.imgur.com/UxGB3MA.jpg" title="https://i.imgur.com/UxGB3MA.jpg"><img alt="i.imgur.com_uxgb3ma.jpg" class="mediacenter" src="https://i.imgur.com/UxGB3MA.jpg" title="i.imgur.com_uxgb3ma.jpg"/></a> <br/>
 データのマージをしていて、訳がわからない状態になったら、右下のボタンを押してください。<br/>
 「変更をすべてキャンセル」します。<br/>
 マージを開始する直前のデータにデータをすべて巻き戻します。<br/>
@@ -402,62 +281,29 @@ OK ROMにはあって、 NG ROMにないもの。<br/>
 データを書き込んで次のデータへフォーカスを自動的に移動します。<br/>
 キーをずっと押しっぱなしにすると、どんどん書き込みを続けます。<br/>
 半分ぐらいマージしてから動作を確認するという二分探索のようなことをしてもいいかもしれません。<br/>
-
 </p>
-
 </div>
-<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1620069131" /><input type="hidden" name="summary" value="[補助機能] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="補助機能" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="10067-10995" /><input type="hidden" name="id" value="guide:febuildergba:3点のdiffによるバグの自動検出" /><button type="submit" title="補助機能">編集</button></div></form></div>
+<div class="secedit editbutton_section editbutton_10"></div>
 <h2 class="sectionedit11" id="元ネタ">元ネタ</h2>
 <div class="level2">
-
 <p>
 この機能は、私が昔書いた、バイナリ比較でバグ修正を簡易化したものです。<br/>
 バイナリ比較ツールなどで2点マージでは面倒なので、3点マージにして、変更点を絞り込み、楽にマージできるようになっています。<br/>
 <br/>
-<a href="http://ngmansion.xyz/wiki/hackfe/index.php?cmd=read&amp;page=%E8%A7%A3%E8%AA%AC%2F%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3" class="urlextern" title="http://ngmansion.xyz/wiki/hackfe/index.php?cmd=read&amp;page=%E8%A7%A3%E8%AA%AC%2F%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3" rel="nofollow">http://ngmansion.xyz/wiki/hackfe/index.php?cmd=read&amp;page=%E8%A7%A3%E8%AA%AC%2F%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3</a>
+<a class="urlextern" href="http://ngmansion.xyz/wiki/hackfe/index.php?cmd=read&amp;page=%E8%A7%A3%E8%AA%AC%2F%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3" rel="nofollow" title="http://ngmansion.xyz/wiki/hackfe/index.php?cmd=read&amp;page=%E8%A7%A3%E8%AA%AC%2F%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3">http://ngmansion.xyz/wiki/hackfe/index.php?cmd=read&amp;page=%E8%A7%A3%E8%AA%AC%2F%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3</a>
 </p>
-
 </div>
-<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1620069131" /><input type="hidden" name="summary" value="[元ネタ] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="元ネタ" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="10996-" /><input type="hidden" name="id" value="guide:febuildergba:3点のdiffによるバグの自動検出" /><button type="submit" title="元ネタ">編集</button></div></form></div>
-                    <!-- wikipage stop -->
-                                    </div>
-
-                <div class="docInfo"><bdi>guide/febuildergba/3点のdiffによるバグの自動検出.txt</bdi> · 最終更新: 2021/05/04 04:12 by <bdi>133.218.41.139</bdi></div>
-
-                            </div></div><!-- /content -->
-
-            <hr class="a11y" />
-
-            <!-- PAGE ACTIONS -->
-            <div id="dokuwiki__pagetools">
-                <h3 class="a11y">ページ用ツール</h3>
-                <div class="tools">
-                    <ul>
-                        <li class="edit"><a href="/doku.php?id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA&amp;do=edit" title="文書の編集 [e]" rel="nofollow" accesskey="e"><span>文書の編集</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="/doku.php?id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA&amp;do=revisions" title="以前のリビジョン [o]" rel="nofollow" accesskey="o"><span>以前のリビジョン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="/doku.php?id=guide:febuildergba:3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA&amp;do=backlink" title="バックリンク" rel="nofollow"><span>バックリンク</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="top"><a href="#dokuwiki__top" title="文書の先頭へ [t]" rel="nofollow" accesskey="t"><span>文書の先頭へ</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
-                </div>
-            </div>
-        </div><!-- /wrapper -->
-
-        
+<div class="secedit editbutton_section editbutton_11"></div>
+<!-- wikipage stop -->
+</div>
+<div class="docInfo"><bdi>guide/febuildergba/3点のdiffによるバグの自動検出.txt</bdi> · 最終更新: 2021/05/04 04:12 by <bdi>133.218.41.139</bdi></div>
+</div></div><!-- /content -->
+<hr class="a11y"/>
+<!-- PAGE ACTIONS -->
+</div><!-- /wrapper -->
 <!-- ********** FOOTER ********** -->
-<div id="dokuwiki__footer"><div class="pad">
-    
-    <div class="buttons">
-                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
-            src="/lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
-        <a href="https://php.net" title="Powered by PHP" ><img
-            src="/lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
-        <a href="//validator.w3.org/check/referer" title="Valid HTML5" ><img
-            src="/lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
-        <a href="//jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
-            src="/lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
-        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
-            src="/lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
-    </div>
-</div></div><!-- /footer -->
-
-    </div></div><!-- /site -->
-
-    <div class="no"><img src="/lib/exe/indexer.php?id=guide%3Afebuildergba%3A3%E7%82%B9%E3%81%AEdiff%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%82%B0%E3%81%AE%E8%87%AA%E5%8B%95%E6%A4%9C%E5%87%BA&amp;1695572120" width="2" height="1" alt="" /></div>
-    <div id="screen__mode" class="no"></div></body>
+<!-- /footer -->
+</div></div><!-- /site -->
+<div class="no"><img alt="" height="1" src="../../..//lib/exe/indexer.php?id=guide/febuildergba/3点のdiffによるバグの自動検出&amp;1695572120" width="2"/></div>
+<div class="no" id="screen__mode"></div></body>
 </html>

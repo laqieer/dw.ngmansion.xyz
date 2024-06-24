@@ -1,360 +1,191 @@
 <!DOCTYPE html>
-<html lang="ja" dir="ltr" class="no-js">
+
+<html class="no-js" dir="ltr" lang="ja">
 <head>
-    <meta charset="utf-8" />
-    <title>guide:guide:febuildergba:dpcm_m4a_hq_mixer [FE改造wiki]</title>
-    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
-    <meta name="generator" content="DokuWiki"/>
-<meta name="theme-color" content="#008800"/>
-<meta name="robots" content="index,follow"/>
-<meta name="keywords" content="guide,guide,febuildergba,dpcm_m4a_hq_mixer"/>
-<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
-<link rel="start" href="/"/>
-<link rel="contents" href="/doku.php?id=guide:guide:febuildergba:dpcm_m4a_hq_mixer&amp;do=index" title="サイトマップ"/>
-<link rel="manifest" href="/lib/exe/manifest.php"/>
-<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
-<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide:guide:febuildergba"/>
-<link rel="edit" title="文書の編集" href="/doku.php?id=guide:guide:febuildergba:dpcm_m4a_hq_mixer&amp;do=edit"/>
-<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:guide:febuildergba:dpcm_m4a_hq_mixer"/>
-<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:guide:febuildergba:dpcm_m4a_hq_mixer"/>
-<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:guide:febuildergba:dpcm_m4a_hq_mixer"/>
-<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<meta charset="utf-8"/>
+<title>guide:guide:febuildergba:dpcm_m4a_hq_mixer [FE改造wiki]</title>
+<meta content="DokuWiki" name="generator"/>
+<meta content="#008800" name="theme-color"/>
+<meta content="index,follow" name="robots"/>
+<meta content="guide,guide,febuildergba,dpcm_m4a_hq_mixer" name="keywords"/>
 <!--[if gte IE 9]><!-->
-<script type="text/javascript">/*<![CDATA[*/var NS='guide:guide:febuildergba';var JSINFO = {"toc":{"initial_state":1},"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:guide:febuildergba:dpcm_m4a_hq_mixer","namespace":"guide:guide:febuildergba","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
-/*!]]>*/</script>
-<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
-<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
 <!--<![endif]-->
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="shortcut icon" href="/lib/tpl/dokuwiki/images/favicon.ico" />
-<link rel="apple-touch-icon" href="/lib/tpl/dokuwiki/images/apple-touch-icon.png" />
-    </head>
-
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+</head>
 <body>
-    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki    showSidebar hasSidebar">
-
-        
+<div id="dokuwiki__site"><div class="site dokuwiki mode_show tpl_dokuwiki showSidebar hasSidebar" id="dokuwiki__top">
 <!-- ********** HEADER ********** -->
-<div id="dokuwiki__header"><div class="pad group">
-
-    
-    <div class="headings group">
-        <ul class="a11y skip">
-            <li><a href="#dokuwiki__content">内容へ移動</a></li>
-        </ul>
-
-        <h1><a href="/doku.php?id=start"  accesskey="h" title="[H]"><img src="/lib/tpl/dokuwiki/images/logo.png" width="64" height="64" alt="" /> <span>FE改造wiki</span></a></h1>
-            </div>
-
-    <div class="tools group">
-        <!-- USER TOOLS -->
-                    <div id="dokuwiki__usertools">
-                <h3 class="a11y">ユーザ用ツール</h3>
-                <ul>
-                    <li class="action register"><a href="/doku.php?id=guide:guide:febuildergba:dpcm_m4a_hq_mixer&amp;do=register" title="ユーザー登録" rel="nofollow"><span>ユーザー登録</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4z"/></svg></a></li><li class="action login"><a href="/doku.php?id=guide:guide:febuildergba:dpcm_m4a_hq_mixer&amp;do=login&amp;sectok=" title="ログイン" rel="nofollow"><span>ログイン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></a></li>                </ul>
-            </div>
-        
-        <!-- SITE TOOLS -->
-        <div id="dokuwiki__sitetools">
-            <h3 class="a11y">サイト用ツール</h3>
-            <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="guide:guide:febuildergba:dpcm_m4a_hq_mixer" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="検索" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="検索">検索</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
-                <form action="/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="guide:guide:febuildergba:dpcm_m4a_hq_mixer" /><select name="do" class="edit quickselect" title="ツール"><option value="">ツール</option><optgroup label="ページ用ツール"><option value="edit">文書の編集</option><option value="revisions">以前のリビジョン</option><option value="backlink">バックリンク</option></optgroup><optgroup label="サイト用ツール"><option value="recent">最近の変更</option><option value="media">メディアマネージャー</option><option value="index">サイトマップ</option></optgroup><optgroup label="ユーザ用ツール"><option value="register">ユーザー登録</option><option value="login">ログイン</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
-            <ul>
-                <li class="action recent"><a href="/doku.php?id=guide:guide:febuildergba:dpcm_m4a_hq_mixer&amp;do=recent" title="最近の変更 [r]" rel="nofollow" accesskey="r">最近の変更</a></li><li class="action media"><a href="/doku.php?id=guide:guide:febuildergba:dpcm_m4a_hq_mixer&amp;do=media&amp;ns=guide%3Aguide%3Afebuildergba" title="メディアマネージャー" rel="nofollow">メディアマネージャー</a></li><li class="action index"><a href="/doku.php?id=guide:guide:febuildergba:dpcm_m4a_hq_mixer&amp;do=index" title="サイトマップ [x]" rel="nofollow" accesskey="x">サイトマップ</a></li>            </ul>
-        </div>
-
-    </div>
-
-    <!-- BREADCRUMBS -->
-            <div class="breadcrumbs">
-                                        <div class="trace"><span class="bchead">トレース:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php?id=guide:guide:febuildergba:dpcm_m4a_hq_mixer"  class="breadcrumbs" title="guide:guide:febuildergba:dpcm_m4a_hq_mixer">dpcm_m4a_hq_mixer</a></bdi></span></div>
-                    </div>
-    
-
-
-    <hr class="a11y" />
-</div></div><!-- /header -->
-
-        <div class="wrapper group">
-
-                            <!-- ********** ASIDE ********** -->
-                <div id="dokuwiki__aside"><div class="pad aside include group">
-                    <h3 class="toggle">サイドバー</h3>
-                    <div class="content"><div class="group">
-                                                                        <ul>
-<li class="level1"><div class="li"> <a href="/doku.php?id=qa" class="wikilink1" title="qa">QA</a></div>
-</li>
-<li class="level1"><div class="li"> <a href="/doku.php?id=guide:start" class="wikilink1" title="guide:start">GUIDE</a></div>
-</li>
-<li class="level1"><div class="li"> <a href="/doku.php?id=dictionary:start" class="wikilink1" title="dictionary:start">DICTIONARY</a></div>
-</li>
-<li class="level1"><div class="li"> <a href="/doku.php?id=column:start" class="wikilink1" title="column:start">COLUMN</a></div>
-</li>
-<li class="level1"><div class="li"> <a href="/doku.php?id=data:start" class="wikilink1" title="data:start">DATA</a></div>
-</li>
-</ul>
-<hr />
-
+<!-- /header -->
+<div class="wrapper group">
+<!-- ********** ASIDE ********** -->
+<!-- /aside -->
+<!-- ********** CONTENT ********** -->
+<div id="dokuwiki__content"><div class="pad group">
+<div class="pageId"><span>guide:guide:febuildergba:dpcm_m4a_hq_mixer</span></div>
+<div class="page group">
+<!-- wikipage start -->
 <p>
-<a href="/doku.php?id=en:start" class="wikilink1" title="en:start">English</a><br />
-<a href="/doku.php?id=zh:start" class="wikilink1" title="zh:start">中文</a>
-</p>
-
-<p>
-<span class="wrap_hi wrap_center wrap_centeralign ">最新の10件</span>
-</p>
-                                            </div></div>
-                </div></div><!-- /aside -->
-            
-            <!-- ********** CONTENT ********** -->
-            <div id="dokuwiki__content"><div class="pad group">
-                
-                <div class="pageId"><span>guide:guide:febuildergba:dpcm_m4a_hq_mixer</span></div>
-
-                <div class="page group">
-                                                            <!-- wikipage start -->
-                    
-<p>
-FEBuilderGBAでもm4a hq mixerをサポートしました。<br />
+FEBuilderGBAでもm4a hq mixerをサポートしました。<br/>
 これにより圧縮音源(DPCM)がサポートされ、wavの容量を半分ぐらいに圧縮することができます。
 </p>
-
 <p>
 遊び方
 </p>
-
 <h4 id="section0">0.</h4>
 <div class="level4">
-
 <p>
 まずは最新版に更新しましょう。
 </p>
-
 </div>
-
 <h4 id="section1">1.</h4>
 <div class="level4">
-
 <p>
-<a href="/lib/exe/fetch.php?tok=1b49e6&amp;media=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F145137778710151168%2F896370860242403369%2FClipboard01.png" class="media" title="https://cdn.discordapp.com/attachments/145137778710151168/896370860242403369/Clipboard01.png"><img src="/lib/exe/fetch.php?tok=1b49e6&amp;media=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F145137778710151168%2F896370860242403369%2FClipboard01.png" class="media" alt="" /></a><br />
+<a class="media" href="https://cdn.discordapp.com/attachments/145137778710151168/896370860242403369/Clipboard01.png" title="https://cdn.discordapp.com/attachments/145137778710151168/896370860242403369/Clipboard01.png"><img alt="" class="media" src="https://cdn.discordapp.com/attachments/145137778710151168/896370860242403369/Clipboard01.png"/></a><br/>
 m4a hq mixer patchをインストールします。
 </p>
-
 <p>
-```<br />
+```<br/>
 NAME=m4a hq mixer
 </p>
-
 <p>
-INFO.en=Probably the successor to the Improved Sound Mixer.\r\nCompressed sound sources(DPCM) are supported from this version.<br />
+INFO.en=Probably the successor to the Improved Sound Mixer.\r\nCompressed sound sources(DPCM) are supported from this version.<br/>
 INFO=おそらくImproved Sound Mixerの後継となるバージョンです。\r\nこのバージョンから圧縮音源(DPCM)をサポートしています。
 </p>
-
 <p>
-AUTHOR=ipatix <a href="https://github.com/ipatix/gba-hq-mixer" class="urlextern" title="https://github.com/ipatix/gba-hq-mixer" rel="nofollow">https://github.com/ipatix/gba-hq-mixer</a> , FE8U porting 7743<br />
+AUTHOR=ipatix <a class="urlextern" href="https://github.com/ipatix/gba-hq-mixer" rel="nofollow" title="https://github.com/ipatix/gba-hq-mixer">https://github.com/ipatix/gba-hq-mixer</a> , FE8U porting 7743<br/>
 ```
 </p>
-
 </div>
-
 <h4 id="section2">2.</h4>
 <div class="level4">
-
 <p>
-<a href="/lib/exe/fetch.php?tok=491575&amp;media=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F145137778710151168%2F896370862926737418%2FClipboard03.png" class="media" title="https://cdn.discordapp.com/attachments/145137778710151168/896370862926737418/Clipboard03.png"><img src="/lib/exe/fetch.php?tok=491575&amp;media=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F145137778710151168%2F896370862926737418%2FClipboard03.png" class="media" alt="" /></a><br />
+<a class="media" href="https://cdn.discordapp.com/attachments/145137778710151168/896370862926737418/Clipboard03.png" title="https://cdn.discordapp.com/attachments/145137778710151168/896370862926737418/Clipboard03.png"><img alt="" class="media" src="https://cdn.discordapp.com/attachments/145137778710151168/896370862926737418/Clipboard03.png"/></a><br/>
 とりあえずwavインポートして動作を確認しましょう。
 </p>
-
 <p>
-テストで利用するwavです。<br />
-波の音(CC0 public domain)<br />
-<a href="https://cdn.discordapp.com/attachments/145137778710151168/896369669164924928/test_wave_.wav" class="urlextern" title="https://cdn.discordapp.com/attachments/145137778710151168/896369669164924928/test_wave_.wav" rel="nofollow">https://cdn.discordapp.com/attachments/145137778710151168/896369669164924928/test_wave_.wav</a>
+テストで利用するwavです。<br/>
+波の音(CC0 public domain)<br/>
+<a class="urlextern" href="https://cdn.discordapp.com/attachments/145137778710151168/896369669164924928/test_wave_.wav" rel="nofollow" title="https://cdn.discordapp.com/attachments/145137778710151168/896369669164924928/test_wave_.wav">https://cdn.discordapp.com/attachments/145137778710151168/896369669164924928/test_wave_.wav</a>
 </p>
-
 <p>
-赤色が圧縮に関わる設定です。<br />
+赤色が圧縮に関わる設定です。<br/>
 黄色の部分はそれ以外で変更する部分です。
 </p>
-
 <p>
-previewボタンを押すと、音を再生できます。<br />
-この時、圧縮された音源の場合は品質を示すSNRが表示されます。<br />
-数字が大きいほど良いとされ、20dB以上を推奨します。<br />
-30dB以上のスコアが出ていれば問題ないと思います。<br />
+previewボタンを押すと、音を再生できます。<br/>
+この時、圧縮された音源の場合は品質を示すSNRが表示されます。<br/>
+数字が大きいほど良いとされ、20dB以上を推奨します。<br/>
+30dB以上のスコアが出ていれば問題ないと思います。<br/>
 それを下回った場合は、圧縮しない方が良いです。
 </p>
-
 <p>
 圧縮により、wavのサイズが半分になっていることがわかります。
 </p>
-
 <p>
 インポートボタンを押してインポートしましょう。
 </p>
-
 </div>
-
 <h4 id="section3">3.</h4>
 <div class="level4">
-
 <p>
-<a href="/lib/exe/fetch.php?tok=b9fe83&amp;media=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F145137778710151168%2F896370865091014678%2FClipboard04.png" class="media" title="https://cdn.discordapp.com/attachments/145137778710151168/896370865091014678/Clipboard04.png"><img src="/lib/exe/fetch.php?tok=b9fe83&amp;media=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F145137778710151168%2F896370865091014678%2FClipboard04.png" class="media" alt="" /></a><br />
-データをインポートしました。<br />
+<a class="media" href="https://cdn.discordapp.com/attachments/145137778710151168/896370865091014678/Clipboard04.png" title="https://cdn.discordapp.com/attachments/145137778710151168/896370865091014678/Clipboard04.png"><img alt="" class="media" src="https://cdn.discordapp.com/attachments/145137778710151168/896370865091014678/Clipboard04.png"/></a><br/>
+データをインポートしました。<br/>
 圧縮された音源の場合は、sappy や VGMusicStadioでは正しく再生できないので、実際にゲームを起動して確認します。
 </p>
-
 </div>
-
 <h4 id="section4">4.</h4>
 <div class="level4">
-
 <p>
-サウンドルームに入って、実際に音を聞いてみましょう。<br />
+サウンドルームに入って、実際に音を聞いてみましょう。<br/>
 先ほどインポートした波の音が再生されれば成功です。
 </p>
-
 <p>
-video:<br />
-<video class="media" width="320" height="240" controls="controls">
-<source src="https://cdn.discordapp.com/attachments/145137778710151168/896369668326064139/1.mp4" type="video/mp4" />
-<a href="/lib/exe/fetch.php?cache=&amp;tok=696a24&amp;media=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F145137778710151168%2F896369668326064139%2F1.mp4" class="media mediafile mf_mp4" title="https://cdn.discordapp.com/attachments/145137778710151168/896369668326064139/1.mp4">1.mp4</a></video>
-
+video:<br/>
+<video class="media" controls="controls" height="240" width="320">
+<source src="https://cdn.discordapp.com/attachments/145137778710151168/896369668326064139/1.mp4" type="video/mp4"/>
+<a class="media mediafile mf_mp4" href="https://cdn.discordapp.com/attachments/145137778710151168/896369668326064139/1.mp4" title="https://cdn.discordapp.com/attachments/145137778710151168/896369668326064139/1.mp4">1.mp4</a></video>
 </p>
-
 <p>
 以上。
 </p>
-
 </div>
-
 <h4 id="トラブルシューティング">トラブルシューティング:</h4>
 <div class="level4">
-
 <p>
-m4a hq mixerをインストールしていないと圧縮機能は利用できません。<br />
-その場合、以下のような表記になります。<br />
-<a href="/lib/exe/fetch.php?tok=d8710f&amp;media=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F145137778710151168%2F896370868001853500%2FClipboard08.png" class="media" title="https://cdn.discordapp.com/attachments/145137778710151168/896370868001853500/Clipboard08.png"><img src="/lib/exe/fetch.php?tok=d8710f&amp;media=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F145137778710151168%2F896370868001853500%2FClipboard08.png" class="media" alt="" /></a>
+m4a hq mixerをインストールしていないと圧縮機能は利用できません。<br/>
+その場合、以下のような表記になります。<br/>
+<a class="media" href="https://cdn.discordapp.com/attachments/145137778710151168/896370868001853500/Clipboard08.png" title="https://cdn.discordapp.com/attachments/145137778710151168/896370868001853500/Clipboard08.png"><img alt="" class="media" src="https://cdn.discordapp.com/attachments/145137778710151168/896370868001853500/Clipboard08.png"/></a>
 </p>
-
 </div>
-
 <h4 id="qa1">QA1:</h4>
 <div class="level4">
-
 <p>
 Q:圧縮によってwavの性能は劣化しますか?
 </p>
-
 <p>
-非可逆圧縮なので性能は劣化します。<br />
+非可逆圧縮なので性能は劣化します。<br/>
 そのため、圧縮前の元のwavは捨てずに保存しておくことをお勧めします。
 </p>
-
 <p>
 これは、パッチがアップデートされて、もっと高性能な圧縮エンジンが登場する可能性があるためです。
 </p>
-
 </div>
-
 <h4 id="qa2">QA2:</h4>
 <div class="level4">
-
 <p>
 Q:バニラに存在するwavデータを圧縮して容量を開けることを推奨しますか?
 </p>
-
 <p>
-推奨しません。<br />
-特にmidi楽器はもっと参照される楽器です。<br />
-そして、音階を変える変調もされます。<br />
+推奨しません。<br/>
+特にmidi楽器はもっと参照される楽器です。<br/>
+そして、音階を変える変調もされます。<br/>
 わずかな劣化であっても、予想外の結果を招く可能性が高いので推奨しません。
 </p>
-
 <p>
-ただ、容量が無駄に大きい効果音などは圧縮してもいいかもしれません。<br />
+ただ、容量が無駄に大きい効果音などは圧縮してもいいかもしれません。<br/>
 でも、バニラのデータに手を出す前に、他にやることがないか考えるべきです。
 </p>
-
 <p>
-また、現時点では、圧縮は、wave内にloopが設定されているものには対応していません。<br />
+また、現時点では、圧縮は、wave内にloopが設定されているものには対応していません。<br/>
 もし間違えて、それを圧縮してしまうと、以下のようになりますので、やらないことお勧めします。
 </p>
-
 </div>
-
 <h4 id="qa3">QA3:</h4>
 <div class="level4">
-
 <p>
 Q:mixer変更で他に影響はありますか?
 </p>
-
 <p>
-たぶん、あります。<br />
-m4a hq mixerは、圧縮音源をサポートするライブラリではなく、mixerを改良するのを目的としているライブラリです。<br />
-よって、mixerがバニラから変更されるので、midiの再生にも影響を与えます。<br />
-それがどれくらいなのかについては、実際にインストールして既存楽曲を聞いてみるしかないです。<br />
-基本的に、楽曲はバニラのmixerに最適化して作られているので、影響を強く受ける曲があるかもしれません。<br />
+たぶん、あります。<br/>
+m4a hq mixerは、圧縮音源をサポートするライブラリではなく、mixerを改良するのを目的としているライブラリです。<br/>
+よって、mixerがバニラから変更されるので、midiの再生にも影響を与えます。<br/>
+それがどれくらいなのかについては、実際にインストールして既存楽曲を聞いてみるしかないです。<br/>
+基本的に、楽曲はバニラのmixerに最適化して作られているので、影響を強く受ける曲があるかもしれません。<br/>
 少なくとも影響が何もないとは言えないと思います。
 </p>
-
 </div>
-
 <h4 id="qa4">QA4:</h4>
 <div class="level4">
-
 <p>
 Q: midiを探すのが面倒なのでwav(DPCM)で音楽をROMに入れたいが、推奨しますか?
 </p>
-
 <p>
-推奨しません。<br />
-waveが圧縮されて半分の容量になったとしても、1分で400kbは最低でも消費します。<br />
-midiだったら、1曲入れても1kb - 3kb ぐらいしか消費しません。<br />
+推奨しません。<br/>
+waveが圧縮されて半分の容量になったとしても、1分で400kbは最低でも消費します。<br/>
+midiだったら、1曲入れても1kb - 3kb ぐらいしか消費しません。<br/>
 差が100倍以上あるので、推奨しません。
 </p>
-
 </div>
-
-                    <!-- wikipage stop -->
-                                    </div>
-
-                <div class="docInfo"><bdi>guide/guide/febuildergba/dpcm_m4a_hq_mixer.txt</bdi> · 最終更新: 2021/10/09 21:35 by <bdi>220.100.68.157</bdi></div>
-
-                            </div></div><!-- /content -->
-
-            <hr class="a11y" />
-
-            <!-- PAGE ACTIONS -->
-            <div id="dokuwiki__pagetools">
-                <h3 class="a11y">ページ用ツール</h3>
-                <div class="tools">
-                    <ul>
-                        <li class="edit"><a href="/doku.php?id=guide:guide:febuildergba:dpcm_m4a_hq_mixer&amp;do=edit" title="文書の編集 [e]" rel="nofollow" accesskey="e"><span>文書の編集</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="/doku.php?id=guide:guide:febuildergba:dpcm_m4a_hq_mixer&amp;do=revisions" title="以前のリビジョン [o]" rel="nofollow" accesskey="o"><span>以前のリビジョン</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="/doku.php?id=guide:guide:febuildergba:dpcm_m4a_hq_mixer&amp;do=backlink" title="バックリンク" rel="nofollow"><span>バックリンク</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="top"><a href="#dokuwiki__top" title="文書の先頭へ [t]" rel="nofollow" accesskey="t"><span>文書の先頭へ</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
-                </div>
-            </div>
-        </div><!-- /wrapper -->
-
-        
+<!-- wikipage stop -->
+</div>
+<div class="docInfo"><bdi>guide/guide/febuildergba/dpcm_m4a_hq_mixer.txt</bdi> · 最終更新: 2021/10/09 21:35 by <bdi>220.100.68.157</bdi></div>
+</div></div><!-- /content -->
+<hr class="a11y"/>
+<!-- PAGE ACTIONS -->
+</div><!-- /wrapper -->
 <!-- ********** FOOTER ********** -->
-<div id="dokuwiki__footer"><div class="pad">
-    
-    <div class="buttons">
-                <a href="https://www.dokuwiki.org/donate" title="Donate" ><img
-            src="/lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
-        <a href="https://php.net" title="Powered by PHP" ><img
-            src="/lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
-        <a href="//validator.w3.org/check/referer" title="Valid HTML5" ><img
-            src="/lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
-        <a href="//jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
-            src="/lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
-        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" ><img
-            src="/lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
-    </div>
-</div></div><!-- /footer -->
-
-    </div></div><!-- /site -->
-
-    <div class="no"><img src="/lib/exe/indexer.php?id=guide%3Aguide%3Afebuildergba%3Adpcm_m4a_hq_mixer&amp;1669731484" width="2" height="1" alt="" /></div>
-    <div id="screen__mode" class="no"></div></body>
+<!-- /footer -->
+</div></div><!-- /site -->
+<div class="no"><img alt="" height="1" src="../../../..//lib/exe/indexer.php?id=guide/guide/febuildergba/dpcm_m4a_hq_mixer&amp;1669731484" width="2"/></div>
+<div class="no" id="screen__mode"></div></body>
 </html>
