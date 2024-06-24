@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="ja" dir="ltr">
+
+<html dir="ltr" lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <title>guide:febuildergba:増援</title>
-<meta name="generator" content="DokuWiki"/>
-<meta name="theme-color" content="#008800"/>
-<meta name="robots" content="index,follow"/>
-<meta name="keywords" content="guide,febuildergba,増援"/>
-<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
-<link rel="start" href="/"/>
-<link rel="contents" href="/doku.php?id=guide:febuildergba:%E5%A2%97%E6%8F%B4&amp;do=index" title="サイトマップ"/>
-<link rel="manifest" href="/lib/exe/manifest.php"/>
-<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
-<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide:febuildergba"/>
-<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:%E5%A2%97%E6%8F%B4"/>
-<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:febuildergba:%E5%A2%97%E6%8F%B4"/>
-<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:%E5%A2%97%E6%8F%B4"/>
-<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<meta charset="utf-8"/>
+<title>guide:febuildergba:増援</title>
+<meta content="DokuWiki" name="generator"/>
+<meta content="#008800" name="theme-color"/>
+<meta content="index,follow" name="robots"/>
+<meta content="guide,febuildergba,増援" name="keywords"/>
+<link href="/lib/exe/opensearch.php" rel="search" title="FE改造wiki" type="application/opensearchdescription+xml"/>
+<link href="/" rel="start"/>
+<link href="/doku.php?id=guide:febuildergba:%E5%A2%97%E6%8F%B4&amp;do=index" rel="contents" title="サイトマップ"/>
+<link href="/lib/exe/manifest.php" rel="manifest"/>
+<link href="/feed.php" rel="alternate" title="最近の変更" type="application/rss+xml"/>
+<link href="/feed.php?mode=list&amp;ns=guide:febuildergba" rel="alternate" title="現在の名前空間" type="application/rss+xml"/>
+<link href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:%E5%A2%97%E6%8F%B4" rel="alternate" title="プレーンHTML" type="text/html"/>
+<link href="/doku.php?do=export_raw&amp;id=guide:febuildergba:%E5%A2%97%E6%8F%B4" rel="alternate" title="Wikiマークアップ" type="text/plain"/>
+<link href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:%E5%A2%97%E6%8F%B4" rel="canonical"/>
+<link href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" rel="stylesheet" type="text/css"/>
 <!--[if gte IE 9]><!-->
 <script type="text/javascript">/*<![CDATA[*/var NS='guide:febuildergba';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:febuildergba:\u5897\u63f4","namespace":"guide:febuildergba","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
 /*!]]>*/</script>
-<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
-<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<script charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f" type="text/javascript"></script>
+<script charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" type="text/javascript"></script>
 <!--<![endif]-->
 </head>
 <body>
 <div class="dokuwiki export">
 <!-- TOC START -->
-<div id="dw__toc" class="dw__toc">
+<div class="dw__toc" id="dw__toc">
 <h3 class="toggle">目次</h3>
 <div>
-
 <ul class="toc">
 <li class="level1"><div class="li"><a href="#増援ユニットの設定">増援ユニットの設定</a></div>
 <ul class="toc">
@@ -96,289 +96,235 @@
 </div>
 </div>
 <!-- TOC END -->
-
 <p>
 FE定番の増援イベントの作り方について説明します。<br/>
 とりあえず序章に毎ターン増援を出したいと思います。<br/>
-<a href="/lib/exe/fetch.php?tok=75a8ba&amp;media=https%3A%2F%2Fi.imgur.com%2FFvE4iYm.jpg" class="media" title="https://i.imgur.com/FvE4iYm.jpg"><img src="/lib/exe/fetch.php?tok=75a8ba&amp;media=https%3A%2F%2Fi.imgur.com%2FFvE4iYm.jpg" class="mediacenter" title="i.imgur.com_fve4iym.jpg" alt="i.imgur.com_fve4iym.jpg" /></a>
+<a class="media" href="https://i.imgur.com/FvE4iYm.jpg" title="https://i.imgur.com/FvE4iYm.jpg"><img alt="i.imgur.com_fve4iym.jpg" class="mediacenter" src="https://i.imgur.com/FvE4iYm.jpg" title="i.imgur.com_fve4iym.jpg"/></a>
 </p>
-
 <h1 class="sectionedit1" id="増援ユニットの設定">増援ユニットの設定</h1>
 <div class="level1">
-
 <p>
 まずは、増援するユニットを作ります。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5897\u63f4\u30e6\u30cb\u30c3\u30c8\u306e\u8a2d\u5b9a&quot;,&quot;hid&quot;:&quot;\u5897\u63f4\u30e6\u30cb\u30c3\u30c8\u306e\u8a2d\u5b9a&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;193-294&quot;} -->
 <h2 class="sectionedit2" id="stepa1">StepA1</h2>
 <div class="level2">
-
 <p>
 「ユニット配置」ボタンをクリックしてください。<br/>
-<a href="/lib/exe/fetch.php?tok=8aaae9&amp;media=https%3A%2F%2Fi.imgur.com%2F7bnHLBX.jpg" class="media" title="https://i.imgur.com/7bnHLBX.jpg"><img src="/lib/exe/fetch.php?tok=8aaae9&amp;media=https%3A%2F%2Fi.imgur.com%2F7bnHLBX.jpg" class="mediacenter" title="i.imgur.com_7bnhlbx.jpg" alt="i.imgur.com_7bnhlbx.jpg" /></a>
+<a class="media" href="https://i.imgur.com/7bnHLBX.jpg" title="https://i.imgur.com/7bnHLBX.jpg"><img alt="i.imgur.com_7bnhlbx.jpg" class="mediacenter" src="https://i.imgur.com/7bnHLBX.jpg" title="i.imgur.com_7bnhlbx.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA1&quot;,&quot;hid&quot;:&quot;stepa1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;295-426&quot;} -->
 <h2 class="sectionedit3" id="stepa2">StepA2</h2>
 <div class="level2">
-
 <p>
 新規に増援ユニット群を定義したいので、「新規領域の確保」ボタンをクリックしてください。<br/>
-<a href="/lib/exe/fetch.php?tok=3b2d42&amp;media=https%3A%2F%2Fi.imgur.com%2FUHKdKEW.jpg" class="media" title="https://i.imgur.com/UHKdKEW.jpg"><img src="/lib/exe/fetch.php?tok=3b2d42&amp;media=https%3A%2F%2Fi.imgur.com%2FUHKdKEW.jpg" class="mediacenter" title="i.imgur.com_uhkdkew.jpg" alt="i.imgur.com_uhkdkew.jpg" /></a>
+<a class="media" href="https://i.imgur.com/UHKdKEW.jpg" title="https://i.imgur.com/UHKdKEW.jpg"><img alt="i.imgur.com_uhkdkew.jpg" class="mediacenter" src="https://i.imgur.com/UHKdKEW.jpg" title="i.imgur.com_uhkdkew.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA2&quot;,&quot;hid&quot;:&quot;stepa2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;427-618&quot;} -->
 <h2 class="sectionedit4" id="stepa3">StepA3</h2>
 <div class="level2">
-
 <p>
 確保する人数を設定します。<br/>
 とりあえず3人ぐらい確保します。<br/>
-<a href="/lib/exe/fetch.php?tok=0487bc&amp;media=https%3A%2F%2Fi.imgur.com%2F6W4aI7F.jpg" class="media" title="https://i.imgur.com/6W4aI7F.jpg"><img src="/lib/exe/fetch.php?tok=0487bc&amp;media=https%3A%2F%2Fi.imgur.com%2F6W4aI7F.jpg" class="mediacenter" title="i.imgur.com_6w4ai7f.jpg" alt="i.imgur.com_6w4ai7f.jpg" /></a>
+<a class="media" href="https://i.imgur.com/6W4aI7F.jpg" title="https://i.imgur.com/6W4aI7F.jpg"><img alt="i.imgur.com_6w4ai7f.jpg" class="mediacenter" src="https://i.imgur.com/6W4aI7F.jpg" title="i.imgur.com_6w4ai7f.jpg"/></a>
 </p>
-
 <p>
-<a href="/lib/exe/fetch.php?tok=2683ce&amp;media=https%3A%2F%2Fi.imgur.com%2FSPsLz1y.jpg" class="media" title="https://i.imgur.com/SPsLz1y.jpg"><img src="/lib/exe/fetch.php?tok=2683ce&amp;media=https%3A%2F%2Fi.imgur.com%2FSPsLz1y.jpg" class="mediacenter" title="i.imgur.com_spslz1y.jpg" alt="i.imgur.com_spslz1y.jpg" /></a>
+<a class="media" href="https://i.imgur.com/SPsLz1y.jpg" title="https://i.imgur.com/SPsLz1y.jpg"><img alt="i.imgur.com_spslz1y.jpg" class="mediacenter" src="https://i.imgur.com/SPsLz1y.jpg" title="i.imgur.com_spslz1y.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA3&quot;,&quot;hid&quot;:&quot;stepa3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;619-807&quot;} -->
 <h2 class="sectionedit5" id="stepa4">StepA4</h2>
 <div class="level2">
-
 <p>
 新規枠が確保されました。<br/>
 NEWとかかれている部分です。<br/>
-<a href="/lib/exe/fetch.php?tok=1b78d5&amp;media=https%3A%2F%2Fi.imgur.com%2FLwlOPQU.jpg" class="media" title="https://i.imgur.com/LwlOPQU.jpg"><img src="/lib/exe/fetch.php?tok=1b78d5&amp;media=https%3A%2F%2Fi.imgur.com%2FLwlOPQU.jpg" class="mediacenter" title="i.imgur.com_lwlopqu.jpg" alt="i.imgur.com_lwlopqu.jpg" /></a>
+<a class="media" href="https://i.imgur.com/LwlOPQU.jpg" title="https://i.imgur.com/LwlOPQU.jpg"><img alt="i.imgur.com_lwlopqu.jpg" class="mediacenter" src="https://i.imgur.com/LwlOPQU.jpg" title="i.imgur.com_lwlopqu.jpg"/></a>
 </p>
-
 <p>
 新規枠には、とりあえずエイリークが設定されているので、そのキャラをどけて増援で出したいキャラを設定します。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA4&quot;,&quot;hid&quot;:&quot;stepa4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;808-1110&quot;} -->
 <h2 class="sectionedit6" id="stepa5">StepA5</h2>
 <div class="level2">
-
 <p>
 まずは、一番上のキャラクターを設定します。<br/>
-<a href="/lib/exe/fetch.php?tok=573c04&amp;media=https%3A%2F%2Fi.imgur.com%2FNfVOXxQ.jpg" class="media" title="https://i.imgur.com/NfVOXxQ.jpg"><img src="/lib/exe/fetch.php?tok=573c04&amp;media=https%3A%2F%2Fi.imgur.com%2FNfVOXxQ.jpg" class="mediacenter" title="i.imgur.com_nfvoxxq.jpg" alt="i.imgur.com_nfvoxxq.jpg" /></a>
+<a class="media" href="https://i.imgur.com/NfVOXxQ.jpg" title="https://i.imgur.com/NfVOXxQ.jpg"><img alt="i.imgur.com_nfvoxxq.jpg" class="mediacenter" src="https://i.imgur.com/NfVOXxQ.jpg" title="i.imgur.com_nfvoxxq.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA5&quot;,&quot;hid&quot;:&quot;stepa5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1111-1235&quot;} -->
 <h2 class="sectionedit7" id="stepa6">StepA6</h2>
 <div class="level2">
-
 <p>
 とりあえず、こんな感じにしてみました。<br/>
 座標は、左上にしました。<br/>
-<a href="/lib/exe/fetch.php?tok=7ea2e6&amp;media=https%3A%2F%2Fi.imgur.com%2FJI7omjY.jpg" class="media" title="https://i.imgur.com/JI7omjY.jpg"><img src="/lib/exe/fetch.php?tok=7ea2e6&amp;media=https%3A%2F%2Fi.imgur.com%2FJI7omjY.jpg" class="mediacenter" title="i.imgur.com_ji7omjy.jpg" alt="i.imgur.com_ji7omjy.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/JI7omjY.jpg" title="https://i.imgur.com/JI7omjY.jpg"><img alt="i.imgur.com_ji7omjy.jpg" class="mediacenter" src="https://i.imgur.com/JI7omjY.jpg" title="i.imgur.com_ji7omjy.jpg"/></a><br/>
 <br/>
-
 </p>
 <div class="table sectionedit8"><table class="inline">
-	<tr class="row0">
-		<td class="col0">ユニット</td><td class="col1">7F</td><td class="col2">グラド兵士</td>
-	</tr>
-	<tr class="row1">
-		<td class="col0">クラス</td><td class="col1">3F</td><td class="col2">戦士</td>
-	</tr>
-	<tr class="row2">
-		<td class="col0">アイテム</td><td class="col1">1F</td><td class="col2">鉄の斧</td>
-	</tr>
-	<tr class="row3">
-		<td class="col0">座標</td><td class="col1">X=2,Y=3</td><td class="col2"></td>
-	</tr>
+<tr class="row0">
+<td class="col0">ユニット</td><td class="col1">7F</td><td class="col2">グラド兵士</td>
+</tr>
+<tr class="row1">
+<td class="col0">クラス</td><td class="col1">3F</td><td class="col2">戦士</td>
+</tr>
+<tr class="row2">
+<td class="col0">アイテム</td><td class="col1">1F</td><td class="col2">鉄の斧</td>
+</tr>
+<tr class="row3">
+<td class="col0">座標</td><td class="col1">X=2,Y=3</td><td class="col2"></td>
+</tr>
 </table></div>
 <!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:8,&quot;range&quot;:&quot;1397-1497&quot;} -->
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA6&quot;,&quot;hid&quot;:&quot;stepa6&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;1236-1498&quot;} -->
 <h2 class="sectionedit9" id="stepa7">StepA7</h2>
 <div class="level2">
-
 <p>
 「書き込む」ボタンで内容を確定します。<br/>
-<a href="/lib/exe/fetch.php?tok=6a4676&amp;media=https%3A%2F%2Fi.imgur.com%2Fw676R2l.jpg" class="media" title="https://i.imgur.com/w676R2l.jpg"><img src="/lib/exe/fetch.php?tok=6a4676&amp;media=https%3A%2F%2Fi.imgur.com%2Fw676R2l.jpg" class="mediacenter" title="i.imgur.com_w676r2l.jpg" alt="i.imgur.com_w676r2l.jpg" /></a>
+<a class="media" href="https://i.imgur.com/w676R2l.jpg" title="https://i.imgur.com/w676R2l.jpg"><img alt="i.imgur.com_w676r2l.jpg" class="mediacenter" src="https://i.imgur.com/w676R2l.jpg" title="i.imgur.com_w676r2l.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA7&quot;,&quot;hid&quot;:&quot;stepa7&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;1499-1617&quot;} -->
 <h2 class="sectionedit10" id="stepa8">StepA8</h2>
 <div class="level2">
-
 <p>
 2人目を設定します。<br/>
 座標は、さっきの奴の隣です。<br/>
-<a href="/lib/exe/fetch.php?tok=ac62f5&amp;media=https%3A%2F%2Fi.imgur.com%2FMwDnICg.jpg" class="media" title="https://i.imgur.com/MwDnICg.jpg"><img src="/lib/exe/fetch.php?tok=ac62f5&amp;media=https%3A%2F%2Fi.imgur.com%2FMwDnICg.jpg" class="mediacenter" title="i.imgur.com_mwdnicg.jpg" alt="i.imgur.com_mwdnicg.jpg" /></a>
+<a class="media" href="https://i.imgur.com/MwDnICg.jpg" title="https://i.imgur.com/MwDnICg.jpg"><img alt="i.imgur.com_mwdnicg.jpg" class="mediacenter" src="https://i.imgur.com/MwDnICg.jpg" title="i.imgur.com_mwdnicg.jpg"/></a>
 </p>
-
 <p>
 設定したら、「書き込む」ボタンで結果を確定します。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA8&quot;,&quot;hid&quot;:&quot;stepa8&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;1618-1831&quot;} -->
 <h2 class="sectionedit11" id="stepa9">StepA9</h2>
 <div class="level2">
-
 <p>
 3人目を設定します。<br/>
-<a href="/lib/exe/fetch.php?tok=1739b0&amp;media=https%3A%2F%2Fi.imgur.com%2Fk79ZWZy.jpg" class="media" title="https://i.imgur.com/k79ZWZy.jpg"><img src="/lib/exe/fetch.php?tok=1739b0&amp;media=https%3A%2F%2Fi.imgur.com%2Fk79ZWZy.jpg" class="mediacenter" title="i.imgur.com_k79zwzy.jpg" alt="i.imgur.com_k79zwzy.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/k79ZWZy.jpg" title="https://i.imgur.com/k79ZWZy.jpg"><img alt="i.imgur.com_k79zwzy.jpg" class="mediacenter" src="https://i.imgur.com/k79ZWZy.jpg" title="i.imgur.com_k79zwzy.jpg"/></a><br/>
 <br/>
 同様に、「書き込む」ボタンで結果を確定します。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA9&quot;,&quot;hid&quot;:&quot;stepa9&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;1832-1996&quot;} -->
 <h2 class="sectionedit12" id="stepa10">StepA10</h2>
 <div class="level2">
-
 <p>
 設定が終わったら、彼らが配置されている先頭アドレスをメモってください。<br/>
-<a href="/lib/exe/fetch.php?tok=ceb404&amp;media=https%3A%2F%2Fi.imgur.com%2Fw6HBJkP.jpg" class="media" title="https://i.imgur.com/w6HBJkP.jpg"><img src="/lib/exe/fetch.php?tok=ceb404&amp;media=https%3A%2F%2Fi.imgur.com%2Fw6HBJkP.jpg" class="mediacenter" title="i.imgur.com_w6hbjkp.jpg" alt="i.imgur.com_w6hbjkp.jpg" /></a>
+<a class="media" href="https://i.imgur.com/w6HBJkP.jpg" title="https://i.imgur.com/w6HBJkP.jpg"><img alt="i.imgur.com_w6hbjkp.jpg" class="mediacenter" src="https://i.imgur.com/w6HBJkP.jpg" title="i.imgur.com_w6hbjkp.jpg"/></a>
 </p>
-
 <p>
 <br/>
 今回は、0x01000000が先頭アドレスです。<br/>
 <br/>
-なぜ、先頭アドレスをメモする必要があるのか？<br />
+なぜ、先頭アドレスをメモする必要があるのか？<br/>
 それは、彼らを表示するイベントはこれから作るため、彼らのデータはどこへも紐付けされていないためです。<br/>
 そのため、ユニット配置ウィンドウを閉じたり、別の章に切り替えたりすると、データが失われるためです。<br/>
 データが失われても、領域を占有していることにはかわりなく、無駄な領域が生まれてしまいます。<br/>
 とはいっても、100バイトにも満たない程度のロスだと思いますが・・・<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA10&quot;,&quot;hid&quot;:&quot;stepa10&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:12,&quot;range&quot;:&quot;1997-2833&quot;} -->
 <h2 class="sectionedit13" id="stepa11">StepA11</h2>
 <div class="level2">
-
 <p>
 メインの簡易メニューに移動します。<br/>
 次は、先ほど作成したユニットを出現させるイベントを作ります。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA11&quot;,&quot;hid&quot;:&quot;stepa11&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:13,&quot;range&quot;:&quot;2834-3002&quot;} -->
 <h2 class="sectionedit14" id="stepa12">StepA12</h2>
 <div class="level2">
-
 <p>
 イベントを作るには、「イベント」と書かれている部分をクリックします。<br/>
-<a href="/lib/exe/fetch.php?tok=eebb76&amp;media=https%3A%2F%2Fi.imgur.com%2Fdgw9bDG.jpg" class="media" title="https://i.imgur.com/dgw9bDG.jpg"><img src="/lib/exe/fetch.php?tok=eebb76&amp;media=https%3A%2F%2Fi.imgur.com%2Fdgw9bDG.jpg" class="mediacenter" title="i.imgur.com_dgw9bdg.jpg" alt="i.imgur.com_dgw9bdg.jpg" /></a>
+<a class="media" href="https://i.imgur.com/dgw9bDG.jpg" title="https://i.imgur.com/dgw9bDG.jpg"><img alt="i.imgur.com_dgw9bdg.jpg" class="mediacenter" src="https://i.imgur.com/dgw9bDG.jpg" title="i.imgur.com_dgw9bdg.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA12&quot;,&quot;hid&quot;:&quot;stepa12&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:14,&quot;range&quot;:&quot;3003-3167&quot;} -->
 <h2 class="sectionedit15" id="stepa13">StepA13</h2>
 <div class="level2">
-
 <p>
 イベント設定画面に来ました。<br/>
 今回は、ターンイベントで彼らを出現させます。<br/>
-<a href="/lib/exe/fetch.php?tok=d90f0d&amp;media=https%3A%2F%2Fi.imgur.com%2F5P2Em15.jpg" class="media" title="https://i.imgur.com/5P2Em15.jpg"><img src="/lib/exe/fetch.php?tok=d90f0d&amp;media=https%3A%2F%2Fi.imgur.com%2F5P2Em15.jpg" class="mediacenter" title="i.imgur.com_5p2em15.jpg" alt="i.imgur.com_5p2em15.jpg" /></a>
+<a class="media" href="https://i.imgur.com/5P2Em15.jpg" title="https://i.imgur.com/5P2Em15.jpg"><img alt="i.imgur.com_5p2em15.jpg" class="mediacenter" src="https://i.imgur.com/5P2Em15.jpg" title="i.imgur.com_5p2em15.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA13&quot;,&quot;hid&quot;:&quot;stepa13&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:15,&quot;range&quot;:&quot;3168-3341&quot;} -->
 <h2 class="sectionedit16" id="stepa14">StepA14</h2>
 <div class="level2">
-
 <p>
 イベントの種類が、ターン条件になっているか確認してください。<br/>
 ディフォルトはターン条件なので、たいていの場合、何もしなくても大丈夫です。<br/>
-<a href="/lib/exe/fetch.php?tok=bf68cf&amp;media=https%3A%2F%2Fi.imgur.com%2FURNYWBY.jpg" class="media" title="https://i.imgur.com/URNYWBY.jpg"><img src="/lib/exe/fetch.php?tok=bf68cf&amp;media=https%3A%2F%2Fi.imgur.com%2FURNYWBY.jpg" class="mediacenter" title="i.imgur.com_urnywby.jpg" alt="i.imgur.com_urnywby.jpg" /></a>
+<a class="media" href="https://i.imgur.com/URNYWBY.jpg" title="https://i.imgur.com/URNYWBY.jpg"><img alt="i.imgur.com_urnywby.jpg" class="mediacenter" src="https://i.imgur.com/URNYWBY.jpg" title="i.imgur.com_urnywby.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA14&quot;,&quot;hid&quot;:&quot;stepa14&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:16,&quot;range&quot;:&quot;3342-3608&quot;} -->
 <h2 class="sectionedit17" id="stepa15">StepA15</h2>
 <div class="level2">
-
 <p>
 次に、ターン条件に新規枠を確保するため、「リストの拡張」ボタンをクリックします。<br/>
-<a href="/lib/exe/fetch.php?tok=bf68cf&amp;media=https%3A%2F%2Fi.imgur.com%2FURNYWBY.jpg" class="media" title="https://i.imgur.com/URNYWBY.jpg"><img src="/lib/exe/fetch.php?tok=bf68cf&amp;media=https%3A%2F%2Fi.imgur.com%2FURNYWBY.jpg" class="mediacenter" title="i.imgur.com_urnywby.jpg" alt="i.imgur.com_urnywby.jpg" /></a>
+<a class="media" href="https://i.imgur.com/URNYWBY.jpg" title="https://i.imgur.com/URNYWBY.jpg"><img alt="i.imgur.com_urnywby.jpg" class="mediacenter" src="https://i.imgur.com/URNYWBY.jpg" title="i.imgur.com_urnywby.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA15&quot;,&quot;hid&quot;:&quot;stepa15&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:17,&quot;range&quot;:&quot;3609-3791&quot;} -->
 <h2 class="sectionedit18" id="stepa16">StepA16</h2>
 <div class="level2">
-
 <p>
 何やら画面が表示されますが、とりあえずそのまま「移動処理を実行する」ボタンをクリックします。<br/>
-<a href="/lib/exe/fetch.php?tok=e0bafe&amp;media=https%3A%2F%2Fi.imgur.com%2FzOjuWTN.jpg" class="media" title="https://i.imgur.com/zOjuWTN.jpg"><img src="/lib/exe/fetch.php?tok=e0bafe&amp;media=https%3A%2F%2Fi.imgur.com%2FzOjuWTN.jpg" class="mediacenter" title="i.imgur.com_zojuwtn.jpg" alt="i.imgur.com_zojuwtn.jpg" /></a>
+<a class="media" href="https://i.imgur.com/zOjuWTN.jpg" title="https://i.imgur.com/zOjuWTN.jpg"><img alt="i.imgur.com_zojuwtn.jpg" class="mediacenter" src="https://i.imgur.com/zOjuWTN.jpg" title="i.imgur.com_zojuwtn.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA16&quot;,&quot;hid&quot;:&quot;stepa16&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:18,&quot;range&quot;:&quot;3792-3992&quot;} -->
 <h2 class="sectionedit19" id="stepa17">StepA17</h2>
 <div class="level2">
-
 <p>
 ターン条件イベントが確保されました。<br/>
 ちょっと多すぎましたね・・・<br/>
 まあ、1つ12バイトなので、誤差みたいなものです。誤差だよ誤差。<br/>
-<a href="/lib/exe/fetch.php?tok=9e2cf9&amp;media=https%3A%2F%2Fi.imgur.com%2FlmtHCat.jpg" class="media" title="https://i.imgur.com/lmtHCat.jpg"><img src="/lib/exe/fetch.php?tok=9e2cf9&amp;media=https%3A%2F%2Fi.imgur.com%2FlmtHCat.jpg" class="mediacenter" title="i.imgur.com_lmthcat.jpg" alt="i.imgur.com_lmthcat.jpg" /></a>
+<a class="media" href="https://i.imgur.com/lmtHCat.jpg" title="https://i.imgur.com/lmtHCat.jpg"><img alt="i.imgur.com_lmthcat.jpg" class="mediacenter" src="https://i.imgur.com/lmtHCat.jpg" title="i.imgur.com_lmthcat.jpg"/></a>
 </p>
-
 <p>
 <br/>
 ちゃんと、やる場合は、先ほど領域を確保するときに、確保するサイズをちゃんと指定してください。<br/>
 ただ、小さすぎると、もっと増やしたくなった時に、再度追加で確保すると、断片化によるロスが発生しますので、どちらがいいかは、難しいところです。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA17&quot;,&quot;hid&quot;:&quot;stepa17&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:19,&quot;range&quot;:&quot;3993-4605&quot;} -->
 <h2 class="sectionedit20" id="stepa18">StepA18</h2>
 <div class="level2">
-
 <p>
 領域を確保はできたので、新規に確保したターン条件に増援のイベントを作ります。<br/>
 新規に増設された5番目のイベントをクリックしてください。<br/>
-<a href="/lib/exe/fetch.php?tok=943949&amp;media=https%3A%2F%2Fi.imgur.com%2F8Kr0D6o.jpg" class="media" title="https://i.imgur.com/8Kr0D6o.jpg"><img src="/lib/exe/fetch.php?tok=943949&amp;media=https%3A%2F%2Fi.imgur.com%2F8Kr0D6o.jpg" class="mediacenter" title="i.imgur.com_8kr0d6o.jpg" alt="i.imgur.com_8kr0d6o.jpg" /></a>
+<a class="media" href="https://i.imgur.com/8Kr0D6o.jpg" title="https://i.imgur.com/8Kr0D6o.jpg"><img alt="i.imgur.com_8kr0d6o.jpg" class="mediacenter" src="https://i.imgur.com/8Kr0D6o.jpg" title="i.imgur.com_8kr0d6o.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA18&quot;,&quot;hid&quot;:&quot;stepa18&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:20,&quot;range&quot;:&quot;4606-4867&quot;} -->
 <h2 class="sectionedit21" id="stepa19">StepA19</h2>
 <div class="level2">
-
 <p>
 今回は以下のように設定しました。<br/>
-<a href="/lib/exe/fetch.php?tok=a49e54&amp;media=https%3A%2F%2Fi.imgur.com%2FWctnsbp.jpg" class="media" title="https://i.imgur.com/Wctnsbp.jpg"><img src="/lib/exe/fetch.php?tok=a49e54&amp;media=https%3A%2F%2Fi.imgur.com%2FWctnsbp.jpg" class="mediacenter" title="i.imgur.com_wctnsbp.jpg" alt="i.imgur.com_wctnsbp.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/Wctnsbp.jpg" title="https://i.imgur.com/Wctnsbp.jpg"><img alt="i.imgur.com_wctnsbp.jpg" class="mediacenter" src="https://i.imgur.com/Wctnsbp.jpg" title="i.imgur.com_wctnsbp.jpg"/></a><br/>
 <br/>
 イベントは後で設定するので0のままにします。<br/>
 <br/>
-
 </p>
 <div class="table sectionedit22"><table class="inline">
-	<tr class="row0">
-		<td class="col0">発生タイプ</td><td class="col1">2</td><td class="col2">2=ターン条件</td>
-	</tr>
-	<tr class="row1">
-		<td class="col0">開始ターン</td><td class="col1">2</td><td class="col2"></td>
-	</tr>
-	<tr class="row2">
-		<td class="col0">終了ターン</td><td class="col1">3</td><td class="col2"></td>
-	</tr>
-	<tr class="row3">
-		<td class="col0">ターン前指定</td><td class="col1">0</td><td class="col2">主人公ターンに実行</td>
-	</tr>
+<tr class="row0">
+<td class="col0">発生タイプ</td><td class="col1">2</td><td class="col2">2=ターン条件</td>
+</tr>
+<tr class="row1">
+<td class="col0">開始ターン</td><td class="col1">2</td><td class="col2"></td>
+</tr>
+<tr class="row2">
+<td class="col0">終了ターン</td><td class="col1">3</td><td class="col2"></td>
+</tr>
+<tr class="row3">
+<td class="col0">ターン前指定</td><td class="col1">0</td><td class="col2">主人公ターンに実行</td>
+</tr>
 </table></div>
 <!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table1&quot;,&quot;secid&quot;:22,&quot;range&quot;:&quot;5052-5180&quot;} -->
 <p>
@@ -396,175 +342,141 @@ NEWとかかれている部分です。<br/>
 もし、背後から増援され、敵ターンで先行して動かれたりなんてすると、悪夢ですね。<br/>
 <br/>
 前半のステージは、プレイヤーターンに増援して、後半は敵ターンにするとかの使い分けを考える必要があります。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA19&quot;,&quot;hid&quot;:&quot;stepa19&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:21,&quot;range&quot;:&quot;4868-6121&quot;} -->
 <h2 class="sectionedit23" id="stepa20">StepA20</h2>
 <div class="level2">
-
 <p>
 とりあえず、「書き込み」ボタンを押して結果を確定します。<br/>
-<a href="/lib/exe/fetch.php?tok=2879b3&amp;media=https%3A%2F%2Fi.imgur.com%2FkADBQoG.jpg" class="media" title="https://i.imgur.com/kADBQoG.jpg"><img src="/lib/exe/fetch.php?tok=2879b3&amp;media=https%3A%2F%2Fi.imgur.com%2FkADBQoG.jpg" class="mediacenter" title="i.imgur.com_kadbqog.jpg" alt="i.imgur.com_kadbqog.jpg" /></a>
+<a class="media" href="https://i.imgur.com/kADBQoG.jpg" title="https://i.imgur.com/kADBQoG.jpg"><img alt="i.imgur.com_kadbqog.jpg" class="mediacenter" src="https://i.imgur.com/kADBQoG.jpg" title="i.imgur.com_kadbqog.jpg"/></a>
 </p>
-
 <p>
 <br/>
 この後に、イベントの確保をしたときにも書き込みは行われるので、ここで書き込みをするかどうかは、実はどうでもいいです。<br/>
 ただ、やったところで損は何もありません。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA20&quot;,&quot;hid&quot;:&quot;stepa20&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:23,&quot;range&quot;:&quot;6122-6512&quot;} -->
 <h2 class="sectionedit24" id="stepa21">StepA21</h2>
 <div class="level2">
-
 <p>
 次に、イベントの設定をします。<br/>
 「新規イベント」ボタンをクリックしてください。<br/>
-<a href="/lib/exe/fetch.php?tok=2879b3&amp;media=https%3A%2F%2Fi.imgur.com%2FkADBQoG.jpg" class="media" title="https://i.imgur.com/kADBQoG.jpg"><img src="/lib/exe/fetch.php?tok=2879b3&amp;media=https%3A%2F%2Fi.imgur.com%2FkADBQoG.jpg" class="mediacenter" title="i.imgur.com_kadbqog.jpg" alt="i.imgur.com_kadbqog.jpg" /></a>
+<a class="media" href="https://i.imgur.com/kADBQoG.jpg" title="https://i.imgur.com/kADBQoG.jpg"><img alt="i.imgur.com_kadbqog.jpg" class="mediacenter" src="https://i.imgur.com/kADBQoG.jpg" title="i.imgur.com_kadbqog.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA21&quot;,&quot;hid&quot;:&quot;stepa21&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:24,&quot;range&quot;:&quot;6513-6692&quot;} -->
 <h2 class="sectionedit25" id="stepa22">StepA22</h2>
 <div class="level2">
-
 <p>
 「新規に領域を割り当てますか？」と聞かれるので、「はい」と答えます。<br/>
-<a href="/lib/exe/fetch.php?tok=483714&amp;media=https%3A%2F%2Fi.imgur.com%2FGZg658F.jpg" class="media" title="https://i.imgur.com/GZg658F.jpg"><img src="/lib/exe/fetch.php?tok=483714&amp;media=https%3A%2F%2Fi.imgur.com%2FGZg658F.jpg" class="mediacenter" title="i.imgur.com_gzg658f.jpg" alt="i.imgur.com_gzg658f.jpg" /></a>
+<a class="media" href="https://i.imgur.com/GZg658F.jpg" title="https://i.imgur.com/GZg658F.jpg"><img alt="i.imgur.com_gzg658f.jpg" class="mediacenter" src="https://i.imgur.com/GZg658F.jpg" title="i.imgur.com_gzg658f.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA22&quot;,&quot;hid&quot;:&quot;stepa22&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:25,&quot;range&quot;:&quot;6693-6857&quot;} -->
 <h2 class="sectionedit26" id="stepa23">StepA23</h2>
 <div class="level2">
-
 <p>
 領域を確保しました。<br/>
-<a href="/lib/exe/fetch.php?tok=483714&amp;media=https%3A%2F%2Fi.imgur.com%2FGZg658F.jpg" class="media" title="https://i.imgur.com/GZg658F.jpg"><img src="/lib/exe/fetch.php?tok=483714&amp;media=https%3A%2F%2Fi.imgur.com%2FGZg658F.jpg" class="mediacenter" title="i.imgur.com_gzg658f.jpg" alt="i.imgur.com_gzg658f.jpg" /></a>
+<a class="media" href="https://i.imgur.com/GZg658F.jpg" title="https://i.imgur.com/GZg658F.jpg"><img alt="i.imgur.com_gzg658f.jpg" class="mediacenter" src="https://i.imgur.com/GZg658F.jpg" title="i.imgur.com_gzg658f.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA23&quot;,&quot;hid&quot;:&quot;stepa23&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:26,&quot;range&quot;:&quot;6858-6950&quot;} -->
 <h2 class="sectionedit27" id="stepa24">StepA24</h2>
 <div class="level2">
-
 <p>
 新規にイベント領域が確保されました。<br/>
 この領域にイベントを作っていきます。<br/>
-<a href="/lib/exe/fetch.php?tok=1f8142&amp;media=https%3A%2F%2Fi.imgur.com%2FgYPopgX.jpg" class="media" title="https://i.imgur.com/gYPopgX.jpg"><img src="/lib/exe/fetch.php?tok=1f8142&amp;media=https%3A%2F%2Fi.imgur.com%2FgYPopgX.jpg" class="mediacenter" title="i.imgur.com_gypopgx.jpg" alt="i.imgur.com_gypopgx.jpg" /></a>
+<a class="media" href="https://i.imgur.com/gYPopgX.jpg" title="https://i.imgur.com/gYPopgX.jpg"><img alt="i.imgur.com_gypopgx.jpg" class="mediacenter" src="https://i.imgur.com/gYPopgX.jpg" title="i.imgur.com_gypopgx.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA24&quot;,&quot;hid&quot;:&quot;stepa24&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:27,&quot;range&quot;:&quot;6951-7124&quot;} -->
 <h2 class="sectionedit28" id="stepa25">StepA25</h2>
 <div class="level2">
-
 <p>
 イベントとと書かれている部分をクリックすると、イベント命令を設定する画面に行けます。<br/>
-<a href="/lib/exe/fetch.php?tok=575c60&amp;media=https%3A%2F%2Fi.imgur.com%2F9AH5dFG.jpg" class="media" title="https://i.imgur.com/9AH5dFG.jpg"><img src="/lib/exe/fetch.php?tok=575c60&amp;media=https%3A%2F%2Fi.imgur.com%2F9AH5dFG.jpg" class="mediacenter" title="i.imgur.com_9ah5dfg.jpg" alt="i.imgur.com_9ah5dfg.jpg" /></a>
+<a class="media" href="https://i.imgur.com/9AH5dFG.jpg" title="https://i.imgur.com/9AH5dFG.jpg"><img alt="i.imgur.com_9ah5dfg.jpg" class="mediacenter" src="https://i.imgur.com/9AH5dFG.jpg" title="i.imgur.com_9ah5dfg.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA25&quot;,&quot;hid&quot;:&quot;stepa25&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:28,&quot;range&quot;:&quot;7125-7313&quot;} -->
 <h2 class="sectionedit29" id="stepa26">StepA26</h2>
 <div class="level2">
-
 <p>
 イベント命令を設定する画面に来ました。<br/>
 現在は、終端命令のリターンしかない、まったくの白紙の状態です。<br/>
 ここに増援を実行するイベントを作ります。<br/>
-<a href="/lib/exe/fetch.php?tok=651169&amp;media=https%3A%2F%2Fi.imgur.com%2FlhlNTjG.jpg" class="media" title="https://i.imgur.com/lhlNTjG.jpg"><img src="/lib/exe/fetch.php?tok=651169&amp;media=https%3A%2F%2Fi.imgur.com%2FlhlNTjG.jpg" class="mediacenter" title="i.imgur.com_lhlntjg.jpg" alt="i.imgur.com_lhlntjg.jpg" /></a>
+<a class="media" href="https://i.imgur.com/lhlNTjG.jpg" title="https://i.imgur.com/lhlNTjG.jpg"><img alt="i.imgur.com_lhlntjg.jpg" class="mediacenter" src="https://i.imgur.com/lhlNTjG.jpg" title="i.imgur.com_lhlntjg.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA26&quot;,&quot;hid&quot;:&quot;stepa26&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:29,&quot;range&quot;:&quot;7314-7592&quot;} -->
 <h2 class="sectionedit30" id="stepa27">StepA27</h2>
 <div class="level2">
-
 <p>
 画面の余白を、ダブルクリックしてください。<br/>
 コントロールパネルが出現します。<br/>
-<a href="/lib/exe/fetch.php?tok=7da945&amp;media=https%3A%2F%2Fi.imgur.com%2FIzSOMZ6.jpg" class="media" title="https://i.imgur.com/IzSOMZ6.jpg"><img src="/lib/exe/fetch.php?tok=7da945&amp;media=https%3A%2F%2Fi.imgur.com%2FIzSOMZ6.jpg" class="mediacenter" title="i.imgur.com_izsomz6.jpg" alt="i.imgur.com_izsomz6.jpg" /></a>
+<a class="media" href="https://i.imgur.com/IzSOMZ6.jpg" title="https://i.imgur.com/IzSOMZ6.jpg"><img alt="i.imgur.com_izsomz6.jpg" class="mediacenter" src="https://i.imgur.com/IzSOMZ6.jpg" title="i.imgur.com_izsomz6.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA27&quot;,&quot;hid&quot;:&quot;stepa27&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:30,&quot;range&quot;:&quot;7593-7769&quot;} -->
 <h2 class="sectionedit31" id="stepa28">StepA28</h2>
 <div class="level2">
-
 <p>
 「命令変更」ボタンをクリックしてください。<br/>
-<a href="/lib/exe/fetch.php?tok=64355b&amp;media=https%3A%2F%2Fi.imgur.com%2FpGcGrj6.jpg" class="media" title="https://i.imgur.com/pGcGrj6.jpg"><img src="/lib/exe/fetch.php?tok=64355b&amp;media=https%3A%2F%2Fi.imgur.com%2FpGcGrj6.jpg" class="mediacenter" title="i.imgur.com_pgcgrj6.jpg" alt="i.imgur.com_pgcgrj6.jpg" /></a>
+<a class="media" href="https://i.imgur.com/pGcGrj6.jpg" title="https://i.imgur.com/pGcGrj6.jpg"><img alt="i.imgur.com_pgcgrj6.jpg" class="mediacenter" src="https://i.imgur.com/pGcGrj6.jpg" title="i.imgur.com_pgcgrj6.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA28&quot;,&quot;hid&quot;:&quot;stepa28&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:31,&quot;range&quot;:&quot;7770-7895&quot;} -->
 <h2 class="sectionedit32" id="stepa29">StepA29</h2>
 <div class="level2">
-
 <p>
 イベントでどんな命令を実行するか選ぶことができます。<br/>
 ここには、先人たちの解析で現在判明しているすべての命令が登録されています。<br/>
-<a href="/lib/exe/fetch.php?tok=54f8f0&amp;media=https%3A%2F%2Fi.imgur.com%2FW2YuWC8.jpg" class="media" title="https://i.imgur.com/W2YuWC8.jpg"><img src="/lib/exe/fetch.php?tok=54f8f0&amp;media=https%3A%2F%2Fi.imgur.com%2FW2YuWC8.jpg" class="mediacenter" title="i.imgur.com_w2yuwc8.jpg" alt="i.imgur.com_w2yuwc8.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/W2YuWC8.jpg" title="https://i.imgur.com/W2YuWC8.jpg"><img alt="i.imgur.com_w2yuwc8.jpg" class="mediacenter" src="https://i.imgur.com/W2YuWC8.jpg" title="i.imgur.com_w2yuwc8.jpg"/></a><br/>
 <br/>
 イベント命令は、 config/data/eventcond_*.txt にあります。<br/>
 命令はFEシリーズごとにことなります。<br/>
 また、ASMを使えれば新規に命令プログラムすることもできます。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA29&quot;,&quot;hid&quot;:&quot;stepa29&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:32,&quot;range&quot;:&quot;7896-8373&quot;} -->
 <h2 class="sectionedit33" id="stepa30">StepA30</h2>
 <div class="level2">
-
 <p>
 今回は、ユニットを出したいので、カテゴリの「ユニット設置」を選択します。<br/>
-<a href="/lib/exe/fetch.php?tok=25e053&amp;media=https%3A%2F%2Fi.imgur.com%2FtYGKtuj.jpg" class="media" title="https://i.imgur.com/tYGKtuj.jpg"><img src="/lib/exe/fetch.php?tok=25e053&amp;media=https%3A%2F%2Fi.imgur.com%2FtYGKtuj.jpg" class="mediacenter" title="i.imgur.com_tygktuj.jpg" alt="i.imgur.com_tygktuj.jpg" /></a>
+<a class="media" href="https://i.imgur.com/tYGKtuj.jpg" title="https://i.imgur.com/tYGKtuj.jpg"><img alt="i.imgur.com_tygktuj.jpg" class="mediacenter" src="https://i.imgur.com/tYGKtuj.jpg" title="i.imgur.com_tygktuj.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA30&quot;,&quot;hid&quot;:&quot;stepa30&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:33,&quot;range&quot;:&quot;8374-8544&quot;} -->
 <h2 class="sectionedit34" id="stepa31">StepA31</h2>
 <div class="level2">
-
 <p>
 「[XXXXXXXX:POINTER_UNIT:ユニット情報]を読込移動 主に増援 カメラ移動有り」を選択してください。<br/>
-<a href="/lib/exe/fetch.php?tok=03038e&amp;media=https%3A%2F%2Fi.imgur.com%2FSgWOhlK.jpg" class="media" title="https://i.imgur.com/SgWOhlK.jpg"><img src="/lib/exe/fetch.php?tok=03038e&amp;media=https%3A%2F%2Fi.imgur.com%2FSgWOhlK.jpg" class="mediacenter" title="i.imgur.com_sgwohlk.jpg" alt="i.imgur.com_sgwohlk.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/SgWOhlK.jpg" title="https://i.imgur.com/SgWOhlK.jpg"><img alt="i.imgur.com_sgwohlk.jpg" class="mediacenter" src="https://i.imgur.com/SgWOhlK.jpg" title="i.imgur.com_sgwohlk.jpg"/></a><br/>
 <br/>
 選択後に、「命令を選択する」ボタンを押してください。<br/>
 なお、命令をダブルクリックしても、大丈夫です。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA31&quot;,&quot;hid&quot;:&quot;stepa31&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:34,&quot;range&quot;:&quot;8545-8891&quot;} -->
 <h2 class="sectionedit35" id="stepa32">StepA32</h2>
 <div class="level2">
-
 <p>
 先ほど選択した命令が選択されました。<br/>
 命令の引数を設定します。<br/>
-<a href="/lib/exe/fetch.php?tok=03038e&amp;media=https%3A%2F%2Fi.imgur.com%2FSgWOhlK.jpg" class="media" title="https://i.imgur.com/SgWOhlK.jpg"><img src="/lib/exe/fetch.php?tok=03038e&amp;media=https%3A%2F%2Fi.imgur.com%2FSgWOhlK.jpg" class="mediacenter" title="i.imgur.com_sgwohlk.jpg" alt="i.imgur.com_sgwohlk.jpg" /></a>
+<a class="media" href="https://i.imgur.com/SgWOhlK.jpg" title="https://i.imgur.com/SgWOhlK.jpg"><img alt="i.imgur.com_sgwohlk.jpg" class="mediacenter" src="https://i.imgur.com/SgWOhlK.jpg" title="i.imgur.com_sgwohlk.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA32&quot;,&quot;hid&quot;:&quot;stepa32&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:35,&quot;range&quot;:&quot;8892-9047&quot;} -->
 <h2 class="sectionedit36" id="stepa33">StepA33</h2>
 <div class="level2">
-
 <p>
 最初の方でユニットを増設したアドレスをメモりましたよね。<br/>
 その内容をここで書きます。<br/>
 <br/>
 今回は、 0x01000000にユニットを設置しましたので、 01000000となります。<br/>
-<a href="/lib/exe/fetch.php?tok=d42537&amp;media=https%3A%2F%2Fi.imgur.com%2F55q0W3H.jpg" class="media" title="https://i.imgur.com/55q0W3H.jpg"><img src="/lib/exe/fetch.php?tok=d42537&amp;media=https%3A%2F%2Fi.imgur.com%2F55q0W3H.jpg" class="mediacenter" title="i.imgur.com_55q0w3h.jpg" alt="i.imgur.com_55q0w3h.jpg" /></a>
+<a class="media" href="https://i.imgur.com/55q0W3H.jpg" title="https://i.imgur.com/55q0W3H.jpg"><img alt="i.imgur.com_55q0w3h.jpg" class="mediacenter" src="https://i.imgur.com/55q0W3H.jpg" title="i.imgur.com_55q0w3h.jpg"/></a>
 </p>
-
 <p>
 <br/>
 <br/>
@@ -575,270 +487,215 @@ NEWとかかれている部分です。<br/>
 そのため、FEBuilderは自動的に変換してくれます。<br/>
 ユーザは、何も考えずに、値を書くだけで自動的にすべて解決します。<br/>
 もちろん、+0x08000000した正しい値を書いていただいてもまったく問題ありません。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA33&quot;,&quot;hid&quot;:&quot;stepa33&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:36,&quot;range&quot;:&quot;9048-10005&quot;} -->
 <h2 class="sectionedit37" id="stepa34">StepA34</h2>
 <div class="level2">
-
 <p>
 ユニット情報の値を書いたら、変更か新規挿入ボタンを押します。<br/>
 現在イベントはないので、どちらでも結果は同じです。<br/>
-<a href="/lib/exe/fetch.php?tok=af7398&amp;media=https%3A%2F%2Fi.imgur.com%2FoOTn6Ce.jpg" class="media" title="https://i.imgur.com/oOTn6Ce.jpg"><img src="/lib/exe/fetch.php?tok=af7398&amp;media=https%3A%2F%2Fi.imgur.com%2FoOTn6Ce.jpg" class="mediacenter" title="i.imgur.com_ootn6ce.jpg" alt="i.imgur.com_ootn6ce.jpg" /></a>
+<a class="media" href="https://i.imgur.com/oOTn6Ce.jpg" title="https://i.imgur.com/oOTn6Ce.jpg"><img alt="i.imgur.com_ootn6ce.jpg" class="mediacenter" src="https://i.imgur.com/oOTn6Ce.jpg" title="i.imgur.com_ootn6ce.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA34&quot;,&quot;hid&quot;:&quot;stepa34&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:37,&quot;range&quot;:&quot;10006-10236&quot;} -->
 <h2 class="sectionedit38" id="stepa35">StepA35</h2>
 <div class="level2">
-
 <p>
 記載した内容がリストに表示されています。<br/>
-<a href="/lib/exe/fetch.php?tok=f459cf&amp;media=https%3A%2F%2Fi.imgur.com%2FdxZrTbP.jpg" class="media" title="https://i.imgur.com/dxZrTbP.jpg"><img src="/lib/exe/fetch.php?tok=f459cf&amp;media=https%3A%2F%2Fi.imgur.com%2FdxZrTbP.jpg" class="mediacenter" title="i.imgur.com_dxzrtbp.jpg" alt="i.imgur.com_dxzrtbp.jpg" /></a>
+<a class="media" href="https://i.imgur.com/dxZrTbP.jpg" title="https://i.imgur.com/dxZrTbP.jpg"><img alt="i.imgur.com_dxzrtbp.jpg" class="mediacenter" src="https://i.imgur.com/dxZrTbP.jpg" title="i.imgur.com_dxzrtbp.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA35&quot;,&quot;hid&quot;:&quot;stepa35&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:38,&quot;range&quot;:&quot;10237-10359&quot;} -->
 <h2 class="sectionedit39" id="stepa36">StepA36</h2>
 <div class="level2">
-
 <p>
 最後に、「書き込み」ボタンを押して内容を確定してください。<br/>
-<a href="/lib/exe/fetch.php?tok=b264ac&amp;media=https%3A%2F%2Fi.imgur.com%2F60Ic5jL.jpg" class="media" title="https://i.imgur.com/60Ic5jL.jpg"><img src="/lib/exe/fetch.php?tok=b264ac&amp;media=https%3A%2F%2Fi.imgur.com%2F60Ic5jL.jpg" class="mediacenter" title="i.imgur.com_60ic5jl.jpg" alt="i.imgur.com_60ic5jl.jpg" /></a>
+<a class="media" href="https://i.imgur.com/60Ic5jL.jpg" title="https://i.imgur.com/60Ic5jL.jpg"><img alt="i.imgur.com_60ic5jl.jpg" class="mediacenter" src="https://i.imgur.com/60Ic5jL.jpg" title="i.imgur.com_60ic5jl.jpg"/></a>
 </p>
-
 <p>
 これで、データの紐付ができました。<br/>
 先ほどメモした、ユニット配置のアドレスはもう消しても大丈夫です。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA36&quot;,&quot;hid&quot;:&quot;stepa36&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:39,&quot;range&quot;:&quot;10360-10663&quot;} -->
 <h2 class="sectionedit40" id="stepa37">StepA37</h2>
 <div class="level2">
-
 <p>
 F5キーを押して、エミュレータを起動して、動作を確認します。<br/>
 2ターンから3ターン目に増援が現れます。<br/>
-<a href="/lib/exe/fetch.php?tok=75a8ba&amp;media=https%3A%2F%2Fi.imgur.com%2FFvE4iYm.jpg" class="media" title="https://i.imgur.com/FvE4iYm.jpg"><img src="/lib/exe/fetch.php?tok=75a8ba&amp;media=https%3A%2F%2Fi.imgur.com%2FFvE4iYm.jpg" class="mediacenter" title="i.imgur.com_fve4iym.jpg" alt="i.imgur.com_fve4iym.jpg" /></a>
+<a class="media" href="https://i.imgur.com/FvE4iYm.jpg" title="https://i.imgur.com/FvE4iYm.jpg"><img alt="i.imgur.com_fve4iym.jpg" class="mediacenter" src="https://i.imgur.com/FvE4iYm.jpg" title="i.imgur.com_fve4iym.jpg"/></a>
 </p>
-
 <p>
 <br/>
 増援を確認したら、エミュレータは終了してください。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA37&quot;,&quot;hid&quot;:&quot;stepa37&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:40,&quot;range&quot;:&quot;10664-10953&quot;} -->
 <h1 class="sectionedit41" id="人数の増減">人数の増減</h1>
 <div class="level1">
-
 <p>
 いきなり3人増援はちょっとやりすぎたかもしれません。<br/>
 増援を減らすべきなのかも・・・・ということで、ユニット数の増減をやってみます。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u4eba\u6570\u306e\u5897\u6e1b&quot;,&quot;hid&quot;:&quot;\u4eba\u6570\u306e\u5897\u6e1b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:41,&quot;range&quot;:&quot;10954-11185&quot;} -->
 <h2 class="sectionedit42" id="stepb1">StepB1</h2>
 <div class="level2">
-
 <p>
 メイン画面である簡易メニュー画面に戻ってください。<br/>
 FEBuilderGBAは、PAUSE/BREAKキーを押すと、どの画面からでも、メイン画面に戻れて便利です。<br/>
-<a href="/lib/exe/fetch.php?tok=716767&amp;media=https%3A%2F%2Fi.imgur.com%2F4fQNrb7.jpg" class="media" title="https://i.imgur.com/4fQNrb7.jpg"><img src="/lib/exe/fetch.php?tok=716767&amp;media=https%3A%2F%2Fi.imgur.com%2F4fQNrb7.jpg" class="mediacenter" title="i.imgur.com_4fqnrb7.jpg" alt="i.imgur.com_4fqnrb7.jpg" /></a>
+<a class="media" href="https://i.imgur.com/4fQNrb7.jpg" title="https://i.imgur.com/4fQNrb7.jpg"><img alt="i.imgur.com_4fqnrb7.jpg" class="mediacenter" src="https://i.imgur.com/4fQNrb7.jpg" title="i.imgur.com_4fqnrb7.jpg"/></a>
 </p>
-
 <p>
 簡易メニュー画面では、増援で出てくる敵キャラがちゃんとマップに表示されています。<br/>
 彼らの数を変えたいので、増援ユニットをダブルクリックしてください。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB1&quot;,&quot;hid&quot;:&quot;stepb1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:42,&quot;range&quot;:&quot;11186-11670&quot;} -->
 <h2 class="sectionedit43" id="stepb2">StepB2</h2>
 <div class="level2">
-
 <p>
 増援キャラの設定に飛びます。<br/>
 作ったときは、NEWでしたが、彼らはターンで増援されるという設定になりましたので、ターン条件で増援されるキャラとして表示されます。<br/>
-<a href="/lib/exe/fetch.php?tok=2e94c9&amp;media=https%3A%2F%2Fi.imgur.com%2FNqZPJ8U.jpg" class="media" title="https://i.imgur.com/NqZPJ8U.jpg"><img src="/lib/exe/fetch.php?tok=2e94c9&amp;media=https%3A%2F%2Fi.imgur.com%2FNqZPJ8U.jpg" class="mediacenter" title="i.imgur.com_nqzpj8u.jpg" alt="i.imgur.com_nqzpj8u.jpg" /></a>
+<a class="media" href="https://i.imgur.com/NqZPJ8U.jpg" title="https://i.imgur.com/NqZPJ8U.jpg"><img alt="i.imgur.com_nqzpj8u.jpg" class="mediacenter" src="https://i.imgur.com/NqZPJ8U.jpg" title="i.imgur.com_nqzpj8u.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB2&quot;,&quot;hid&quot;:&quot;stepb2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:43,&quot;range&quot;:&quot;11671-11966&quot;} -->
 <h2 class="sectionedit44" id="stepb3">StepB3</h2>
 <div class="level2">
-
 <p>
 数を減らしましょう。とりあえず1人だけにしてみます。<br/>
 真ん中のキャラを選択してください。<br/>
-<a href="/lib/exe/fetch.php?tok=14bd2f&amp;media=https%3A%2F%2Fi.imgur.com%2FYpCWKlJ.jpg" class="media" title="https://i.imgur.com/YpCWKlJ.jpg"><img src="/lib/exe/fetch.php?tok=14bd2f&amp;media=https%3A%2F%2Fi.imgur.com%2FYpCWKlJ.jpg" class="mediacenter" title="i.imgur.com_ypcwklj.jpg" alt="i.imgur.com_ypcwklj.jpg" /></a>
+<a class="media" href="https://i.imgur.com/YpCWKlJ.jpg" title="https://i.imgur.com/YpCWKlJ.jpg"><img alt="i.imgur.com_ypcwklj.jpg" class="mediacenter" src="https://i.imgur.com/YpCWKlJ.jpg" title="i.imgur.com_ypcwklj.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB3&quot;,&quot;hid&quot;:&quot;stepb3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:44,&quot;range&quot;:&quot;11967-12158&quot;} -->
 <h2 class="sectionedit45" id="stepb31">StepB3</h2>
 <div class="level2">
-
 <p>
 真ん中のキャラのユニット番号を 0 にしてください。<br/>
 ユニット番号 0 というのは、終端という意味です。<br/>
 これ以降にはデータはありませんという意味になります。<br/>
-<a href="/lib/exe/fetch.php?tok=6075d4&amp;media=https%3A%2F%2Fi.imgur.com%2FaTIqRi5.jpg" class="media" title="https://i.imgur.com/aTIqRi5.jpg"><img src="/lib/exe/fetch.php?tok=6075d4&amp;media=https%3A%2F%2Fi.imgur.com%2FaTIqRi5.jpg" class="mediacenter" title="i.imgur.com_atiqri5.jpg" alt="i.imgur.com_atiqri5.jpg" /></a>
+<a class="media" href="https://i.imgur.com/aTIqRi5.jpg" title="https://i.imgur.com/aTIqRi5.jpg"><img alt="i.imgur.com_atiqri5.jpg" class="mediacenter" src="https://i.imgur.com/aTIqRi5.jpg" title="i.imgur.com_atiqri5.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB3&quot;,&quot;hid&quot;:&quot;stepb31&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:45,&quot;range&quot;:&quot;12159-12445&quot;} -->
 <h2 class="sectionedit46" id="stepb4">StepB4</h2>
 <div class="level2">
-
 <p>
 「書き込み」ボタンで書き込んで結果を確定させます。<br/>
-<a href="/lib/exe/fetch.php?tok=91b644&amp;media=https%3A%2F%2Fi.imgur.com%2FU4Ipuj5.jpg" class="media" title="https://i.imgur.com/U4Ipuj5.jpg"><img src="/lib/exe/fetch.php?tok=91b644&amp;media=https%3A%2F%2Fi.imgur.com%2FU4Ipuj5.jpg" class="mediacenter" title="i.imgur.com_u4ipuj5.jpg" alt="i.imgur.com_u4ipuj5.jpg" /></a>
+<a class="media" href="https://i.imgur.com/U4Ipuj5.jpg" title="https://i.imgur.com/U4Ipuj5.jpg"><img alt="i.imgur.com_u4ipuj5.jpg" class="mediacenter" src="https://i.imgur.com/U4Ipuj5.jpg" title="i.imgur.com_u4ipuj5.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB4&quot;,&quot;hid&quot;:&quot;stepb4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:46,&quot;range&quot;:&quot;12446-12582&quot;} -->
 <h2 class="sectionedit47" id="stepb5">StepB5</h2>
 <div class="level2">
-
 <p>
 そうすると、真ん中のキャラが -EMPTY- となります。<br/>
 これは終端マークが入っているキャラという意味です。<br/>
 一度ユニット設定を移動してしまうと、終端以降のキャラの表示は消えます。<br/>
-<a href="/lib/exe/fetch.php?tok=91b644&amp;media=https%3A%2F%2Fi.imgur.com%2FU4Ipuj5.jpg" class="media" title="https://i.imgur.com/U4Ipuj5.jpg"><img src="/lib/exe/fetch.php?tok=91b644&amp;media=https%3A%2F%2Fi.imgur.com%2FU4Ipuj5.jpg" class="mediacenter" title="i.imgur.com_u4ipuj5.jpg" alt="i.imgur.com_u4ipuj5.jpg" /></a>
+<a class="media" href="https://i.imgur.com/U4Ipuj5.jpg" title="https://i.imgur.com/U4Ipuj5.jpg"><img alt="i.imgur.com_u4ipuj5.jpg" class="mediacenter" src="https://i.imgur.com/U4Ipuj5.jpg" title="i.imgur.com_u4ipuj5.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB5&quot;,&quot;hid&quot;:&quot;stepb5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:47,&quot;range&quot;:&quot;12583-12899&quot;} -->
 <h2 class="sectionedit48" id="stepb6">StepB6</h2>
 <div class="level2">
-
 <p>
 F5キーでエミュレータを起動して動作を確認します。<br/>
 終端マークを2人目に入れたため、今回は、1人しか増援されません。<br/>
-<a href="/lib/exe/fetch.php?tok=03104c&amp;media=https%3A%2F%2Fi.imgur.com%2FmNzlkLw.jpg" class="media" title="https://i.imgur.com/mNzlkLw.jpg"><img src="/lib/exe/fetch.php?tok=03104c&amp;media=https%3A%2F%2Fi.imgur.com%2FmNzlkLw.jpg" class="mediacenter" title="i.imgur.com_mnzlklw.jpg" alt="i.imgur.com_mnzlklw.jpg" /></a>
+<a class="media" href="https://i.imgur.com/mNzlkLw.jpg" title="https://i.imgur.com/mNzlkLw.jpg"><img alt="i.imgur.com_mnzlklw.jpg" class="mediacenter" src="https://i.imgur.com/mNzlkLw.jpg" title="i.imgur.com_mnzlklw.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB6&quot;,&quot;hid&quot;:&quot;stepb6&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:48,&quot;range&quot;:&quot;12900-13127&quot;} -->
 <h2 class="sectionedit49" id="stepb7">StepB7</h2>
 <div class="level2">
-
 <p>
 1人だけだと味気ない場合は、元に戻すこともできます。<br/>
 先ほどのユニット情報を再度見てみると、1人になっています。<br/>
 これは、ディフォルトは終端まで読み込むからです。<br/>
 2人目に終端が入っているので、1人だけの読込になっています。<br/>
-<a href="/lib/exe/fetch.php?tok=a97023&amp;media=https%3A%2F%2Fi.imgur.com%2FNqa03II.jpg" class="media" title="https://i.imgur.com/Nqa03II.jpg"><img src="/lib/exe/fetch.php?tok=a97023&amp;media=https%3A%2F%2Fi.imgur.com%2FNqa03II.jpg" class="mediacenter" title="i.imgur.com_nqa03ii.jpg" alt="i.imgur.com_nqa03ii.jpg" /></a>
+<a class="media" href="https://i.imgur.com/Nqa03II.jpg" title="https://i.imgur.com/Nqa03II.jpg"><img alt="i.imgur.com_nqa03ii.jpg" class="mediacenter" src="https://i.imgur.com/Nqa03II.jpg" title="i.imgur.com_nqa03ii.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB7&quot;,&quot;hid&quot;:&quot;stepb7&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:49,&quot;range&quot;:&quot;13128-13517&quot;} -->
 <h2 class="sectionedit50" id="stepb8">StepB8</h2>
 <div class="level2">
-
 <p>
 元に戻すには、「読込数」で、元の人数である「3」を入力し、「再取得」ボタンを押します。<br/>
 そうすると、ちゃんと3人表示されます。<br/>
-<a href="/lib/exe/fetch.php?tok=a85a3d&amp;media=https%3A%2F%2Fi.imgur.com%2F8sQYQ6C.jpg" class="media" title="https://i.imgur.com/8sQYQ6C.jpg"><img src="/lib/exe/fetch.php?tok=a85a3d&amp;media=https%3A%2F%2Fi.imgur.com%2F8sQYQ6C.jpg" class="mediacenter" title="i.imgur.com_8sqyq6c.jpg" alt="i.imgur.com_8sqyq6c.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/8sQYQ6C.jpg" title="https://i.imgur.com/8sQYQ6C.jpg"><img alt="i.imgur.com_8sqyq6c.jpg" class="mediacenter" src="https://i.imgur.com/8sQYQ6C.jpg" title="i.imgur.com_8sqyq6c.jpg"/></a><br/>
 <br/>
 ここで、2人目の ユニットIDを 0 以外にすれば復元できます。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB8&quot;,&quot;hid&quot;:&quot;stepb8&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:50,&quot;range&quot;:&quot;13518-13852&quot;} -->
 <h2 class="sectionedit51" id="stepb9">StepB9</h2>
 <div class="level2">
-
 <p>
 では、増やす場合、読込数をもっと大きい値にすればいいのか？というと、そんなことはダメです。<br/>
 試しに、読込数を10と、当初の3よりもっと大きい値にすると、このようになりました。<br/>
-<a href="/lib/exe/fetch.php?tok=fe9d96&amp;media=https%3A%2F%2Fi.imgur.com%2FAudoqsi.jpg" class="media" title="https://i.imgur.com/Audoqsi.jpg"><img src="/lib/exe/fetch.php?tok=fe9d96&amp;media=https%3A%2F%2Fi.imgur.com%2FAudoqsi.jpg" class="mediacenter" title="i.imgur.com_audoqsi.jpg" alt="i.imgur.com_audoqsi.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/Audoqsi.jpg" title="https://i.imgur.com/Audoqsi.jpg"><img alt="i.imgur.com_audoqsi.jpg" class="mediacenter" src="https://i.imgur.com/Audoqsi.jpg" title="i.imgur.com_audoqsi.jpg"/></a><br/>
 <br/>
 なにやら、めちゃくちゃな情報が表示されました。<br/>
 これは、終端を突き破って、別の情報を強引にユニット情報として解釈したためです。<br/>
 これらを書き換えると、他の情報を壊してしまうため、とても危険です。<br/>
 ゲームのフリーズにつながります。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB9&quot;,&quot;hid&quot;:&quot;stepb9&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:51,&quot;range&quot;:&quot;13853-14518&quot;} -->
 <h2 class="sectionedit52" id="stepb10">StepB10</h2>
 <div class="level2">
-
 <p>
 何かまずいことが起きた場合は、もう一度、リストを選択しなおすと、自動的に再取得が行われるため、安全になります。<br/>
 「書き込む」ボタンを押さない限り、大丈夫です。<br/>
-<a href="/lib/exe/fetch.php?tok=732962&amp;media=https%3A%2F%2Fi.imgur.com%2FV7SQ7AG.jpg" class="media" title="https://i.imgur.com/V7SQ7AG.jpg"><img src="/lib/exe/fetch.php?tok=732962&amp;media=https%3A%2F%2Fi.imgur.com%2FV7SQ7AG.jpg" class="mediacenter" title="i.imgur.com_v7sq7ag.jpg" alt="i.imgur.com_v7sq7ag.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/V7SQ7AG.jpg" title="https://i.imgur.com/V7SQ7AG.jpg"><img alt="i.imgur.com_v7sq7ag.jpg" class="mediacenter" src="https://i.imgur.com/V7SQ7AG.jpg" title="i.imgur.com_v7sq7ag.jpg"/></a><br/>
 <br/>
 また、間違って「書き込む」ボタンを押したとしても、Undo機能で元に戻せますし、そもそも、メインメニューでROMに書き込むと、命じない限り、すべての処理はメモリ上で行われるので、ROMファイルを傷つけることはありません。<br/>
 もし、ROMにも書き込んでしまったという場合でも、FEBuilderはROMに書き込む前にバックアップを取っています。<br/>
 <br/>
 だからといって、バックアップもすべて消してしまったという場合は、さすがにどうしようもありません。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB10&quot;,&quot;hid&quot;:&quot;stepb10&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:52,&quot;range&quot;:&quot;14519-15435&quot;} -->
 <h2 class="sectionedit53" id="stepb11">StepB11</h2>
 <div class="level2">
-
 <p>
 では、もともとの人数を覚えていなかったり、<br/>
 最初に確保した数よりユニットを増やした場合はどうするか？というと、「リストの拡張」ボタンを利用します。<br/>
-<a href="/lib/exe/fetch.php?tok=315099&amp;media=https%3A%2F%2Fi.imgur.com%2FhbKOHhg.jpg" class="media" title="https://i.imgur.com/hbKOHhg.jpg"><img src="/lib/exe/fetch.php?tok=315099&amp;media=https%3A%2F%2Fi.imgur.com%2FhbKOHhg.jpg" class="mediacenter" title="i.imgur.com_hbkohhg.jpg" alt="i.imgur.com_hbkohhg.jpg" /></a>
+<a class="media" href="https://i.imgur.com/hbKOHhg.jpg" title="https://i.imgur.com/hbKOHhg.jpg"><img alt="i.imgur.com_hbkohhg.jpg" class="mediacenter" src="https://i.imgur.com/hbKOHhg.jpg" title="i.imgur.com_hbkohhg.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB11&quot;,&quot;hid&quot;:&quot;stepb11&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:53,&quot;range&quot;:&quot;15436-15717&quot;} -->
 <h2 class="sectionedit54" id="stepb12">StepB12</h2>
 <div class="level2">
-
 <p>
 リストの拡張で、設定したい人数を入れれば、安全にデータを拡張できます。<br/>
-<a href="/lib/exe/fetch.php?tok=699565&amp;media=https%3A%2F%2Fi.imgur.com%2FLdLvzPr.jpg" class="media" title="https://i.imgur.com/LdLvzPr.jpg"><img src="/lib/exe/fetch.php?tok=699565&amp;media=https%3A%2F%2Fi.imgur.com%2FLdLvzPr.jpg" class="mediacenter" title="i.imgur.com_ldlvzpr.jpg" alt="i.imgur.com_ldlvzpr.jpg" /></a>
+<a class="media" href="https://i.imgur.com/LdLvzPr.jpg" title="https://i.imgur.com/LdLvzPr.jpg"><img alt="i.imgur.com_ldlvzpr.jpg" class="mediacenter" src="https://i.imgur.com/LdLvzPr.jpg" title="i.imgur.com_ldlvzpr.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB12&quot;,&quot;hid&quot;:&quot;stepb12&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:54,&quot;range&quot;:&quot;15718-15885&quot;} -->
 <h2 class="sectionedit55" id="stepb13">StepB13</h2>
 <div class="level2">
-
 <p>
 5人に増やしてみました。<br/>
-<a href="/lib/exe/fetch.php?tok=677b00&amp;media=https%3A%2F%2Fi.imgur.com%2FD2R1aaC.jpg" class="media" title="https://i.imgur.com/D2R1aaC.jpg"><img src="/lib/exe/fetch.php?tok=677b00&amp;media=https%3A%2F%2Fi.imgur.com%2FD2R1aaC.jpg" class="mediacenter" title="i.imgur.com_d2r1aac.jpg" alt="i.imgur.com_d2r1aac.jpg" /></a>
+<a class="media" href="https://i.imgur.com/D2R1aaC.jpg" title="https://i.imgur.com/D2R1aaC.jpg"><img alt="i.imgur.com_d2r1aac.jpg" class="mediacenter" src="https://i.imgur.com/D2R1aaC.jpg" title="i.imgur.com_d2r1aac.jpg"/></a>
 </p>
-
 <p>
 リストの拡張でいくらでも変えられるといっても、リストの拡張をやりまくると、使えない断片データがたくさん生まれて、残り容量を圧迫します。<br/>
 ご利用は計画的にどうぞ。<br/>
 <br/>
 将来的には、断片データを再利用するdeflagする機能を作りたいとは思います。<br/>
 ただ、なかなか難しい機能なので開発は難航しています。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB13&quot;,&quot;hid&quot;:&quot;stepb13&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:55,&quot;range&quot;:&quot;15886-16419&quot;} -->
 <h1 class="sectionedit56" id="おしまい">おしまい</h1>
 <div class="level1">
-
 <p>
 以上で増援の説明は終了です。<br/>
 ユニット数の調整は、章開始イベントとかでもやりますので、やり方を覚えてしまうと、幅広い応用が可能です。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u304a\u3057\u307e\u3044&quot;,&quot;hid&quot;:&quot;\u304a\u3057\u307e\u3044&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:56,&quot;range&quot;:&quot;16420-&quot;} --></div>
 </body>

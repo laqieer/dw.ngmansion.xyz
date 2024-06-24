@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="ja" dir="ltr">
+
+<html dir="ltr" lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <title>column:arm_asmカンペ</title>
-<meta name="generator" content="DokuWiki"/>
-<meta name="theme-color" content="#008800"/>
-<meta name="robots" content="index,follow"/>
-<meta name="keywords" content="column,arm_asmカンペ"/>
-<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
-<link rel="start" href="/"/>
-<link rel="contents" href="/doku.php?id=column:arm_asm%E3%82%AB%E3%83%B3%E3%83%9A&amp;do=index" title="サイトマップ"/>
-<link rel="manifest" href="/lib/exe/manifest.php"/>
-<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
-<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=column"/>
-<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=column:arm_asm%E3%82%AB%E3%83%B3%E3%83%9A"/>
-<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=column:arm_asm%E3%82%AB%E3%83%B3%E3%83%9A"/>
-<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=column:arm_asm%E3%82%AB%E3%83%B3%E3%83%9A"/>
-<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<meta charset="utf-8"/>
+<title>column:arm_asmカンペ</title>
+<meta content="DokuWiki" name="generator"/>
+<meta content="#008800" name="theme-color"/>
+<meta content="index,follow" name="robots"/>
+<meta content="column,arm_asmカンペ" name="keywords"/>
+<link href="/lib/exe/opensearch.php" rel="search" title="FE改造wiki" type="application/opensearchdescription+xml"/>
+<link href="/" rel="start"/>
+<link href="/doku.php?id=column:arm_asm%E3%82%AB%E3%83%B3%E3%83%9A&amp;do=index" rel="contents" title="サイトマップ"/>
+<link href="/lib/exe/manifest.php" rel="manifest"/>
+<link href="/feed.php" rel="alternate" title="最近の変更" type="application/rss+xml"/>
+<link href="/feed.php?mode=list&amp;ns=column" rel="alternate" title="現在の名前空間" type="application/rss+xml"/>
+<link href="/doku.php?do=export_xhtml&amp;id=column:arm_asm%E3%82%AB%E3%83%B3%E3%83%9A" rel="alternate" title="プレーンHTML" type="text/html"/>
+<link href="/doku.php?do=export_raw&amp;id=column:arm_asm%E3%82%AB%E3%83%B3%E3%83%9A" rel="alternate" title="Wikiマークアップ" type="text/plain"/>
+<link href="https://dw.ngmansion.xyz/doku.php?id=column:arm_asm%E3%82%AB%E3%83%B3%E3%83%9A" rel="canonical"/>
+<link href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" rel="stylesheet" type="text/css"/>
 <!--[if gte IE 9]><!-->
 <script type="text/javascript">/*<![CDATA[*/var NS='column';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"column:arm_asm\u30ab\u30f3\u30da","namespace":"column","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
 /*!]]>*/</script>
-<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
-<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<script charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f" type="text/javascript"></script>
+<script charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" type="text/javascript"></script>
 <!--<![endif]-->
 </head>
 <body>
 <div class="dokuwiki export">
 <!-- TOC START -->
-<div id="dw__toc" class="dw__toc">
+<div class="dw__toc" id="dw__toc">
 <h3 class="toggle">目次</h3>
 <div>
-
 <ul class="toc">
 <li class="level1"><div class="li"><a href="#関数呼び出し">関数呼び出し</a></div></li>
 <li class="level1"><div class="li"><a href="#条件分岐カンペ">条件分岐カンペ</a></div></li>
@@ -41,17 +41,13 @@
 </div>
 </div>
 <!-- TOC END -->
-
 <p>
 armアセンブラを書く上で便利なことをまとめます。<br/>
-
 </p>
-
 <h1 class="sectionedit1" id="関数呼び出し">関数呼び出し</h1>
 <div class="level1">
 <pre class="code">bl 相対アドレスジャンプ。ただし、遠くへは飛べない。
 b  無条件ジャンプ。ただし、遠くへは飛べない。</pre>
-
 <p>
 blとbの違いは、8086でいう callとjmpです。<br/>
 現在実行している番地はpc(r15レジスタ)に格納されいます。<br/>
@@ -62,12 +58,10 @@ pcを書き換えることでjmpを実現します。<br/>
 絶対番地へ問答無用で飛ばしたい場合は、次のようにする。<br/>
 <br/>
 ・blを置き換える命令<br/>
-
 </p>
 <pre class="code">ldr		r1,=$08AABBCC    ;bl 08AABBCC の置き換え
 mov		lr, r1
 @dcw	$F800 ; pcとlrレジスタを置き換えて、戻り先の確保と、実行番地を飛ばす.</pre>
-
 <p>
 GASだと、blhマクロを利用すると便利です。
 </p>
@@ -79,17 +73,14 @@ GASだと、blhマクロを利用すると便利です。
 
 blh 0x08AABBCC
 </pre>
-
 <p>
 ・bを置き換える命令<br/>
-
 </p>
 <pre class="code">ldr		r1,=$08AABBCC 　;b 08AABBCC の置き換え
 mov		pc, r1 ;pcを置き換えて飛ばす.
 
 ;生成されるasmコードの1バイト目が0x00になるので、
 ;コピペするときは、開始バイトを確認して、0x00バイトをコピーし忘れないように。</pre>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u95a2\u6570\u547c\u3073\u51fa\u3057&quot;,&quot;hid&quot;:&quot;\u95a2\u6570\u547c\u3073\u51fa\u3057&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;74-1370&quot;} -->
 <h1 class="sectionedit2" id="条件分岐カンペ">条件分岐カンペ</h1>
@@ -101,49 +92,36 @@ BGE(Ra&gt;=XX)
 BGT(Ra&gt;XX)
 BLE(Ra&lt;=XX)
 BLT(Ra&lt;XX)</pre>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6761\u4ef6\u5206\u5c90\u30ab\u30f3\u30da&quot;,&quot;hid&quot;:&quot;\u6761\u4ef6\u5206\u5c90\u30ab\u30f3\u30da&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:2,&quot;range&quot;:&quot;1371-1519&quot;} -->
 <h1 class="sectionedit3" id="代入">代入</h1>
 <div class="level1">
-
 <p>
 数字を代入する時は、 mov を使う。<br/>
-
 </p>
 <pre class="code">mov r0,#0x01</pre>
-
 <p>
 ポインタを代入するときは、ldrを使う。<br/>
-
 </p>
 <pre class="code">ldr r0,=$0202BE48</pre>
-
 <p>
 ポインタを代入する時に、 movを使うと、 コンパイル(アセンブル)は成功となるが null値代入のコードが生成される。<br/>
-
 </p>
 <pre class="code">mov r0,=$0202BE48
 ↓
 mov r0,=$00000000 ;実際にはこういうコードが生成される。危険。</pre>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u4ee3\u5165&quot;,&quot;hid&quot;:&quot;\u4ee3\u5165&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:3,&quot;range&quot;:&quot;1520-1991&quot;} -->
 <h1 class="sectionedit4" id="逆汗とアセンブル">逆汗とアセンブル</h1>
 <div class="level1">
-
 <p>
 逆アセンブラ<br/>
-
 </p>
 <pre class="code">disarm -t aaa.gba &gt; aaa.asm</pre>
-
 <p>
 アセンブル<br/>
-
 </p>
 <pre class="code">goldroad aaa.asm</pre>
-
 <p>
 ただし、 数値データの解釈が両者異なるので注意。<br/>
 disarmでは、 mov r1,#11 は、  r1に <strong>0x11</strong> を代入する意味だが、<br/>
@@ -151,22 +129,19 @@ goldroadでは、 mov r1,#11 は、r1に <strong>11</strong> を代入する意�
 <br/>
 取り違えると悲惨なことになるので、<br/>
 disarmしたasmの数字データには、#0x11 と 0x をつけて16進数にしなくてはいけない。<br/>
-
 </p>
 <pre class="code">mov r1,#11
 ↓
 mov r1,#0x11</pre>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u9006\u6c57\u3068\u30a2\u30bb\u30f3\u30d6\u30eb&quot;,&quot;hid&quot;:&quot;\u9006\u6c57\u3068\u30a2\u30bb\u30f3\u30d6\u30eb&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:4,&quot;range&quot;:&quot;1992-2599&quot;} -->
 <h1 class="sectionedit5" id="no_gba_debugger_ブレークポイント">no$gba debugger ブレークポイント</h1>
 <div class="level1">
-
 <p>
 Debug→Define Break / Conditionでブレークポイントを作れる。<br/>
 <br/>
-詳細な使い方はこちらを参照<br />
-<a href="http://ngmansion.webcrow.jp/wp/2015/02/23/gba%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E6%94%B9%E9%80%A0%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/#nogba" class="urlextern" title="http://ngmansion.webcrow.jp/wp/2015/02/23/gba%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E6%94%B9%E9%80%A0%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/#nogba" rel="nofollow">http://ngmansion.webcrow.jp/wp/2015/02/23/gba%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E6%94%B9%E9%80%A0%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/#nogba</a>
+詳細な使い方はこちらを参照<br/>
+<a class="urlextern" href="http://ngmansion.webcrow.jp/wp/2015/02/23/gba%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E6%94%B9%E9%80%A0%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/#nogba" rel="nofollow" title="http://ngmansion.webcrow.jp/wp/2015/02/23/gba%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E6%94%B9%E9%80%A0%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/#nogba">http://ngmansion.webcrow.jp/wp/2015/02/23/gba%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E6%94%B9%E9%80%A0%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/#nogba</a>
 </p>
 <pre class="code">08123456
 0x08123456 のコードを実行したら止まる。</pre>
@@ -185,17 +160,14 @@ r0レジスタが 01234567 になったら止まる</pre>
 <pre class="code">r0!=01234567
 r0レジスタが 01234567 以外になったら止まる
 r0&lt;&gt;01234567と同一。</pre>
-
 <p>
 便利な方法。<br/>
 探したい値がある場合。その値を r0 - r2 までに指定するとだいたい見つけることができる。<br/>
 レジスタマシンなので、利用するためには、どこかでレジスタに読み込む必要があるからだ。<br/>
-
 </p>
 <pre class="code">r0=1234
 r1=1234
 r2=1234</pre>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;no$gba debugger \u30d6\u30ec\u30fc\u30af\u30dd\u30a4\u30f3\u30c8&quot;,&quot;hid&quot;:&quot;no_gba_debugger_\u30d6\u30ec\u30fc\u30af\u30dd\u30a4\u30f3\u30c8&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:5,&quot;range&quot;:&quot;2600-&quot;} --></div>
 </body>

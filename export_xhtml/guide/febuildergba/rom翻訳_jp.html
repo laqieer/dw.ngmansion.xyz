@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="ja" dir="ltr">
+
+<html dir="ltr" lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <title>guide:febuildergba:rom翻訳_jp</title>
-<meta name="generator" content="DokuWiki"/>
-<meta name="theme-color" content="#008800"/>
-<meta name="robots" content="index,follow"/>
-<meta name="keywords" content="guide,febuildergba,rom翻訳_jp"/>
-<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
-<link rel="start" href="/"/>
-<link rel="contents" href="/doku.php?id=guide:febuildergba:rom%E7%BF%BB%E8%A8%B3_jp&amp;do=index" title="サイトマップ"/>
-<link rel="manifest" href="/lib/exe/manifest.php"/>
-<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
-<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide:febuildergba"/>
-<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:rom%E7%BF%BB%E8%A8%B3_jp"/>
-<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:febuildergba:rom%E7%BF%BB%E8%A8%B3_jp"/>
-<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:rom%E7%BF%BB%E8%A8%B3_jp"/>
-<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<meta charset="utf-8"/>
+<title>guide:febuildergba:rom翻訳_jp</title>
+<meta content="DokuWiki" name="generator"/>
+<meta content="#008800" name="theme-color"/>
+<meta content="index,follow" name="robots"/>
+<meta content="guide,febuildergba,rom翻訳_jp" name="keywords"/>
+<link href="/lib/exe/opensearch.php" rel="search" title="FE改造wiki" type="application/opensearchdescription+xml"/>
+<link href="/" rel="start"/>
+<link href="/doku.php?id=guide:febuildergba:rom%E7%BF%BB%E8%A8%B3_jp&amp;do=index" rel="contents" title="サイトマップ"/>
+<link href="/lib/exe/manifest.php" rel="manifest"/>
+<link href="/feed.php" rel="alternate" title="最近の変更" type="application/rss+xml"/>
+<link href="/feed.php?mode=list&amp;ns=guide:febuildergba" rel="alternate" title="現在の名前空間" type="application/rss+xml"/>
+<link href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:rom%E7%BF%BB%E8%A8%B3_jp" rel="alternate" title="プレーンHTML" type="text/html"/>
+<link href="/doku.php?do=export_raw&amp;id=guide:febuildergba:rom%E7%BF%BB%E8%A8%B3_jp" rel="alternate" title="Wikiマークアップ" type="text/plain"/>
+<link href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:rom%E7%BF%BB%E8%A8%B3_jp" rel="canonical"/>
+<link href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" rel="stylesheet" type="text/css"/>
 <!--[if gte IE 9]><!-->
 <script type="text/javascript">/*<![CDATA[*/var NS='guide:febuildergba';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:febuildergba:rom\u7ffb\u8a33_jp","namespace":"guide:febuildergba","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
 /*!]]>*/</script>
-<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
-<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<script charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f" type="text/javascript"></script>
+<script charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" type="text/javascript"></script>
 <!--<![endif]-->
 </head>
 <body>
 <div class="dokuwiki export">
 <!-- TOC START -->
-<div id="dw__toc" class="dw__toc">
+<div class="dw__toc" id="dw__toc">
 <h3 class="toggle">目次</h3>
 <div>
-
 <ul class="toc">
 <li class="level1"><div class="li"><a href="#rom翻訳">ROM翻訳</a></div></li>
 <li class="level1"><div class="li"><a href="#何が嬉しいか">何が嬉しいか？</a></div></li>
@@ -51,136 +51,114 @@
 </div>
 </div>
 <!-- TOC END -->
-
 <h1 class="sectionedit1" id="rom翻訳">ROM翻訳</h1>
 <div class="level1">
-
 <p>
 FE7U FE8U に、マルチバイト表示ルーチンを追加します。<br/>
 FE7J FE8J に、シングルバイト表示ルーチンを追加します。<br/>
 (FE6Jはまだ未対応)<br/>
-<br />
-<a href="/lib/exe/fetch.php?tok=6e7b48&amp;media=https%3A%2F%2Fi.imgur.com%2FWdDMzGe.jpg" class="media" title="https://i.imgur.com/WdDMzGe.jpg"><img src="/lib/exe/fetch.php?tok=6e7b48&amp;media=https%3A%2F%2Fi.imgur.com%2FWdDMzGe.jpg" class="mediacenter" title="i.imgur.com_wddmzge.jpg" alt="i.imgur.com_wddmzge.jpg" /></a><br />
-<a href="/lib/exe/fetch.php?tok=c3e40a&amp;media=https%3A%2F%2Fi.imgur.com%2F5x0DAtx.jpg" class="media" title="https://i.imgur.com/5x0DAtx.jpg"><img src="/lib/exe/fetch.php?tok=c3e40a&amp;media=https%3A%2F%2Fi.imgur.com%2F5x0DAtx.jpg" class="mediacenter" title="i.imgur.com_5x0datx.jpg" alt="i.imgur.com_5x0datx.jpg" /></a>
+<br/>
+<a class="media" href="https://i.imgur.com/WdDMzGe.jpg" title="https://i.imgur.com/WdDMzGe.jpg"><img alt="i.imgur.com_wddmzge.jpg" class="mediacenter" src="https://i.imgur.com/WdDMzGe.jpg" title="i.imgur.com_wddmzge.jpg"/></a><br/>
+<a class="media" href="https://i.imgur.com/5x0DAtx.jpg" title="https://i.imgur.com/5x0DAtx.jpg"><img alt="i.imgur.com_5x0datx.jpg" class="mediacenter" src="https://i.imgur.com/5x0DAtx.jpg" title="i.imgur.com_5x0datx.jpg"/></a>
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;ROM\u7ffb\u8a33&quot;,&quot;hid&quot;:&quot;rom\u7ffb\u8a33&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-287&quot;} -->
 <h1 class="sectionedit2" id="何が嬉しいか">何が嬉しいか？</h1>
 <div class="level1">
-
 <p>
 FE7J FE8J用に作られた改造ROMの翻訳が容易になります。<br/>
 逆に、FE7U FE8U用に作られた改造ROMの翻訳が容易になります。<br/>
-<br />
+<br/>
 今のところ、英語(アスキーコード)と、日本語(SJIS)ですが、理屈の上では何語でも行けるはずです。<br/>
 (さすがに、アラビア語みたいに、右から左に書くような言語は無理かもしれませんが・・・)<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u4f55\u304c\u5b09\u3057\u3044\u304b\uff1f&quot;,&quot;hid&quot;:&quot;\u4f55\u304c\u5b09\u3057\u3044\u304b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;288-750&quot;} -->
 <h1 class="sectionedit3" id="既存手法との比較">既存手法との比較</h1>
 <div class="level1">
-
 <p>
 TBLと比べると、以下のメリットがあります。<br/>
-<br />
+<br/>
 ・マルチバイトとシングルバイトが同居が共存可能である。<br/>
 ・修正が容易である。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u65e2\u5b58\u624b\u6cd5\u3068\u306e\u6bd4\u8f03&quot;,&quot;hid&quot;:&quot;\u65e2\u5b58\u624b\u6cd5\u3068\u306e\u6bd4\u8f03&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;751-973&quot;} -->
 <h1 class="sectionedit4" id="遊び方">遊び方</h1>
 <div class="level1">
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u904a\u3073\u65b9&quot;,&quot;hid&quot;:&quot;\u904a\u3073\u65b9&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;974-998&quot;} -->
 <h2 class="sectionedit5" id="fe8u_fe7uの場合">FE8U FE7Uの場合</h2>
 <div class="level2">
-
 <p>
 A-1. FEBuilderGBAで ROMを開きます。<br/>
-<a href="/lib/exe/fetch.php?tok=12f90d&amp;media=https%3A%2F%2Fi.imgur.com%2Fc6Nq4bh.jpg" class="media" title="https://i.imgur.com/c6Nq4bh.jpg"><img src="/lib/exe/fetch.php?tok=12f90d&amp;media=https%3A%2F%2Fi.imgur.com%2Fc6Nq4bh.jpg" class="mediacenter" title="i.imgur.com_c6nq4bh.jpg" alt="i.imgur.com_c6nq4bh.jpg" /></a>
+<a class="media" href="https://i.imgur.com/c6Nq4bh.jpg" title="https://i.imgur.com/c6Nq4bh.jpg"><img alt="i.imgur.com_c6nq4bh.jpg" class="mediacenter" src="https://i.imgur.com/c6Nq4bh.jpg" title="i.imgur.com_c6nq4bh.jpg"/></a>
 </p>
-
 <p>
 A-2. ツール→パッチで、 Anti-Haffman と、 DrawMultiByte の2つのパッチを適用します。<br/>
-<a href="/lib/exe/fetch.php?tok=ad1b6f&amp;media=https%3A%2F%2Fi.imgur.com%2FGd4Z6hu.jpg" class="media" title="https://i.imgur.com/Gd4Z6hu.jpg"><img src="/lib/exe/fetch.php?tok=ad1b6f&amp;media=https%3A%2F%2Fi.imgur.com%2FGd4Z6hu.jpg" class="mediacenter" title="i.imgur.com_gd4z6hu.jpg" alt="i.imgur.com_gd4z6hu.jpg" /></a><br />
-<a href="/lib/exe/fetch.php?tok=ef2f47&amp;media=https%3A%2F%2Fi.imgur.com%2FHtMpKav.jpg" class="media" title="https://i.imgur.com/HtMpKav.jpg"><img src="/lib/exe/fetch.php?tok=ef2f47&amp;media=https%3A%2F%2Fi.imgur.com%2FHtMpKav.jpg" class="mediacenter" title="i.imgur.com_htmpkav.jpg" alt="i.imgur.com_htmpkav.jpg" /></a>
+<a class="media" href="https://i.imgur.com/Gd4Z6hu.jpg" title="https://i.imgur.com/Gd4Z6hu.jpg"><img alt="i.imgur.com_gd4z6hu.jpg" class="mediacenter" src="https://i.imgur.com/Gd4Z6hu.jpg" title="i.imgur.com_gd4z6hu.jpg"/></a><br/>
+<a class="media" href="https://i.imgur.com/HtMpKav.jpg" title="https://i.imgur.com/HtMpKav.jpg"><img alt="i.imgur.com_htmpkav.jpg" class="mediacenter" src="https://i.imgur.com/HtMpKav.jpg" title="i.imgur.com_htmpkav.jpg"/></a>
 </p>
-
 <p>
 A-3. 文字列を翻訳します。<br/>
 ツール→ROM翻訳ツール で、テキストのエクスポート/インポートができます。<br/>
 個別に翻訳してもいいです。<br/>
 <br/>
 とりあえず、わかりやすいアイテムの名前だけを変えてみましょう。<br/>
-<a href="/lib/exe/fetch.php?tok=92aad9&amp;media=https%3A%2F%2Fi.imgur.com%2FkDKiJ1t.jpg" class="media" title="https://i.imgur.com/kDKiJ1t.jpg"><img src="/lib/exe/fetch.php?tok=92aad9&amp;media=https%3A%2F%2Fi.imgur.com%2FkDKiJ1t.jpg" class="mediacenter" title="i.imgur.com_kdkij1t.jpg" alt="i.imgur.com_kdkij1t.jpg" /></a><br />
-<a href="/lib/exe/fetch.php?tok=be1d22&amp;media=https%3A%2F%2Fi.imgur.com%2FoQplYei.jpg" class="media" title="https://i.imgur.com/oQplYei.jpg"><img src="/lib/exe/fetch.php?tok=be1d22&amp;media=https%3A%2F%2Fi.imgur.com%2FoQplYei.jpg" class="mediacenter" title="i.imgur.com_oqplyei.jpg" alt="i.imgur.com_oqplyei.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/kDKiJ1t.jpg" title="https://i.imgur.com/kDKiJ1t.jpg"><img alt="i.imgur.com_kdkij1t.jpg" class="mediacenter" src="https://i.imgur.com/kDKiJ1t.jpg" title="i.imgur.com_kdkij1t.jpg"/></a><br/>
+<a class="media" href="https://i.imgur.com/oQplYei.jpg" title="https://i.imgur.com/oQplYei.jpg"><img alt="i.imgur.com_oqplyei.jpg" class="mediacenter" src="https://i.imgur.com/oQplYei.jpg" title="i.imgur.com_oqplyei.jpg"/></a><br/>
 <br/>
 A-4. フォントをインポートします.<br/>
 ツール→ROM翻訳ツール から、FE8J FE7J ROMを指定して、表示に利用するフォントをインポートします。<br/>
 足りないフォントだけをインポートするので何度インポートしても安全です。<br/>
-<a href="/lib/exe/fetch.php?tok=14d23e&amp;media=https%3A%2F%2Fi.imgur.com%2Fx9EyOzH.jpg" class="media" title="https://i.imgur.com/x9EyOzH.jpg"><img src="/lib/exe/fetch.php?tok=14d23e&amp;media=https%3A%2F%2Fi.imgur.com%2Fx9EyOzH.jpg" class="mediacenter" title="i.imgur.com_x9eyozh.jpg" alt="i.imgur.com_x9eyozh.jpg" /></a>
+<a class="media" href="https://i.imgur.com/x9EyOzH.jpg" title="https://i.imgur.com/x9EyOzH.jpg"><img alt="i.imgur.com_x9eyozh.jpg" class="mediacenter" src="https://i.imgur.com/x9EyOzH.jpg" title="i.imgur.com_x9eyozh.jpg"/></a>
 </p>
-
 <p>
 A-5. F5キーでエミュレータを起動して、動作を確認します。<br/>
-<a href="/lib/exe/fetch.php?tok=c3e40a&amp;media=https%3A%2F%2Fi.imgur.com%2F5x0DAtx.jpg" class="media" title="https://i.imgur.com/5x0DAtx.jpg"><img src="/lib/exe/fetch.php?tok=c3e40a&amp;media=https%3A%2F%2Fi.imgur.com%2F5x0DAtx.jpg" class="mediacenter" title="i.imgur.com_5x0datx.jpg" alt="i.imgur.com_5x0datx.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/5x0DAtx.jpg" title="https://i.imgur.com/5x0DAtx.jpg"><img alt="i.imgur.com_5x0datx.jpg" class="mediacenter" src="https://i.imgur.com/5x0DAtx.jpg" title="i.imgur.com_5x0datx.jpg"/></a><br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8U FE7U\u306e\u5834\u5408&quot;,&quot;hid&quot;:&quot;fe8u_fe7u\u306e\u5834\u5408&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;999-2119&quot;} -->
 <h2 class="sectionedit6" id="fe8j_fe7jの場合">FE8J FE7Jの場合</h2>
 <div class="level2">
-
 <p>
 A-1. FEBuilderGBAで ROMを開きます。<br/>
-<a href="/lib/exe/fetch.php?tok=fc5b95&amp;media=https%3A%2F%2Fi.imgur.com%2FCT3OAlJ.jpg" class="media" title="https://i.imgur.com/CT3OAlJ.jpg"><img src="/lib/exe/fetch.php?tok=fc5b95&amp;media=https%3A%2F%2Fi.imgur.com%2FCT3OAlJ.jpg" class="mediacenter" title="i.imgur.com_ct3oalj.jpg" alt="i.imgur.com_ct3oalj.jpg" /></a>
+<a class="media" href="https://i.imgur.com/CT3OAlJ.jpg" title="https://i.imgur.com/CT3OAlJ.jpg"><img alt="i.imgur.com_ct3oalj.jpg" class="mediacenter" src="https://i.imgur.com/CT3OAlJ.jpg" title="i.imgur.com_ct3oalj.jpg"/></a>
 </p>
-
 <p>
 A-2. ツール→パッチで、 Anti-Haffman と、 DrawSingleByte の2つのパッチを適用します。<br/>
-<a href="/lib/exe/fetch.php?tok=852150&amp;media=https%3A%2F%2Fi.imgur.com%2Fs76hjrY.jpg" class="media" title="https://i.imgur.com/s76hjrY.jpg"><img src="/lib/exe/fetch.php?tok=852150&amp;media=https%3A%2F%2Fi.imgur.com%2Fs76hjrY.jpg" class="mediacenter" title="i.imgur.com_s76hjry.jpg" alt="i.imgur.com_s76hjry.jpg" /></a><br />
-<a href="/lib/exe/fetch.php?tok=e9bca0&amp;media=https%3A%2F%2Fi.imgur.com%2FigdtIi8.jpg" class="media" title="https://i.imgur.com/igdtIi8.jpg"><img src="/lib/exe/fetch.php?tok=e9bca0&amp;media=https%3A%2F%2Fi.imgur.com%2FigdtIi8.jpg" class="mediacenter" title="i.imgur.com_igdtii8.jpg" alt="i.imgur.com_igdtii8.jpg" /></a>
+<a class="media" href="https://i.imgur.com/s76hjrY.jpg" title="https://i.imgur.com/s76hjrY.jpg"><img alt="i.imgur.com_s76hjry.jpg" class="mediacenter" src="https://i.imgur.com/s76hjrY.jpg" title="i.imgur.com_s76hjry.jpg"/></a><br/>
+<a class="media" href="https://i.imgur.com/igdtIi8.jpg" title="https://i.imgur.com/igdtIi8.jpg"><img alt="i.imgur.com_igdtii8.jpg" class="mediacenter" src="https://i.imgur.com/igdtIi8.jpg" title="i.imgur.com_igdtii8.jpg"/></a>
 </p>
-
 <p>
 A-3. 文字列を翻訳します。<br/>
 ツール→ROM翻訳ツール で、テキストのエクスポート/インポートができます。<br/>
 個別に翻訳してもいいです。<br/>
 <br/>
 とりあえず、わかりやすいアイテムの名前だけを変えてみましょう。<br/>
-<a href="/lib/exe/fetch.php?tok=ea51af&amp;media=https%3A%2F%2Fi.imgur.com%2FmEcTWfa.jpg" class="media" title="https://i.imgur.com/mEcTWfa.jpg"><img src="/lib/exe/fetch.php?tok=ea51af&amp;media=https%3A%2F%2Fi.imgur.com%2FmEcTWfa.jpg" class="mediacenter" title="i.imgur.com_mectwfa.jpg" alt="i.imgur.com_mectwfa.jpg" /></a><br />
-<a href="/lib/exe/fetch.php?tok=47bb1a&amp;media=https%3A%2F%2Fi.imgur.com%2FvMUj0n0.jpg" class="media" title="https://i.imgur.com/vMUj0n0.jpg"><img src="/lib/exe/fetch.php?tok=47bb1a&amp;media=https%3A%2F%2Fi.imgur.com%2FvMUj0n0.jpg" class="mediacenter" title="i.imgur.com_vmuj0n0.jpg" alt="i.imgur.com_vmuj0n0.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/mEcTWfa.jpg" title="https://i.imgur.com/mEcTWfa.jpg"><img alt="i.imgur.com_mectwfa.jpg" class="mediacenter" src="https://i.imgur.com/mEcTWfa.jpg" title="i.imgur.com_mectwfa.jpg"/></a><br/>
+<a class="media" href="https://i.imgur.com/vMUj0n0.jpg" title="https://i.imgur.com/vMUj0n0.jpg"><img alt="i.imgur.com_vmuj0n0.jpg" class="mediacenter" src="https://i.imgur.com/vMUj0n0.jpg" title="i.imgur.com_vmuj0n0.jpg"/></a><br/>
 <br/>
 A-4. フォントをインポートします。<br/>
 ツール→ROM翻訳ツール から、FE8U FE7U ROMを指定して、表示に利用するフォントをインポートします。<br/>
 足りないフォントだけをインポートするので何度インポートしても安全です。<br/>
-<a href="/lib/exe/fetch.php?tok=d67e0f&amp;media=https%3A%2F%2Fi.imgur.com%2FN2CU52L.jpg" class="media" title="https://i.imgur.com/N2CU52L.jpg"><img src="/lib/exe/fetch.php?tok=d67e0f&amp;media=https%3A%2F%2Fi.imgur.com%2FN2CU52L.jpg" class="mediacenter" title="i.imgur.com_n2cu52l.jpg" alt="i.imgur.com_n2cu52l.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/N2CU52L.jpg" title="https://i.imgur.com/N2CU52L.jpg"><img alt="i.imgur.com_n2cu52l.jpg" class="mediacenter" src="https://i.imgur.com/N2CU52L.jpg" title="i.imgur.com_n2cu52l.jpg"/></a><br/>
 <br/>
 A-5. F5キーでエミュレータを起動して、動作を確認します。<br/>
-<a href="/lib/exe/fetch.php?tok=6e7b48&amp;media=https%3A%2F%2Fi.imgur.com%2FWdDMzGe.jpg" class="media" title="https://i.imgur.com/WdDMzGe.jpg"><img src="/lib/exe/fetch.php?tok=6e7b48&amp;media=https%3A%2F%2Fi.imgur.com%2FWdDMzGe.jpg" class="mediacenter" title="i.imgur.com_wddmzge.jpg" alt="i.imgur.com_wddmzge.jpg" /></a><br />
+<a class="media" href="https://i.imgur.com/WdDMzGe.jpg" title="https://i.imgur.com/WdDMzGe.jpg"><img alt="i.imgur.com_wddmzge.jpg" class="mediacenter" src="https://i.imgur.com/WdDMzGe.jpg" title="i.imgur.com_wddmzge.jpg"/></a><br/>
 <br/>
 <br/>
 <br/>
 <br/>
-注意点:<br />
+注意点:<br/>
 ただし、FE8J FE7Jには、“文字列”を経由しない直接Shift-JIS指定があるので、そこも忘れずに翻訳しないといけません。<br/>
 地形とか、メニューとか、FE7Jだとサウンドルームとか。ともに、FEBuilderGBAから簡単に変更できます。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8J FE7J\u306e\u5834\u5408&quot;,&quot;hid&quot;:&quot;fe8j_fe7j\u306e\u5834\u5408&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;2120-3563&quot;} -->
 <h1 class="sectionedit7" id="技術情報">技術情報</h1>
 <div class="level1">
-
 <p>
 Anti-Haffman と、 DrawMultiByte / DrawSyngleByte の 2つのパッチによって実現します。<br/>
 <br/>
@@ -193,14 +171,11 @@ DrawMultiByte / DrawSyngleByteにより、表示するときに、マルチバ�
 <br/>
 マルチバイト環境でシングルバイトを出すために、シングルバイトフォントは、0x40 XX にマッピングしています。<br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6280\u8853\u60c5\u5831&quot;,&quot;hid&quot;:&quot;\u6280\u8853\u60c5\u5831&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;3564-4298&quot;} -->
 <h1 class="sectionedit8" id="文字コードについて">文字コードについて</h1>
 <div class="level1">
-
 <p>
 FontForm.cs を読むのが一番わかりやすい。<br/>
 <br/>
@@ -208,22 +183,17 @@ FEでは主に2つのフォントがあります。
 </p>
 <pre class="code">ItemFont	アイテム表示で使われる、白く枠抜きされたフォント。
 SerifFont	セリフの吹き出しで利用されるフォント。</pre>
-
 <p>
 <br/>
 これ以外にもいくつかありますが、それらは数が少ないので対象外です。<br/>
 <br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6587\u5b57\u30b3\u30fc\u30c9\u306b\u3064\u3044\u3066&quot;,&quot;hid&quot;:&quot;\u6587\u5b57\u30b3\u30fc\u30c9\u306b\u3064\u3044\u3066&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;4299-4729&quot;} -->
 <h2 class="sectionedit9" id="マルチバイト">マルチバイト</h2>
 <div class="level2">
-
 <p>
 マルチバイトでは、以下のように演算が行われます。<br/>
-
 </p>
 <pre class="code">struct FONT{
 	FONT* next;
@@ -255,28 +225,23 @@ while(font != NULL)
 }
  
 return NOT_FOUND;</pre>
-
 <p>
 <br/>
 日本語版では、シングルバイトをフォントとして組み込むために、 シングルバイトを0x40のリストにマップしました。<br/>
 <br/>
-
 </p>
 <pre class="code">例.
-&#039;A&#039; == 0x41    + (0x40 &lt;&lt; 8)
+'A' == 0x41    + (0x40 &lt;&lt; 8)
 0x40 0x41 としてフォントにマップします。
 
-&#039;Z&#039; == 0x5A    + (0x40 &lt;&lt; 8)
+'Z' == 0x5A    + (0x40 &lt;&lt; 8)
 0x40 0x5A としてフォントにマップします。</pre>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30de\u30eb\u30c1\u30d0\u30a4\u30c8&quot;,&quot;hid&quot;:&quot;\u30de\u30eb\u30c1\u30d0\u30a4\u30c8&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:9,&quot;range&quot;:&quot;4730-5663&quot;} -->
 <h2 class="sectionedit10" id="シングルバイト">シングルバイト</h2>
 <div class="level2">
-
 <p>
 英語版では、以下のように演算が行われます。<br/>
-
 </p>
 <pre class="code">struct FONT{
 	FONT* next;
@@ -307,14 +272,11 @@ while(font != NULL)
  
 return NOT_FOUND;
 */</pre>
-
 <p>
 <br/>
 英語版での、リスト探索を復活させました。<br/>
 マルチバイトであれば、リストを探索します。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30b7\u30f3\u30b0\u30eb\u30d0\u30a4\u30c8&quot;,&quot;hid&quot;:&quot;\u30b7\u30f3\u30b0\u30eb\u30d0\u30a4\u30c8&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:10,&quot;range&quot;:&quot;5664-&quot;} --></div>
 </body>

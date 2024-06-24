@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="ja" dir="ltr">
+
+<html dir="ltr" lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <title>guide:イベント命令での自前関数呼び出し</title>
-<meta name="generator" content="DokuWiki"/>
-<meta name="theme-color" content="#008800"/>
-<meta name="robots" content="index,follow"/>
-<meta name="keywords" content="guide,イベント命令での自前関数呼び出し"/>
-<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
-<link rel="start" href="/"/>
-<link rel="contents" href="/doku.php?id=guide:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4%E3%81%A7%E3%81%AE%E8%87%AA%E5%89%8D%E9%96%A2%E6%95%B0%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97&amp;do=index" title="サイトマップ"/>
-<link rel="manifest" href="/lib/exe/manifest.php"/>
-<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
-<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide"/>
-<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4%E3%81%A7%E3%81%AE%E8%87%AA%E5%89%8D%E9%96%A2%E6%95%B0%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97"/>
-<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4%E3%81%A7%E3%81%AE%E8%87%AA%E5%89%8D%E9%96%A2%E6%95%B0%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97"/>
-<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4%E3%81%A7%E3%81%AE%E8%87%AA%E5%89%8D%E9%96%A2%E6%95%B0%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97"/>
-<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<meta charset="utf-8"/>
+<title>guide:イベント命令での自前関数呼び出し</title>
+<meta content="DokuWiki" name="generator"/>
+<meta content="#008800" name="theme-color"/>
+<meta content="index,follow" name="robots"/>
+<meta content="guide,イベント命令での自前関数呼び出し" name="keywords"/>
+<link href="/lib/exe/opensearch.php" rel="search" title="FE改造wiki" type="application/opensearchdescription+xml"/>
+<link href="/" rel="start"/>
+<link href="/doku.php?id=guide:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4%E3%81%A7%E3%81%AE%E8%87%AA%E5%89%8D%E9%96%A2%E6%95%B0%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97&amp;do=index" rel="contents" title="サイトマップ"/>
+<link href="/lib/exe/manifest.php" rel="manifest"/>
+<link href="/feed.php" rel="alternate" title="最近の変更" type="application/rss+xml"/>
+<link href="/feed.php?mode=list&amp;ns=guide" rel="alternate" title="現在の名前空間" type="application/rss+xml"/>
+<link href="/doku.php?do=export_xhtml&amp;id=guide:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4%E3%81%A7%E3%81%AE%E8%87%AA%E5%89%8D%E9%96%A2%E6%95%B0%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97" rel="alternate" title="プレーンHTML" type="text/html"/>
+<link href="/doku.php?do=export_raw&amp;id=guide:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4%E3%81%A7%E3%81%AE%E8%87%AA%E5%89%8D%E9%96%A2%E6%95%B0%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97" rel="alternate" title="Wikiマークアップ" type="text/plain"/>
+<link href="https://dw.ngmansion.xyz/doku.php?id=guide:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A4%E3%81%A7%E3%81%AE%E8%87%AA%E5%89%8D%E9%96%A2%E6%95%B0%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97" rel="canonical"/>
+<link href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" rel="stylesheet" type="text/css"/>
 <!--[if gte IE 9]><!-->
 <script type="text/javascript">/*<![CDATA[*/var NS='guide';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:\u30a4\u30d9\u30f3\u30c8\u547d\u4ee4\u3067\u306e\u81ea\u524d\u95a2\u6570\u547c\u3073\u51fa\u3057","namespace":"guide","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
 /*!]]>*/</script>
-<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
-<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<script charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f" type="text/javascript"></script>
+<script charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767" type="text/javascript"></script>
 <!--<![endif]-->
 </head>
 <body>
 <div class="dokuwiki export">
 <!-- TOC START -->
-<div id="dw__toc" class="dw__toc">
+<div class="dw__toc" id="dw__toc">
 <h3 class="toggle">目次</h3>
 <div>
-
 <ul class="toc">
 <li class="level1"><div class="li"><a href="#自前関数呼び出し">自前関数呼び出し</a></div></li>
 <li class="level1"><div class="li"><a href="#r4以降のレジスタの保存">r4以降のレジスタの保存</a></div></li>
@@ -50,21 +50,17 @@
 </div>
 </div>
 <!-- TOC END -->
-
 <p>
 イベント命令の 40 0D から始まる命令で、呼び出される、自前asm関数について解説する。
 </p>
-
 <h1 class="sectionedit1" id="自前関数呼び出し">自前関数呼び出し</h1>
 <div class="level1">
-
 <p>
 イベント命令から自前のasm関数呼ぶには、以下のようにする。
 </p>
 <pre class="code">40 0D 00 00 アドレス+1</pre>
 <pre class="code">例:
 40 0D 00 00 81 F6 E4 08</pre>
-
 <p>
 これで、 0x08E4F680 に設置した関数を呼び出すことができる。
 </p>
@@ -77,12 +73,10 @@
 
 	mov	r0, #0
 	pop	{pc}</pre>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u81ea\u524d\u95a2\u6570\u547c\u3073\u51fa\u3057&quot;,&quot;hid&quot;:&quot;\u81ea\u524d\u95a2\u6570\u547c\u3073\u51fa\u3057&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;122-542&quot;} -->
 <h1 class="sectionedit2" id="r4以降のレジスタの保存">r4以降のレジスタの保存</h1>
 <div class="level1">
-
 <p>
 r4以降のレジスタを壊す場合は pushするのが望ましい(多分?)
 </p>
@@ -94,22 +88,19 @@ r4以降のレジスタを壊す場合は pushするのが望ましい(多分?)
 
 	mov	r0, #0
 	pop	{pc,r7, r6 , r5 ,r4 }</pre>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;r4\u4ee5\u964d\u306e\u30ec\u30b8\u30b9\u30bf\u306e\u4fdd\u5b58&quot;,&quot;hid&quot;:&quot;r4\u4ee5\u964d\u306e\u30ec\u30b8\u30b9\u30bf\u306e\u4fdd\u5b58&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:2,&quot;range&quot;:&quot;543-802&quot;} -->
 <h1 class="sectionedit3" id="関数引数">関数引数</h1>
 <div class="level1">
-
 <p>
 UCHAR2つ(USHORT値)の引数を取ることができる。<br/>
 <br/>
-r0 or r3 or r4 = 0x02025018  + 0x38 offset = 2025050 (アドレスは進捗状況によるかも)<br />
+r0 or r3 or r4 = 0x02025018  + 0x38 offset = 2025050 (アドレスは進捗状況によるかも)<br/>
 ここに、実行しているイベント命令へのポインタがある。<br/>
 ldr  r0, [r0, #0x38]     //イベント命令にアクセスらしい [r3,#0x38] でイベント命令が書いてあるアドレスの場所へ<br/>
 ldrb r1, [r0, #0x2]      //引数1 40 0D [引数1] [引数2] [プログラム場所 XX XX XX 08]<br/>
 ldrb r2, [r0, #0x3]      //引数2 40 0D [引数1] [引数2] [プログラム場所 XX XX XX 08]<br/>
 <br/>
-
 </p>
 <pre class="code">例:
 40 0D 11 22 81 F6 E4 08</pre>
@@ -128,42 +119,35 @@ ldrb r2, [r0, #0x3]      //引数2 40 0D [引数1] [引数2] [プログラム場
 
 	mov	r0, #0
 	pop	{pc}</pre>
-
 <p>
 ldrh を使えば、 unsigned short で取れる。
 </p>
 <pre class="code">	ldr  r0, [r0, #0x38]      //イベント命令にアクセスらしい [r3,#0x38] でイベント命令が書いてあるアドレスの場所へ
 	ldrh r2, [r0, #0x2]       ;引数1 40 0D [11] [22] [プログラム場所 XX XX XX 08]
 ;→リトルエンディアンなので、 0x2211 が取れる。</pre>
-
 <p>
 イベントフラグにアクセスしたり、アセンブラなので全メモリ空間にアクセスできるため、情報は好きなだけ取れる。
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u95a2\u6570\u5f15\u6570&quot;,&quot;hid&quot;:&quot;\u95a2\u6570\u5f15\u6570&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:3,&quot;range&quot;:&quot;803-2507&quot;} -->
 <h3 class="sectionedit4" id="注意事項">注意事項</h3>
 <div class="level3">
-
 <p>
 一部関数(魔王出現エフェクト 08081bb6)などで、 r0 == 0 のチェックをしている箇所がある。<br/>
-今のところ確認できていないが、関数呼び出しがされた結果、 r0 == 0 になることがあるのかもしれない。<br />
+今のところ確認できていないが、関数呼び出しがされた結果、 r0 == 0 になることがあるのかもしれない。<br/>
 もし、見かけたら教えてほしい。
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6ce8\u610f\u4e8b\u9805&quot;,&quot;hid&quot;:&quot;\u6ce8\u610f\u4e8b\u9805&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:4,&quot;range&quot;:&quot;2508-2843&quot;} -->
 <h1 class="sectionedit5" id="関数戻り値_条件式">関数戻り値 条件式</h1>
 <div class="level1">
-
 <p>
 イベント命令の条件式として利用するには、以下のようにする。
 </p>
 <pre class="code">ldr	r2, =$030004B0  ; + #0x30
 str	r0, [r2, #0x30]	;条件式で取れる領域に書き込む</pre>
-
 <p>
-例:<br />
+例:<br/>
 所持金で分岐する場合とか。
 </p>
 <pre class="code">;所持金チェック 所持金が指定ゴールド以上かどうか
@@ -195,36 +179,32 @@ exit_result
 
 	mov	r0, #0
 	pop	{pc}</pre>
-
 <p>
 イベント命令をこんな感じで作る。
 </p>
-<pre class="code">400D50C3&#039;&#039;不明  //5万ゴールドの確認 gold_find.asm 0x50C3=&gt;50000
-E1F6E408&#039;&#039;不明
-4005050001000000&#039;&#039;[05]条件作成終わり???
-410C05000C000500&#039;&#039;条件成立時にｲﾍﾞﾝﾄID[0005]で以下を実行[05]2???
-	2016B900&#039;&#039;[B9]効果音 //5万ゴールドぽんとくれたぜ
-	201A0000&#039;&#039;会話開始  //あざーす
-	201B5D05201D0000&#039;&#039;[055D]背景無会話表示
-20090400&#039;&#039;不成立時に条件ｲﾍﾞﾝﾄID[0004]で以下を実行
-20080500&#039;&#039;条件ｲﾍﾞﾝﾄID[0005]終了
-	201A0000&#039;&#039;会話開始  //カネがないのかよ
-	201B5E05201D0000&#039;&#039;[055E]背景無会話表示
-20080400&#039;&#039;条件ｲﾍﾞﾝﾄID[0004]終了</pre>
-
+<pre class="code">400D50C3''不明  //5万ゴールドの確認 gold_find.asm 0x50C3=&gt;50000
+E1F6E408''不明
+4005050001000000''[05]条件作成終わり???
+410C05000C000500''条件成立時にｲﾍﾞﾝﾄID[0005]で以下を実行[05]2???
+	2016B900''[B9]効果音 //5万ゴールドぽんとくれたぜ
+	201A0000''会話開始  //あざーす
+	201B5D05201D0000''[055D]背景無会話表示
+20090400''不成立時に条件ｲﾍﾞﾝﾄID[0004]で以下を実行
+20080500''条件ｲﾍﾞﾝﾄID[0005]終了
+	201A0000''会話開始  //カネがないのかよ
+	201B5E05201D0000''[055E]背景無会話表示
+20080400''条件ｲﾍﾞﾝﾄID[0004]終了</pre>
 <p>
 なお、イベント命令の分岐の書き方は、他にもある。
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u95a2\u6570\u623b\u308a\u5024 \u6761\u4ef6\u5f0f&quot;,&quot;hid&quot;:&quot;\u95a2\u6570\u623b\u308a\u5024_\u6761\u4ef6\u5f0f&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:5,&quot;range&quot;:&quot;2844-4728&quot;} -->
 <h1 class="sectionedit6" id="関数戻り値_会話テキスト">関数戻り値 会話テキスト</h1>
 <div class="level1">
-
 <p>
 会話テキストで、@0080@0005 で10進数で取ることができる。<br/>
 ただし、@0080@0005 が使えるのは、吹き出しの会話のみ。システムメッセージでは取れない。<br/>
-<br />
+<br/>
 例
 </p>
 <pre class="code">;r0に格納されている数字を @0080@0005で取れるように書き込む
@@ -233,24 +213,19 @@ mov		r0,r7
 ldr		r1,=$08008914
 mov		lr, r1
 @dcw	$F800</pre>
-
 <p>
 ↓こういうふうに使います。
 </p>
 <pre class="code">@0080@0005ゴールドもっているかい？@0003</pre>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u95a2\u6570\u623b\u308a\u5024 \u4f1a\u8a71\u30c6\u30ad\u30b9\u30c8&quot;,&quot;hid&quot;:&quot;\u95a2\u6570\u623b\u308a\u5024_\u4f1a\u8a71\u30c6\u30ad\u30b9\u30c8&quot;,&quot;codeblockOffset&quot;:10,&quot;secid&quot;:6,&quot;range&quot;:&quot;4729-5353&quot;} -->
 <h1 class="sectionedit7" id="関数処理">関数処理</h1>
 <div class="level1">
-
 <p>
 asmなので、全メモリにアクセスできる。(ただし、一部領域は例外)<br/>
 ldrでデータを読み出して、 strでデータを書き込もう。<br/>
 関数を呼び出したりなんでもできます。<br/>
-
 </p>
-
 </div>
 <!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u95a2\u6570\u51e6\u7406&quot;,&quot;hid&quot;:&quot;\u95a2\u6570\u51e6\u7406&quot;,&quot;codeblockOffset&quot;:12,&quot;secid&quot;:7,&quot;range&quot;:&quot;5354-&quot;} --></div>
 </body>
