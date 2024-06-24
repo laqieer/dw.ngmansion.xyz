@@ -1,0 +1,440 @@
+FEBuilderGBAのconfigディレクトリ内のデータ構造について説明します。\\ \\ ====== 設定ファイルのルール  ======
+===== /config/config.xml  =====
+このツールの設定が格納されます。 \\ \\ \\ ===== /config/translate/  =====
+このツールが利用する翻訳リソースです。 \\ GNU GetTextみたいな考え方をもとにした、KEY:\r\nVALUE形式です。\\ \\ <code>
+:元文字列
+翻訳文字列
+</code>
+\\ {{ https://i.imgur.com/iPFRtmE.jpg }}\\ \\ ===== /config/data/  =====
+このツールが利用する、ゲーム内での設定データがあります。\\ 項目が長くなったり、外部リソースとして切り出した方が拡張性が高くなると判断したデータが入っています。\\ \\ \\ ==== ファイル適合ルール  ====
+設定ファイルは、以下の順番で探索されます。\\ langには、選択されている言語入ります。en=英語 ,zh=中国語。\\ file_VERSION.lang.txt\\ file_VERSION.txt\\ file_ALL.lang.txt\\ file_ALL.txt\\ \\ また、ファイル内にも、{J} {U} で切り替わるものが有ります。\\ 例えば、ポインタ値は、FE8J FE8Uで違いますので、この切替に利用されます。\\ \\ ==== 例.  ====
+
+|search|"foo"|
+|game|FE8|
+|lang|en|
+|type|FE8U|
+
+<code>
+if ( Exists("config/data/foo_FE8.en.txt") )
+{
+   return found;
+}
+if ( Exists("config/data/foo_FE8.txt") )
+{
+   return found;
+}
+if ( Exists("config/data/foo_ALL.en.txt") )
+{
+   return found;
+}
+if ( Exists("config/data/foo_ALL.txt") )
+{
+   return found;
+}
+return NOT_FOUND;
+</code>
+\\ 仮に、foo_ALL.txt が見つかったとします。\\ \\ foo_ALL.txtの中身が以下のように書かれていたと仮定します。\\ <code>
+TEST1=A
+TEST2=B	{U}
+TEST3=C	{J}
+</code>
+\\ 探索命令でtype==FE8U と指定したため、以下の内容が取得されます。\\ <code>
+TEST1=A
+TEST2=B
+</code>
+\\ もし、探索命令で type==FE8J であった場合、以下の内容が取得されます。\\ <code>
+TEST1=A
+TEST3=C
+</code>
+
+すべてのファイルは タブ区切りのTSV形式です。\\ 文字コードはUTF-8で統一です。\\ ==== 一覧  ====
+
+|ai1|ユニット配置のAI1の一覧を定義します|
+|ai2|ユニット配置のAI2の一覧を定義します|
+|aiscript|aiscript命令を定義します|
+|asmmap|関数マップ 逆アセンブラ時にヒントを表示します|
+|base_rom_info|無改造ROMの容量とCRCを定義します|
+|battleanime_85command|戦闘アニメのC85コマンド一覧を定義します|
+|battleanime_auto_recolor|戦闘アニメで敵配色を決定するのに利用します|
+|battleanime_mode|戦闘アニメの種類を定義します|
+|event|イベント命令を定義します|
+|eventcond|イベント条件の種類を定義します|
+|func_lang|FEBuilderGBAで利用できる言語の一覧を定義します|
+|item_anime_effect|武器アニメエフェクトの一覧を定義します|
+|item_staff_use_effect|アイテムを利用した場合の効果を定義します|
+|item_weapon_effect|武器の追加効果を定義します|
+|item_usability_array_|アイテムを利用できるか判定する|
+|item_effect_array_|アイテムを利用した場合の効果を定義する|
+|item_promotion1_array_|CCアイテムを使った場合の処理を定義する|
+|item_promotion2_array_|CCアイテムかどうかを定義する(FE7のみ)|
+|item_staff1_array_|アイテムのターゲット選択の方法を定義する(多分)|
+|item_staff2_array_|杖の種類を定義する|
+|item_statbooster1_array_|ドーピングアイテムを利用した時のメッセージを定義する|
+|item_statbooster2_array_|ドーピングアイテムとCCアイテムかどうかを定義する|
+|magic_command|魔法拡張のコマンドを定義します|
+|magic_csa_spell_table|魔法拡張の魔法アニメーションを定義するCSATABLEを検索する条件を定義します|
+|magic_extends|魔法拡張の是非を判定する方法を定義します|
+|mappointer|マップポインタ名を定義します|
+|mapstyle|マップスタイル一覧を定義します|
+|other_text|C言語の文字列直値が埋め込まれているアドレス一覧を定義します|
+|skill_extends|スキル拡張の是非を判定する方法を定義します|
+|skill_extends_*|スキル拡張別に、スキルIDを定義します|
+|song_instrument|楽器情報をMD5化し、楽器アドレスに楽器名を振ります|
+|song_instrumentset|NIMAPの是非を判定する方法を定義します|
+|sound|効果音名を定義します|
+|sound_foot_steps|足音を定義します FE8のみ|
+|tbl_cond|tblを利用するべきかどうかを定義します|
+|translate_textid|翻訳のために日米のROMでの文字列IDの対応表を作ります|
+|updater.bat.txt|設定ファイルではない。 自動アップデートのバッチファイルです。|
+
+\\ \\ ===== /config/patch/  =====
+細かい設定がパッチとして切り出されています。\\ メニューの 機能->パッチ管理 からアクセスできます。\\ \\ {{ https://i.imgur.com/59gvcy9.jpg }}
+\\ 
+====== パッチ形式  ======
+パッチファイルは、 KEY=VALUE 形式です。\\ %%//%% # ; はコメントになります。\\ 数字データは 0xをつけると16進数になります。何も付けないと10進数です。\\ <code>
++0x08000000 GBAポインタにしてもしなくても、どちらでも問題ありません。~
+</code>
+\\ ===== 共通項  =====
+<code>
+NAME=名前
+</code>
+パッチの名前を定義します。\\ 未定義の場合、パッチのファイル名になります。\\ \\ <code>
+TYPE=IMAGE TYPE=ADDR TYPE=STRUCT TYPE=BIN TYPE=EA TYPE=SWITCH
+</code>
+パッチの種類を定義します。6つの種類があります。\\ 詳しくは後で説明します。\\ \\ <code>
+INFO=詳しい情報を書きます。\r\n可能であれば説明を書いてください。
+</code>
+詳しい情報を書きます。 改行は\r\nにしてください。\\ \\ \\ <code>
+IF:0xEE594=0x4B 0xFA 0x2F 0x59 0x7E 0x19
+</code>
+パッチが利用できるかどうかを定義します。\\ この例では、ROM内 0xEE594 が 0x4B 0xFA 0x2F 0x59 0x7E 0x19 となっているかどうかを見ています。\\ もし、 0xEE594 が 0x4B 0xFA 0x2F 0x59 0x7E 0x19 であれば、このパッチを利用できます。\\ \\ <code>
+IF_NOT:0xEE594=0x4B 0xFA 0x2F 0x59 0x7E 0x19
+</code>
+パッチが利用できるかどうかを定義します。\\ 先ほどとは逆に、ROM内 0xEE594 が 0x4B 0xFA 0x2F 0x59 0x7E 0x19 で、なければ、利用可能になります。\\ \\ <code>
+PATCHED_IF:0x080bb182=0x45 0x46 0xE0 0xB4
+PATCHED_IF_NOT:0x080bb182=0x45 0x46 0xE0 0xB4
+</code>
+既にパッチが適合されたかどうかを定義します。\\ 2回パッチを当てるとまずい BINパッチで主に使われます。\\ \\ ==== マルチ言語  ====
+英語名を記述するには、 .en をつけます。\\ 中国名を記述するには、 .zh をつけます。\\ \\ NAME=日本語名\\ NAME.en=English\\ NAME.zh=中国語\\ \\ ver20171211から、すべてのパラメータに対して、 AAAA.en などの言語指定ができるようになりました。\\ \\ ===== パッチの種類 ADDRパッチ  =====
+<code>
+NAME=きずぐすりの回復量
+NAME.en=Recovery amount of Vulnerary
+NAME.zh=责骂的回收量
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+
+ADDRESS=0x2fe16
+
+AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a
+AUTHOR.zh=来源：从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a
+AUTHOR.en=Source: From aera's data\r\http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#jf501d8a
+</code>
+\\ FE8Jの傷薬の回復量は0x2fe16に格納されています。\\ これは、それを変更するパッチです。\\ \\ {{ https://i.imgur.com/YLOE1U7.jpg }}
+\\ ===== マルチバイト  =====
+ADDRは、基本的に1バイトの変更のみですが、コンボボックス形式にすると、長いバイト数を扱うことができます\\ 
+<code>
+NAME=フリーマップから入らないとフリーズする制約を消す
+NAME.en=Eliminate the constraint of freezing unless it enters from the world map.
+NAME.zh=消除冻结的限制，除非从免费地图进入
+
+//Implement as an address patch.
+TYPE=ADDR
+
+ADDRESS=0xc1e7c
+COMBO=default|0x47 0x2D|fix|0xB8 0xE0
+</code>
+\\ {{ https://i.imgur.com/vRuzDeu.jpg }}
+\\ ==== DATASIZE  ====
+新たに、 DATASIZE 指定がサポートされました。\\ DATASIZE=4 とすると、4バイト(データはGBAなのでリトルエンディアンで書き込まれます)として動作します。\\ \\ 互換性のため、何も指定しないと、DATASIZE=1 として1バイトになります。\\ また、COMBO指定があると、DATASIZE指定は無視され、COMBO指定が優先されます。\\ \\ 
+例: FE7でMODE SELECTのリンの顔を変更する
+<code>
+NAME=MODE SELECT 顔画像 リン編
+NAME.en=MODE SELECT Portrait of the Lyn Editing
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+
+ADDRESS=0x4393D8
+ADDRESS_TYPE=PORTRAIT
+DATASIZE=4         //MODE SELECTの顔画像IDは、なぜか 4バイト DWORDで格納される
+</code>
+
+==== ADDRESSの同時指定  ====
+ADRESSに、スペース区切りで、複数のアドレスを書くことができます。\\ それぞれに同じ値が設定されます。\\ いろいろな場所を同時に変えないといけない場合に利用します。\\ \\ <code>
+NAME=幸運上限
+NAME.en=Upper limit of lucky
+NAME.zh=运气最大
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+
+ADDRESS=0x80CA0 0x29f0e 0x29f12 0x180d8 0x180dc 0x95694 0x95694 0x9585C
+</code>
+
+例えば、幸運上限はいろいろな場所に設定が点在してハードコーディングされているので、\\ 上記のように記述して、一気に値を変えてしまいます。\\ 
+
+==== HEX  ====
+UIに表示する数字を10進数にしたい場合は、 HEX=FALSE を利用してください。
+
+<code>
+NAME=最大レベル
+NAME.en=Max Level
+NAME.zh=最高级别
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+
+ADDRESS=0x25132
+HEX=false //レベルなので10進数で表示します.
+</code>
+\\ {{ https://i.imgur.com/cRQavFM.jpg }}
+~ 
+==== ADDRESS_TYPE  ====
+値に関連付けたいものがある場合 ADDRESS_TYPE を利用してください。\\ \\ <code>
+ADDRESS_TYPE=UNIT //ユニットIDとして扱います
+ADDRESS_TYPE=ITEM //アイテムIDとして扱います
+ADDRESS_TYPE=CLASS //クラスIDとして扱います
+ADDRESS_TYPE=SONG //音楽IDとして扱います
+</code>
+
+
+<code>
+NAME=進撃準備
+NAME.en=MUSIC_Preparation
+NAME.zh=MUSIC_提前准备
+//アドレスパッチとして実装します
+TYPE=ADDR
+
+ADDRESS=0x080495cc 0x080af17e 0x08031654 0x08090048 0x080960b4 0x0809b880 0x0809c7f6
+ADDRESS_TYPE=SONG //進撃準備BGMを変更するので音楽IDとして扱います
+</code>
+
+\\ {{ https://i.imgur.com/gen0Pz4.jpg }}
+\\ ===== パッチの種類 IMAGEパッチ  =====
+\\ <code>
+TYPE=IMAGE
+</code>
+画像を変更するパッチを定義します。\\ このパッチは、画像アドレスではなく、ポインタで書く必要があります。\\ なぜなら、画像は可変長なので、画像アドレスが変更される可能性があるためです。\\ \\ 以下は、FE8Jの FIN を変更するパッチです。\\ <code>
+NAME=SYSTEM_FIN
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=1
+
+//圧縮画像
+ZIMAGE_POINTER=0xBBF48
+//非圧縮ヘッダー付きTSA
+HEADERTSA_POINTER=0xBBF54
+//非圧縮パレット
+PALETTE_POINTER=0xBBF44
+</code>
+\\ {{ https://i.imgur.com/oEtDONy.jpg }}
+\\ \\ 無圧縮の画像\\ IMAGE_POINTER\\ \\ 圧縮された画像\\ ZIMAGE_POINTER\\ \\ 圧縮TSAを利用する\\ ZTSA_POINTER\\ \\ 圧縮ヘッダー付きTSAを利用する\\ ZHEADERTSA_POINTER\\ \\ 無圧縮ヘッダー付きTSAを利用する\\ HEADERTSA_POINTER\\ \\ 無圧縮パレットを利用する\\ PALETTE_POINTER\\ \\ 画像の表示とインポート時に使われます。\\ 以下の例だと、256x160の大きさの画像で、16色のパレット1種類を保持していることが条件になります。\\ <code>
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=1
+</code>
+\\ 画像パッチを書くのは大変なので、自動的に生成することができます。\\ メニュー->ツール->グラフィックツール で、画像を探して、TSA等を探り当てたのち、右下のPatch Makerボタンをクリックすると、全自動でパッチを作ってくれます。\\ いちいち、ポインターを手で計算する必要はありません。\\ \\ {{ https://i.imgur.com/WHG6zIQ.jpg }}\\ \\ {{ https://i.imgur.com/LTklo5l.jpg }}\\ \\ {{ https://i.imgur.com/Qj0vh2c.jpg }}\\ \\ \\ ===== パッチの種類 STRUCTパッチ  =====
+<code>
+TYPE=STRUCT
+</code>
+構造体パッチ\\ \\ 構造体のようにデータを変更したい場合使います。\\ ただし、ツール本体でやっているような高度なことはできません。\\ 難しいものを作りたく、それが汎用化できる場合、ツール本体側で作るべきです。\\ \\ <code>
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+
+//データへのポインタ
+POINTER=$GREP4END 0x00 0xB5 0xC0 0x46 0x06 0x48 0xC0 0x46 0x06 0x49 0x89 0x7B 0x89 0x00 0x40 0x58 0x01 0x21 0x00 0xF0 0x02 0xF8 0x17 0x20 0x00 0xBD 0xC0 0x46 0x02 0x4B 0x9F 0x46
+
+//ユニット クラス 0x00 0x00 アニメ設定ポインタ
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数(10進数)
+DATACOUNT=12
+
+//データを定義します
+//P0 ポインタ が 0バイトからあります
+//その型は EVENT 
+//名前は、イベントポインタとしました。
+B0:UNIT=ユニット
+B1:CLASS=クラス
+B2=00
+B3=00
+P4:BATTLEANIMENAME=アニメ設定
+</code>
+\\ {{ https://i.imgur.com/NOQORUH.jpg }}\\ \\ FE8ユグドラパッチの個別アニメを設定するパッチです。\\ 怪盗パッチには追加構造体がないので、ユグドラを例に説明します。\\ \\ <code>
+B0:UNIT=ユニット
+B1:CLASS=クラス
+B2=00
+B3=00
+P4:BATTLEANIMENAME=アニメ設定
+
+↓↓↓↓↓
+
+struct 
+{
+	byte	unit;			// +0
+	byte	class;			// +1
+	byte	zero1;			// +2
+	byte	zero2;			// +3
+	void*	battleanime;	// +4
+};
+</code>
+\\ \\ <code>
+b	sbyte( char )	-128 ～ 127
+B	byte			0 ～ 255
+W	word			0 ～ 65535
+D	dword			0 ～ 4294836225
+P	dword			0 ～ 4294836225
+</code>
+\\ D と P の違いについて\\ Pの場合、必ずポインタとして記録されます。\\ ユーザが、 0x123 と入れた場合、 Dでは 0x123 と記録しますが、 Pだと、 0x08000123 として記録します。\\ \\ \\ ===== パッチの種類 BINパッチ  =====
+type=BIN\\ バイナリデータとソースコード\\ \\ <code>
+NAME=SOUND_NIMAP(Native Instrument Map)
+
+TYPE=BIN
+
+PATCHED_IFNOT:$GREP4 0x00 0x3C 0x00 0x00 0x68 0x27 0x50 0x08 0xFF 0xFA 0x00 0xCC 0x00 0x3C 0x00 0x00 0x18 0x7D 0x29 0x08 0xFF 0xFA 0x00 0xCC 0x00 0x3C 0x00 0x00 0x3C 0x8E 0x28 0x08 0xFF 0xF9 0x00 0xA5 0x01 0x3C 0x00 0x00 0x02 0x00 0x00 0x00 0x00 0x00 0x0F 0x00=0x00 0x3C 0x00 0x00
+</code>
+
+<code>
+BIN:$FREEAREA=JAPFE8_NI_Map.bin
+INFO=Midi Instrument Map
+</code>
+\\ \\ {{ https://i.imgur.com/oB9KLti.jpg }}\\ \\ JAPFE8_NI_Map.bin を、適当な $FREEAREAに貼り付けます。\\ 2回貼り付けるとまずいので、 $GREP4 で、適応しているかどうか調べています。\\ \\ <code>
+マクロ
+$FREEAREA	フリーエリア
+$GREP4		バイト列を検索 ただし4バイト単位(高速)
+$GREP1		バイト列を検索 ただし1バイト単位(低速)
+$GREP4_NOT	バイト列を検索して見つからないこと
+$GREP1_NOT	バイト列を検索して見つからないこと
+</code>
+\\ \\ \\ <code>
+NAME=10分割CG表示
+
+//BINパッチとして実装します
+TYPE=BIN
+
+//パッチ適応条件
+PATCHED_IF:0x080bb182=0x45 0x46 0xE0 0xB4
+
+BIN:$FREEAREA=show_10split_image.bin
+
+//10分割画像表示ルーチンを入れたところに飛ばす
+JUMP:0x080bb182:$r4=show_10split_image.bin
+
+INFO=10分割CGを表示できるようにします
+</code>
+
+\\ {{ https://i.imgur.com/41kVbuk.jpg }}\\ \\ show_10split_image.binを、フリーエリアに貼り付ける。\\ 貼り付けた、データに対して、飛ばすコードを生成する。この時、r4レジスタを利用する。\\ \\ ジャンプするコードは、以下のようなコードが生成されます。\\ <code>
+アドレスが4バイトで割り切れる場合 (addr%4 == 0)
+ldr r4,[JUMP ADDR]		//+0
+mov pc,r4;				//+2
+JUMP ADDR				//+4  -->合計 8バイト
+</code>
+
+ただし、2バイトで割り切れる場合 NOPが差し込まれます。
+<code>
+NOP						//+0
+ldr r4,[JUMP ADDR]		//+2
+mov pc,r4;				//+4
+JUMP ADDR				//+6  -->合計 10バイト
+</code>
+
+
+==== オフセット追加  ====
+<code>
+JUMP:0x080bb182:$r4:+2=show_10split_image.bin
+</code>
+\\ こうすると、 show_10split_image.bin の設置場所+2 のアドレスへジャンプできます。\\ \\ \\ ==== 直値 $NONE  ====
+<code>
+JUMP:0x080bb182:$NONE=show_10split_image.bin
+</code>
+\\ ジャンプコードを生成せずに、 show_10split_image.bin を設置したアドレスをそのまま書き込みます。\\ アドレスなので4バイト消費します。書き込むアドレスはリトルエンディアン形式です。\\ \\ 実用的な使い方としては、設定からコードへ飛ばすところで使うと思います。\\ \\ <code>
+//メニュー効果に、指南プログラムのアドレスを書き入れます.
+//直値を入れるので、レジスタ関係ないので $NONE
+//直値の場合 アドレス+1 にしないといけないので、 +1 
+JUMP:0x5C53A8:$NONE:+1=main指南本体.bin
+</code>
+\\ ==== B ジャンプ生成  ====
+<code>
+JUMP:0x988c6:$B=0x9893a
+</code>
+\\ 0x988c6 のアドレスに、 b 0x9893a のASMオペコードを生成します。\\ b ジャンプなので、あまり遠くへは飛べません。\\ b ジャンプなので2バイト消費します。\\ \\ \\ ==== BL ジャンプ生成  ====
+<code>
+JUMP:0x340cc:$BL=0x988c8
+</code>
+\\ 0x340cc のアドレスに、 bl 0x988c8 のASMオペコードを生成します。\\ bl ジャンプなので、あまり遠くへは飛べません。\\ bl ジャンプなので4バイト消費します。\\ \\ \\ ===== テキスト拡張命令  =====
+<code>
+EXTENDS:0xe30=TEXT    //テキストテーブルを 0xe30 まで拡張します
+TEXT:0x0e01=0x0e01.txt  //テキスト 0xe01 に 0x0e01.txt の内容を書き込みます.
+TEXT:0x0e02=0x0e02.txt
+TEXT:0x0e00=0x0e00.txt
+</code>
+\\ テキストテーブルの拡張と書き込みをサポートしています。\\ ただし、今のところ、他のテーブルの拡張はできません。\\ \\ 
+===== パッチの種類 EAパッチ  =====
+<code>
+TYPE=EA
+
+EA=ea.event
+</code>
+\\ {{ https://i.imgur.com/WaVR6Ro.jpg }}\\ \\ Event Assemblerを利用して、データを追加します。\\ 現在のROMに、EAで指定した、Event Assembler scriptの内容を追加します。\\ 
+===== パッチの種類 SWITCHパッチ  =====
+<code>
+NAME=CC時に武器表示無し
+TYPE=SWITCH
+
+COMBO=武器なし|ONN|武器あり|OFF
+
+ONN:0x0802F5C0=0x00 0x20 0x00 0x20
+ONN:0x080D1DE2=0x00 0x20 0x00 0x20
+
+OFF:0x0802F5C0=0xE7 0xF7 0x86 0xF9
+OFF:0x080D1DE2=0x44 0xF7 0x75 0xFD
+</code>
+
+
+"SWITCHパッチ"は、addrパッチの発展系です。\\ 複数のアドレスに対して、異なる値で書き込みをしなければならない場合に利用します。\\ BINやEAパッチとの違いとして、数バイト程度のより小さいデータを扱います。\\ \\ この例では、 ONとOFFの選択肢を表示し、\\ ONの場合は、  ONNで定義した内容をアドレスに書き込みます。\\ OFFの場合は、 OFFで定義した内容をアドレスに書き込みます。\\ 
+====== MOD  ======
+パッチのパラメータとして、構造体の未使用領域を利用したいときがあります。\\ FEBuilderGBAでは、patchディレクトリ内にMOD_*.txtを作成すると利用できます。\\ \\ <code>
+IF:0x89268=0x00 0x4B 0x9F 0x46
+</code>
+
+<code>
+FORM=UnitForm   //UnitForm(FE8用)で動作します
+J_38=スキル1
+J_39=スキル2
+J_49=個人スキル
+J_38:NAME=J_38_SKILLASSIGNMENT_SCROLL1_B39
+J_39:NAME=J_39_SKILLASSIGNMENT_SCROLL2_B38
+J_49:NAME=J_49_SKILLASSIGNMENT_MASTERY
+</code>
+\\ ただし、MODに設定するパラメータは、FEBuilderGBAのC#内に使われているラベル名になりますので、ソースコードを理解する必要があります。\\ また、欧米の改造では、未使用領域ではなく、独自に構造体を作ってしまうことが多いように思います。\\ そう考えると、MODは日本の改造で多く使われる機能かもしれませんね。\\ 
+====== FEBuilderGBAの起動引数  ======
+
+<code>
+FEBuilderGBA.exe [ROM] [--options=value]
+</code>
+
+
+FEBuilderGBAは、何もオプションを指定しないと、welcome画面を表示します。\\ いつかのオプションを指定することで、これを変更することが出来ます。\\ \\ \\ ===== [ROM]  =====
+指定されたROMファイル名を開きます。\\ ファイル名が指定されない場合、またはファイルが読み込めなかった場合は、Welcome画面が表示されます。\\ ===== --rom=filename  =====
+[ROM]と同じです。\\ 
+===== --lastrom  =====
+最後に開いたROMを開きます。\\ 最後に開いたROMは、FEBuilderGBAを終了させたときに、開いていたROMになります。\\ (プロセス終了時に、現在開いているファイル名を記録します。)\\ 
+===== --force-version=ver  =====
+強制的に、特定のバージョンとしてROMを開きます。\\ 通常は、ROMのヘッダでバージョンを判別しますが、強制的に特定のバージョンで開かせたい場合に利用します。\\ 何かの理由でROMヘッダが破損している場合や、デバッグ用に別のGBAゲームをロードしたい場合に利用します。\\ 通常利用する必要はありません。\\ 
+
+|バージョン表記一覧|
+|FE8JP|
+|FE7JP|
+|FE6|
+|FE8U|
+|FE7U|
+
+===== --force-detail  =====
+強制的に、詳細メニュー画面からスタートします。\\ 何か特別な理由があり、簡易画面メニューをスキップしたいときに利用します。\\ 通常は利用する必要はありません。\\ 

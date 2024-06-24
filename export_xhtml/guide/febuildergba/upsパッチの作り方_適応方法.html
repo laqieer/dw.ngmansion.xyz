@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>guide:febuildergba:upsパッチの作り方_適応方法</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="guide,febuildergba,upsパッチの作り方_適応方法"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=guide:febuildergba:ups%E3%83%91%E3%83%83%E3%83%81%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9_%E9%81%A9%E5%BF%9C%E6%96%B9%E6%B3%95&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide:febuildergba"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:ups%E3%83%91%E3%83%83%E3%83%81%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9_%E9%81%A9%E5%BF%9C%E6%96%B9%E6%B3%95"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:febuildergba:ups%E3%83%91%E3%83%83%E3%83%81%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9_%E9%81%A9%E5%BF%9C%E6%96%B9%E6%B3%95"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:ups%E3%83%91%E3%83%83%E3%83%81%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9_%E9%81%A9%E5%BF%9C%E6%96%B9%E6%B3%95"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='guide:febuildergba';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:febuildergba:ups\u30d1\u30c3\u30c1\u306e\u4f5c\u308a\u65b9_\u9069\u5fdc\u65b9\u6cd5","namespace":"guide:febuildergba","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#ups_patchを作り方">UPS Patchを作り方</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepa1">StepA1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa2">StepA2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa3">StepA3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa4">StepA4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa5">StepA5</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#ups_patchの適応方法">UPS Patchの適応方法</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepb1">StepB1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb2">StepB2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb3">StepB3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb4">StepB4</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#ups_patchの適応方法_その2">UPS Patchの適応方法 その2</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+UPSパッチの作り方、適応方法
+</p>
+
+<p>
+ROMを公開することは多くの国で違法です。<br/>
+そのため、あなたの改造を公開するときは、あなたの改造だけを取り出したupsパッチを作らないといけません。<br/>
+FEBuilderGBAを利用すると、簡単にUPSパッチを作ることができます。<br/>
+<br/>
+
+</p>
+
+<h1 class="sectionedit1" id="ups_patchを作り方">UPS Patchを作り方</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;UPS Patch\u3092\u4f5c\u308a\u65b9&quot;,&quot;hid&quot;:&quot;ups_patch\u3092\u4f5c\u308a\u65b9&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;348-384&quot;} -->
+<h2 class="sectionedit2" id="stepa1">StepA1</h2>
+<div class="level2">
+
+<p>
+まず、貴方の改造したROMを、読み込んでください。
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA1&quot;,&quot;hid&quot;:&quot;stepa1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;385-475&quot;} -->
+<h2 class="sectionedit3" id="stepa2">StepA2</h2>
+<div class="level2">
+
+<p>
+メニューの「ファイル」→「UPS差分で保存」を選択してください。<br/>
+<a href="/lib/exe/fetch.php?tok=185507&amp;media=https%3A%2F%2Fi.imgur.com%2F6JvzhzP.jpg" class="media" title="https://i.imgur.com/6JvzhzP.jpg"><img src="/lib/exe/fetch.php?tok=185507&amp;media=https%3A%2F%2Fi.imgur.com%2F6JvzhzP.jpg" class="mediacenter" title="i.imgur.com_6jvzhzp.jpg" alt="i.imgur.com_6jvzhzp.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA2&quot;,&quot;hid&quot;:&quot;stepa2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;476-626&quot;} -->
+<h2 class="sectionedit4" id="stepa3">StepA3</h2>
+<div class="level2">
+
+<p>
+差分を取るために、無改造ROMを指定してください。<br/>
+FEBuilderGBAはカレントディレクトリに無改造ROMがあれば、自動的に推薦します。<br/>
+そのため、たいていは何もしなくてもいいです。<br/>
+<a href="/lib/exe/fetch.php?tok=25fbc3&amp;media=https%3A%2F%2Fi.imgur.com%2FrYBZ2am.jpg" class="media" title="https://i.imgur.com/rYBZ2am.jpg"><img src="/lib/exe/fetch.php?tok=25fbc3&amp;media=https%3A%2F%2Fi.imgur.com%2FrYBZ2am.jpg" class="mediacenter" title="i.imgur.com_rybz2am.jpg" alt="i.imgur.com_rybz2am.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA3&quot;,&quot;hid&quot;:&quot;stepa3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;627-934&quot;} -->
+<h2 class="sectionedit5" id="stepa4">StepA4</h2>
+<div class="level2">
+
+<p>
+「差分をUPSパッチとして作成する」ボタンを押して、UPS差分を保存します。<br/>
+<a href="/lib/exe/fetch.php?tok=3775a0&amp;media=https%3A%2F%2Fi.imgur.com%2F96P1elo.jpg" class="media" title="https://i.imgur.com/96P1elo.jpg"><img src="/lib/exe/fetch.php?tok=3775a0&amp;media=https%3A%2F%2Fi.imgur.com%2F96P1elo.jpg" class="mediacenter" title="i.imgur.com_96p1elo.jpg" alt="i.imgur.com_96p1elo.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA4&quot;,&quot;hid&quot;:&quot;stepa4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;935-1098&quot;} -->
+<h2 class="sectionedit6" id="stepa5">StepA5</h2>
+<div class="level2">
+
+<p>
+以上。<br/>
+UPSファイルが作成されました。<br/>
+<a href="/lib/exe/fetch.php?tok=23624d&amp;media=https%3A%2F%2Fi.imgur.com%2FjPViO6B.jpg" class="media" title="https://i.imgur.com/jPViO6B.jpg"><img src="/lib/exe/fetch.php?tok=23624d&amp;media=https%3A%2F%2Fi.imgur.com%2FjPViO6B.jpg" class="mediacenter" title="i.imgur.com_jpvio6b.jpg" alt="i.imgur.com_jpvio6b.jpg" /></a><br />
+<br/>
+簡単ですね。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA5&quot;,&quot;hid&quot;:&quot;stepa5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1099-1239&quot;} -->
+<h1 class="sectionedit7" id="ups_patchの適応方法">UPS Patchの適応方法</h1>
+<div class="level1">
+
+<p>
+貴方が作ったUPSや、他人が作ったUPSファイルを適応する方法を説明します。<br/>
+こちらはもっと簡単です。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;UPS Patch\u306e\u9069\u5fdc\u65b9\u6cd5&quot;,&quot;hid&quot;:&quot;ups_patch\u306e\u9069\u5fdc\u65b9\u6cd5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;1240-1424&quot;} -->
+<h2 class="sectionedit8" id="stepb1">StepB1</h2>
+<div class="level2">
+
+<p>
+FEBuilderGBAでROMを開くときに、upsファイルを選択してください。<br/>
+<a href="/lib/exe/fetch.php?tok=6234f7&amp;media=https%3A%2F%2Fi.imgur.com%2FqTZjl5z.jpg" class="media" title="https://i.imgur.com/qTZjl5z.jpg"><img src="/lib/exe/fetch.php?tok=6234f7&amp;media=https%3A%2F%2Fi.imgur.com%2FqTZjl5z.jpg" class="mediacenter" title="i.imgur.com_qtzjl5z.jpg" alt="i.imgur.com_qtzjl5z.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB1&quot;,&quot;hid&quot;:&quot;stepb1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;1425-1570&quot;} -->
+<h2 class="sectionedit9" id="stepb2">StepB2</h2>
+<div class="level2">
+
+<p>
+差分を適応するための無改造ROMをいれてください。<br/>
+FEBuilderGBAはカレントディレクトリに無改造ROMがあれば、自動的に推薦します。<br/>
+そのため、たいていは何もしなくてもいいです。<br/>
+<a href="/lib/exe/fetch.php?tok=ede7c9&amp;media=https%3A%2F%2Fi.imgur.com%2Foqqz1D8.jpg" class="media" title="https://i.imgur.com/oqqz1D8.jpg"><img src="/lib/exe/fetch.php?tok=ede7c9&amp;media=https%3A%2F%2Fi.imgur.com%2Foqqz1D8.jpg" class="mediacenter" title="i.imgur.com_oqqz1d8.jpg" alt="i.imgur.com_oqqz1d8.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB2&quot;,&quot;hid&quot;:&quot;stepb2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;1571-1878&quot;} -->
+<h2 class="sectionedit10" id="stepb3">StepB3</h2>
+<div class="level2">
+
+<p>
+「UPSパッチを開く」ボタンを押してください。<br />
+<a href="/lib/exe/fetch.php?tok=a2b351&amp;media=https%3A%2F%2Fi.imgur.com%2FHWf3iyX.jpg" class="media" title="https://i.imgur.com/HWf3iyX.jpg"><img src="/lib/exe/fetch.php?tok=a2b351&amp;media=https%3A%2F%2Fi.imgur.com%2FHWf3iyX.jpg" class="mediacenter" title="i.imgur.com_hwf3iyx.jpg" alt="i.imgur.com_hwf3iyx.jpg" /></a>
+</p>
+
+<p>
+「UPSパッチを適応したROMを、UPSファイル名.gbaとして保存する」のチェックを消さなければ、<br/>
+UPSパッチがあったディレクトリに、UPSパッチを適応した内容が、UPSファイル名.gbaとして保存されます。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB3&quot;,&quot;hid&quot;:&quot;stepb3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;1879-2271&quot;} -->
+<h2 class="sectionedit11" id="stepb4">StepB4</h2>
+<div class="level2">
+
+<p>
+パッチが適応されました。<br/>
+<a href="/lib/exe/fetch.php?tok=df65d8&amp;media=https%3A%2F%2Fi.imgur.com%2F5VOgeuH.jpg" class="media" title="https://i.imgur.com/5VOgeuH.jpg"><img src="/lib/exe/fetch.php?tok=df65d8&amp;media=https%3A%2F%2Fi.imgur.com%2F5VOgeuH.jpg" class="mediacenter" title="i.imgur.com_5vogeuh.jpg" alt="i.imgur.com_5vogeuh.jpg" /></a><br />
+<br/>
+とても簡単です。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB4&quot;,&quot;hid&quot;:&quot;stepb4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;2272-2399&quot;} -->
+<h1 class="sectionedit12" id="ups_patchの適応方法_その2">UPS Patchの適応方法 その2</h1>
+<div class="level1">
+
+<p>
+他の方法もあります。<br/>
+UPSファイルをD&amp;Dするだけで開くことができます。<br/>
+<br/>
+FEBuilderGBA.exe に、UPSファイルをD&amp;Dする。<br/>
+FEBuilderGBAのWelcome画面に、UPSファイルをD&amp;Dする。<br/>
+<br/>
+どちらしても、FEBuilderGBAで簡単にUPSを作れます。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;UPS Patch\u306e\u9069\u5fdc\u65b9\u6cd5 \u305d\u306e2&quot;,&quot;hid&quot;:&quot;ups_patch\u306e\u9069\u5fdc\u65b9\u6cd5_\u305d\u306e2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:12,&quot;range&quot;:&quot;2400-&quot;} --></div>
+</body>
+</html>

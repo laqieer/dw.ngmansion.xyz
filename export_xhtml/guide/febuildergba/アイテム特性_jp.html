@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>guide:febuildergba:アイテム特性_jp</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="guide,febuildergba,アイテム特性_jp"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=guide:febuildergba:%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E7%89%B9%E6%80%A7_jp&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide:febuildergba"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E7%89%B9%E6%80%A7_jp"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:febuildergba:%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E7%89%B9%E6%80%A7_jp"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E7%89%B9%E6%80%A7_jp"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='guide:febuildergba';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:febuildergba:\u30a2\u30a4\u30c6\u30e0\u7279\u6027_jp","namespace":"guide:febuildergba","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#アイテムを新設する">アイテムを新設する</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepa1">StepA1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa2">StepA2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa3">StepA3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa4">StepA4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa5">StepA5</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa6">StepA6</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa7">StepA7</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa8">StepA8</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa9">StepA9</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa10">StepA10</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa11">StepA11</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa12">StepA12</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa13">StepA13</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa14">StepA14</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa15">StepA15</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa16">StepA16</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa17">StepA17</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#武器持たせる">武器持たせる</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepb1">StepB1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb2">StepB2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb3">StepB3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb4">StepB4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb5">StepB5</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#アイテムエフェクトの設定">アイテムエフェクトの設定</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepc1">StepC1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc2">StepC2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc3">StepC3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc4">StepC4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc5">StepC5</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#特攻効果でもっと強く">特攻効果でもっと強く</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepd1">StepD1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd2">StepD2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd3">StepD3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd31">StepD3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd4">StepD4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd5">StepD5</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd6">StepD6</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd7">StepD7</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd8">StepD8</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#能力補正">能力補正</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepe1">StepE1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepe2">StepE2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepe3">StepE3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepe31">StepE3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepe4">StepE4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepe5">StepE5</a></div></li>
+<li class="level2"><div class="li"><a href="#stepe6">StepE6</a></div></li>
+<li class="level2"><div class="li"><a href="#stepe7">StepE7</a></div></li>
+<li class="level2"><div class="li"><a href="#stepe8">StepE8</a></div></li>
+<li class="level2"><div class="li"><a href="#stepe9">StepE9</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#神器化">神器化</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepf1">StepF1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepf2">StepF2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepf3">StepF3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepf4">StepF4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepf5">StepF5</a></div></li>
+<li class="level2"><div class="li"><a href="#stepf6">StepF6</a></div></li>
+<li class="level2"><div class="li"><a href="#stepf7">StepF7</a></div></li>
+<li class="level2"><div class="li"><a href="#おしまい">おしまい</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+アイテムの設定方法を解説します。<br/>
+普通に解説しても面白くないので、絶対に負けないチート武器を作りながら、GBA FEのアイテムの設定方法を見ていきましょう。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=4c1a1c&amp;media=https%3A%2F%2Fi.imgur.com%2FBeUOK89.jpg" class="media" title="https://i.imgur.com/BeUOK89.jpg"><img src="/lib/exe/fetch.php?tok=4c1a1c&amp;media=https%3A%2F%2Fi.imgur.com%2FBeUOK89.jpg" class="mediacenter" title="i.imgur.com_beuok89.jpg" alt="i.imgur.com_beuok89.jpg" /></a><br />
+<a href="/lib/exe/fetch.php?tok=1e07cf&amp;media=https%3A%2F%2Fi.imgur.com%2FWYlgsMc.jpg" class="media" title="https://i.imgur.com/WYlgsMc.jpg"><img src="/lib/exe/fetch.php?tok=1e07cf&amp;media=https%3A%2F%2Fi.imgur.com%2FWYlgsMc.jpg" class="mediacenter" title="i.imgur.com_wylgsmc.jpg" alt="i.imgur.com_wylgsmc.jpg" /></a>
+</p>
+
+<h1 class="sectionedit1" id="アイテムを新設する">アイテムを新設する</h1>
+<div class="level1">
+
+<p>
+新規にアイテムを作ります。<br/>
+FE8には、利用されていないダミーアイテムがたくさん存在するので、その領域を利用します。<br/>
+(もっと、たくさん作りたい人はアイテムリストを拡張するといいでしょう)<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a2\u30a4\u30c6\u30e0\u3092\u65b0\u8a2d\u3059\u308b&quot;,&quot;hid&quot;:&quot;\u30a2\u30a4\u30c6\u30e0\u3092\u65b0\u8a2d\u3059\u308b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;304-626&quot;} -->
+<h2 class="sectionedit2" id="stepa1">StepA1</h2>
+<div class="level2">
+
+<p>
+アイテムの設定をするには、「アイテム」ボタンを選択してください。<br/>
+<a href="/lib/exe/fetch.php?tok=9a94ac&amp;media=https%3A%2F%2Fi.imgur.com%2FMYqfZDq.jpg" class="media" title="https://i.imgur.com/MYqfZDq.jpg"><img src="/lib/exe/fetch.php?tok=9a94ac&amp;media=https%3A%2F%2Fi.imgur.com%2FMYqfZDq.jpg" class="mediacenter" title="i.imgur.com_myqfzdq.jpg" alt="i.imgur.com_myqfzdq.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA1&quot;,&quot;hid&quot;:&quot;stepa1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;627-784&quot;} -->
+<h2 class="sectionedit3" id="stepa2">StepA2</h2>
+<div class="level2">
+
+<p>
+アイテムリストの下の方に、利用されていないダミーアイテムがあります。<br/>
+この領域に、武器を新設します。<br/>
+<br/>
+今回は、ダミー 0xBCを利用しましょう。<br/>
+<a href="/lib/exe/fetch.php?tok=c0284b&amp;media=https%3A%2F%2Fi.imgur.com%2FxOdw47z.jpg" class="media" title="https://i.imgur.com/xOdw47z.jpg"><img src="/lib/exe/fetch.php?tok=c0284b&amp;media=https%3A%2F%2Fi.imgur.com%2FxOdw47z.jpg" class="mediacenter" title="i.imgur.com_xodw47z.jpg" alt="i.imgur.com_xodw47z.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA2&quot;,&quot;hid&quot;:&quot;stepa2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;785-1056&quot;} -->
+<h2 class="sectionedit4" id="stepa3">StepA3</h2>
+<div class="level2">
+
+<p>
+まず名前を設定しましょう。<br/>
+名前という部分のリンクを押すと、「文字列テーブル」に行けます。<br />
+<a href="/lib/exe/fetch.php?tok=06868c&amp;media=https%3A%2F%2Fi.imgur.com%2FrpyOj0o.jpg" class="media" title="https://i.imgur.com/rpyOj0o.jpg"><img src="/lib/exe/fetch.php?tok=06868c&amp;media=https%3A%2F%2Fi.imgur.com%2FrpyOj0o.jpg" class="mediacenter" title="i.imgur.com_rpyoj0o.jpg" alt="i.imgur.com_rpyoj0o.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA3&quot;,&quot;hid&quot;:&quot;stepa3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1057-1251&quot;} -->
+<h2 class="sectionedit5" id="stepa4">StepA4</h2>
+<div class="level2">
+
+<p>
+FE8の文字列には、なぜかFE6のステージの名前があります。<br/>
+FE6のステージ名は 0x6Bぐらいからあるみたいです。<br/>
+今回は、文字列 0x6Bを武器名に利用します。<br/>
+<a href="/lib/exe/fetch.php?tok=7a9c38&amp;media=https%3A%2F%2Fi.imgur.com%2FteAoaJC.jpg" class="media" title="https://i.imgur.com/teAoaJC.jpg"><img src="/lib/exe/fetch.php?tok=7a9c38&amp;media=https%3A%2F%2Fi.imgur.com%2FteAoaJC.jpg" class="mediacenter" title="i.imgur.com_teaoajc.jpg" alt="i.imgur.com_teaoajc.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA4&quot;,&quot;hid&quot;:&quot;stepa4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;1252-1525&quot;} -->
+<h2 class="sectionedit6" id="stepa5">StepA5</h2>
+<div class="level2">
+
+<p>
+名前を付けましょう。<br/>
+とりあえず、「超強い剣」としました。<br/>
+<a href="/lib/exe/fetch.php?tok=d30999&amp;media=https%3A%2F%2Fi.imgur.com%2FmFHK2r8.jpg" class="media" title="https://i.imgur.com/mFHK2r8.jpg"><img src="/lib/exe/fetch.php?tok=d30999&amp;media=https%3A%2F%2Fi.imgur.com%2FmFHK2r8.jpg" class="mediacenter" title="i.imgur.com_mfhk2r8.jpg" alt="i.imgur.com_mfhk2r8.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA5&quot;,&quot;hid&quot;:&quot;stepa5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1526-1674&quot;} -->
+<h2 class="sectionedit7" id="stepa6">StepA6</h2>
+<div class="level2">
+
+<p>
+文字列を変更したら、「書き込み」ボタンを押して、内容を確定します。<br/>
+<a href="/lib/exe/fetch.php?tok=869bd2&amp;media=https%3A%2F%2Fi.imgur.com%2FVslE2ZY.jpg" class="media" title="https://i.imgur.com/VslE2ZY.jpg"><img src="/lib/exe/fetch.php?tok=869bd2&amp;media=https%3A%2F%2Fi.imgur.com%2FVslE2ZY.jpg" class="mediacenter" title="i.imgur.com_vsle2zy.jpg" alt="i.imgur.com_vsle2zy.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA6&quot;,&quot;hid&quot;:&quot;stepa6&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;1675-1835&quot;} -->
+<h2 class="sectionedit8" id="stepa7">StepA7</h2>
+<div class="level2">
+
+<p>
+文字列 0x6B をアイテム名に利用したので、アイテム名前の部分に 0x6Bと書けばいいのですが、コピペするのも面倒です。<br/>
+FEBuilderGBAは、そんな怠惰な人のために、InjectionCallbackという機能を搭載しています。<br/>
+<br/>
+リンクで呼び出されたリストは、リスト名をダブルクリックすると、呼び出し元に自動設定されます。<br/>
+<br/>
+とにかく、やってみましょう。<br/>
+文字列 0x6B の 「006B 0014D238」という部分をダブルクリックしてみてください。<br/>
+<a href="/lib/exe/fetch.php?tok=d36193&amp;media=https%3A%2F%2Fi.imgur.com%2FFMIbzhW.jpg" class="media" title="https://i.imgur.com/FMIbzhW.jpg"><img src="/lib/exe/fetch.php?tok=d36193&amp;media=https%3A%2F%2Fi.imgur.com%2FFMIbzhW.jpg" class="mediacenter" title="i.imgur.com_fmibzhw.jpg" alt="i.imgur.com_fmibzhw.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA7&quot;,&quot;hid&quot;:&quot;stepa7&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;1836-2474&quot;} -->
+<h2 class="sectionedit9" id="stepa8">StepA8</h2>
+<div class="level2">
+
+<p>
+名前に、文字列 0x6Bが設定されました。<br/>
+<a href="/lib/exe/fetch.php?tok=db1b1d&amp;media=https%3A%2F%2Fi.imgur.com%2FdbQqlM8.jpg" class="media" title="https://i.imgur.com/dbQqlM8.jpg"><img src="/lib/exe/fetch.php?tok=db1b1d&amp;media=https%3A%2F%2Fi.imgur.com%2FdbQqlM8.jpg" class="mediacenter" title="i.imgur.com_dbqqlm8.jpg" alt="i.imgur.com_dbqqlm8.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA8&quot;,&quot;hid&quot;:&quot;stepa8&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;2475-2590&quot;} -->
+<h2 class="sectionedit10" id="stepa9">StepA9</h2>
+<div class="level2">
+
+<p>
+説明にも同様に名前を付けてみましょう。<br/>
+文字列 0x6Cとかが同様に空いているので、そこを利用してください。<br/>
+<a href="/lib/exe/fetch.php?tok=6881bf&amp;media=https%3A%2F%2Fi.imgur.com%2FCbDKODY.jpg" class="media" title="https://i.imgur.com/CbDKODY.jpg"><img src="/lib/exe/fetch.php?tok=6881bf&amp;media=https%3A%2F%2Fi.imgur.com%2FCbDKODY.jpg" class="mediacenter" title="i.imgur.com_cbdkody.jpg" alt="i.imgur.com_cbdkody.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA9&quot;,&quot;hid&quot;:&quot;stepa9&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;2591-2804&quot;} -->
+<h2 class="sectionedit11" id="stepa10">StepA10</h2>
+<div class="level2">
+
+<p>
+説明も書いてみました。<br/>
+<a href="/lib/exe/fetch.php?tok=67d674&amp;media=https%3A%2F%2Fi.imgur.com%2FemrFR5C.jpg" class="media" title="https://i.imgur.com/emrFR5C.jpg"><img src="/lib/exe/fetch.php?tok=67d674&amp;media=https%3A%2F%2Fi.imgur.com%2FemrFR5C.jpg" class="mediacenter" title="i.imgur.com_emrfr5c.jpg" alt="i.imgur.com_emrfr5c.jpg" /></a>
+</p>
+
+<p>
+エターナルフォースブリザード。相手は死ぬ。<br/>
+<a href="/lib/exe/fetch.php?tok=ab995b&amp;media=https%3A%2F%2Fi.imgur.com%2FXJm3Rvn.jpg" class="media" title="https://i.imgur.com/XJm3Rvn.jpg"><img src="/lib/exe/fetch.php?tok=ab995b&amp;media=https%3A%2F%2Fi.imgur.com%2FXJm3Rvn.jpg" class="mediacenter" title="i.imgur.com_xjm3rvn.jpg" alt="i.imgur.com_xjm3rvn.jpg" /></a>
+</p>
+
+<p>
+<a href="/lib/exe/fetch.php?tok=4d6837&amp;media=https%3A%2F%2Fi.imgur.com%2FkjAoH8C.jpg" class="media" title="https://i.imgur.com/kjAoH8C.jpg"><img src="/lib/exe/fetch.php?tok=4d6837&amp;media=https%3A%2F%2Fi.imgur.com%2FkjAoH8C.jpg" class="mediacenter" title="i.imgur.com_kjaoh8c.jpg" alt="i.imgur.com_kjaoh8c.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA10&quot;,&quot;hid&quot;:&quot;stepa10&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;2805-3047&quot;} -->
+<h2 class="sectionedit12" id="stepa11">StepA11</h2>
+<div class="level2">
+
+<p>
+とにかく強い剣を作りたいので、特性で強そうなものをつけていきましょう。<br/>
+<a href="/lib/exe/fetch.php?tok=9c96a8&amp;media=https%3A%2F%2Fi.imgur.com%2Fbv4pH6N.jpg" class="media" title="https://i.imgur.com/bv4pH6N.jpg"><img src="/lib/exe/fetch.php?tok=9c96a8&amp;media=https%3A%2F%2Fi.imgur.com%2Fbv4pH6N.jpg" class="mediacenter" title="i.imgur.com_bv4ph6n.jpg" alt="i.imgur.com_bv4ph6n.jpg" /></a>
+</p>
+
+<p>
+耐久無限、2回攻撃、ついでに、飛行特攻無効に必殺無効もつけました。<br/>
+これなら、ファルコンに持たせて突撃しても大丈夫そうですね。<br/>
+<br/>
+防御無視のフラグは立てそびれてしまったので、やりたい人はそれも立てましょう。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA11&quot;,&quot;hid&quot;:&quot;stepa11&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:12,&quot;range&quot;:&quot;3048-3526&quot;} -->
+<h2 class="sectionedit13" id="stepa12">StepA12</h2>
+<div class="level2">
+
+<p>
+性能の項目では、武器の性能を指定できます。<br/>
+<a href="/lib/exe/fetch.php?tok=d6f413&amp;media=https%3A%2F%2Fi.imgur.com%2FQwpYQ65.jpg" class="media" title="https://i.imgur.com/QwpYQ65.jpg"><img src="/lib/exe/fetch.php?tok=d6f413&amp;media=https%3A%2F%2Fi.imgur.com%2FQwpYQ65.jpg" class="mediacenter" title="i.imgur.com_qwpyq65.jpg" alt="i.imgur.com_qwpyq65.jpg" /></a>
+</p>
+
+<p>
+<br/>
+耐久無限のフラグをつけていますが、耐久も念のため指定しておきましょう。<br/>
+とんでもない攻撃力(攻撃力=20)で、命中しまくり(100%命中)、ついでに必殺も出まくる(80%必殺)という壊れ具合にしてみました。<br/>
+重さは1です。重いと不利ですからね。<br/>
+<br/>
+剣の射程は、1-1 (1マス分の射程)ですが、せっかくなので、2-3の長弓の射程にしてみました。<br/>
+設定値を変更すれば、遠距離攻撃もできます。<br/>
+ただ、射程を1-3より大きく、1-4とかにすると、ユニット選択時の攻撃範囲のマークがおかしくなることがあります。<br/>
+攻撃範囲のマークが変でもちゃんと機能はするのでご安心ください。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA12&quot;,&quot;hid&quot;:&quot;stepa12&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:13,&quot;range&quot;:&quot;3527-4442&quot;} -->
+<h2 class="sectionedit14" id="stepa13">StepA13</h2>
+<div class="level2">
+
+<p>
+単価を設定すると、武器の価格、売値が求まります。<br/>
+単価 * 耐久 = 価格です。<br/>
+価格の半額が売値ですね。<br/>
+<a href="/lib/exe/fetch.php?tok=353a8e&amp;media=https%3A%2F%2Fi.imgur.com%2FAbHjTRx.jpg" class="media" title="https://i.imgur.com/AbHjTRx.jpg"><img src="/lib/exe/fetch.php?tok=353a8e&amp;media=https%3A%2F%2Fi.imgur.com%2FAbHjTRx.jpg" class="mediacenter" title="i.imgur.com_abhjtrx.jpg" alt="i.imgur.com_abhjtrx.jpg" /></a>
+</p>
+
+<p>
+<br/>
+ちゃんと作る場合、耐久と単価をちゃんと計算してゲームバランスを保つ必要があるのですが、この武器はチート武器なので気にしません。<br/>
+今回は、適当に単価=100にしてみました。<br/>
+単価*耐久なので、店で販売される場合は、単価100 * 耐久60=6000ゴールドになります。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA13&quot;,&quot;hid&quot;:&quot;stepa13&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:14,&quot;range&quot;:&quot;4443-5023&quot;} -->
+<h2 class="sectionedit15" id="stepa14">StepA14</h2>
+<div class="level2">
+
+<p>
+レベルは、武器レベルです。<br/>
+エイリークは剣の武器レベルがEなので、彼女が装備できるようにEにします。<br/>
+<a href="/lib/exe/fetch.php?tok=a00f98&amp;media=https%3A%2F%2Fi.imgur.com%2F6SnqxHd.jpg" class="media" title="https://i.imgur.com/6SnqxHd.jpg"><img src="/lib/exe/fetch.php?tok=a00f98&amp;media=https%3A%2F%2Fi.imgur.com%2F6SnqxHd.jpg" class="mediacenter" title="i.imgur.com_6snqxhd.jpg" alt="i.imgur.com_6snqxhd.jpg" /></a>
+</p>
+
+<p>
+武器レベルもちゃんと考えないと、敵に強い銀装備を持たせたけど、武器レベル足りなかった・・・・orzとかいうことがたまによくあります。<br/>
+だからといって、武器レベルを下げすぎると、武器レベルを上げる意味がなくなります。<br/>
+このあたりも、ちゃんと作るときは考える必要がありますが、これはチート武器なので気にしません。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA14&quot;,&quot;hid&quot;:&quot;stepa14&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:15,&quot;range&quot;:&quot;5024-5694&quot;} -->
+<h2 class="sectionedit16" id="stepa15">StepA15</h2>
+<div class="level2">
+
+<p>
+武器アイコンは、なんか強そうなアイコンを適当に選びましょう。<br/>
+<a href="/lib/exe/fetch.php?tok=d825ea&amp;media=https%3A%2F%2Fi.imgur.com%2FO2uDXJh.jpg" class="media" title="https://i.imgur.com/O2uDXJh.jpg"><img src="/lib/exe/fetch.php?tok=d825ea&amp;media=https%3A%2F%2Fi.imgur.com%2FO2uDXJh.jpg" class="mediacenter" title="i.imgur.com_o2udxjh.jpg" alt="i.imgur.com_o2udxjh.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA15&quot;,&quot;hid&quot;:&quot;stepa15&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:16,&quot;range&quot;:&quot;5695-5848&quot;} -->
+<h2 class="sectionedit17" id="stepa16">StepA16</h2>
+<div class="level2">
+
+<p>
+他は、ディフォルトのままにします。<br/>
+<a href="/lib/exe/fetch.php?tok=578af0&amp;media=https%3A%2F%2Fi.imgur.com%2FzwOGEal.jpg" class="media" title="https://i.imgur.com/zwOGEal.jpg"><img src="/lib/exe/fetch.php?tok=578af0&amp;media=https%3A%2F%2Fi.imgur.com%2FzwOGEal.jpg" class="mediacenter" title="i.imgur.com_zwogeal.jpg" alt="i.imgur.com_zwogeal.jpg" /></a>
+</p>
+
+<p>
+<br/>
+武器熟練度は、とりあえず1でいいでしょう。<br/>
+杖以外は、あんまり高くしても、いいことがない気がします。<br/>
+武器は普通に使っていれば、普通に育ちますので。<br/>
+杖は素振りがつらいので少しサービスしてあげるといいかもしれません。<br/>
+<br/>
+使った時の効果は、武器なので、なしです。<br/>
+ダメージの追加効果もいろいろ面倒なので、なしです。毒とか、吸収とか設定できます。<br/>
+また、状態異常剣パッチ(SuperSwordPatch)を当てると、眠りや混乱などの効果の付与もできます。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA16&quot;,&quot;hid&quot;:&quot;stepa16&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:17,&quot;range&quot;:&quot;5849-6608&quot;} -->
+<h2 class="sectionedit18" id="stepa17">StepA17</h2>
+<div class="level2">
+
+<p>
+設定できたので、「書き込み」ボタンを押して、結果を確定します。<br/>
+<a href="/lib/exe/fetch.php?tok=a52dcc&amp;media=https%3A%2F%2Fi.imgur.com%2Fj1SWj2o.jpg" class="media" title="https://i.imgur.com/j1SWj2o.jpg"><img src="/lib/exe/fetch.php?tok=a52dcc&amp;media=https%3A%2F%2Fi.imgur.com%2Fj1SWj2o.jpg" class="mediacenter" title="i.imgur.com_j1swj2o.jpg" alt="i.imgur.com_j1swj2o.jpg" /></a>
+</p>
+
+<p>
+武器の設定は完了しましたが、武器は手に入れないことには利用できません。<br/>
+次は、エイリークにこの武器を持たせます。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA17&quot;,&quot;hid&quot;:&quot;stepa17&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:18,&quot;range&quot;:&quot;6609-6938&quot;} -->
+<h1 class="sectionedit19" id="武器持たせる">武器持たせる</h1>
+<div class="level1">
+
+<p>
+武器は装備しないと効果がないが、持っていないことには装備もできません。<br/>
+そのため、エイリークに、先ほど作った武器をもたせます。<br/>
+<br />
+簡易メニューのトップ画面に戻ってください。<br/>
+ちなみに、PAUSE/BREAKキーを押すと、この画面に簡単に戻ることができて便利です。<br/>
+<a href="/lib/exe/fetch.php?tok=07c599&amp;media=https%3A%2F%2Fi.imgur.com%2FtwZXdmN.jpg" class="media" title="https://i.imgur.com/twZXdmN.jpg"><img src="/lib/exe/fetch.php?tok=07c599&amp;media=https%3A%2F%2Fi.imgur.com%2FtwZXdmN.jpg" class="mediacenter" title="i.imgur.com_twzxdmn.jpg" alt="i.imgur.com_twzxdmn.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6b66\u5668\u6301\u305f\u305b\u308b&quot;,&quot;hid&quot;:&quot;\u6b66\u5668\u6301\u305f\u305b\u308b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:19,&quot;range&quot;:&quot;6939-7384&quot;} -->
+<h2 class="sectionedit20" id="stepb1">StepB1</h2>
+<div class="level2">
+
+<p>
+トップ画面で、序章のエイリークをダブルクリックします。<br/>
+<a href="/lib/exe/fetch.php?tok=ead2cc&amp;media=https%3A%2F%2Fi.imgur.com%2FCSCY188.jpg" class="media" title="https://i.imgur.com/CSCY188.jpg"><img src="/lib/exe/fetch.php?tok=ead2cc&amp;media=https%3A%2F%2Fi.imgur.com%2FCSCY188.jpg" class="mediacenter" title="i.imgur.com_cscy188.jpg" alt="i.imgur.com_cscy188.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB1&quot;,&quot;hid&quot;:&quot;stepb1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:20,&quot;range&quot;:&quot;7385-7527&quot;} -->
+<h2 class="sectionedit21" id="stepb2">StepB2</h2>
+<div class="level2">
+
+<p>
+序章のエイリークの設定画面が開きますので、彼女のアイテム欄に、先ほど作った、「超強い剣」をセットします。<br/>
+<a href="/lib/exe/fetch.php?tok=07b07a&amp;media=https%3A%2F%2Fi.imgur.com%2FPIV526T.jpg" class="media" title="https://i.imgur.com/PIV526T.jpg"><img src="/lib/exe/fetch.php?tok=07b07a&amp;media=https%3A%2F%2Fi.imgur.com%2FPIV526T.jpg" class="mediacenter" title="i.imgur.com_piv526t.jpg" alt="i.imgur.com_piv526t.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB2&quot;,&quot;hid&quot;:&quot;stepb2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:21,&quot;range&quot;:&quot;7528-7745&quot;} -->
+<h2 class="sectionedit22" id="stepb3">StepB3</h2>
+<div class="level2">
+
+<p>
+変更したので、「書き込み」ボタンを押して結果を確定します。<br/>
+<a href="/lib/exe/fetch.php?tok=644273&amp;media=https%3A%2F%2Fi.imgur.com%2FbKht0WZ.jpg" class="media" title="https://i.imgur.com/bKht0WZ.jpg"><img src="/lib/exe/fetch.php?tok=644273&amp;media=https%3A%2F%2Fi.imgur.com%2FbKht0WZ.jpg" class="mediacenter" title="i.imgur.com_bkht0wz.jpg" alt="i.imgur.com_bkht0wz.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB3&quot;,&quot;hid&quot;:&quot;stepb3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:22,&quot;range&quot;:&quot;7746-7894&quot;} -->
+<h2 class="sectionedit23" id="stepb4">StepB4</h2>
+<div class="level2">
+
+<p>
+これで設定が終わりました。<br/>
+F5キーを押して、エミュレータを起動して、動作を確認してみましょう。<br/>
+<a href="/lib/exe/fetch.php?tok=15ec1f&amp;media=https%3A%2F%2Fi.imgur.com%2F5c6SyZG.jpg" class="media" title="https://i.imgur.com/5c6SyZG.jpg"><img src="/lib/exe/fetch.php?tok=15ec1f&amp;media=https%3A%2F%2Fi.imgur.com%2F5c6SyZG.jpg" class="mediacenter" title="i.imgur.com_5c6syzg.jpg" alt="i.imgur.com_5c6syzg.jpg" /></a>
+</p>
+
+<p>
+<br/>
+エイリークは、先ほど作った超強い剣をもっています。<br/>
+途中で渡されるレイピアより先に持たせているので自動的に装備しています。<br/>
+<br/>
+耐久を無限にしたので、 –/– で無限に利用できます。<br/>
+射程や命中率なども設定した値が反映されていますね。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB4&quot;,&quot;hid&quot;:&quot;stepb4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:23,&quot;range&quot;:&quot;7895-8443&quot;} -->
+<h2 class="sectionedit24" id="stepb5">StepB5</h2>
+<div class="level2">
+
+<p>
+さっそく試し切りをしてみましょう。<br/>
+<a href="/lib/exe/fetch.php?tok=6bfa55&amp;media=https%3A%2F%2Fi.imgur.com%2FYWPEMO4.jpg" class="media" title="https://i.imgur.com/YWPEMO4.jpg"><img src="/lib/exe/fetch.php?tok=6bfa55&amp;media=https%3A%2F%2Fi.imgur.com%2FYWPEMO4.jpg" class="mediacenter" title="i.imgur.com_ywpemo4.jpg" alt="i.imgur.com_ywpemo4.jpg" /></a>
+</p>
+
+<p>
+<br/>
+超強い剣にかかれば、敵を簡単に粉砕できます。<br/>
+<a href="/lib/exe/fetch.php?tok=3d3c79&amp;media=https%3A%2F%2Fi.imgur.com%2FB1SgQ8Q.jpg" class="media" title="https://i.imgur.com/B1SgQ8Q.jpg"><img src="/lib/exe/fetch.php?tok=3d3c79&amp;media=https%3A%2F%2Fi.imgur.com%2FB1SgQ8Q.jpg" class="mediacenter" title="i.imgur.com_b1sgq8q.jpg" alt="i.imgur.com_b1sgq8q.jpg" /></a><br />
+<br/>
+敵を粉砕できるのはいいんですが、モーションがなんだか寂しいですね。<br/>
+長弓の射程にしたので、風の剣のような間接攻撃剣になり、剣を持ち上げるモーションだけです。<br/>
+そして、エフェクトも出ずに敵がただ倒れます。<br/>
+これでは面白くないです。<br/>
+<br/>
+と、いうことで、次は武器に攻撃用のエフェクトを設定してみます。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB5&quot;,&quot;hid&quot;:&quot;stepb5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:24,&quot;range&quot;:&quot;8444-9114&quot;} -->
+<h1 class="sectionedit25" id="アイテムエフェクトの設定">アイテムエフェクトの設定</h1>
+<div class="level1">
+
+<p>
+間接攻撃の武器や、魔法を使用した時のエフェクトを設定します。<br/>
+<a href="/lib/exe/fetch.php?tok=8c7c8c&amp;media=https%3A%2F%2Fi.imgur.com%2FHGfnUFx.jpg" class="media" title="https://i.imgur.com/HGfnUFx.jpg"><img src="/lib/exe/fetch.php?tok=8c7c8c&amp;media=https%3A%2F%2Fi.imgur.com%2FHGfnUFx.jpg" class="mediacenter" title="i.imgur.com_hgfnufx.jpg" alt="i.imgur.com_hgfnufx.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a2\u30a4\u30c6\u30e0\u30a8\u30d5\u30a7\u30af\u30c8\u306e\u8a2d\u5b9a&quot;,&quot;hid&quot;:&quot;\u30a2\u30a4\u30c6\u30e0\u30a8\u30d5\u30a7\u30af\u30c8\u306e\u8a2d\u5b9a&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:25,&quot;range&quot;:&quot;9115-9298&quot;} -->
+<h2 class="sectionedit26" id="stepc1">StepC1</h2>
+<div class="level2">
+
+<p>
+アイテムのエフェクトを設定するには、該当アイテムの「間接エフェクト Jump」を利用すると楽に行けます。<br/>
+アイテムの、右下にあります。<br/>
+<a href="/lib/exe/fetch.php?tok=9657a2&amp;media=https%3A%2F%2Fi.imgur.com%2FMOtPgYt.jpg" class="media" title="https://i.imgur.com/MOtPgYt.jpg"><img src="/lib/exe/fetch.php?tok=9657a2&amp;media=https%3A%2F%2Fi.imgur.com%2FMOtPgYt.jpg" class="mediacenter" title="i.imgur.com_motpgyt.jpg" alt="i.imgur.com_motpgyt.jpg" /></a>
+</p>
+
+<p>
+武器エフェクトはなぜかアイテムの順番に並んでいないので、探すのがそこそこ手間です。<br/>
+「間接エフェクト Jump」だと、自動的に探してくれるので手間が省けます。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC1&quot;,&quot;hid&quot;:&quot;stepc1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:26,&quot;range&quot;:&quot;9299-9782&quot;} -->
+<h2 class="sectionedit27" id="stepc2">StepC2</h2>
+<div class="level2">
+
+<p>
+アイテムエフェクト画面にきました。<br/>
+<a href="/lib/exe/fetch.php?tok=05aea5&amp;media=https%3A%2F%2Fi.imgur.com%2FAYSk25A.jpg" class="media" title="https://i.imgur.com/AYSk25A.jpg"><img src="/lib/exe/fetch.php?tok=05aea5&amp;media=https%3A%2F%2Fi.imgur.com%2FAYSk25A.jpg" class="mediacenter" title="i.imgur.com_aysk25a.jpg" alt="i.imgur.com_aysk25a.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC2&quot;,&quot;hid&quot;:&quot;stepc2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:27,&quot;range&quot;:&quot;9783-9895&quot;} -->
+<h2 class="sectionedit28" id="stepc3">StepC3</h2>
+<div class="level2">
+
+<p>
+エフェクトID 0x35 エイルカリバーや風の剣のエフェクトにしてみましょう。<br/>
+また、エフェクト は、 魔法剣なので 0x00 を設定します。(0x01だとフリーズします)<br/>
+<a href="/lib/exe/fetch.php?tok=b84c79&amp;media=https%3A%2F%2Fi.imgur.com%2FiH58uAN.jpg" class="media" title="https://i.imgur.com/iH58uAN.jpg"><img src="/lib/exe/fetch.php?tok=b84c79&amp;media=https%3A%2F%2Fi.imgur.com%2FiH58uAN.jpg" class="mediacenter" title="i.imgur.com_ih58uan.jpg" alt="i.imgur.com_ih58uan.jpg" /></a><br />
+<br/>
+そのほか、被弾色とかいろいろ設定できますが、とりあえず他はディフォルトのままにしておきましょう。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC3&quot;,&quot;hid&quot;:&quot;stepc3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:28,&quot;range&quot;:&quot;9896-10321&quot;} -->
+<h2 class="sectionedit29" id="stepc4">StepC4</h2>
+<div class="level2">
+
+<p>
+書き込むボタンで、エフェクトを確定させます。<br/>
+<a href="/lib/exe/fetch.php?tok=261c1c&amp;media=https%3A%2F%2Fi.imgur.com%2FxLWgwkb.jpg" class="media" title="https://i.imgur.com/xLWgwkb.jpg"><img src="/lib/exe/fetch.php?tok=261c1c&amp;media=https%3A%2F%2Fi.imgur.com%2FxLWgwkb.jpg" class="mediacenter" title="i.imgur.com_xlwgwkb.jpg" alt="i.imgur.com_xlwgwkb.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC4&quot;,&quot;hid&quot;:&quot;stepc4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:29,&quot;range&quot;:&quot;10322-10449&quot;} -->
+<h2 class="sectionedit30" id="stepc5">StepC5</h2>
+<div class="level2">
+
+<p>
+さっそく試し切りをしてみましょう。<br/>
+剣を掲げると、設定したエフェクトが表示されました。<br/>
+<a href="/lib/exe/fetch.php?tok=8c7c8c&amp;media=https%3A%2F%2Fi.imgur.com%2FHGfnUFx.jpg" class="media" title="https://i.imgur.com/HGfnUFx.jpg"><img src="/lib/exe/fetch.php?tok=8c7c8c&amp;media=https%3A%2F%2Fi.imgur.com%2FHGfnUFx.jpg" class="mediacenter" title="i.imgur.com_hgfnufx.jpg" alt="i.imgur.com_hgfnufx.jpg" /></a>
+</p>
+
+<p>
+<br/>
+エフェクトを増やしたい場合は、詳細メニューの追加魔法の項目からいけます。<br/>
+ただし、魔法システムパッチをインストールする必要があります。<br/>
+GBA FEの魔法はハードコーディングされているので、スクリプトで制御できる処理系を入れないと定義できないのです。<br/>
+現在、数多くの実績があるFEEditor AdvのCSAルーチン(FE8JPのまほーパッチ)と、解像度がより高い新進気鋭のCSA_Creatorの2つの処理系があります。<br/>
+共に、パッチ画面から簡単にインストールできます。<br/>
+(両方のインストールはてきません。どちらか片方しかインストールできません。)<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC5&quot;,&quot;hid&quot;:&quot;stepc5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:30,&quot;range&quot;:&quot;10450-11390&quot;} -->
+<h1 class="sectionedit31" id="特攻効果でもっと強く">特攻効果でもっと強く</h1>
+<div class="level1">
+
+<p>
+特攻効果をつけると、より高いダメージを出せます。<br/>
+飛行ユニットが弓矢に弱いとか、アーマーキラーやホースキラーとかで、使われている効果です。<br/>
+特攻効果を追加して、より強い剣を目指しましょう。<br/>
+<a href="/lib/exe/fetch.php?tok=15021a&amp;media=https%3A%2F%2Fi.imgur.com%2FJrtcEbF.jpg" class="media" title="https://i.imgur.com/JrtcEbF.jpg"><img src="/lib/exe/fetch.php?tok=15021a&amp;media=https%3A%2F%2Fi.imgur.com%2FJrtcEbF.jpg" class="mediacenter" title="i.imgur.com_jrtcebf.jpg" alt="i.imgur.com_jrtcebf.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u7279\u653b\u52b9\u679c\u3067\u3082\u3063\u3068\u5f37\u304f&quot;,&quot;hid&quot;:&quot;\u7279\u653b\u52b9\u679c\u3067\u3082\u3063\u3068\u5f37\u304f&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:31,&quot;range&quot;:&quot;11391-11760&quot;} -->
+<h2 class="sectionedit32" id="stepd1">StepD1</h2>
+<div class="level2">
+
+<p>
+「超強い剣」のアイテム画面を開いてください。<br/>
+<a href="/lib/exe/fetch.php?tok=578af0&amp;media=https%3A%2F%2Fi.imgur.com%2FzwOGEal.jpg" class="media" title="https://i.imgur.com/zwOGEal.jpg"><img src="/lib/exe/fetch.php?tok=578af0&amp;media=https%3A%2F%2Fi.imgur.com%2FzwOGEal.jpg" class="mediacenter" title="i.imgur.com_zwogeal.jpg" alt="i.imgur.com_zwogeal.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD1&quot;,&quot;hid&quot;:&quot;stepd1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:32,&quot;range&quot;:&quot;11761-11888&quot;} -->
+<h2 class="sectionedit33" id="stepd2">StepD2</h2>
+<div class="level2">
+
+<p>
+現在は、特攻効果はなしになっています。<br/>
+そのため、新規に設定する領域を割り振る必要があります。<br/>
+<a href="/lib/exe/fetch.php?tok=038e3b&amp;media=https%3A%2F%2Fi.imgur.com%2FFJQ7dwI.jpg" class="media" title="https://i.imgur.com/FJQ7dwI.jpg"><img src="/lib/exe/fetch.php?tok=038e3b&amp;media=https%3A%2F%2Fi.imgur.com%2FFJQ7dwI.jpg" class="mediacenter" title="i.imgur.com_fjq7dwi.jpg" alt="i.imgur.com_fjq7dwi.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD2&quot;,&quot;hid&quot;:&quot;stepd2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:33,&quot;range&quot;:&quot;11889-12091&quot;} -->
+<h2 class="sectionedit34" id="stepd3">StepD3</h2>
+<div class="level2">
+
+<p>
+「新規効果割当」ボタンを押すと、自動的に領域を確保できます。<br/>
+さっそくやってみましょう。<br/>
+<a href="/lib/exe/fetch.php?tok=64dee3&amp;media=https%3A%2F%2Fi.imgur.com%2FrFriPrB.jpg" class="media" title="https://i.imgur.com/rFriPrB.jpg"><img src="/lib/exe/fetch.php?tok=64dee3&amp;media=https%3A%2F%2Fi.imgur.com%2FrFriPrB.jpg" class="mediacenter" title="i.imgur.com_rfriprb.jpg" alt="i.imgur.com_rfriprb.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD3&quot;,&quot;hid&quot;:&quot;stepd3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:34,&quot;range&quot;:&quot;12092-12285&quot;} -->
+<h2 class="sectionedit35" id="stepd31">StepD3</h2>
+<div class="level2">
+
+<p>
+「このアイテムに特効効果を割り当てますか？」と聞かれるので、「はい」と答えます。<br/>
+<a href="/lib/exe/fetch.php?tok=604c31&amp;media=https%3A%2F%2Fi.imgur.com%2FTTpexFZ.jpg" class="media" title="https://i.imgur.com/TTpexFZ.jpg"><img src="/lib/exe/fetch.php?tok=604c31&amp;media=https%3A%2F%2Fi.imgur.com%2FTTpexFZ.jpg" class="mediacenter" title="i.imgur.com_ttpexfz.jpg" alt="i.imgur.com_ttpexfz.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD3&quot;,&quot;hid&quot;:&quot;stepd31&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:35,&quot;range&quot;:&quot;12286-12467&quot;} -->
+<h2 class="sectionedit36" id="stepd4">StepD4</h2>
+<div class="level2">
+
+<p>
+領域が確保されました。<br/>
+<a href="/lib/exe/fetch.php?tok=960688&amp;media=https%3A%2F%2Fi.imgur.com%2F8jSg3pr.jpg" class="media" title="https://i.imgur.com/8jSg3pr.jpg"><img src="/lib/exe/fetch.php?tok=960688&amp;media=https%3A%2F%2Fi.imgur.com%2F8jSg3pr.jpg" class="mediacenter" title="i.imgur.com_8jsg3pr.jpg" alt="i.imgur.com_8jsg3pr.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD4&quot;,&quot;hid&quot;:&quot;stepd4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:36,&quot;range&quot;:&quot;12468-12562&quot;} -->
+<h2 class="sectionedit37" id="stepd5">StepD5</h2>
+<div class="level2">
+
+<p>
+ディフォルトで 0x01 ロードが指定されています。<br/>
+「特攻効果格納アドレス」をクリックすると、設定画面に移動できます。<br/>
+<a href="/lib/exe/fetch.php?tok=a0d723&amp;media=https%3A%2F%2Fi.imgur.com%2FahbqRAF.jpg" class="media" title="https://i.imgur.com/ahbqRAF.jpg"><img src="/lib/exe/fetch.php?tok=a0d723&amp;media=https%3A%2F%2Fi.imgur.com%2FahbqRAF.jpg" class="mediacenter" title="i.imgur.com_ahbqraf.jpg" alt="i.imgur.com_ahbqraf.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD5&quot;,&quot;hid&quot;:&quot;stepd5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:37,&quot;range&quot;:&quot;12563-12792&quot;} -->
+<h2 class="sectionedit38" id="stepd6">StepD6</h2>
+<div class="level2">
+
+<p>
+特攻効果を割り当てたいクラスを指定していきます。<br/>
+とりあえずなんか適当に入れてみましょう。<br/>
+<a href="/lib/exe/fetch.php?tok=b198f1&amp;media=https%3A%2F%2Fi.imgur.com%2FeS5HiLA.jpg" class="media" title="https://i.imgur.com/eS5HiLA.jpg"><img src="/lib/exe/fetch.php?tok=b198f1&amp;media=https%3A%2F%2Fi.imgur.com%2FeS5HiLA.jpg" class="mediacenter" title="i.imgur.com_es5hila.jpg" alt="i.imgur.com_es5hila.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD6&quot;,&quot;hid&quot;:&quot;stepd6&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:38,&quot;range&quot;:&quot;12793-12989&quot;} -->
+<h2 class="sectionedit39" id="stepd7">StepD7</h2>
+<div class="level2">
+
+<p>
+とりあえず、試し切りに利用する戦士と、後はなんか適当にいれてみました。<br/>
+<a href="/lib/exe/fetch.php?tok=b73366&amp;media=https%3A%2F%2Fi.imgur.com%2Fax91Tkw.jpg" class="media" title="https://i.imgur.com/ax91Tkw.jpg"><img src="/lib/exe/fetch.php?tok=b73366&amp;media=https%3A%2F%2Fi.imgur.com%2Fax91Tkw.jpg" class="mediacenter" title="i.imgur.com_ax91tkw.jpg" alt="i.imgur.com_ax91tkw.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD7&quot;,&quot;hid&quot;:&quot;stepd7&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:39,&quot;range&quot;:&quot;12990-13156&quot;} -->
+<h2 class="sectionedit40" id="stepd8">StepD8</h2>
+<div class="level2">
+
+<p>
+さっそく、F5キーでエミュレータを起動して、試し切りをしてみましょう。<br/>
+<a href="/lib/exe/fetch.php?tok=15021a&amp;media=https%3A%2F%2Fi.imgur.com%2FJrtcEbF.jpg" class="media" title="https://i.imgur.com/JrtcEbF.jpg"><img src="/lib/exe/fetch.php?tok=15021a&amp;media=https%3A%2F%2Fi.imgur.com%2FJrtcEbF.jpg" class="mediacenter" title="i.imgur.com_jrtcebf.jpg" alt="i.imgur.com_jrtcebf.jpg" /></a><br />
+<br/>
+アイテムアイコンがフラッシュして、特攻武器だということがよくわかります。<br/>
+さらに、「超強い剣」はより強くなりました。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD8&quot;,&quot;hid&quot;:&quot;stepd8&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:40,&quot;range&quot;:&quot;13157-13500&quot;} -->
+<h1 class="sectionedit41" id="能力補正">能力補正</h1>
+<div class="level1">
+
+<p>
+剣がどんなに強くても、それは攻撃力だけです。<br/>
+敵からの攻撃に持ち主が耐えられなければ、反撃もできません。<br/>
+そこで、アイテムによる能力補正値を利用して、持ち主を強化しましょう。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=1af158&amp;media=https%3A%2F%2Fi.imgur.com%2FPub4PXi.jpg" class="media" title="https://i.imgur.com/Pub4PXi.jpg"><img src="/lib/exe/fetch.php?tok=1af158&amp;media=https%3A%2F%2Fi.imgur.com%2FPub4PXi.jpg" class="mediacenter" title="i.imgur.com_pub4pxi.jpg" alt="i.imgur.com_pub4pxi.jpg" /></a>
+</p>
+
+<p>
+<br/>
+エイリークは、まだLv1なので、やはり弱いです。<br/>
+能力を強化しないと、攻撃する前に倒されてしまうかもしれません。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u80fd\u529b\u88dc\u6b63&quot;,&quot;hid&quot;:&quot;\u80fd\u529b\u88dc\u6b63&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:41,&quot;range&quot;:&quot;13501-14004&quot;} -->
+<h2 class="sectionedit42" id="stepe1">StepE1</h2>
+<div class="level2">
+
+<p>
+「超強い剣」のアイテム画面を開いてください。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepE1&quot;,&quot;hid&quot;:&quot;stepe1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:42,&quot;range&quot;:&quot;14005-14094&quot;} -->
+<h2 class="sectionedit43" id="stepe2">StepE2</h2>
+<div class="level2">
+
+<p>
+現在は、能力補正はなしになっています。<br/>
+そのため、新規に設定する領域を割り振る必要があります。<br/>
+<a href="/lib/exe/fetch.php?tok=8b9e1f&amp;media=https%3A%2F%2Fi.imgur.com%2Fr19b9Mu.jpg" class="media" title="https://i.imgur.com/r19b9Mu.jpg"><img src="/lib/exe/fetch.php?tok=8b9e1f&amp;media=https%3A%2F%2Fi.imgur.com%2Fr19b9Mu.jpg" class="mediacenter" title="i.imgur.com_r19b9mu.jpg" alt="i.imgur.com_r19b9mu.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepE2&quot;,&quot;hid&quot;:&quot;stepe2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:43,&quot;range&quot;:&quot;14095-14297&quot;} -->
+<h2 class="sectionedit44" id="stepe3">StepE3</h2>
+<div class="level2">
+
+<p>
+「新規効果割当」ボタンを押すと、自動的に領域を確保できます。<br/>
+さっそくやってみましょう。<br/>
+<a href="/lib/exe/fetch.php?tok=406ee8&amp;media=https%3A%2F%2Fi.imgur.com%2FkCMjUR2.jpg" class="media" title="https://i.imgur.com/kCMjUR2.jpg"><img src="/lib/exe/fetch.php?tok=406ee8&amp;media=https%3A%2F%2Fi.imgur.com%2FkCMjUR2.jpg" class="mediacenter" title="i.imgur.com_kcmjur2.jpg" alt="i.imgur.com_kcmjur2.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepE3&quot;,&quot;hid&quot;:&quot;stepe3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:44,&quot;range&quot;:&quot;14298-14491&quot;} -->
+<h2 class="sectionedit45" id="stepe31">StepE3</h2>
+<div class="level2">
+
+<p>
+「このアイテムに能力補正を新規に割り当てますか？」と聞かれるので、「はい」と答えます。<br/>
+<a href="/lib/exe/fetch.php?tok=794238&amp;media=https%3A%2F%2Fi.imgur.com%2FImQnPB6.jpg" class="media" title="https://i.imgur.com/ImQnPB6.jpg"><img src="/lib/exe/fetch.php?tok=794238&amp;media=https%3A%2F%2Fi.imgur.com%2FImQnPB6.jpg" class="mediacenter" title="i.imgur.com_imqnpb6.jpg" alt="i.imgur.com_imqnpb6.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepE3&quot;,&quot;hid&quot;:&quot;stepe31&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:45,&quot;range&quot;:&quot;14492-14682&quot;} -->
+<h2 class="sectionedit46" id="stepe4">StepE4</h2>
+<div class="level2">
+
+<p>
+領域が確保されました。<br/>
+<a href="/lib/exe/fetch.php?tok=4664f4&amp;media=https%3A%2F%2Fi.imgur.com%2FeU0sZg9.jpg" class="media" title="https://i.imgur.com/eU0sZg9.jpg"><img src="/lib/exe/fetch.php?tok=4664f4&amp;media=https%3A%2F%2Fi.imgur.com%2FeU0sZg9.jpg" class="mediacenter" title="i.imgur.com_eu0szg9.jpg" alt="i.imgur.com_eu0szg9.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepE4&quot;,&quot;hid&quot;:&quot;stepe4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:46,&quot;range&quot;:&quot;14683-14777&quot;} -->
+<h2 class="sectionedit47" id="stepe5">StepE5</h2>
+<div class="level2">
+
+<p>
+ディフォルトで攻撃力+5 だけが設定されています。<br/>
+守備力とかも上げたいので、変更する必要があります。<br/>
+「能力修正格納アドレス」をクリックすると、設定画面に移動できます。<br/>
+<a href="/lib/exe/fetch.php?tok=49b439&amp;media=https%3A%2F%2Fi.imgur.com%2F3wFwxzb.jpg" class="media" title="https://i.imgur.com/3wFwxzb.jpg"><img src="/lib/exe/fetch.php?tok=49b439&amp;media=https%3A%2F%2Fi.imgur.com%2F3wFwxzb.jpg" class="mediacenter" title="i.imgur.com_3wfwxzb.jpg" alt="i.imgur.com_3wfwxzb.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepE5&quot;,&quot;hid&quot;:&quot;stepe5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:47,&quot;range&quot;:&quot;14778-15088&quot;} -->
+<h2 class="sectionedit48" id="stepe6">StepE6</h2>
+<div class="level2">
+
+<p>
+好きな値を割り当ててください。<br/>
+<a href="/lib/exe/fetch.php?tok=6c6083&amp;media=https%3A%2F%2Fi.imgur.com%2F8QTX6bg.jpg" class="media" title="https://i.imgur.com/8QTX6bg.jpg"><img src="/lib/exe/fetch.php?tok=6c6083&amp;media=https%3A%2F%2Fi.imgur.com%2F8QTX6bg.jpg" class="mediacenter" title="i.imgur.com_8qtx6bg.jpg" alt="i.imgur.com_8qtx6bg.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepE6&quot;,&quot;hid&quot;:&quot;stepe6&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:48,&quot;range&quot;:&quot;15089-15195&quot;} -->
+<h2 class="sectionedit49" id="stepe7">StepE7</h2>
+<div class="level2">
+
+<p>
+とりあえず、+20ぐらいしてみました。<br/>
+<a href="/lib/exe/fetch.php?tok=915310&amp;media=https%3A%2F%2Fi.imgur.com%2FURmxr9x.jpg" class="media" title="https://i.imgur.com/URmxr9x.jpg"><img src="/lib/exe/fetch.php?tok=915310&amp;media=https%3A%2F%2Fi.imgur.com%2FURmxr9x.jpg" class="mediacenter" title="i.imgur.com_urmxr9x.jpg" alt="i.imgur.com_urmxr9x.jpg" /></a><br />
+<br/>
+ただし、HP補正は装備時に行われます。今回は最初から装備しているので行われません。<br/>
+移動と体格は、ドーピングアイテムのみ有効です。アイテムへの補正は無視されるようです。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepE7&quot;,&quot;hid&quot;:&quot;stepe7&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:49,&quot;range&quot;:&quot;15196-15563&quot;} -->
+<h2 class="sectionedit50" id="stepe8">StepE8</h2>
+<div class="level2">
+
+<p>
+「書き込み」ボタンで結果を確定させます。<br/>
+<a href="/lib/exe/fetch.php?tok=a53cd4&amp;media=https%3A%2F%2Fi.imgur.com%2FeGlQGQC.jpg" class="media" title="https://i.imgur.com/eGlQGQC.jpg"><img src="/lib/exe/fetch.php?tok=a53cd4&amp;media=https%3A%2F%2Fi.imgur.com%2FeGlQGQC.jpg" class="mediacenter" title="i.imgur.com_eglqgqc.jpg" alt="i.imgur.com_eglqgqc.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepE8&quot;,&quot;hid&quot;:&quot;stepe8&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:50,&quot;range&quot;:&quot;15564-15685&quot;} -->
+<h2 class="sectionedit51" id="stepe9">StepE9</h2>
+<div class="level2">
+
+<p>
+F5キーでエミュレータを起動して、能力補正が正しく働いているか、確認してみましょう。<br/>
+<a href="/lib/exe/fetch.php?tok=4c1a1c&amp;media=https%3A%2F%2Fi.imgur.com%2FBeUOK89.jpg" class="media" title="https://i.imgur.com/BeUOK89.jpg"><img src="/lib/exe/fetch.php?tok=4c1a1c&amp;media=https%3A%2F%2Fi.imgur.com%2FBeUOK89.jpg" class="mediacenter" title="i.imgur.com_beuok89.jpg" alt="i.imgur.com_beuok89.jpg" /></a><br />
+<br/>
+おー、強すぎですね。<br/>
+これならLv1でラスボスにも勝てるかもしれません。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepE9&quot;,&quot;hid&quot;:&quot;stepe9&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:51,&quot;range&quot;:&quot;15686-15979&quot;} -->
+<h1 class="sectionedit52" id="神器化">神器化</h1>
+<div class="level1">
+
+<p>
+さまざまなチートにより「超強い剣」は、最強なりました。<br/>
+双聖器や神器なんて目じゃありません。<br/>
+<a href="/lib/exe/fetch.php?tok=1e07cf&amp;media=https%3A%2F%2Fi.imgur.com%2FWYlgsMc.jpg" class="media" title="https://i.imgur.com/WYlgsMc.jpg"><img src="/lib/exe/fetch.php?tok=1e07cf&amp;media=https%3A%2F%2Fi.imgur.com%2FWYlgsMc.jpg" class="mediacenter" title="i.imgur.com_wylgsmc.jpg" alt="i.imgur.com_wylgsmc.jpg" /></a><br />
+<br/>
+これは、あらたな神器といっても過言在りません。<br/>
+しかし、それならば、戦闘時に神器フラッシュを炊きたいところです。<br/>
+<a href="/lib/exe/fetch.php?tok=f72a3a&amp;media=https%3A%2F%2Fi.imgur.com%2FpCYXfkt.jpg" class="media" title="https://i.imgur.com/pCYXfkt.jpg"><img src="/lib/exe/fetch.php?tok=f72a3a&amp;media=https%3A%2F%2Fi.imgur.com%2FpCYXfkt.jpg" class="mediacenter" title="i.imgur.com_pcyxfkt.jpg" alt="i.imgur.com_pcyxfkt.jpg" /></a>
+</p>
+
+<p>
+神器フラッシュを設定してみましょう。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u795e\u5668\u5316&quot;,&quot;hid&quot;:&quot;\u795e\u5668\u5316&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:52,&quot;range&quot;:&quot;15980-16456&quot;} -->
+<h2 class="sectionedit53" id="stepf1">StepF1</h2>
+<div class="level2">
+
+<p>
+「詳細メニュー」を開いてください。<br/>
+<a href="/lib/exe/fetch.php?tok=600164&amp;media=https%3A%2F%2Fi.imgur.com%2Ft4KSzys.jpg" class="media" title="https://i.imgur.com/t4KSzys.jpg"><img src="/lib/exe/fetch.php?tok=600164&amp;media=https%3A%2F%2Fi.imgur.com%2Ft4KSzys.jpg" class="mediacenter" title="i.imgur.com_t4kszys.jpg" alt="i.imgur.com_t4kszys.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepF1&quot;,&quot;hid&quot;:&quot;stepf1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:53,&quot;range&quot;:&quot;16457-16569&quot;} -->
+<h2 class="sectionedit54" id="stepf2">StepF2</h2>
+<div class="level2">
+
+<p>
+「アイテムその他」を選択します。<br/>
+<a href="/lib/exe/fetch.php?tok=44d73e&amp;media=https%3A%2F%2Fi.imgur.com%2F7hBPYrK.jpg" class="media" title="https://i.imgur.com/7hBPYrK.jpg"><img src="/lib/exe/fetch.php?tok=44d73e&amp;media=https%3A%2F%2Fi.imgur.com%2F7hBPYrK.jpg" class="mediacenter" title="i.imgur.com_7hbpyrk.jpg" alt="i.imgur.com_7hbpyrk.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepF2&quot;,&quot;hid&quot;:&quot;stepf2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:54,&quot;range&quot;:&quot;16570-16679&quot;} -->
+<h2 class="sectionedit55" id="stepf3">StepF3</h2>
+<div class="level2">
+
+<p>
+「神器フラッシュ」タブを選択してください。<br/>
+<a href="/lib/exe/fetch.php?tok=0a5a90&amp;media=https%3A%2F%2Fi.imgur.com%2Fym1qVXg.jpg" class="media" title="https://i.imgur.com/ym1qVXg.jpg"><img src="/lib/exe/fetch.php?tok=0a5a90&amp;media=https%3A%2F%2Fi.imgur.com%2Fym1qVXg.jpg" class="mediacenter" title="i.imgur.com_ym1qvxg.jpg" alt="i.imgur.com_ym1qvxg.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepF3&quot;,&quot;hid&quot;:&quot;stepf3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:55,&quot;range&quot;:&quot;16680-16804&quot;} -->
+<h2 class="sectionedit56" id="stepf4">StepF4</h2>
+<div class="level2">
+
+<p>
+神器フラッシュをするアイテムIDはプログラムでハードコーディングされているので、なかなか簡単には設定できません。<br/>
+それに、神器アイテムは連続しておらずあちらこちらに点在しているので、結構複雑です。<br/>
+とりあえず、一番簡単な方法として、一番上にあるイーヴァルディにどいてもらうことにしました。<br/>
+<a href="/lib/exe/fetch.php?tok=42ff19&amp;media=https%3A%2F%2Fi.imgur.com%2FmvLYsiz.jpg" class="media" title="https://i.imgur.com/mvLYsiz.jpg"><img src="/lib/exe/fetch.php?tok=42ff19&amp;media=https%3A%2F%2Fi.imgur.com%2FmvLYsiz.jpg" class="mediacenter" title="i.imgur.com_mvlysiz.jpg" alt="i.imgur.com_mvlysiz.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepF4&quot;,&quot;hid&quot;:&quot;stepf4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:56,&quot;range&quot;:&quot;16805-17294&quot;} -->
+<h2 class="sectionedit57" id="stepf5">StepF5</h2>
+<div class="level2">
+
+<p>
+一番上のイーヴァルディのIDを、「超強い剣」のIDに書き換えます。<br/>
+<a href="/lib/exe/fetch.php?tok=9de322&amp;media=https%3A%2F%2Fi.imgur.com%2FvY0sl1P.jpg" class="media" title="https://i.imgur.com/vY0sl1P.jpg"><img src="/lib/exe/fetch.php?tok=9de322&amp;media=https%3A%2F%2Fi.imgur.com%2FvY0sl1P.jpg" class="mediacenter" title="i.imgur.com_vy0sl1p.jpg" alt="i.imgur.com_vy0sl1p.jpg" /></a>
+</p>
+
+<p>
+たくさん神器を作りたい人は、神器をアイテムID末に移動した方が楽です。<br/>
+そして、 &gt;=条件 でまとめて設定してしまいましょう。<br/>
+そうすればずっと楽に行けます。<br/>
+例えば、怪盗パッチだと裏面で神器がたくさんでてるので、後ろの方にまとめてあります。<br/>
+<a href="/lib/exe/fetch.php?tok=cef4fc&amp;media=https%3A%2F%2Fi.imgur.com%2FzOwxMAO.jpg" class="media" title="https://i.imgur.com/zOwxMAO.jpg"><img src="/lib/exe/fetch.php?tok=cef4fc&amp;media=https%3A%2F%2Fi.imgur.com%2FzOwxMAO.jpg" class="mediacenter" title="i.imgur.com_zowxmao.jpg" alt="i.imgur.com_zowxmao.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepF5&quot;,&quot;hid&quot;:&quot;stepf5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:57,&quot;range&quot;:&quot;17295-17841&quot;} -->
+<h2 class="sectionedit58" id="stepf6">StepF6</h2>
+<div class="level2">
+
+<p>
+「書き込む」で結果を確定させます。<br/>
+<a href="/lib/exe/fetch.php?tok=9e8404&amp;media=https%3A%2F%2Fi.imgur.com%2F0PL3tJQ.jpg" class="media" title="https://i.imgur.com/0PL3tJQ.jpg"><img src="/lib/exe/fetch.php?tok=9e8404&amp;media=https%3A%2F%2Fi.imgur.com%2F0PL3tJQ.jpg" class="mediacenter" title="i.imgur.com_0pl3tjq.jpg" alt="i.imgur.com_0pl3tjq.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepF6&quot;,&quot;hid&quot;:&quot;stepf6&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:58,&quot;range&quot;:&quot;17842-17954&quot;} -->
+<h2 class="sectionedit59" id="stepf7">StepF7</h2>
+<div class="level2">
+
+<p>
+さっそく、F5キーでエミュレータを立ち上げて、結果を確認しましょう。<br/>
+<a href="/lib/exe/fetch.php?tok=f72a3a&amp;media=https%3A%2F%2Fi.imgur.com%2FpCYXfkt.jpg" class="media" title="https://i.imgur.com/pCYXfkt.jpg"><img src="/lib/exe/fetch.php?tok=f72a3a&amp;media=https%3A%2F%2Fi.imgur.com%2FpCYXfkt.jpg" class="mediacenter" title="i.imgur.com_pcyxfkt.jpg" alt="i.imgur.com_pcyxfkt.jpg" /></a><br />
+<a href="/lib/exe/fetch.php?tok=370665&amp;media=https%3A%2F%2Fi.imgur.com%2F6CjbIgr.jpg" class="media" title="https://i.imgur.com/6CjbIgr.jpg"><img src="/lib/exe/fetch.php?tok=370665&amp;media=https%3A%2F%2Fi.imgur.com%2F6CjbIgr.jpg" class="mediacenter" title="i.imgur.com_6cjbigr.jpg" alt="i.imgur.com_6cjbigr.jpg" /></a>
+</p>
+
+<p>
+戦闘に入ると、画面がフラッシュします。<br/>
+これで、超強い剣は神器になりました。<br/>
+名実ともに最強になりました。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepF7&quot;,&quot;hid&quot;:&quot;stepf7&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:59,&quot;range&quot;:&quot;17955-18316&quot;} -->
+<h2 class="sectionedit60" id="おしまい">おしまい</h2>
+<div class="level2">
+
+<p>
+以上で、超強い剣の説明を終わります。<br/>
+ここまで強いアイテムを作ることは普通はしないでしょうけど、作り方を理解しておけばたいていのアイテムは作れます。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u304a\u3057\u307e\u3044&quot;,&quot;hid&quot;:&quot;\u304a\u3057\u307e\u3044&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:60,&quot;range&quot;:&quot;18317-&quot;} --></div>
+</body>
+</html>

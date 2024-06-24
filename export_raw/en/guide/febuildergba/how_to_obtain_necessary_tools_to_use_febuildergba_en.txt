@@ -1,0 +1,99 @@
+I will explain how to obtain necessary tools to use FEBuilderGBA.\\ 
+====== OS  ======
+FEBuilderGBA is written in C# 4.0.\\ Win7 or higher is recommended.\\ 
+\\ It is unknown about the operation on Linux/mono, but it also seems to work.\\ 
+\\ ====== Required tool.  ======
+I will explain the tools that are essential for using FEBuilderGBA.\\ 
+
+===== 7z  =====
+FEBuilderGBA is compressed with 7z.
+
+For unpacking 7z I recommend noah.
+It can handle various compressed files other than 7z.
+http://www.kmonos.net/lib/noah.en.html
+
+===== VBA-M  =====
+this is a GBA emulator.\\ It is used for checking the operation.\\ Although VBA-M is recommended, other emulators can be used.\\ https://sourceforge.net/projects/vbam/
+
+===== sappy  =====
+this is a music player.\\ From FEBuilderGBA, it is used to play sounds.\\ Since it is written in old VB 6, installation is quite troublesome.\\ However, there is an installer so you can use it easily if you use it.\\ 
+http://feuniverse.us/t/sappy-working-version/153
+
+====== Recommended Tools  ======
+Although it is not essential for the operation, I will introduce a tool that should be set.\\ 
+===== Event Assembler  =====
+Since large patches such as magic systems are often implemented by EA, I recommend setting them.\\ From FEBuilderGBA, you can also activate safely with additional execution -> Event Assembler.\\ http://feuniverse.us/t/event-assembler/1749
+
+===== no$gba debugger  =====
+This is a GBA debugger.\\ If you want to challenge arm asm, let's install it.\\ Since breakpoints can be set, it helps to understand the code.\\ 
+http://problemkaputt.de/gba.htm
+
+====== How to set each tool.  ======
+===== StepA1  =====
+Select "Settings" -> "Options".\\ 
+{{ https://i.imgur.com/LstjXn3.jpg }}
+
+
+===== StepA2  =====
+You will set each application on the "Path" tab.\\ {{ https://i.imgur.com/hfC0iM0.jpg }}
+
+===== StepA3  =====
+Please set VBA-M to "emulator".\\ The emulator set here is called by pressing F5 key.\\ {{ https://i.imgur.com/swOuqj4.jpg }}
+
+===== StepA4  =====
+To use no$gba-debugger, set it to "emulator 2".\\ Emulator2 is invoked by pressing Ctrl + F5.\\ {{ https://i.imgur.com/AoBahJF.jpg }}
+
+===== StepA5  =====
+In "sappy", set sappy.\\ sappy will be called automatically if you press the "♪" button in each item.\\ 
+{{ https://i.imgur.com/646geir.jpg }}
+
+===== StepA6  =====
+When using EventAssembler, set it to "Event Assembler".(Set core.exe.) \\ EventAssembler will be called automatically when installing patches that use EA.\\ You can call it from "Execute" -> "Add with Event Assembler" in the menu.\\ {{ https://i.imgur.com/hkxKZsQ.jpg }}
+
+===== StepA7  =====
+When you are done, write the result with the "Save" button.\\ {{ https://i.imgur.com/DZTkXSF.jpg }}
+
+===== StepA8  =====
+Let's try it now.\\ Please press F5 key.\\ VBA-M should start.\\ {{ https://i.imgur.com/T0fPme1.jpg }}
+
+===== StepA9  =====
+If you click the "♪" button in "Map Setting" or "Song Table", the song will be played with sappy.\\ {{ https://i.imgur.com/xDtL1v3.jpg }}
+
+
+====== Introduction of other tools.  ======
+Here are some useful tools for doing remodeling FE.\\ 
+===== EDGE  =====
+It is a tool that can correctly handle palettes of images, so I recommend you to install them.\\ 
+http://takabosoft.com/edge
+
+===== Tiled Map Editor  =====
+It is Map Editor.\\ FEBuilerGBA also has Map Editor, but please use it if you want to use sophisticated ones.\\ It can be used by outputting the map in tmx format.\\ http://www.mapeditor.org/
+
+===== 世界樹  =====
+It is free software midi editing software.
+http://openmidiproject.osdn.jp/Sekaiju.html
+
+
+===== A text editor that UTF-8 can handle.  =====
+I think that no one uses only Notepad, please use a text editor that UTF-8 can handle.\\ \\ Since there are various editors, please choose the one you like.\\ Personally, I like Sakura Editor.\\ 
+===== goldroad  =====
+It is a disassembler which is mainly used for remodeling in Japan.\\ It can be described with a syntax similar to masm.\\ https://www.romhacking.net/utilities/343/
+
+===== devkit pro  =====
+It is an assembler that is mainly used for oversea remodeling.\\ It seems that it is based on gnu/gas.\\ https://sourceforge.net/projects/devkitpro/
+
+===== lyn  =====
+This is an EA elf linker.
+It is necessary to use the patch written using lyn.
+Please download lyn.exe and copy it to EA's Tools directory.
+https://github.com/StanHash/lyn/releases
+
+===== mid2agb  =====
+This is a tool to convert midi into a format that can be used by GBA.
+Although FEBuilderGBA also has a function to convert midi, it is most accurate to use mid2agb, as loops can not be represented correctly with complicated midi.
+However, this program can not affix a link due to reason.
+
+If you want to use it please search on google.
+
+
+====== End  ======

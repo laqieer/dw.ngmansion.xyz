@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>wiki:syntax</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="wiki,syntax"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=wiki:syntax&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=wiki"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=wiki:syntax"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=wiki:syntax"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=wiki:syntax"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='wiki';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"wiki:syntax","namespace":"wiki","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#ページ編集を試してみたい">ページ編集を試してみたい</a></div></li>
+<li class="level3"><div class="li"><a href="#導入しているdokuwikiプラグインを知りたい">導入しているDokuWikiプラグインを知りたい</a></div></li>
+<li class="level3"><div class="li"><a href="#階層の下に新ページを作る">階層の下に新ページを作る</a></div></li>
+<li class="level3"><div class="li"><a href="#メディアファイルの埋め込み">メディアファイルの埋め込み</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level5"><div class="li"><a href="#画像">画像</a></div></li>
+<li class="level5"><div class="li"><a href="#youtube">YouTube</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level3"><div class="li"><a href="#ページトップにあるインデックス_目次_の操作">ページトップにあるインデックス(目次)の操作</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level5"><div class="li"><a href="#デフォルトで閉じる">デフォルトで閉じる</a></div></li>
+<li class="level5"><div class="li"><a href="#指定範囲のクラスの見出しのみ表示する">指定範囲のクラスの見出しのみ表示する</a></div></li>
+<li class="level5"><div class="li"><a href="#指定範囲のクラスの見出しのみ表示しない">指定範囲のクラスの見出しのみ表示しない</a></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+参考になるサイト<br />
+<a href="https://www.dokuwiki.org/ja:syntax" class="urlextern" title="https://www.dokuwiki.org/ja:syntax" rel="nofollow">https://www.dokuwiki.org/ja:syntax</a><br />
+<a href="https://dokuwiki.oreda.net/dokuwiki-pukiwiki.html" class="urlextern" title="https://dokuwiki.oreda.net/dokuwiki-pukiwiki.html" rel="nofollow">https://dokuwiki.oreda.net/dokuwiki-pukiwiki.html</a>
+</p>
+
+<h3 class="sectionedit1" id="ページ編集を試してみたい">ページ編集を試してみたい</h3>
+<div class="level3">
+
+<p>
+<a href="/doku.php?id=playground:playground" class="wikilink1" title="playground:playground">playground</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30da\u30fc\u30b8\u7de8\u96c6\u3092\u8a66\u3057\u3066\u307f\u305f\u3044&quot;,&quot;hid&quot;:&quot;\u30da\u30fc\u30b8\u7de8\u96c6\u3092\u8a66\u3057\u3066\u307f\u305f\u3044&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;111-186&quot;} -->
+<h3 class="sectionedit2" id="導入しているdokuwikiプラグインを知りたい">導入しているDokuWikiプラグインを知りたい</h3>
+<div class="level3">
+
+<p>
+<a href="/doku.php?id=wiki:plugin" class="wikilink1" title="wiki:plugin">plugin</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5c0e\u5165\u3057\u3066\u3044\u308bDokuWiki\u30d7\u30e9\u30b0\u30a4\u30f3\u3092\u77e5\u308a\u305f\u3044&quot;,&quot;hid&quot;:&quot;\u5c0e\u5165\u3057\u3066\u3044\u308bdokuwiki\u30d7\u30e9\u30b0\u30a4\u30f3\u3092\u77e5\u308a\u305f\u3044&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;187-272&quot;} -->
+<h3 class="sectionedit3" id="階層の下に新ページを作る">階層の下に新ページを作る</h3>
+<div class="level3">
+
+<p>
+階層の下は：で指定できます。
+</p>
+
+<p>
+例えば<a href="https://dw.ngmansion.xyz/doku.php?id=en:start" class="urlextern" title="https://dw.ngmansion.xyz/doku.php?id=en:start" rel="nofollow">Englishページ</a>の階層に新ページを作る場合は<br />
+下記のようなページ名で作ればguideフォルダに新ページを作れます。
+</p>
+<pre class="code">guide:新ページ</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u968e\u5c64\u306e\u4e0b\u306b\u65b0\u30da\u30fc\u30b8\u3092\u4f5c\u308b&quot;,&quot;hid&quot;:&quot;\u968e\u5c64\u306e\u4e0b\u306b\u65b0\u30da\u30fc\u30b8\u3092\u4f5c\u308b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;273-610&quot;} -->
+<h3 class="sectionedit4" id="メディアファイルの埋め込み">メディアファイルの埋め込み</h3>
+<div class="level3">
+
+</div>
+
+<h5 id="画像">画像</h5>
+<div class="level5">
+<pre class="code">{{？？？}}</pre>
+
+<p>
+画像のURLを上記のように囲えばできます。
+</p>
+
+<p>
+画像URLの最後に?をつけると、画像の横サイズを指定することができます<br />
+縦横比を保ったまま、縦サイズも縮小してくれます
+</p>
+<pre class="code">{{https://www.nintendo.co.jp/fe/series/images/series08_img.jpg?300}}</pre>
+
+</div>
+
+<h5 id="youtube">YouTube</h5>
+<div class="level5">
+
+<p>
+wiki編集画面に<br />
+「動画共有サイトの動画を挿入」<br />
+というボタンがあるので、それを選ぶといいです
+</p>
+
+<p>
+<a href="https://www.dokuwiki.org/plugin:vshare" class="urlextern" title="https://www.dokuwiki.org/plugin:vshare" rel="nofollow">https://www.dokuwiki.org/plugin:vshare</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30e1\u30c7\u30a3\u30a2\u30d5\u30a1\u30a4\u30eb\u306e\u57cb\u3081\u8fbc\u307f&quot;,&quot;hid&quot;:&quot;\u30e1\u30c7\u30a3\u30a2\u30d5\u30a1\u30a4\u30eb\u306e\u57cb\u3081\u8fbc\u307f&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;611-1201&quot;} -->
+<h3 class="sectionedit5" id="ページトップにあるインデックス_目次_の操作">ページトップにあるインデックス(目次)の操作</h3>
+<div class="level3">
+
+<p>
+以下の記述をどこかに置くと、機能します。
+</p>
+
+</div>
+
+<h5 id="デフォルトで閉じる">デフォルトで閉じる</h5>
+<div class="level5">
+<pre class="code">~~CLOSETOC~~</pre>
+
+</div>
+
+<h5 id="指定範囲のクラスの見出しのみ表示する">指定範囲のクラスの見出しのみ表示する</h5>
+<div class="level5">
+<pre class="code">~~TOC 2-3~~ </pre>
+
+</div>
+
+<h5 id="指定範囲のクラスの見出しのみ表示しない">指定範囲のクラスの見出しのみ表示しない</h5>
+<div class="level5">
+<pre class="code">~~NOTOC 2-3~~ </pre>
+
+<p>
+<a href="https://www.dokuwiki.org/plugin:toctweak" class="urlextern" title="https://www.dokuwiki.org/plugin:toctweak" rel="nofollow">https://www.dokuwiki.org/plugin:toctweak</a>
+</p>
+
+<p>
+テスト1<br />
+テスト2
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30da\u30fc\u30b8\u30c8\u30c3\u30d7\u306b\u3042\u308b\u30a4\u30f3\u30c7\u30c3\u30af\u30b9(\u76ee\u6b21)\u306e\u64cd\u4f5c&quot;,&quot;hid&quot;:&quot;\u30da\u30fc\u30b8\u30c8\u30c3\u30d7\u306b\u3042\u308b\u30a4\u30f3\u30c7\u30c3\u30af\u30b9_\u76ee\u6b21_\u306e\u64cd\u4f5c&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:5,&quot;range&quot;:&quot;1202-&quot;} --></div>
+</body>
+</html>

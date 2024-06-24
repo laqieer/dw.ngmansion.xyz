@@ -1,0 +1,13 @@
+  * [[QA]]
+  * [[GUIDE:]]
+  * [[DICTIONARY:]]
+  * [[COLUMN:]]
+  * [[DATA:]]
+
+----
+
+[[EN:|English]]
+[[ZH:|中文]]
+
+<wrap hi center centeralign>最新の10件</wrap>
+{{changes>count=10&type=create,edit,delete&render=pagelist(table,header,nouser,nofirsthl)}}

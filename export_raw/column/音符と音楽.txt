@@ -1,0 +1,117 @@
+====== .s ファイルとかにある音楽コードについての解説.  ======
+
+
+====== 1音節は96  ======
+
+全休符
+<code>
+.byte   W96
+
+</code>
+全音符 で Gn3の音を ベロシティ112の強さで鳴らす
+<code>
+.byte   N96, Gn3 ,v112
+.byte   W96
+</code>
+
+全音符の和音  Gn3の音を ベロシティ112 , Cn4をベロシティ88 の強さで鳴らす
+<code>
+.byte   N96, Gn3 ,v112
+.byte   N96, Cn4 ,v088
+.byte   W96
+</code>
+
+
+====== N96って？ W96と何が違うの?  ======
+
+<code>
+.byte   N64, Gn3 ,v112 //Gn3 v112 を 64区間再生
+.byte   N24, Cn3 ,v88  //Cn3 v112 を 24区間再生
+.byte   W24            //ウエイト24
+</code>
+
+この場合、N24, Cn3 ,v88は、W24の後で停止するが、\\ N64の方はなり続ける。なぜなら、 64 - 24 = 40 で、40区間再生が残っている。
+
+
+<code>
+.byte   N64, Gn3 ,v112 //Gn3 v112 を 64区間再生  (1)
+.byte   N24, Cn3 ,v88  //Cn3 v112 を 24区間再生  (2)
+.byte   W24            //ウエイト24
+                                   ←ここで(2)が停止
+.byte   W40            //ウエイト40
+                                   ←ここで(1)が停止
+</code>
+
+
+====== TIEって？ Nxxと何が違うの?  ======
+
+<code>
+.byte  TIE, Gn3 ,v112   
+.byte  N24, Gn3 ,v112   
+.byte  W24            //ウエイト24
+</code>
+
+Nxxは、xx区間分音を鳴らすが、TIEは、EOTが来るまでならずっと鳴らし続ける.
+
+
+<code>
+.byte  TIE, Gn3 ,v112   //(1)
+.byte  N24, Gn3 ,v112   //(2)
+.byte  W24            //ウエイト24
+                        ←ここで(2)を停止
+.byte  W96
+.byte  W96
+.byte  EOT
+                        ←ここで(1)を停止
+</code>
+
+
+====== N01 と Nがない音符は何が違うの?  ======
+
+<code>
+.byte  Gn3 ,v112
+.byte  N24, Gn3 ,v112
+</code>
+
+Nxxは指定した区間鳴らし続けるが、 Nがないものは、最初の停止後に停止される.
+
+<code>
+.byte  Gn3 ,v112        //(1)
+.byte  W96              //
+.byte  N24, Gn3 ,v112   //(2)
+.byte  W96              //分解される N24なので、 96-24 で。
+</code>
+
+↓以下のように読み替える↓\\ 
+<code>
+.byte  Gn3 ,v112        //(1)
+.byte  W96
+                    ← ここで (1)を停止
+.byte  N24, Gn3 ,v112   //(2)
+.byte  W24
+                    ← ここで (2)を停止
+.byte  W72
+</code>
+
+
+
+
+====== テンポって？  ======
+
+テンポは、以下の式で求まる.
+<code>
+midiテンポ = 60000000 / (GBA ROM内で指定されたテンポ * 2);
+</code>
+
+
+
+<code>
+uint tempo = code.value * 2;
+tempo = (uint)(60000000.0 / tempo);
+
+data.Add(0x00); //テンポ変更命令4バイト
+data.Add(0xFF);
+data.Add(0x51);
+data.Add(0x03);
+U.append_big24(data, tempo); //テンポを3バイトのビッグエンディアンで書く
+</code>

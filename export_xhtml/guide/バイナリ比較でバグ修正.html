@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>guide:バイナリ比較でバグ修正</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="guide,バイナリ比較でバグ修正"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=guide:%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E6%AF%94%E8%BC%83%E3%81%A7%E3%83%90%E3%82%B0%E4%BF%AE%E6%AD%A3"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='guide';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:\u30d0\u30a4\u30ca\u30ea\u6bd4\u8f03\u3067\u30d0\u30b0\u4fee\u6b63","namespace":"guide","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+
+<h1 class="sectionedit1" id="改造feでどんなバグも数時間で直せるかもしれないデバッグ方法">改造FEでどんなバグも数時間で直せるかもしれないデバッグ方法</h1>
+<div class="level1">
+
+<p>
+改造feを作っていく時に、<br/>
+過去ロムのバックアップをちゃんと取っていれば、<br/>
+過去ロムとのバイナリ比較を使い、<br/>
+原因はよくわからんがバグ修正できることがあります。<br/>
+<br/>
+まず、今のバグありrom(ng rom)が壊れちゃうので必ずバックアップを取る<br/>
+↓<br/>
+バックアップをとっている過去ロムから、<br/>
+このバグがおきなくなるバージョンまで遡る。<br/>
+↓<br/>
+起きないバージョンを見つけたらok romと命名。<br/>
+↓<br/>
+ok romと、バグありng romの差分を<br/>
+WinMargeU(バイナリ比較)とかで取る。<br/>
+↓<br/>
+loop1:<br/>
+ok romから、ng romに<br/>
+適当に差分をコピーして当てていく。<br/>
+↓<br/>
+動作確認。このバグが起きるのか？<br/>
+Yes→バグが起きなくなるまで差分をコピーしていく loop1:に戻る<br/>
+No<br/>
+↓<br/>
+loop2:<br/>
+バグが起きなくなったので、<br/>
+次は、Undoをつかって、バグが起きるまで戻す<br/>
+↓<br/>
+動作確認。このバグが起きるのか？<br/>
+No→さらにUndoして、バグが起きるまで戻る loop2:に戻る<br/>
+Yes<br/>
+↓<br/>
+今undoしたところがバグを生み出している箇所だ！<br/>
+アドレスと、バグらないok romのコードをメモる。<br/>
+(救済コードと命名)<br/>
+<br/>
+<br/>
+バックアップを取った一切手を入れていないng romに<br/>
+救済コードを注入する。<br/>
+(救済コードを入れ前にもバックアップ取って)<br/>
+↓<br/>
+動作確認。このバグが起きるのか？<br/>
+Yes→残念。救済コードが足りないらしい。このromとOK romを比較してloop1:からやり直そう。<br/>
+No<br/>
+↓<br/>
+バグを直した！<br/>
+副作用がないか確認する<br/>
+↓<br/>
+動作確認。副作用があるか？<br/>
+Yes→残念。救済コードが過剰だったらしい。救済コードの周りのアドレスを含めてコピペしてみるか、<br/>
+この方法を諦めて逆汗を交えながら根本解決をするしかない。<br/>
+No<br/>
+↓<br/>
+副作用なし。バグ修正完了。<br/>
+やったぜ<br/>
+<br/>
+こんな感じでやれば、プログラムとか一切関係無しに<br/>
+だいたい数時間ぐらいあれば、<br/>
+たいていのバグは直せます。<br/>
+
+</p>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+===== FEBuilderGBA =====
+{{https://i.imgur.com/UCSXqm3.jpg?400}}
+
+==== DOWNLOAD ====
+なるべく新しいの使ってほしい。
+https://github.com/FEBuilderGBA/FEBuilderGBA/releases/latest
+
+==== FEBuilderGBAを利用する上で必要になるツールの入手方法 ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/LstjXn3.jpg?160x120}}|[[guide:FEBuilderGBA:FEBuilderGBAを利用する上で必要になるツールの入手方法]]|
+
+==== FEUniverseスレッド ====
+http://feuniverse.us/t/fe-builder-gba/2845
+
+わかんないことがあったら聞いてね。
+Discordで聞くのもいい詳細はこちら 
+[[column:discord_chat]] 
+
+==== 質問について ====
+
+質問するときは、report7zを送ってください。
+的確に問題を再現させるために、report7zを送ってください。
+report7zの作り方は、こちらをご覧ください。
+|{{https://i.imgur.com/RlxGoBk.jpg?160x120}}|[[guide:FEBuilderGBA:report7z]]|
+
+==== 動画 ====
+
+Creating Chapters in FEBuilderGBA
+[[https://www.youtube.com/watch?v=Z_HeNcLc6Jk|{{ https://i.imgur.com/7LreV9h.png?400 }}]]
+
+
+
+===== FEBuilderGBA用の解説 =====
+
+FE GBA 3部作のROMエディターです。
+FE8J FE7J FE6 FE8U FE7U に対応しています。
+
+==== 村訪問と村破壊(マップ変化、イベント条件、離脱ポイント)  ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/VkMuWxu.jpg?160x120}}|[[guide:FEBuilderGBA:村訪問と村破壊_JP]]|
+
+==== 増援 ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/FvE4iYm.jpg?160x120}}|[[guide:FEBuilderGBA:増援]]|
+
+==== 追加魔法 ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/tyox7Tp.jpg?160x120}}|[[guide:FEBuilderGBA:魔法エフェクトを追加する_JP]]|
+
+==== 音楽(midi import/export sファイル import/export 他ゲームからの曲移植について )  ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/RYJtJvO.jpg?120x160}}|[[guide:FEBuilderGBA:音楽_JP]]|
+
+==== 減色ツールを使って背景を設定する ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/oQGFKE2.jpg?160x120}}|[[guide:FEBuilderGBA:減色ツールを使って背景を設定する_JP]]|
+
+==== FE7リンをFE8に移植してみよう(待機アイコン、移動アイコン、バトルアニメーション) ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/zl2M2gc.jpg?160x120}}|[[guide:FEBuilderGBA:FE7リンをFE8に移植してみよう_JP]]|
+
+==== アイテム特性 ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/BeUOK89.jpg?160x120}}|[[guide:FEBuilderGBA:アイテム特性_JP]]|
+
+==== セリフの変更_JP ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/Mwo1Y9a.jpg?160x120}}|[[guide:FEBuilderGBA:セリフの変更_JP]]|
+
+==== 背景とCGの変更方法 ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/g7Fn4fd.jpg?160x120}}|[[guide:FEBuilderGBA:背景とCGの変更方法_JP]]|
+
+==== ROM翻訳 ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/WdDMzGe.jpg?160x120}}|[[guide:FEBuilderGBA:ROM翻訳_JP]]|
+
+==== FEBuilderGBAのconfigデータ構造 ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/iPFRtmE.jpg?160x120}}|[[guide:FEBuilderGBA:FEBuilderGBAのconfigデータ構造]]|
+
+==== 逆アセンブラ ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/fxIsbFe.jpg?160x120}}|[[guide:FEBuilderGBA:逆アセンブラ_JP]]|
+
+==== ポインタの自動計算機能 ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/3JkYdFf.jpg?160x120}}|[[guide:FEBuilderGBA:ポインタの自動計算機能_JP]]|
+
+==== 勝利条件イベントの作成方法 ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/Bvk40yk.jpg?160x120}}|[[guide:FEBuilderGBA:勝利条件イベント_JP]]|
+
+==== 3点のDIFFによるバグの自動検出 ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/PGYPMy7.jpg?160x120}}|[[guide:FEBuilderGBA:3点のDIFFによるバグの自動検出]]|
+
+==== UPSパッチの作り方、適応方法 ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/jPViO6B.jpg?160x120}}|[[guide:FEBuilderGBA:UPSパッチの作り方、適応方法]]|
+
+==== キーボードショートカット ====
+|< 70% 300px - >|
+|{{guide:febuildergba:keybord_shortcut.jpg?160x120}}|[[guide:FEBuilderGBA:FEBuilderGBAのキーボードショートカット]]|
+
+==== ROMがフリーズした時に読む項目 ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/0r0vb21.jpg?160x120}}|[[guide:FEBuilderGBA:ROMがフリーズした時に読む項目]]|
+
+==== 問題報告ツール / report7z ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/RlxGoBk.jpg?160x120}}|[[guide:FEBuilderGBA:report7z]]|
+
+==== Rebuild ====
+|< 70% 300px - >|
+|{{guide:FEBuilderGBA:rebuild.png?160x120}}|[[guide:FEBuilderGBA:rebuild]]|
+
+
+誤字等見つけたら、修正してください。
+このページはwikiなので誰でも変更できます。
+
+===== FAQ =====
+==== モルダーとバネッサはどこにいますか？  ====
+モルダーとバネッサは、フレリア城にいます。
+マップID 0x38 フレリア城です。
+彼らのユニット配置は 0x908958 です。
+[[:qa]]
+
+==== 章を移動したら、バグりました。 ====
+"フリーマップから入らないとフリーズする制約を消す" パッチを入れてください。
+[[:qa]]
+
+==== FEBuilderGBA readme ====
+FE GBA 3部作のROMエディターです。
+FE8J FE7J FE6 FE8U FE7U に対応しています。
+
+Project_FE_GBA の画面を参考に、
+新規に判明した部分を追加しました。
+画像表示やインポートエクスポート、マップ改造まで幅広い機能をサポートします。
+
+怪盗パッチを作っているときに思った、こんな機能が欲しい!!という機能をすべて入れ込みました。
+
+名前の由来は、 某LANDのアレからです。
+ただし、開発言語はC# です。 (中の人達は一緒だしね・・・)
+C#でありますが、特にパフォーマンスに注意しているので、サクサク動くかと思います。
+
+当然、オープンソース。ソースコードのライセンスは GPL3 です。
+ご自由にご利用ください。
+
+これを作るのに、いろいろいなデータ、コミニティを参考にしました。
+解析したデータを公開してくれた先人にお礼を申し上げます。
+
+このソフトウェアは、公式とは一切関係ありません。
+私達は非営利でこのソフトウェアを作っているので、寄付を必要としません。
+どうしても寄付したい方は、EFF 電子フロンティア財団を始めとする、インターネットでの言論の自由、表現の自由を支援している慈善団体にでも寄付してください。
+
+もちろん、あなたがFEBuilderGBAに関する記事を書くのは自由です。
+場合によっては、アフェリエイトでお小遣いを稼ぐこともできるでしょう。 :)
+ただし、あなたの責任において実施してください。 :(
+
+もし、hackromでわからないことがあれば、「ヘルプ」の「マニュアル」を読んでください。
+どうしても解決しないバグが発生した場合は、「メニュー」の「ファイル」->「問題報告ツール」から、report.7zを作成して、コミニティに相談してください。(ROMは送信しないでください。)
+
+https://github.com/FEBuilderGBA/FEBuilderGBA

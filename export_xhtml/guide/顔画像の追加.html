@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>guide:顔画像の追加</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="guide,顔画像の追加"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=guide:%E9%A1%94%E7%94%BB%E5%83%8F%E3%81%AE%E8%BF%BD%E5%8A%A0&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:%E9%A1%94%E7%94%BB%E5%83%8F%E3%81%AE%E8%BF%BD%E5%8A%A0"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:%E9%A1%94%E7%94%BB%E5%83%8F%E3%81%AE%E8%BF%BD%E5%8A%A0"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:%E9%A1%94%E7%94%BB%E5%83%8F%E3%81%AE%E8%BF%BD%E5%8A%A0"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='guide';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:\u9854\u753b\u50cf\u306e\u8ffd\u52a0","namespace":"guide","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#顔画像変更について">顔画像変更について</a></div></li>
+<li class="level1"><div class="li"><a href="#用意するもの">用意するもの</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#サンプル画像">サンプル画像</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#手順">手順</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#step1">step1.</a></div></li>
+<li class="level2"><div class="li"><a href="#step2">step2.</a></div></li>
+<li class="level2"><div class="li"><a href="#step3">step3.</a></div></li>
+<li class="level2"><div class="li"><a href="#step4">step4.</a></div></li>
+<li class="level2"><div class="li"><a href="#step5">step5.</a></div></li>
+<li class="level2"><div class="li"><a href="#step6">step6.</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#別feからの移植">別FEからの移植</a></div></li>
+<li class="level1"><div class="li"><a href="#顔画像の作成について">顔画像の作成について</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+FE8JP 聖魔の光石 で、魔法を追加する方法について説明します。
+</p>
+
+<h1 class="sectionedit1" id="顔画像変更について">顔画像変更について</h1>
+<div class="level1">
+
+<p>
+FE GBAの顔画像変更の仕方を解説します。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u9854\u753b\u50cf\u5909\u66f4\u306b\u3064\u3044\u3066&quot;,&quot;hid&quot;:&quot;\u9854\u753b\u50cf\u5909\u66f4\u306b\u3064\u3044\u3066&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;88-189&quot;} -->
+<h1 class="sectionedit2" id="用意するもの">用意するもの</h1>
+<div class="level1">
+
+<p>
+FEditor Adv 7743 ver 5 で説明します。<br/>
+<a href="http://ux.getuploader.com/FE4/download/244/FEditor+Adv+7743.05.7z" class="urlextern" title="http://ux.getuploader.com/FE4/download/244/FEditor+Adv+7743.05.7z" rel="nofollow">http://ux.getuploader.com/FE4/download/244/FEditor+Adv+7743.05.7z</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u7528\u610f\u3059\u308b\u3082\u306e&quot;,&quot;hid&quot;:&quot;\u7528\u610f\u3059\u308b\u3082\u306e&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;190-339&quot;} -->
+<h2 class="sectionedit3" id="サンプル画像">サンプル画像</h2>
+<div class="level2">
+
+<p>
+internal\Test Portrait.PNG<br/>
+doc\Portrait Editor Examples\*.png<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30b5\u30f3\u30d7\u30eb\u753b\u50cf&quot;,&quot;hid&quot;:&quot;\u30b5\u30f3\u30d7\u30eb\u753b\u50cf&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;340-439&quot;} -->
+<h1 class="sectionedit4" id="手順">手順</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u624b\u9806&quot;,&quot;hid&quot;:&quot;\u624b\u9806&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;440-461&quot;} -->
+<h2 class="sectionedit5" id="step1">step1.</h2>
+<div class="level2">
+
+<p>
+ツールを立ち上げ、ROMを開き、<br/>
+メニューから Tool → Portrait Editor… を選択<br/>
+<a href="/lib/exe/fetch.php?tok=33bcc0&amp;media=https%3A%2F%2Fi.imgur.com%2FepGlA93.jpg" class="media" title="https://i.imgur.com/epGlA93.jpg"><img src="/lib/exe/fetch.php?tok=33bcc0&amp;media=https%3A%2F%2Fi.imgur.com%2FepGlA93.jpg" class="mediacenter" title="i.imgur.com_epgla93.jpg" alt="i.imgur.com_epgla93.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step1.&quot;,&quot;hid&quot;:&quot;step1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;462-623&quot;} -->
+<h2 class="sectionedit6" id="step2">step2.</h2>
+<div class="level2">
+
+<p>
+Input Index: の数字を変えるキャラの顔ででくるので、<br/>
+変更したいキャラを選びます。<br/>
+<a href="/lib/exe/fetch.php?tok=174e40&amp;media=https%3A%2F%2Fi.imgur.com%2FSEIe82w.jpg" class="media" title="https://i.imgur.com/SEIe82w.jpg"><img src="/lib/exe/fetch.php?tok=174e40&amp;media=https%3A%2F%2Fi.imgur.com%2FSEIe82w.jpg" class="mediacenter" title="i.imgur.com_seie82w.jpg" alt="i.imgur.com_seie82w.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step2.&quot;,&quot;hid&quot;:&quot;step2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;624-800&quot;} -->
+<h2 class="sectionedit7" id="step3">step3.</h2>
+<div class="level2">
+
+<p>
+Load From File で、変更する顔画像を選択します。<br/>
+今回は、　internal\Test Portrait.PNG　を利用します。<br/>
+<a href="/lib/exe/fetch.php?tok=778bc4&amp;media=https%3A%2F%2Fi.imgur.com%2FYxtTCne.jpg" class="media" title="https://i.imgur.com/YxtTCne.jpg"><img src="/lib/exe/fetch.php?tok=778bc4&amp;media=https%3A%2F%2Fi.imgur.com%2FYxtTCne.jpg" class="mediacenter" title="i.imgur.com_yxttcne.jpg" alt="i.imgur.com_yxttcne.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step3.&quot;,&quot;hid&quot;:&quot;step3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;801-993&quot;} -->
+<h2 class="sectionedit8" id="step4">step4.</h2>
+<div class="level2">
+
+<p>
+目の位置と口の位置がおかしいときは、<br/>
+画像をマウスでドラッグすると直せます。<br/>
+<a href="/lib/exe/fetch.php?tok=6a0855&amp;media=https%3A%2F%2Fi.imgur.com%2FUxHMm97.jpg" class="media" title="https://i.imgur.com/UxHMm97.jpg"><img src="/lib/exe/fetch.php?tok=6a0855&amp;media=https%3A%2F%2Fi.imgur.com%2FUxHMm97.jpg" class="mediacenter" title="i.imgur.com_uxhmm97.jpg" alt="i.imgur.com_uxhmm97.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step4.&quot;,&quot;hid&quot;:&quot;step4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;994-1169&quot;} -->
+<h2 class="sectionedit9" id="step5">step5.</h2>
+<div class="level2">
+
+<p>
+save を押して結果を確定します(まだファイルには保存されていない)<br/>
+<a href="/lib/exe/fetch.php?tok=64a2a3&amp;media=https%3A%2F%2Fi.imgur.com%2FJ2jUrpS.jpg" class="media" title="https://i.imgur.com/J2jUrpS.jpg"><img src="/lib/exe/fetch.php?tok=64a2a3&amp;media=https%3A%2F%2Fi.imgur.com%2FJ2jUrpS.jpg" class="mediacenter" title="i.imgur.com_j2jurps.jpg" alt="i.imgur.com_j2jurps.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step5.&quot;,&quot;hid&quot;:&quot;step5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;1170-1322&quot;} -->
+<h2 class="sectionedit10" id="step6">step6.</h2>
+<div class="level2">
+
+<p>
+メニューから File → Save を押して保存します。<br/>
+(romを上書きする前に、必ずバックアップは取ろう)<br/>
+<a href="/lib/exe/fetch.php?tok=a474fa&amp;media=https%3A%2F%2Fi.imgur.com%2FUhfYaG6.jpg" class="media" title="https://i.imgur.com/UhfYaG6.jpg"><img src="/lib/exe/fetch.php?tok=a474fa&amp;media=https%3A%2F%2Fi.imgur.com%2FUhfYaG6.jpg" class="mediacenter" title="i.imgur.com_uhfyag6.jpg" alt="i.imgur.com_uhfyag6.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step6.&quot;,&quot;hid&quot;:&quot;step6&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;1323-1517&quot;} -->
+<h1 class="sectionedit11" id="別feからの移植">別FEからの移植</h1>
+<div class="level1">
+
+<p>
+別FEから顔画像を移植する場合は、<br/>
+移植した顔画像の Save To File を選択して、<br/>
+ファイルに落としてください。<br/>
+png 形式で保存されます。<br/>
+png を変更しても問題ありません。16色を超えてはいけませんよ。<br/>
+<a href="/lib/exe/fetch.php?tok=b28067&amp;media=https%3A%2F%2Fi.imgur.com%2FWfIB13P.jpg" class="media" title="https://i.imgur.com/WfIB13P.jpg"><img src="/lib/exe/fetch.php?tok=b28067&amp;media=https%3A%2F%2Fi.imgur.com%2FWfIB13P.jpg" class="mediacenter" title="i.imgur.com_wfib13p.jpg" alt="i.imgur.com_wfib13p.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5225FE\u304b\u3089\u306e\u79fb\u690d&quot;,&quot;hid&quot;:&quot;\u5225fe\u304b\u3089\u306e\u79fb\u690d&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;1518-1873&quot;} -->
+<h1 class="sectionedit12" id="顔画像の作成について">顔画像の作成について</h1>
+<div class="level1">
+
+<p>
+(どこか解説となるページがあったら追加してください。)
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u9854\u753b\u50cf\u306e\u4f5c\u6210\u306b\u3064\u3044\u3066&quot;,&quot;hid&quot;:&quot;\u9854\u753b\u50cf\u306e\u4f5c\u6210\u306b\u3064\u3044\u3066&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:12,&quot;range&quot;:&quot;1874-&quot;} --></div>
+</body>
+</html>

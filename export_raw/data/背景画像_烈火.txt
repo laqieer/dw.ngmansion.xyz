@@ -1,0 +1,14 @@
+聖魔の光石に無い背景画像まとめ
+
+===== 背景画像一覧  =====
+
+^[[start|00]]^[[start|0C]]^[[start|0E]]^[[start|0F]]^[[start|12]]^[[start|13]]^[[start|17]]^[[start|18]]|
+|{{data:背景画像:fe7:fe700.png}}|{{data:背景画像:fe7:fe70C.png}}|{{data:背景画像:fe7:fe70E.png}}|{{data:背景画像:fe7:fe70F.png}}|{{data:背景画像:fe7:fe712.png}}|{{data:背景画像:fe7:fe713.png}}|{{data:背景画像:fe7:fe717.png}}|{{data:背景画像:fe7:fe718.png}}|
+^[[start|2C]]^[[start|2D]]^[[start|2E]]^[[start|2F]]^[[start|30]]^[[start|35]]^[[start|40]]^[[start|41]]|
+|{{data:背景画像:fe7:fe72C.png}}|{{data:背景画像:fe7:fe72D.png}}|{{data:背景画像:fe7:fe72E.png}}|{{data:背景画像:fe7:fe72F.png}}|{{data:背景画像:fe7:fe730.png}}|{{data:背景画像:fe7:fe735.png}}|{{data:背景画像:fe7:fe740.png}}|{{data:背景画像:fe7:fe741.png}}|
+^[[start|44]]^[[start|45]]^[[start|4A]]^[[start|4B]]^[[start|4F]]^[[start|50]]^[[start|53]]^[[start|54]]|
+|{{data:背景画像:fe7:fe744.png}}|{{data:背景画像:fe7:fe745.png}}|{{data:背景画像:fe7:fe74A.png}}|{{data:背景画像:fe7:fe74B.png}}|{{data:背景画像:fe7:fe74F.png}}|{{data:背景画像:fe7:fe750.png}}|{{data:背景画像:fe7:fe753.png}}|{{data:背景画像:fe7:fe754.png}}|
+^[[start|55]]^[[start|56]]^[[start|57]]^[[start|58]]^[[start|59]]^[[start|5A]]^[[start|5C]]^[[start|5D]]|
+|{{data:背景画像:fe7:fe755.png}}|{{data:背景画像:fe7:fe756.png}}|{{data:背景画像:fe7:fe757.png}}|{{data:背景画像:fe7:fe758.png}}|{{data:背景画像:fe7:fe759.png}}|{{data:背景画像:fe7:fe75A.png}}|{{data:背景画像:fe7:fe75C.png}}|{{data:背景画像:fe7:fe75D.png}}|
+^[[start|5E]]|
+|{{data:背景画像:fe7:fe75E.png}}|

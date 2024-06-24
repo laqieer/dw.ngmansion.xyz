@@ -1,0 +1,56 @@
+ここでは、FEBuilderGBAが搭載しているTSAを考慮した減色ツールを使って、背景を挿入する方法を説明します。\\ {{ https://i.imgur.com/oQGFKE2.jpg }}
+
+====== TSAを考慮した減色とは？  ======
+元画像の味噌ラーメン(wikiepdiaより CC0)\\ {{ https://i.imgur.com/8Hs6wOb.jpg }}
+
+\\ 16色減色\\ https://i.imgur.com/wNsrUez.png
+
+\\ FEBuilderGBAでTSAを考慮した減色\\ https://i.imgur.com/nqgzmKO.png
+
+\\ TSAを考慮した減色だと、ネギの緑色がちゃんと出ていることがわかります。\\ FEの背景は8パレット * 15色まで出すことができますが、それには、TSAを考慮しないといけなく、人力で作るのは大変でした。\\ そのため、TSAを気にしないで済む、16色に減色して利用していたわけです。\\ ですが、FEBuilderGBAに、TSAを考慮した減色機能が搭載されたので、もっと色数を増やすことができます。\\ 
+
+====== 設定方法  ======
+===== StepA1  =====
+メニューから "ツール"->"減色ツール" を呼び出します。\\ {{ https://i.imgur.com/Z67P7dl.jpg }}
+
+===== StepA2  =====
+減色ツールが画面になります。\\ {{ https://i.imgur.com/BJPm8DY.jpg }}
+
+===== StepA3  =====
+元ファイルと、変換した画像の保存先を設定します。\\ {{ https://i.imgur.com/vuCj783.jpg }}
+
+===== StepA4  =====
+開始ボタンをクリックします。\\ これで減色処理が開始されます。\\ {{ https://i.imgur.com/x8xZZe5.jpg }}
+
+===== StepA5  =====
+完成した画像をedgeで見てましょう。\\ ちゃんと、パレットが割り振られています。\\ {{ https://i.imgur.com/4FmQtKx.jpg }}
+
+===== StepA6  =====
+とりあえず、この画像をBGに設定してみましょう。\\ "画像設定"を押してください。\\ {{ https://i.imgur.com/Tmv5XFf.jpg }}
+
+===== StepA7  =====
+"背景"を選択してください。\\ {{ https://i.imgur.com/OrgiN87.jpg }}
+
+===== StepA8  =====
+背景画面がでるので・・・\\ {{ https://i.imgur.com/SN90Uba.jpg }}
+
+===== StepA9  =====
+序章の背景を選択してください。\\ FE8Jだと、ID:0x25です。(FE8UだとIDが違うので注意してください。)\\ {{ https://i.imgur.com/S1kuArH.jpg }}
+
+===== StepA10  =====
+"画像読込"ボタンを押して、先ほど減色した画像を選択してください。\\ {{ https://i.imgur.com/Kl1X5JP.jpg }}
+
+===== StepA11  =====
+画像が読み込まれます。\\ {{ https://i.imgur.com/fpKCkUr.jpg }}
+
+===== StepA12  =====
+ゲームをスタートしてください。\\ ラーメンを前に会話をする二人が出てくるはずです。\\ {{ https://i.imgur.com/oQGFKE2.jpg }}
+
+====== 弱点  ======
+現在は、FEBuilderGBAは、K-means法を利用して減色していますが、このアルゴリズムはグラデーションに弱いです。\\ \\ ピラミッド 元画像\\ {{ https://i.imgur.com/Pdhdh2a.jpg }}
+
+\\ 16色減色\\ {{ https://i.imgur.com/k35ML0f.jpg }}
+
+\\ FEBuilderGBAでTSAを考慮した減色\\ https://i.imgur.com/rpE6AGN.png
+
+残念ながら、グラデーションの境目にある部分がきれいに出ませんでした。\\ この場合は、FEBuilderGBAの画像をもとに自力で修正するか、 16色減色であきらめるしかありません。\\ 

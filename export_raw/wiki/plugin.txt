@@ -1,0 +1,16 @@
+導入しているpluginを列挙していきます
+
+^ 名前 ^ URL ^ 導入日 ^ 削除日 ^
+|Add New Page|http://www.dokuwiki.org/plugin:addnewpage|-|-|
+|CAPTCHA Plugin|http://www.dokuwiki.org/plugin:captcha|-|-|
+|Changes Plugin|http://www.dokuwiki.org/plugin:changes|-|-|
+|color syntax plugin|https://www.dokuwiki.org/plugin:color|-|-|
+|CSV Plugin|http://www.dokuwiki.org/plugin:csv|-|-|
+|Gallery Plugin|http://www.dokuwiki.org/plugin:gallery|-|-|
+|Indexmenu Plugin|https://www.dokuwiki.org/plugin:indexmenu|-|-|
+|Pagelist Plugin|http://www.dokuwiki.org/plugin:pagelist|-|-|
+|Table Width Plugin|http://www.dokuwiki.org/plugin:tablewidth|-|-|
+|TocTweak ver.2|https://www.dokuwiki.org/plugin:toctweak|-|-|
+|Video Sharing Site Plugin|https://www.dokuwiki.org/plugin:vshare|-|-|
+|Wrap Plugin|https://www.dokuwiki.org/plugin:wrap|-|-|
+|XBR Plugin|https://www.dokuwiki.org/plugin:xbr|-|-|

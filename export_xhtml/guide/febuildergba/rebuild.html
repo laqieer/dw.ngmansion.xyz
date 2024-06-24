@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>guide:febuildergba:rebuild</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="guide,febuildergba,rebuild"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=guide:febuildergba:rebuild&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide:febuildergba"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:rebuild"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:febuildergba:rebuild"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:rebuild"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='guide:febuildergba';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:febuildergba:rebuild","namespace":"guide:febuildergba","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#アルゴリズム">アルゴリズム</a></div></li>
+<li class="level1"><div class="li"><a href="#データの共有化">データの共有化</a></div></li>
+<li class="level1"><div class="li"><a href="#圧縮効率化">圧縮効率化</a></div></li>
+<li class="level1"><div class="li"><a href="#利用シーン">利用シーン</a></div></li>
+<li class="level1"><div class="li"><a href="#ファイル構造">ファイル構造</a></div></li>
+<li class="level1"><div class="li"><a href="#ダンプされる形式について">ダンプされる形式について</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#ポインタ">@ポインタ</a></div></li>
+<li class="level3"><div class="li"><a href="#ポインタ1">`ポインタ</a></div></li>
+<li class="level3"><div class="li"><a href="#自己参照ポインタ">+自己参照ポインタ</a></div></li>
+<li class="level3"><div class="li"><a href="#asm関数へのポインタ">&amp;ASM関数へのポインタ</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#romrrebuild内の項目">ROM.R.rebuild内の項目</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#ifr">@IFR</a></div></li>
+<li class="level3"><div class="li"><a href="#bin">@BIN</a></div></li>
+<li class="level3"><div class="li"><a href="#mix">@MIX</a></div></li>
+<li class="level3"><div class="li"><a href="#mixlz77">@MIXLZ77</a></div></li>
+<li class="level3"><div class="li"><a href="#def_123456">@DEF 123456</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#その他">その他</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#crc32">@_CRC32</a></div></li>
+<li class="level3"><div class="li"><a href="#rebuildaddress">@_REBUILDADDRESS</a></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+FEBuilderGBA -REBUILD-<br />
+<a href="/lib/exe/detail.php?id=guide%3Afebuildergba%3Arebuild&amp;media=guide:febuildergba:rebuild.png" class="media" title="guide:febuildergba:rebuild.png"><img src="/lib/exe/fetch.php?media=guide:febuildergba:rebuild.png" class="media" alt="" /></a>
+</p>
+
+<p>
+FEBuilderGBAの問題点として、ROMのフラグメントがあります。<br/>
+何度もリポイントをしていると、細切れの領域がたくさん出来てしまい、ROMの容量を圧迫します。<br/>
+これは、とても大きな改造を作る場合には問題になります。<br/>
+REBUILDは、この問題を自動的に解決する機能です。<br/>
+たとえるならば、デフラグのようなものです。<br />
+<br/>
+
+</p>
+
+<h1 class="sectionedit1" id="アルゴリズム">アルゴリズム</h1>
+<div class="level1">
+
+<p>
+アルゴリズムは以下の通りです。<br/>
+<br/>
+
+</p>
+<pre class="code">FEBuilderGBAが知っている領域のデータをすべてファイルに書きだします。
+↓
+無改造ROMにそのデータを取り込みます。
+↓
+クリーンアップしたROMを作成します。</pre>
+
+<p>
+<br/>
+ようするに、既存のROMから、Buildfileのようなものを自動生成していると考えれば理解しやすいかもしれません。<br/>
+ただし、生成するデータは機械で読むことを前提としているため、buildfileよりも可読性は低下します。<br/>
+<br/>
+FEBuilderGBAが知らないデータ構造でも、LDR参照を頼りに追跡するので、動作します。<br/>
+FE8がもっとも正しく動作します。<br/>
+FE7,FE6だと未知のデータ構造がまだたくさんあるので、失敗する可能性が高いです。<br/>
+<br/>
+<br/>
+また、以下のような、途中から複雑な実行されるコードには対応していません。<br/>
+EAで書くとしたら以下のようなパッチです。<br/>
+<br/>
+
+</p>
+<pre class="code">org 1234
+jmpToHack(my_program + $50)
+
+my_program:
+#incbin &quot;my_program.dmp&quot;
+
+my_program.asm
+.thumb
+MyLib:
+push {lr}
+
+pop {pc}
+
+
+.org 0x50
+Main:
+bl MyLib
+bl MyLib
+bl MyLib</pre>
+
+<p>
+ようするに、指定されたポインタより上の相対アドレスに対して、BLで相対ジャンプしているコードです。<br/>
+このようなコードは、めったにありませんが、FE8Jでは、古い2つのパッチがこの書き方で書かれていました。<br/>
+このコードが、リビルド対象のアドレスである 0x01000000にあると、リビルドは失敗します。<br/>
+<br/>
+FE8Jの古い2つのパッチは、新規に書き直したバージョンがありますので、リビルドを利用する場合は、そちらを利用してください。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0&quot;,&quot;hid&quot;:&quot;\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;510-2373&quot;} -->
+<h1 class="sectionedit2" id="データの共有化">データの共有化</h1>
+<div class="level1">
+
+<p>
+再構築するときに、既にあるBINデータを共有してサイズを小さくすることがあります。<br/>
+例えば、ROM内にバイオリンの楽器データがあるのに、まったく同じバイオリンの楽器データを追加するのは容量の無駄です。<br/>
+REBUILDでは、このようなデータ構造があると、自動的に共有します。(ログにはSHARE!と表示されます。)<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30c7\u30fc\u30bf\u306e\u5171\u6709\u5316&quot;,&quot;hid&quot;:&quot;\u30c7\u30fc\u30bf\u306e\u5171\u6709\u5316&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:2,&quot;range&quot;:&quot;2374-2843&quot;} -->
+<h1 class="sectionedit3" id="圧縮効率化">圧縮効率化</h1>
+<div class="level1">
+
+<p>
+だいたい2MB-11MBほどの圧縮効果があるようです。<br/>
+これは、昔作られた改造が楽器データを共有化していないためです。<br/>
+
+</p>
+<pre class="code">怪盗
+31MB
+↓
+19MB
+
+ユグドラ
+28MB
+↓
+21MB
+
+女王の剣
+21MB
+↓
+18MB</pre>
+
+<p>
+昔のzalhman&#039;s song editorは、楽器を共有化ができませんでした。<br/>
+現在、私が拡張したバージョンやFEBuilderGBAは、楽器の共有化を自動的に行います。<br/>
+よって、10MBの容量減というのは、あまり期待しない方がいいです。<br/>
+だいたい2-5MB程度だと思われます。<br/>
+<br/>
+なお、Buildfileで作られた改造に対しても、わずかではありますが、圧縮効果があるときがあります。<br/>
+ただし、効果はわずかなので、気にする必要はありません。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5727\u7e2e\u52b9\u7387\u5316&quot;,&quot;hid&quot;:&quot;\u5727\u7e2e\u52b9\u7387\u5316&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:3,&quot;range&quot;:&quot;2844-3702&quot;} -->
+<h1 class="sectionedit4" id="利用シーン">利用シーン</h1>
+<div class="level1">
+
+<p>
+通常、REBUILDを利用する必要はありません。<br/>
+ROM容量が限界である32MB近くになったときに、検討すればいいでしょう。<br/>
+むやみに利用すると、バグを発生させる原因になるので、乱用しないでください。<br/>
+<br/>
+ROM.GBAをリビルドすると、ROM.R.GBAというファイルが作られます。<br/>
+ROM.R.GBAが、リビルドされたROMです。<br/>
+<br/>
+リビルド後は、必ずクリアテストをしてください。<br/>
+もし、何か間違いがあったら、危険なので、リビルドしたROMは破棄してください。<br/>
+リビルドした結果壊れたROMの修復は、とても困難だからです。<br/>
+よって、リビルド結果を採用するかどうかのフルテストが絶対に必要になります。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5229\u7528\u30b7\u30fc\u30f3&quot;,&quot;hid&quot;:&quot;\u5229\u7528\u30b7\u30fc\u30f3&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:4,&quot;range&quot;:&quot;3703-4544&quot;} -->
+<h1 class="sectionedit5" id="ファイル構造">ファイル構造</h1>
+<div class="level1">
+<pre class="code">ROM.gba  //ターゲットROM
+ROM.R.gba //rebuildしたROM (Rマークが入ります)
+ROM.R.rebuild.log.txt //リビルド結果のログファイル
+
+ROM.R.rebuild //リビルドスクリプト
+rebuild_bin //ポインタが入らないバイナリデータを保存するディレクトリ.画像や楽器データ等
+rebuild_ifr //ユニットやクラスなどの表形式のデータを格納するディレクトリ
+rebuild_mix //ポインタが入るデータを格納するディレクトリ</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30d5\u30a1\u30a4\u30eb\u69cb\u9020&quot;,&quot;hid&quot;:&quot;\u30d5\u30a1\u30a4\u30eb\u69cb\u9020&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:5,&quot;range&quot;:&quot;4545-5097&quot;} -->
+<h1 class="sectionedit6" id="ダンプされる形式について">ダンプされる形式について</h1>
+<div class="level1">
+
+<p>
+このフォーマットは、機械で読むことを前提としています。<br/>
+手書きするべきではありません。<br/>
+ただし、@BIN以外はテキスト形式で格納しています。<br/>
+<br/>
+数字はすべて16進数表記です。<br/>
+区切りは、半角スペース1つ。<br/>
+ポインタでない限り1バイト単位です。<br/>
+ポインタだけは、4バイト固定です。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30c0\u30f3\u30d7\u3055\u308c\u308b\u5f62\u5f0f\u306b\u3064\u3044\u3066&quot;,&quot;hid&quot;:&quot;\u30c0\u30f3\u30d7\u3055\u308c\u308b\u5f62\u5f0f\u306b\u3064\u3044\u3066&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:6,&quot;range&quot;:&quot;5098-5555&quot;} -->
+<h3 class="sectionedit7" id="ポインタ">@ポインタ</h3>
+<div class="level3">
+
+<p>
+EAでいう POIN labelに相当する.<br/>
+例:@08123456<br/>
+<br/>
+EAで表現すると以下のようになります。<br/>
+POIN _08123456<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;@\u30dd\u30a4\u30f3\u30bf&quot;,&quot;hid&quot;:&quot;\u30dd\u30a4\u30f3\u30bf&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:7,&quot;range&quot;:&quot;5556-5716&quot;} -->
+<h3 class="sectionedit8" id="ポインタ1">`ポインタ</h3>
+<div class="level3">
+
+<p>
+アンチハフマンポインタです。<br/>
+テキストデータをアンチハフマン形式で格納している場合に利用します。<br/>
+<br/>
+例:`08123456<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;`\u30dd\u30a4\u30f3\u30bf&quot;,&quot;hid&quot;:&quot;\u30dd\u30a4\u30f3\u30bf1&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:8,&quot;range&quot;:&quot;5717-5910&quot;} -->
+<h3 class="sectionedit9" id="自己参照ポインタ">+自己参照ポインタ</h3>
+<div class="level3">
+
+<p>
+開始アドレスからの相対位置を記録する。<br/>
+楽譜などによくつかわれる.<br/>
+<br/>
+例:+123<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;+\u81ea\u5df1\u53c2\u7167\u30dd\u30a4\u30f3\u30bf&quot;,&quot;hid&quot;:&quot;\u81ea\u5df1\u53c2\u7167\u30dd\u30a4\u30f3\u30bf&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:9,&quot;range&quot;:&quot;5911-6064&quot;} -->
+<h3 class="sectionedit10" id="asm関数へのポインタ">&amp;ASM関数へのポインタ</h3>
+<div class="level3">
+
+<p>
+特別な理由がない限り、偶数でポインタを記述します。<br/>
+ASM関数へのポインタの場合、 +1 した領域も探索します。<br/>
+<br/>
+例:&amp;08123456<br/>
+これは、08123456と&amp;08123457 の両方にマッチします。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;&amp;ASM\u95a2\u6570\u3078\u306e\u30dd\u30a4\u30f3\u30bf&quot;,&quot;hid&quot;:&quot;asm\u95a2\u6570\u3078\u306e\u30dd\u30a4\u30f3\u30bf&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:10,&quot;range&quot;:&quot;6065-6353&quot;} -->
+<h1 class="sectionedit11" id="romrrebuild内の項目">ROM.R.rebuild内の項目</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;ROM.R.rebuild\u5185\u306e\u9805\u76ee&quot;,&quot;hid&quot;:&quot;romrrebuild\u5185\u306e\u9805\u76ee&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:11,&quot;range&quot;:&quot;6354-6395&quot;} -->
+<h3 class="sectionedit12" id="ifr">@IFR</h3>
+<div class="level3">
+
+<p>
+フォームデータを表します。<br/>
+先頭に必ずINDEX番目が入ります。<br/>
+以降は、データが16進数表記で続きます。<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;@IFR&quot;,&quot;hid&quot;:&quot;ifr&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:12,&quot;range&quot;:&quot;6396-6565&quot;} -->
+<h3 class="sectionedit13" id="bin">@BIN</h3>
+<div class="level3">
+
+<p>
+ポインタが一切入らないバイナリデータ<br/>
+画像など.<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;@BIN&quot;,&quot;hid&quot;:&quot;bin&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:13,&quot;range&quot;:&quot;6566-6657&quot;} -->
+<h3 class="sectionedit14" id="mix">@MIX</h3>
+<div class="level3">
+
+<p>
+ポインタが混ざるデータです。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;@MIX&quot;,&quot;hid&quot;:&quot;mix&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:14,&quot;range&quot;:&quot;6658-6721&quot;} -->
+<h3 class="sectionedit15" id="mixlz77">@MIXLZ77</h3>
+<div class="level3">
+
+<p>
+ポインタが混ざるデータ LZ77に圧縮して利用する。<br/>
+戦闘アニメのフレームデータです。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;@MIXLZ77&quot;,&quot;hid&quot;:&quot;mixlz77&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:15,&quot;range&quot;:&quot;6722-6866&quot;} -->
+<h3 class="sectionedit16" id="def_123456">@DEF 123456</h3>
+<div class="level3">
+
+<p>
+定義のみ 無変更のアドレスで利用される.<br/>
+EAで書くならば、何も定義しないラベルです。<br/>
+<br/>
+
+</p>
+<pre class="code">org $123456
+_123456:</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;@DEF 123456&quot;,&quot;hid&quot;:&quot;def_123456&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:16,&quot;range&quot;:&quot;6867-7054&quot;} -->
+<h2 class="sectionedit17" id="その他">その他</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u305d\u306e\u4ed6&quot;,&quot;hid&quot;:&quot;\u305d\u306e\u4ed6&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:17,&quot;range&quot;:&quot;7055-7077&quot;} -->
+<h3 class="sectionedit18" id="crc32">@_CRC32</h3>
+<div class="level3">
+
+<p>
+対応する無改造ROMのCRC32のハッシュです。<br/>
+このハッシュを元に無改造ROMを特定します。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;@_CRC32&quot;,&quot;hid&quot;:&quot;crc32&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:18,&quot;range&quot;:&quot;7078-7221&quot;} -->
+<h3 class="sectionedit19" id="rebuildaddress">@_REBUILDADDRESS</h3>
+<div class="level3">
+
+<p>
+このアドレス以降を再構築します。<br/>
+通常は、0x01000000 になります。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;@_REBUILDADDRESS&quot;,&quot;hid&quot;:&quot;rebuildaddress&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:19,&quot;range&quot;:&quot;7222-&quot;} --></div>
+</body>
+</html>

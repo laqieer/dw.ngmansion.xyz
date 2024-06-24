@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>data:システムメニュー</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="data,システムメニュー"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=data:%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=data"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=data:%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=data:%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=data:%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='data';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"data:\u30b7\u30b9\u30c6\u30e0\u30e1\u30cb\u30e5\u30fc","namespace":"data","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#fe8jシステムメニュー_system_menu">FE8Jシステムメニュー / system menu</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#fe8j_目的表示枠_goal_display_frame">FE8J 目的表示枠 / Goal display frame.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe8j_地形名表示枠_terrain_name_display_frame">FE8J 地形名表示枠 / Terrain name display frame.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe8j_名前表示枠_name_display_frame">FE8J 名前表示枠 / Name display frame.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe8j_戦闘前の数字_numbers_before_battle">FE8J 戦闘前の数字 / Numbers before battle.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe8j_行動範囲カラー_behavior_range_color">FE8J 行動範囲カラー / Behavior range color.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe8j_攻撃範囲カラー_attack_range_color">FE8J 攻撃範囲カラー / Attack range color.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe8j_謎カラー_データ上で存在している_nazo_color_exists_on_data">FE8J 謎カラー(データ上で存在している) / NAZO color (exists on data).</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#fe8uシステムメニュー_system_menu">FE8Uシステムメニュー / system menu</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#fe8u_目的表示枠_goal_display_frame">FE8U 目的表示枠 / Goal display frame.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe8u_地形名表示枠_terrain_name_display_frame">FE8U 地形名表示枠 / Terrain name display frame.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe8u_名前表示枠_name_display_frame">FE8U 名前表示枠 / Name display frame.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe8u_戦闘前の数字_numbers_before_battle">FE8U 戦闘前の数字 / Numbers before battle.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe8u_行動範囲カラー_behavior_range_color">FE8U 行動範囲カラー / Behavior range color.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe8u_攻撃範囲カラー_attack_range_color">FE8U 攻撃範囲カラー / Attack range color.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe8u_謎カラー_データ上で存在している_nazo_color_exists_on_data">FE8U 謎カラー(データ上で存在している) / NAZO color (exists on data).</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#fe7jシステムメニュー_system_menu">FE7Jシステムメニュー / system menu</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#fe7j_名前表示枠_name_display_frame">FE7J 名前表示枠 / Name display frame.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe7j_地形名表示枠_terrain_name_display_frame">FE7J 地形名表示枠 / Terrain name display frame.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe7j_目的表示枠_goal_display_frame">FE7J 目的表示枠 / Goal display frame.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe7j_戦闘前の数字_numbers_before_battle">FE7J 戦闘前の数字 / Numbers before battle.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe7j_行動範囲カラー_behavior_range_color">FE7J 行動範囲カラー / Behavior range color.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe7j_攻撃範囲カラー_attack_range_color">FE7J 攻撃範囲カラー / Attack range color.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe7j_謎カラー_データ上で存在している_nazo_color_exists_on_data">FE7J 謎カラー(データ上で存在している) / NAZO color (exists on data)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#fe7uシステムメニュー_system_menu">FE7Uシステムメニュー / system menu</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#fe7u_名前表示枠_name_display_frame">FE7U 名前表示枠 / Name display frame.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe7u_地形名表示枠_terrain_name_display_frame">FE7U 地形名表示枠 / Terrain name display frame.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe7u_目的表示枠_goal_display_frame">FE7U 目的表示枠 / Goal display frame.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe7u_戦闘前の数字_numbers_before_battle">FE7U 戦闘前の数字 / Numbers before battle.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe7u_行動範囲カラー_behavior_range_color">FE7U 行動範囲カラー / Behavior range color.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe7u_攻撃範囲カラー_attack_range_color">FE7U 攻撃範囲カラー / Attack range color.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe7u_謎カラー_データ上で存在している_nazo_color_exists_on_data">FE7U 謎カラー(データ上で存在している) / NAZO color (exists on data)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#fe6システムメニュー_system_menu">FE6システムメニュー / system menu</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#fe6_名前表示枠_name_display_frame">FE6 名前表示枠 / Name display frame.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe6_地形名表示枠_terrain_name_display_frame">FE6 地形名表示枠 / Terrain name display frame.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe6_目的表示枠_goal_display_frame">FE6 目的表示枠 / Goal display frame.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe6_戦闘前の数字_numbers_before_battle">FE6 戦闘前の数字 / Numbers before battle.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe6_行動範囲カラー_behavior_range_color">FE6 行動範囲カラー / Behavior range color.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe6_攻撃範囲カラー_attack_range_color">FE6 攻撃範囲カラー / Attack range color.</a></div></li>
+<li class="level2"><div class="li"><a href="#fe6_謎カラー_データ上で存在している_nazo_color_exists_on_data">FE6 謎カラー(データ上で存在している) / NAZO color (exists on data)</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="fe8jシステムメニュー_system_menu">FE8Jシステムメニュー / system menu</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8J\u30b7\u30b9\u30c6\u30e0\u30e1\u30cb\u30e5\u30fc \/ system menu&quot;,&quot;hid&quot;:&quot;fe8j\u30b7\u30b9\u30c6\u30e0\u30e1\u30cb\u30e5\u30fc_system_menu&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-58&quot;} -->
+<h2 class="sectionedit2" id="fe8j_目的表示枠_goal_display_frame">FE8J 目的表示枠 / Goal display frame.</h2>
+<div class="level2">
+<div class="table sectionedit3"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">5E07A0</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">A93490</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">5E0D94</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;116-157&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8J \u76ee\u7684\u8868\u793a\u67a0 \/ Goal display frame.&quot;,&quot;hid&quot;:&quot;fe8j_\u76ee\u7684\u8868\u793a\u67a0_goal_display_frame&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;59-158&quot;} -->
+<h2 class="sectionedit4" id="fe8j_地形名表示枠_terrain_name_display_frame">FE8J 地形名表示枠 / Terrain name display frame.</h2>
+<div class="level2">
+<div class="table sectionedit5"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">5E07A0</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">A93178</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">5E0D94</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table1&quot;,&quot;secid&quot;:5,&quot;range&quot;:&quot;227-268&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8J \u5730\u5f62\u540d\u8868\u793a\u67a0 \/ Terrain name display frame.&quot;,&quot;hid&quot;:&quot;fe8j_\u5730\u5f62\u540d\u8868\u793a\u67a0_terrain_name_display_frame&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;159-269&quot;} -->
+<h2 class="sectionedit6" id="fe8j_名前表示枠_name_display_frame">FE8J 名前表示枠 / Name display frame.</h2>
+<div class="level2">
+<div class="table sectionedit7"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">5E07A0</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">A931D0</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">5E0D94</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table2&quot;,&quot;secid&quot;:7,&quot;range&quot;:&quot;327-368&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8J \u540d\u524d\u8868\u793a\u67a0 \/ Name display frame.&quot;,&quot;hid&quot;:&quot;fe8j_\u540d\u524d\u8868\u793a\u67a0_name_display_frame&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;270-369&quot;} -->
+<h2 class="sectionedit8" id="fe8j_戦闘前の数字_numbers_before_battle">FE8J 戦闘前の数字 / Numbers before battle.</h2>
+<div class="level2">
+<div class="table sectionedit9"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">5E07A0</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">5C8EC8</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">5E0D94</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table3&quot;,&quot;secid&quot;:9,&quot;range&quot;:&quot;433-474&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8J \u6226\u95d8\u524d\u306e\u6570\u5b57 \/ Numbers before battle.&quot;,&quot;hid&quot;:&quot;fe8j_\u6226\u95d8\u524d\u306e\u6570\u5b57_numbers_before_battle&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;370-475&quot;} -->
+<h2 class="sectionedit10" id="fe8j_行動範囲カラー_behavior_range_color">FE8J 行動範囲カラー / Behavior range color.</h2>
+<div class="level2">
+<div class="table sectionedit11"><table class="inline">
+	<tr class="row0">
+		<td class="col0">A74FEC (+0x60)</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table4&quot;,&quot;secid&quot;:11,&quot;range&quot;:&quot;541-557&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8J \u884c\u52d5\u7bc4\u56f2\u30ab\u30e9\u30fc \/ Behavior range color.&quot;,&quot;hid&quot;:&quot;fe8j_\u884c\u52d5\u7bc4\u56f2\u30ab\u30e9\u30fc_behavior_range_color&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;476-558&quot;} -->
+<h2 class="sectionedit12" id="fe8j_攻撃範囲カラー_attack_range_color">FE8J 攻撃範囲カラー / Attack range color.</h2>
+<div class="level2">
+<div class="table sectionedit13"><table class="inline">
+	<tr class="row0">
+		<td class="col0">A7504C (+0x60)</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table5&quot;,&quot;secid&quot;:13,&quot;range&quot;:&quot;622-638&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8J \u653b\u6483\u7bc4\u56f2\u30ab\u30e9\u30fc \/ Attack range color.&quot;,&quot;hid&quot;:&quot;fe8j_\u653b\u6483\u7bc4\u56f2\u30ab\u30e9\u30fc_attack_range_color&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:12,&quot;range&quot;:&quot;559-639&quot;} -->
+<h2 class="sectionedit14" id="fe8j_謎カラー_データ上で存在している_nazo_color_exists_on_data">FE8J 謎カラー(データ上で存在している) / NAZO color (exists on data).</h2>
+<div class="level2">
+<div class="table sectionedit15"><table class="inline">
+	<tr class="row0">
+		<td class="col0">A750AC (+0x60 maybe)</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table6&quot;,&quot;secid&quot;:15,&quot;range&quot;:&quot;738-760&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8J \u8b0e\u30ab\u30e9\u30fc(\u30c7\u30fc\u30bf\u4e0a\u3067\u5b58\u5728\u3057\u3066\u3044\u308b) \/ NAZO color (exists on data).&quot;,&quot;hid&quot;:&quot;fe8j_\u8b0e\u30ab\u30e9\u30fc_\u30c7\u30fc\u30bf\u4e0a\u3067\u5b58\u5728\u3057\u3066\u3044\u308b_nazo_color_exists_on_data&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:14,&quot;range&quot;:&quot;640-763&quot;} -->
+<h1 class="sectionedit16" id="fe8uシステムメニュー_system_menu">FE8Uシステムメニュー / system menu</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8U\u30b7\u30b9\u30c6\u30e0\u30e1\u30cb\u30e5\u30fc \/ system menu&quot;,&quot;hid&quot;:&quot;fe8u\u30b7\u30b9\u30c6\u30e0\u30e1\u30cb\u30e5\u30fc_system_menu&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:16,&quot;range&quot;:&quot;764-821&quot;} -->
+<h2 class="sectionedit17" id="fe8u_目的表示枠_goal_display_frame">FE8U 目的表示枠 / Goal display frame.</h2>
+<div class="level2">
+<div class="table sectionedit18"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">5B65C0</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">A17744</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">5B6BB4</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table7&quot;,&quot;secid&quot;:18,&quot;range&quot;:&quot;879-920&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8U \u76ee\u7684\u8868\u793a\u67a0 \/ Goal display frame.&quot;,&quot;hid&quot;:&quot;fe8u_\u76ee\u7684\u8868\u793a\u67a0_goal_display_frame&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:17,&quot;range&quot;:&quot;822-921&quot;} -->
+<h2 class="sectionedit19" id="fe8u_地形名表示枠_terrain_name_display_frame">FE8U 地形名表示枠 / Terrain name display frame.</h2>
+<div class="level2">
+<div class="table sectionedit20"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">5B65C0</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">A1742C</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">5B6BB4</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table8&quot;,&quot;secid&quot;:20,&quot;range&quot;:&quot;990-1031&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8U \u5730\u5f62\u540d\u8868\u793a\u67a0 \/ Terrain name display frame.&quot;,&quot;hid&quot;:&quot;fe8u_\u5730\u5f62\u540d\u8868\u793a\u67a0_terrain_name_display_frame&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:19,&quot;range&quot;:&quot;922-1032&quot;} -->
+<h2 class="sectionedit21" id="fe8u_名前表示枠_name_display_frame">FE8U 名前表示枠 / Name display frame.</h2>
+<div class="level2">
+<div class="table sectionedit22"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">5B65C0</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">A17484</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">5B6BB4</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table9&quot;,&quot;secid&quot;:22,&quot;range&quot;:&quot;1090-1131&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8U \u540d\u524d\u8868\u793a\u67a0 \/ Name display frame.&quot;,&quot;hid&quot;:&quot;fe8u_\u540d\u524d\u8868\u793a\u67a0_name_display_frame&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:21,&quot;range&quot;:&quot;1033-1132&quot;} -->
+<h2 class="sectionedit23" id="fe8u_戦闘前の数字_numbers_before_battle">FE8U 戦闘前の数字 / Numbers before battle.</h2>
+<div class="level2">
+<div class="table sectionedit24"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">5B65C0</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">5A09A8</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">5B6BB4</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table10&quot;,&quot;secid&quot;:24,&quot;range&quot;:&quot;1196-1237&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8U \u6226\u95d8\u524d\u306e\u6570\u5b57 \/ Numbers before battle.&quot;,&quot;hid&quot;:&quot;fe8u_\u6226\u95d8\u524d\u306e\u6570\u5b57_numbers_before_battle&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:23,&quot;range&quot;:&quot;1133-1238&quot;} -->
+<h2 class="sectionedit25" id="fe8u_行動範囲カラー_behavior_range_color">FE8U 行動範囲カラー / Behavior range color.</h2>
+<div class="level2">
+<div class="table sectionedit26"><table class="inline">
+	<tr class="row0">
+		<td class="col0">A02F34 (+0x60)</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table11&quot;,&quot;secid&quot;:26,&quot;range&quot;:&quot;1304-1320&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8U \u884c\u52d5\u7bc4\u56f2\u30ab\u30e9\u30fc \/ Behavior range color.&quot;,&quot;hid&quot;:&quot;fe8u_\u884c\u52d5\u7bc4\u56f2\u30ab\u30e9\u30fc_behavior_range_color&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:25,&quot;range&quot;:&quot;1239-1321&quot;} -->
+<h2 class="sectionedit27" id="fe8u_攻撃範囲カラー_attack_range_color">FE8U 攻撃範囲カラー / Attack range color.</h2>
+<div class="level2">
+<div class="table sectionedit28"><table class="inline">
+	<tr class="row0">
+		<td class="col0">A02F94 (+0x60)</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table12&quot;,&quot;secid&quot;:28,&quot;range&quot;:&quot;1385-1401&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8U \u653b\u6483\u7bc4\u56f2\u30ab\u30e9\u30fc \/ Attack range color.&quot;,&quot;hid&quot;:&quot;fe8u_\u653b\u6483\u7bc4\u56f2\u30ab\u30e9\u30fc_attack_range_color&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:27,&quot;range&quot;:&quot;1322-1402&quot;} -->
+<h2 class="sectionedit29" id="fe8u_謎カラー_データ上で存在している_nazo_color_exists_on_data">FE8U 謎カラー(データ上で存在している) / NAZO color (exists on data).</h2>
+<div class="level2">
+<div class="table sectionedit30"><table class="inline">
+	<tr class="row0">
+		<td class="col0">A02FF4 (+0x60 maybe)</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table13&quot;,&quot;secid&quot;:30,&quot;range&quot;:&quot;1501-1523&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8U \u8b0e\u30ab\u30e9\u30fc(\u30c7\u30fc\u30bf\u4e0a\u3067\u5b58\u5728\u3057\u3066\u3044\u308b) \/ NAZO color (exists on data).&quot;,&quot;hid&quot;:&quot;fe8u_\u8b0e\u30ab\u30e9\u30fc_\u30c7\u30fc\u30bf\u4e0a\u3067\u5b58\u5728\u3057\u3066\u3044\u308b_nazo_color_exists_on_data&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:29,&quot;range&quot;:&quot;1403-1526&quot;} -->
+<h1 class="sectionedit31" id="fe7jシステムメニュー_system_menu">FE7Jシステムメニュー / system menu</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE7J\u30b7\u30b9\u30c6\u30e0\u30e1\u30cb\u30e5\u30fc \/ system menu&quot;,&quot;hid&quot;:&quot;fe7j\u30b7\u30b9\u30c6\u30e0\u30e1\u30cb\u30e5\u30fc_system_menu&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:31,&quot;range&quot;:&quot;1527-1584&quot;} -->
+<h2 class="sectionedit32" id="fe7j_名前表示枠_name_display_frame">FE7J 名前表示枠 / Name display frame.</h2>
+<div class="level2">
+<div class="table sectionedit33"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">41BE00</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">41C80C</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">41C754</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table14&quot;,&quot;secid&quot;:33,&quot;range&quot;:&quot;1642-1683&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE7J \u540d\u524d\u8868\u793a\u67a0 \/ Name display frame.&quot;,&quot;hid&quot;:&quot;fe7j_\u540d\u524d\u8868\u793a\u67a0_name_display_frame&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:32,&quot;range&quot;:&quot;1585-1684&quot;} -->
+<h2 class="sectionedit34" id="fe7j_地形名表示枠_terrain_name_display_frame">FE7J 地形名表示枠 / Terrain name display frame.</h2>
+<div class="level2">
+<div class="table sectionedit35"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">41BE00</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">41C7B4</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">1DBD64</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table15&quot;,&quot;secid&quot;:35,&quot;range&quot;:&quot;1753-1794&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE7J \u5730\u5f62\u540d\u8868\u793a\u67a0 \/ Terrain name display frame.&quot;,&quot;hid&quot;:&quot;fe7j_\u5730\u5f62\u540d\u8868\u793a\u67a0_terrain_name_display_frame&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:34,&quot;range&quot;:&quot;1685-1795&quot;} -->
+<h2 class="sectionedit36" id="fe7j_目的表示枠_goal_display_frame">FE7J 目的表示枠 / Goal display frame.</h2>
+<div class="level2">
+<div class="table sectionedit37"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">41BE00</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">41cacc</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">1DBD64</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table16&quot;,&quot;secid&quot;:37,&quot;range&quot;:&quot;1853-1894&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE7J \u76ee\u7684\u8868\u793a\u67a0 \/ Goal display frame.&quot;,&quot;hid&quot;:&quot;fe7j_\u76ee\u7684\u8868\u793a\u67a0_goal_display_frame&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:36,&quot;range&quot;:&quot;1796-1895&quot;} -->
+<h2 class="sectionedit38" id="fe7j_戦闘前の数字_numbers_before_battle">FE7J 戦闘前の数字 / Numbers before battle.</h2>
+<div class="level2">
+<div class="table sectionedit39"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">191410</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">191780</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">191700</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table17&quot;,&quot;secid&quot;:39,&quot;range&quot;:&quot;1959-2000&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE7J \u6226\u95d8\u524d\u306e\u6570\u5b57 \/ Numbers before battle.&quot;,&quot;hid&quot;:&quot;fe7j_\u6226\u95d8\u524d\u306e\u6570\u5b57_numbers_before_battle&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:38,&quot;range&quot;:&quot;1896-2001&quot;} -->
+<h2 class="sectionedit40" id="fe7j_行動範囲カラー_behavior_range_color">FE7J 行動範囲カラー / Behavior range color.</h2>
+<div class="level2">
+<div class="table sectionedit41"><table class="inline">
+	<tr class="row0">
+		<td class="col0">4047B4 (+0x60)</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table18&quot;,&quot;secid&quot;:41,&quot;range&quot;:&quot;2067-2083&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE7J \u884c\u52d5\u7bc4\u56f2\u30ab\u30e9\u30fc \/ Behavior range color.&quot;,&quot;hid&quot;:&quot;fe7j_\u884c\u52d5\u7bc4\u56f2\u30ab\u30e9\u30fc_behavior_range_color&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:40,&quot;range&quot;:&quot;2002-2084&quot;} -->
+<h2 class="sectionedit42" id="fe7j_攻撃範囲カラー_attack_range_color">FE7J 攻撃範囲カラー / Attack range color.</h2>
+<div class="level2">
+<div class="table sectionedit43"><table class="inline">
+	<tr class="row0">
+		<td class="col0">404814 (+0x60)</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table19&quot;,&quot;secid&quot;:43,&quot;range&quot;:&quot;2148-2164&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE7J \u653b\u6483\u7bc4\u56f2\u30ab\u30e9\u30fc \/ Attack range color.&quot;,&quot;hid&quot;:&quot;fe7j_\u653b\u6483\u7bc4\u56f2\u30ab\u30e9\u30fc_attack_range_color&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:42,&quot;range&quot;:&quot;2085-2165&quot;} -->
+<h2 class="sectionedit44" id="fe7j_謎カラー_データ上で存在している_nazo_color_exists_on_data">FE7J 謎カラー(データ上で存在している) / NAZO color (exists on data)</h2>
+<div class="level2">
+<div class="table sectionedit45"><table class="inline">
+	<tr class="row0">
+		<td class="col0">404874 (+0x60 maybe)</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table20&quot;,&quot;secid&quot;:45,&quot;range&quot;:&quot;2263-2285&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE7J \u8b0e\u30ab\u30e9\u30fc(\u30c7\u30fc\u30bf\u4e0a\u3067\u5b58\u5728\u3057\u3066\u3044\u308b) \/ NAZO color (exists on data)&quot;,&quot;hid&quot;:&quot;fe7j_\u8b0e\u30ab\u30e9\u30fc_\u30c7\u30fc\u30bf\u4e0a\u3067\u5b58\u5728\u3057\u3066\u3044\u308b_nazo_color_exists_on_data&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:44,&quot;range&quot;:&quot;2166-2287&quot;} -->
+<h1 class="sectionedit46" id="fe7uシステムメニュー_system_menu">FE7Uシステムメニュー / system menu</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE7U\u30b7\u30b9\u30c6\u30e0\u30e1\u30cb\u30e5\u30fc \/ system menu&quot;,&quot;hid&quot;:&quot;fe7u\u30b7\u30b9\u30c6\u30e0\u30e1\u30cb\u30e5\u30fc_system_menu&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:46,&quot;range&quot;:&quot;2288-2345&quot;} -->
+<h2 class="sectionedit47" id="fe7u_名前表示枠_name_display_frame">FE7U 名前表示枠 / Name display frame.</h2>
+<div class="level2">
+<div class="table sectionedit48"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">403BC4</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">4045F4</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">40453C</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table21&quot;,&quot;secid&quot;:48,&quot;range&quot;:&quot;2403-2444&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE7U \u540d\u524d\u8868\u793a\u67a0 \/ Name display frame.&quot;,&quot;hid&quot;:&quot;fe7u_\u540d\u524d\u8868\u793a\u67a0_name_display_frame&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:47,&quot;range&quot;:&quot;2346-2445&quot;} -->
+<h2 class="sectionedit49" id="fe7u_地形名表示枠_terrain_name_display_frame">FE7U 地形名表示枠 / Terrain name display frame.</h2>
+<div class="level2">
+<div class="table sectionedit50"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">403BC4</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">1C4780</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">1D60F0</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table22&quot;,&quot;secid&quot;:50,&quot;range&quot;:&quot;2514-2555&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE7U \u5730\u5f62\u540d\u8868\u793a\u67a0 \/ Terrain name display frame.&quot;,&quot;hid&quot;:&quot;fe7u_\u5730\u5f62\u540d\u8868\u793a\u67a0_terrain_name_display_frame&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:49,&quot;range&quot;:&quot;2446-2556&quot;} -->
+<h2 class="sectionedit51" id="fe7u_目的表示枠_goal_display_frame">FE7U 目的表示枠 / Goal display frame.</h2>
+<div class="level2">
+<div class="table sectionedit52"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">403BC4</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">4048B4</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">1D60F0</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table23&quot;,&quot;secid&quot;:52,&quot;range&quot;:&quot;2614-2655&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE7U \u76ee\u7684\u8868\u793a\u67a0 \/ Goal display frame.&quot;,&quot;hid&quot;:&quot;fe7u_\u76ee\u7684\u8868\u793a\u67a0_goal_display_frame&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:51,&quot;range&quot;:&quot;2557-2656&quot;} -->
+<h2 class="sectionedit53" id="fe7u_戦闘前の数字_numbers_before_battle">FE7U 戦闘前の数字 / Numbers before battle.</h2>
+<div class="level2">
+<div class="table sectionedit54"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">1958BC</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">195C2C</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">195BAC</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table24&quot;,&quot;secid&quot;:54,&quot;range&quot;:&quot;2720-2761&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE7U \u6226\u95d8\u524d\u306e\u6570\u5b57 \/ Numbers before battle.&quot;,&quot;hid&quot;:&quot;fe7u_\u6226\u95d8\u524d\u306e\u6570\u5b57_numbers_before_battle&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:53,&quot;range&quot;:&quot;2657-2762&quot;} -->
+<h2 class="sectionedit55" id="fe7u_行動範囲カラー_behavior_range_color">FE7U 行動範囲カラー / Behavior range color.</h2>
+<div class="level2">
+<div class="table sectionedit56"><table class="inline">
+	<tr class="row0">
+		<td class="col0">3FDD1C (+0x60)</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table25&quot;,&quot;secid&quot;:56,&quot;range&quot;:&quot;2828-2844&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE7U \u884c\u52d5\u7bc4\u56f2\u30ab\u30e9\u30fc \/ Behavior range color.&quot;,&quot;hid&quot;:&quot;fe7u_\u884c\u52d5\u7bc4\u56f2\u30ab\u30e9\u30fc_behavior_range_color&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:55,&quot;range&quot;:&quot;2763-2845&quot;} -->
+<h2 class="sectionedit57" id="fe7u_攻撃範囲カラー_attack_range_color">FE7U 攻撃範囲カラー / Attack range color.</h2>
+<div class="level2">
+<div class="table sectionedit58"><table class="inline">
+	<tr class="row0">
+		<td class="col0">3FDD7C (+0x60)</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table26&quot;,&quot;secid&quot;:58,&quot;range&quot;:&quot;2909-2925&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE7U \u653b\u6483\u7bc4\u56f2\u30ab\u30e9\u30fc \/ Attack range color.&quot;,&quot;hid&quot;:&quot;fe7u_\u653b\u6483\u7bc4\u56f2\u30ab\u30e9\u30fc_attack_range_color&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:57,&quot;range&quot;:&quot;2846-2926&quot;} -->
+<h2 class="sectionedit59" id="fe7u_謎カラー_データ上で存在している_nazo_color_exists_on_data">FE7U 謎カラー(データ上で存在している) / NAZO color (exists on data)</h2>
+<div class="level2">
+<div class="table sectionedit60"><table class="inline">
+	<tr class="row0">
+		<td class="col0">3FDDDC (+0x60 maybe)</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table27&quot;,&quot;secid&quot;:60,&quot;range&quot;:&quot;3024-3046&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE7U \u8b0e\u30ab\u30e9\u30fc(\u30c7\u30fc\u30bf\u4e0a\u3067\u5b58\u5728\u3057\u3066\u3044\u308b) \/ NAZO color (exists on data)&quot;,&quot;hid&quot;:&quot;fe7u_\u8b0e\u30ab\u30e9\u30fc_\u30c7\u30fc\u30bf\u4e0a\u3067\u5b58\u5728\u3057\u3066\u3044\u308b_nazo_color_exists_on_data&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:59,&quot;range&quot;:&quot;2927-3049&quot;} -->
+<h1 class="sectionedit61" id="fe6システムメニュー_system_menu">FE6システムメニュー / system menu</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE6\u30b7\u30b9\u30c6\u30e0\u30e1\u30cb\u30e5\u30fc \/ system menu&quot;,&quot;hid&quot;:&quot;fe6\u30b7\u30b9\u30c6\u30e0\u30e1\u30cb\u30e5\u30fc_system_menu&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:61,&quot;range&quot;:&quot;3050-3106&quot;} -->
+<h2 class="sectionedit62" id="fe6_名前表示枠_name_display_frame">FE6 名前表示枠 / Name display frame.</h2>
+<div class="level2">
+<div class="table sectionedit63"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">3189b4</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">319124</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">31906C</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table28&quot;,&quot;secid&quot;:63,&quot;range&quot;:&quot;3163-3204&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE6 \u540d\u524d\u8868\u793a\u67a0 \/ Name display frame.&quot;,&quot;hid&quot;:&quot;fe6_\u540d\u524d\u8868\u793a\u67a0_name_display_frame&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:62,&quot;range&quot;:&quot;3107-3205&quot;} -->
+<h2 class="sectionedit64" id="fe6_地形名表示枠_terrain_name_display_frame">FE6 地形名表示枠 / Terrain name display frame.</h2>
+<div class="level2">
+<div class="table sectionedit65"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">3189b4</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">1064D0</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">10ff78</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table29&quot;,&quot;secid&quot;:65,&quot;range&quot;:&quot;3273-3314&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE6 \u5730\u5f62\u540d\u8868\u793a\u67a0 \/ Terrain name display frame.&quot;,&quot;hid&quot;:&quot;fe6_\u5730\u5f62\u540d\u8868\u793a\u67a0_terrain_name_display_frame&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:64,&quot;range&quot;:&quot;3206-3315&quot;} -->
+<h2 class="sectionedit66" id="fe6_目的表示枠_goal_display_frame">FE6 目的表示枠 / Goal display frame.</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> &gt; FE6には目的表示は存在しない / There is no purpose indication on FE6.<br/>
+</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE6 \u76ee\u7684\u8868\u793a\u67a0 \/ Goal display frame.&quot;,&quot;hid&quot;:&quot;fe6_\u76ee\u7684\u8868\u793a\u67a0_goal_display_frame&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:66,&quot;range&quot;:&quot;3316-3460&quot;} -->
+<h2 class="sectionedit67" id="fe6_戦闘前の数字_numbers_before_battle">FE6 戦闘前の数字 / Numbers before battle.</h2>
+<div class="level2">
+<div class="table sectionedit68"><table class="inline">
+	<tr class="row0">
+		<td class="col0">IMG:</td><td class="col1">101AE4</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">TSA:</td><td class="col1">101E54</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">PAL:</td><td class="col1">101DD4</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table30&quot;,&quot;secid&quot;:68,&quot;range&quot;:&quot;3523-3564&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE6 \u6226\u95d8\u524d\u306e\u6570\u5b57 \/ Numbers before battle.&quot;,&quot;hid&quot;:&quot;fe6_\u6226\u95d8\u524d\u306e\u6570\u5b57_numbers_before_battle&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:67,&quot;range&quot;:&quot;3461-3565&quot;} -->
+<h2 class="sectionedit69" id="fe6_行動範囲カラー_behavior_range_color">FE6 行動範囲カラー / Behavior range color.</h2>
+<div class="level2">
+<div class="table sectionedit70"><table class="inline">
+	<tr class="row0">
+		<td class="col0">308E98 (+0x60)</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table31&quot;,&quot;secid&quot;:70,&quot;range&quot;:&quot;3630-3646&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE6 \u884c\u52d5\u7bc4\u56f2\u30ab\u30e9\u30fc \/ Behavior range color.&quot;,&quot;hid&quot;:&quot;fe6_\u884c\u52d5\u7bc4\u56f2\u30ab\u30e9\u30fc_behavior_range_color&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:69,&quot;range&quot;:&quot;3566-3647&quot;} -->
+<h2 class="sectionedit71" id="fe6_攻撃範囲カラー_attack_range_color">FE6 攻撃範囲カラー / Attack range color.</h2>
+<div class="level2">
+<div class="table sectionedit72"><table class="inline">
+	<tr class="row0">
+		<td class="col0">308EF8 (+0x60)</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table32&quot;,&quot;secid&quot;:72,&quot;range&quot;:&quot;3710-3726&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE6 \u653b\u6483\u7bc4\u56f2\u30ab\u30e9\u30fc \/ Attack range color.&quot;,&quot;hid&quot;:&quot;fe6_\u653b\u6483\u7bc4\u56f2\u30ab\u30e9\u30fc_attack_range_color&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:71,&quot;range&quot;:&quot;3648-3727&quot;} -->
+<h2 class="sectionedit73" id="fe6_謎カラー_データ上で存在している_nazo_color_exists_on_data">FE6 謎カラー(データ上で存在している) / NAZO color (exists on data)</h2>
+<div class="level2">
+<div class="table sectionedit74"><table class="inline">
+	<tr class="row0">
+		<td class="col0">308F58 (+0x60 maybe)</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table33&quot;,&quot;secid&quot;:74,&quot;range&quot;:&quot;3824-3846&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE6 \u8b0e\u30ab\u30e9\u30fc(\u30c7\u30fc\u30bf\u4e0a\u3067\u5b58\u5728\u3057\u3066\u3044\u308b) \/ NAZO color (exists on data)&quot;,&quot;hid&quot;:&quot;fe6_\u8b0e\u30ab\u30e9\u30fc_\u30c7\u30fc\u30bf\u4e0a\u3067\u5b58\u5728\u3057\u3066\u3044\u308b_nazo_color_exists_on_data&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:73,&quot;range&quot;:&quot;3728-&quot;} --></div>
+</body>
+</html>

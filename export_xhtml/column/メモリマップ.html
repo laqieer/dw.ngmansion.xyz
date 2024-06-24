@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>column:メモリマップ</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="column,メモリマップ"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=column:%E3%83%A1%E3%83%A2%E3%83%AA%E3%83%9E%E3%83%83%E3%83%97&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=column"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=column:%E3%83%A1%E3%83%A2%E3%83%AA%E3%83%9E%E3%83%83%E3%83%97"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=column:%E3%83%A1%E3%83%A2%E3%83%AA%E3%83%9E%E3%83%83%E3%83%97"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=column:%E3%83%A1%E3%83%A2%E3%83%AA%E3%83%9E%E3%83%83%E3%83%97"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='column';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"column:\u30e1\u30e2\u30ea\u30de\u30c3\u30d7","namespace":"column","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+
+<h2 class="sectionedit1" id="wram_0x02000000">WRAM 0x02000000</h2>
+<div class="level2">
+<div class="table sectionedit2"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">Address</th><th class="col1">Offset</th><th class="col2">長</th><th class="col3">概要</th><th class="col4">指定</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0" colspan="5"></td>
+	</tr>
+	<tr class="row2">
+		<td class="col0" rowspan="2">0200F158</td><td class="col1">0x?</td><td class="col2">1</td><td class="col3">出撃人数</td><td class="col4">「部隊」を選んだ時に更新</td>
+	</tr>
+	<tr class="row3">
+		
+	</tr>
+	<tr class="row4">
+		<td class="col0">02024CC2</td><td class="col1">-</td><td class="col2">1</td><td class="col3">キー判定</td><td class="col4">キーが押さ続けているかどうか。押されていない=0x0C 押され続けている間 0x02からカウントアップする？</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">02024CC4</td><td class="col1">-</td><td class="col2">2</td><td class="col3">キー判定</td><td class="col4">キーを押している間、キーコード(ビット)を格納 A:0x0100 B:0x0200 セレクト:0x0400 スタート:0x0800 右:0x10 00 左:0x2000 上:0x4000 下:0x8000 L:0x0001 R:0x0002</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">02024CC6</td><td class="col1">-</td><td class="col2">2</td><td class="col3">キー判定</td><td class="col4">02024CC4と同一だが更新周期が短い</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0">02024CCA</td><td class="col1">-</td><td class="col2">2</td><td class="col3">キー判定</td><td class="col4">キーを押している間、キーコードを格納 02024CC4と同一</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0">02024CCC</td><td class="col1">-</td><td class="col2">2</td><td class="col3">キー判定</td><td class="col4">最後に押されたキーコードを永続的に格納</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0">02029D8C</td><td class="col1">-</td><td class="col2">1</td><td class="col3">カーソルx座標</td><td class="col4">画面上でのx座標</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0">02029D8E</td><td class="col1">-</td><td class="col2">1</td><td class="col3">カーソルy座標</td><td class="col4">画面上でのy座標</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0" colspan="5">~02024E5C</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0">02024E60</td><td class="col1">0x4</td><td class="col2">2</td><td class="col3">BGM番号</td><td class="col4">08002398で書き込み</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0">02024E62</td><td class="col1">0x6</td><td class="col2">1</td><td class="col3">nazo</td><td class="col4">再生状態フラグ？ 同じく08002398で書き込み</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0">02024E63</td><td class="col1">0x7</td><td class="col2">1</td><td class="col3">nazo</td><td class="col4">同じく08002398で書き込み</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0" colspan="5">~0202BCEC</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0">0202BCF4</td><td class="col1">0x8</td><td class="col2">4</td><td class="col3">所持金</td><td class="col4"></td>
+	</tr>
+	<tr class="row17">
+		<td class="col0">0202BCF9</td><td class="col1">0xD</td><td class="col2">1</td><td class="col3">霧の濃さ</td><td class="col4">現在のマップの霧の濃さ 0=なし ターンエンドや画面更新命令発生時に適応されるっぽい</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0">0202BCFA</td><td class="col1">0xE</td><td class="col2">1</td><td class="col3">章指定</td><td class="col4">マップID</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0">0202BCFB</td><td class="col1">0xF</td><td class="col2">1</td><td class="col3">フェイズ</td><td class="col4">0=自軍,0x40=友軍,0x80=敵軍</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0">0202BCFC</td><td class="col1">0x10</td><td class="col2">1</td><td class="col3">ターン数</td><td class="col4"></td>
+	</tr>
+	<tr class="row21">
+		<td class="col0">0202BD00</td><td class="col1">0x14</td><td class="col2">1</td><td class="col3">設定</td><td class="col4">+0x01=,+0x02=<br/>
++0x04=,+0x08=<br/>
++0x10=,+0x20=<br/>
++0x40=むずかしい,+0x80=</td>
+	</tr>
+	<tr class="row22">
+		<td class="col0">0202BD07</td><td class="col1">0x1B</td><td class="col2">1</td><td class="col3">編指定</td><td class="col4">序盤=0x1,A編=0x2,F編=0x3</td>
+	</tr>
+	<tr class="row23">
+		<td class="col0">0202BD2C</td><td class="col1">0x40</td><td class="col2">1</td><td class="col3">設定</td><td class="col4">+0x01=？？,+0x02=地形ｳｨﾝﾄﾞｳオフ<br/>
++0x04=ﾕﾆｯﾄｳｨﾝﾄﾞｳフキダシ,+0x08=同オフ<br/>
++0x10=ｵｰﾄｶｰｿﾙオフ,+0x20=ﾒｯｾｰｼﾞｽﾋﾟｰﾄﾞふつう<br/>
++0x40=同はやい(60=最速),+0x80=ｹﾞｰﾑｽﾋﾟｰﾄﾞはやい</td>
+	</tr>
+	<tr class="row24">
+		<td class="col0">0202BD2D</td><td class="col1">0x41</td><td class="col2">1</td><td class="col3">設定</td><td class="col4">+0x2=効果音オン</td>
+	</tr>
+	<tr class="row25">
+		<td class="col0">0202BD2E</td><td class="col1">0x42</td><td class="col2">1</td><td class="col3">設定</td><td class="col4">アニメ設定:+0x0=1, +0x2=オフ, +0x4=個別, +0x6=2 難易度:+0x0=はじめて, +0x20=ふつうむずかしい</td>
+	</tr>
+	<tr class="row26">
+		<td class="col0" colspan="5">~0202BE48</td>
+	</tr>
+	<tr class="row27">
+		<td class="col0">0202BE48</td><td class="col1">0x0</td><td class="col2">4</td><td class="col3">ユニット表アドレス</td><td class="col4">0885xxxx</td>
+	</tr>
+	<tr class="row28">
+		<td class="col0">0202BE4C</td><td class="col1">0x4</td><td class="col2">4</td><td class="col3">クラス表アドレス</td><td class="col4">0885xxxx</td>
+	</tr>
+	<tr class="row29">
+		<td class="col0">0202BE50</td><td class="col1">0x8</td><td class="col2">1</td><td class="col3">レベル</td><td class="col4"></td>
+	</tr>
+	<tr class="row30">
+		<td class="col0">0202BE51</td><td class="col1">0x9</td><td class="col2">1</td><td class="col3">EXP</td><td class="col4"></td>
+	</tr>
+	<tr class="row31">
+		<td class="col0">0202BE53</td><td class="col1">0xB</td><td class="col2">1</td><td class="col3">所属と順番</td><td class="col4">進撃準備でのユニット並び順。 ただし上位2ビットは所属フラグ。 &amp; 0x80 だと敵軍、 &amp; 0x40 だと友軍(多分) それ以外だと自軍</td>
+	</tr>
+	<tr class="row32">
+		<td class="col0">0202BE54</td><td class="col1">0xC</td><td class="col2">4</td><td class="col3">状態</td><td class="col4">$631E004</td>
+	</tr>
+	<tr class="row33">
+		<td class="col0">0202BE58</td><td class="col1">0x10</td><td class="col2">1</td><td class="col3">X座標</td><td class="col4"></td>
+	</tr>
+	<tr class="row34">
+		<td class="col0">0202BE59</td><td class="col1">0x11</td><td class="col2">1</td><td class="col3">Y座標</td><td class="col4"></td>
+	</tr>
+	<tr class="row35">
+		<td class="col0">0202BE5A</td><td class="col1">0x12</td><td class="col2">1</td><td class="col3">最大HP</td><td class="col4"></td>
+	</tr>
+	<tr class="row36">
+		<td class="col0">0202BE5B</td><td class="col1">0x13</td><td class="col2">1</td><td class="col3">現在HP</td><td class="col4"></td>
+	</tr>
+	<tr class="row37">
+		<td class="col0">0202BE5C</td><td class="col1">0x14</td><td class="col2">1</td><td class="col3">力/魔力</td><td class="col4"></td>
+	</tr>
+	<tr class="row38">
+		<td class="col0">0202BE5D</td><td class="col1">0x15</td><td class="col2">1</td><td class="col3">技</td><td class="col4"></td>
+	</tr>
+	<tr class="row39">
+		<td class="col0">0202BE5E</td><td class="col1">0x16</td><td class="col2">1</td><td class="col3">速さ</td><td class="col4"></td>
+	</tr>
+	<tr class="row40">
+		<td class="col0">0202BE5F</td><td class="col1">0x17</td><td class="col2">1</td><td class="col3">守備</td><td class="col4"></td>
+	</tr>
+	<tr class="row41">
+		<td class="col0">0202BE60</td><td class="col1">0x18</td><td class="col2">1</td><td class="col3">魔防</td><td class="col4"></td>
+	</tr>
+	<tr class="row42">
+		<td class="col0">0202BE61</td><td class="col1">0x19</td><td class="col2">1</td><td class="col3">幸運</td><td class="col4"></td>
+	</tr>
+	<tr class="row43">
+		<td class="col0">0202BE62</td><td class="col1">0x1A</td><td class="col2">1</td><td class="col3">体格補正</td><td class="col4">補正がない場合0</td>
+	</tr>
+	<tr class="row44">
+		<td class="col0">0202BE63</td><td class="col1">0x1B</td><td class="col2">1</td><td class="col3">同行者ID</td><td class="col4"></td>
+	</tr>
+	<tr class="row45">
+		<td class="col0">0202BE65</td><td class="col1">0x1D</td><td class="col2">1</td><td class="col3">移動補正</td><td class="col4">補正がない場合0</td>
+	</tr>
+	<tr class="row46">
+		<td class="col0">0202BE66</td><td class="col1">0x1E</td><td class="col2">1</td><td class="col3">アイテム1ID</td><td class="col4">ここからアイテム欄 アイテムID,個数 と並んでいる</td>
+	</tr>
+	<tr class="row47">
+		<td class="col0">0202BE67</td><td class="col1">0x1F</td><td class="col2">1</td><td class="col3">アイテム1個数</td><td class="col4"></td>
+	</tr>
+	<tr class="row48">
+		<td class="col0">0202BE68</td><td class="col1">0x20</td><td class="col2">1</td><td class="col3">アイテム2ID</td><td class="col4"></td>
+	</tr>
+	<tr class="row49">
+		<td class="col0">0202BE69</td><td class="col1">0x21</td><td class="col2">1</td><td class="col3">アイテム2個数</td><td class="col4"></td>
+	</tr>
+	<tr class="row50">
+		<td class="col0">0202BE6A</td><td class="col1">0x22</td><td class="col2">1</td><td class="col3">アイテム3ID</td><td class="col4"></td>
+	</tr>
+	<tr class="row51">
+		<td class="col0">0202BE6B</td><td class="col1">0x23</td><td class="col2">1</td><td class="col3">アイテム3個数</td><td class="col4"></td>
+	</tr>
+	<tr class="row52">
+		<td class="col0">0202BE6C</td><td class="col1">0x24</td><td class="col2">1</td><td class="col3">アイテム4ID</td><td class="col4"></td>
+	</tr>
+	<tr class="row53">
+		<td class="col0">0202BE6D</td><td class="col1">0x25</td><td class="col2">1</td><td class="col3">アイテム4個数</td><td class="col4"></td>
+	</tr>
+	<tr class="row54">
+		<td class="col0">0202BE6E</td><td class="col1">0x26</td><td class="col2">1</td><td class="col3">アイテム5ID</td><td class="col4"></td>
+	</tr>
+	<tr class="row55">
+		<td class="col0">0202BE6F</td><td class="col1">0x27</td><td class="col2">1</td><td class="col3">アイテム5個数</td><td class="col4"></td>
+	</tr>
+	<tr class="row56">
+		<td class="col0">0202BE70</td><td class="col1">0x28</td><td class="col2">1</td><td class="col3">剣武器レベル</td><td class="col4"></td>
+	</tr>
+	<tr class="row57">
+		<td class="col0">0202BE71</td><td class="col1">0x29</td><td class="col2">1</td><td class="col3">槍武器レベル</td><td class="col4"></td>
+	</tr>
+	<tr class="row58">
+		<td class="col0">0202BE72</td><td class="col1">0x2A</td><td class="col2">1</td><td class="col3">斧武器レベル</td><td class="col4"></td>
+	</tr>
+	<tr class="row59">
+		<td class="col0">0202BE73</td><td class="col1">0x2B</td><td class="col2">1</td><td class="col3">弓武器レベル</td><td class="col4"></td>
+	</tr>
+	<tr class="row60">
+		<td class="col0">0202BE74</td><td class="col1">0x2C</td><td class="col2">1</td><td class="col3">杖武器レベル</td><td class="col4"></td>
+	</tr>
+	<tr class="row61">
+		<td class="col0">0202BE75</td><td class="col1">0x2D</td><td class="col2">1</td><td class="col3">理武器レベル</td><td class="col4"></td>
+	</tr>
+	<tr class="row62">
+		<td class="col0">0202BE76</td><td class="col1">0x2E</td><td class="col2">1</td><td class="col3">光武器レベル</td><td class="col4"></td>
+	</tr>
+	<tr class="row63">
+		<td class="col0">0202BE77</td><td class="col1">0x2F</td><td class="col2">1</td><td class="col3">闇武器レベル</td><td class="col4"></td>
+	</tr>
+	<tr class="row64">
+		<td class="col0">0202BE78</td><td class="col1">0x30</td><td class="col2">1</td><td class="col3">状態とターン数 YX Y=ターン数  X=状態</td><td class="col4">状態 1=ポイズン 2=スリープ 3=サイレス 4=バーサク 5=攻撃 6=守備 7=必殺 8=回避 9=病気? 例:0x21 毒を2ターン</td>
+	</tr>
+	<tr class="row65">
+		<td class="col0">0202BE7A</td><td class="col1">0x32</td><td class="col2">1</td><td class="col3">支援レベル1人目</td><td class="col4"></td>
+	</tr>
+	<tr class="row66">
+		<td class="col0">0202BE7B</td><td class="col1">0x33</td><td class="col2">1</td><td class="col3">支援レベル2人目</td><td class="col4"></td>
+	</tr>
+	<tr class="row67">
+		<td class="col0">0202BE7C</td><td class="col1">0x34</td><td class="col2">1</td><td class="col3">支援レベル3人目</td><td class="col4"></td>
+	</tr>
+	<tr class="row68">
+		<td class="col0">0202BE7D</td><td class="col1">0x35</td><td class="col2">1</td><td class="col3">支援レベル4人目</td><td class="col4"></td>
+	</tr>
+	<tr class="row69">
+		<td class="col0">0202BE7E</td><td class="col1">0x36</td><td class="col2">1</td><td class="col3">支援レベル5人目</td><td class="col4"></td>
+	</tr>
+	<tr class="row70">
+		<td class="col0">0202BE7F</td><td class="col1">0x37</td><td class="col2">1</td><td class="col3">支援レベル6人目</td><td class="col4"></td>
+	</tr>
+	<tr class="row71">
+		<td class="col0">0202BE80</td><td class="col1">0x38</td><td class="col2">1</td><td class="col3">支援レベル7人目</td><td class="col4"></td>
+	</tr>
+	<tr class="row72">
+		<td class="col0">0202BE90</td><td class="col1">0x48</td><td class="col2">4</td><td class="col3">ユニット表アドレス</td><td class="col4">以降2人目</td>
+	</tr>
+	<tr class="row73">
+		<td class="col0" colspan="5">~0203A818</td>
+	</tr>
+	<tr class="row74">
+		<td class="col0">0203A818</td><td class="col1">0x0</td><td class="col2">200</td><td class="col3">輸送隊の中身</td><td class="col4">[アイテムID] [個数]の2バイトで、100個</td>
+	</tr>
+	<tr class="row75">
+		<td class="col0" colspan="5">~0203A8EC</td>
+	</tr>
+	<tr class="row76">
+		<td class="col0">0203A8EC</td><td class="col1">0x0</td><td class="col2">4</td><td class="col3">ポインタ</td><td class="col4">味方の1一人目のデータがどこにあるか示すポインタ??</td>
+	</tr>
+	<tr class="row77">
+		<td class="col0" colspan="5">~0203AABE</td>
+	</tr>
+	<tr class="row78">
+		<td class="col0">0203AABE</td><td class="col1">0x0</td><td class="col2">2</td><td class="col3">変身パッチ</td><td class="col4">変身パッチで利用されるぽい</td>
+	</tr>
+	<tr class="row79">
+		<td class="col0" colspan="5">~0203AB10</td>
+	</tr>
+	<tr class="row80">
+		<td class="col0">0203AB10</td><td class="col1">0x0</td><td class="col2">?</td><td class="col3">太陽パッチ</td><td class="col4">パッチで利用されるっぽい</td>
+	</tr>
+	<tr class="row81">
+		<td class="col0" colspan="5">~0203AB20</td>
+	</tr>
+	<tr class="row82">
+		<td class="col0">0203AB20</td><td class="col1">0x0</td><td class="col2">4</td><td class="col3">太陽フラグ</td><td class="col4">パッチで利用されるっぽい</td>
+	</tr>
+	<tr class="row83">
+		<td class="col0" colspan="5">~0203AB40</td>
+	</tr>
+	<tr class="row84">
+		<td class="col0">0203AB40</td><td class="col1">0x0</td><td class="col2">4</td><td class="col3">スキルアニメ表示</td><td class="col4">スキルアニメ表示のワークメモリとして利用</td>
+	</tr>
+	<tr class="row85">
+		<td class="col0" colspan="5">~0203AB48</td>
+	</tr>
+	<tr class="row86">
+		<td class="col0">0203AB48</td><td class="col1">0x0</td><td class="col2">500</td><td class="col3">拡張輸送体</td><td class="col4">輸送体を拡張するパッチで利用 250個</td>
+	</tr>
+	<tr class="row87">
+		<td class="col0" colspan="5">~0203AFF0</td>
+	</tr>
+	<tr class="row88">
+		<td class="col0">0203AFF0</td><td class="col1">0x00</td><td class="col2">16</td><td class="col3">UnitSelectSFXパッチ</td><td class="col4">ユニット選択時に音を再生するパッチで利用</td>
+	</tr>
+	<tr class="row89">
+		<td class="col0" colspan="5">~0203ABEC</td>
+	</tr>
+	<tr class="row90">
+		<td class="col0">0203ABEC</td><td class="col1">0x0</td><td class="col2">4</td><td class="col3">ポインタ</td><td class="col4">操作キャラのデータへのポインタ</td>
+	</tr>
+	<tr class="row91">
+		<td class="col0" colspan="5">~0203AD0C</td>
+	</tr>
+	<tr class="row92">
+		<td class="col0">0203AD0C</td><td class="col1">0x0</td><td class="col2">?</td><td class="col3">ポインタ</td><td class="col4">スキル連続でしようしているらしい</td>
+	</tr>
+	<tr class="row93">
+		<td class="col0" colspan="5">~0203E880</td>
+	</tr>
+	<tr class="row94">
+		<td class="col0">0203E890</td><td class="col1">0x0</td><td class="col2">1</td><td class="col3">敗数</td><td class="col4">ID0x1の敗数</td>
+	</tr>
+	<tr class="row95">
+		<td class="col0">0203E89B</td><td class="col1">0xB</td><td class="col2">1</td><td class="col3">勝数</td><td class="col4">ID0x1の勝数(下位8bit)</td>
+	</tr>
+	<tr class="row96">
+		<td class="col0">0203E89B</td><td class="col1">0xC</td><td class="col2">2</td><td class="col3">勝数+戦闘数</td><td class="col4">ID0x1の勝数(上位2bit)+戦闘数 « 2</td>
+	</tr>
+	<tr class="row97">
+		<td class="col0">0203E8A0</td><td class="col1">0x10</td><td class="col2"> </td><td class="col3"> </td><td class="col4">ID0x2の先頭</td>
+	</tr>
+	<tr class="row98">
+		<td class="col0" colspan="5">最大0x45まで</td>
+	</tr>
+	<tr class="row99">
+		<td class="col0" colspan="5">~0203ECF0</td>
+	</tr>
+	<tr class="row100">
+		<td class="col0">0203ECF0</td><td class="col1">0x0</td><td class="col2">2</td><td class="col3">序章の章IDとターン数</td><td class="col4">ターン数 « 7 + 章ID</td>
+	</tr>
+	<tr class="row101">
+		<td class="col0">0203ECF2</td><td class="col1">0x2</td><td class="col2">2</td><td class="col3">序章のクリアタイム</td><td class="col4">クリア時刻(秒数)が入る</td>
+	</tr>
+	<tr class="row102">
+		<td class="col0">0203ECF4</td><td class="col1">0x4</td><td class="col2">2</td><td class="col3">1章の章IDとターン数</td><td class="col4">ターン数 « 7 + 章ID</td>
+	</tr>
+	<tr class="row103">
+		<td class="col0">0203ECF6</td><td class="col1">0x6</td><td class="col2">2</td><td class="col3">2章のクリアタイム</td><td class="col4">クリア時刻(秒数)が入る</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;31-5738&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;WRAM 0x02000000&quot;,&quot;hid&quot;:&quot;wram_0x02000000&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-5740&quot;} -->
+<h2 class="sectionedit3" id="iram_0x03000000">IRAM 0x03000000</h2>
+<div class="level2">
+<div class="table sectionedit4"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">Address</th><th class="col1">Offset</th><th class="col2">長</th><th class="col3">概要</th><th class="col4">指定</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0" colspan="5">~03000040</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">0300007C</td><td class="col1">0x3C</td><td class="col2">4</td><td class="col3">価格などの数字</td><td class="col4">文章中の @0080@0005 で取得できる数字</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0" colspan="5">~030004B0</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">030004B0</td><td class="col1">0x00</td><td class="col2">4</td><td class="col3">データ</td><td class="col4">イベント命令40050000XXXXXXXXで詰まれる数字</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">030004B4</td><td class="col1">0x04</td><td class="col2">4</td><td class="col3">データ</td><td class="col4">イベント命令40050100XXXXXXXXで詰まれる数字</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">030004B8</td><td class="col1">0x08</td><td class="col2">4</td><td class="col3">データ</td><td class="col4">イベント命令40050200XXXXXXXXで詰まれる数字</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0" colspan="5">~03005315</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0">03005315</td><td class="col1">0x0</td><td class="col2">30</td><td class="col3">道データ</td><td class="col4">画面に表示する道データ</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0" colspan="5">~03005260</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0" colspan="5">フラグ 0x01～0x28</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table1&quot;,&quot;secid&quot;:4,&quot;range&quot;:&quot;5771-6303&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;IRAM 0x03000000&quot;,&quot;hid&quot;:&quot;iram_0x03000000&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;5741-&quot;} --></div>
+</body>
+</html>

@@ -1,0 +1,319 @@
+音楽を奏でる楽器データについて\\ とてつもなく難しく広大です。\\ 
+http://i.imgur.com/aK30dfk.jpg
+
+====== voices(ボイステーブル、またはボイスグループ)  ======
+ボイステーブルは、12バイト固定の楽器データ(instrument、またはvoice)が128個以下で存在するものです\\ 楽器データは12バイト固定ですが、種類によっては12バイトの中に「ポインタ」を持つものがあります。\\ よって、移植する場合、単純に12バイト*128個をコピーすれば、いいというわけではないです。\\ 
+<code>
+struct instrument_code{
+    byte    type; //楽器の種類
+
+    ... 楽器の種類によって項目が異なる ...
+    ... 最大12バイト sizeof(instrument_code) == 12 ...
+    ... ただしポインタを持っているものがある ...
+};
+</code>
+
+===== sappyでの確認方法  =====
+緑の逆三角を押して、曲を再生すると、楽譜(track)を再生している楽器番号がわかります。\\ 赤枠でくくったところが、楽器番号です。\\ http://i.imgur.com/McRU7Rx.jpg
+
+\\ この楽器番号を元に、ボイステーブルの編集で、再生している楽器の詳細を知ることが出来ます。\\ \\ ボイステーブル編集を押すと、GUIで値を編集できます。\\ FEの場合、ボイステーブルは曲ごとにひとつずつ存在するケースがほとんどですが、まれに別の曲でも共有して利用しているものがあるので注意してください。\\ http://i.imgur.com/owUAhF6.jpg
+
+
+===== ポインタを保持している楽器  =====
+ポインタを保持している楽器がいろいろあるので、移植時には注意しましょう。\\ 
+|0x00 DirectSound|音データ？|
+|0x08 DirectSound Fixed freq|音データ？|
+|0x10 DirectSound Reverse Playback|音データ？|
+|0x18 DirectSound Fixed Freq And Reverse Playback|音データ？|
+|0x03 Wave Memory|波形データ？|
+|0x0B Wave Memory(消音プチノイズ)|波形データ？|
+|0x40 Multi Sample|別楽器データ キーボード割当データ|
+|0x80 DrumPart|別楽器データ|
+
+
+===== 構造体  =====
+このページの以下掲載しているstructは、sappyのボイステーブル編集を元にして調べたものです。\\ 
+==== 0x00 DirectSound(音?)  ====
+http://i.imgur.com/bZl7YBb.jpg
+
+<code>
+struct VoicesDirectSound {
+	BYTE type;			//楽器の種類 DrumPartは 0x00
+	BYTE torn;			//トーン 基準ノート値
+	BYTE zero1;			//常にゼロ
+	BYTE forced_pan;		//パン強制
+					//パン強制しない場合は0
+					//パンポット 0 だと  0x80
+					//パンポット 10 だと  0x8A
+					//たぶん左右の割り振りなはずなんだけど
+	void* musicdata;		//音データへ?
+	BYTE atk;			//これなに？
+	BYTE dec;			//これなに？
+	BYTE sus;			//これなに？
+	BYTE rel;			//これなに？
+ 
+	//sizeof(VoicesDirectSound) == 12
+};
+</code>
+
+
+似て異なるバージョンとして以下があります。\\ 0x08 DirectSound Fixed Freq(周波数固定の音?)\\ 0x10 DirectSound Reverse Playback(逆再生の音?)\\ 0x18 DirectSound Fixed Freq And Reverse Playback(周波数固定で且つ 逆再生の音?)\\ 
+音楽データ\\ http://i.imgur.com/R4bM42z.jpg
+\\ よくわからないが、長さが12バイト目に入っているらしい.\\ 12 + 4 + length = データ長\\ <code>
+struct musicdata{
+	BYTE nazo[12];		//不明
+	DWORD length;		//自分より下のデータ長
+	
+	BYTE data[length];	//lengthバイトデータが続く
+};
+</code>
+
+赤枠がデータ\\ 緑枠が長さ\\ 以降長さ分のデータがある時がある(今回は長さ0なのでなし)\\ 
+
+==== 0x01 SquareWave1  ====
+http://i.imgur.com/x9EIo9t.jpg
+
+<code>
+struct VoicesSquareWave1 {
+	BYTE type;			//楽器の種類 0x02
+	BYTE zero1;			//常にゼロ
+	BYTE zero2;			//常にゼロ
+	BYTE sweep;			//sweepshift (sweep  & 0x0f)
+					//0 Disable
+					//1 add 2bit
+					//2 add 3bit
+					//3 add 4bit
+					//4 add 5bit
+					//5 add 6bit
+					//6 add 7bit
+					//7 add 8bit
+					//8 Disable
+					//9 sub 2bit
+					//A sub 3bit
+					//B sub 4bit
+					//C sub 5bit
+					//D sub 6bit
+					//E sub 7bit
+					//F sub 8bit
+					//
+					//sweeptime (sweep  & 0xf0) >> 8
+					//0 Disable
+					//1 7.8ms
+					//2 15.6ms
+					//3 23.4ms
+					//4 31.3ms
+					//5 39.1ms
+					//6 46.9ms
+					//7 54.7ms
+
+	BYTE squarepattern;		//スクウェアパターン
+					//0	12.5%
+					//1	25.0%
+					//2	50.0%
+					//3	75.0%
+	BYTE zero4;			//常にゼロ
+	BYTE zero5;			//常にゼロ
+	BYTE zero6;			//常にゼロ
+	BYTE atk;			//これなに？
+	BYTE dec;			//これなに？
+	BYTE sus;			//これなに？
+	BYTE rel;			//これなに？
+
+	//sizeof(VoicesSquareWave1) == 12
+};
+</code>
+
+似て異なるバージョンとして以下があります。\\ 0x09 SquareWave1(消音プチノイズ)\\ 
+
+注意:\\ 主に効果音で使われている。BGMで利用すると効果音とぶつかった時に音が欠けます。\\ BGMでは使わないほうが無難です。\\ \\ 
+==== 0x02 SquareWave2  ====
+http://i.imgur.com/0q6YF4Z.jpg
+
+<code>
+struct VoicesSquareWave2 {
+	BYTE type;			//楽器の種類 0x02
+	BYTE zero1;			//常にゼロ
+	BYTE zero2;			//常にゼロ
+	BYTE zero3;			//常にゼロ
+	BYTE squarepattern;		//スクウェアパターン
+					//0	12.5%
+					//1	25.0%
+					//2	50.0%
+					//3	75.0%
+	BYTE zero4;			//常にゼロ
+	BYTE zero5;			//常にゼロ
+	BYTE zero6;			//常にゼロ
+	BYTE atk;			//これなに？
+	BYTE dec;			//これなに？
+	BYTE sus;			//これなに？
+	BYTE rel;			//これなに？
+
+	//sizeof(VoicesSquareWave2) == 12
+};
+</code>
+
+似て異なるバージョンとして以下があります。\\ 0x0A SquareWave2(消音プチノイズ)\\ 
+
+
+==== 0x03 Wave Memory(?)  ====
+http://i.imgur.com/4WpiiZi.jpg
+
+<code>
+struct VoicesWaveMemory {
+	BYTE type;			//楽器の種類 0x03
+	BYTE zero1;			//常にゼロ
+	BYTE zero2;			//常にゼロ
+	BYTE zero3;			//常にゼロ
+	void* wavedata;			//波形データへ?
+	BYTE atk;			//これなに？
+	BYTE dec;			//これなに？
+	BYTE sus;			//これなに？
+	BYTE rel;			//これなに？
+
+	//sizeof(VoicesWaveMemory) == 12
+};
+</code>
+
+似て異なるバージョンとして以下があります。\\ 0x0B Wave Memory(消音プチノイズ)\\ 
+
+波形について\\ http://i.imgur.com/ifzBb7I.jpg
+
+よくわかっていないのですが、なにか波形が格納されるらしい.\\ 16バイト固定\\ <code>
+struct wavedata{
+	BYTE nazo[16];		//波形データ
+};
+</code>
+
+波形編集ボタンから、変更画面に行ける\\ http://i.imgur.com/VAn2iQD.jpg
+
+
+==== 0x04 Noise(?)  ====
+http://i.imgur.com/AUzVga6.jpg
+
+<code>
+struct VoicesNoise {
+	BYTE type;			//楽器の種類 0x04
+	BYTE zero1;			//常にゼロ
+	BYTE zero2;			//常にゼロ
+	BYTE zero3;			//常にゼロ
+	BYTE noisepattern;		//ノイズパータン
+					//0 32768 Samples
+					//1 256samples
+	BYTE atk;			//これなに？
+	BYTE dec;			//これなに？
+	BYTE sus;			//これなに？
+	BYTE rel;			//これなに？
+
+	//sizeof(VoicesNoise) == 12
+};
+</code>
+
+
+似て異なるバージョンとして以下があります。\\ 0x0C Noise(消音プチノイズ)\\ 
+==== 0x08 DirectSound Fixed Freq(周波数固定の音?)  ====
+http://i.imgur.com/nAvPES6.jpg
+
+VoicesDirectSoundの周波数固定番？\\ よくドラムの中で使われるっぽい\\ 構造はDirectSoundとまったく一緒です。\\ type == 0x08 になっただけです\\ 
+==== 0x09 SquareWave1(消音プチノイズ)  ====
+http://i.imgur.com/vMIwqdi.jpg
+
+SquareWave1 の 消音プチノイズ？\\ type == 0x09 になっただけです\\ 
+
+==== 0x0A SquareWave2(消音プチノイズ)  ====
+http://i.imgur.com/9Xnedpb.jpg
+
+SquareWave2 の 消音プチノイズ？\\ type == 0x0A になっただけです\\ 
+==== 0x0B Wave Memory(消音プチノイズ)  ====
+http://i.imgur.com/jsfdk7j.jpg
+
+VoicesWaveMemory の 消音プチノイズ？\\ type == 0x0B になっただけです\\ 
+==== 0x0C Noise(消音プチノイズ)  ====
+http://i.imgur.com/LnSFnpd.jpg
+
+VoicesNoise の 消音プチノイズ？\\ type == 0x0C になっただけです\\ 
+
+==== 0x10 DirectSound Reverse Playback(逆再生の音?)  ====
+http://i.imgur.com/rv8HNqG.jpg
+
+VoicesDirectSoundの逆再生番?\\ あまり見たことがない。\\ 構造はDirectSoundとまったく一緒です。\\ type == 0x10 になっただけです\\ \\ ==== 0x18 DirectSound Fixed Freq And Reverse Playback(周波数固定で且つ 逆再生の音?)  ====
+http://i.imgur.com/yEu24Ua.jpg
+
+定義上作れる。\\ 構造はDirectSoundとまったく一緒です。\\ type == 0x18 になっただけです\\ \\ 
+==== 0x40 Multi Sample(エレクトーンみたいなもの)  ====
+http://i.imgur.com/HCDKTOl.jpg
+
+<code>
+struct VoicesMultiSample {
+	BYTE type;			//楽器の種類 MultiSampleは 0x80
+	BYTE zero1;			//常にゼロ
+	BYTE zero2;			//常にゼロ
+	BYTE zero3;			//常にゼロ
+	void* other_voice;	//ドラムの楽器セットへ
+	void* keyboard;		//キーボードの定義へ
+ 
+	//sizeof(VoicesMultiSample) == 12
+};
+</code>
+
+エレクトーンみたいなものです。\\ other_voiceで別の楽器を割り当てます。\\ keyboardで、楽器を割り当てる鍵盤を指定します。\\ \\ 右側の編集ボタンからkeyboardの割当画面が出せる\\ http://i.imgur.com/oG17GmQ.jpg
+
+<code>
+BYTE keyboard[128];//鍵盤の数
+</code>
+
+keyboardの鍵盤を押したら、other_voiceで指定した楽器に割り当てるかを書いていきます。\\ 
+<code>
+//例えば
+//ピアノの鍵盤みたいなものを想像して。
+鍵盤1 鍵盤2 鍵盤3 鍵盤4 鍵盤5 ... 鍵盤120
+</code>
+
+鍵盤1を押したら、楽器0番の音を出す\\ 鍵盤2を押したら、楽器1番の音を出す\\ 鍵盤3を押したら、楽器1番の音を出す\\ 鍵盤4を押したら、楽器2番の音を出す\\ 鍵盤5を押したら、楽器9番の音を出す\\ 鍵盤120を押したら、楽器0番の音を出す\\ \\ としたら、以下のようになります。\\ 鍵盤1 鍵盤2 鍵盤3 鍵盤4 鍵盤5 ... 鍵盤120\\ 0x00  0x01  0x01  0x02  0x09  ... 0x00\\ 
+
+データ上はこのようになります。\\ BYTE keyboard[128] = {0x00,0x01,0x01,0x02,0x09, ... ,0x00}\\ \\ 利用する楽器セットは、other_voicesで指定した楽器セットになります。\\ 0x01番の楽器というのは、other_voicesの楽器セットの1番の楽器セットです。\\ \\ ただし、例外が有ります。\\ 楽器は0-127までしかないです。\\ もし、128バイトデータを読みこんだとして、\\ 途中に 0x00 - 0x7F 以外のデータ(つまり、0x80-0xFF)が出てきたら、\\ 無視してすすまないといけません。\\ \\ 例\\ BYTE keyboard[128] = {0x00,0x01,0xF1,0x02,0x09, ... ,0x00}\\ \\ この場合、 keyboard[2] == 0xF1 ですので、これは楽器ではありません。\\ 
+
+==== 0x80 DrumPart(ドラム)  ====
+http://i.imgur.com/wOefeKn.jpg
+
+<code>
+struct VoicesDrumPart {
+	BYTE type;			//楽器の種類 DrumPartは 0x80
+	BYTE zero1;			//常にゼロ
+	BYTE zero2;			//常にゼロ
+	BYTE zero3;			//常にゼロ
+	void* other_voice;		//ドラムの楽器セットへ
+	BYTE zero4			//常にゼロ
+	BYTE zero5			//常にゼロ
+	BYTE zero6			//常にゼロ
+	BYTE zero7			//常にゼロ
+
+	//sizeof(VoicesDrumPart) == 12
+};
+</code>
+
+ドラムの場合、楽譜の音階が、楽器番号になるっぽい？
+
+楽譜データ(track)データで、このようになっていた場合(たぶん)
+<code>
+0xBD [ドラム楽器ID] [0x01] .... 0x80
+
+//解説すると、以下のようになるらしい
+0xBD 楽器を変更する命令
+ドラム楽器ID ドラム楽器として定義されている楽器だったら
+0x01 ドラム楽器のother_voice[0x01]の楽器の音を再生
+
+...
+
+0x80 0x80以上はコントロールコードらしい
+</code>
+
+
+==== 0x?? Unknown Param5  ====
+==== 0x?? Unknown Param6  ====
+==== 0x?? Unknown Param7  ====
+
+====== 参考資料  ======
+
+Basic Voice Table Editing in Sappy\\ http://feuniverse.us/t/basic-voice-table-editing-in-sappy/1075 \\ http://serenesforest.net/forums/index.php?showtopic=56934&p=3971497 \\ 
+
+

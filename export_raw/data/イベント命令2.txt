@@ -1,0 +1,395 @@
+■終了
+<code>
+ENDA //リターン命令
+NoFade; ENDA //イベント終了命令
+</code>
+====== 条件イベント系  ======
+===== ターン条件  =====
+■増援
+<code>
+WORD $20540; POIN ????????; CALL $08A603AC //通常増援
+WORD $20540; POIN ????????; CALL $08A603D4 //ハードのみ増援
+LOAD1 1 ????????; ENUN //カメラ移動無し増援
+</code>
+
+■AI変更
+<code>
+WORD $010540; BYTE $0 $0 0 0; CHAI $XX  //XXを[$0,$0](突撃AI)に変更
+</code>
+
+===== オブジェクト指定  =====
+■訪問(情報)
+<code>
+HouseEvent(textID,background) //会話($YYY),背景($XX)
+</code>
+
+■訪問(アイテム)
+<code>
+MUNO
+Text($XX,$YYY) //背景($XX)を表示して会話($YYY)発生
+MUSI; CALL $085B9D24; SVAL 0x3 $XX //アイテムID
+GIVEITEMTO 0xFFFF; NoFade; ENDA
+</code>
+or
+<code>
+VillageEventItem(textID,background,item) //(会話,背景CG,貰えるアイテム)
+</code>
+
+■訪問(ゴールド)
+<code>
+MUNO
+Text($XX,$YYY) //背景($XX)を表示して会話($YYY)発生
+CALL $085B9D24; SVAL 3 $XXXX //報酬額 
+GIVEITEMTOMAIN 0x0; MUSI; NoFade; ENDA
+</code>
+or
+<code>
+VillageEventMoney(textID,background,money) //(会話,背景CG,貰える金額)
+</code>
+
+■マップ変化
+<code>
+TILECHANGE $XX //[XX]部分マップ変化を実行
+SOUN $XX //[XX]効果音を鳴らす 
+</code>
+マップ変化IDはTiledなどで確認\\ 
+===== 会話条件  =====
+■もっとも単純な会話
+<code>
+Text(textID)
+NoFade; ENDA //イベント終了命令
+</code>
+
+■曲変更会話
+<code>
+MUSS $XXX //BGM一時変化
+STAL 33; TEXTSTART; TEXTSHOW $YYY //$YYY会話指定
+TEXTEND; REMA; MURE 2
+NoFade; ENDA //イベント終了命令
+</code>
+
+■寝返り
+<code>
+CUSA $XX //[XX]を自軍に変更
+NoFade; ENDA //イベント終了命令
+</code>
+Ｌ会話イベントの最後をこれにする\\ 
+
+===== 範囲条件  =====
+■ユニット進入
+<code>
+SVAL 2 $XX; CALL $08A602D4 //XXが進入したら
+</code>
+
+■〇軍進入
+<code>
+SVAL 2 0; CALL $08A602F0 //自軍が進入したら
+SVAL 2 1; CALL $08A602F0 //友軍が進入したら
+SVAL 2 2; CALL $08A602F0 //敵軍が進入したら
+</code>
+
+<code>
+SVAL 2 0; CALL $08A602F0; ENUF $XXX; NoFade; ENDA //自軍進入でフラグ[XXX]OFF
+</code>
+
+<code>
+SVAL 2 2; CALL $08A602F0; CALL $085B9EE8; NoFade; ENDA //敵が進入したらゲームオーバー
+</code>
+
+<code>
+SVAL 2 0; CALL $08A602F0; WORD $010540; BYTE $0 $0 $0 $0; CHAI $XX; NoFade; ENDA //自軍進入で[XX]が突撃AIに
+</code>
+===== 分岐条件  =====
+■ジャンプ(命令無視)
+<code>
+GOTO X //XXまでジャンプ
+LABEL X //ジャンプ先XX
+</code>
+
+LABEL 0を分岐終了にするのがスマート\\ LABEL命令は、同じイベント中に同一のIDで二度出すことは不可能\\ 
+■フラグ分岐
+<code>
+ENUT $XXX //[XXX]ﾌﾗｸﾞON
+ENUF $XXX //[XXX]ﾌﾗｸﾞOFF
+</code>
+
+<code>
+CHECK_EVENTID $XXX //[XXX]フラグ条件
+BEQ $XX 0xC 0 //オフの場合LABEL $XXまでジャンプ
+BNE $XX 0xC 0 //オンの場合LABEL $XXまでジャンプ
+</code>
+
+■生存ユニット分岐
+<code>
+CHECK_ALIVE $89 //ユニットXX生存条件
+BEQ X 0xC 0 //死亡の場合LABEL Xまでジャンプ
+BNE X 0xC 0 //生存の場合LABEL Xまでジャンプ
+</code>
+
+■動作中ユニット分岐
+<code>
+CHECK_ACTIVE //動作中ユニットID取得
+SVAL 7 $XX; BEQ $Y 0xC 7 //[XX]ならLABEL Yまでジャンプ
+</code>
+
+■会話グループ分岐
+<code>
+WORD $2E21 $FFFF3321 //動作中ユニットの会話グループ取得
+SVAL 6 $XX; BEQ $Y 0xC 6 //[XX]ならLABEL Yにジャンプ
+</code>
+
+選択中ユニットが会話グループ[XX]かを照合
+===== 特殊  =====
+
+■離脱と復帰
+<code>
+REMU $XX //離脱フラグオン（データは残るがゲーム上では見えなくなる）
+REVEAL $XX //離脱フラグオフ（ゲーム上で見えるようになる）
+</code>
+Ｌ新たなる旅立ちで違う方の主人公を消す命令
+
+■天候
+<code>
+WEA1 X //天気を変更する 00:晴れ 01:雪 02:吹雪 04:雨 05:マグマ 06:砂嵐 07:曇り
+VCWF XXXX //霧の濃さを調整 00:霧無し FFFF:ﾏｯﾌﾟ初期値
+</code>
+
+■マップ切り替え
+<code>
+LOMA $XX //[XX](座標指定されていればその座標にｶﾒﾗ移動)
+</code>
+
+====== 演出イベント系  ======
+■待機
+<code>
+STAL 60 //1秒=60f待機
+</code>
+
+===== 映像効果  =====
+■暗転
+<code>
+FADI $02 //[XX]の速さで暗転
+FADU $02 //[XX]の速さで暗転解除
+</code>
+■明転
+<code>
+FAWI $02 //[XX]の速さで明転
+FAWU $02 //[XX]の速さで明転解除
+</code>
+01遅い<->一瞬$20　01は本当に遅い\\ 
+■会話
+<code>
+TEXTSTART
+TEXTSHOW $XXX; TEXTEND //会話実行
+REMA //顔画像消去
+</code>
+・背景変更
+<code>
+SetBackground($XX) //(XX)背景画像表示
+ClearBackground //背景を消去してマップに戻る
+</code>
+
+■会話系略式
+<code>
+Text($XXX) //会話実行。会話後画像消去
+Text($XX,$YYY) //背景($XX)を表示して会話($YYY)後にマップに戻す
+</code>
+
+■会話系詳細
+<code>
+TEXTCONT; TEXTEND //会話中イベント
+</code>
+・会話中イベント例(BGM変化)
+<code>
+TEXTSHOW $XXX; TEXTEND //会話実行
+MUSS $XXX; STAL 33 //BGM一時変化
+TEXTCONT; TEXTEND //会話中イベント
+REMA
+</code>
+Ｌ会話中に@0080@0004命令があると、TEXTEND～TEXTCONT間のイベント実行。
+
+■通常使わない命令
+<code>
+REMOVEPORTRAITS //マップ消去
+SHORT $2140 $XX 0 0 //[XX]背景表示
+CLEAN //背景画像消去（マップに戻る場合に使用）
+</code>
+
+
+■BGM関連
+<code>
+MUSC $XXX //通常のBGM変更 $1220
+MUSCMID $7FFF //BGM消去 $1322
+</code>
+
+<code>
+MUSS $XXX //BGM一時変化 $1420
+MURE $4 //BGM一時変化解除 $1421
+</code>
+
+<code>
+MUNO //会話前BGM小さく$1520
+MUSI //会話後BGM大きく$1521
+</code>
+
+■効果音を鳴らす
+<code>
+SOUN $XX //効果音を鳴らす
+</code>
+
+■マップ変化
+<code>
+SOUN $XX //効果音
+TILECHANGE $XX //[XX]IDマップ変化を実行
+</code>
+
+<code>
+SHORT $2721 XX //[XX]IDマップ変化を戻す
+</code>
+
+■斬撃エフェクト
+<code>
+WORD $4320 //画面全体を被うエフェクト表示
+</code>
+
+===== ユニット効果  =====
+
+■ユニットXX消滅
+<code>
+DISA $XX //ユニット消去
+</code>
+Ｌデータから完全に抹消する\\ <code>
+ENUN //ユニットが移動完了するまで待機
+</code>
+
+■ユニット読み込み
+<code>
+LOAD1 1 $XXXXXXXX; ENUN //ユニット読み込み1　特に特徴がないのが特徴
+LOAD2 1 $XXXXXXXX; ENUN //ユニット読み込み2　味方を読んでも加入しない。未加入ユニットを読んだ場合はイベント終了時に即消滅する。死亡ユニットは出現しない
+LOAD1 0 $XXXXXXXX; ENUN //ユニット読み込み3 自軍ユニット加入?
+LOAD3 0 $XXXXXXXX; ENUN //ユニット読み込み4　ユニットIDを無視して、出撃表順に読み込む
+</code>
+
+■ユニット移動\\ <code>
+MOVE 0 $ZZ [4,5]; ENUN //[00]の速さで[ZZ]が[XX,YY]へ移動
+MOVEONTO 0 $XX $YY; ENUN //[00]の速さで[XX]を[YY]の上へ移動
+MOVE_1STEP ZZ XX YY; ENUN //[ZZ]速さ(通常00)[XX]が[YY]方向(00:← 01:→ 02:↓ 03↑)で1ﾏｽ移動
+
+</code>
+■所属変更
+<code>
+CUSA $XX //XXの所属を自軍に
+CUSE $XX //XXの所属を敵軍に
+CUSN $XX //XXの所属を友軍に
+</code>
+
+■イベント戦闘\\ [[https://github.com/ngmansion/FE8/wiki/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB#%E6%88%A6%E9%97%98%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88|イベントサンプル]]
+
+■ユニット死亡消滅
+<code>
+WORD $0B0540; SHORT $XX $YY; WORD $FFFE342D $FFFE342E //XXYYの座標のユニット死亡消滅
+</code>
+
+<code>
+SET_SOMETHING $XX; DISA_IF $XX //ユニットID死亡消滅
+</code>
+
+===== マップ効果  =====
+
+■ユニットカメラ
+<code>
+CAM1 $XX  //[ZZ]ﾕﾆｯﾄを画面に映す
+SHORT $2629 $XX //ﾕﾆｯﾄを画面中心に映す(画面隅は危険)
+</code>
+■座標カメラ移動
+<code>
+CAM1 [1,1]  //[XX、YY]を中心に映す(画面隅指定は危険)
+SHORT $2620; BYTE XX YY //[XX、YY]を指定座標地点を映す
+</code>
+
+■ユニットに[]枠
+<code>
+FlashCursor(characterID,60)
+</code>
+■座標[]枠
+<code>
+FlashCursor(X,Y,60)
+</code>
+複数地点光らせる
+<code>
+CUMO [X,Y]
+CUMO [X,Y]
+CUMO [X,Y]
+STAL 60; CURE
+</code>
+
+■カメラ追従
+<code>
+WORD $090228 //主人公にカメラ追従
+WORD $090220 //主人公カメラ追従解除
+</code>
+
+■現在地表示
+<code>
+BROWNBOXTEXT $ZZZZ [8,8] //[XX,YY]左上にZZZZﾃｷｽﾄ表示
+</code>
+会話背景中でも可能\\ 
+■地震
+<code>
+EARTHQUAKE_START 0x100 //0x0101だと縦揺れ？
+STAL 180
+EARTHQUAKE_END
+</code>
+
+■聖石を壊すエフェクト
+<code>
+GLOWING_CROSS $XX //charID
+STAL 60
+END_GLOWING_CROSS
+</code>
+
+===== 開始終了イベント  =====
+開始や終了イベントほぼピンポ\\ 
+■消去\\ 自軍の場合は表示を消すだけ。他はメモリから抹消
+<code>
+CLEA 0x0 //自軍全消去
+CLEE 0x0 //敵軍全消去
+CLEN 0x0 //友軍全消去
+</code>
+
+■進撃準備\\ <code>
+LOAD1 1 $XXXXXXXX; ENUN //敵をロード
+CALL $085B9DBC //進撃準備呼び出し
+CAM1 [07,19] //カメラ中心
+ENDA //終了
+</code>
+
+■マップ切り替え\\ <code>
+LOMA $XX //[XX](座標指定されていればその座標にｶﾒﾗ移動)
+</code>
+
+■次のマップへ
+<code>
+MNCH $XX //ﾜｰﾙﾄﾞﾏｯﾌﾟ有次のﾏｯﾌﾟ???
+MNC2 $XX //ﾜｰﾙﾄﾞﾏｯﾌﾟ無次のﾏｯﾌﾟ???
+MNC3 $XX //次のマップ(Exマップ用)
+MNC4 $0 //終章2で使われている？
+</code>
+
+
+■ASMコード読み込み
+<code>
+ASMC $XXXXXXXX+1
+</code>
+
+====== その他  ======
+作中1回くらいレベルの命令\\ 
+■エンディング総ターン表示
+<code>
+ASMC $080BD041; WORD $2220
+</code>
+
+■CCイベント
+<code>
+PROM Character Class Item
+</code>

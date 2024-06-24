@@ -1,0 +1,59 @@
+参考になるサイト
+https://www.dokuwiki.org/ja:syntax
+https://dokuwiki.oreda.net/dokuwiki-pukiwiki.html
+==== ページ編集を試してみたい ====
+
+[[:playground:playground]]
+
+==== 導入しているDokuWikiプラグインを知りたい ====
+
+[[:wiki:plugin]]
+
+==== 階層の下に新ページを作る ====
+階層の下は：で指定できます。
+
+例えば[[https://dw.ngmansion.xyz/doku.php?id=en:start|Englishページ]]の階層に新ページを作る場合は
+下記のようなページ名で作ればguideフォルダに新ページを作れます。
+<code>
+guide:新ページ
+</code>
+
+
+==== メディアファイルの埋め込み ====
+
+== 画像 ==
+<code>
+{{？？？}}
+</code>
+画像のURLを上記のように囲えばできます。
+
+画像URLの最後に?をつけると、画像の横サイズを指定することができます
+縦横比を保ったまま、縦サイズも縮小してくれます
+<code>
+{{https://www.nintendo.co.jp/fe/series/images/series08_img.jpg?300}}
+</code>
+== YouTube ==
+wiki編集画面に
+「動画共有サイトの動画を挿入」
+というボタンがあるので、それを選ぶといいです
+
+https://www.dokuwiki.org/plugin:vshare
+==== ページトップにあるインデックス(目次)の操作 ====
+以下の記述をどこかに置くと、機能します。
+
+== デフォルトで閉じる ==
+<code>
+~~CLOSETOC~~
+</code>
+== 指定範囲のクラスの見出しのみ表示する ==
+<code>
+~~TOC 2-3~~ 
+</code>
+== 指定範囲のクラスの見出しのみ表示しない ==
+<code>
+~~NOTOC 2-3~~ 
+</code>
+https://www.dokuwiki.org/plugin:toctweak
+
+テスト1
+テスト2

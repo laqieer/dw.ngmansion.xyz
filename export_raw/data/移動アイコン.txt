@@ -1,0 +1,25 @@
+[[https://github.com/ngmansion/FE8/tree/master/Sprite|他作品]]
+[[待機アイコン]]
+|Start Adr|0x1b2d84～|
+|Image No.|156～|
+|Pal Adr|0x5C7340～|
+|Width|4|
+まったく同じ画像もあります
+===== 移動アイコン  =====
+
+^01^02^03^04^05^06^07^08^09^0A^0B^0C^0D^0E^0F^10|
+|{{data:移動アイコン:01.png}}|{{data:移動アイコン:02.png}}|{{data:移動アイコン:03.png}}|{{data:移動アイコン:04.png}}|{{data:移動アイコン:05.png}}|{{data:移動アイコン:06.png}}|{{data:移動アイコン:07.png}}|{{data:移動アイコン:08.png}}|{{data:移動アイコン:09.png}}|{{data:移動アイコン:0A.png}}|{{data:移動アイコン:0B.png}}|{{data:移動アイコン:0C.png}}|{{data:移動アイコン:0D.png}}|{{data:移動アイコン:0E.png}}|{{data:移動アイコン:0F.png}}|{{data:移動アイコン:10.png}}|
+^11^12^13^14^15^16^17^18^19^1A^1B^1C^1D^1E^1F^20|
+|{{data:移動アイコン:11.png}}|{{data:移動アイコン:12.png}}|{{data:移動アイコン:13.png}}|{{data:移動アイコン:14.png}}|{{data:移動アイコン:15.png}}|{{data:移動アイコン:16.png}}|{{data:移動アイコン:17.png}}|{{data:移動アイコン:18.png}}|{{data:移動アイコン:19.png}}|{{data:移動アイコン:1A.png}}|{{data:移動アイコン:1B.png}}|{{data:移動アイコン:1C.png}}|{{data:移動アイコン:1D.png}}|{{data:移動アイコン:1E.png}}|{{data:移動アイコン:1F.png}}|{{data:移動アイコン:20.png}}|
+^21^22^23^24^25^26^27^28^29^2A^2B^2C^2D^2E^2F^30|
+|{{data:移動アイコン:21.png}}|{{data:移動アイコン:22.png}}|{{data:移動アイコン:23.png}}|{{data:移動アイコン:24.png}}|{{data:移動アイコン:25.png}}|{{data:移動アイコン:26.png}}|{{data:移動アイコン:27.png}}|{{data:移動アイコン:28.png}}|{{data:移動アイコン:29.png}}|{{data:移動アイコン:2A.png}}|{{data:移動アイコン:2B.png}}|{{data:移動アイコン:2C.png}}|{{data:移動アイコン:2D.png}}|{{data:移動アイコン:2E.png}}|{{data:移動アイコン:2F.png}}|{{data:移動アイコン:30.png}}|
+^31^32^33^34^35^36^37^38^39^3A^3B^3C^3D^3E^3F^40|
+|{{data:移動アイコン:31.png}}|{{data:移動アイコン:32.png}}|{{data:移動アイコン:33.png}}|{{data:移動アイコン:34.png}}|{{data:移動アイコン:35.png}}|{{data:移動アイコン:36.png}}|{{data:移動アイコン:37.png}}|{{data:移動アイコン:38.png}}|{{data:移動アイコン:39.png}}|{{data:移動アイコン:3A.png}}|{{data:移動アイコン:3B.png}}|{{data:移動アイコン:3C.png}}|{{data:移動アイコン:3D.png}}|{{data:移動アイコン:3E.png}}|{{data:移動アイコン:3F.png}}|{{data:移動アイコン:40.png}}|
+^41^42^43^44^45^46^47^48^49^4A^4B^4C^4D^4E^4F^50|
+|{{data:移動アイコン:41.png}}|{{data:移動アイコン:42.png}}|{{data:移動アイコン:43.png}}|{{data:移動アイコン:44.png}}|{{data:移動アイコン:45.png}}|{{data:移動アイコン:46.png}}|{{data:移動アイコン:47.png}}|{{data:移動アイコン:48.png}}|{{data:移動アイコン:49.png}}|{{data:移動アイコン:4A.png}}|{{data:移動アイコン:4B.png}}|{{data:移動アイコン:4C.png}}|{{data:移動アイコン:4D.png}}|{{data:移動アイコン:4E.png}}|{{data:移動アイコン:4F.png}}|{{data:移動アイコン:50.png}}|
+^51^52^53^54^55^56^57^58^59^5A^5B^5C^5D^5E^5F^60|
+|{{data:移動アイコン:51.png}}|{{data:移動アイコン:52.png}}|{{data:移動アイコン:53.png}}|{{data:移動アイコン:54.png}}|{{data:移動アイコン:55.png}}|{{data:移動アイコン:56.png}}|{{data:移動アイコン:57.png}}|{{data:移動アイコン:58.png}}|{{data:移動アイコン:59.png}}|{{data:移動アイコン:5A.png}}|{{data:移動アイコン:5B.png}}|{{data:移動アイコン:5C.png}}|{{data:移動アイコン:5D.png}}|{{data:移動アイコン:5E.png}}|{{data:移動アイコン:5F.png}}|{{data:移動アイコン:60.png}}|
+^61^62^63^64^65^66^67^68^69^6A^6B^6C^6D^6E^6F^70|
+|{{data:移動アイコン:61.png}}|{{data:移動アイコン:62.png}}|{{data:移動アイコン:63.png}}|{{data:移動アイコン:64.png}}|{{data:移動アイコン:65.png}}|{{data:移動アイコン:66.png}}|{{data:移動アイコン:67.png}}|{{data:移動アイコン:68.png}}|{{data:移動アイコン:69.png}}|{{data:移動アイコン:6A.png}}|{{data:移動アイコン:6B.png}}|{{data:移動アイコン:6C.png}}|{{data:移動アイコン:6D.png}}|{{data:移動アイコン:6E.png}}|{{data:移動アイコン:6F.png}}|{{data:移動アイコン:70.png}}|
+^71^72^73^74^75^76^77^78^79^7A^7B^7C^7D^7E^7F|
+|{{data:移動アイコン:71.png}}|{{data:移動アイコン:72.png}}|{{data:移動アイコン:73.png}}|{{data:移動アイコン:74.png}}|{{data:移動アイコン:75.png}}|{{data:移動アイコン:76.png}}|{{data:移動アイコン:77.png}}|{{data:移動アイコン:78.png}}|{{data:移動アイコン:79.png}}|{{data:移動アイコン:7A.png}}|{{data:移動アイコン:7B.png}}|{{data:移動アイコン:7C.png}}|{{data:移動アイコン:7D.png}}|{{data:移動アイコン:7E.png}}|{{data:移動アイコン:7F.png}}|

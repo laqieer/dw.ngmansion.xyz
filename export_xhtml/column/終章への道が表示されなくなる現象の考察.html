@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>column:終章への道が表示されなくなる現象の考察</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="column,終章への道が表示されなくなる現象の考察"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=column:%E7%B5%82%E7%AB%A0%E3%81%B8%E3%81%AE%E9%81%93%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E7%8F%BE%E8%B1%A1%E3%81%AE%E8%80%83%E5%AF%9F&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=column"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=column:%E7%B5%82%E7%AB%A0%E3%81%B8%E3%81%AE%E9%81%93%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E7%8F%BE%E8%B1%A1%E3%81%AE%E8%80%83%E5%AF%9F"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=column:%E7%B5%82%E7%AB%A0%E3%81%B8%E3%81%AE%E9%81%93%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E7%8F%BE%E8%B1%A1%E3%81%AE%E8%80%83%E5%AF%9F"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=column:%E7%B5%82%E7%AB%A0%E3%81%B8%E3%81%AE%E9%81%93%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E7%8F%BE%E8%B1%A1%E3%81%AE%E8%80%83%E5%AF%9F"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='column';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"column:\u7d42\u7ae0\u3078\u306e\u9053\u304c\u8868\u793a\u3055\u308c\u306a\u304f\u306a\u308b\u73fe\u8c61\u306e\u8003\u5bdf","namespace":"column","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+
+<p>
+緑パッチや怪盗パッチとかの大陸を周回させる改造で、<br/>
+後半の道が引かれなくなるバグが発生することが有ります。<br/>
+<br/>
+原因:道のワークメモリ(IRAM)がいっぱいになるためです。<br/>
+<br/>
+<br/>
+メモリ(IRAM)の 0x03005315 - 0x03005333 に、道IDらしきものが格納される。<br/>
+<br/>
+怪盗パッチで一度もリセットせずに進めた場合<br/>
+
+</p>
+<pre class="code">03005310:00 00 00 00 00 01 09 02 03 04 05 06 07 09 08 0a
+03005320:0b 0c 09 0e 0f 10 11 12 16 0e 0f 10 11 12 13 14
+03005330:15 17 18 19 20 00 00 00 16 00 00 00 00 00 4c 36</pre>
+
+<p>
+<br/>
+怪盗パッチで最後の方でリセットした状態<br/>
+
+</p>
+<pre class="code">03005310:00 00 00 00 00 01 02 03 04 05 06 07 08 09 0a 0b
+03005320:0c 0e 0f 10 11 12 13 14 15 16 17 18 19 ff ff ff
+03005330:ff ff ff 19 20 00 00 00 16 00 00 00 00 00 4c 36</pre>
+
+<p>
+<br/>
+道を何度も表示すると、道のワークメモリに同じ値が追記される。<br/>
+また、本来ならば消えている道を消さなければワークメモリに詰まれる。<br/>
+それによって、本来 ff と空き領域にならないといけないワークメモリが汚染される。<br/>
+そのため、道を新たに引きたくても、ワークメモリ不足になり、道が引けなくなるのではないか？<br/>
+<br/>
+
+</p>
+
+<h3 class="sectionedit1" id="なぜ_リセットすれば直るのか">なぜ、リセットすれば直るのか？</h3>
+<div class="level3">
+
+<p>
+このワーク領域は、セーブデータではないらしい。<br/>
+セーブデータは別に有り、リセットしてロードすると<br/>
+セーブデータから、道情報が再構成され、重複値が消える。<br/>
+リセットすると、 後半のff領域が復活しているのがわかる。<br/>
+そのため、ワークメモリに空きが出来、道が引ける。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u306a\u305c\u3001\u30ea\u30bb\u30c3\u30c8\u3059\u308c\u3070\u76f4\u308b\u306e\u304b\uff1f&quot;,&quot;hid&quot;:&quot;\u306a\u305c_\u30ea\u30bb\u30c3\u30c8\u3059\u308c\u3070\u76f4\u308b\u306e\u304b&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:1,&quot;range&quot;:&quot;1302-1749&quot;} -->
+<h3 class="sectionedit2" id="大陸を周回させる改造を行う場合の注意点">大陸を周回させる改造を行う場合の注意点</h3>
+<div class="level3">
+
+<p>
+大陸を周回させる改造を行う場合は、<br/>
+メモリ 03005310～ を表示させながら、重複した道が引かれないかを確認しながらやる必要があります。<br/>
+もしくは、ここにデータを格納するコードを直して、重複分は無視するようにプログラムを直すとか。<br/>
+いやらしいのは、リセットすると、空間が綺麗になってしまうので、発見しづらいこと。<br/>
+まじめにプレーしていると、たいてい後半の高難易度ステージは、1度ぐらいはリセットするから、発見できません。<br/>
+ステートセーブを使うと、一度もリセットしないプレーとなるので、このバグに陥りやすいです。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5927\u9678\u3092\u5468\u56de\u3055\u305b\u308b\u6539\u9020\u3092\u884c\u3046\u5834\u5408\u306e\u6ce8\u610f\u70b9&quot;,&quot;hid&quot;:&quot;\u5927\u9678\u3092\u5468\u56de\u3055\u305b\u308b\u6539\u9020\u3092\u884c\u3046\u5834\u5408\u306e\u6ce8\u610f\u70b9&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:2,&quot;range&quot;:&quot;1750-&quot;} --></div>
+</body>
+</html>

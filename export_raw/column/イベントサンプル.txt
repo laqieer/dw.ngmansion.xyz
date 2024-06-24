@@ -1,0 +1,203 @@
+
+===== 会話が変わる訪問村  =====
+<code>
+EVENT00:
+  MUSS $30 //BGM一時変化
+  STAL $20
+  CHECK_ACTIVE //現在動かしているユニットのID取得
+  SVAL 7 $13; BEQ $1 0xC 7 //アスレイ[13]ならLABEL 1へ
+  SVAL 7 $1; BEQ $2 0xC 7 //エイリーク[1]ならLABEL 2へ
+  Text($02,$974) //[02]の背景でルーテ会話[0974]を表示
+  GOTO 0
+  
+ LABEL 1
+  Text($02,$972) //[02]の背景でアスレイxルーテ会話[0972]を表示
+  GOTO 0
+  
+ LABEL 2
+  Text($02,$973) //[02]の背景でエイリークxルーテ会話[0973]を表示
+  LAVEL 0 //ジャンプ先[00]
+  MURE 0x4 //BGMを戻す
+  LOAD1 1 $08909184; ENUN //ルーテ登場
+  NoFade; ENDA //イベント終了命令
+</code>
+
+
+===== 離脱マップ  =====
+<code>
+EVENT00:
+  SVAL 2 0; CALL $08A602F0 //自軍なら誰が進入しても
+  CHECK_ACTIVE //選択中ユニット取得
+  SVAL 1 $XX //主人公ユニットID指定☆
+  BNE 1 0xC 1 //主人公以外はLABAL 1へジャンプ
+  
+  ASMC asm_alone+1	//マップ上に残っているユニットチェック
+  BEQ 2 0xC 0 //残っている場合はLABEL 2へジャンプ
+  
+  TEXTSHOW $XXX; TEXTEND //主人公離脱成功セリフ☆
+  REMA //会話終了
+  ENUT $3 //クリアフラグオン
+  GOTO 0
+  
+ LABEL 2
+   TEXTSHOW $XXX; TEXTEND //主人公離脱失敗セリフ☆
+   REMA //会話終了
+   GOTO 0
+  
+ LABEL 1
+  CALL escape_text //離脱セリフ呼び出し(アドレス指定可)
+  ASMC asm_ridatu+1	//(主人公を担いでなければ)ユニット離脱
+  
+ LABEL 0
+   NoFade; ENDA //イベント終了命令
+ 
+ escape_text:
+  MUNO; TEXTSTART
+  CHECK_ACTIVE //現在動かしているユニットのID取得
+  SVAL 7 $13; BEQ $1 0xC 7 //アスレイ[13]ならLABEL 1へ
+  SVAL 7 $1; BEQ $2 0xC 7 //エイリーク[1]ならLABEL 2へ
+  GOTO 0
+ LABEL $1; TEXTSHOW $XXX; GOTO 0
+ LABEL $2; TEXTSHOW $XXX
+ 
+ LABEL 0
+  TEXTEND; REMA; MUSI //会話終了
+  ENDA //リターン命令
+</code>
+
+===== 会話グループ別セリフ表示  =====
+<code>
+EVENT00:
+  SVAL 2 0; CALL $08A602F0 //自軍なら誰が進入しても
+  MUNO; TEXTSTART
+  WORD $2E21 $FFFF3321 //選択中ユニットの会話グループID取得
+  
+  SVAL 6 $1 //選択中ユニットが会話グループ$1かを照合
+  BEQ $1 0xC 6 //合っていたらLABEL 1へジャンプ
+  SVAL 6 $2; BEQ $2 0xC 6
+  SVAL 6 $3; BEQ $3 0xC 6
+  SVAL 6 $4; BEQ $4 0xC 6
+  SVAL 6 $5; BEQ $5 0xC 6
+  SVAL 6 $6; BEQ $6 0xC 6
+  SVAL 6 $7; BEQ $7 0xC 6
+  SVAL 6 $8; BEQ $8 0xC 6
+  SVAL 6 $9; BEQ $9 0xC 6
+  SVAL 6 $A; BEQ $A 0xC 6
+  SVAL 6 $B; BEQ $B 0xC 6
+  SVAL 6 $C; BEQ $C 0xC 6
+  SVAL 6 $D; BEQ $D 0xC 6
+  
+  TEXTSHOW $XXXX; GOTO 0 //会話グループ[0]用セリフ[XXXX]
+  LABEL $1; TEXTSHOW $XXX; GOTO 0 //会話グループ[1]用セリフ[XXXX]
+  LABEL $2; TEXTSHOW $XXX; GOTO 0
+  LABEL $3; TEXTSHOW $XXX; GOTO 0
+  LABEL $4; TEXTSHOW $XXX; GOTO 0
+  LABEL $5; TEXTSHOW $XXX; GOTO 0
+  LABEL $6; TEXTSHOW $XXX; GOTO 0
+  LABEL $7; TEXTSHOW $XXX; GOTO 0
+  LABEL $8; TEXTSHOW $XXX; GOTO 0
+  LABEL $9; TEXTSHOW $XXX; GOTO 0
+  LABEL $A; TEXTSHOW $XXX; GOTO 0
+  LABEL $B; TEXTSHOW $XXX; GOTO 0
+  LABEL $C; TEXTSHOW $XXX; GOTO 0
+  LABEL $D; TEXTSHOW $XXX;
+ LABEL 0
+  TEXTEND; REMA; MUSI //会話終了
+  NoFade; ENDA //イベント終了命令
+</code>
+
+
+==== 会話グループ例  ====
+<code>
+00=フランツ、フォルデ、クーガー
+01=エフラム、ヨシュア、ヒー様、ジスト
+02=ロス
+03=ゼト、ギリアム、カイル、オルソン、サレフ
+04=モルダ、ガルシア、デュッセル、（ドズラ）
+05=コーマ、レナック
+06=マリカ
+07=ターナ、テティス
+08=ラーチェル
+09=ルーテ
+0A=ヴァネッサ、シレーネ
+0B=エイリーク、ノール、アスレイ
+0C=ネイミー、ミルラ、ナターシャ
+0D=ユアン、アメリア
+</code>
+
+===== 戦闘イベント例  =====
+ヴァルター($45)がゼトに($2)に攻撃を仕掛け、ヴァルターが攻撃、ゼトがクリティカルで反撃
+<code>
+ StartBattle
+  NormalDamage(0,0)
+  CriticalHit(1,0)
+ EndAttack
+ FIG1 $45 $2 0
+</code>
+
+==== イベント戦闘詳細  ====
+戦闘内容入力――(前準備)
+<code>
+StartBattle
+  NormalDamage(combatant,damage)
+  CriticalHit(combatant,damage)
+  MissedAttack(combatant,damage)
+EndAttack
+</code>
+combatant=どちらが攻撃するか[0=攻撃側,1=反撃側]\\ damage=0なら通常ダメージ
+
+戦闘開始――
+<code>
+FIG1 $XX $YY 0 //戦闘画面有ｲﾍﾞﾝﾄ戦闘[XX]が[YY]に攻撃
+FIG2 $XX $YY 0 //戦闘画面有ｲﾍﾞﾝﾄ戦闘[XX]が[YY]に攻撃
+</code>
+
+<code>
+SHORT $0540 $B $XX $YY //座標からユニット取得
+FIG1 $XX $FFFF 0 //戦闘画面有ｲﾍﾞﾝﾄ戦闘[XX]が[取得座標ユニット]に攻撃
+FIG2 $XX $FFFF 0 //戦闘画面有ｲﾍﾞﾝﾄ戦闘[XX]が[取得座標ユニット]に攻撃
+</code>
+
+イベント戦闘ではHP残量や生死には反映されない\\ 戦闘会話フラグや死亡会話フラグは立てられる\\ 
+===== 支援Aの時にのみ可能な会話  =====
+
+<code>
+CHARASM $ZZZZ CBE01 [$XX,$YY] asm_A_Talk+1
+</code>
+
+===== 烈火の剣 序章再現風イベント  =====
+
+<code>
+BeginningScene:
+  REMOVEPORTRAITS //マップ要素消去
+  ASMC $0x48199 //名前入力画面
+  CLEAN //画面初期化
+
+  SetBackground($4F)
+  SETVAL 0xB 0xFFFFFFFF
+  SOLOTEXTBOXSTART
+  TEXTSHOW $08C3
+  TEXTEND
+  FADI 16
+  
+  WORD $1A22 //??(類0x1A21REMOVEPORTRAITS)
+  SHORT $2142 $00 0 2		//$XXがCGのID
+  MUSC $27 //BGM変更
+  FADU 3
+  TEXTSHOW $08C4
+  TEXTEND
+  
+  FADI 16
+  SetBackground($00)
+  TEXTSHOW $08C5
+  TEXTEND
+  
+  FADI 16
+  LOAD1 1 UNITS01; ENUN //ユニット読み込み1　特に特徴がないのが特徴
+  ENDA
+  
+  
+ UNITS01:
+    UNIT $01 $02 $00 Level(1,0,0) [14,9] 0 0 0 0 [$01,$6C] NoAI
+    WORD 0 0 0 0 0
+</code>

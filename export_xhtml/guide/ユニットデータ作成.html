@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>guide:ユニットデータ作成</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="guide,ユニットデータ作成"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=guide:%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E3%83%87%E3%83%BC%E3%82%BF%E4%BD%9C%E6%88%90&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E3%83%87%E3%83%BC%E3%82%BF%E4%BD%9C%E6%88%90"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E3%83%87%E3%83%BC%E3%82%BF%E4%BD%9C%E6%88%90"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E3%83%87%E3%83%BC%E3%82%BF%E4%BD%9C%E6%88%90"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='guide';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:\u30e6\u30cb\u30c3\u30c8\u30c7\u30fc\u30bf\u4f5c\u6210","namespace":"guide","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+
+<p>
+FEBuilderを活用して、Event Assenmbler用のユニットデータを作成する<br/>
+
+</p>
+
+<h2 class="sectionedit1" id="ユニット配置_fe_builder">ユニット配置(FE Builder)</h2>
+<div class="level2">
+
+<p>
+<a href="https://i.imgur.com/2uDLV2U.png" class="media" title="https://i.imgur.com/2uDLV2U.png" rel="nofollow"><img src="/lib/exe/fetch.php?tok=b08c13&amp;media=https%3A%2F%2Fi.imgur.com%2F2uDLV2U.png" class="media" alt="" /></a><br />
+FE Builderを使って、適当なユニットデータを作成します。今回は最初からいるユニットを出力させます。<br/>
+<br/>
+FE Builderは、ユニット群一列分を丸ごと出力できる(この画面ならオニール込みの3人分)<br/>
+<br />
+この画面で、選択アドレスをダブルクリック
+</p>
+
+<p>
+<a href="https://i.imgur.com/ypDIDzr.png" class="media" title="https://i.imgur.com/ypDIDzr.png" rel="nofollow"><img src="/lib/exe/fetch.php?tok=0a268a&amp;media=https%3A%2F%2Fi.imgur.com%2FypDIDzr.png" class="media" alt="" /></a><br />
+~この画面が出るので、当然EA出力を選ぶ
+</p>
+
+<p>
+<a href="https://i.imgur.com/lgvQis3.png" class="media" title="https://i.imgur.com/lgvQis3.png" rel="nofollow"><img src="/lib/exe/fetch.php?tok=fdf53e&amp;media=https%3A%2F%2Fi.imgur.com%2FlgvQis3.png" class="media" alt="" /></a><br />
+~必要なのは、この部分。<br />
+<br/>
+~特に変哲の無いユニットならば、これで終わりです。
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30e6\u30cb\u30c3\u30c8\u914d\u7f6e(FE Builder)&quot;,&quot;hid&quot;:&quot;\u30e6\u30cb\u30c3\u30c8\u914d\u7f6e_fe_builder&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;89-844&quot;} -->
+<h2 class="sectionedit2" id="移動後座標を整える">移動後座標を整える</h2>
+<div class="level2">
+
+<p>
+移動させながら出現させたい or 増援塞ぎをされたくない絶対出現させたいユニットを出現させる場合は、もうひとつ作業が必要です。<br/>
+出力したままの状態では、移動後座標が絶対アドレス固定になっています。なので、整形していきます。
+</p>
+<pre class="code">BYTE 0x68 0x3F 0x00 0x24;SHORT 0x020E;BYTE 0x00 1;POIN 0x908184;BYTE 0x1F 0x00 0x00 0x00 0x06 0x03 0x00 0x00 //オニール(戦士)  Lv:4
+BYTE 0x82 0x3F 0x00 0x0C;SHORT 0x01CE;BYTE 0x00 1;POIN 0x90818C;BYTE 0x1F 0x00 0x00 0x00 0x00 0x0A 0x00 0x00 //グラド兵(戦士)  Lv:1
+BYTE 0x80 0x3F 0x00 0x14;SHORT 0x01CE;BYTE 0x00 1;POIN 0x908194;BYTE 0x1F 0x00 0x00 0x00 0x00 0x12 0x02 0x00 //グラド兵(戦士)  Lv:2</pre>
+
+<p>
+オニールだけ抜粋します。
+</p>
+<pre class="code">BYTE 0x68 0x3F 0x00 0x24;SHORT 0x020E;BYTE 0x00 1;POIN 0x908184;BYTE 0x1F 0x00 0x00 0x00 0x06 0x03 0x00 0x00 //オニール(戦士)  Lv:4</pre>
+
+<p>
+変えるのは「POIN」の部分です
+</p>
+<pre class="code">BYTE 0x68 0x3F 0x00 0x24;SHORT 0x020E;BYTE 0x00 1;POIN moveto10_8;BYTE 0x1F 0x00 0x00 0x00 0x06 0x03 0x00 0x00 //オニール(戦士)  Lv:4</pre>
+
+<p>
+移動先データを作成
+</p>
+<pre class="code">BYTE 0x68 0x3F 0x00 0x24;SHORT 0x020E;BYTE 0x00 1;POIN moveto10_8;BYTE 0x1F 0x00 0x00 0x00 0x06 0x03 0x00 0x00 //オニール(戦士)  Lv:4
+moveto10_8:
+ REDA [10,8] 0 0 0 0</pre>
+<pre class="code">BYTE 0x68 0x3F 0x00 0x24;SHORT 0x020E;BYTE 0x00 1;POIN moveto10_8;BYTE 0x1F 0x00 0x00 0x00 0x06 0x03 0x00 0x00 //オニール(戦士)  Lv:4
+BYTE 0x82 0x3F 0x00 0x0C;SHORT 0x01CE;BYTE 0x00 1;POIN moveto8_6;BYTE 0x1F 0x00 0x00 0x00 0x00 0x0A 0x00 0x00 //グラド兵(戦士)  Lv:1
+BYTE 0x80 0x3F 0x00 0x14;SHORT 0x01CE;BYTE 0x00 1;POIN moveto9_6;BYTE 0x1F 0x00 0x00 0x00 0x00 0x12 0x02 0x00 //グラド兵(戦士)  Lv:2
+WORD 0 0 0 0 0
+ moveto10_8:
+  REDA [10,8] 0 0 0 0
+ moveto8_6:
+  REDA [8,6] 0 0 0 0
+ moveto9_6:
+  REDA [9,6] 0 0 0 0</pre>
+
+<p>
+以上の様に、必要なユニット分を作って下さい。
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u79fb\u52d5\u5f8c\u5ea7\u6a19\u3092\u6574\u3048\u308b&quot;,&quot;hid&quot;:&quot;\u79fb\u52d5\u5f8c\u5ea7\u6a19\u3092\u6574\u3048\u308b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;845-&quot;} --></div>
+</body>
+</html>

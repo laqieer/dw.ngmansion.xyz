@@ -1,0 +1,38 @@
+UPSパッチの作り方、適応方法
+
+ROMを公開することは多くの国で違法です。\\ そのため、あなたの改造を公開するときは、あなたの改造だけを取り出したupsパッチを作らないといけません。\\ FEBuilderGBAを利用すると、簡単にUPSパッチを作ることができます。\\ \\ ====== UPS Patchを作り方  ======
+===== StepA1  =====
+まず、貴方の改造したROMを、読み込んでください。
+
+===== StepA2  =====
+メニューの「ファイル」->「UPS差分で保存」を選択してください。\\ {{ https://i.imgur.com/6JvzhzP.jpg }}
+
+===== StepA3  =====
+差分を取るために、無改造ROMを指定してください。\\ FEBuilderGBAはカレントディレクトリに無改造ROMがあれば、自動的に推薦します。\\ そのため、たいていは何もしなくてもいいです。\\ {{ https://i.imgur.com/rYBZ2am.jpg }}
+
+===== StepA4  =====
+「差分をUPSパッチとして作成する」ボタンを押して、UPS差分を保存します。\\ {{ https://i.imgur.com/96P1elo.jpg }}
+
+===== StepA5  =====
+以上。\\ UPSファイルが作成されました。\\ {{ https://i.imgur.com/jPViO6B.jpg }}
+\\ 簡単ですね。\\ 
+
+====== UPS Patchの適応方法  ======
+貴方が作ったUPSや、他人が作ったUPSファイルを適応する方法を説明します。\\ こちらはもっと簡単です。\\ 
+===== StepB1  =====
+FEBuilderGBAでROMを開くときに、upsファイルを選択してください。\\ {{ https://i.imgur.com/qTZjl5z.jpg }}
+
+===== StepB2  =====
+差分を適応するための無改造ROMをいれてください。\\ FEBuilderGBAはカレントディレクトリに無改造ROMがあれば、自動的に推薦します。\\ そのため、たいていは何もしなくてもいいです。\\ {{ https://i.imgur.com/oqqz1D8.jpg }}
+
+===== StepB3  =====
+「UPSパッチを開く」ボタンを押してください。
+{{ https://i.imgur.com/HWf3iyX.jpg }}
+
+「UPSパッチを適応したROMを、UPSファイル名.gbaとして保存する」のチェックを消さなければ、\\ UPSパッチがあったディレクトリに、UPSパッチを適応した内容が、UPSファイル名.gbaとして保存されます。\\ 
+===== StepB4  =====
+パッチが適応されました。\\ {{ https://i.imgur.com/5VOgeuH.jpg }}
+\\ とても簡単です。\\ 
+====== UPS Patchの適応方法 その2  ======
+
+他の方法もあります。\\ UPSファイルをD&Dするだけで開くことができます。\\ \\ FEBuilderGBA.exe に、UPSファイルをD&Dする。\\ FEBuilderGBAのWelcome画面に、UPSファイルをD&Dする。\\ \\ どちらしても、FEBuilderGBAで簡単にUPSを作れます。\\ 

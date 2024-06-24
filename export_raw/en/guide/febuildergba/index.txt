@@ -1,0 +1,162 @@
+===== FEBuilderGBA =====
+{{https://i.imgur.com/UCSXqm3.jpg?400}}
+
+==== DOWNLOAD ====
+I want you to use the latest version.
+https://github.com/FEBuilderGBA/FEBuilderGBA/releases/latest
+
+
+==== How to obtain necessary tools to use FEBuilderGBA ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/LstjXn3.jpg?160x120}}|[[:en:guide:FEBuilderGBA:How_to_obtain_necessary_tools_to_use_FEBuilderGBA_EN]]|
+
+==== FeUniverse Thread ====
+http://feuniverse.us/t/fe-builder-gba/2845
+
+Do you have any Question? please, ask me(7743).
+You can also ask at the Discord. Click here for details.
+[[en:discord_chat]] 
+
+==== About the question. ====
+
+To ask a question please send report 7z.
+Please send report 7z to accurately reproduce the problem.
+How to make report 7z, please click here.
+|{{https://i.imgur.com/kge9Bgq.jpg?160x120}}|[[:en:guide:FEBuilderGBA:report7z]]|
+
+==== Video ====
+
+Creating Chapters in FEBuilderGBA
+[[https://www.youtube.com/watch?v=Z_HeNcLc6Jk|{{ https://i.imgur.com/7LreV9h.png?400 }}]]
+
+===== FEBuilderGBA Manual  English translation =====
+==== Village visit and village destruction(Tile change and event cond, and Escape point.) ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/VkMuWxu.jpg?160x120}}|[[:en:guide:FEBuilderGBA:Village visit and village destruction_EN]]|
+
+==== Reinforcement ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/FvE4iYm.jpg?160x120}}|[[:en:guide:FEBuilderGBA:Reinforcement_EN]]|
+
+==== Add magic effect ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/tyox7Tp.jpg?160x120}}|[[:en:guide:FEBuilderGBA:Add_magic_effect_EN]]|
+
+==== Musics.(midi import/export , s file import/export , Transplant songs from other GBA games) ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/RYJtJvO.jpg?120x160}}|[[:en:guide:FEBuilderGBA:Music_EN]]|
+
+==== Background by using color reduction tool considering TSA.(Maximum 8 pallets 8 15 colors = 120 colors About how to use.) ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/oQGFKE2.jpg?160x120}}|[[:en:guide:FEBuilderGBA:Set_the_background_using_the_reduction_color_tool_EN]]|
+
+==== Let's port FE7 Lyn to FE8(about Map Hover Icon、Map Move Icon、Portrait、Battle Animation) ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/zl2M2gc.jpg?160x120}}|[[:en:guide:FEBuilderGBA:Porting_FE7_lyn_to_FE8_EN]]|
+
+==== Item characteristics.(While setting up a super strong sword, I will explain the setting of item relation.) ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/BeUOK89.jpg?160x120}}|[[:en:guide:FEBuilderGBA:Item_characteristics_EN]]|
+
+
+==== Tile Changes at Snag(Broken_Wall),Chest,Events ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/OqpkKCw.jpg?160x120}}|[[:en:guide:FEBuilderGBA:How_to_make_Tile_Changes_at_Snag_(Broken_Wall),_Chest,_Event_EN]]|
+
+==== Config data structure of FEBuilderGBA ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/iPFRtmE.jpg?160x120}}|[[:en:guide:FEBuilderGBA:The config data structure of FEBuilderGBA_EN]]|
+
+==== Disassembler ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/fxIsbFe.jpg?160x120}}|[[:en:guide:FEBuilderGBA:Disassembler_EN]]|
+
+==== Automatic pointer calculation ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/3JkYdFf.jpg?160x120}}|[[:en:guide:FEBuilderGBA:Automatic pointer calculation_EN]]|
+
+==== How to make Victory condition ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/Bvk40yk.jpg?160x120}}|[[:en:guide:FEBuilderGBA:How to make Victory condition_EN]]|
+
+==== Automatic detection of bugs by 3 points DIFF====
+|< 70% 300px - >|
+|{{https://i.imgur.com/PGYPMy7.jpg?160x120}}|[[:en:guide:FEBuilderGBA:Automatic detection of bugs by 3 points DIFF_EN]]|
+
+==== How to make UPS patch, adaptation method_EN ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/jPViO6B.jpg?160x120}}|[[:en:guide:FEBuilderGBA:How to make UPS patch, adaptation method_EN]]|
+
+==== Keyboard shortcut for FEBuilderGBA ====
+|< 70% 300px - >|
+|{{guide:febuildergba:keybord_shortcut.jpg?160x120}}|[[:en:guide:FEBuilderGBA:Keyboard shortcut for FEBuilderGBA_EN]]|
+
+==== If your ROM freezes, read here ====
+|< 70% 300px - >|
+|{{https://i.imgur.com/0r0vb21.jpg?160x120}}|[[:en:guide:FEBuilderGBA:If your ROM freezes, read here_EN]]|
+
+==== Create Report Issue / report7z　====
+|< 70% 300px - >|
+|{{https://i.imgur.com/kge9Bgq.jpg?160x120}}|[[:en:guide:FEBuilderGBA:report7z]]|
+
+==== Rebuild ====
+|< 70% 300px - >|
+|{{guide:FEBuilderGBA:rebuild.png?160x120}}|[[:en:guide:FEBuilderGBA:rebuild.en]]|
+
+
+
+
+
+If you find a mistranslation, please fix it.
+When you press the second button from the left in this wiki, it becomes the editing screen.
+
+===== FAQ =====
+==== Where are Mulder and Vanessa? ====
+Mulder and Vanessa are in Frelia Castle.
+Map ID 0x38 It is Frelia castle.
+Their unit arrangement is 0x8B43D0 (FE8U)
+In FE8J, it becomes 0x908958 (FE8J).
+[[:en:qa]]
+
+==== When trying to move a chapter, it freezes. ====
+Please use the "Skip World Map Fix" patch.
+[[:en:qa]]
+
+==== I want to display text with FEEditorAdv notation. / I want to [A] instead of @ 0003. ====
+Please Change Game Script Notation of Option.
+The current FEBuilderGBA is set to FEEditor Adv notation automatically when there is no setting and if you are an English speaking user.
+
+
+==== FEBuilderGBA readme ===
+This is a ROM editor of FE GBA trilogy.
+Support to FE8J FE7J FE6 FE8U FE7U.
+
+With reference to the screen of Project_FE_GBA,
+We support a wide range of functions from image display, import export, map remodeling.
+
+I wanted this kind of function I thought when making a Kaitou patch!
+
+The origin of the name is from 某LAND.
+However, the development language is C#. (People inside are together ...)
+
+Naturally, open source.
+The license of the source code is GPL3.
+Please use it freely.
+
+To make this, I referred to various data and Communities.
+We would like to thank our predecessors who released the analyzed data.
+
+This software has nothing to do with official.
+We do not need donation as we are making this software Non commercial.
+
+If you really want to donate,donate to the charitable organization supporting the freedom of speech on the Internet, Freedom of Expression, including the EFF Electronic Frontier Foundation.
+
+Of course, you are free to write articles about FEBuilderGBA.
+In some cases, you may earn pocket money with affiliate. :)
+However, please do it at your own risk. :(
+
+If you have something you do not understand from hackrom, please read "Manual" in "Help".
+If you find a bug that you can not solve by any means, please create report.7z from 'File' -> 'Menu' -> 'Create Report Issue' and consult with the community.(Do NOT send the ROM)
+
+https://github.com/FEBuilderGBA/FEBuilderGBA
+

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>column:イベント条件</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="column,イベント条件"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=column:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E6%9D%A1%E4%BB%B6&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=column"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=column:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E6%9D%A1%E4%BB%B6"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=column:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E6%9D%A1%E4%BB%B6"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=column:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E6%9D%A1%E4%BB%B6"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='column';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"column:\u30a4\u30d9\u30f3\u30c8\u6761\u4ef6","namespace":"column","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#ユニットデータ">ユニットデータ</a></div></li>
+<li class="level1"><div class="li"><a href="#条件イベント系">条件イベント系</a></div></li>
+<li class="level2"><div class="li"><a href="#ターン条件">ターン条件</a></div></li>
+<li class="level2"><div class="li"><a href="#会話条件">会話条件</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#通常用">通常用</a></div></li>
+<li class="level3"><div class="li"><a href="#フラグ条件会話">フラグ条件会話</a></div></li>
+<li class="level3"><div class="li"><a href="#asm条件会話">ASM条件会話</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#オブジェクト指定">オブジェクト指定</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#まとめ">まとめ</a></div></li>
+<li class="level3"><div class="li"><a href="#イベント宝箱">イベント宝箱</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#範囲・常時条件">範囲・常時条件</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#常時条件">常時条件</a></div></li>
+<li class="level3"><div class="li"><a href="#asm常時条件">ASM常時条件</a></div></li>
+<li class="level3"><div class="li"><a href="#範囲条件">範囲条件</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h2 class="sectionedit1" id="ユニットデータ">ユニットデータ</h2>
+<div class="level2">
+<pre class="code">UNIT $80 $01 $00 Level(5,2,1) [0,0] 0 0 0 0 [$14,$6C] [0,0,0,0]
+REDA [x,y] 0 0 0 0</pre>
+
+<p>
+これでも可能ですが、ユニットデータは作成しづらいので<a href="/doku.php?id=%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%91%BD%E4%BB%A42:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E6%9D%A1%E4%BB%B6:%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E3%83%87%E3%83%BC%E3%82%BF%E4%BD%9C%E6%88%90" class="wikilink2" title="イベント命令2:イベント条件:ユニットデータ作成" rel="nofollow">FE Builder</a>を使いましょう
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30e6\u30cb\u30c3\u30c8\u30c7\u30fc\u30bf&quot;,&quot;hid&quot;:&quot;\u30e6\u30cb\u30c3\u30c8\u30c7\u30fc\u30bf&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-316&quot;} -->
+<h1 class="sectionedit2" id="条件イベント系">条件イベント系</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6761\u4ef6\u30a4\u30d9\u30f3\u30c8\u7cfb&quot;,&quot;hid&quot;:&quot;\u6761\u4ef6\u30a4\u30d9\u30f3\u30c8\u7cfb&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:2,&quot;range&quot;:&quot;317-353&quot;} -->
+<h2 class="sectionedit3" id="ターン条件">ターン条件</h2>
+<div class="level2">
+<pre class="code">TURN $ZZZ TBE01 [AA,BB] X</pre>
+
+<p>
+[ZZZ]=使用フラグ,[AA, BB]=ターン指定[X]0=自フェイズ前,4=緑フェイズ前,8=敵フェイズ前
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30bf\u30fc\u30f3\u6761\u4ef6&quot;,&quot;hid&quot;:&quot;\u30bf\u30fc\u30f3\u6761\u4ef6&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:3,&quot;range&quot;:&quot;354-536&quot;} -->
+<h2 class="sectionedit4" id="会話条件">会話条件</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u4f1a\u8a71\u6761\u4ef6&quot;,&quot;hid&quot;:&quot;\u4f1a\u8a71\u6761\u4ef6&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:4,&quot;range&quot;:&quot;537-562&quot;} -->
+<h3 class="sectionedit5" id="通常用">通常用</h3>
+<div class="level3">
+<pre class="code">CharacterEventBothWays($ZZZ,CBE01,$XX,$YY)</pre>
+
+<p>
+[ZZZ]=使用フラグ,[XX]=会話ユニットID1,[YY]=会話ユニットID2
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u901a\u5e38\u7528&quot;,&quot;hid&quot;:&quot;\u901a\u5e38\u7528&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:5,&quot;range&quot;:&quot;563-718&quot;} -->
+<h3 class="sectionedit6" id="フラグ条件会話">フラグ条件会話</h3>
+<div class="level3">
+<pre class="code">CharacterEvent($ZZZ,CBE01,$XX,$YY,$AAA)</pre>
+
+<p>
+[ZZZ]=使用フラグ,[XX]=話す選択ID,[YY]=話す相手ID[AAA]=条件フラグ
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30d5\u30e9\u30b0\u6761\u4ef6\u4f1a\u8a71&quot;,&quot;hid&quot;:&quot;\u30d5\u30e9\u30b0\u6761\u4ef6\u4f1a\u8a71&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:6,&quot;range&quot;:&quot;719-891&quot;} -->
+<h3 class="sectionedit7" id="asm条件会話">ASM条件会話</h3>
+<div class="level3">
+<pre class="code">CHARASM $ZZZ CBE01 $XX $YY pointer+1</pre>
+
+<p>
+[ZZZ]使用フラグ[XX]会話する人[YY]会話相手[pointer]ASM条件
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;ASM\u6761\u4ef6\u4f1a\u8a71&quot;,&quot;hid&quot;:&quot;asm\u6761\u4ef6\u4f1a\u8a71&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:7,&quot;range&quot;:&quot;892-1046&quot;} -->
+<h2 class="sectionedit8" id="オブジェクト指定">オブジェクト指定</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u6307\u5b9a&quot;,&quot;hid&quot;:&quot;\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u6307\u5b9a&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:8,&quot;range&quot;:&quot;1047-1084&quot;} -->
+<h3 class="sectionedit9" id="まとめ">まとめ</h3>
+<div class="level3">
+<pre class="code">House(0,LBE01,X,Y) //民家
+Seize(3,EndingScene,X,Y) // 制圧
+Door(X,Y) //通常扉
+DOOR $ZZ LBE01 [X,Y] 0x12 //イベント指定扉
+Chest($ZZ,X,Y) //宝箱
+ChestMoney(ZZZZ,X,Y) //お金入り宝箱
+Village($ZZ,LBE01,X,Y,$AA) //通常村(AA=村破壊フラグ)
+VILL $ZZ LBE01 [X,Y] //1マス村
+Armory(ShopList,X,Y) //武器屋
+Vendor(ShopList,X,Y) //道具屋
+SecretShop(ShopList,X,Y) //秘密店</pre>
+<pre class="code">ShopList:
+ SHLI $1 $2 $3 $4
+ ALIGN 4</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u307e\u3068\u3081&quot;,&quot;hid&quot;:&quot;\u307e\u3068\u3081&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:9,&quot;range&quot;:&quot;1085-1575&quot;} -->
+<h3 class="sectionedit10" id="イベント宝箱">イベント宝箱</h3>
+<div class="level3">
+<pre class="code">LOCA $ZZZ LBE01 [XX,YY] 0x14</pre>
+
+<p>
+[ZZZ]使用フラグ[pointer]開けると発生するイベント[XX,YY]座標
+</p>
+<pre class="code">PUSH
+ORG $8651a
+#incbin &quot;TrapTreasureFE8.gba&quot;
+POP</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a4\u30d9\u30f3\u30c8\u5b9d\u7bb1&quot;,&quot;hid&quot;:&quot;\u30a4\u30d9\u30f3\u30c8\u5b9d\u7bb1&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:10,&quot;range&quot;:&quot;1576-1795&quot;} -->
+<h2 class="sectionedit11" id="範囲・常時条件">範囲・常時条件</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u7bc4\u56f2\u30fb\u5e38\u6642\u6761\u4ef6&quot;,&quot;hid&quot;:&quot;\u7bc4\u56f2\u30fb\u5e38\u6642\u6761\u4ef6&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:11,&quot;range&quot;:&quot;1796-1830&quot;} -->
+<h3 class="sectionedit12" id="常時条件">常時条件</h3>
+<div class="level3">
+<pre class="code">AFEV $ZZZ MBE01 $AAA</pre>
+
+<p>
+[ZZZ]=使用フラグ[AAA]=条件フラグ
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5e38\u6642\u6761\u4ef6&quot;,&quot;hid&quot;:&quot;\u5e38\u6642\u6761\u4ef6&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:12,&quot;range&quot;:&quot;1831-1934&quot;} -->
+<h3 class="sectionedit13" id="asm常時条件">ASM常時条件</h3>
+<div class="level3">
+<pre class="code">ASME $ZZZ MBE01 pointer+1</pre>
+
+<p>
+[ZZZ]使用フラグ[pointer]ASM条件
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;ASM\u5e38\u6642\u6761\u4ef6&quot;,&quot;hid&quot;:&quot;asm\u5e38\u6642\u6761\u4ef6&quot;,&quot;codeblockOffset&quot;:10,&quot;secid&quot;:13,&quot;range&quot;:&quot;1935-2043&quot;} -->
+<h3 class="sectionedit14" id="範囲条件">範囲条件</h3>
+<div class="level3">
+<pre class="code">AREA $ZZZ MBE01 [X1,Y1] [X2,Y2]</pre>
+
+<p>
+[ZZZ]=使用フラグ[X1,Y1]=範囲左上[X2,Y2]=範囲右下
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u7bc4\u56f2\u6761\u4ef6&quot;,&quot;hid&quot;:&quot;\u7bc4\u56f2\u6761\u4ef6&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:14,&quot;range&quot;:&quot;2044-&quot;} --></div>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>zh:column:arm_asm_zh</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="zh,column,arm_asm_zh"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=zh:column:arm_asm_zh&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=zh:column"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=zh:column:arm_asm_zh"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=zh:column:arm_asm_zh"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=zh:column:arm_asm_zh"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='zh:column';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"zh:column:arm_asm_zh","namespace":"zh:column","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#调用函数">调用函数</a></div></li>
+<li class="level1"><div class="li"><a href="#条件的分支">条件的分支</a></div></li>
+<li class="level1"><div class="li"><a href="#代入">代入</a></div></li>
+<li class="level1"><div class="li"><a href="#汇编">汇编</a></div></li>
+<li class="level1"><div class="li"><a href="#no_gba_debugger_断点">no$gba debugger 断点</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+arm汇编程序上方便的事情,总结。<br/>
+
+</p>
+
+<h1 class="sectionedit1" id="调用函数">调用函数</h1>
+<div class="level1">
+<pre class="code">bl 相对地址跳转。但是,不跳到远处。
+b  无条件跳转。但是，不跳到远处。</pre>
+
+<p>
+bl和b的区别、8086 call和jmp。<br/>
+现在执行的地址保存在pc（r15寄存器）上。<br/>
+pc改写jmp的实现。。<br/>
+<br/>
+回到前面的定义、bl的情况是、堆栈而是lr(r14寄存器)利用。<br/>
+<br/>
+如果你想跳到绝对地址、如下。<br/>
+<br/>
+・bl置换命令<br/>
+
+</p>
+<pre class="code">ldr		r1,=$08AABBCC    ;bl 08AABBCC 置换
+mov		lr, r1
+@dcw	$F800 ; 置换pc和lr寄存器，确保返回目的地，跳到执行地址.</pre>
+
+<p>
+・b置换命令<br/>
+
+</p>
+<pre class="code">ldr		r1,=$08AABBCC 　;b 08AABBCC 置换
+mov		pc, r1 ;pc被置换并跳转.
+
+;因为生成的asm代码的第1字节是 0x00、
+;复制的时候、确认开始字节、请不要忘记复制0x00字节。</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u8c03\u7528\u51fd\u6570&quot;,&quot;hid&quot;:&quot;\u8c03\u7528\u51fd\u6570&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;48-860&quot;} -->
+<h1 class="sectionedit2" id="条件的分支">条件的分支</h1>
+<div class="level1">
+<pre class="code">cmp Ra,XX 的时候
+BEQ(Ra==XX)
+BNE(Ra!=XX)
+BGE(Ra&gt;=XX)
+BGT(Ra&gt;XX)
+BLE(Ra&lt;=XX)
+BLT(Ra&lt;XX)</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6761\u4ef6\u7684\u5206\u652f&quot;,&quot;hid&quot;:&quot;\u6761\u4ef6\u7684\u5206\u652f&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:2,&quot;range&quot;:&quot;861-996&quot;} -->
+<h1 class="sectionedit3" id="代入">代入</h1>
+<div class="level1">
+
+<p>
+代入数字的时候、 使用mov。<br/>
+
+</p>
+<pre class="code">mov r0,#0x01</pre>
+
+<p>
+取代指针的时候、使用ldr。<br/>
+
+</p>
+<pre class="code">ldr r0,=$0202BE48</pre>
+
+<p>
+在代入指针的时候、 使用mov的话、 虽然编译成功但会生成null值的代码。<br/>
+
+</p>
+<pre class="code">mov r0,=$0202BE48
+↓
+mov r0,=$00000000 ;实际生成这样的代码。危险。</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u4ee3\u5165&quot;,&quot;hid&quot;:&quot;\u4ee3\u5165&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:3,&quot;range&quot;:&quot;997-1356&quot;} -->
+<h1 class="sectionedit4" id="汇编">汇编</h1>
+<div class="level1">
+
+<p>
+反汇编<br/>
+
+</p>
+<pre class="code">disarm -t aaa.gba &gt; aaa.asm</pre>
+
+<p>
+汇编<br/>
+
+</p>
+<pre class="code">goldroad aaa.asm</pre>
+
+<p>
+但是，因为数值数据的解释两者不同，所以要注意。<br/>
+
+</p>
+<pre class="code">disarm、 mov r1,#11 、  r1在 &#039;&#039;0x11&#039;&#039; 是代入的意思、~
+goldroad、 mov r1,#11 、r1在 &#039;&#039;11&#039;&#039; 成为代入的意思。~</pre>
+
+<p>
+<br/>
+如果搞错了的话，会变成悲惨的事情、<br/>
+disarm的asm的数字数据、#0x11 和 0x 要加上十六进制。<br/>
+
+</p>
+<pre class="code">mov r1,#11
+↓
+mov r1,#0x11</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6c47\u7f16&quot;,&quot;hid&quot;:&quot;\u6c47\u7f16&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:4,&quot;range&quot;:&quot;1357-1863&quot;} -->
+<h1 class="sectionedit5" id="no_gba_debugger_断点">no$gba debugger 断点</h1>
+<div class="level1">
+
+<p>
+Debug→Define Break / Condition 可以做一个断点。<br/>
+<br/>
+详细的使用方法请参照这边<br />
+<a href="http://ngmansion.webcrow.jp/wp/2015/02/23/gba%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E6%94%B9%E9%80%A0%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/#nogba" class="urlextern" title="http://ngmansion.webcrow.jp/wp/2015/02/23/gba%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E6%94%B9%E9%80%A0%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/#nogba" rel="nofollow">http://ngmansion.webcrow.jp/wp/2015/02/23/gba%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E6%94%B9%E9%80%A0%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D/#nogba</a>
+</p>
+<pre class="code">08123456
+0x08123456 执行代码后停止。</pre>
+<pre class="code">[0202BE48]?
+0x0202BE48 读入就停止</pre>
+<pre class="code">[0202BE48]!
+0x0202BE48 写入就停止</pre>
+<pre class="code">[0202BE48]=34
+0x0202BE48在0x34会被写入后停止。(字节指定)</pre>
+<pre class="code">[0202BE48]=0xF0
+0x0202BE48在0xF0会被写入后停止。(字节指定)
+好像有错误、A-F想要使用的情况、必须作为 0xF0。
+0x即使没有数、16进数的标记、不接受。</pre>
+<pre class="code">r0=01234567
+r0寄存器 01234567 到了就停止</pre>
+<pre class="code">r0!=01234567
+r0寄存器 01234567 除此之外就停止
+r0&lt;&gt;01234567 相同。</pre>
+
+<p>
+方便的方法。<br/>
+如果有想找的值的情况。把那个值指定到r0-r2的话，大致可以找到。<br/>
+因为是寄存器机器，所以要使用的话，必须在哪里读到寄存器。<br/>
+
+</p>
+<pre class="code">r0=1234
+r1=1234
+r2=1234</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;no$gba debugger \u65ad\u70b9&quot;,&quot;hid&quot;:&quot;no_gba_debugger_\u65ad\u70b9&quot;,&quot;codeblockOffset&quot;:11,&quot;secid&quot;:5,&quot;range&quot;:&quot;1864-&quot;} --></div>
+</body>
+</html>

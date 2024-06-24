@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>column:memoryslot</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="column,memoryslot"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=column:memoryslot&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=column"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=column:memoryslot"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=column:memoryslot"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=column:memoryslot"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='column';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"column:memoryslot","namespace":"column","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#memoryslot">MemorySlot</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#実際の命令を見てみる">実際の命令を見てみる</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#キューについて">キューについて</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#実際の命令を見てみる1">実際の命令を見てみる</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+FE8から導入されたMemorySlotについて
+</p>
+
+<h1 class="sectionedit1" id="memoryslot">MemorySlot</h1>
+<div class="level1">
+
+<p>
+MemorySlotは、レジスタのようなものです。<br/>
+0x00-0x0Dまであります。サイズは各自4バイトです。<br/>
+
+</p>
+<div class="table sectionedit2"><table class="inline">
+	<tr class="row0">
+		<td class="col0">名前</td><td class="col1">役割</td><td class="col2">FE8Jアドレス</td><td class="col3">FE8Uアドレス</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">MemorySlot0</td><td class="col1">書き込み禁止 常に0にする必要がある</td><td class="col2">030004B0</td><td class="col3">030004B8</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">MemorySlot1</td><td class="col1">データの受け渡しで使われることがある</td><td class="col2">030004B4</td><td class="col3">030004BC</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">MemorySlot2</td><td class="col1">データの受け渡しで使われることがある</td><td class="col2">030004B8</td><td class="col3">030004C0</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">MemorySlot3</td><td class="col1"> </td><td class="col2">030004BC</td><td class="col3">030004C4</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">MemorySlot4</td><td class="col1"> </td><td class="col2">030004C0</td><td class="col3">030004C8</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">MemorySlot5</td><td class="col1"> </td><td class="col2">030004C4</td><td class="col3">030004CC</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0">MemorySlot6</td><td class="col1"> </td><td class="col2">030004C8</td><td class="col3">030004D0</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0">MemorySlot7</td><td class="col1">比較用のテンポラリとして使われることが多い</td><td class="col2">030004CC</td><td class="col3">030004D4</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0">MemorySlot8</td><td class="col1"> </td><td class="col2">030004D0</td><td class="col3">030004D8</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0">MemorySlot9</td><td class="col1"> </td><td class="col2">030004D4</td><td class="col3">030004DC</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0">MemorySlotA</td><td class="col1"> </td><td class="col2">030004D8</td><td class="col3">030004E0</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0">MemorySlotB</td><td class="col1">主に座標が読みこまれるのに利用されます</td><td class="col2">030004DC</td><td class="col3">030004E4</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0">MemorySlotC</td><td class="col1">主に処理の結果が返されます</td><td class="col2">030004E0</td><td class="col3">030004E8</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0">MemorySlotD</td><td class="col1">キューの最大値</td><td class="col2">030004E4</td><td class="col3">030004EC</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;205-1061&quot;} -->
+<p>
+値を取得した、比較する、条件系の命令は、メモリスロットに結果の値を返します。(主にMemorySlotCが利用されます)<br/>
+比較命令は、メモリスロットに対して行われます。
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;MemorySlot&quot;,&quot;hid&quot;:&quot;memoryslot&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;49-1291&quot;} -->
+<h2 class="sectionedit3" id="実際の命令を見てみる">実際の命令を見てみる</h2>
+<div class="level2">
+
+<p>
+序章で、敵が1体になると、ゼトがつぶやきます。
+</p>
+<pre class="code">24190000	//CHECK_ENEMIES   残り敵数を取得して MemorySlotCに格納
+4005070001000000410C00000C000700	//BNE(Jump to ConditionID label when !=,else execute the following)[ConditionID:0x0][Value:0x1] 
+           //2つの命令から成り立っています。分解してみましょう。
+           //4005070001000000    //MemorySlot7に1を代入
+           //410C00000C000700    //BNE MemorySlotC,MemorySlot7 の比較
+           //                    //つまり、残りの敵数と、1を比較します
+           //                    //if (残り敵数 != 1) { goto labelC; }
+           //                    //else{ 以下を実行します
+213B0200200E3C00223B0000	//[frame seconds:60][Character:0x2 ゼト]  //ゼトにフレームをあわせて
+201A0000201BD308201D0000221B0000	//Conversation event [conversation text:0x8D3 これで　残るは敵将のみ・・・] //彼がつぶやく
+//以下省略</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5b9f\u969b\u306e\u547d\u4ee4\u3092\u898b\u3066\u307f\u308b&quot;,&quot;hid&quot;:&quot;\u5b9f\u969b\u306e\u547d\u4ee4\u3092\u898b\u3066\u307f\u308b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;1292-2347&quot;} -->
+<h1 class="sectionedit4" id="キューについて">キューについて</h1>
+<div class="level1">
+
+<p>
+複雑な移動命令や、イベント戦闘などは、設定値がたくさん必要になるので、<br/>
+値をキューに積んで渡されます。<br/>
+<br />
+キューというよりもスタックに近いです。
+</p>
+
+<p>
+キューを利用する時は、MemorySlotD(キューの最大値)に 0 を代入して、既存のキューを消します。<br/>
+その後で、メモリスロットに値を書き込んで、SAVETOQUEUE命令で、キューに push します。<br/>
+SAVETOQUEUEされるたびに、キューが伸びるので、 MemorySlotDが自動的に更新されます。<br/>
+スタックレジスタみたいですね。<br/>
+<br/>
+キューは、MemorySlotD+4のアドレスからアドレスに存在します。<br/>
+
+</p>
+<div class="table sectionedit5"><table class="inline">
+	<tr class="row0">
+		<td class="col0">名前</td><td class="col1">FE8J</td><td class="col2">FE8U</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">キュー0</td><td class="col1">030004E8</td><td class="col2">030004F0</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">キュー1</td><td class="col1">030004EC</td><td class="col2">030004F4</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">…</td><td class="col1">…</td><td class="col2">…</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table1&quot;,&quot;secid&quot;:5,&quot;range&quot;:&quot;3101-3195&quot;} -->
+<p>
+いくつまであるかは資料がありませんでした。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30ad\u30e5\u30fc\u306b\u3064\u3044\u3066&quot;,&quot;hid&quot;:&quot;\u30ad\u30e5\u30fc\u306b\u3064\u3044\u3066&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;2348-3263&quot;} -->
+<h2 class="sectionedit6" id="実際の命令を見てみる1">実際の命令を見てみる</h2>
+<div class="level2">
+
+<p>
+オープニングイベントで、フランツがゼトと一緒に去っていく命令です。<br/>
+
+</p>
+<pre class="code">40050D0000000000400501000C0100002107000040050100000000002107000040050100CC02000021070000400501000000000021070000432F00000400000020300000 //Move Setting And Move immediately [UNIT:Character] to [EVENTUNITPOS:coordinate 1] to [EVENTUNITPOS:coordinate 2]
+
+//まとめられているので、命令ごとに分解してみましょう
+//40050D0000000000 //MemorySlotDに 0 を設定   キューの個数を0で初期化する
+  400501000C010000 //MemorySlot1に 座標を設定 y&lt;&lt;6 | x
+  21070000         //SAVETOQUEUE  キューに詰む命令
+  4005010000000000 //MemorySlot1に セパレータ用の0を設定する
+  21070000         //SAVETOQUEUE  キューに詰む命令
+  40050100CC020000 //MemorySlot1に座標を設定 y&lt;&lt;6 | x
+  21070000         //SAVETOQUEUE  キューに詰む命令
+  4005010000000000 //MemorySlot1に セパレータ用の0を設定する
+  21070000         //SAVETOQUEUE  キューに詰む命令
+  432F000004000000 //ユニットID:4 フランツに複雑な移動を設定する
+  20300000         //移動設定した命令を実行する</pre>
+
+<p>
+メモリスロットが導入される前の作品である FE7 では、<br />
+こういう情報を構造体に保持して、その構造体へのポインタを指定していました。<br/>
+FE8は、メモリスロットが導入されたので、構造体を使わずに、イベント命令から直接コードを書くことが出来ます。<br/>
+複雑にはなりましたが、汎用性は増えました。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5b9f\u969b\u306e\u547d\u4ee4\u3092\u898b\u3066\u307f\u308b&quot;,&quot;hid&quot;:&quot;\u5b9f\u969b\u306e\u547d\u4ee4\u3092\u898b\u3066\u307f\u308b1&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:6,&quot;range&quot;:&quot;3264-&quot;} --></div>
+</body>
+</html>

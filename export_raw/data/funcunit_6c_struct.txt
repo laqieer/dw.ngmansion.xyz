@@ -1,0 +1,112 @@
+====== FuncUnit(6C Struct)  ======
+
+FuncUnit(6C Struct)は、このゲームの幹線を制御するものです。\\ イベント命令と多少似て入るがまったく違う別物です。\\ 詳細は謎が多くてよくわかっていません。\\ \\ 
+===== Stanさんの解析資料  =====
+\\ [FE8] - Stan’s ASM Stuff \\ http://feuniverse.us/t/fe8-stans-asm-stuff/2376  \\ My ASM Notes の  6CNote.txt参照。\\ \\ 
+==== 6CNote.txtからの一部抜粋  ====
+Call Codes:
+<code>
+code sarg   larg   | (code is code id, sarg = short argument, larg = long argument)
+---- ---- --------
+0000 0000 00000000 | End (Deletes Self)
+0001 0000 pppppppp | Set Name Pointer (larg) (Thankfully used in FE8, not in other games)
+0002 0000 pppppppp | Call Routine (larg) (Argument: r0 = Struct Ptr)
+0003 0000 pppppppp | Set Loop routine (larg) And Yield
+0004 0000 pppppppp | Set Destructor (larg)
+0005 0000 pppppppp | Call new Child 6C (larg)
+0006 0000 pppppppp | Call new Child 6C (larg) And Yield
+0007 0000 pppppppp | Call new Global 6C (larg)
+0008 0000 pppppppp | Continue only if struct of type (larg) exists, Yields without forwarding otherwise
+0009 0000 pppppppp | Delete all struct of given type (larg)
+000A 0000 pppppppp | Clear callback for all struct of given type (larg)
+000B nnnn 00000000 | Defines Label (sarg) (doesn't do anything by itself)
+000C nnnn 00000000 | Goto Label (sarg)
+000D 0000 pppppppp | Jump code to pointer
+000E nnnn 00000000 | Sleep for given duration (sarg) (Sets callback to 0x08003290 (Sleep Callback))
+000F 00nn 00000000 | Store Byte (sarg) to Field 26 in Struct (unknown use yet, maybe for passing data to routines?)
+0010 0000 00000000 | Yeild (Stops exectution until next call to interpreter)
+0011 0000 00000000 | Delete Self if at least one other struct of same type exists
+0012 0000 00000000 | Set bit 4 in Field 27
+0013 0000 00000000 | Continue (Does nothing)
+0014 0000 pppppppp | Call Routine (larg). If Routine returns 1, yield without forwarding, continue otherwise
+0015 0000 00000000 | Continue (Does nothing)
+0016 0000 pppppppp | Call Routine (larg). If Routine returns 0, yield, continue otherwise.
+0017 0000 00000000 | Delete all other instances of same type
+0018 nnnn pppppppp | Call Routine (larg) with r0 = sarg & r1 = struct (as opposed to r0 = struct)
+0019 0000 00000000 | Same as 000B whithout being reckognized by 000C (joins 0013 and 0015 in the effectively useless club)
+</code>
+
+===== FE8JPでの処理  =====
+FE8JPでは以下のようになるようです。
+処理部:080032e0
+命令に対応するテーブル:08577688
+
+<code>
+Call Code Routine Table: 08577688
+0=>39 30 00 08 
+1=>45 30 00 08 
+2=>55 30 00 08 
+3=>C9 30 00 08 
+4=>D9 30 00 08 
+5=>F5 30 00 08 
+6=>11 31 00 08 
+7=>2D 31 00 08 
+8=>4D 31 00 08 
+9=>75 31 00 08 
+a=>91 31 00 08 
+b=>AD 31 00 08 
+c=>C9 31 00 08 
+d=>B9 31 00 08 
+e=>F9 31 00 08 
+f=>21 32 00 08 
+10=>41 32 00 08 
+11=>45 32 00 08 
+12=>C9 32 00 08 
+13=>35 32 00 08 
+14=>9D 30 00 08 
+15=>BD 32 00 08 
+16=>69 30 00 08 
+17=>85 32 00 08 
+18=>81 30 00 08 
+19=>AD 31 00 08
+</code>
+
+===== 構造体  =====
+<code>
+struct FuncUnit{
+	WORD  code; //命令 0x00 - 0x19 まである
+	WORD  sarg; //引数
+	DWORD larg; //引数 主にポインタ
+};
+</code>
+8バイトで構成されます。
+
+==== 例 スタッフロール  ====
+<code>
+6C Struct  08b3b414
+0E 00 00 00 00 00 00 00
+02 00 00 00 19 92 0C 08
+03 00 00 00 1D 94 0C 08
+0C 00 01 00 00 00 00 00
+0B 00 00 00 00 00 00 00
+02 00 00 00 9D 94 0C 08
+0E 00 01 00 00 00 00 00
+18 00 10 00 71 2D 0B 08
+14 00 00 00 35 2D 0B 08
+02 00 00 00 A9 94 0C 08
+0E 00 01 00 00 00 00 00
+02 00 00 00 F1 94 0C 08
+0E 00 01 00 00 00 00 00
+18 00 10 00 4D 2D 0B 08
+14 00 00 00 1D 2D 0B 08
+0B 00 01 00 00 00 00 00
+03 00 00 00 69 95 0C 08
+02 00 00 00 2D 3E 01 08
+03 00 00 00 21 41 01 08
+0E 00 1E 00 00 00 00 00
+02 00 00 00 AD 95 0C 08
+0E 00 01 00 00 00 00 00
+00 00 00 00 00 00 00 00
+</code>
+
+まだまだ謎が多い機能ですが、\\ ゲームの幹線を制御するものなので、これを理解できればなんでもできるはず・・・\\ 

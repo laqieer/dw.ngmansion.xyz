@@ -1,0 +1,123 @@
+===== FEBuilderGBA =====
+{{https://i.imgur.com/UCSXqm3.jpg?400}}
+
+==== DOWNLOAD ====
+希望你使用最新版本。
+https://github.com/FEBuilderGBA/FEBuilderGBA/releases/latest
+
+==== FEBuilderGBA需要的工具入手方法 ====
+|{{https://i.imgur.com/LstjXn3.jpg?160x120}}|[[:zh:guide:FEBuilderGBA:FEBuilderGBA需要的工具入手方法_ZH]]|
+
+==== FeUniverse主题 ====
+http://feuniverse.us/t/fe-builder-gba/2845
+
+你有什么问题吗？ 请问我(7743)。
+你也可以在 Discord 询问问题 
+[[zh:discord_chat]] 
+
+==== 关于问题 ====
+
+如有问题请发送report 7z。
+请发送report 7z以准确再现问题。
+如何制作report 7z，请点击这里。
+|{{https://i.imgur.com/kge9Bgq.jpg?160x120}}|[[:en:guide:FEBuilderGBA:report7z]]|
+
+==== 视频 ====
+
+Creating Chapters in FEBuilderGBA
+[[https://www.youtube.com/watch?v=Z_HeNcLc6Jk|{{ https://i.imgur.com/7LreV9h.png?400 }}]]
+
+===== FEBuilderGBA的解说 (中文翻译) =====
+==== 村庄访问和村庄破坏(地图变化、事件条件、脱离地点)  ====
+|{{https://i.imgur.com/VkMuWxu.jpg?160x120}}|[[:zh:guide:FEBuilderGBA:村庄访问和村庄破坏_ZH]]|
+
+==== 增援 ====
+|{{https://i.imgur.com/FvE4iYm.jpg?160x120}}|[[:zh:guide:FEBuilderGBA:増援_ZH]]|
+
+==== 追加魔法 ====
+|{{https://i.imgur.com/tyox7Tp.jpg?160x120}}|[[:zh:guide:FEBuilderGBA:追加魔法_ZH]]|
+
+==== 音乐(midi import/export s文件 import/export 关于来自其他游戏的歌曲移植) ====
+|{{https://i.imgur.com/RYJtJvO.jpg?160x120)|[[:zh:guide:FEBuilderGBA:音乐_ZH]]|
+
+==== 使用减色工具来设定背景 ====
+|{{https://i.imgur.com/oQGFKE2.jpg?160x120}}|[[:zh:guide:FEBuilderGBA:使用减色工具设定背景_ZH]]|
+
+==== FE7琳移植到FE8 (待机图标、移动图标、战斗动画) ====
+|{{https://i.imgur.com/zl2M2gc.jpg?160x120}}|[[:zh:guide:FEBuilderGBA:FE7琳移植到FE8_ZH]]|
+
+==== 道具特性 ====
+|{{https://i.imgur.com/BeUOK89.jpg?160x120}}|[[:zh:guide:FEBuilderGBA:道具特性_ZH]]|
+
+==== 古木(损坏的墙壁)、宝箱、事件中地图变化的制作方法 ====
+|{{https://i.imgur.com/OqpkKCw.jpg?160x120}}|[[:zh:guide:FEBuilderGBA:古木(损坏的墙壁)、宝箱、事件中地图变化的制作方法_ZH]]|
+
+==== 对话变更 ====
+|{{https://i.imgur.com/Mwo1Y9a.jpg?160x120}}|[[:zh:guide:FEBuilderGBA:对话变更_ZH]]|
+
+==== 背景和CG的变更方法 ====
+|{{https://i.imgur.com/g7Fn4fd.jpg?160x120}}|[[:zh:guide:FEBuilderGBA:背景和CG的变更方法_ZH]]|
+
+==== FEBuilderGBA的配置数据结构 ====
+|{{https://i.imgur.com/iPFRtmE.jpg?160x120}}|[[guide:FEBuilderGBA:FEBuilderGBA的配置数据结构_ZH]]|
+
+==== 反汇编 ====
+|{{https://i.imgur.com/fxIsbFe.jpg?160x120}}|[[:zh:guide:FEBuilderGBA:反汇编_ZH]]|
+
+==== 指针自动计算功能 ====
+|{{https://i.imgur.com/3JkYdFf.jpg?160x120}}|[[:zh:guide:FEBuilderGBA:指针自动计算功能_ZH]]|
+
+==== 胜利条件事件的制作方法 ====
+|{{https://i.imgur.com/Bvk40yk.jpg?160x120}}|[[:zh:guide:FEBuilderGBA:胜利条件事件的制作方法_ZH]]|
+
+==== 3点DIFF错误的自动检测 ====
+|{{https://i.imgur.com/PGYPMy7.jpg?160x120}}|[[:zh:guide:FEBuilderGBA:3点DIFF错误的自动检测_ZH]]|
+
+==== 如何制作UPS补丁，自适应​​方法_ZH ====
+|{{https://i.imgur.com/jPViO6B.jpg?160x120}}|[[:zh:guide:FEBuilderGBA:如何制作UPS补丁，自适应​​方法_ZH]]|
+
+
+如果您发现错误翻译，请修正它。
+按下左边第二个按钮时，它就变成了编辑屏幕。
+
+===== FAQ =====
+==== 摩达和瓦内萨在哪？ ====
+摩达和瓦内萨、在弗雷利亚城堡。
+地图ID 0x38 弗雷利亚城堡。
+他们的人物配置是 0x908958 。
+
+==== 试图移动一章时，它会冻结。 ====
+"如果不从自由地图中进入的话，就可以消除死机的限制。
+
+==== FEBuilderGBA readme ===
+它是FE GBA三部曲的ROM编辑器。
+它对应于 FE8J FE7J FE6 FE8U FE7U.
+
+参考Project_FE_GBA的屏幕，
+我添加了一个新发现的部分。
+我们支持图像显示，导入导出，地图重构等功能。
+
+当我制作一个kaitou补丁时，我想要这样的功能
+
+这个名字的起源是来自 某LAND。
+但是，开发语言是C＃。 （里面的人在一起...）
+它是C＃，但我担心性能，所以我认为它会工作很好。
+
+当然，开源。源代码的许可证是GPL3。
+请自由使用。
+
+我参考了各种数据和社区来做到这一点。
+我要感谢发布分析数据的前辈。
+
+这个软件与官方无关。
+我们不需要捐赠，因为我们正在制作该软件的非营利。
+如果你真的想捐赠，
+捐赠给支持言论自由的慈善组织，包括EFF电子前沿基金会在内的言论自由
+
+当然，您可以自由撰写关于FEBuilderGBA的文章。
+在某些情况下，您可以通过会员赚取零用钱。 :)
+但是，请自行承担风险。 :(
+
+如果你有一些你从hackrom不能理解的东西，请阅读“帮助”中的“手册”。
+如果您发现无法解决的错误，请在'菜单'的'文件' -> '问题报告工具'中创建report.7z，并咨询社区。（请不要发送ROM。）
+https://github.com/FEBuilderGBA/FEBuilderGBA

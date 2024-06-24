@@ -1,0 +1,72 @@
+GBAでは、大きな画像を8*8のタイルに分けて管理します。\\ そのタイルをどうやって表示するか決めるのがTSAデータです。\\ 小さい画像ではTSA不要のものが多いですが、CGなどの大きな画像を操作しようとするとTSAの問題にぶつかります。\\ TSAを活用すると、8*8のタイルごとにパレットを切替たりして16色以上の絵が出せたりしますが、使いこなすのがとてつもなく難しいです。\\ 
+====== TSAのデータ構造  ======
+{{column:tsa:tile2.png}}\\ 1つのタイルは8*8ピクセルからなります。\\ タイル番号は左上を0番としてスタートします。\\ 1つのデータはu16のデータです。(リトルエンディアン)\\ \\ C言語で表現するとこのようなデータ構造です。\\ <code>
+uint max = (width / 8)  * (height / 8);
+for(uint i = 0 ; i < max ; i ++ )
+{
+    u16 tileNumber        = data[i] & 0x03FF; //タイル番号
+    bool isHorizontalFlip = data[i] & 0x0400; //横反転するか
+    bool isVerticalFlip   = data[i] & 0x0800; //縦反転するか
+    u8  pallet            = (data[i] >> 12) & 0xf; //利用するパレット0-15個
+}
+</code>
+
+
+ビット列に対して、このようになります。\\ <code>
+FE DC BA 98 76 54 32 10
+11 11 11 11 11 11 11 11
+         |------------|
+         3  F     F    ---> タイルナンバー   0 ～ 1023
+       |-> 横(Horizontal )反転するかどうか？ 0=しない 1=する
+      |--> 縦(Vertical )反転するかどうか？   0=しない 1=する
+|---| ---> パレット 0-15
+</code>
+
+
+
+こちらに詳しい解説があります。\\ gbatek LCD VRAM BG Screen Data Format (BG Map)\\ http://problemkaputt.de/gbatek.htm#lcdvrambgscreendataformatbgmap \\ 
+[FE7] World Map! + TSA Tips\\ http://feuniverse.us/t/fe7-world-map-tsa-tips/165 \\ 
+
+====== TSAをGUIで作る方法  ======
+===== step_a01  =====
+GBA Graphics Editor で生成できます。\\ GBA Graphics Editorを立ち上げて、romを読み込み、\\ Window->Control を表示してください。\\ 
+===== step_a02  =====
+Use TSA にチェックを入れます。\\ TSAのアドレスを入れます。\\ もし、TSAが圧縮されているならば、「Compressed」をチェックします。\\ \\ これでTSAを利用した画像が見れます。\\ 
+===== step_a03  =====
+例えば、OPデモのワールドマップは、このような感じです。\\ 
+|画像アドレス|0xB4BBA0|
+|パレット|0xB4FCD4|
+|TSA|0xB4F758|
+
+
+TSAを設定しない時\\ {{column:tsa:no_tsa.png}}
+\\ TSAを設定した時\\ {{column:tsa:use_tsa.png}}
+
+===== step_a04  =====
+TSAを変更した場合、Tileの項目で変更できます。\\ 注意!\\ この内容は変更したら即反映されます。\\ 圧縮TSAの場合、サイズが可変長になるので、後ろのデータを壊すことがあります。\\ 必ずバックアップをとってください。\\ \\ {{column:tsa:edit_tsa.png}}
+\\ \\ いちいち変更しなくてはいけないのは変動なので、\\ キーボード操作自動化ソフトとかを使ってマクロを作るといいです。\\ OPデモのワールドマップは、HiMacroExで以下のように定義して、一気に作成させました。\\ \\ <code>
+W WindowsForms10.Window.8.app.0.33c0d9d,Tile Control
+LCtrl Down
+A
+C
+LCtrl Up
+LShift Down
+Tab
+LShift Up
+LCtrl Down
+A
+V
+LCtrl Up
+Tab
+Tab
+LCtrl Down
+A
+LCtrl Up
+0
+LShift Down
+Tab
+LShift Up
+↑
+</code>
+\\ \\ 圧縮解凍はlz77ですので、Nintenlords Compressorなどを使ってください。\\ \\ ====== 背景用に240x160 16色の画像を表示する無圧縮TSA  ======
+背景用に240x160の16色を表示する無圧縮TSAが、ROM内に 0xAA7330 として定義されています。\\ このTSAで動くものについては、何もせずにこれを指定するだけで利用できます。\\ 

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>data:サンプル</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="data,サンプル"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=data:%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=data"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=data:%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=data:%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=data:%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='data';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"data:\u30b5\u30f3\u30d7\u30eb","namespace":"data","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+
+<p>
+長いイベント命令のサンプルは、ここに隔離します<br/>
+まだ体裁とかは考えていません、増えてきたら考えます<br/>
+
+</p>
+
+<h3 class="sectionedit1" id="イベント分岐">イベント分岐</h3>
+<div class="level3">
+
+<p>
+■ユニットでセリフが変わる訪問村（5章異形の者たち　ルーテ加入村　微改変）
+</p>
+<pre class="code">20143000 &#039;&#039;[30]曲変更
+200E2100 &#039;&#039;[0021]ﾌﾚｰﾑ分の待機
+212E0000 &#039;&#039;現在動かしているユニットのID取得
+40050700 [13]000000 400C[01]00 0C000700 &#039;&#039;アスレイ[13]ならジャンプ先[01]へ
+40050700 [01]000000 400C[02]00 0C000700 &#039;&#039;エイリーク[01]ならジャンプ先[02]へ
+
+40050200 02000000 40050300 74090000 400A0000 4804A608 &#039;&#039;[02]の背景でルーテ会話[0974]を表示
+2009[00]00 &#039;&#039;2008[00]00までジャンプ
+
+2008[01]00 &#039;&#039;ジャンプ先[01]
+40050200 02000000 40050300 72090000 400A0000 4804A608&#039;&#039;[02]の背景でアスレイxルーテ会話[0972]を表示
+2009[00]00 &#039;&#039;2008[00]00までジャンプ
+
+2008[02]00 &#039;&#039;ジャンプ先[02]
+40050200 02000000 40050300 73090000 400A0000 4804A608&#039;&#039;[02]の背景でエイリークxルーテ会話[0973]を表示
+
+2008[00]00 &#039;&#039;ジャンプ先[00]
+21140400 &#039;&#039;BGMを戻す
+402C0100 84919008 20300000 &#039;&#039;ルーテ登場
+28020700 20010000 &#039;&#039;章ｲﾍﾞﾝﾄ終了</pre>
+
+<p>
+■到達した際、会話グループ別で違うことを喋らせる（範囲条件）
+</p>
+<pre class="code">40050200 00000000 400A0000 F002A608 &#039;自軍が通過したら
+20150000 201A0000
+212E0000 2133FFFF 
+40050700 01000000 400C0100 0C000700
+40050700 02000000 400C0200 0C000700
+40050700 03000000 400C0300 0C000700
+40050700 04000000 400C0400 0C000700
+40050700 05000000 400C0500 0C000700
+40050700 06000000 400C0600 0C000700
+40050700 07000000 400C0700 0C000700
+40050700 08000000 400C0800 0C000700
+40050700 09000000 400C0900 0C000700
+40050700 0A000000 400C0A00 0C000700
+40050700 0B000000 400C0B00 0C000700
+40050700 0C000000 400C0C00 0C000700
+40050700 0D000000 400C0D00 0C000700
+
+201BXXXX 20090000	&#039;&#039;会話グループ[00]用セリフ[XXXX]
+
+20080100 201BXXXX 20090000	&#039;&#039;会話グループ[01]用セリフ[XXXX]
+
+20080200 201BXXXX 20090000	&#039;&#039;会話グループ[02]用セリフ[XXXX]
+
+20080300 201BXXXX 20090000	&#039;&#039;会話グループ[03]用セリフ[XXXX]
+
+20080400 201BXXXX 20090000	&#039;&#039;会話グループ[04]用セリフ[XXXX]
+
+20080500 201BXXXX 20090000	&#039;&#039;会話グループ[05]用セリフ[XXXX]
+
+20080600 201BXXXX 20090000	&#039;&#039;会話グループ[06]用セリフ[XXXX]
+
+20080700 201BXXXX 20090000	&#039;&#039;会話グループ[07]用セリフ[XXXX]
+
+20080800 201BXXXX 20090000	&#039;&#039;会話グループ[08]用セリフ[XXXX]
+
+20080900 201BXXXX 20090000	&#039;&#039;会話グループ[09]用セリフ[XXXX]
+
+20080A00 201BXXXX 20090000	&#039;&#039;会話グループ[0A]用セリフ[XXXX]
+
+20080B00 201BXXXX 20090000	&#039;&#039;会話グループ[0B]用セリフ[XXXX]
+
+20080C00 201BXXXX 20090000	&#039;&#039;会話グループ[0C]用セリフ[XXXX]
+
+20080D00 201BXXXX	&#039;&#039;会話グループ[0D]用セリフ[XXXX]
+
+20080000	&#039;&#039;分岐終了
+201D0000 221B0000 21150000 &#039;&#039;会話終了
+2902??00		&#039;&#039;フラグ[??]オン(ここは自由に)
+28020700 20010000 &#039;&#039;イベント終了</pre>
+
+<p>
+実際に数値を入れた形（会話0B8F～0B9C）
+</p>
+<pre class="code">40050200 00000000 400A0000 F002A608
+20150000 201A0000
+212E0000 2133FFFF 
+40050700 01000000 400C0100 0C000700
+40050700 02000000 400C0200 0C000700
+40050700 03000000 400C0300 0C000700
+40050700 04000000 400C0400 0C000700
+40050700 05000000 400C0500 0C000700
+40050700 06000000 400C0600 0C000700
+40050700 07000000 400C0700 0C000700
+40050700 08000000 400C0800 0C000700
+40050700 09000000 400C0900 0C000700
+40050700 0A000000 400C0A00 0C000700
+40050700 0B000000 400C0B00 0C000700
+40050700 0C000000 400C0C00 0C000700
+40050700 0D000000 400C0D00 0C000700
+
+201B8F0B 20090000
+20080100 201B900B 20090000
+20080200 201B910B 20090000
+20080300 201B920B 20090000
+20080400 201B930B 20090000
+20080500 201B940B 20090000
+20080600 201B950B 20090000
+20080700 201B960B 20090000
+20080800 201B970B 20090000
+20080900 201B980B 20090000
+20080A00 201B990B 20090000
+20080B00 201B9A0B 20090000
+20080C00 201B9B0B 20090000
+20080D00 201B9C0B
+
+20080000 201D0000 221B0000 21150000
+29020700
+28020700 20010000</pre>
+
+<p>
+計0x19Cバイト<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a4\u30d9\u30f3\u30c8\u5206\u5c90&quot;,&quot;hid&quot;:&quot;\u30a4\u30d9\u30f3\u30c8\u5206\u5c90&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;151-&quot;} --></div>
+</body>
+</html>

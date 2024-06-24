@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>data:パッチ</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="data,パッチ"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=data"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=data:%E3%83%91%E3%83%83%E3%83%81"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=data:%E3%83%91%E3%83%83%E3%83%81"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='data';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"data:\u30d1\u30c3\u30c1","namespace":"data","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#支援値2倍">支援値2倍</a></div></li>
+<li class="level1"><div class="li"><a href="#戦闘スキル発動クラス変更">戦闘スキル発動クラス変更</a></div></li>
+<li class="level1"><div class="li"><a href="#cc時に武器表示無し">CC時に武器表示無し</a></div></li>
+<li class="level1"><div class="li"><a href="#塔及び遺跡でセーブ可能">塔及び遺跡でセーブ可能</a></div></li>
+<li class="level1"><div class="li"><a href="#武器破壊時でも武器lvアップ">武器破壊時でも武器LVアップ</a></div></li>
+<li class="level1"><div class="li"><a href="#敵ステータス詳細表示制限">敵ステータス詳細表示制限</a></div></li>
+<li class="level1"><div class="li"><a href="#フリーマップの魔物の配置lv20上限解除">フリーマップの魔物の配置LV20上限解除</a></div></li>
+<li class="level1"><div class="li"><a href="#クラス紹介色々">クラス紹介色々</a></div></li>
+<li class="level1"><div class="li"><a href="#ふつうでも上級職が程よく強い">ふつうでも上級職が程よく強い</a></div></li>
+<li class="level1"><div class="li"><a href="#強制出撃解除解除">強制出撃解除解除</a></div></li>
+<li class="level1"><div class="li"><a href="#アイコン0xfeまで拡張">アイコン0xFEまで拡張</a></div></li>
+<li class="level1"><div class="li"><a href="#輸送隊交換可">輸送隊交換可</a></div></li>
+<li class="level1"><div class="li"><a href="#サウンドルーム全開">サウンドルーム全開</a></div></li>
+<li class="level1"><div class="li"><a href="#フリマ霧無し">フリマ霧無し</a></div></li>
+<li class="level1"><div class="li"><a href="#杖命中">杖命中</a></div></li>
+<li class="level1"><div class="li"><a href="#杖命中の基礎値">杖命中の基礎値</a></div></li>
+<li class="level1"><div class="li"><a href="#瞬殺率">瞬殺率</a></div></li>
+<li class="level1"><div class="li"><a href="#見習い共を勝手にccさせない">見習い共を勝手にCCさせない</a></div></li>
+<li class="level1"><div class="li"><a href="#ユアン理消滅処理">ユアン理消滅処理</a></div></li>
+<li class="level1"><div class="li"><a href="#ぼったくり店を改心させる">ぼったくり店を改心させる</a></div></li>
+<li class="level1"><div class="li"><a href="#最低毒ダメージ">最低毒ダメージ</a></div></li>
+<li class="level1"><div class="li"><a href="#エイリーク編序盤の特殊経験値係数削除">エイリーク編序盤の特殊経験値係数削除</a></div></li>
+<li class="level1"><div class="li"><a href="#色々100_発動ver2_テストプレイに">色々100％発動Ver.2（テストプレイに）</a></div></li>
+<li class="level1"><div class="li"><a href="#fe8_オープニングカット">[FE8]オープニングカット</a></div></li>
+<li class="level1"><div class="li"><a href="#瞬殺不可クラス">瞬殺不可クラス</a></div></li>
+<li class="level1"><div class="li"><a href="#制圧フラグオン_章クリア">制圧フラグオン（章クリア）</a></div></li>
+<li class="level1"><div class="li"><a href="#幸運上限">幸運上限</a></div></li>
+<li class="level1"><div class="li"><a href="#支援の有効範囲3_1">支援の有効範囲3→1</a></div></li>
+<li class="level1"><div class="li"><a href="#エイルカリバーの音を出す">エイルカリバーの音を出す</a></div></li>
+<li class="level1"><div class="li"><a href="#きずぐすりの回復量">きずぐすりの回復量</a></div></li>
+<li class="level1"><div class="li"><a href="#指輪補正">指輪補正</a></div></li>
+<li class="level1"><div class="li"><a href="#騎馬系の救出値男女で同じ">騎馬系の救出値男女で同じ</a></div></li>
+<li class="level1"><div class="li"><a href="#下級武器レベル制限_b">下級武器レベル制限（B）</a></div></li>
+<li class="level1"><div class="li"><a href="#アイテムの交換_無制限">アイテムの交換 無制限</a></div></li>
+<li class="level1"><div class="li"><a href="#はやい_もっとはやい_a押しっぱと同速">はやい ＞ もっとはやい（A押しっぱと同速）</a></div></li>
+<li class="level1"><div class="li"><a href="#踊りのアニメオフ_反撃時はｏｎ">踊りのアニメオフ（反撃時はＯＮ）</a></div></li>
+<li class="level1"><div class="li"><a href="#ステータスの戦績非表示">ステータスの戦績非表示</a></div></li>
+<li class="level1"><div class="li"><a href="#敵ターンのディレイ削除">敵ターンのディレイ削除</a></div></li>
+<li class="level1"><div class="li"><a href="#クリア済み判定">クリア済み判定</a></div></li>
+<li class="level1"><div class="li"><a href="#攻撃ミス経験値">攻撃ミス経験値</a></div></li>
+<li class="level1"><div class="li"><a href="#最大レベル">最大レベル</a></div></li>
+<li class="level1"><div class="li"><a href="#ステータス31突破_輸送体250個保存を可能にするパッチ">ステータス31突破、輸送体250個保存を可能にするパッチ</a></div></li>
+<li class="level1"><div class="li"><a href="#cc不可レベル">CC不可レベル</a></div></li>
+<li class="level1"><div class="li"><a href="#level_reset">level reset</a></div></li>
+<li class="level1"><div class="li"><a href="#steal_hack">steal hack</a></div></li>
+<li class="level1"><div class="li"><a href="#攻速落ちしない">攻速落ちしない</a></div></li>
+<li class="level1"><div class="li"><a href="#イクリプスを最大hp半分に">イクリプスを最大HP半分に</a></div></li>
+<li class="level1"><div class="li"><a href="#要追撃攻速差">要追撃攻速差</a></div></li>
+<li class="level1"><div class="li"><a href="#必的の発動率2倍">必的の発動率2倍</a></div></li>
+<li class="level1"><div class="li"><a href="#の発動率を技_に">の発動率を技％に</a></div></li>
+<li class="level1"><div class="li"><a href="#貫通を防御半減に">貫通を防御半減に</a></div></li>
+<li class="level1"><div class="li"><a href="#大盾ダメージ半減化">大盾ダメージ半減化</a></div></li>
+<li class="level1"><div class="li"><a href="#大盾発動率">大盾発動率</a></div></li>
+<li class="level1"><div class="li"><a href="#ホプロン無視">ホプロン無視</a></div></li>
+<li class="level1"><div class="li"><a href="#退却消滅">退却消滅</a></div></li>
+<li class="level1"><div class="li"><a href="#戦績を消す">戦績を消す</a></div></li>
+<li class="level1"><div class="li"><a href="#ワールドマップ要素削除">ワールドマップ要素削除</a></div></li>
+<li class="level1"><div class="li"><a href="#輸送体解禁">輸送体解禁</a></div></li>
+<li class="level1"><div class="li"><a href="#エクストラ削除">エクストラ削除</a></div></li>
+<li class="level1"><div class="li"><a href="#撃破経験値にプラス補正がかかる相手クラス">撃破経験値にプラス補正がかかる相手クラス</a></div></li>
+<li class="level1"><div class="li"><a href="#リザイアバグ修正">リザイアバグ修正</a></div></li>
+<li class="level1"><div class="li"><a href="#背景0x51番を解放する">背景0x51番を解放する</a></div></li>
+<li class="level1"><div class="li"><a href="#ハードブーストで敵hpをブーストしない">ハードブーストで敵HPをブーストしない</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+FE8用のパッチまとめ<br />
+<br/>
+出典元があるものは出典元を明記するようにしたいところ。<br/>
+<br/>
+
+</p>
+
+<h1 class="sectionedit1" id="支援値2倍">支援値2倍</h1>
+<div class="level1">
+
+<p>
+08028232:46 5C B6 19<br/>
+<br/>
+出典:Chap@FE8_GIRLS 09.10.01 の資料より<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u652f\u63f4\u50242\u500d&quot;,&quot;hid&quot;:&quot;\u652f\u63f4\u50242\u500d&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;119-223&quot;} -->
+<h1 class="sectionedit2" id="戦闘スキル発動クラス変更">戦闘スキル発動クラス変更</h1>
+<div class="level1">
+
+<p>
+«大盾»<br/>
+0802B2B6:[0C] 29 01 D0 [0B] 29 14 D1<br/>
+«貫通»<br/>
+0802B21A:[24] 28 01 D0 [23] 28 13 D1<br/>
+«必的»<br/>
+0802B196:[1C] 28 01 D0 [1B] 28 1C D1<br/>
+«魔物特効»<br/>
+08016A3C:[2C] 2A 01 D0 [2B] 2A 00 D1<br/>
+«かぎ開»<br />
+08023E4C:[33]<br/>
+[ ]にクラスIDを入れて8バイト分書き換えてください。(鍵開けはローグだけなので[ ]だけです。)<br/>
+<br/>
+出典:Chap@FE8_GIRLS 09.10.01 の資料より<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6226\u95d8\u30b9\u30ad\u30eb\u767a\u52d5\u30af\u30e9\u30b9\u5909\u66f4&quot;,&quot;hid&quot;:&quot;\u6226\u95d8\u30b9\u30ad\u30eb\u767a\u52d5\u30af\u30e9\u30b9\u5909\u66f4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;224-703&quot;} -->
+<h1 class="sectionedit3" id="cc時に武器表示無し">CC時に武器表示無し</h1>
+<div class="level1">
+
+<p>
+(CC先がCC前の武器を使用できない特殊な場合に使えます。)<br/>
+080D1DE2:00 20 00 20<br/>
+0802F5C0:00 20 00 20<br/>
+<br/>
+出典:Chap@FE8_GIRLS 09.10.01 の資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;CC\u6642\u306b\u6b66\u5668\u8868\u793a\u7121\u3057&quot;,&quot;hid&quot;:&quot;cc\u6642\u306b\u6b66\u5668\u8868\u793a\u7121\u3057&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;704-927&quot;} -->
+<h1 class="sectionedit4" id="塔及び遺跡でセーブ可能">塔及び遺跡でセーブ可能</h1>
+<div class="level1">
+
+<p>
+(説明文はセーブ禁止になってますが、セーブできます。)<br/>
+08097888:00 E0<br/>
+<br/>
+出典:Chap@FE8_GIRLS 09.10.01 の資料より<br/>
+<br/>
+追加　完全版<br/>
+0x97350 &gt; 04 E0<br/>
+0x335BC &gt; C0 46<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5854\u53ca\u3073\u907a\u8de1\u3067\u30bb\u30fc\u30d6\u53ef\u80fd&quot;,&quot;hid&quot;:&quot;\u5854\u53ca\u3073\u907a\u8de1\u3067\u30bb\u30fc\u30d6\u53ef\u80fd&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;928-1188&quot;} -->
+<h1 class="sectionedit5" id="武器破壊時でも武器lvアップ">武器破壊時でも武器LVアップ</h1>
+<div class="level1">
+
+<p>
+(使い道は無いですが、自分みたいに耐久1で大幅アップみたいなのに使いました。)<br/>
+0802C07C:4A<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6b66\u5668\u7834\u58ca\u6642\u3067\u3082\u6b66\u5668LV\u30a2\u30c3\u30d7&quot;,&quot;hid&quot;:&quot;\u6b66\u5668\u7834\u58ca\u6642\u3067\u3082\u6b66\u5668lv\u30a2\u30c3\u30d7&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;1189-1373&quot;} -->
+<h1 class="sectionedit6" id="敵ステータス詳細表示制限">敵ステータス詳細表示制限</h1>
+<div class="level1">
+
+<p>
+・62ゴーゴン卵<br/>
+0801C596:62<br/>
+08089C52:62<br/>
+08089716:62<br/>
+・34ゴーゴン卵<br/>
+0801C59A:34<br/>
+08089C56:34<br/>
+0808971A:34<br/>
+<br/>
+出典:Chap@FE8_GIRLS 09.10.01 の資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6575\u30b9\u30c6\u30fc\u30bf\u30b9\u8a73\u7d30\u8868\u793a\u5236\u9650&quot;,&quot;hid&quot;:&quot;\u6575\u30b9\u30c6\u30fc\u30bf\u30b9\u8a73\u7d30\u8868\u793a\u5236\u9650&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1374-1610&quot;} -->
+<h1 class="sectionedit7" id="フリーマップの魔物の配置lv20上限解除">フリーマップの魔物の配置LV20上限解除</h1>
+<div class="level1">
+
+<p>
+0807A734:14&gt;1E<br/>
+0807A738:14&gt;1E<br/>
+<br/>
+出典:Chap@FE8_GIRLS 09.10.01 の資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30d5\u30ea\u30fc\u30de\u30c3\u30d7\u306e\u9b54\u7269\u306e\u914d\u7f6eLV20\u4e0a\u9650\u89e3\u9664&quot;,&quot;hid&quot;:&quot;\u30d5\u30ea\u30fc\u30de\u30c3\u30d7\u306e\u9b54\u7269\u306e\u914d\u7f6elv20\u4e0a\u9650\u89e3\u9664&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;1611-1768&quot;} -->
+<h1 class="sectionedit8" id="クラス紹介色々">クラス紹介色々</h1>
+<div class="level1">
+
+<p>
+000b753e:09 20<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30af\u30e9\u30b9\u7d39\u4ecb\u8272\u3005&quot;,&quot;hid&quot;:&quot;\u30af\u30e9\u30b9\u7d39\u4ecb\u8272\u3005&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;1769-1863&quot;} -->
+<h1 class="sectionedit9" id="ふつうでも上級職が程よく強い">ふつうでも上級職が程よく強い</h1>
+<div class="level1">
+
+<p>
+00037be8:D1 &gt; E0<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u3075\u3064\u3046\u3067\u3082\u4e0a\u7d1a\u8077\u304c\u7a0b\u3088\u304f\u5f37\u3044&quot;,&quot;hid&quot;:&quot;\u3075\u3064\u3046\u3067\u3082\u4e0a\u7d1a\u8077\u304c\u7a0b\u3088\u304f\u5f37\u3044&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;1864-1982&quot;} -->
+<h1 class="sectionedit10" id="強制出撃解除解除">強制出撃解除解除</h1>
+<div class="level1">
+
+<p>
+976E4 : C0 46<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f37\u5236\u51fa\u6483\u89e3\u9664\u89e3\u9664&quot;,&quot;hid&quot;:&quot;\u5f37\u5236\u51fa\u6483\u89e3\u9664\u89e3\u9664&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;1983-2080&quot;} -->
+<h1 class="sectionedit11" id="アイコン0xfeまで拡張">アイコン0xFEまで拡張</h1>
+<div class="level1">
+
+<p>
+34FC : C0 &gt; FE<br/>
+10 6E 02 02 &gt; 90 6E 02 02<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a2\u30a4\u30b3\u30f30xFE\u307e\u3067\u62e1\u5f35&quot;,&quot;hid&quot;:&quot;\u30a2\u30a4\u30b3\u30f30xfe\u307e\u3067\u62e1\u5f35&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;2081-2211&quot;} -->
+<h1 class="sectionedit12" id="輸送隊交換可">輸送隊交換可</h1>
+<div class="level1">
+
+<p>
+$00022f2c 0C D1 &gt; C0 46<br/>
+$00025224:08 D1 &gt; C0 46<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u8f38\u9001\u968a\u4ea4\u63db\u53ef&quot;,&quot;hid&quot;:&quot;\u8f38\u9001\u968a\u4ea4\u63db\u53ef&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:12,&quot;range&quot;:&quot;2212-2339&quot;} -->
+<h1 class="sectionedit13" id="サウンドルーム全開">サウンドルーム全開</h1>
+<div class="level1">
+
+<p>
+B3A00:C0 46<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30b5\u30a6\u30f3\u30c9\u30eb\u30fc\u30e0\u5168\u958b&quot;,&quot;hid&quot;:&quot;\u30b5\u30a6\u30f3\u30c9\u30eb\u30fc\u30e0\u5168\u958b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:13,&quot;range&quot;:&quot;2340-2438&quot;} -->
+<h1 class="sectionedit14" id="フリマ霧無し">フリマ霧無し</h1>
+<div class="level1">
+
+<p>
+00030D9F:D1 &gt; E0<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30d5\u30ea\u30de\u9727\u7121\u3057&quot;,&quot;hid&quot;:&quot;\u30d5\u30ea\u30de\u9727\u7121\u3057&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:14,&quot;range&quot;:&quot;2439-2534&quot;} -->
+<h1 class="sectionedit15" id="杖命中">杖命中</h1>
+<div class="level1">
+
+<p>
+敵の杖の最低命中率(未テスト)<br/>
+0040292:04<br/>
+0040538:04<br/>
+　命中率4%以下の敵は狙わないの意味<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6756\u547d\u4e2d&quot;,&quot;hid&quot;:&quot;\u6756\u547d\u4e2d&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:15,&quot;range&quot;:&quot;2535-2724&quot;} -->
+<h1 class="sectionedit16" id="杖命中の基礎値">杖命中の基礎値</h1>
+<div class="level1">
+
+<p>
+0002cc68:1E<br/>
+10進数で30<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6756\u547d\u4e2d\u306e\u57fa\u790e\u5024&quot;,&quot;hid&quot;:&quot;\u6756\u547d\u4e2d\u306e\u57fa\u790e\u5024&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:16,&quot;range&quot;:&quot;2725-2833&quot;} -->
+<h1 class="sectionedit17" id="瞬殺率">瞬殺率</h1>
+<div class="level1">
+
+<p>
+通常の瞬殺率<br/>
+0002ac8e<br/>
+対敵将の瞬殺率<br/>
+0002aca6<br/>
+対経験値ゼロ特性持ちの瞬殺率<br/>
+0002acba<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u77ac\u6bba\u7387&quot;,&quot;hid&quot;:&quot;\u77ac\u6bba\u7387&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:17,&quot;range&quot;:&quot;2834-3023&quot;} -->
+<h1 class="sectionedit18" id="見習い共を勝手にccさせない">見習い共を勝手にCCさせない</h1>
+<div class="level1">
+
+<p>
+000d146c:C0 46<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u898b\u7fd2\u3044\u5171\u3092\u52dd\u624b\u306bCC\u3055\u305b\u306a\u3044&quot;,&quot;hid&quot;:&quot;\u898b\u7fd2\u3044\u5171\u3092\u52dd\u624b\u306bcc\u3055\u305b\u306a\u3044&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:18,&quot;range&quot;:&quot;3024-3136&quot;} -->
+<h1 class="sectionedit19" id="ユアン理消滅処理">ユアン理消滅処理</h1>
+<div class="level1">
+
+<p>
+CC前クラス<br/>
+0002bda2:3E<br/>
+CC後クラス<br/>
+0002bda8:2D<br/>
+ゼロにする武器種（28剣～2F闇）<br/>
+0002bdae:2D<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30e6\u30a2\u30f3\u7406\u6d88\u6ec5\u51e6\u7406&quot;,&quot;hid&quot;:&quot;\u30e6\u30a2\u30f3\u7406\u6d88\u6ec5\u51e6\u7406&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:19,&quot;range&quot;:&quot;3137-3340&quot;} -->
+<h1 class="sectionedit20" id="ぼったくり店を改心させる">ぼったくり店を改心させる</h1>
+<div class="level1">
+
+<p>
+000b9dbb:E0<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u307c\u3063\u305f\u304f\u308a\u5e97\u3092\u6539\u5fc3\u3055\u305b\u308b&quot;,&quot;hid&quot;:&quot;\u307c\u3063\u305f\u304f\u308a\u5e97\u3092\u6539\u5fc3\u3055\u305b\u308b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:20,&quot;range&quot;:&quot;3341-3448&quot;} -->
+<h1 class="sectionedit21" id="最低毒ダメージ">最低毒ダメージ</h1>
+<div class="level1">
+
+<p>
+000259ee:01<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6700\u4f4e\u6bd2\u30c0\u30e1\u30fc\u30b8&quot;,&quot;hid&quot;:&quot;\u6700\u4f4e\u6bd2\u30c0\u30e1\u30fc\u30b8&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:21,&quot;range&quot;:&quot;3449-3541&quot;} -->
+<h1 class="sectionedit22" id="エイリーク編序盤の特殊経験値係数削除">エイリーク編序盤の特殊経験値係数削除</h1>
+<div class="level1">
+
+<p>
+0002c3b2:c046<br/>
+（聖魔には難易度での経験値減はなさそう？）<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a8\u30a4\u30ea\u30fc\u30af\u7de8\u5e8f\u76e4\u306e\u7279\u6b8a\u7d4c\u9a13\u5024\u4fc2\u6570\u524a\u9664&quot;,&quot;hid&quot;:&quot;\u30a8\u30a4\u30ea\u30fc\u30af\u7de8\u5e8f\u76e4\u306e\u7279\u6b8a\u7d4c\u9a13\u5024\u4fc2\u6570\u524a\u9664&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:22,&quot;range&quot;:&quot;3542-3735&quot;} -->
+<h1 class="sectionedit23" id="色々100_発動ver2_テストプレイに">色々100％発動Ver.2（テストプレイに）</h1>
+<div class="level1">
+
+<p>
+0002a4ae: 01 20<br/>
+必殺は無効<br/>
+0002b40A: 00 20<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u8272\u3005100\uff05\u767a\u52d5Ver.2\uff08\u30c6\u30b9\u30c8\u30d7\u30ec\u30a4\u306b\uff09&quot;,&quot;hid&quot;:&quot;\u8272\u3005100_\u767a\u52d5ver2_\u30c6\u30b9\u30c8\u30d7\u30ec\u30a4\u306b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:23,&quot;range&quot;:&quot;3736-3897&quot;} -->
+<h1 class="sectionedit24" id="fe8_オープニングカット">[FE8]オープニングカット</h1>
+<div class="level1">
+
+<p>
+00009961 &gt; E0<br/>
+00009987 &gt; E0<br/>
+おまけ(いきなりOPタイトルロゴ)<br/>
+CB660 &gt; C0 46<br/>
+D0DC4&gt; C0 46<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;[FE8]\u30aa\u30fc\u30d7\u30cb\u30f3\u30b0\u30ab\u30c3\u30c8&quot;,&quot;hid&quot;:&quot;fe8_\u30aa\u30fc\u30d7\u30cb\u30f3\u30b0\u30ab\u30c3\u30c8&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:24,&quot;range&quot;:&quot;3898-4096&quot;} -->
+<h1 class="sectionedit25" id="瞬殺不可クラス">瞬殺不可クラス</h1>
+<div class="level1">
+
+<p>
+0002b302:66<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u77ac\u6bba\u4e0d\u53ef\u30af\u30e9\u30b9&quot;,&quot;hid&quot;:&quot;\u77ac\u6bba\u4e0d\u53ef\u30af\u30e9\u30b9&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:25,&quot;range&quot;:&quot;4097-4189&quot;} -->
+<h1 class="sectionedit26" id="制圧フラグオン_章クリア">制圧フラグオン（章クリア）</h1>
+<div class="level1">
+
+<p>
+03005260:04<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5236\u5727\u30d5\u30e9\u30b0\u30aa\u30f3\uff08\u7ae0\u30af\u30ea\u30a2\uff09&quot;,&quot;hid&quot;:&quot;\u5236\u5727\u30d5\u30e9\u30b0\u30aa\u30f3_\u7ae0\u30af\u30ea\u30a2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:26,&quot;range&quot;:&quot;4190-4300&quot;} -->
+<h1 class="sectionedit27" id="幸運上限">幸運上限</h1>
+<div class="level1">
+
+<p>
+レベルアップの上限<br/>
+　0002bf5e<br/>
+　0002bf64<br/>
+初期値の上限<br/>
+　00017f64<br/>
+　00017f68<br/>
+CCの上限<br/>
+　ない<br/>
+編成画面の幸運上限<br/>
+　0009e41c<br/>
+　0009e5e4<br/>
+ステータス画面の上限<br/>
+　00089546<br/>
+部隊の上限<br/>
+　000949f4<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5e78\u904b\u4e0a\u9650&quot;,&quot;hid&quot;:&quot;\u5e78\u904b\u4e0a\u9650&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:27,&quot;range&quot;:&quot;4301-4639&quot;} -->
+<h1 class="sectionedit28" id="支援の有効範囲3_1">支援の有効範囲3→1</h1>
+<div class="level1">
+
+<p>
+　000285b4:03 &gt; 01<br/>
+<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u652f\u63f4\u306e\u6709\u52b9\u7bc4\u56f23\u21921&quot;,&quot;hid&quot;:&quot;\u652f\u63f4\u306e\u6709\u52b9\u7bc4\u56f23_1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:28,&quot;range&quot;:&quot;4640-4747&quot;} -->
+<h1 class="sectionedit29" id="エイルカリバーの音を出す">エイルカリバーの音を出す</h1>
+<div class="level1">
+
+<p>
+　00214960:00 27 57 08 06 00 06 00<br/>
+　00214968:1C 27 57 08 06 00 06 00<br/>
+　　エクスの音を当てただけです<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a8\u30a4\u30eb\u30ab\u30ea\u30d0\u30fc\u306e\u97f3\u3092\u51fa\u3059&quot;,&quot;hid&quot;:&quot;\u30a8\u30a4\u30eb\u30ab\u30ea\u30d0\u30fc\u306e\u97f3\u3092\u51fa\u3059&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:29,&quot;range&quot;:&quot;4748-4965&quot;} -->
+<h1 class="sectionedit30" id="きずぐすりの回復量">きずぐすりの回復量</h1>
+<div class="level1">
+
+<p>
+　0002fe16:0A<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u304d\u305a\u3050\u3059\u308a\u306e\u56de\u5fa9\u91cf&quot;,&quot;hid&quot;:&quot;\u304d\u305a\u3050\u3059\u308a\u306e\u56de\u5fa9\u91cf&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:30,&quot;range&quot;:&quot;4966-5067&quot;} -->
+<h1 class="sectionedit31" id="指輪補正">指輪補正</h1>
+<div class="level1">
+
+<p>
+　0002ad34:0A<br/>
+　　全ての指輪一括<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6307\u8f2a\u88dc\u6b63&quot;,&quot;hid&quot;:&quot;\u6307\u8f2a\u88dc\u6b63&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:31,&quot;range&quot;:&quot;5068-5184&quot;} -->
+<h1 class="sectionedit32" id="騎馬系の救出値男女で同じ">騎馬系の救出値男女で同じ</h1>
+<div class="level1">
+
+<p>
+　000186FE:C0 46<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u9a0e\u99ac\u7cfb\u306e\u6551\u51fa\u5024\u7537\u5973\u3067\u540c\u3058&quot;,&quot;hid&quot;:&quot;\u9a0e\u99ac\u7cfb\u306e\u6551\u51fa\u5024\u7537\u5973\u3067\u540c\u3058&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:32,&quot;range&quot;:&quot;5185-5298&quot;} -->
+<h1 class="sectionedit33" id="下級武器レベル制限_b">下級武器レベル制限（B）</h1>
+<div class="level1">
+
+<p>
+　0002c0ea:B5<br/>
+　0002c0ee:B5<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u4e0b\u7d1a\u6b66\u5668\u30ec\u30d9\u30eb\u5236\u9650\uff08B\uff09&quot;,&quot;hid&quot;:&quot;\u4e0b\u7d1a\u6b66\u5668\u30ec\u30d9\u30eb\u5236\u9650_b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:33,&quot;range&quot;:&quot;5299-5425&quot;} -->
+<h1 class="sectionedit34" id="アイテムの交換_無制限">アイテムの交換 無制限</h1>
+<div class="level1">
+
+<p>
+　00022f18:c0 46<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a2\u30a4\u30c6\u30e0\u306e\u4ea4\u63db \u7121\u5236\u9650&quot;,&quot;hid&quot;:&quot;\u30a2\u30a4\u30c6\u30e0\u306e\u4ea4\u63db_\u7121\u5236\u9650&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:34,&quot;range&quot;:&quot;5426-5534&quot;} -->
+<h1 class="sectionedit35" id="はやい_もっとはやい_a押しっぱと同速">はやい ＞ もっとはやい（A押しっぱと同速）</h1>
+<div class="level1">
+
+<p>
+　0007b928:40 &gt; 80<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u306f\u3084\u3044 \uff1e \u3082\u3063\u3068\u306f\u3084\u3044\uff08A\u62bc\u3057\u3063\u3071\u3068\u540c\u901f\uff09&quot;,&quot;hid&quot;:&quot;\u306f\u3084\u3044_\u3082\u3063\u3068\u306f\u3084\u3044_a\u62bc\u3057\u3063\u3071\u3068\u540c\u901f&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:35,&quot;range&quot;:&quot;5535-5674&quot;} -->
+<h1 class="sectionedit36" id="踊りのアニメオフ_反撃時はｏｎ">踊りのアニメオフ（反撃時はＯＮ）</h1>
+<div class="level1">
+
+<p>
+00058614：54 E2<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u8e0a\u308a\u306e\u30a2\u30cb\u30e1\u30aa\u30d5\uff08\u53cd\u6483\u6642\u306f\uff2f\uff2e\uff09&quot;,&quot;hid&quot;:&quot;\u8e0a\u308a\u306e\u30a2\u30cb\u30e1\u30aa\u30d5_\u53cd\u6483\u6642\u306f\uff4f\uff4e&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:36,&quot;range&quot;:&quot;5675-5799&quot;} -->
+<h1 class="sectionedit37" id="ステータスの戦績非表示">ステータスの戦績非表示</h1>
+<div class="level1">
+
+<p>
+000892a3:D0 &gt; E0<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30b9\u30c6\u30fc\u30bf\u30b9\u306e\u6226\u7e3e\u975e\u8868\u793a&quot;,&quot;hid&quot;:&quot;\u30b9\u30c6\u30fc\u30bf\u30b9\u306e\u6226\u7e3e\u975e\u8868\u793a&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:37,&quot;range&quot;:&quot;5800-5909&quot;} -->
+<h1 class="sectionedit38" id="敵ターンのディレイ削除">敵ターンのディレイ削除</h1>
+<div class="level1">
+
+<p>
+00039f1b:D1 &gt; E0<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6575\u30bf\u30fc\u30f3\u306e\u30c7\u30a3\u30ec\u30a4\u524a\u9664&quot;,&quot;hid&quot;:&quot;\u6575\u30bf\u30fc\u30f3\u306e\u30c7\u30a3\u30ec\u30a4\u524a\u9664&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:38,&quot;range&quot;:&quot;5910-6019&quot;} -->
+<h1 class="sectionedit39" id="クリア済み判定">クリア済み判定</h1>
+<div class="level1">
+
+<p>
+00030c1a:c0 46 00<br/>
+（ステータス下の戦績とか出す）<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30af\u30ea\u30a2\u6e08\u307f\u5224\u5b9a&quot;,&quot;hid&quot;:&quot;\u30af\u30ea\u30a2\u6e08\u307f\u5224\u5b9a&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:39,&quot;range&quot;:&quot;6020-6166&quot;} -->
+<h1 class="sectionedit40" id="攻撃ミス経験値">攻撃ミス経験値</h1>
+<div class="level1">
+
+<p>
+0002c4ac:01<br/>
+もとい、最低経験値<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u653b\u6483\u30df\u30b9\u7d4c\u9a13\u5024&quot;,&quot;hid&quot;:&quot;\u653b\u6483\u30df\u30b9\u7d4c\u9a13\u5024&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:40,&quot;range&quot;:&quot;6167-6289&quot;} -->
+<h1 class="sectionedit41" id="最大レベル">最大レベル</h1>
+<div class="level1">
+
+<p>
+0002b9c0:14<br/>
+セーブは31までしかできません。<br/>
+(FE8で上限を超えるためには別パッチが必要)<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6700\u5927\u30ec\u30d9\u30eb&quot;,&quot;hid&quot;:&quot;\u6700\u5927\u30ec\u30d9\u30eb&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:41,&quot;range&quot;:&quot;6290-6484&quot;} -->
+<h1 class="sectionedit42" id="ステータス31突破_輸送体250個保存を可能にするパッチ">ステータス31突破、輸送体250個保存を可能にするパッチ</h1>
+<div class="level1">
+
+<p>
+<a href="http://ux.getuploader.com/FE4/download/213/FE8status.zip" class="urlextern" title="http://ux.getuploader.com/FE4/download/213/FE8status.zip" rel="nofollow">http://ux.getuploader.com/FE4/download/213/FE8status.zip</a><br />
+<br/>
+ただし、指揮パッチと輸送体エリアがぶつかる。<br/>
+輸送隊を203AB18から、203AB48へ移動させるとokです。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30b9\u30c6\u30fc\u30bf\u30b931\u7a81\u7834\u3001\u8f38\u9001\u4f53250\u500b\u4fdd\u5b58\u3092\u53ef\u80fd\u306b\u3059\u308b\u30d1\u30c3\u30c1&quot;,&quot;hid&quot;:&quot;\u30b9\u30c6\u30fc\u30bf\u30b931\u7a81\u7834_\u8f38\u9001\u4f53250\u500b\u4fdd\u5b58\u3092\u53ef\u80fd\u306b\u3059\u308b\u30d1\u30c3\u30c1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:42,&quot;range&quot;:&quot;6485-6776&quot;} -->
+<h1 class="sectionedit43" id="cc不可レベル">CC不可レベル</h1>
+<div class="level1">
+
+<p>
+0002919e:09<br/>
+この数字以下はできない<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;CC\u4e0d\u53ef\u30ec\u30d9\u30eb&quot;,&quot;hid&quot;:&quot;cc\u4e0d\u53ef\u30ec\u30d9\u30eb&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:43,&quot;range&quot;:&quot;6777-6900&quot;} -->
+<h1 class="sectionedit44" id="level_reset">level reset</h1>
+<div class="level1">
+
+<p>
+0002BDB4:00 21 01 20 &gt; 28 7A 69 7A<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;level reset&quot;,&quot;hid&quot;:&quot;level_reset&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:44,&quot;range&quot;:&quot;6901-7006&quot;} -->
+<h1 class="sectionedit45" id="steal_hack">steal hack</h1>
+<div class="level1">
+
+<p>
+00016e1c:c0 46<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;steal hack&quot;,&quot;hid&quot;:&quot;steal_hack&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:45,&quot;range&quot;:&quot;7007-7090&quot;} -->
+<h1 class="sectionedit46" id="攻速落ちしない">攻速落ちしない</h1>
+<div class="level1">
+
+<p>
+0002ab02:40 1A &gt; C0 46<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u653b\u901f\u843d\u3061\u3057\u306a\u3044&quot;,&quot;hid&quot;:&quot;\u653b\u901f\u843d\u3061\u3057\u306a\u3044&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:46,&quot;range&quot;:&quot;7091-7196&quot;} -->
+<h1 class="sectionedit47" id="イクリプスを最大hp半分に">イクリプスを最大HP半分に</h1>
+<div class="level1">
+
+<p>
+0002ad92:13 &gt; 14<br/>
+<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a4\u30af\u30ea\u30d7\u30b9\u3092\u6700\u5927HP\u534a\u5206\u306b&quot;,&quot;hid&quot;:&quot;\u30a4\u30af\u30ea\u30d7\u30b9\u3092\u6700\u5927hp\u534a\u5206\u306b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:47,&quot;range&quot;:&quot;7197-7310&quot;} -->
+<h1 class="sectionedit48" id="要追撃攻速差">要追撃攻速差</h1>
+<div class="level1">
+
+<p>
+0002af2c:03<br/>
+0002af3e:03<br/>
+確か反撃時と攻撃時の二種<br/>
+<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u8981\u8ffd\u6483\u653b\u901f\u5dee&quot;,&quot;hid&quot;:&quot;\u8981\u8ffd\u6483\u653b\u901f\u5dee&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:48,&quot;range&quot;:&quot;7311-7455&quot;} -->
+<h1 class="sectionedit49" id="必的の発動率2倍">必的の発動率2倍</h1>
+<div class="level1">
+
+<p>
+0002b1b6:00 0C &gt; C0 0B<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5fc5\u7684\u306e\u767a\u52d5\u73872\u500d&quot;,&quot;hid&quot;:&quot;\u5fc5\u7684\u306e\u767a\u52d5\u73872\u500d&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:49,&quot;range&quot;:&quot;7456-7562&quot;} -->
+<h1 class="sectionedit50" id="の発動率を技_に">の発動率を技％に</h1>
+<div class="level1">
+
+<p>
+0002b222:08 &gt; 15<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u306e\u767a\u52d5\u7387\u3092\u6280\uff05\u306b&quot;,&quot;hid&quot;:&quot;\u306e\u767a\u52d5\u7387\u3092\u6280_\u306b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:50,&quot;range&quot;:&quot;7563-7665&quot;} -->
+<h1 class="sectionedit51" id="貫通を防御半減に">貫通を防御半減に</h1>
+<div class="level1">
+
+<p>
+0002b3e8:00 24 &gt; 64 10<br/>
+<br/>
+（ノーダメを大盾するとカンストダメージになるバグ有り）<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u8cab\u901a\u3092\u9632\u5fa1\u534a\u6e1b\u306b&quot;,&quot;hid&quot;:&quot;\u8cab\u901a\u3092\u9632\u5fa1\u534a\u6e1b\u306b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:51,&quot;range&quot;:&quot;7666-7858&quot;} -->
+<h1 class="sectionedit52" id="大盾ダメージ半減化">大盾ダメージ半減化</h1>
+<div class="level1">
+
+<p>
+0002b3f6　&gt;<br/>
+52 46 10 40<br/>
+02 D0 08 1B<br/>
+40 08<br/>
+<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5927\u76fe\u30c0\u30e1\u30fc\u30b8\u534a\u6e1b\u5316&quot;,&quot;hid&quot;:&quot;\u5927\u76fe\u30c0\u30e1\u30fc\u30b8\u534a\u6e1b\u5316&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:52,&quot;range&quot;:&quot;7859-7996&quot;} -->
+<h1 class="sectionedit53" id="大盾発動率">大盾発動率</h1>
+<div class="level1">
+
+<p>
+0002b2be<br/>
+<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5927\u76fe\u767a\u52d5\u7387&quot;,&quot;hid&quot;:&quot;\u5927\u76fe\u767a\u52d5\u7387&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:53,&quot;range&quot;:&quot;7997-8082&quot;} -->
+<h1 class="sectionedit54" id="ホプロン無視">ホプロン無視</h1>
+<div class="level1">
+
+<p>
+0002AC5B:D0 &gt; E0<br/>
+<br/>
+出典:aeraさんの資料より<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30db\u30d7\u30ed\u30f3\u7121\u8996&quot;,&quot;hid&quot;:&quot;\u30db\u30d7\u30ed\u30f3\u7121\u8996&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:54,&quot;range&quot;:&quot;8083-8177&quot;} -->
+<h1 class="sectionedit55" id="退却消滅">退却消滅</h1>
+<div class="level1">
+
+<p>
+24C85 : E0<br />
+<br/>
+出典:aeraさんの書き込みより<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u9000\u5374\u6d88\u6ec5&quot;,&quot;hid&quot;:&quot;\u9000\u5374\u6d88\u6ec5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:55,&quot;range&quot;:&quot;8178-8263&quot;} -->
+<h1 class="sectionedit56" id="戦績を消す">戦績を消す</h1>
+<div class="level1">
+
+<p>
+24bf9:E0<br/>
+<br/>
+出典:aeraさんの書き込みより<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6226\u7e3e\u3092\u6d88\u3059&quot;,&quot;hid&quot;:&quot;\u6226\u7e3e\u3092\u6d88\u3059&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:56,&quot;range&quot;:&quot;8264-8352&quot;} -->
+<h1 class="sectionedit57" id="ワールドマップ要素削除">ワールドマップ要素削除</h1>
+<div class="level1">
+
+<p>
+ワールドマップイベントによる章変更防止<br/>
+C03E0 &gt;<br/>
+01 48 80 7B 70 47 00 00 EC BC 02 02<br/>
+<br/>
+フリーマップモードにならない<br/>
+C66B4 &gt; 00 00 00 00<br/>
+C1E74 &gt; 70 B5 05 48<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7\u8981\u7d20\u524a\u9664&quot;,&quot;hid&quot;:&quot;\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7\u8981\u7d20\u524a\u9664&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:57,&quot;range&quot;:&quot;8353-8604&quot;} -->
+<h1 class="sectionedit58" id="輸送体解禁">輸送体解禁</h1>
+<div class="level1">
+
+<p>
+マップID:00と01で輸送体解禁<br/>
+08031590:00 00 00 00<br/>
+<br/>
+マップID:05で輸送体解禁<br/>
+08031598:00 00 00 00<br/>
+<br/>
+マップID:38で輸送体解禁<br/>
+08031594:00 00 00 00<br/>
+<br/>
+出典:7743さんの書き込みより<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u8f38\u9001\u4f53\u89e3\u7981&quot;,&quot;hid&quot;:&quot;\u8f38\u9001\u4f53\u89e3\u7981&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:58,&quot;range&quot;:&quot;8605-8868&quot;} -->
+<h1 class="sectionedit59" id="エクストラ削除">エクストラ削除</h1>
+<div class="level1">
+
+<p>
+通信闘技場<br/>
+B03C6 &gt; 00 00 00 20<br/>
+サウンドルーム<br/>
+B03D8 &gt; 00 00 00 20<br/>
+支援会話<br/>
+B03EA &gt; 00 00 00 20<br/>
+フリーマップ<br/>
+B03FC &gt; 00 00 00 20<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a8\u30af\u30b9\u30c8\u30e9\u524a\u9664&quot;,&quot;hid&quot;:&quot;\u30a8\u30af\u30b9\u30c8\u30e9\u524a\u9664&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:59,&quot;range&quot;:&quot;8869-9072&quot;} -->
+<h1 class="sectionedit60" id="撃破経験値にプラス補正がかかる相手クラス">撃破経験値にプラス補正がかかる相手クラス</h1>
+<div class="level1">
+
+<p>
+2C346:53
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6483\u7834\u7d4c\u9a13\u5024\u306b\u30d7\u30e9\u30b9\u88dc\u6b63\u304c\u304b\u304b\u308b\u76f8\u624b\u30af\u30e9\u30b9&quot;,&quot;hid&quot;:&quot;\u6483\u7834\u7d4c\u9a13\u5024\u306b\u30d7\u30e9\u30b9\u88dc\u6b63\u304c\u304b\u304b\u308b\u76f8\u624b\u30af\u30e9\u30b9&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:60,&quot;range&quot;:&quot;9073-9158&quot;} -->
+<h1 class="sectionedit61" id="リザイアバグ修正">リザイアバグ修正</h1>
+<div class="level1">
+
+<p>
+2b67C:00 0E<br/>
+<br/>
+符号付きでシフトしているためこのバグが発生します。<br/>
+lsl	r0,r0,#0x18 ;and r0,0xff を armでやる場合、シフトしあった方が命令数が少ない<br/>
+;asr	r0,r0,#0x18 ;バグ 符号付きでシフトしているため 0x80以降はマイナスの世界へ突入する<br/>
+lsr	r0,r0,#0x18 ;バグらせないためには、 符号なしで戻します。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30ea\u30b6\u30a4\u30a2\u30d0\u30b0\u4fee\u6b63&quot;,&quot;hid&quot;:&quot;\u30ea\u30b6\u30a4\u30a2\u30d0\u30b0\u4fee\u6b63&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:61,&quot;range&quot;:&quot;9159-9606&quot;} -->
+<h1 class="sectionedit62" id="背景0x51番を解放する">背景0x51番を解放する</h1>
+<div class="level1">
+
+<p>
+00ea46:0000
+</p>
+
+<p>
+背景を拡張する場合、0x09000000以降の空き領域に移動して拡張することが可能である。<br/>
+ただし、背景0x51番の変更はできない。これは以下のようなコードが組まれているためである。<br/>
+0800ea44 cmp	r6, #51<br/>
+0800ea46 bne	$0000ea52<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u80cc\u666f0x51\u756a\u3092\u89e3\u653e\u3059\u308b&quot;,&quot;hid&quot;:&quot;\u80cc\u666f0x51\u756a\u3092\u89e3\u653e\u3059\u308b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:62,&quot;range&quot;:&quot;9607-9960&quot;} -->
+<h1 class="sectionedit63" id="ハードブーストで敵hpをブーストしない">ハードブーストで敵HPをブーストしない</h1>
+<div class="level1">
+
+<p>
+17cf8:0000 0000 0000 0000 0000 (5バイト00で埋める)<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30cf\u30fc\u30c9\u30d6\u30fc\u30b9\u30c8\u3067\u6575HP\u3092\u30d6\u30fc\u30b9\u30c8\u3057\u306a\u3044&quot;,&quot;hid&quot;:&quot;\u30cf\u30fc\u30c9\u30d6\u30fc\u30b9\u30c8\u3067\u6575hp\u3092\u30d6\u30fc\u30b9\u30c8\u3057\u306a\u3044&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:63,&quot;range&quot;:&quot;9961-&quot;} --></div>
+</body>
+</html>

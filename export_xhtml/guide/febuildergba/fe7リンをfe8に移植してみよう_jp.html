@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>guide:febuildergba:fe7リンをfe8に移植してみよう_jp</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="guide,febuildergba,fe7リンをfe8に移植してみよう_jp"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=guide:febuildergba:fe7%E3%83%AA%E3%83%B3%E3%82%92fe8%E3%81%AB%E7%A7%BB%E6%A4%8D%E3%81%97%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86_jp&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide:febuildergba"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:fe7%E3%83%AA%E3%83%B3%E3%82%92fe8%E3%81%AB%E7%A7%BB%E6%A4%8D%E3%81%97%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86_jp"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:febuildergba:fe7%E3%83%AA%E3%83%B3%E3%82%92fe8%E3%81%AB%E7%A7%BB%E6%A4%8D%E3%81%97%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86_jp"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:fe7%E3%83%AA%E3%83%B3%E3%82%92fe8%E3%81%AB%E7%A7%BB%E6%A4%8D%E3%81%97%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86_jp"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='guide:febuildergba';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:febuildergba:fe7\u30ea\u30f3\u3092fe8\u306b\u79fb\u690d\u3057\u3066\u307f\u3088\u3046_jp","namespace":"guide:febuildergba","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#待機の移植">待機の移植</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepa1">StepA1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa2">StepA2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa3">StepA3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa4">StepA4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa5">StepA5</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa6">StepA6</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa7">StepA7</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa8">StepA8</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa9">StepA9</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa10">StepA10</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#移動の移植">移動の移植</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepb1">StepB1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb2">StepB2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb3">StepB3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb4">StepB4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb5">StepB5</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb6">StepB6</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb7">StepB7</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb8">StepB8</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb9">StepB9</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb10">StepB10</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#顔画像の移植">顔画像の移植</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepc1">StepC1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc2">StepC2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc3">StepC3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc4">StepC4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc5">StepC5</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc6">StepC6</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc7">StepC7</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc8">StepC8</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc9">StepC9</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc10">StepC10</a></div></li>
+<li class="level2"><div class="li"><a href="#おまけ_パレットについて">おまけ パレットについて</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#戦闘アニメの移植">戦闘アニメの移植</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepd1">StepD1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd2">StepD2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd3">StepD3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd4">StepD4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd5">StepD5</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd6">StepD6</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd7">StepD7</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd8">StepD8</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd9">StepD9</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd10">StepD10</a></div></li>
+<li class="level2"><div class="li"><a href="#おまけ1_戦闘アニメと武器">おまけ1 戦闘アニメと武器</a></div></li>
+<li class="level2"><div class="li"><a href="#おまけ2_色">おまけ2 色</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+FE7リンをFE8に移植しながら、待機アイコン、移動アイコン、顔画像、戦闘アニメの追加の方法を説明します。<br/>
+<a href="/lib/exe/fetch.php?tok=215e01&amp;media=https%3A%2F%2Fi.imgur.com%2Fzl2M2gc.jpg" class="media" title="https://i.imgur.com/zl2M2gc.jpg"><img src="/lib/exe/fetch.php?tok=215e01&amp;media=https%3A%2F%2Fi.imgur.com%2Fzl2M2gc.jpg" class="mediacenter" title="i.imgur.com_zl2m2gc.jpg" alt="i.imgur.com_zl2m2gc.jpg" /></a>
+</p>
+
+<h1 class="sectionedit1" id="待機の移植">待機の移植</h1>
+<div class="level1">
+
+<p>
+FEBuilderGBAを2つ立ち上げ、片方にFE7を、もう片方にFE8を読み込ませましょう。<br/>
+FE7の方から、リンのデータを取り出して、FE8へ入れ込みます。<br/>
+<br />
+FE7の方から、待機アイコンを取り出します。
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f85\u6a5f\u306e\u79fb\u690d&quot;,&quot;hid&quot;:&quot;\u5f85\u6a5f\u306e\u79fb\u690d&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;190-477&quot;} -->
+<h2 class="sectionedit2" id="stepa1">StepA1</h2>
+<div class="level2">
+
+<p>
+FE7の方で、簡易メニューの“画像設定”を選択してください。<br />
+<a href="/lib/exe/fetch.php?tok=338f10&amp;media=https%3A%2F%2Fi.imgur.com%2FLK3jQJ7.jpg" class="media" title="https://i.imgur.com/LK3jQJ7.jpg"><img src="/lib/exe/fetch.php?tok=338f10&amp;media=https%3A%2F%2Fi.imgur.com%2FLK3jQJ7.jpg" class="mediacenter" title="i.imgur.com_lk3jqj7.jpg" alt="i.imgur.com_lk3jqj7.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA1&quot;,&quot;hid&quot;:&quot;stepa1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;478-617&quot;} -->
+<h2 class="sectionedit3" id="stepa2">StepA2</h2>
+<div class="level2">
+
+<p>
+画像設定から、“待機アイコン”を選択してください。<br />
+<a href="/lib/exe/fetch.php?tok=6c5007&amp;media=https%3A%2F%2Fi.imgur.com%2F9BbS00j.jpg" class="media" title="https://i.imgur.com/9BbS00j.jpg"><img src="/lib/exe/fetch.php?tok=6c5007&amp;media=https%3A%2F%2Fi.imgur.com%2F9BbS00j.jpg" class="mediacenter" title="i.imgur.com_9bbs00j.jpg" alt="i.imgur.com_9bbs00j.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA2&quot;,&quot;hid&quot;:&quot;stepa2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;618-748&quot;} -->
+<h2 class="sectionedit4" id="stepa3">StepA3</h2>
+<div class="level2">
+
+<p>
+待機アイコン画面になったら、リン ID:0x01 を選択してください。<br />
+<a href="/lib/exe/fetch.php?tok=c5638b&amp;media=https%3A%2F%2Fi.imgur.com%2FIMc2emo.jpg" class="media" title="https://i.imgur.com/IMc2emo.jpg"><img src="/lib/exe/fetch.php?tok=c5638b&amp;media=https%3A%2F%2Fi.imgur.com%2FIMc2emo.jpg" class="mediacenter" title="i.imgur.com_imc2emo.jpg" alt="i.imgur.com_imc2emo.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA3&quot;,&quot;hid&quot;:&quot;stepa3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;749-895&quot;} -->
+<h2 class="sectionedit5" id="stepa4">StepA4</h2>
+<div class="level2">
+
+<p>
+リンを選択したら、“画像取得”ボタンを押して、アイコンを画像ファイルとして保存してください。<br />
+<a href="/lib/exe/fetch.php?tok=25d17d&amp;media=https%3A%2F%2Fi.imgur.com%2F42XqGaO.jpg" class="media" title="https://i.imgur.com/42XqGaO.jpg"><img src="/lib/exe/fetch.php?tok=25d17d&amp;media=https%3A%2F%2Fi.imgur.com%2F42XqGaO.jpg" class="mediacenter" title="i.imgur.com_42xqgao.jpg" alt="i.imgur.com_42xqgao.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA4&quot;,&quot;hid&quot;:&quot;stepa4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;896-1089&quot;} -->
+<h2 class="sectionedit6" id="stepa5">StepA5</h2>
+<div class="level2">
+
+<p>
+FE8の方に移ります。
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA5&quot;,&quot;hid&quot;:&quot;stepa5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1090-1138&quot;} -->
+<h2 class="sectionedit7" id="stepa6">StepA6</h2>
+<div class="level2">
+
+<p>
+“画像設定”ボタンをクリックしてください。<br />
+<a href="/lib/exe/fetch.php?tok=7a754f&amp;media=https%3A%2F%2Fi.imgur.com%2FSv1Iye0.jpg" class="media" title="https://i.imgur.com/Sv1Iye0.jpg"><img src="/lib/exe/fetch.php?tok=7a754f&amp;media=https%3A%2F%2Fi.imgur.com%2FSv1Iye0.jpg" class="mediacenter" title="i.imgur.com_sv1iye0.jpg" alt="i.imgur.com_sv1iye0.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA6&quot;,&quot;hid&quot;:&quot;stepa6&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;1139-1257&quot;} -->
+<h2 class="sectionedit8" id="stepa7">StepA7</h2>
+<div class="level2">
+
+<p>
+画像設定から、“待機アイコン”を選択してください。<br />
+<a href="/lib/exe/fetch.php?tok=60d33c&amp;media=https%3A%2F%2Fi.imgur.com%2FRjroCd8.jpg" class="media" title="https://i.imgur.com/RjroCd8.jpg"><img src="/lib/exe/fetch.php?tok=60d33c&amp;media=https%3A%2F%2Fi.imgur.com%2FRjroCd8.jpg" class="mediacenter" title="i.imgur.com_rjrocd8.jpg" alt="i.imgur.com_rjrocd8.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA7&quot;,&quot;hid&quot;:&quot;stepa7&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;1258-1388&quot;} -->
+<h2 class="sectionedit9" id="stepa8">StepA8</h2>
+<div class="level2">
+
+<p>
+リンのアイコンを設定するキャラを選んでください。<br/>
+説明のため、今回はエイリークのアイコンをリンにします。<br/>
+エイリークのアイコン ID:0x01 を選択してください。<br/>
+<a href="/lib/exe/fetch.php?tok=c3dffc&amp;media=https%3A%2F%2Fi.imgur.com%2FmGHThGV.jpg" class="media" title="https://i.imgur.com/mGHThGV.jpg"><img src="/lib/exe/fetch.php?tok=c3dffc&amp;media=https%3A%2F%2Fi.imgur.com%2FmGHThGV.jpg" class="mediacenter" title="i.imgur.com_mghthgv.jpg" alt="i.imgur.com_mghthgv.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA8&quot;,&quot;hid&quot;:&quot;stepa8&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;1389-1678&quot;} -->
+<h2 class="sectionedit10" id="stepa9">StepA9</h2>
+<div class="level2">
+
+<p>
+“画像読込”ボタンで、先ほど保存したリンの待機アイコン画像を読み込ませてください。<br />
+<a href="/lib/exe/fetch.php?tok=60ccf9&amp;media=https%3A%2F%2Fi.imgur.com%2F1ioyiqR.jpg" class="media" title="https://i.imgur.com/1ioyiqR.jpg"><img src="/lib/exe/fetch.php?tok=60ccf9&amp;media=https%3A%2F%2Fi.imgur.com%2F1ioyiqR.jpg" class="mediacenter" title="i.imgur.com_1ioyiqr.jpg" alt="i.imgur.com_1ioyiqr.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA9&quot;,&quot;hid&quot;:&quot;stepa9&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;1679-1857&quot;} -->
+<h2 class="sectionedit11" id="stepa10">StepA10</h2>
+<div class="level2">
+
+<p>
+インポートできました。<br/>
+<a href="/lib/exe/fetch.php?tok=423919&amp;media=https%3A%2F%2Fi.imgur.com%2FyEilGVz.jpg" class="media" title="https://i.imgur.com/yEilGVz.jpg"><img src="/lib/exe/fetch.php?tok=423919&amp;media=https%3A%2F%2Fi.imgur.com%2FyEilGVz.jpg" class="mediacenter" title="i.imgur.com_yeilgvz.jpg" alt="i.imgur.com_yeilgvz.jpg" /></a><br />
+<br/>
+<br/>
+F5キーでエミュレータを起動して、動作を確認しましょう。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=83b7f0&amp;media=https%3A%2F%2Fi.imgur.com%2FgftEt6W.jpg" class="media" title="https://i.imgur.com/gftEt6W.jpg"><img src="/lib/exe/fetch.php?tok=83b7f0&amp;media=https%3A%2F%2Fi.imgur.com%2FgftEt6W.jpg" class="mediacenter" title="i.imgur.com_gftet6w.jpg" alt="i.imgur.com_gftet6w.jpg" /></a><br />
+<br/>
+リンのアイコンになりましたか？<br/>
+<br/>
+<br/>
+ただし、カーソルを当てて移動モードにしてしまうと、エイリークのアイコンに戻ります。<br/>
+これは移動アイコンをまだ移植していないためです。<br/>
+<a href="/lib/exe/fetch.php?tok=fc4b15&amp;media=https%3A%2F%2Fi.imgur.com%2FyTP5v7E.jpg" class="media" title="https://i.imgur.com/yTP5v7E.jpg"><img src="/lib/exe/fetch.php?tok=fc4b15&amp;media=https%3A%2F%2Fi.imgur.com%2FyTP5v7E.jpg" class="mediacenter" title="i.imgur.com_ytp5v7e.jpg" alt="i.imgur.com_ytp5v7e.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA10&quot;,&quot;hid&quot;:&quot;stepa10&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;1858-2378&quot;} -->
+<h1 class="sectionedit12" id="移動の移植">移動の移植</h1>
+<div class="level1">
+
+<p>
+先ほどと同じく、FE7の方から、リンのデータを取り出して、FE8へ入れ込みます。<br/>
+FE7の方から、移動アイコンを取り出します。<br/>
+<a href="/lib/exe/fetch.php?tok=34882a&amp;media=https%3A%2F%2Fi.imgur.com%2F7bUa2XA.jpg" class="media" title="https://i.imgur.com/7bUa2XA.jpg"><img src="/lib/exe/fetch.php?tok=34882a&amp;media=https%3A%2F%2Fi.imgur.com%2F7bUa2XA.jpg" class="mediacenter" title="i.imgur.com_7bua2xa.jpg" alt="i.imgur.com_7bua2xa.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u79fb\u52d5\u306e\u79fb\u690d&quot;,&quot;hid&quot;:&quot;\u79fb\u52d5\u306e\u79fb\u690d&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:12,&quot;range&quot;:&quot;2379-2622&quot;} -->
+<h2 class="sectionedit13" id="stepb1">StepB1</h2>
+<div class="level2">
+
+<p>
+FE7の方で、簡易メニューの“画像設定”を選択してください。<br />
+<a href="/lib/exe/fetch.php?tok=338f10&amp;media=https%3A%2F%2Fi.imgur.com%2FLK3jQJ7.jpg" class="media" title="https://i.imgur.com/LK3jQJ7.jpg"><img src="/lib/exe/fetch.php?tok=338f10&amp;media=https%3A%2F%2Fi.imgur.com%2FLK3jQJ7.jpg" class="mediacenter" title="i.imgur.com_lk3jqj7.jpg" alt="i.imgur.com_lk3jqj7.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB1&quot;,&quot;hid&quot;:&quot;stepb1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:13,&quot;range&quot;:&quot;2623-2762&quot;} -->
+<h2 class="sectionedit14" id="stepb2">StepB2</h2>
+<div class="level2">
+
+<p>
+画像設定から、“移動アイコン”を選択してください。<br />
+<a href="/lib/exe/fetch.php?tok=fbac6b&amp;media=https%3A%2F%2Fi.imgur.com%2FJT0jXe6.jpg" class="media" title="https://i.imgur.com/JT0jXe6.jpg"><img src="/lib/exe/fetch.php?tok=fbac6b&amp;media=https%3A%2F%2Fi.imgur.com%2FJT0jXe6.jpg" class="mediacenter" title="i.imgur.com_jt0jxe6.jpg" alt="i.imgur.com_jt0jxe6.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB2&quot;,&quot;hid&quot;:&quot;stepb2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:14,&quot;range&quot;:&quot;2763-2893&quot;} -->
+<h2 class="sectionedit15" id="stepb3">StepB3</h2>
+<div class="level2">
+
+<p>
+移動アイコン画面になったら、リン ID:0x01 を選択してください。<br />
+<a href="/lib/exe/fetch.php?tok=2e33e5&amp;media=https%3A%2F%2Fi.imgur.com%2F6zwlZB3.jpg" class="media" title="https://i.imgur.com/6zwlZB3.jpg"><img src="/lib/exe/fetch.php?tok=2e33e5&amp;media=https%3A%2F%2Fi.imgur.com%2F6zwlZB3.jpg" class="mediacenter" title="i.imgur.com_6zwlzb3.jpg" alt="i.imgur.com_6zwlzb3.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB3&quot;,&quot;hid&quot;:&quot;stepb3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:15,&quot;range&quot;:&quot;2894-3040&quot;} -->
+<h2 class="sectionedit16" id="stepb4">StepB4</h2>
+<div class="level2">
+
+<p>
+リンを選択したら、“画像取得”ボタンを押して、アイコンを画像ファイルとして保存してください。<br />
+<a href="/lib/exe/fetch.php?tok=750b40&amp;media=https%3A%2F%2Fi.imgur.com%2Fi0HIr9R.jpg" class="media" title="https://i.imgur.com/i0HIr9R.jpg"><img src="/lib/exe/fetch.php?tok=750b40&amp;media=https%3A%2F%2Fi.imgur.com%2Fi0HIr9R.jpg" class="mediacenter" title="i.imgur.com_i0hir9r.jpg" alt="i.imgur.com_i0hir9r.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB4&quot;,&quot;hid&quot;:&quot;stepb4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:16,&quot;range&quot;:&quot;3041-3234&quot;} -->
+<h2 class="sectionedit17" id="stepb5">StepB5</h2>
+<div class="level2">
+
+<p>
+FE8の方に移ります。
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB5&quot;,&quot;hid&quot;:&quot;stepb5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:17,&quot;range&quot;:&quot;3235-3283&quot;} -->
+<h2 class="sectionedit18" id="stepb6">StepB6</h2>
+<div class="level2">
+
+<p>
+“画像設定”ボタンをクリックしてください。<br />
+<a href="/lib/exe/fetch.php?tok=7a754f&amp;media=https%3A%2F%2Fi.imgur.com%2FSv1Iye0.jpg" class="media" title="https://i.imgur.com/Sv1Iye0.jpg"><img src="/lib/exe/fetch.php?tok=7a754f&amp;media=https%3A%2F%2Fi.imgur.com%2FSv1Iye0.jpg" class="mediacenter" title="i.imgur.com_sv1iye0.jpg" alt="i.imgur.com_sv1iye0.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB6&quot;,&quot;hid&quot;:&quot;stepb6&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:18,&quot;range&quot;:&quot;3284-3402&quot;} -->
+<h2 class="sectionedit19" id="stepb7">StepB7</h2>
+<div class="level2">
+
+<p>
+画像設定から、“移動アイコン”を選択してください。<br />
+<a href="/lib/exe/fetch.php?tok=9e2207&amp;media=https%3A%2F%2Fi.imgur.com%2FRyvYJje.jpg" class="media" title="https://i.imgur.com/RyvYJje.jpg"><img src="/lib/exe/fetch.php?tok=9e2207&amp;media=https%3A%2F%2Fi.imgur.com%2FRyvYJje.jpg" class="mediacenter" title="i.imgur.com_ryvyjje.jpg" alt="i.imgur.com_ryvyjje.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB7&quot;,&quot;hid&quot;:&quot;stepb7&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:19,&quot;range&quot;:&quot;3403-3533&quot;} -->
+<h2 class="sectionedit20" id="stepb8">StepB8</h2>
+<div class="level2">
+
+<p>
+リンのアイコンを設定するキャラを選んでください。<br/>
+説明のため、今回はエイリークのアイコン ID:0x01 をリンにします。<br/>
+エイリークのアイコンを選択してください。<br/>
+<a href="/lib/exe/fetch.php?tok=e9f5a5&amp;media=https%3A%2F%2Fi.imgur.com%2F72iAtNp.jpg" class="media" title="https://i.imgur.com/72iAtNp.jpg"><img src="/lib/exe/fetch.php?tok=e9f5a5&amp;media=https%3A%2F%2Fi.imgur.com%2F72iAtNp.jpg" class="mediacenter" title="i.imgur.com_72iatnp.jpg" alt="i.imgur.com_72iatnp.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB8&quot;,&quot;hid&quot;:&quot;stepb8&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:20,&quot;range&quot;:&quot;3534-3823&quot;} -->
+<h2 class="sectionedit21" id="stepb9">StepB9</h2>
+<div class="level2">
+
+<p>
+“画像読込”ボタンで、先ほど保存したリンの移動アイコン画像を読み込ませてください。<br />
+<a href="/lib/exe/fetch.php?tok=d33b23&amp;media=https%3A%2F%2Fi.imgur.com%2FYnFbXtL.jpg" class="media" title="https://i.imgur.com/YnFbXtL.jpg"><img src="/lib/exe/fetch.php?tok=d33b23&amp;media=https%3A%2F%2Fi.imgur.com%2FYnFbXtL.jpg" class="mediacenter" title="i.imgur.com_ynfbxtl.jpg" alt="i.imgur.com_ynfbxtl.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB9&quot;,&quot;hid&quot;:&quot;stepb9&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:21,&quot;range&quot;:&quot;3824-4002&quot;} -->
+<h2 class="sectionedit22" id="stepb10">StepB10</h2>
+<div class="level2">
+
+<p>
+インポートできました。<br/>
+<a href="/lib/exe/fetch.php?tok=76090a&amp;media=https%3A%2F%2Fi.imgur.com%2FgGjgOiH.jpg" class="media" title="https://i.imgur.com/gGjgOiH.jpg"><img src="/lib/exe/fetch.php?tok=76090a&amp;media=https%3A%2F%2Fi.imgur.com%2FgGjgOiH.jpg" class="mediacenter" title="i.imgur.com_ggjgoih.jpg" alt="i.imgur.com_ggjgoih.jpg" /></a><br />
+<br/>
+<br/>
+F5キーでエミュレータを起動して、動作を確認しましょう。<br/>
+<a href="/lib/exe/fetch.php?tok=34882a&amp;media=https%3A%2F%2Fi.imgur.com%2F7bUa2XA.jpg" class="media" title="https://i.imgur.com/7bUa2XA.jpg"><img src="/lib/exe/fetch.php?tok=34882a&amp;media=https%3A%2F%2Fi.imgur.com%2F7bUa2XA.jpg" class="mediacenter" title="i.imgur.com_7bua2xa.jpg" alt="i.imgur.com_7bua2xa.jpg" /></a><br />
+<br/>
+リンのアイコンになりましたか？<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB10&quot;,&quot;hid&quot;:&quot;stepb10&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:22,&quot;range&quot;:&quot;4003-4278&quot;} -->
+<h1 class="sectionedit23" id="顔画像の移植">顔画像の移植</h1>
+<div class="level1">
+
+<p>
+先ほどと同じく、FE7の方から、リンのデータを取り出して、FE8へ入れ込みます。<br/>
+<a href="/lib/exe/fetch.php?tok=3fb42f&amp;media=https%3A%2F%2Fi.imgur.com%2F5Xr3woP.jpg" class="media" title="https://i.imgur.com/5Xr3woP.jpg"><img src="/lib/exe/fetch.php?tok=3fb42f&amp;media=https%3A%2F%2Fi.imgur.com%2F5Xr3woP.jpg" class="mediacenter" title="i.imgur.com_5xr3wop.jpg" alt="i.imgur.com_5xr3wop.jpg" /></a><br />
+<br/>
+FE7の方から、顔アイコンを取り出します。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u9854\u753b\u50cf\u306e\u79fb\u690d&quot;,&quot;hid&quot;:&quot;\u9854\u753b\u50cf\u306e\u79fb\u690d&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:23,&quot;range&quot;:&quot;4279-4525&quot;} -->
+<h2 class="sectionedit24" id="stepc1">StepC1</h2>
+<div class="level2">
+
+<p>
+FE7の方で、簡易メニューの“画像設定”を選択してください。<br />
+<a href="/lib/exe/fetch.php?tok=338f10&amp;media=https%3A%2F%2Fi.imgur.com%2FLK3jQJ7.jpg" class="media" title="https://i.imgur.com/LK3jQJ7.jpg"><img src="/lib/exe/fetch.php?tok=338f10&amp;media=https%3A%2F%2Fi.imgur.com%2FLK3jQJ7.jpg" class="mediacenter" title="i.imgur.com_lk3jqj7.jpg" alt="i.imgur.com_lk3jqj7.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC1&quot;,&quot;hid&quot;:&quot;stepc1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:24,&quot;range&quot;:&quot;4526-4665&quot;} -->
+<h2 class="sectionedit25" id="stepc2">StepC2</h2>
+<div class="level2">
+
+<p>
+画像設定から、“顔画像”を選択してください。<br />
+<a href="/lib/exe/fetch.php?tok=5ad2f8&amp;media=https%3A%2F%2Fi.imgur.com%2FyFArLeW.jpg" class="media" title="https://i.imgur.com/yFArLeW.jpg"><img src="/lib/exe/fetch.php?tok=5ad2f8&amp;media=https%3A%2F%2Fi.imgur.com%2FyFArLeW.jpg" class="mediacenter" title="i.imgur.com_yfarlew.jpg" alt="i.imgur.com_yfarlew.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC2&quot;,&quot;hid&quot;:&quot;stepc2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:25,&quot;range&quot;:&quot;4666-4787&quot;} -->
+<h2 class="sectionedit26" id="stepc3">StepC3</h2>
+<div class="level2">
+
+<p>
+顔画像画面になったら、リン ID:0x16 を選択してください。<br />
+<a href="/lib/exe/fetch.php?tok=c022b9&amp;media=https%3A%2F%2Fi.imgur.com%2F4SYrJZH.jpg" class="media" title="https://i.imgur.com/4SYrJZH.jpg"><img src="/lib/exe/fetch.php?tok=c022b9&amp;media=https%3A%2F%2Fi.imgur.com%2F4SYrJZH.jpg" class="mediacenter" title="i.imgur.com_4syrjzh.jpg" alt="i.imgur.com_4syrjzh.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC3&quot;,&quot;hid&quot;:&quot;stepc3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:26,&quot;range&quot;:&quot;4788-4925&quot;} -->
+<h2 class="sectionedit27" id="stepc4">StepC4</h2>
+<div class="level2">
+
+<p>
+リンを選択したら、“画像取得”ボタンを押して、顔画像を画像ファイルとして保存してください。<br />
+<a href="/lib/exe/fetch.php?tok=e61505&amp;media=https%3A%2F%2Fi.imgur.com%2FmI2FLmT.jpg" class="media" title="https://i.imgur.com/mI2FLmT.jpg"><img src="/lib/exe/fetch.php?tok=e61505&amp;media=https%3A%2F%2Fi.imgur.com%2FmI2FLmT.jpg" class="mediacenter" title="i.imgur.com_mi2flmt.jpg" alt="i.imgur.com_mi2flmt.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC4&quot;,&quot;hid&quot;:&quot;stepc4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:27,&quot;range&quot;:&quot;4926-5116&quot;} -->
+<h2 class="sectionedit28" id="stepc5">StepC5</h2>
+<div class="level2">
+
+<p>
+FE8の方に移ります。
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC5&quot;,&quot;hid&quot;:&quot;stepc5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:28,&quot;range&quot;:&quot;5117-5165&quot;} -->
+<h2 class="sectionedit29" id="stepc6">StepC6</h2>
+<div class="level2">
+
+<p>
+“画像設定”ボタンをクリックしてください。<br />
+<a href="/lib/exe/fetch.php?tok=7a754f&amp;media=https%3A%2F%2Fi.imgur.com%2FSv1Iye0.jpg" class="media" title="https://i.imgur.com/Sv1Iye0.jpg"><img src="/lib/exe/fetch.php?tok=7a754f&amp;media=https%3A%2F%2Fi.imgur.com%2FSv1Iye0.jpg" class="mediacenter" title="i.imgur.com_sv1iye0.jpg" alt="i.imgur.com_sv1iye0.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC6&quot;,&quot;hid&quot;:&quot;stepc6&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:29,&quot;range&quot;:&quot;5166-5284&quot;} -->
+<h2 class="sectionedit30" id="stepc7">StepC7</h2>
+<div class="level2">
+
+<p>
+画像設定から、“顔画像”を選択してください。<br />
+<a href="/lib/exe/fetch.php?tok=62a6ef&amp;media=https%3A%2F%2Fi.imgur.com%2Fv3QfcJM.jpg" class="media" title="https://i.imgur.com/v3QfcJM.jpg"><img src="/lib/exe/fetch.php?tok=62a6ef&amp;media=https%3A%2F%2Fi.imgur.com%2Fv3QfcJM.jpg" class="mediacenter" title="i.imgur.com_v3qfcjm.jpg" alt="i.imgur.com_v3qfcjm.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC7&quot;,&quot;hid&quot;:&quot;stepc7&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:30,&quot;range&quot;:&quot;5285-5406&quot;} -->
+<h2 class="sectionedit31" id="stepc8">StepC8</h2>
+<div class="level2">
+
+<p>
+リンのアイコンを設定するキャラを選んでください。<br/>
+説明のため、今回はエイリークの顔画像 ID:0x02 をリンにします。<br/>
+エイリークの顔画像を選択してください。<br/>
+<a href="/lib/exe/fetch.php?tok=b6f932&amp;media=https%3A%2F%2Fi.imgur.com%2F51TrKZf.jpg" class="media" title="https://i.imgur.com/51TrKZf.jpg"><img src="/lib/exe/fetch.php?tok=b6f932&amp;media=https%3A%2F%2Fi.imgur.com%2F51TrKZf.jpg" class="mediacenter" title="i.imgur.com_51trkzf.jpg" alt="i.imgur.com_51trkzf.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC8&quot;,&quot;hid&quot;:&quot;stepc8&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:31,&quot;range&quot;:&quot;5407-5690&quot;} -->
+<h2 class="sectionedit32" id="stepc9">StepC9</h2>
+<div class="level2">
+
+<p>
+“画像読込”ボタンで、先ほど保存したリンの顔画像を読み込ませてください。<br/>
+<a href="/lib/exe/fetch.php?tok=b36c0e&amp;media=https%3A%2F%2Fi.imgur.com%2F0T6KQ8o.jpg" class="media" title="https://i.imgur.com/0T6KQ8o.jpg"><img src="/lib/exe/fetch.php?tok=b36c0e&amp;media=https%3A%2F%2Fi.imgur.com%2F0T6KQ8o.jpg" class="mediacenter" title="i.imgur.com_0t6kq8o.jpg" alt="i.imgur.com_0t6kq8o.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC9&quot;,&quot;hid&quot;:&quot;stepc9&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:32,&quot;range&quot;:&quot;5691-5856&quot;} -->
+<h2 class="sectionedit33" id="stepc10">StepC10</h2>
+<div class="level2">
+
+<p>
+インポートできました。<br/>
+<a href="/lib/exe/fetch.php?tok=9c84bc&amp;media=https%3A%2F%2Fi.imgur.com%2Fyyu7OjM.jpg" class="media" title="https://i.imgur.com/yyu7OjM.jpg"><img src="/lib/exe/fetch.php?tok=9c84bc&amp;media=https%3A%2F%2Fi.imgur.com%2Fyyu7OjM.jpg" class="mediacenter" title="i.imgur.com_yyu7ojm.jpg" alt="i.imgur.com_yyu7ojm.jpg" /></a><br />
+<br/>
+F5キーでエミュレータを起動して、動作を確認しましょう。<br/>
+リンの顔画像になりましたか？<br/>
+<a href="/lib/exe/fetch.php?tok=3fb42f&amp;media=https%3A%2F%2Fi.imgur.com%2F5Xr3woP.jpg" class="media" title="https://i.imgur.com/5Xr3woP.jpg"><img src="/lib/exe/fetch.php?tok=3fb42f&amp;media=https%3A%2F%2Fi.imgur.com%2F5Xr3woP.jpg" class="mediacenter" title="i.imgur.com_5xr3wop.jpg" alt="i.imgur.com_5xr3wop.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC10&quot;,&quot;hid&quot;:&quot;stepc10&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:33,&quot;range&quot;:&quot;5857-6121&quot;} -->
+<h2 class="sectionedit34" id="おまけ_パレットについて">おまけ パレットについて</h2>
+<div class="level2">
+
+<p>
+顔画像はキャラごとに15色+1色(透過色)のパレットを設定できます。<br />
+パレットを変更する場合は、インポートした画像のパレットを、グラフィックソフト等で変更してください。<br />
+読み込んだ画像のパレットがそのまま顔画像となります。
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u304a\u307e\u3051 \u30d1\u30ec\u30c3\u30c8\u306b\u3064\u3044\u3066&quot;,&quot;hid&quot;:&quot;\u304a\u307e\u3051_\u30d1\u30ec\u30c3\u30c8\u306b\u3064\u3044\u3066&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:34,&quot;range&quot;:&quot;6122-6489&quot;} -->
+<h1 class="sectionedit35" id="戦闘アニメの移植">戦闘アニメの移植</h1>
+<div class="level1">
+
+<p>
+いつものごとく、FE7の方から、リンのデータを取り出して、FE8へ入れ込みます。<br/>
+<a href="/lib/exe/fetch.php?tok=e99796&amp;media=https%3A%2F%2Fi.imgur.com%2FstGeXNR.jpg" class="media" title="https://i.imgur.com/stGeXNR.jpg"><img src="/lib/exe/fetch.php?tok=e99796&amp;media=https%3A%2F%2Fi.imgur.com%2FstGeXNR.jpg" class="mediacenter" title="i.imgur.com_stgexnr.jpg" alt="i.imgur.com_stgexnr.jpg" /></a><br />
+<br/>
+FE7の方から、戦闘アニメを取り出します。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6226\u95d8\u30a2\u30cb\u30e1\u306e\u79fb\u690d&quot;,&quot;hid&quot;:&quot;\u6226\u95d8\u30a2\u30cb\u30e1\u306e\u79fb\u690d&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:35,&quot;range&quot;:&quot;6490-6742&quot;} -->
+<h2 class="sectionedit36" id="stepd1">StepD1</h2>
+<div class="level2">
+
+<p>
+FE7の方で、簡易メニューの“画像設定”を選択してください。<br />
+<a href="/lib/exe/fetch.php?tok=338f10&amp;media=https%3A%2F%2Fi.imgur.com%2FLK3jQJ7.jpg" class="media" title="https://i.imgur.com/LK3jQJ7.jpg"><img src="/lib/exe/fetch.php?tok=338f10&amp;media=https%3A%2F%2Fi.imgur.com%2FLK3jQJ7.jpg" class="mediacenter" title="i.imgur.com_lk3jqj7.jpg" alt="i.imgur.com_lk3jqj7.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD1&quot;,&quot;hid&quot;:&quot;stepd1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:36,&quot;range&quot;:&quot;6743-6882&quot;} -->
+<h2 class="sectionedit37" id="stepd2">StepD2</h2>
+<div class="level2">
+
+<p>
+画像設定から、“戦闘アニメ”を選択してください。<br />
+<a href="/lib/exe/fetch.php?tok=652c5d&amp;media=https%3A%2F%2Fi.imgur.com%2F40KuaJB.jpg" class="media" title="https://i.imgur.com/40KuaJB.jpg"><img src="/lib/exe/fetch.php?tok=652c5d&amp;media=https%3A%2F%2Fi.imgur.com%2F40KuaJB.jpg" class="mediacenter" title="i.imgur.com_40kuajb.jpg" alt="i.imgur.com_40kuajb.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD2&quot;,&quot;hid&quot;:&quot;stepd2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:37,&quot;range&quot;:&quot;6883-7010&quot;} -->
+<h2 class="sectionedit38" id="stepd3">StepD3</h2>
+<div class="level2">
+
+<p>
+戦闘アニメ画面になったら、リン ID:0x0F を選択してください。<br />
+<a href="/lib/exe/fetch.php?tok=512132&amp;media=https%3A%2F%2Fi.imgur.com%2FWYIvzm2.jpg" class="media" title="https://i.imgur.com/WYIvzm2.jpg"><img src="/lib/exe/fetch.php?tok=512132&amp;media=https%3A%2F%2Fi.imgur.com%2FWYIvzm2.jpg" class="mediacenter" title="i.imgur.com_wyivzm2.jpg" alt="i.imgur.com_wyivzm2.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD3&quot;,&quot;hid&quot;:&quot;stepd3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:38,&quot;range&quot;:&quot;7011-7154&quot;} -->
+<h2 class="sectionedit39" id="stepd4">StepD4</h2>
+<div class="level2">
+
+<p>
+リンを選択したら、“戦闘アニメの書出し”ボタンを押して、戦闘アニメをファイルとして保存してください。<br />
+<a href="/lib/exe/fetch.php?tok=0c05b1&amp;media=https%3A%2F%2Fi.imgur.com%2FeSjiEAw.jpg" class="media" title="https://i.imgur.com/eSjiEAw.jpg"><img src="/lib/exe/fetch.php?tok=0c05b1&amp;media=https%3A%2F%2Fi.imgur.com%2FeSjiEAw.jpg" class="mediacenter" title="i.imgur.com_esjieaw.jpg" alt="i.imgur.com_esjieaw.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD4&quot;,&quot;hid&quot;:&quot;stepd4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:39,&quot;range&quot;:&quot;7155-7360&quot;} -->
+<h2 class="sectionedit40" id="stepd5">StepD5</h2>
+<div class="level2">
+
+<p>
+FE8の方に移ります。
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD5&quot;,&quot;hid&quot;:&quot;stepd5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:40,&quot;range&quot;:&quot;7361-7409&quot;} -->
+<h2 class="sectionedit41" id="stepd6">StepD6</h2>
+<div class="level2">
+
+<p>
+“画像設定”ボタンをクリックしてください。<br />
+<a href="/lib/exe/fetch.php?tok=7a754f&amp;media=https%3A%2F%2Fi.imgur.com%2FSv1Iye0.jpg" class="media" title="https://i.imgur.com/Sv1Iye0.jpg"><img src="/lib/exe/fetch.php?tok=7a754f&amp;media=https%3A%2F%2Fi.imgur.com%2FSv1Iye0.jpg" class="mediacenter" title="i.imgur.com_sv1iye0.jpg" alt="i.imgur.com_sv1iye0.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD6&quot;,&quot;hid&quot;:&quot;stepd6&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:41,&quot;range&quot;:&quot;7410-7528&quot;} -->
+<h2 class="sectionedit42" id="stepd7">StepD7</h2>
+<div class="level2">
+
+<p>
+画像設定から、“戦闘アニメ”を選択してください。<br />
+<a href="/lib/exe/fetch.php?tok=f0acaa&amp;media=https%3A%2F%2Fi.imgur.com%2FYawQDcT.jpg" class="media" title="https://i.imgur.com/YawQDcT.jpg"><img src="/lib/exe/fetch.php?tok=f0acaa&amp;media=https%3A%2F%2Fi.imgur.com%2FYawQDcT.jpg" class="mediacenter" title="i.imgur.com_yawqdct.jpg" alt="i.imgur.com_yawqdct.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD7&quot;,&quot;hid&quot;:&quot;stepd7&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:42,&quot;range&quot;:&quot;7529-7656&quot;} -->
+<h2 class="sectionedit43" id="stepd8">StepD8</h2>
+<div class="level2">
+
+<p>
+リンの戦闘アニメを設定するキャラを選んでください。<br/>
+説明のため、今回はエイリークの戦闘アニメをリンにします。<br/>
+エイリークの戦闘アニメ ID:0x03 を選択してください。<br/>
+<a href="/lib/exe/fetch.php?tok=920832&amp;media=https%3A%2F%2Fi.imgur.com%2FyjbatGF.jpg" class="media" title="https://i.imgur.com/yjbatGF.jpg"><img src="/lib/exe/fetch.php?tok=920832&amp;media=https%3A%2F%2Fi.imgur.com%2FyjbatGF.jpg" class="mediacenter" title="i.imgur.com_yjbatgf.jpg" alt="i.imgur.com_yjbatgf.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD8&quot;,&quot;hid&quot;:&quot;stepd8&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:43,&quot;range&quot;:&quot;7657-7955&quot;} -->
+<h2 class="sectionedit44" id="stepd9">StepD9</h2>
+<div class="level2">
+
+<p>
+“戦闘アニメの読込”ボタンで、先ほど保存したリンの戦闘アニメを読み込ませてください。<br />
+<a href="/lib/exe/fetch.php?tok=754eea&amp;media=https%3A%2F%2Fi.imgur.com%2FKygHHM3.jpg" class="media" title="https://i.imgur.com/KygHHM3.jpg"><img src="/lib/exe/fetch.php?tok=754eea&amp;media=https%3A%2F%2Fi.imgur.com%2FKygHHM3.jpg" class="mediacenter" title="i.imgur.com_kyghhm3.jpg" alt="i.imgur.com_kyghhm3.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD9&quot;,&quot;hid&quot;:&quot;stepd9&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:44,&quot;range&quot;:&quot;7956-8137&quot;} -->
+<h2 class="sectionedit45" id="stepd10">StepD10</h2>
+<div class="level2">
+
+<p>
+インポートできました。<br/>
+<a href="/lib/exe/fetch.php?tok=b68747&amp;media=https%3A%2F%2Fi.imgur.com%2FoJPRTuL.jpg" class="media" title="https://i.imgur.com/oJPRTuL.jpg"><img src="/lib/exe/fetch.php?tok=b68747&amp;media=https%3A%2F%2Fi.imgur.com%2FoJPRTuL.jpg" class="mediacenter" title="i.imgur.com_ojprtul.jpg" alt="i.imgur.com_ojprtul.jpg" /></a><br />
+<br/>
+F5キーでエミュレータを起動して、動作を確認しましょう。<br/>
+リンの戦闘アニメになりましたか？<br/>
+<a href="/lib/exe/fetch.php?tok=e99796&amp;media=https%3A%2F%2Fi.imgur.com%2FstGeXNR.jpg" class="media" title="https://i.imgur.com/stGeXNR.jpg"><img src="/lib/exe/fetch.php?tok=e99796&amp;media=https%3A%2F%2Fi.imgur.com%2FstGeXNR.jpg" class="mediacenter" title="i.imgur.com_stgexnr.jpg" alt="i.imgur.com_stgexnr.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD10&quot;,&quot;hid&quot;:&quot;stepd10&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:45,&quot;range&quot;:&quot;8138-8408&quot;} -->
+<h2 class="sectionedit46" id="おまけ1_戦闘アニメと武器">おまけ1 戦闘アニメと武器</h2>
+<div class="level2">
+
+<p>
+戦闘アニメには、複数のパターンがあるものがあります。<br/>
+今回は、剣で攻撃するモーション ID:0x03 でしたが、<br/>
+剣をもっていないモーション ID:0x04 が、別にあります。<br/>
+完璧を目指す場合、こちらも移植する必要があります。<br/>
+<a href="/lib/exe/fetch.php?tok=78ce80&amp;media=https%3A%2F%2Fi.imgur.com%2FvL6AclG.jpg" class="media" title="https://i.imgur.com/vL6AclG.jpg"><img src="/lib/exe/fetch.php?tok=78ce80&amp;media=https%3A%2F%2Fi.imgur.com%2FvL6AclG.jpg" class="mediacenter" title="i.imgur.com_vl6aclg.jpg" alt="i.imgur.com_vl6aclg.jpg" /></a>
+</p>
+
+<p>
+モーションは、基本的に6つあります。<br/>
+
+</p>
+<div class="table sectionedit47"><table class="inline">
+	<tr class="row0">
+		<td class="col0">剣をもっている</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">槍をもっている</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">斧をもっている</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">弓をもっている</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">魔法または杖をもっている</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">アイテム使用か何も持っていない場合</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:47,&quot;range&quot;:&quot;8862-9050&quot;} -->
+<p>
+<br/>
+ただし、例外に手斧があります。<br/>
+手斧は、それぞれのアイテムごとに、手斧モーションを設定しないといけません。<br/>
+これを忘れると、手斧を装備して、戦闘アニメに入るとゲームがフリーズします。<br/>
+<a href="/lib/exe/fetch.php?tok=567a04&amp;media=https%3A%2F%2Fi.imgur.com%2FfGLDVUo.jpg" class="media" title="https://i.imgur.com/fGLDVUo.jpg"><img src="/lib/exe/fetch.php?tok=567a04&amp;media=https%3A%2F%2Fi.imgur.com%2FfGLDVUo.jpg" class="mediacenter" title="i.imgur.com_fgldvuo.jpg" alt="i.imgur.com_fgldvuo.jpg" /></a><br />
+<br/>
+<br/>
+マップ戦闘の場合は、フリーズしないので、デバッグとかでよく漏れが出ます。<br/>
+手斧系アイテムを新規に追加したり、斧使いを追加した場合は、かならず手斧モーションの設定をするようにしましょう。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u304a\u307e\u30511 \u6226\u95d8\u30a2\u30cb\u30e1\u3068\u6b66\u5668&quot;,&quot;hid&quot;:&quot;\u304a\u307e\u30511_\u6226\u95d8\u30a2\u30cb\u30e1\u3068\u6b66\u5668&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:46,&quot;range&quot;:&quot;8409-9655&quot;} -->
+<h2 class="sectionedit48" id="おまけ2_色">おまけ2 色</h2>
+<div class="level2">
+
+<p>
+クラスごとに色を変えたい場合は、ユニットパレットからできます。<br/>
+<a href="/lib/exe/fetch.php?tok=9168c3&amp;media=https%3A%2F%2Fi.imgur.com%2Fh5olpGZ.jpg" class="media" title="https://i.imgur.com/h5olpGZ.jpg"><img src="/lib/exe/fetch.php?tok=9168c3&amp;media=https%3A%2F%2Fi.imgur.com%2Fh5olpGZ.jpg" class="mediacenter" title="i.imgur.com_h5olpgz.jpg" alt="i.imgur.com_h5olpgz.jpg" /></a><br />
+<a href="/lib/exe/fetch.php?tok=36ed0f&amp;media=https%3A%2F%2Fi.imgur.com%2Ff4MV7zy.jpg" class="media" title="https://i.imgur.com/f4MV7zy.jpg"><img src="/lib/exe/fetch.php?tok=36ed0f&amp;media=https%3A%2F%2Fi.imgur.com%2Ff4MV7zy.jpg" class="mediacenter" title="i.imgur.com_f4mv7zy.jpg" alt="i.imgur.com_f4mv7zy.jpg" /></a><br />
+<br/>
+<br/>
+汎用のザコ敵色として、赤い色を設定する場合は、戦闘アニメのパレットから可能です。<br/>
+<a href="/lib/exe/fetch.php?tok=f8f42d&amp;media=https%3A%2F%2Fi.imgur.com%2FWu6xepV.jpg" class="media" title="https://i.imgur.com/Wu6xepV.jpg"><img src="/lib/exe/fetch.php?tok=f8f42d&amp;media=https%3A%2F%2Fi.imgur.com%2FWu6xepV.jpg" class="mediacenter" title="i.imgur.com_wu6xepv.jpg" alt="i.imgur.com_wu6xepv.jpg" /></a><br />
+<a href="/lib/exe/fetch.php?tok=a94deb&amp;media=https%3A%2F%2Fi.imgur.com%2FX0BqiI8.jpg" class="media" title="https://i.imgur.com/X0BqiI8.jpg"><img src="/lib/exe/fetch.php?tok=a94deb&amp;media=https%3A%2F%2Fi.imgur.com%2FX0BqiI8.jpg" class="mediacenter" title="i.imgur.com_x0bqii8.jpg" alt="i.imgur.com_x0bqii8.jpg" /></a><br />
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u304a\u307e\u30512 \u8272&quot;,&quot;hid&quot;:&quot;\u304a\u307e\u30512_\u8272&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:48,&quot;range&quot;:&quot;9656-&quot;} --></div>
+</body>
+</html>

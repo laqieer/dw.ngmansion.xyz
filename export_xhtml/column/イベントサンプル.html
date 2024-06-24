@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>column:イベントサンプル</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="column,イベントサンプル"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=column:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=column"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=column:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=column:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=column:%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='column';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"column:\u30a4\u30d9\u30f3\u30c8\u30b5\u30f3\u30d7\u30eb","namespace":"column","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#会話が変わる訪問村">会話が変わる訪問村</a></div></li>
+<li class="level2"><div class="li"><a href="#離脱マップ">離脱マップ</a></div></li>
+<li class="level2"><div class="li"><a href="#会話グループ別セリフ表示">会話グループ別セリフ表示</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#会話グループ例">会話グループ例</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#戦闘イベント例">戦闘イベント例</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#イベント戦闘詳細">イベント戦闘詳細</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#支援aの時にのみ可能な会話">支援Aの時にのみ可能な会話</a></div></li>
+<li class="level2"><div class="li"><a href="#烈火の剣_序章再現風イベント">烈火の剣 序章再現風イベント</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h2 class="sectionedit1" id="会話が変わる訪問村">会話が変わる訪問村</h2>
+<div class="level2">
+<pre class="code">EVENT00:
+  MUSS $30 //BGM一時変化
+  STAL $20
+  CHECK_ACTIVE //現在動かしているユニットのID取得
+  SVAL 7 $13; BEQ $1 0xC 7 //アスレイ[13]ならLABEL 1へ
+  SVAL 7 $1; BEQ $2 0xC 7 //エイリーク[1]ならLABEL 2へ
+  Text($02,$974) //[02]の背景でルーテ会話[0974]を表示
+  GOTO 0
+  
+ LABEL 1
+  Text($02,$972) //[02]の背景でアスレイxルーテ会話[0972]を表示
+  GOTO 0
+  
+ LABEL 2
+  Text($02,$973) //[02]の背景でエイリークxルーテ会話[0973]を表示
+  LAVEL 0 //ジャンプ先[00]
+  MURE 0x4 //BGMを戻す
+  LOAD1 1 $08909184; ENUN //ルーテ登場
+  NoFade; ENDA //イベント終了命令</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u4f1a\u8a71\u304c\u5909\u308f\u308b\u8a2a\u554f\u6751&quot;,&quot;hid&quot;:&quot;\u4f1a\u8a71\u304c\u5909\u308f\u308b\u8a2a\u554f\u6751&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;2-711&quot;} -->
+<h2 class="sectionedit2" id="離脱マップ">離脱マップ</h2>
+<div class="level2">
+<pre class="code">EVENT00:
+  SVAL 2 0; CALL $08A602F0 //自軍なら誰が進入しても
+  CHECK_ACTIVE //選択中ユニット取得
+  SVAL 1 $XX //主人公ユニットID指定☆
+  BNE 1 0xC 1 //主人公以外はLABAL 1へジャンプ
+  
+  ASMC asm_alone+1	//マップ上に残っているユニットチェック
+  BEQ 2 0xC 0 //残っている場合はLABEL 2へジャンプ
+  
+  TEXTSHOW $XXX; TEXTEND //主人公離脱成功セリフ☆
+  REMA //会話終了
+  ENUT $3 //クリアフラグオン
+  GOTO 0
+  
+ LABEL 2
+   TEXTSHOW $XXX; TEXTEND //主人公離脱失敗セリフ☆
+   REMA //会話終了
+   GOTO 0
+  
+ LABEL 1
+  CALL escape_text //離脱セリフ呼び出し(アドレス指定可)
+  ASMC asm_ridatu+1	//(主人公を担いでなければ)ユニット離脱
+  
+ LABEL 0
+   NoFade; ENDA //イベント終了命令
+ 
+ escape_text:
+  MUNO; TEXTSTART
+  CHECK_ACTIVE //現在動かしているユニットのID取得
+  SVAL 7 $13; BEQ $1 0xC 7 //アスレイ[13]ならLABEL 1へ
+  SVAL 7 $1; BEQ $2 0xC 7 //エイリーク[1]ならLABEL 2へ
+  GOTO 0
+ LABEL $1; TEXTSHOW $XXX; GOTO 0
+ LABEL $2; TEXTSHOW $XXX
+ 
+ LABEL 0
+  TEXTEND; REMA; MUSI //会話終了
+  ENDA //リターン命令</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u96e2\u8131\u30de\u30c3\u30d7&quot;,&quot;hid&quot;:&quot;\u96e2\u8131\u30de\u30c3\u30d7&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:2,&quot;range&quot;:&quot;712-1941&quot;} -->
+<h2 class="sectionedit3" id="会話グループ別セリフ表示">会話グループ別セリフ表示</h2>
+<div class="level2">
+<pre class="code">EVENT00:
+  SVAL 2 0; CALL $08A602F0 //自軍なら誰が進入しても
+  MUNO; TEXTSTART
+  WORD $2E21 $FFFF3321 //選択中ユニットの会話グループID取得
+  
+  SVAL 6 $1 //選択中ユニットが会話グループ$1かを照合
+  BEQ $1 0xC 6 //合っていたらLABEL 1へジャンプ
+  SVAL 6 $2; BEQ $2 0xC 6
+  SVAL 6 $3; BEQ $3 0xC 6
+  SVAL 6 $4; BEQ $4 0xC 6
+  SVAL 6 $5; BEQ $5 0xC 6
+  SVAL 6 $6; BEQ $6 0xC 6
+  SVAL 6 $7; BEQ $7 0xC 6
+  SVAL 6 $8; BEQ $8 0xC 6
+  SVAL 6 $9; BEQ $9 0xC 6
+  SVAL 6 $A; BEQ $A 0xC 6
+  SVAL 6 $B; BEQ $B 0xC 6
+  SVAL 6 $C; BEQ $C 0xC 6
+  SVAL 6 $D; BEQ $D 0xC 6
+  
+  TEXTSHOW $XXXX; GOTO 0 //会話グループ[0]用セリフ[XXXX]
+  LABEL $1; TEXTSHOW $XXX; GOTO 0 //会話グループ[1]用セリフ[XXXX]
+  LABEL $2; TEXTSHOW $XXX; GOTO 0
+  LABEL $3; TEXTSHOW $XXX; GOTO 0
+  LABEL $4; TEXTSHOW $XXX; GOTO 0
+  LABEL $5; TEXTSHOW $XXX; GOTO 0
+  LABEL $6; TEXTSHOW $XXX; GOTO 0
+  LABEL $7; TEXTSHOW $XXX; GOTO 0
+  LABEL $8; TEXTSHOW $XXX; GOTO 0
+  LABEL $9; TEXTSHOW $XXX; GOTO 0
+  LABEL $A; TEXTSHOW $XXX; GOTO 0
+  LABEL $B; TEXTSHOW $XXX; GOTO 0
+  LABEL $C; TEXTSHOW $XXX; GOTO 0
+  LABEL $D; TEXTSHOW $XXX;
+ LABEL 0
+  TEXTEND; REMA; MUSI //会話終了
+  NoFade; ENDA //イベント終了命令</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u4f1a\u8a71\u30b0\u30eb\u30fc\u30d7\u5225\u30bb\u30ea\u30d5\u8868\u793a&quot;,&quot;hid&quot;:&quot;\u4f1a\u8a71\u30b0\u30eb\u30fc\u30d7\u5225\u30bb\u30ea\u30d5\u8868\u793a&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:3,&quot;range&quot;:&quot;1942-3253&quot;} -->
+<h3 class="sectionedit4" id="会話グループ例">会話グループ例</h3>
+<div class="level3">
+<pre class="code">00=フランツ、フォルデ、クーガー
+01=エフラム、ヨシュア、ヒー様、ジスト
+02=ロス
+03=ゼト、ギリアム、カイル、オルソン、サレフ
+04=モルダ、ガルシア、デュッセル、（ドズラ）
+05=コーマ、レナック
+06=マリカ
+07=ターナ、テティス
+08=ラーチェル
+09=ルーテ
+0A=ヴァネッサ、シレーネ
+0B=エイリーク、ノール、アスレイ
+0C=ネイミー、ミルラ、ナターシャ
+0D=ユアン、アメリア</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u4f1a\u8a71\u30b0\u30eb\u30fc\u30d7\u4f8b&quot;,&quot;hid&quot;:&quot;\u4f1a\u8a71\u30b0\u30eb\u30fc\u30d7\u4f8b&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:4,&quot;range&quot;:&quot;3254-3796&quot;} -->
+<h2 class="sectionedit5" id="戦闘イベント例">戦闘イベント例</h2>
+<div class="level2">
+
+<p>
+ヴァルター($45)がゼトに($2)に攻撃を仕掛け、ヴァルターが攻撃、ゼトがクリティカルで反撃
+</p>
+<pre class="code"> StartBattle
+  NormalDamage(0,0)
+  CriticalHit(1,0)
+ EndAttack
+ FIG1 $45 $2 0</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6226\u95d8\u30a4\u30d9\u30f3\u30c8\u4f8b&quot;,&quot;hid&quot;:&quot;\u6226\u95d8\u30a4\u30d9\u30f3\u30c8\u4f8b&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:5,&quot;range&quot;:&quot;3797-4049&quot;} -->
+<h3 class="sectionedit6" id="イベント戦闘詳細">イベント戦闘詳細</h3>
+<div class="level3">
+
+<p>
+戦闘内容入力――(前準備)
+</p>
+<pre class="code">StartBattle
+  NormalDamage(combatant,damage)
+  CriticalHit(combatant,damage)
+  MissedAttack(combatant,damage)
+EndAttack</pre>
+
+<p>
+combatant=どちらが攻撃するか[0=攻撃側,1=反撃側]<br/>
+damage=0なら通常ダメージ
+</p>
+
+<p>
+戦闘開始――
+</p>
+<pre class="code">FIG1 $XX $YY 0 //戦闘画面有ｲﾍﾞﾝﾄ戦闘[XX]が[YY]に攻撃
+FIG2 $XX $YY 0 //戦闘画面有ｲﾍﾞﾝﾄ戦闘[XX]が[YY]に攻撃</pre>
+<pre class="code">SHORT $0540 $B $XX $YY //座標からユニット取得
+FIG1 $XX $FFFF 0 //戦闘画面有ｲﾍﾞﾝﾄ戦闘[XX]が[取得座標ユニット]に攻撃
+FIG2 $XX $FFFF 0 //戦闘画面有ｲﾍﾞﾝﾄ戦闘[XX]が[取得座標ユニット]に攻撃</pre>
+
+<p>
+イベント戦闘ではHP残量や生死には反映されない<br/>
+戦闘会話フラグや死亡会話フラグは立てられる<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a4\u30d9\u30f3\u30c8\u6226\u95d8\u8a73\u7d30&quot;,&quot;hid&quot;:&quot;\u30a4\u30d9\u30f3\u30c8\u6226\u95d8\u8a73\u7d30&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:6,&quot;range&quot;:&quot;4050-4941&quot;} -->
+<h2 class="sectionedit7" id="支援aの時にのみ可能な会話">支援Aの時にのみ可能な会話</h2>
+<div class="level2">
+<pre class="code">CHARASM $ZZZZ CBE01 [$XX,$YY] asm_A_Talk+1</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u652f\u63f4A\u306e\u6642\u306b\u306e\u307f\u53ef\u80fd\u306a\u4f1a\u8a71&quot;,&quot;hid&quot;:&quot;\u652f\u63f4a\u306e\u6642\u306b\u306e\u307f\u53ef\u80fd\u306a\u4f1a\u8a71&quot;,&quot;codeblockOffset&quot;:8,&quot;secid&quot;:7,&quot;range&quot;:&quot;4942-5052&quot;} -->
+<h2 class="sectionedit8" id="烈火の剣_序章再現風イベント">烈火の剣 序章再現風イベント</h2>
+<div class="level2">
+<pre class="code">BeginningScene:
+  REMOVEPORTRAITS //マップ要素消去
+  ASMC $0x48199 //名前入力画面
+  CLEAN //画面初期化
+
+  SetBackground($4F)
+  SETVAL 0xB 0xFFFFFFFF
+  SOLOTEXTBOXSTART
+  TEXTSHOW $08C3
+  TEXTEND
+  FADI 16
+  
+  WORD $1A22 //??(類0x1A21REMOVEPORTRAITS)
+  SHORT $2142 $00 0 2		//$XXがCGのID
+  MUSC $27 //BGM変更
+  FADU 3
+  TEXTSHOW $08C4
+  TEXTEND
+  
+  FADI 16
+  SetBackground($00)
+  TEXTSHOW $08C5
+  TEXTEND
+  
+  FADI 16
+  LOAD1 1 UNITS01; ENUN //ユニット読み込み1　特に特徴がないのが特徴
+  ENDA
+  
+  
+ UNITS01:
+    UNIT $01 $02 $00 Level(1,0,0) [14,9] 0 0 0 0 [$01,$6C] NoAI
+    WORD 0 0 0 0 0</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u70c8\u706b\u306e\u5263 \u5e8f\u7ae0\u518d\u73fe\u98a8\u30a4\u30d9\u30f3\u30c8&quot;,&quot;hid&quot;:&quot;\u70c8\u706b\u306e\u5263_\u5e8f\u7ae0\u518d\u73fe\u98a8\u30a4\u30d9\u30f3\u30c8&quot;,&quot;codeblockOffset&quot;:9,&quot;secid&quot;:8,&quot;range&quot;:&quot;5053-&quot;} --></div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+====== ROM翻訳  ======
+
+FE7U FE8U に、マルチバイト表示ルーチンを追加します。\\ FE7J FE8J に、シングルバイト表示ルーチンを追加します。\\ (FE6Jはまだ未対応)\\ 
+{{ https://i.imgur.com/WdDMzGe.jpg }}
+{{ https://i.imgur.com/5x0DAtx.jpg }}
+
+
+====== 何が嬉しいか？  ======
+FE7J FE8J用に作られた改造ROMの翻訳が容易になります。\\ 逆に、FE7U FE8U用に作られた改造ROMの翻訳が容易になります。\\ 
+今のところ、英語(アスキーコード)と、日本語(SJIS)ですが、理屈の上では何語でも行けるはずです。\\ (さすがに、アラビア語みたいに、右から左に書くような言語は無理かもしれませんが・・・)\\ 
+====== 既存手法との比較  ======
+TBLと比べると、以下のメリットがあります。\\ 
+・マルチバイトとシングルバイトが同居が共存可能である。\\ ・修正が容易である。\\ 
+
+====== 遊び方  ======
+===== FE8U FE7Uの場合  =====
+A-1. FEBuilderGBAで ROMを開きます。\\ {{ https://i.imgur.com/c6Nq4bh.jpg }}
+
+A-2. ツール->パッチで、 Anti-Haffman と、 DrawMultiByte の2つのパッチを適用します。\\ {{ https://i.imgur.com/Gd4Z6hu.jpg }}
+{{ https://i.imgur.com/HtMpKav.jpg }}
+
+A-3. 文字列を翻訳します。\\ ツール->ROM翻訳ツール で、テキストのエクスポート/インポートができます。\\ 個別に翻訳してもいいです。\\ \\ とりあえず、わかりやすいアイテムの名前だけを変えてみましょう。\\ {{ https://i.imgur.com/kDKiJ1t.jpg }}
+{{ https://i.imgur.com/oQplYei.jpg }}
+\\ A-4. フォントをインポートします.\\ ツール->ROM翻訳ツール から、FE8J FE7J ROMを指定して、表示に利用するフォントをインポートします。\\ 足りないフォントだけをインポートするので何度インポートしても安全です。\\ {{ https://i.imgur.com/x9EyOzH.jpg }}
+
+A-5. F5キーでエミュレータを起動して、動作を確認します。\\ {{ https://i.imgur.com/5x0DAtx.jpg }}
+\\ 
+===== FE8J FE7Jの場合  =====
+A-1. FEBuilderGBAで ROMを開きます。\\ {{ https://i.imgur.com/CT3OAlJ.jpg }}
+
+A-2. ツール->パッチで、 Anti-Haffman と、 DrawSingleByte の2つのパッチを適用します。\\ {{ https://i.imgur.com/s76hjrY.jpg }}
+{{ https://i.imgur.com/igdtIi8.jpg }}
+
+A-3. 文字列を翻訳します。\\ ツール->ROM翻訳ツール で、テキストのエクスポート/インポートができます。\\ 個別に翻訳してもいいです。\\ \\ とりあえず、わかりやすいアイテムの名前だけを変えてみましょう。\\ {{ https://i.imgur.com/mEcTWfa.jpg }}
+{{ https://i.imgur.com/vMUj0n0.jpg }}
+\\ A-4. フォントをインポートします。\\ ツール->ROM翻訳ツール から、FE8U FE7U ROMを指定して、表示に利用するフォントをインポートします。\\ 足りないフォントだけをインポートするので何度インポートしても安全です。\\ {{ https://i.imgur.com/N2CU52L.jpg }}
+\\ A-5. F5キーでエミュレータを起動して、動作を確認します。\\ {{ https://i.imgur.com/WdDMzGe.jpg }}
+\\ \\ \\ \\ 注意点:
+ただし、FE8J FE7Jには、"文字列"を経由しない直接Shift-JIS指定があるので、そこも忘れずに翻訳しないといけません。\\ 地形とか、メニューとか、FE7Jだとサウンドルームとか。ともに、FEBuilderGBAから簡単に変更できます。\\ 
+
+====== 技術情報  ======
+Anti-Haffman と、 DrawMultiByte / DrawSyngleByte の 2つのパッチによって実現します。\\ \\ Anti-Haffmanにより、符号テーブルを無視して文字を格納します。\\ DrawMultiByte / DrawSyngleByteにより、表示するときに、マルチバイトとシングルバイト用のフォントを表示します。\\ フォントは、既存のROMからインポートします。\\ \\ 共に、FEBuilderGBAに含まれています。\\ ソースコードも patchディレクトリの下に付属しています。\\ \\ マルチバイト環境でシングルバイトを出すために、シングルバイトフォントは、0x40 XX にマッピングしています。\\ \\ 
+====== 文字コードについて  ======
+FontForm.cs を読むのが一番わかりやすい。\\ \\ FEでは主に2つのフォントがあります。
+<code>
+ItemFont	アイテム表示で使われる、白く枠抜きされたフォント。
+SerifFont	セリフの吹き出しで利用されるフォント。
+</code>
+\\ これ以外にもいくつかありますが、それらは数が少ないので対象外です。\\ \\ ===== マルチバイト  =====
+マルチバイトでは、以下のように演算が行われます。\\ <code>
+struct FONT{
+	FONT* next;
+	byte  sjis2_hash;
+	byte  width;
+	byte  nazo1; //unknown
+	byte  nazo2; //unknown
+	byte[64] bitmap4color;
+};
+ 
+SJIS1 = ((moji_char >> 8) & 0xFF)
+SJIS2 = (moji_char 0xFF)
+ 
+if (SJIS1 < 0x1f)
+{
+	return NOT_FOUND;
+}
+ 
+font = ItemFont + (SJIS1 << 2) - 0x100;
+font = SerifFont + (SJIS1 << 2) - 0x100;
+ 
+while(font != NULL)
+{
+	if ( font->sjis2_hash == SJIS2 )
+	{//found!
+		return font;
+	}
+	font = font->next;
+}
+ 
+return NOT_FOUND;
+</code>
+
+\\ 日本語版では、シングルバイトをフォントとして組み込むために、 シングルバイトを0x40のリストにマップしました。\\ \\ <code>
+例.
+'A' == 0x41    + (0x40 << 8)
+0x40 0x41 としてフォントにマップします。
+
+'Z' == 0x5A    + (0x40 << 8)
+0x40 0x5A としてフォントにマップします。
+</code>
+
+
+
+===== シングルバイト  =====
+英語版では、以下のように演算が行われます。\\ <code>
+struct FONT{
+	FONT* next;
+	byte  sjis2_hash;
+	byte  width;
+	byte  nazo1; //unknown
+	byte  nazo2; //unknown
+	byte[64] bitmap4color;
+};
+ 
+SJIS1 = ((moji_char >> 8) & 0xFF) //Always Zero
+SJIS2 = (moji_char 0xFF)
+ 
+font = ItemFont + (SJIS2 << 2) ; 
+font = SerifFont + (SJIS2 << 2) ;
+ 
+//探索する必要がないのでそのまま採用.
+return font;
+/*
+while(font != NULL)
+{
+	if ( font->sjis2_hash == SJIS2 )
+	{//found!
+		return font;
+	}
+	font = font->next;
+}
+ 
+return NOT_FOUND;
+*/
+</code>
+\\ 英語版での、リスト探索を復活させました。\\ マルチバイトであれば、リストを探索します。\\ 

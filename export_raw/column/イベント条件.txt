@@ -1,0 +1,91 @@
+===== ユニットデータ  =====
+
+<code>
+UNIT $80 $01 $00 Level(5,2,1) [0,0] 0 0 0 0 [$14,$6C] [0,0,0,0]
+REDA [x,y] 0 0 0 0
+</code>
+これでも可能ですが、ユニットデータは作成しづらいので[[イベント命令2:イベント条件:ユニットデータ作成|FE Builder]]を使いましょう
+
+====== 条件イベント系  ======
+===== ターン条件  =====
+<code>
+TURN $ZZZ TBE01 [AA,BB] X
+</code>
+[ZZZ]=使用フラグ,[AA, BB]=ターン指定[X]0=自フェイズ前,4=緑フェイズ前,8=敵フェイズ前
+
+===== 会話条件  =====
+==== 通常用  ====
+<code>
+CharacterEventBothWays($ZZZ,CBE01,$XX,$YY)
+</code>
+[ZZZ]=使用フラグ,[XX]=会話ユニットID1,[YY]=会話ユニットID2
+
+==== フラグ条件会話  ====
+<code>
+CharacterEvent($ZZZ,CBE01,$XX,$YY,$AAA)
+</code>
+
+[ZZZ]=使用フラグ,[XX]=話す選択ID,[YY]=話す相手ID[AAA]=条件フラグ
+
+==== ASM条件会話  ====
+<code>
+CHARASM $ZZZ CBE01 $XX $YY pointer+1
+</code>
+[ZZZ]使用フラグ[XX]会話する人[YY]会話相手[pointer]ASM条件
+
+
+===== オブジェクト指定  =====
+==== まとめ  ====
+
+<code>
+House(0,LBE01,X,Y) //民家
+Seize(3,EndingScene,X,Y) // 制圧
+Door(X,Y) //通常扉
+DOOR $ZZ LBE01 [X,Y] 0x12 //イベント指定扉
+Chest($ZZ,X,Y) //宝箱
+ChestMoney(ZZZZ,X,Y) //お金入り宝箱
+Village($ZZ,LBE01,X,Y,$AA) //通常村(AA=村破壊フラグ)
+VILL $ZZ LBE01 [X,Y] //1マス村
+Armory(ShopList,X,Y) //武器屋
+Vendor(ShopList,X,Y) //道具屋
+SecretShop(ShopList,X,Y) //秘密店
+</code>
+
+<code>
+ShopList:
+ SHLI $1 $2 $3 $4
+ ALIGN 4
+</code>
+
+==== イベント宝箱  ====
+<code>
+LOCA $ZZZ LBE01 [XX,YY] 0x14
+</code>
+[ZZZ]使用フラグ[pointer]開けると発生するイベント[XX,YY]座標
+
+<code>
+PUSH
+ORG $8651a
+#incbin "TrapTreasureFE8.gba"
+POP
+</code>
+
+===== 範囲・常時条件  =====
+==== 常時条件  ====
+<code>
+AFEV $ZZZ MBE01 $AAA
+</code>
+[ZZZ]=使用フラグ[AAA]=条件フラグ
+
+==== ASM常時条件  ====
+<code>
+ASME $ZZZ MBE01 pointer+1
+</code>
+[ZZZ]使用フラグ[pointer]ASM条件
+
+
+==== 範囲条件  ====
+<code>
+AREA $ZZZ MBE01 [X1,Y1] [X2,Y2]
+</code>
+[ZZZ]=使用フラグ[X1,Y1]=範囲左上[X2,Y2]=範囲右下

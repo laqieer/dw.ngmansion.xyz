@@ -1,0 +1,119 @@
+It is a place to write question and answer which are likely to be frequent in modifying FE8\\ 
+\\ ====== Where are Mulder and Vanessa?  ======
+Mulder and Vanessa are in Frelia Castle.\\ Map ID 0x38 It is Frelia castle.\\ Their unit arrangement is 0x8B43D0 (FE8U)\\ In FE8J, it becomes 0x908958 (FE8J).\\ \\ Please recall the event of the process of making they join.\\ \\ Eirika escapes to Frelia Castle.\\ Then, King Frelia gets money and Mulder and Vanessa join the group.\\ They are in Frelia Castle.\\ \\ Frelia Castle is map ID 0x38.\\ It is a map with only 1 tile on the meadow.\\ 
+The starting event here is made special.\\ (Because it is a new departure to visit again.).\\ 
+
+
+====== When trying to move a chapter, it freezes.  ======
+Please use the "Skip World Map Fix" patch.\\ 
+\\ 
+====== I want to sound midi.  ======
+Please use NIMAP sound source.\\ The structure of FE's sound source is different from that of midi.\\ Therefore, in order to sound midi, it is convenient to use NIMAP which rearranged instruments in order of midi's instruments.\\ \\ NIMAP can be easily installed from FEBuilderGBA.\\ \\ 
+====== I want to display images of 16 colors or more in background and CG.  ======
+
+If you want to do it easily, please use FEBuilderGBA's tool -> subtractive color tool.\\ However, since it converts mechanically, some gradations may drop.\\ \\ Detailed commentary.\\ The GBA processes the screen by dividing it into 8 * 8 dot tiles.\\ With GBA, you can keep 16 colors on one palette.This palette is a bunch of 16 pieces.\\ In GBA, you can switch the palette to use with tiles of 8 * 8 dots.\\ Therefore, you can specify the palette containing the color you want to use with the tile you want to use.\\ Also, to reduce the capacity, the same tiles can be combined into one tile.\\ In this way, data that defines which tiles are displayed and which pallets to display is called TSA data.\\ \\ If you want to create data by hand without using the tool, first make an image using only 16 colors.\\ And please color only the tiles that you want to specially color out with another palette.\\ BG and CG can use 8 pallets.\\ 
+====== I do not know the information on the Japanese site.  ======
+
+There is one summarizing the difference in terms used in both communities.\\ After that, please do something with google translation.\\ We are playing with the same FE game, so if we have patience and imagination, it will do something.\\ [[column:FEで学ぶ英語]]
+
+\\ I will give you one point of advice.\\ If you write to Japanese Communities, we recommend that you write in English.\\ \\ google translation will output very strange Japanese.\\ Therefore, when written in translated Japanese, we can not understand the meaning.\\ Therefore, you should write in English.\\ \\ We can read English a little.\\ Multiple translation engines can also be used.\\ However, when written in funny Japanese translated, they can not be used.\\ We can not understand the meaning.\\ \\ So, you should write in English, whether it is a Japanese community.\\ If you absolutely want to write in Japanese, please write both Japanese and English.\\ That way, we can get many hints to understand the meaning.\\ \\ \\ ====== I can not import maps even though they are in TMX format.  ======
+
+The TMX format has multiple internal formats with the same extension.
+Please make sure your TMX format is the format that the tool is targeting.
+
+A. Format like TMX\\ <code>
+<layer name="Map" width="16" height="24">
+  <properties>
+   <property name="Main" value=""/>
+  </properties>
+  <data>
+   <tile gid="353"/>
+   <tile gid="259"/>
+   <tile gid="260"/>
+   ...
+  </data>
+</layer>
+</code>
+
+B.Format like CSV.
+<code>
+<layer name="Village closed" width="28" height="18">
+  <properties>
+   <property name="Height" value="1"/>
+   <property name="ID" value="0"/>
+   <property name="Width" value="1"/>
+   <property name="X" value="1"/>
+   <property name="Y" value="2"/>
+  </properties>
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  </data>
+</layer>
+</code>
+
+C.zlib + base64 format.
+<code>
+<layer name="Village Saved" width="23" height="18" visible="0">
+  <properties>
+   <property name="Height" value="1"/>
+   <property name="ID" value="1"/>
+   <property name="Width" value="1"/>
+   <property name="X" value="19"/>
+   <property name="Y" value="10"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDGegONAOGAWjAA0AAFuMACI=
+  </data>
+</layer>
+</code>
+
+FEBuilderGBA corresponds to A and B.
+
+
+====== I want to erase the tutorial of the sword of the FE7.  ======
+
+It is not FE 8, but it seems likely, so write it.\\ There are two ways to erase the FE 7 tutorial.\\ \\ 1. How to remove the tutorial itself \\ 
+Please use FEBuilderGBA menu tool -> patch "Tutorial Disabler".\\ Fill the tutorial event with null and delete the tutorial judgment if statement.\\ All the tutorials will disappear.\\ \\ 2. Hard fixation difficulty ~\r\n
+FEBuilderGBA menu tool -> patch \\ "Fixed Level"\\ Etc to forcibly select the hard mode in which the tutorial itself is invalid.\\ \\ \\ Please use whichever you like.
+~\r\n
+
+
+====== I try a choice instruction with FE8 in a conversation with a background image,but it will not work.  ======
+
+Using text using @0018 in a background with conversation does not work.\\ Please use it with no background talk.\\ 
+Ex: This will not work.
+<code>
+4005020000000000400503008D090000400A000010E39E08	//Show conversation with BG(LOW) [Background:0x0][TEXT:0x98D]
+4005070001000000	//SVAL[Memory_Slot:0x7][Value_to_store:0x1]
+</code>
+
+Ex. This will work.
+<code>
+201B8D09201D0000　[XXXX:TEXT:Conversation text]Background no conversation display (LOW)
+4005070001000000	//SVAL[Memory_Slot:0x7][Value_to_store:0x1]
+</code>
+
+
+====== What is PLIST?  ======
+
+PLIST stands for MAP Pointer List ID.(Maybe).\\ Map related values of GBAFE are managed with pointer list.\\ In the map setting, you specify what value of the list to see.\\ \\ Please see this image.\\ {{qa:plist_event.jpg}}
+{{qa:plist_map.jpg}}
+{{qa:plist_style1.jpg}}
+{{qa:plist_style2.jpg}}
+\\ \\ Since this value is a byte value, it can not exceed 255.\\ 
+
+====== I can not automatically update FEBuilderGBA.  ======
+
+Two cases are conceivable.\\ Together, the latest version has been fixed.\\ Please re-download again.\\ [[en:guide:febuildergba:how_to_download_febuildergba_en]] \\ \\ ===== When trying to update, version: 0 is displayed.  =====
+It occurs in the cultural area where the decimal point is represented by ",".\\ \\ <code>
+3.141592
+3,141592 //This case.
+</code>
+\\ FEBuilderGBA uses the decimal point for the date part of the version number.\\ In the case of a cultural zone where the decimal point is written with ",", acquisition of the version number fails at the time of update.\\ The Double.tryParse function will result in an error and will eventually return 0.\\ As a result, the version number becomes 0, and the update fails.\\ \\ This problem has been fixed in the latest version.\\ 
+
+===== When using version earlier than 2017 / November.  =====
+Because the update mechanism has been changed, automatic update can not be done.\\ Please download it manually,again.\\ 
+
+====== Battle animation troubleshooting.  ======
+Basic is ported in text format.\\ This is because animation editing is easier.\\ \\ If it does not work, use the BIN format.\\ You can port animations that depend on OAM sheets.\\ \\ However, because the magic unit still has a mant command, it still does not work, so you have to give up or make a mantle command using C01 Hack yourself.\\ 

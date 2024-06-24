@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>data:敵ai</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="data,敵ai"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=data:%E6%95%B5ai&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=data"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=data:%E6%95%B5ai"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=data:%E6%95%B5ai"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=data:%E6%95%B5ai"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='data';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"data:\u6575ai","namespace":"data","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#攻撃ai_ai_-_1">攻撃AI(AI - 1)</a></div></li>
+<li class="level2"><div class="li"><a href="#移動ai_ai_-_2">移動AI(AI - 2)</a></div></li>
+<li class="level2"><div class="li"><a href="#回復_標的ai_ai_-_3">回復+標的AI(AI - 3)</a></div></li>
+<li class="level2"><div class="li"><a href="#ai_-_4">(AI - 4)</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h2 class="sectionedit1" id="攻撃ai_ai_-_1">攻撃AI(AI - 1)</h2>
+<div class="level2">
+<div class="table sectionedit2"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">AI1</th><th class="col1">名前</th><th class="col2">概要</th><th class="col3">5D308C～</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<th class="col0">00</th><td class="col1">無差別100</td><td class="col2">何もしない確率 0%</td><td class="col3">5D2778</td>
+	</tr>
+	<tr class="row2">
+		<th class="col0">01</th><td class="col1">無差別80</td><td class="col2">何もしない確率20%</td><td class="col3">5D2798</td>
+	</tr>
+	<tr class="row3">
+		<th class="col0">02</th><td class="col1">無差別50</td><td class="col2">何もしない確率50%</td><td class="col3">5D27B8</td>
+	</tr>
+	<tr class="row4">
+		<th class="col0">03</th><td class="col1">無移動100</td><td class="col2">何もしない確率 0%、移動しない場合にのみ攻撃<br/>
+(盗む・杖などは移動して行う)</td><td class="col3">5D27D8</td>
+	</tr>
+	<tr class="row5">
+		<th class="col0">04</th><td class="col1">無移動80</td><td class="col2">何もしない確率20%、移動しない場合にのみ行動</td><td class="col3">5D27F8</td>
+	</tr>
+	<tr class="row6">
+		<th class="col0">05</th><td class="col1">無移動50</td><td class="col2">何もしない確率50%、移動しない場合にのみ行動</td><td class="col3">5D2818</td>
+	</tr>
+	<tr class="row7">
+		<th class="col0">06</th><td class="col1">なし</td><td class="col2">行動しない (AI2=移動のみ)</td><td class="col3">5D2838</td>
+	</tr>
+	<tr class="row8">
+		<th class="col0">07</th><td class="col1">ニノ無</td><td class="col2">[0x5D2908](0x100)のユニットを攻撃しない<br/>
+(海外版ではヨシュア用、ナターシャ非攻撃AI)</td><td class="col3">5D290C</td>
+	</tr>
+	<tr class="row9">
+		<th class="col0">08</th><td class="col1">ダグラス用攻撃</td><td class="col2">[0x5D2A44](0xFC)のユニットを攻撃しない</td><td class="col3">5D2A48</td>
+	</tr>
+	<tr class="row10">
+		<th class="col0">09</th><td class="col1">１１Ｂ市民無し</td><td class="col2">[0x5D2086]のユニットを攻撃しない</td><td class="col3">5D2A88</td>
+	</tr>
+	<tr class="row11">
+		<th class="col0">0A</th><td class="col1">リン</td><td class="col2">[0x100]のみを狙う</td><td class="col3">5D2AA8</td>
+	</tr>
+	<tr class="row12">
+		<th class="col0">0B</th><td class="col1">ロイ</td><td class="col2">無差別100と同じ</td><td class="col3">5D2AE8</td>
+	</tr>
+	<tr class="row13">
+		<th class="col0">0C</th><td class="col1">門番</td><td class="col2">半分の移動で攻撃できる場合に攻撃</td><td class="col3">5D2B08</td>
+	</tr>
+	<tr class="row14">
+		<th class="col0">0D</th><td class="col1">リーダー</td><td class="col2">指揮官の攻撃範囲に敵がいたら攻撃</td><td class="col3">5D2B78</td>
+	</tr>
+	<tr class="row15">
+		<th class="col0">0E</th><td class="col1">回復優先</td><td class="col2">HPが50%以下のユニットがいたら回復を行う</td><td class="col3">5D2E98</td>
+	</tr>
+	<tr class="row16">
+		<th class="col0">0F</th><td class="col1">無移動回復</td><td class="col2">0x0Eと0x03のAIを交互に行う</td><td class="col3">5D2EB8</td>
+	</tr>
+	<tr class="row17">
+		<th class="col0">10</th><td class="col1">ぬすむ</td><td class="col2">Might attack/steal or open/escape?</td><td class="col3">5D2EE8</td>
+	</tr>
+	<tr class="row18">
+		<th class="col0">11</th><td class="col1">扉開け</td><td class="col2">扉の鍵がなくなるか、扉が全部開くまで攻撃しない</td><td class="col3">5D2F48</td>
+	</tr>
+	<tr class="row19">
+		<th class="col0">12</th><td class="col1">ルセア無</td><td class="col2">[0x5D292C](0x100と0x100)を攻撃しない</td><td class="col3">5D2934</td>
+	</tr>
+	<tr class="row20">
+		<th class="col0">13</th><td class="col1">レイヴァン無</td><td class="col2">[0x5D2954](0x100)のユニットを攻撃しない</td><td class="col3">5D2958</td>
+	</tr>
+	<tr class="row21">
+		<th class="col0">14</th><td class="col1">（魔王）</td><td class="col2">呼魔・漆黒の悪夢を使う</td><td class="col3">5D2984</td>
+	</tr>
+	<tr class="row22">
+		<th class="col0">15<br/>
+（28）</th><td class="col1"> </td><td class="col2">AI2先頭指定</td><td class="col3">5D3040</td>
+	</tr>
+	<tr class="row23">
+		<th class="col0">16<br/>
+(29)</th><td class="col1"> </td><td class="col2">空き</td><td class="col3">5D3040</td>
+	</tr>
+	<tr class="row24">
+		<th class="col0">17<br/>
+(2A)</th><td class="col1"> </td><td class="col2">空き</td><td class="col3">5D3040</td>
+	</tr>
+	<tr class="row25">
+		<th class="col0">18<br/>
+(2B)</th><td class="col1"> </td><td class="col2">AI1先頭指定</td><td class="col3">5D308C</td>
+	</tr>
+	<tr class="row26">
+		<th class="col0">19<br/>
+(2C)</th><td class="col1"> </td><td class="col2">空き</td><td class="col3">5D308C</td>
+	</tr>
+	<tr class="row27">
+		<th class="col0">1A<br/>
+(2D)</th><td class="col1"> </td><td class="col2">空き</td><td class="col3">5D308C</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;32-1790&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u653b\u6483AI(AI - 1)&quot;,&quot;hid&quot;:&quot;\u653b\u6483ai_ai_-_1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-1791&quot;} -->
+<h2 class="sectionedit3" id="移動ai_ai_-_2">移動AI(AI - 2)</h2>
+<div class="level2">
+<div class="table sectionedit4"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">AI2</th><th class="col1">名前</th><th class="col2">概要</th><th class="col3">5D3040～</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<th class="col0">00</th><td class="col1">敵に近づく</td><td class="col2">相手に向かって移動する</td><td class="col3">5D2318</td>
+	</tr>
+	<tr class="row2">
+		<th class="col0">01</th><td class="col1">敵に近づく　クラ</td><td class="col2">[$C063C6](00)以外の相手に向かって移動する</td><td class="col3">5D23B8</td>
+	</tr>
+	<tr class="row3">
+		<th class="col0">02</th><td class="col1">ダグラス用移動</td><td class="col2">[$C063C8](00)以外の相手に向かって移動する</td><td class="col3">5D23D8</td>
+	</tr>
+	<tr class="row4">
+		<th class="col0">03</th><td class="col1">なし</td><td class="col2">移動しない</td><td class="col3">5D23F8</td>
+	</tr>
+	<tr class="row5">
+		<th class="col0">04</th><td class="col1">略奪攻撃</td><td class="col2">村や宝を襲う。襲ったらAI1&gt;00、AI2&gt;00</td><td class="col3">5D2418</td>
+	</tr>
+	<tr class="row6">
+		<th class="col0">05</th><td class="col1">略奪りだつ</td><td class="col2">村や宝を襲う。襲ったらAI1&gt;06、AI2&gt;0C</td><td class="col3">5D2448</td>
+	</tr>
+	<tr class="row7">
+		<th class="col0">06</th><td class="col1">２いどう</td><td class="col2">2回行動すれば攻撃できる距離に相手がいたらAI2&gt;00</td><td class="col3">5D2528</td>
+	</tr>
+	<tr class="row8">
+		<th class="col0">07</th><td class="col1">２いどう　クラ</td><td class="col2">2回行動すれば攻撃できる距離に相手がいたらAI2&gt;01</td><td class="col3">5D2598</td>
+	</tr>
+	<tr class="row9">
+		<th class="col0">08</th><td class="col1">じゅん回</td><td class="col2">？？</td><td class="col3">5D24D8</td>
+	</tr>
+	<tr class="row10">
+		<th class="col0">09</th><td class="col1">ランダム</td><td class="col2">ランダム移動</td><td class="col3">5D2698</td>
+	</tr>
+	<tr class="row11">
+		<th class="col0">0A</th><td class="col1">エイリークへ</td><td class="col2">[01](エイリーク)に向けて移動（遊撃型）</td><td class="col3">5D2D08</td>
+	</tr>
+	<tr class="row12">
+		<th class="col0">0B</th><td class="col1">エフラムへ</td><td class="col2">エフラム《$5D2DBC: 0F》に向け移動（遊撃型）</td><td class="col3">5D2DB8</td>
+	</tr>
+	<tr class="row13">
+		<th class="col0">0C</th><td class="col1">離脱</td><td class="col2">離脱地点へ移動</td><td class="col3">5D2478</td>
+	</tr>
+	<tr class="row14">
+		<th class="col0">0D</th><td class="col1">拠点へ</td><td class="col2">？？</td><td class="col3">5D2718</td>
+	</tr>
+	<tr class="row15">
+		<th class="col0">0E</th><td class="col1">壁破壊</td><td class="col2">壁や古木を破壊しに行く</td><td class="col3">5D2F68</td>
+	</tr>
+	<tr class="row16">
+		<th class="col0">0F</th><td class="col1">近づく移無視</td><td class="col2">壁や地形で塞がっていても相手に向かって移動する</td><td class="col3">5D2338</td>
+	</tr>
+	<tr class="row17">
+		<th class="col0">10</th><td class="col1">範囲移動</td><td class="col2">座標移動《$05D2FC8: 0F , 11》（護衛型）</td><td class="col3">5D2FD0</td>
+	</tr>
+	<tr class="row18">
+		<th class="col0">11</th><td class="col1">１Ｔ待機略奪</td><td class="col2">1ターン待機し、AI2&gt;04(蛮族AI)</td><td class="col3">5D2388</td>
+	</tr>
+	<tr class="row19">
+		<th class="col0">12</th><td class="col1">１Ｔ待機近敵</td><td class="col2">1ターン待機し、AI2&gt;00</td><td class="col3">5D2358</td>
+	</tr>
+	<tr class="row20">
+		<th class="col0">20</th><td class="col1">リーダー</td><td class="col2">指揮官の攻撃範囲に敵がいたら突撃</td><td class="col3"></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table1&quot;,&quot;secid&quot;:4,&quot;range&quot;:&quot;1823-3228&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u79fb\u52d5AI(AI - 2)&quot;,&quot;hid&quot;:&quot;\u79fb\u52d5ai_ai_-_2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;1792-3229&quot;} -->
+<h2 class="sectionedit5" id="回復_標的ai_ai_-_3">回復+標的AI(AI - 3)</h2>
+<div class="level2">
+
+<p>
+3Byte目の下位3bitsが回復AIの設定に使われており、残りの上位4-8bitsが標的AIに使われています。
+</p>
+<div class="table sectionedit6"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">AI3</th><th class="col1">Bin</th><th class="col2">名前</th><th class="col3">概要</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<th class="col0">00(08)</th><td class="col1">000</td><td class="col2">弱気</td><td class="col3">50%以下で回復モードに入り、100%回復したら戻る</td>
+	</tr>
+	<tr class="row2">
+		<th class="col0">01(09)</th><td class="col1">001</td><td class="col2">ふつう</td><td class="col3">30%以下で回復モードに入り、80%以上回復したら戻る</td>
+	</tr>
+	<tr class="row3">
+		<th class="col0">02(0A)</th><td class="col1">010</td><td class="col2">強気</td><td class="col3">10%以下で回復モードに入り、50%以上回復したら戻る</td>
+	</tr>
+	<tr class="row4">
+		<th class="col0">03(0B)</th><td class="col1">011</td><td class="col2">オオヨワ</td><td class="col3">80%以下で回復モードに入り、100%回復したら戻る</td>
+	</tr>
+	<tr class="row5">
+		<th class="col0">04(0C)</th><td class="col1">100</td><td class="col2">いけいけ</td><td class="col3">回復モードにならない</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table2&quot;,&quot;secid&quot;:6,&quot;range&quot;:&quot;3395-3834&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u56de\u5fa9+\u6a19\u7684AI(AI - 3)&quot;,&quot;hid&quot;:&quot;\u56de\u5fa9_\u6a19\u7684ai_ai_-_3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;3230-3835&quot;} -->
+<h2 class="sectionedit7" id="ai_-_4">(AI - 4)</h2>
+<div class="level2">
+<div class="table sectionedit8"><table class="inline">
+	<tr class="row0">
+		<th class="col0">00</th><td class="col1">通常</td>
+	</tr>
+	<tr class="row1">
+		<th class="col0">20</th><td class="col1">回復モードに入っても、退避行動を起こさない</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table3&quot;,&quot;secid&quot;:8,&quot;range&quot;:&quot;3860-3940&quot;} -->
+<p>
+絶対に動いて欲しくない、玉座・城門ユニット用AI<br/>
+回復アイテムも動かないで使用し、砦にも逃げない。また、攻撃AI【0x03】のような挙動になる<br/>
+聖魔はこの設定を忘れてるボスが多く、条件を満たせば玉座城門ボスでも動く<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;(AI - 4)&quot;,&quot;hid&quot;:&quot;ai_-_4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;3836-&quot;} --></div>
+</body>
+</html>

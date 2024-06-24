@@ -1,0 +1,51 @@
+[[data:顔画像_封印]]\\ [[data:顔画像_烈火]]
+===== 顔画像一覧  =====
+
+^01(未)^02^03(-未)^04^05^06^07^08|
+|{{data:顔画像:01.png}}|{{data:顔画像:02.png}}|{{data:顔画像:03.png}}|{{data:顔画像:04.png}}|{{data:顔画像:05.png}}|{{data:顔画像:06.png}}|{{data:顔画像:07.png}}|{{data:顔画像:08.png}}|
+^09^0A^0B(-)^0C^0D(-)^0E^0F^10|
+|{{data:顔画像:09.png}}|{{data:顔画像:0A.png}}|{{data:顔画像:0B.png}}|{{data:顔画像:0C.png}}|{{data:顔画像:0D.png}}|{{data:顔画像:0E.png}}|{{data:顔画像:0F.png}}|{{data:顔画像:10.png}}|
+^11^12(-)^13^14^15(-未)^16^17(-)^18|
+|{{data:顔画像:11.png}}|{{data:顔画像:12.png}}|{{data:顔画像:13.png}}|{{data:顔画像:14.png}}|{{data:顔画像:15.png}}|{{data:顔画像:16.png}}|{{data:顔画像:17.png}}|{{data:顔画像:18.png}}|
+^19^1A^1B^1C^1D(-未)^1E^1F(-未)^20|
+|{{data:顔画像:19.png}}|{{data:顔画像:1A.png}}|{{data:顔画像:1B.png}}|{{data:顔画像:1C.png}}|{{data:顔画像:1D.png}}|{{data:顔画像:1E.png}}|{{data:顔画像:1F.png}}|{{data:顔画像:20.png}}|
+^21^22^23^24^25^26^27(-不)^28|
+|{{data:顔画像:21.png}}|{{data:顔画像:22.png}}|{{data:顔画像:23.png}}|{{data:顔画像:24.png}}|{{data:顔画像:25.png}}|{{data:顔画像:26.png}}|{{data:顔画像:27.png}}|{{data:顔画像:28.png}}|
+^29^2A^2B^2C^2D^2E^2F^30|
+|{{data:顔画像:29.png}}|{{data:顔画像:2A.png}}|{{data:顔画像:2B.png}}|{{data:顔画像:2C.png}}|{{data:顔画像:2D.png}}|{{data:顔画像:2E.png}}|{{data:顔画像:2F.png}}|{{data:顔画像:30.png}}|
+^31^32^33^34^35^36^37^38|
+|{{data:顔画像:31.png}}|{{data:顔画像:32.png}}|{{data:顔画像:33.png}}|{{data:顔画像:34.png}}|{{data:顔画像:35.png}}|{{data:顔画像:36.png}}|{{data:顔画像:37.png}}|{{data:顔画像:38.png}}|
+^39^3A^3B^3C^3D^3E^3F^40|
+|{{data:顔画像:39.png}}|{{data:顔画像:3A.png}}|{{data:顔画像:3B.png}}|{{data:顔画像:3C.png}}|{{data:顔画像:3D.png}}|{{data:顔画像:3E.png}}|{{data:顔画像:3F.png}}|{{data:顔画像:40.png}}|
+^41(不)^42^43^44^45^46^47(-不)^48(不)|
+|{{data:顔画像:41.png}}|{{data:顔画像:42.png}}|{{data:顔画像:43.png}}|{{data:顔画像:44.png}}|{{data:顔画像:45.png}}|{{data:顔画像:46.png}}|{{data:顔画像:47.png}}|{{data:顔画像:48.png}}|
+^49^4A^4B^4C^4D^4E(不)^4F^50(-)|
+|{{data:顔画像:49.png}}|{{data:顔画像:4A.png}}|{{data:顔画像:4B.png}}|{{data:顔画像:4C.png}}|{{data:顔画像:4D.png}}|{{data:顔画像:4E.png}}|{{data:顔画像:4F.png}}|{{data:顔画像:50.png}}|
+^51^52^53^54^55^56^57^58(-)|
+|{{data:顔画像:51.png}}|{{data:顔画像:52.png}}|{{data:顔画像:53.png}}|{{data:顔画像:54.png}}|{{data:顔画像:55.png}}|{{data:顔画像:56.png}}|{{data:顔画像:57.png}}|{{data:顔画像:58.png}}|
+^59^5A^5B^5C^5D^5E^5F^60|
+|{{data:顔画像:59.png}}|{{data:顔画像:5A.png}}|{{data:顔画像:5B.png}}|{{data:顔画像:5C.png}}|{{data:顔画像:5D.png}}|{{data:顔画像:5E.png}}|{{data:顔画像:5F.png}}|{{data:顔画像:60.png}}|
+^61^62^63^64^65^66^67^68|
+|{{data:顔画像:61.png}}|{{data:顔画像:62.png}}|{{data:顔画像:63.png}}|{{data:顔画像:64.png}}|{{data:顔画像:65.png}}|{{data:顔画像:66.png}}|{{data:顔画像:67.png}}|{{data:顔画像:68.png}}|
+^69^6A^6B^6C^6D(不)^6E^6F(不)^70|
+|{{data:顔画像:69.png}}|{{data:顔画像:6A.png}}|{{data:顔画像:6B.png}}|{{data:顔画像:6C.png}}|{{data:顔画像:6D.png}}|{{data:顔画像:6E.png}}|{{data:顔画像:6F.png}}|{{data:顔画像:70.png}}|
+^71(不)^72(不)^73^74^75^76^77^78|
+|{{data:顔画像:71.png}}|{{data:顔画像:72.png}}|{{data:顔画像:73.png}}|{{data:顔画像:74.png}}|{{data:顔画像:75.png}}|{{data:顔画像:76.png}}|{{data:顔画像:77.png}}|{{data:顔画像:78.png}}|
+^79^7A^7B^7C^7D^7E^7F^80|
+|{{data:顔画像:79.png}}|{{data:顔画像:7A.png}}|{{data:顔画像:7B.png}}|{{data:顔画像:7C.png}}|{{data:顔画像:7D.png}}|{{data:顔画像:7E.png}}|{{data:顔画像:7F.png}}|{{data:顔画像:80.png}}|
+^81^82^83^84^85^86^87^88|
+|{{data:顔画像:81.png}}|{{data:顔画像:82.png}}|{{data:顔画像:83.png}}|{{data:顔画像:84.png}}|{{data:顔画像:85.png}}|{{data:顔画像:86.png}}|{{data:顔画像:87.png}}|{{data:顔画像:88.png}}|
+^89^8A^8B^8C^8D^8E^8F^90|
+|{{data:顔画像:89.png}}|{{data:顔画像:8A.png}}|{{data:顔画像:8B.png}}|{{data:顔画像:8C.png}}|{{data:顔画像:8D.png}}|{{data:顔画像:8E.png}}|{{data:顔画像:8F.png}}|{{data:顔画像:90.png}}|
+^91^92^93^94^95^96^97^98|
+|{{data:顔画像:91.png}}|{{data:顔画像:92.png}}|{{data:顔画像:93.png}}|{{data:顔画像:94.png}}|{{data:顔画像:95.png}}|{{data:顔画像:96.png}}|{{data:顔画像:97.png}}|{{data:顔画像:98.png}}|
+^99^9A^9B^9C^9D^9E^9F^A0|
+|{{data:顔画像:99.png}}|{{data:顔画像:9A.png}}|{{data:顔画像:9B.png}}|{{data:顔画像:9C.png}}|{{data:顔画像:9D.png}}|{{data:顔画像:9E.png}}|{{data:顔画像:9F.png}}|{{data:顔画像:A0.png}}|
+^A1^A2^A3^A4^A5^A6^A7^A8|
+|{{data:顔画像:A1.png}}|{{data:顔画像:A2.png}}|{{data:顔画像:A3.png}}|{{data:顔画像:A4.png}}|{{data:顔画像:A5.png}}|{{data:顔画像:A6.png}}|{{data:顔画像:A7.png}}|{{data:顔画像:A8.png}}|
+^A9^AB^AC(不)|
+|{{data:顔画像:A9.png}}|{{data:顔画像:AB.png}}|{{data:顔画像:AC.png}}|
+
+(-)・・・目を閉じている\\ (未)・・・未使用でそのまま会話に使用可能\\ (不)・・・そのままでは会話不可、WMでのみ使用など\\ 
+
+===== 顔画像テーブル  =====

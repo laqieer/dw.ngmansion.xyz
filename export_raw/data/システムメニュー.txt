@@ -1,0 +1,187 @@
+====== FE8Jシステムメニュー / system menu  ======
+===== FE8J 目的表示枠 / Goal display frame.  =====
+
+|IMG:|5E07A0|
+|TSA:|A93490|
+|PAL:|5E0D94|
+
+===== FE8J 地形名表示枠 / Terrain name display frame.  =====
+
+|IMG:|5E07A0|
+|TSA:|A93178|
+|PAL:|5E0D94|
+
+===== FE8J 名前表示枠 / Name display frame.  =====
+
+|IMG:|5E07A0|
+|TSA:|A931D0|
+|PAL:|5E0D94|
+
+===== FE8J 戦闘前の数字 / Numbers before battle.  =====
+
+|IMG:|5E07A0|
+|TSA:|5C8EC8|
+|PAL:|5E0D94|
+
+===== FE8J 行動範囲カラー / Behavior range color.  =====
+
+|A74FEC (+0x60)|
+
+===== FE8J 攻撃範囲カラー / Attack range color.  =====
+
+|A7504C (+0x60)|
+
+===== FE8J 謎カラー(データ上で存在している) / NAZO color (exists on data).  =====
+
+|A750AC (+0x60 maybe)|
+
+
+
+====== FE8Uシステムメニュー / system menu  ======
+===== FE8U 目的表示枠 / Goal display frame.  =====
+
+|IMG:|5B65C0|
+|TSA:|A17744|
+|PAL:|5B6BB4|
+
+===== FE8U 地形名表示枠 / Terrain name display frame.  =====
+
+|IMG:|5B65C0|
+|TSA:|A1742C|
+|PAL:|5B6BB4|
+
+===== FE8U 名前表示枠 / Name display frame.  =====
+
+|IMG:|5B65C0|
+|TSA:|A17484|
+|PAL:|5B6BB4|
+
+===== FE8U 戦闘前の数字 / Numbers before battle.  =====
+
+|IMG:|5B65C0|
+|TSA:|5A09A8|
+|PAL:|5B6BB4|
+
+===== FE8U 行動範囲カラー / Behavior range color.  =====
+
+|A02F34 (+0x60)|
+
+===== FE8U 攻撃範囲カラー / Attack range color.  =====
+
+|A02F94 (+0x60)|
+
+===== FE8U 謎カラー(データ上で存在している) / NAZO color (exists on data).  =====
+
+|A02FF4 (+0x60 maybe)|
+
+
+
+====== FE7Jシステムメニュー / system menu  ======
+===== FE7J 名前表示枠 / Name display frame.  =====
+
+|IMG:|41BE00|
+|TSA:|41C80C|
+|PAL:|41C754|
+
+===== FE7J 地形名表示枠 / Terrain name display frame.  =====
+
+|IMG:|41BE00|
+|TSA:|41C7B4|
+|PAL:|1DBD64|
+
+===== FE7J 目的表示枠 / Goal display frame.  =====
+
+|IMG:|41BE00|
+|TSA:|41cacc|
+|PAL:|1DBD64|
+
+===== FE7J 戦闘前の数字 / Numbers before battle.  =====
+
+|IMG:|191410|
+|TSA:|191780|
+|PAL:|191700|
+
+===== FE7J 行動範囲カラー / Behavior range color.  =====
+
+|4047B4 (+0x60)|
+
+===== FE7J 攻撃範囲カラー / Attack range color.  =====
+
+|404814 (+0x60)|
+
+===== FE7J 謎カラー(データ上で存在している) / NAZO color (exists on data)  =====
+
+|404874 (+0x60 maybe)|
+
+
+====== FE7Uシステムメニュー / system menu  ======
+===== FE7U 名前表示枠 / Name display frame.  =====
+
+|IMG:|403BC4|
+|TSA:|4045F4|
+|PAL:|40453C|
+
+===== FE7U 地形名表示枠 / Terrain name display frame.  =====
+
+|IMG:|403BC4|
+|TSA:|1C4780|
+|PAL:|1D60F0|
+
+===== FE7U 目的表示枠 / Goal display frame.  =====
+
+|IMG:|403BC4|
+|TSA:|4048B4|
+|PAL:|1D60F0|
+
+===== FE7U 戦闘前の数字 / Numbers before battle.  =====
+
+|IMG:|1958BC|
+|TSA:|195C2C|
+|PAL:|195BAC|
+
+===== FE7U 行動範囲カラー / Behavior range color.  =====
+
+|3FDD1C (+0x60)|
+
+===== FE7U 攻撃範囲カラー / Attack range color.  =====
+
+|3FDD7C (+0x60)|
+
+===== FE7U 謎カラー(データ上で存在している) / NAZO color (exists on data)  =====
+
+|3FDDDC (+0x60 maybe)|
+
+
+
+====== FE6システムメニュー / system menu  ======
+===== FE6 名前表示枠 / Name display frame.  =====
+
+|IMG:|3189b4|
+|TSA:|319124|
+|PAL:|31906C|
+
+===== FE6 地形名表示枠 / Terrain name display frame.  =====
+
+|IMG:|3189b4|
+|TSA:|1064D0|
+|PAL:|10ff78|
+
+===== FE6 目的表示枠 / Goal display frame.  =====
+  * > FE6には目的表示は存在しない / There is no purpose indication on FE6.\\ 
+===== FE6 戦闘前の数字 / Numbers before battle.  =====
+
+|IMG:|101AE4|
+|TSA:|101E54|
+|PAL:|101DD4|
+
+===== FE6 行動範囲カラー / Behavior range color.  =====
+
+|308E98 (+0x60)|
+
+===== FE6 攻撃範囲カラー / Attack range color.  =====
+
+|308EF8 (+0x60)|
+
+===== FE6 謎カラー(データ上で存在している) / NAZO color (exists on data)  =====
+
+|308F58 (+0x60 maybe)|

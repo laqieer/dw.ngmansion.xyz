@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>en:guide:febuildergba:index</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="en,guide,febuildergba,index"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=en:guide:febuildergba:index&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=en:guide:febuildergba"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=en:guide:febuildergba:index"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=en:guide:febuildergba:index"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=en:guide:febuildergba:index"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='en:guide:febuildergba';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"en:guide:febuildergba:index","namespace":"en:guide:febuildergba","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#febuildergba">FEBuilderGBA</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#download">DOWNLOAD</a></div></li>
+<li class="level3"><div class="li"><a href="#how_to_obtain_necessary_tools_to_use_febuildergba">How to obtain necessary tools to use FEBuilderGBA</a></div></li>
+<li class="level3"><div class="li"><a href="#feuniverse_thread">FeUniverse Thread</a></div></li>
+<li class="level3"><div class="li"><a href="#about_the_question">About the question.</a></div></li>
+<li class="level3"><div class="li"><a href="#video">Video</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#febuildergba_manual_english_translation">FEBuilderGBA Manual  English translation</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#village_visit_and_village_destruction_tile_change_and_event_cond_and_escape_point">Village visit and village destruction(Tile change and event cond, and Escape point.)</a></div></li>
+<li class="level3"><div class="li"><a href="#reinforcement">Reinforcement</a></div></li>
+<li class="level3"><div class="li"><a href="#add_magic_effect">Add magic effect</a></div></li>
+<li class="level3"><div class="li"><a href="#musics_midi_import_export_s_file_import_export_transplant_songs_from_other_gba_games">Musics.(midi import/export , s file import/export , Transplant songs from other GBA games)</a></div></li>
+<li class="level3"><div class="li"><a href="#background_by_using_color_reduction_tool_considering_tsa_maximum_8_pallets_8_15_colors_120_colors_about_how_to_use">Background by using color reduction tool considering TSA.(Maximum 8 pallets 8 15 colors = 120 colors About how to use.)</a></div></li>
+<li class="level3"><div class="li"><a href="#let_s_port_fe7_lyn_to_fe8_about_map_hover_icon_map_move_icon_portrait_battle_animation">Let&#039;s port FE7 Lyn to FE8(about Map Hover Icon、Map Move Icon、Portrait、Battle Animation)</a></div></li>
+<li class="level3"><div class="li"><a href="#item_characteristics_while_setting_up_a_super_strong_sword_i_will_explain_the_setting_of_item_relation">Item characteristics.(While setting up a super strong sword, I will explain the setting of item relation.)</a></div></li>
+<li class="level3"><div class="li"><a href="#tile_changes_at_snag_broken_wall_chest_events">Tile Changes at Snag(Broken_Wall),Chest,Events</a></div></li>
+<li class="level3"><div class="li"><a href="#config_data_structure_of_febuildergba">Config data structure of FEBuilderGBA</a></div></li>
+<li class="level3"><div class="li"><a href="#disassembler">Disassembler</a></div></li>
+<li class="level3"><div class="li"><a href="#automatic_pointer_calculation">Automatic pointer calculation</a></div></li>
+<li class="level3"><div class="li"><a href="#how_to_make_victory_condition">How to make Victory condition</a></div></li>
+<li class="level3"><div class="li"><a href="#automatic_detection_of_bugs_by_3_points_diff">Automatic detection of bugs by 3 points DIFF</a></div></li>
+<li class="level3"><div class="li"><a href="#how_to_make_ups_patch_adaptation_method_en">How to make UPS patch, adaptation method_EN</a></div></li>
+<li class="level3"><div class="li"><a href="#keyboard_shortcut_for_febuildergba">Keyboard shortcut for FEBuilderGBA</a></div></li>
+<li class="level3"><div class="li"><a href="#if_your_rom_freezes_read_here">If your ROM freezes, read here</a></div></li>
+<li class="level3"><div class="li"><a href="#create_report_issue_report7z">Create Report Issue / report7z　</a></div></li>
+<li class="level3"><div class="li"><a href="#rebuild">Rebuild</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#faq">FAQ</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#where_are_mulder_and_vanessa">Where are Mulder and Vanessa?</a></div></li>
+<li class="level3"><div class="li"><a href="#when_trying_to_move_a_chapter_it_freezes">When trying to move a chapter, it freezes.</a></div></li>
+<li class="level3"><div class="li"><a href="#i_want_to_display_text_with_feeditoradv_notation_i_want_to_a_instead_of_0003">I want to display text with FEEditorAdv notation. / I want to [A] instead of @ 0003.</a></div></li>
+<li class="level3"><div class="li"><a href="#febuildergba_readme">FEBuilderGBA readme</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h2 class="sectionedit1" id="febuildergba">FEBuilderGBA</h2>
+<div class="level2">
+
+<p>
+<a href="/lib/exe/fetch.php?tok=12e8cb&amp;media=https%3A%2F%2Fi.imgur.com%2FUCSXqm3.jpg" class="media" title="https://i.imgur.com/UCSXqm3.jpg"><img src="/lib/exe/fetch.php?w=400&amp;tok=d79891&amp;media=https%3A%2F%2Fi.imgur.com%2FUCSXqm3.jpg" class="media" title="i.imgur.com_ucsxqm3.jpg" alt="i.imgur.com_ucsxqm3.jpg" width="400" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FEBuilderGBA&quot;,&quot;hid&quot;:&quot;febuildergba&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-66&quot;} -->
+<h3 class="sectionedit2" id="download">DOWNLOAD</h3>
+<div class="level3">
+
+<p>
+I want you to use the latest version.<br />
+<a href="https://github.com/FEBuilderGBA/FEBuilderGBA/releases/latest" class="urlextern" title="https://github.com/FEBuilderGBA/FEBuilderGBA/releases/latest" rel="nofollow">https://github.com/FEBuilderGBA/FEBuilderGBA/releases/latest</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;DOWNLOAD&quot;,&quot;hid&quot;:&quot;download&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;67-186&quot;} -->
+<h3 class="sectionedit3" id="how_to_obtain_necessary_tools_to_use_febuildergba">How to obtain necessary tools to use FEBuilderGBA</h3>
+<div class="level3">
+<div class="table sectionedit4"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=db8bb4&amp;media=https%3A%2F%2Fi.imgur.com%2FLstjXn3.jpg" class="media" title="https://i.imgur.com/LstjXn3.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=879261&amp;media=https%3A%2F%2Fi.imgur.com%2FLstjXn3.jpg" class="media" title="i.imgur.com_lstjxn3.jpg" alt="i.imgur.com_lstjxn3.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:how_to_obtain_necessary_tools_to_use_febuildergba_en" class="wikilink1" title="en:guide:febuildergba:how_to_obtain_necessary_tools_to_use_febuildergba_en">How_to_obtain_necessary_tools_to_use_FEBuilderGBA_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:4,&quot;range&quot;:&quot;265-390&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;How to obtain necessary tools to use FEBuilderGBA&quot;,&quot;hid&quot;:&quot;how_to_obtain_necessary_tools_to_use_febuildergba&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;187-391&quot;} -->
+<h3 class="sectionedit5" id="feuniverse_thread">FeUniverse Thread</h3>
+<div class="level3">
+
+<p>
+<a href="http://feuniverse.us/t/fe-builder-gba/2845" class="urlextern" title="http://feuniverse.us/t/fe-builder-gba/2845" rel="nofollow">http://feuniverse.us/t/fe-builder-gba/2845</a>
+</p>
+
+<p>
+Do you have any Question? please, ask me(7743).<br />
+You can also ask at the Discord. Click here for details.<br />
+<a href="/doku.php?id=en:discord_chat" class="wikilink1" title="en:discord_chat">discord_chat</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FeUniverse Thread&quot;,&quot;hid&quot;:&quot;feuniverse_thread&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;392-590&quot;} -->
+<h3 class="sectionedit6" id="about_the_question">About the question.</h3>
+<div class="level3">
+
+<p>
+To ask a question please send report 7z.<br />
+Please send report 7z to accurately reproduce the problem.<br />
+How to make report 7z, please click here.
+</p>
+<div class="table sectionedit7"><table class="inline">
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=fec659&amp;media=https%3A%2F%2Fi.imgur.com%2Fkge9Bgq.jpg" class="media" title="https://i.imgur.com/kge9Bgq.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=4bab78&amp;media=https%3A%2F%2Fi.imgur.com%2Fkge9Bgq.jpg" class="media" title="i.imgur.com_kge9bgq.jpg" alt="i.imgur.com_kge9bgq.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:report7z" class="wikilink1" title="en:guide:febuildergba:report7z">report7z</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table1&quot;,&quot;secid&quot;:7,&quot;range&quot;:&quot;764-845&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;About the question.&quot;,&quot;hid&quot;:&quot;about_the_question&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;591-846&quot;} -->
+<h3 class="sectionedit8" id="video">Video</h3>
+<div class="level3">
+
+<p>
+Creating Chapters in FEBuilderGBA<br />
+<a href="https://www.youtube.com/watch?v=Z_HeNcLc6Jk" class="media" title="https://www.youtube.com/watch?v=Z_HeNcLc6Jk" rel="nofollow"><img src="/lib/exe/fetch.php?w=400&amp;tok=c79481&amp;media=https%3A%2F%2Fi.imgur.com%2F7LreV9h.png" class="mediacenter" alt="" width="400" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Video&quot;,&quot;hid&quot;:&quot;video&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;847-988&quot;} -->
+<h2 class="sectionedit9" id="febuildergba_manual_english_translation">FEBuilderGBA Manual  English translation</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FEBuilderGBA Manual  English translation&quot;,&quot;hid&quot;:&quot;febuildergba_manual_english_translation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;989-1041&quot;} -->
+<h3 class="sectionedit10" id="village_visit_and_village_destruction_tile_change_and_event_cond_and_escape_point">Village visit and village destruction(Tile change and event cond, and Escape point.)</h3>
+<div class="level3">
+<div class="table sectionedit11"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=bea218&amp;media=https%3A%2F%2Fi.imgur.com%2FVkMuWxu.jpg" class="media" title="https://i.imgur.com/VkMuWxu.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=bf493a&amp;media=https%3A%2F%2Fi.imgur.com%2FVkMuWxu.jpg" class="media" title="i.imgur.com_vkmuwxu.jpg" alt="i.imgur.com_vkmuwxu.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:village_visit_and_village_destruction_en" class="wikilink1" title="en:guide:febuildergba:village_visit_and_village_destruction_en">Village visit and village destruction_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table2&quot;,&quot;secid&quot;:11,&quot;range&quot;:&quot;1155-1268&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Village visit and village destruction(Tile change and event cond, and Escape point.)&quot;,&quot;hid&quot;:&quot;village_visit_and_village_destruction_tile_change_and_event_cond_and_escape_point&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;1042-1269&quot;} -->
+<h3 class="sectionedit12" id="reinforcement">Reinforcement</h3>
+<div class="level3">
+<div class="table sectionedit13"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=75a8ba&amp;media=https%3A%2F%2Fi.imgur.com%2FFvE4iYm.jpg" class="media" title="https://i.imgur.com/FvE4iYm.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=0169eb&amp;media=https%3A%2F%2Fi.imgur.com%2FFvE4iYm.jpg" class="media" title="i.imgur.com_fve4iym.jpg" alt="i.imgur.com_fve4iym.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:reinforcement_en" class="wikilink1" title="en:guide:febuildergba:reinforcement_en">Reinforcement_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table3&quot;,&quot;secid&quot;:13,&quot;range&quot;:&quot;1312-1401&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Reinforcement&quot;,&quot;hid&quot;:&quot;reinforcement&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:12,&quot;range&quot;:&quot;1270-1402&quot;} -->
+<h3 class="sectionedit14" id="add_magic_effect">Add magic effect</h3>
+<div class="level3">
+<div class="table sectionedit15"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=9298ee&amp;media=https%3A%2F%2Fi.imgur.com%2Ftyox7Tp.jpg" class="media" title="https://i.imgur.com/tyox7Tp.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=821582&amp;media=https%3A%2F%2Fi.imgur.com%2Ftyox7Tp.jpg" class="media" title="i.imgur.com_tyox7tp.jpg" alt="i.imgur.com_tyox7tp.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:add_magic_effect_en" class="wikilink1" title="en:guide:febuildergba:add_magic_effect_en">Add_magic_effect_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table4&quot;,&quot;secid&quot;:15,&quot;range&quot;:&quot;1448-1540&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Add magic effect&quot;,&quot;hid&quot;:&quot;add_magic_effect&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:14,&quot;range&quot;:&quot;1403-1541&quot;} -->
+<h3 class="sectionedit16" id="musics_midi_import_export_s_file_import_export_transplant_songs_from_other_gba_games">Musics.(midi import/export , s file import/export , Transplant songs from other GBA games)</h3>
+<div class="level3">
+<div class="table sectionedit17"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=e09e4a&amp;media=https%3A%2F%2Fi.imgur.com%2FRYJtJvO.jpg" class="media" title="https://i.imgur.com/RYJtJvO.jpg"><img src="/lib/exe/fetch.php?w=120&amp;h=160&amp;tok=5f64f0&amp;media=https%3A%2F%2Fi.imgur.com%2FRYJtJvO.jpg" class="media" title="i.imgur.com_ryjtjvo.jpg" alt="i.imgur.com_ryjtjvo.jpg" width="120" height="160" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:music_en" class="wikilink1" title="en:guide:febuildergba:music_en">Music_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table5&quot;,&quot;secid&quot;:17,&quot;range&quot;:&quot;1661-1742&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Musics.(midi import\/export , s file import\/export , Transplant songs from other GBA games)&quot;,&quot;hid&quot;:&quot;musics_midi_import_export_s_file_import_export_transplant_songs_from_other_gba_games&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:16,&quot;range&quot;:&quot;1542-1743&quot;} -->
+<h3 class="sectionedit18" id="background_by_using_color_reduction_tool_considering_tsa_maximum_8_pallets_8_15_colors_120_colors_about_how_to_use">Background by using color reduction tool considering TSA.(Maximum 8 pallets 8 15 colors = 120 colors About how to use.)</h3>
+<div class="level3">
+<div class="table sectionedit19"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=d8242e&amp;media=https%3A%2F%2Fi.imgur.com%2FoQGFKE2.jpg" class="media" title="https://i.imgur.com/oQGFKE2.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=c0fb28&amp;media=https%3A%2F%2Fi.imgur.com%2FoQGFKE2.jpg" class="media" title="i.imgur.com_oqgfke2.jpg" alt="i.imgur.com_oqgfke2.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:set_the_background_using_the_reduction_color_tool_en" class="wikilink1" title="en:guide:febuildergba:set_the_background_using_the_reduction_color_tool_en">Set_the_background_using_the_reduction_color_tool_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table6&quot;,&quot;secid&quot;:19,&quot;range&quot;:&quot;1892-2017&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Background by using color reduction tool considering TSA.(Maximum 8 pallets 8 15 colors = 120 colors About how to use.)&quot;,&quot;hid&quot;:&quot;background_by_using_color_reduction_tool_considering_tsa_maximum_8_pallets_8_15_colors_120_colors_about_how_to_use&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:18,&quot;range&quot;:&quot;1744-2018&quot;} -->
+<h3 class="sectionedit20" id="let_s_port_fe7_lyn_to_fe8_about_map_hover_icon_map_move_icon_portrait_battle_animation">Let&#039;s port FE7 Lyn to FE8(about Map Hover Icon、Map Move Icon、Portrait、Battle Animation)</h3>
+<div class="level3">
+<div class="table sectionedit21"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=215e01&amp;media=https%3A%2F%2Fi.imgur.com%2Fzl2M2gc.jpg" class="media" title="https://i.imgur.com/zl2M2gc.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=df61e1&amp;media=https%3A%2F%2Fi.imgur.com%2Fzl2M2gc.jpg" class="media" title="i.imgur.com_zl2m2gc.jpg" alt="i.imgur.com_zl2m2gc.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:porting_fe7_lyn_to_fe8_en" class="wikilink1" title="en:guide:febuildergba:porting_fe7_lyn_to_fe8_en">Porting_FE7_lyn_to_FE8_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table7&quot;,&quot;secid&quot;:21,&quot;range&quot;:&quot;2141-2239&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Let&#039;s port FE7 Lyn to FE8(about Map Hover Icon\u3001Map Move Icon\u3001Portrait\u3001Battle Animation)&quot;,&quot;hid&quot;:&quot;let_s_port_fe7_lyn_to_fe8_about_map_hover_icon_map_move_icon_portrait_battle_animation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:20,&quot;range&quot;:&quot;2019-2240&quot;} -->
+<h3 class="sectionedit22" id="item_characteristics_while_setting_up_a_super_strong_sword_i_will_explain_the_setting_of_item_relation">Item characteristics.(While setting up a super strong sword, I will explain the setting of item relation.)</h3>
+<div class="level3">
+<div class="table sectionedit23"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=4c1a1c&amp;media=https%3A%2F%2Fi.imgur.com%2FBeUOK89.jpg" class="media" title="https://i.imgur.com/BeUOK89.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=9882a5&amp;media=https%3A%2F%2Fi.imgur.com%2FBeUOK89.jpg" class="media" title="i.imgur.com_beuok89.jpg" alt="i.imgur.com_beuok89.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:item_characteristics_en" class="wikilink1" title="en:guide:febuildergba:item_characteristics_en">Item_characteristics_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table8&quot;,&quot;secid&quot;:23,&quot;range&quot;:&quot;2376-2472&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Item characteristics.(While setting up a super strong sword, I will explain the setting of item relation.)&quot;,&quot;hid&quot;:&quot;item_characteristics_while_setting_up_a_super_strong_sword_i_will_explain_the_setting_of_item_relation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:22,&quot;range&quot;:&quot;2241-2474&quot;} -->
+<h3 class="sectionedit24" id="tile_changes_at_snag_broken_wall_chest_events">Tile Changes at Snag(Broken_Wall),Chest,Events</h3>
+<div class="level3">
+<div class="table sectionedit25"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=2dd993&amp;media=https%3A%2F%2Fi.imgur.com%2FOqpkKCw.jpg" class="media" title="https://i.imgur.com/OqpkKCw.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=a83519&amp;media=https%3A%2F%2Fi.imgur.com%2FOqpkKCw.jpg" class="media" title="i.imgur.com_oqpkkcw.jpg" alt="i.imgur.com_oqpkkcw.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:how_to_make_tile_changes_at_snag_broken_wall_chest_event_en" class="wikilink1" title="en:guide:febuildergba:how_to_make_tile_changes_at_snag_broken_wall_chest_event_en">How_to_make_Tile_Changes_at_Snag_(Broken_Wall),_Chest,_Event_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table9&quot;,&quot;secid&quot;:25,&quot;range&quot;:&quot;2550-2686&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Tile Changes at Snag(Broken_Wall),Chest,Events&quot;,&quot;hid&quot;:&quot;tile_changes_at_snag_broken_wall_chest_events&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:24,&quot;range&quot;:&quot;2475-2687&quot;} -->
+<h3 class="sectionedit26" id="config_data_structure_of_febuildergba">Config data structure of FEBuilderGBA</h3>
+<div class="level3">
+<div class="table sectionedit27"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=ea8e3c&amp;media=https%3A%2F%2Fi.imgur.com%2FiPFRtmE.jpg" class="media" title="https://i.imgur.com/iPFRtmE.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=0d17a2&amp;media=https%3A%2F%2Fi.imgur.com%2FiPFRtmE.jpg" class="media" title="i.imgur.com_ipfrtme.jpg" alt="i.imgur.com_ipfrtme.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:the_config_data_structure_of_febuildergba_en" class="wikilink1" title="en:guide:febuildergba:the_config_data_structure_of_febuildergba_en">The config data structure of FEBuilderGBA_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table10&quot;,&quot;secid&quot;:27,&quot;range&quot;:&quot;2754-2871&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Config data structure of FEBuilderGBA&quot;,&quot;hid&quot;:&quot;config_data_structure_of_febuildergba&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:26,&quot;range&quot;:&quot;2688-2872&quot;} -->
+<h3 class="sectionedit28" id="disassembler">Disassembler</h3>
+<div class="level3">
+<div class="table sectionedit29"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=895a74&amp;media=https%3A%2F%2Fi.imgur.com%2FfxIsbFe.jpg" class="media" title="https://i.imgur.com/fxIsbFe.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=1ce44c&amp;media=https%3A%2F%2Fi.imgur.com%2FfxIsbFe.jpg" class="media" title="i.imgur.com_fxisbfe.jpg" alt="i.imgur.com_fxisbfe.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:disassembler_en" class="wikilink1" title="en:guide:febuildergba:disassembler_en">Disassembler_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table11&quot;,&quot;secid&quot;:29,&quot;range&quot;:&quot;2914-3002&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Disassembler&quot;,&quot;hid&quot;:&quot;disassembler&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:28,&quot;range&quot;:&quot;2873-3003&quot;} -->
+<h3 class="sectionedit30" id="automatic_pointer_calculation">Automatic pointer calculation</h3>
+<div class="level3">
+<div class="table sectionedit31"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=43990d&amp;media=https%3A%2F%2Fi.imgur.com%2F3JkYdFf.jpg" class="media" title="https://i.imgur.com/3JkYdFf.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=5be6d2&amp;media=https%3A%2F%2Fi.imgur.com%2F3JkYdFf.jpg" class="media" title="i.imgur.com_3jkydff.jpg" alt="i.imgur.com_3jkydff.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:automatic_pointer_calculation_en" class="wikilink1" title="en:guide:febuildergba:automatic_pointer_calculation_en">Automatic pointer calculation_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table12&quot;,&quot;secid&quot;:31,&quot;range&quot;:&quot;3062-3167&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Automatic pointer calculation&quot;,&quot;hid&quot;:&quot;automatic_pointer_calculation&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:30,&quot;range&quot;:&quot;3004-3168&quot;} -->
+<h3 class="sectionedit32" id="how_to_make_victory_condition">How to make Victory condition</h3>
+<div class="level3">
+<div class="table sectionedit33"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=dfad0a&amp;media=https%3A%2F%2Fi.imgur.com%2FBvk40yk.jpg" class="media" title="https://i.imgur.com/Bvk40yk.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=40bc1f&amp;media=https%3A%2F%2Fi.imgur.com%2FBvk40yk.jpg" class="media" title="i.imgur.com_bvk40yk.jpg" alt="i.imgur.com_bvk40yk.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:how_to_make_victory_condition_en" class="wikilink1" title="en:guide:febuildergba:how_to_make_victory_condition_en">How to make Victory condition_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table13&quot;,&quot;secid&quot;:33,&quot;range&quot;:&quot;3227-3332&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;How to make Victory condition&quot;,&quot;hid&quot;:&quot;how_to_make_victory_condition&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:32,&quot;range&quot;:&quot;3169-3333&quot;} -->
+<h3 class="sectionedit34" id="automatic_detection_of_bugs_by_3_points_diff">Automatic detection of bugs by 3 points DIFF</h3>
+<div class="level3">
+<div class="table sectionedit35"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=747158&amp;media=https%3A%2F%2Fi.imgur.com%2FPGYPMy7.jpg" class="media" title="https://i.imgur.com/PGYPMy7.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=9192ab&amp;media=https%3A%2F%2Fi.imgur.com%2FPGYPMy7.jpg" class="media" title="i.imgur.com_pgypmy7.jpg" alt="i.imgur.com_pgypmy7.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:automatic_detection_of_bugs_by_3_points_diff_en" class="wikilink1" title="en:guide:febuildergba:automatic_detection_of_bugs_by_3_points_diff_en">Automatic detection of bugs by 3 points DIFF_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table14&quot;,&quot;secid&quot;:35,&quot;range&quot;:&quot;3406-3526&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Automatic detection of bugs by 3 points DIFF&quot;,&quot;hid&quot;:&quot;automatic_detection_of_bugs_by_3_points_diff&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:34,&quot;range&quot;:&quot;3334-3527&quot;} -->
+<h3 class="sectionedit36" id="how_to_make_ups_patch_adaptation_method_en">How to make UPS patch, adaptation method_EN</h3>
+<div class="level3">
+<div class="table sectionedit37"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=23624d&amp;media=https%3A%2F%2Fi.imgur.com%2FjPViO6B.jpg" class="media" title="https://i.imgur.com/jPViO6B.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=4e718c&amp;media=https%3A%2F%2Fi.imgur.com%2FjPViO6B.jpg" class="media" title="i.imgur.com_jpvio6b.jpg" alt="i.imgur.com_jpvio6b.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:how_to_make_ups_patch_adaptation_method_en" class="wikilink1" title="en:guide:febuildergba:how_to_make_ups_patch_adaptation_method_en">How to make UPS patch, adaptation method_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table15&quot;,&quot;secid&quot;:37,&quot;range&quot;:&quot;3600-3716&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;How to make UPS patch, adaptation method_EN&quot;,&quot;hid&quot;:&quot;how_to_make_ups_patch_adaptation_method_en&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:36,&quot;range&quot;:&quot;3528-3717&quot;} -->
+<h3 class="sectionedit38" id="keyboard_shortcut_for_febuildergba">Keyboard shortcut for FEBuilderGBA</h3>
+<div class="level3">
+<div class="table sectionedit39"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/detail.php?id=en%3Aguide%3Afebuildergba%3Aindex&amp;media=guide:febuildergba:keybord_shortcut.jpg" class="media" title="guide:febuildergba:keybord_shortcut.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=ec87dc&amp;media=guide:febuildergba:keybord_shortcut.jpg" class="media" title="keybord_shortcut.jpg" alt="keybord_shortcut.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:keyboard_shortcut_for_febuildergba_en" class="wikilink1" title="en:guide:febuildergba:keyboard_shortcut_for_febuildergba_en">Keyboard shortcut for FEBuilderGBA_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table16&quot;,&quot;secid&quot;:39,&quot;range&quot;:&quot;3781-3899&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Keyboard shortcut for FEBuilderGBA&quot;,&quot;hid&quot;:&quot;keyboard_shortcut_for_febuildergba&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:38,&quot;range&quot;:&quot;3718-3900&quot;} -->
+<h3 class="sectionedit40" id="if_your_rom_freezes_read_here">If your ROM freezes, read here</h3>
+<div class="level3">
+<div class="table sectionedit41"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=64a31b&amp;media=https%3A%2F%2Fi.imgur.com%2F0r0vb21.jpg" class="media" title="https://i.imgur.com/0r0vb21.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=a2cf3b&amp;media=https%3A%2F%2Fi.imgur.com%2F0r0vb21.jpg" class="media" title="i.imgur.com_0r0vb21.jpg" alt="i.imgur.com_0r0vb21.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:if_your_rom_freezes_read_here_en" class="wikilink1" title="en:guide:febuildergba:if_your_rom_freezes_read_here_en">If your ROM freezes, read here_EN</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table17&quot;,&quot;secid&quot;:41,&quot;range&quot;:&quot;3960-4066&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;If your ROM freezes, read here&quot;,&quot;hid&quot;:&quot;if_your_rom_freezes_read_here&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:40,&quot;range&quot;:&quot;3901-4067&quot;} -->
+<h3 class="sectionedit42" id="create_report_issue_report7z">Create Report Issue / report7z　</h3>
+<div class="level3">
+<div class="table sectionedit43"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/fetch.php?tok=fec659&amp;media=https%3A%2F%2Fi.imgur.com%2Fkge9Bgq.jpg" class="media" title="https://i.imgur.com/kge9Bgq.jpg"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=4bab78&amp;media=https%3A%2F%2Fi.imgur.com%2Fkge9Bgq.jpg" class="media" title="i.imgur.com_kge9bgq.jpg" alt="i.imgur.com_kge9bgq.jpg" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:report7z" class="wikilink1" title="en:guide:febuildergba:report7z">report7z</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table18&quot;,&quot;secid&quot;:43,&quot;range&quot;:&quot;4129-4210&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Create Report Issue \/ report7z\u3000&quot;,&quot;hid&quot;:&quot;create_report_issue_report7z&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:42,&quot;range&quot;:&quot;4068-4211&quot;} -->
+<h3 class="sectionedit44" id="rebuild">Rebuild</h3>
+<div class="level3">
+<div class="table sectionedit45"><table class="inline" style="min-width: 0px; width: 70%;">
+<col style="width: 300px" /><col />
+	<tr class="row0">
+		<td class="col0"><a href="/lib/exe/detail.php?id=en%3Aguide%3Afebuildergba%3Aindex&amp;media=guide:febuildergba:rebuild.png" class="media" title="guide:febuildergba:rebuild.png"><img src="/lib/exe/fetch.php?w=160&amp;h=120&amp;tok=62d216&amp;media=guide:febuildergba:rebuild.png" class="media" alt="" width="160" height="120" /></a></td><td class="col1"><a href="/doku.php?id=en:guide:febuildergba:rebuild.en" class="wikilink1" title="en:guide:febuildergba:rebuild.en">rebuild.en</a></td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table19&quot;,&quot;secid&quot;:45,&quot;range&quot;:&quot;4248-4330&quot;} -->
+<p>
+If you find a mistranslation, please fix it.<br />
+When you press the second button from the left in this wiki, it becomes the editing screen.
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Rebuild&quot;,&quot;hid&quot;:&quot;rebuild&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:44,&quot;range&quot;:&quot;4212-4473&quot;} -->
+<h2 class="sectionedit46" id="faq">FAQ</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FAQ&quot;,&quot;hid&quot;:&quot;faq&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:46,&quot;range&quot;:&quot;4474-4489&quot;} -->
+<h3 class="sectionedit47" id="where_are_mulder_and_vanessa">Where are Mulder and Vanessa?</h3>
+<div class="level3">
+
+<p>
+Mulder and Vanessa are in Frelia Castle.<br />
+Map ID 0x38 It is Frelia castle.<br />
+Their unit arrangement is 0x8B43D0 (FE8U)<br />
+In FE8J, it becomes 0x908958 (FE8J).<br />
+<a href="/doku.php?id=en:qa" class="wikilink1" title="en:qa">qa</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Where are Mulder and Vanessa?&quot;,&quot;hid&quot;:&quot;where_are_mulder_and_vanessa&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:47,&quot;range&quot;:&quot;4490-4694&quot;} -->
+<h3 class="sectionedit48" id="when_trying_to_move_a_chapter_it_freezes">When trying to move a chapter, it freezes.</h3>
+<div class="level3">
+
+<p>
+Please use the “Skip World Map Fix” patch.<br />
+<a href="/doku.php?id=en:qa" class="wikilink1" title="en:qa">qa</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;When trying to move a chapter, it freezes.&quot;,&quot;hid&quot;:&quot;when_trying_to_move_a_chapter_it_freezes&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:48,&quot;range&quot;:&quot;4695-4802&quot;} -->
+<h3 class="sectionedit49" id="i_want_to_display_text_with_feeditoradv_notation_i_want_to_a_instead_of_0003">I want to display text with FEEditorAdv notation. / I want to [A] instead of @ 0003.</h3>
+<div class="level3">
+
+<p>
+Please Change Game Script Notation of Option.<br />
+The current FEBuilderGBA is set to FEEditor Adv notation automatically when there is no setting and if you are an English speaking user.
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;I want to display text with FEEditorAdv notation. \/ I want to [A] instead of @ 0003.&quot;,&quot;hid&quot;:&quot;i_want_to_display_text_with_feeditoradv_notation_i_want_to_a_instead_of_0003&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:49,&quot;range&quot;:&quot;4803-5082&quot;} -->
+<h3 class="sectionedit50" id="febuildergba_readme">FEBuilderGBA readme</h3>
+<div class="level3">
+
+<p>
+This is a ROM editor of FE GBA trilogy.<br />
+Support to FE8J FE7J FE6 FE8U FE7U.
+</p>
+
+<p>
+With reference to the screen of Project_FE_GBA,<br />
+We support a wide range of functions from image display, import export, map remodeling.
+</p>
+
+<p>
+I wanted this kind of function I thought when making a Kaitou patch!
+</p>
+
+<p>
+The origin of the name is from 某LAND.<br />
+However, the development language is C#. (People inside are together …)
+</p>
+
+<p>
+Naturally, open source.<br />
+The license of the source code is GPL3.<br />
+Please use it freely.
+</p>
+
+<p>
+To make this, I referred to various data and Communities.<br />
+We would like to thank our predecessors who released the analyzed data.
+</p>
+
+<p>
+This software has nothing to do with official.<br />
+We do not need donation as we are making this software Non commercial.
+</p>
+
+<p>
+If you really want to donate,donate to the charitable organization supporting the freedom of speech on the Internet, Freedom of Expression, including the EFF Electronic Frontier Foundation.
+</p>
+
+<p>
+Of course, you are free to write articles about FEBuilderGBA.<br />
+In some cases, you may earn pocket money with affiliate. :)<br />
+However, please do it at your own risk. :(
+</p>
+
+<p>
+If you have something you do not understand from hackrom, please read “Manual” in “Help”.<br />
+If you find a bug that you can not solve by any means, please create report.7z from &#039;File&#039; → &#039;Menu&#039; → &#039;Create Report Issue&#039; and consult with the community.(Do NOT send the ROM)
+</p>
+
+<p>
+<a href="https://github.com/FEBuilderGBA/FEBuilderGBA" class="urlextern" title="https://github.com/FEBuilderGBA/FEBuilderGBA" rel="nofollow">https://github.com/FEBuilderGBA/FEBuilderGBA</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FEBuilderGBA readme&quot;,&quot;hid&quot;:&quot;febuildergba_readme&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:50,&quot;range&quot;:&quot;5083-&quot;} --></div>
+</body>
+</html>

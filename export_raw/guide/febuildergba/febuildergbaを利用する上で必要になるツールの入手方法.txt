@@ -1,0 +1,90 @@
+FEBuilderGBAを利用する上で必要になるツールの入手方法を説明します。
+
+====== OS  ======
+FEBuilderGBAはC# 4.0で書かれています。\\ win7以上を推奨します。\\ \\ もし、XPなどの古いPCをお使いの場合は、数万円もって家電屋さんに行くと、win10が搭載されたノートPCを買えるでしょうから、苦労するぐらいなら買い換えましょう。\\ \\ Linux/monoでの動作については不明ですが、動きそうな気もします。\\ \\ ====== 必須ツール  ======
+
+===== 7z  =====
+FEBuilderGBAは、7zで圧縮されています。
+
+7zを圧縮するツールはいろいろありますが、私はnoahをお勧めします。
+http://www.kmonos.net/lib/noah.html
+
+===== VBA-M  =====
+GBAエミュレータです。\\ 動作確認に利用します。\\ VBA-Mを推奨しますが、他のエミュレータでも、かまいません。\\ https://sourceforge.net/projects/vbam/
+
+===== sappy  =====
+音楽プレイヤです。\\ FEBuilderGBAからは、音を再生するのに利用します。\\ 古のVB6でかかれているので、インストールが結構面倒です。\\ 幸いなことに、インストーラーがあるので利用すると楽に導入できます。\\ http://feuniverse.us/t/sappy-working-version/153
+
+====== あった方がよいツール  ======
+===== Event Assembler  =====
+魔法システムなどの大きいパッチは、EAで実装されていることが多いので、あったほうがいいです。
+FEBuilderGBAからは、実行->Event Assemblerで追加 で、安全に起動することもできます。
+http://feuniverse.us/t/event-assembler/1749
+
+===== no$gba debugger  =====
+GBAデバッガーです。\\ arm asmに挑戦したい人はインストールしましょう。\\ ブレークポイントが設定できるので、コードを理解するのに役立ちます。\\ http://problemkaputt.de/gba.htm
+
+====== 各ツールの設定方法  ======
+===== StepA1  =====
+"設定" -> "オプション"を選択します。\\ {{ https://i.imgur.com/LstjXn3.jpg }}
+
+
+===== StepA2  =====
+"パス"タブに、各アプリケーションを設定していきます。\\ {{ https://i.imgur.com/hfC0iM0.jpg }}
+
+===== StepA3  =====
+"エミュレータ"に、 VBA-M を設定してください。\\ ここに設定したエミュレータは、F5キーを押せば呼び出されます。\\ {{ https://i.imgur.com/swOuqj4.jpg }}
+
+===== StepA4  =====
+no$gba-debuggerを利用する場合は、"エミュレータ2"に設定してください。\\ エミュレータ2は、Ctrl+F5キーを押せば呼び出されます。\\ {{ https://i.imgur.com/AoBahJF.jpg }}
+
+===== StepA5  =====
+"sappy"に、sappyを設定します。\\ sappyは、それぞれの項目にある"♪"ボタンを押せば自動的に呼び出されます。\\ {{ https://i.imgur.com/646geir.jpg }}
+
+===== StepA6  =====
+EventAssemblerを利用する場合は、"Event Assembler"に設定します。(core.exeの方を設定します。)\\ EventAssemblerは、EAを利用するパッチをインストールするときに自動的に呼び出されます。\\ また、メニューの"実行"->"Event Assemblerで追加" から、呼び出すことができます。\\ {{ https://i.imgur.com/hkxKZsQ.jpg }}
+
+===== StepA7  =====
+設定が終わったら、"保存"ボタンで、結果を確定します。\\ {{ https://i.imgur.com/DZTkXSF.jpg }}
+
+===== StepA8  =====
+さっそく、試してみましょう。\\ F5キーを押してください。 VBA-M が起動するはずです。\\ {{ https://i.imgur.com/T0fPme1.jpg }}
+
+===== StepA9  =====
+"マップ設定"や"ソングテーブル"にある、"♪"ボタンをクリックすると、sappyで曲が再生されます。\\ {{ https://i.imgur.com/xDtL1v3.jpg }}
+
+
+====== そのほかのツールの紹介  ======
+FEBuilderGBAからは呼ぶことはないのですが、改造FEをやる上で便利なツールをいくつか紹介します。\\ 
+===== EDGE  =====
+画像のパレットを正しく扱えるツールなので、インストールすることをお勧めします。\\ http://takabosoft.com/edge
+
+===== Tiled Map Editor  =====
+マップエディターです。\\ FEBuilerGBAにもマップエディタはありますが、より高度なものを利用したい方は利用してください。\\ マップを tmx形式で出力すると利用できます。\\ http://www.mapeditor.org/
+
+===== 世界樹  =====
+フリーのmidi編集ソフトです。\\ http://openmidiproject.osdn.jp/Sekaiju.html
+
+
+===== UTF-8が扱えるテキストエディタ  =====
+メモ帳しか使っていない人はいないと思いますが、UTF-8が扱えるテキストエディタをご利用ください。\\ \\ 色々なエディタがあるので、自分で好きなものを選んでください。\\ 個人的には、サクラエディタが好きです。\\ 
+===== goldroad  =====
+日本の改造で主に使われている逆アセンブラです。\\ masmに近い構文で記述できます。\\ https://www.romhacking.net/utilities/343/
+
+===== devkit pro  =====
+海外の改造で主に使われているアセンブラです。\\ gnu/gasをベースにしているようです。\\ https://sourceforge.net/projects/devkitpro/
+
+===== lyn  =====
+EAのelfリンカーです。
+lynを利用して書かれているパッチを利用するときに必要になります。
+lyn.exeをダウンロードして、EAのToolsディレクトリにコピーしてください。
+https://github.com/StanHash/lyn/releases
+
+===== mid2agb  =====
+midiをGBAで利用できる形式に変換するツールです。
+FEBuilderGBAにもmidiを変換する機能がありますが、複雑なmidiだとループを正しく表現できないことがあるので、mid2agbを利用するのが一番正確です。
+ただ、このプログラムは、理由によりリンクを貼れません。
+利用したい場合は、googleで探してください。
+
+
+====== 以上  ======

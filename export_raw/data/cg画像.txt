@@ -1,0 +1,235 @@
+===== CG画像テーブル  =====
+
+GBAGE上では"1744～"\\ Image - compressed\\ TSA - raw\\ Palette - raw\\ \\ CG画像テーブルは、AC0524 から12バイトごと に、0-9まで合計10個あります。(10*12=120バイト)\\ \\ 
+==== 0:ED3人組  ====
+
+^Address|AC0524|{{data:CG画像:0.PNG}}||||
+^Table|AC0394| ::: ||||
+^TSA|B04F70| ::: ||||
+^Pal|B07E78| ::: ||||
+^row1|AD247C| ::: ||||
+^row2|AD2A4C^row3|AD324C^row4|AD3A70|
+^row5|AD42D4^row6|AD4B2C^row7|AD53AC|
+^row8|AD5C14^row9|AD6484^row10|AD6CE4|
+
+==== 1:女王を抱えるエイリーク  ====
+
+^Address|AC0530|{{data:CG画像:1.PNG}}||||
+^Table|AC03BC| ::: ||||
+^TSA|B05424| ::: ||||
+^Pal|B07F38| ::: ||||
+^row1|AD74EC| ::: ||||
+^row2|AD7C78^row3|AD8490^row4|AD8CA4|
+^row5|AD94B0^row6|AD9CC4^row7|ADA508|
+^row8|ADACB0^row9|ADB4A4^row10|ADBCB8|
+
+==== 2:魔石研究  ====
+
+^Address|AC053C|{{data:CG画像:2.PNG}}||||
+^Table|AC03E4| ::: ||||
+^TSA|B058D8| ::: ||||
+^Pal|B07FF8| ::: ||||
+^row1|ADC494| ::: ||||
+^row2|ADCCC4^row3|ADD51C^row4|ADDD78|
+^row5|ADE5EC^row6|ADEE6C^row7|ADF6C8|
+^row8|ADFEC8^row9|AE0624^row10|AE0DE8|
+
+==== 3:ドラゴンナイト  ====
+
+^Address|AC0548|{{data:CG画像:3.PNG}}||||
+^Table|AC040C| ::: ||||
+^TSA|B05D8C| ::: ||||
+^Pal|B080B8| ::: ||||
+^row1|AE15E4| ::: ||||
+^row2|AE1DB4^row3|AE258C^row4|AE2D04|
+^row5|AE3510^row6|AE3d30^row7|AE4584|
+^row8|AE4DB4^row9|AE5580^row10|AE5DB8|
+
+==== 4:ゼトとエイリーク  ====
+
+^Address|AC0554|{{data:CG画像:4.PNG}}||||
+^Table|AC0434| ::: ||||
+^TSA|B06240| ::: ||||
+^Pal|B08178| ::: ||||
+^row1|AE661C| ::: ||||
+^row2|AE6E58^row3|AE76BC^row4|AE7F20|
+^row5|AE8780^row6|AE8FF8^row7|AE9864|
+^row8|AEA080^row9|AEA8B0^row10|AEB0C8|
+
+==== 5:魔王と聖石  ====
+
+^Address|AC0560|{{data:CG画像:5.PNG}}||||
+^Table|AC045C| ::: ||||
+^TSA|B066F4| ::: ||||
+^Pal|B08238| ::: ||||
+^row1|AEB8C8| ::: ||||
+^row2|AEC078^row3|AEC85C^row4|AED054|
+^row5|AED890^row6|AEE0CC^row7|AEE928|
+^row8|AEF158^row9|AEF960^row10|AF0118|
+
+==== 6:ゼト訓練  ====
+
+^Address|AC056C|{{data:CG画像:6.PNG}}||||
+^Table|AC0484| ::: ||||
+^TSA|B06BA8| ::: ||||
+^Pal|B082F8| ::: ||||
+^row1|AF0858| ::: ||||
+^row2|AF106C^row3|AF18C0^row4|AF2114|
+^row5|AF2970^row6|AF31E4^row7|AF3A60|
+^row8|AF42D4^row9|AF4B28^row10|AF5378|
+
+==== 7:ペガサスナイト  ====
+
+^Address|AC0578|{{data:CG画像:7.PNG}}||||
+^Table|AC04AC| ::: ||||
+^TSA|B0705C| ::: ||||
+^Pal|B083B8| ::: ||||
+^row1|AF5B88| ::: ||||
+^row2|AF6198^row3|AF6974^row4|AF7178|
+^row5|AF79AC^row6|AF81D8^row7|AF8A34|
+^row8|AF9284^row9|AF9AA0^row10|AFA288|
+
+==== 8:ラーチェル乗馬  ====
+
+^Address|AC0584|{{data:CG画像:8.PNG}}||||
+^Table|AC04D4| ::: ||||
+^TSA|B07510| ::: ||||
+^Pal|B08478| ::: ||||
+^row1|AFAACC| ::: ||||
+^row2|AFB244^row3|AFBA90^row4|AFC304|
+^row5|AFCB6C^row6|AFD380^row7|AFDBC0|
+^row8|AFE41C^row9|AFEC80^row10|AFF4AC|
+
+==== 9:踊り子と町の人  ====
+
+^Address|AC0590|{{data:CG画像:9.PNG}}||||
+^Table|AC04FC| ::: ||||
+^TSA|B079C4| ::: ||||
+^Pal|B08538| ::: ||||
+^row1|AFFCA0| ::: ||||
+^row2|B00488^row3|B00CC0^row4|B01514|
+^row5|B01D64^row6|B025B8^row7|B02E04|
+^row8|B03674^row9|B03ED0^row10|B04728|
+
+==== 構造体イメージ  ====
+<code>
+struct split10image_list{
+ split10image* table;
+ tsa*         tsa;
+ pallet*      pallet;
+}; sizeof(Table) == 4*3 = 12バイト
+
+struct split10image{
+ image*    row1; //圧縮画像10個
+ image*    row2;
+ image*    row3;
+ image*    row4;
+ image*    row5;
+ image*    row6;
+ image*    row7;
+ image*    row8;
+ image*    row9;
+ image*    row10;
+};
+</code>
+
+==== ソースコード  ====
+ディフォルトでは、CGを表示させられないので、唯一表示できる0:ED3人組を表示する命令を拡張して、表示できるようにします。\\ 関数080bb17cが、3人組を表示する専用命令とかしているので、これを拡張します。\\ \\ 
+
+show_10split_image_hook.asm
+<code>
+;3人組みを表示する関数を拡張して、ED挿絵を表示できるようにする フック部
+;
+;3人組を描画する関数をフックする.
+;
+
+@thumb
+
+;ジャンプ.
+@org	$080bb182
+ldr	r4, =$08E4FD50
+mov	pc, r4
+</code>
+
+
+show_10split_image.asm
+<code>
+;3人組みを表示する関数を拡張して、ED挿絵を表示できるようにする 本体
+;
+;ED3人組を表示するコード
+;221A0000
+;42210000 00000200
+;221A0000
+;↓↓Nで切り替えられるようにする↓↓
+;221A0000
+;42210[N]00 00000200
+;221A0000
+;
+;画像表示後、マップがおかしくなる時がある。
+;その時は、適当に背景を描画して背景消去してください。背景付き会話でも可。
+;画像表示時間を延ばしたいときは、 後ろの221A0000の前にウェイト命令を。
+;
+;N=
+;[0]->0x08ac0524 ED3人組
+;[1]->0x08AC0530 王女を抱えるエイリーク
+;[2]->0x08ac053c 魔石研究
+;[3]->0x08AC0548 ドラゴンナイト
+;[4]->0x08AC0554 ゼトとエイリーク
+;[5]->0x08AC0560 魔王と聖石
+;[6]->0x08AC056C ゼト訓練
+;[7]->0x08AC0578 ペガサスナイト
+;[8]->0x08AC0584 ラーチェル乗馬
+;[9]->0x08AC0590 踊り子と町の人
+;
+@thumb
+@org	$08E4FD50
+ 
+mov r4,r5           ;r5のメモリ位置がどうしても必要
+ 
+mov r5,r8           ;元の処理をする
+push	{r5, r6, r7}
+mov	r9, r0
+mov	r7, r1
+mov	r8, r2
+mov	r10, r3         ;ここまで元処理
+ 
+mov r0,r4           ;元r5のメモリ位置 + 0x38 = 現在のイベント命令 スクリプトコードへのポインタ
+add r0,#0x38
+ 
+ldr r0,[r0]         ; 現在のイベント命令 スクリプトコードへ
+ldrb r6,[r0,#0x2]   ; イベント命令 スクリプトコードへ 番号をとる.
+ 
+mov r0,#0x0C
+mul r6,r0           ; 1つ 12バイト区切り 番号*12バイト
+ldr r0,=$0x08ac0524
+add r6,r6,r0        ;$0x08ac0524 + (12バイト*個数)
+                    ;
+                    ;struct split10image_list{
+                    ; split10image* table;
+                    ; tsa*         tsa;
+                    ; pallet*      pallet;
+                    ;}; sizeof() == 4*3 = 12バイト
+                    ;
+                    ;struct split10image{
+                    ; image*    row1; //圧縮画像10個
+                    ; image*    row2;
+                    ; image*    row3;
+                    ; image*    row4;
+                    ; image*    row5;
+                    ; image*    row6;
+                    ; image*    row7;
+                    ; image*    row8;
+                    ; image*    row9;
+                    ; image*    row10;
+                    ;};
+                    ;
+ 
+;元に戻す.
+ldr	r0, =$080bb196  ;080bb196 2500     	mov	r5, #0        //r5=0
+mov	pc, r0
+</code>
+
+
+==== 画像の変更方法  ====
+
+まだわかりません。\\ 専用ツールを作らないとダメかも。\\ 

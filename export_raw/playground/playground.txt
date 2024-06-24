@@ -1,0 +1,9 @@
+以下のページが公式が置いている練習用ページです。
+https://www.dokuwiki.org/ja:playground
+
+ただし、登録が必要です。
+以下のURLからアカウントを作成してログインすれば練習できます。
+https://forum.dokuwiki.org/forum.php?req=register
+
+ちなみに、アカウント作成にメールアドレスの入力を求められますが
+適当に入力して最後に@gmail.comってつければ通ります。

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>guide:febuildergba:減色ツールを使って背景を設定する_jp</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="guide,febuildergba,減色ツールを使って背景を設定する_jp"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=guide:febuildergba:%E6%B8%9B%E8%89%B2%E3%83%84%E3%83%BC%E3%83%AB%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E8%83%8C%E6%99%AF%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B_jp&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide:febuildergba"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:%E6%B8%9B%E8%89%B2%E3%83%84%E3%83%BC%E3%83%AB%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E8%83%8C%E6%99%AF%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B_jp"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:febuildergba:%E6%B8%9B%E8%89%B2%E3%83%84%E3%83%BC%E3%83%AB%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E8%83%8C%E6%99%AF%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B_jp"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:%E6%B8%9B%E8%89%B2%E3%83%84%E3%83%BC%E3%83%AB%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E8%83%8C%E6%99%AF%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B_jp"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='guide:febuildergba';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:febuildergba:\u6e1b\u8272\u30c4\u30fc\u30eb\u3092\u4f7f\u3063\u3066\u80cc\u666f\u3092\u8a2d\u5b9a\u3059\u308b_jp","namespace":"guide:febuildergba","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#tsaを考慮した減色とは">TSAを考慮した減色とは？</a></div></li>
+<li class="level1"><div class="li"><a href="#設定方法">設定方法</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepa1">StepA1</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa2">StepA2</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa3">StepA3</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa4">StepA4</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa5">StepA5</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa6">StepA6</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa7">StepA7</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa8">StepA8</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa9">StepA9</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa10">StepA10</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa11">StepA11</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa12">StepA12</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#弱点">弱点</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+ここでは、FEBuilderGBAが搭載しているTSAを考慮した減色ツールを使って、背景を挿入する方法を説明します。<br/>
+<a href="/lib/exe/fetch.php?tok=d8242e&amp;media=https%3A%2F%2Fi.imgur.com%2FoQGFKE2.jpg" class="media" title="https://i.imgur.com/oQGFKE2.jpg"><img src="/lib/exe/fetch.php?tok=d8242e&amp;media=https%3A%2F%2Fi.imgur.com%2FoQGFKE2.jpg" class="mediacenter" title="i.imgur.com_oqgfke2.jpg" alt="i.imgur.com_oqgfke2.jpg" /></a>
+</p>
+
+<h1 class="sectionedit1" id="tsaを考慮した減色とは">TSAを考慮した減色とは？</h1>
+<div class="level1">
+
+<p>
+元画像の味噌ラーメン(wikiepdiaより CC0)<br/>
+<a href="/lib/exe/fetch.php?tok=1f2813&amp;media=https%3A%2F%2Fi.imgur.com%2F8Hs6wOb.jpg" class="media" title="https://i.imgur.com/8Hs6wOb.jpg"><img src="/lib/exe/fetch.php?tok=1f2813&amp;media=https%3A%2F%2Fi.imgur.com%2F8Hs6wOb.jpg" class="mediacenter" title="i.imgur.com_8hs6wob.jpg" alt="i.imgur.com_8hs6wob.jpg" /></a>
+</p>
+
+<p>
+<br/>
+16色減色<br/>
+<a href="https://i.imgur.com/wNsrUez.png" class="urlextern" title="https://i.imgur.com/wNsrUez.png" rel="nofollow">https://i.imgur.com/wNsrUez.png</a>
+</p>
+
+<p>
+<br/>
+FEBuilderGBAでTSAを考慮した減色<br/>
+<a href="https://i.imgur.com/nqgzmKO.png" class="urlextern" title="https://i.imgur.com/nqgzmKO.png" rel="nofollow">https://i.imgur.com/nqgzmKO.png</a>
+</p>
+
+<p>
+<br/>
+TSAを考慮した減色だと、ネギの緑色がちゃんと出ていることがわかります。<br/>
+FEの背景は8パレット * 15色まで出すことができますが、それには、TSAを考慮しないといけなく、人力で作るのは大変でした。<br/>
+そのため、TSAを気にしないで済む、16色に減色して利用していたわけです。<br/>
+ですが、FEBuilderGBAに、TSAを考慮した減色機能が搭載されたので、もっと色数を増やすことができます。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;TSA\u3092\u8003\u616e\u3057\u305f\u6e1b\u8272\u3068\u306f\uff1f&quot;,&quot;hid&quot;:&quot;tsa\u3092\u8003\u616e\u3057\u305f\u6e1b\u8272\u3068\u306f&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;187-981&quot;} -->
+<h1 class="sectionedit2" id="設定方法">設定方法</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u8a2d\u5b9a\u65b9\u6cd5&quot;,&quot;hid&quot;:&quot;\u8a2d\u5b9a\u65b9\u6cd5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;982-1009&quot;} -->
+<h2 class="sectionedit3" id="stepa1">StepA1</h2>
+<div class="level2">
+
+<p>
+メニューから “ツール”→“減色ツール” を呼び出します。<br/>
+<a href="/lib/exe/fetch.php?tok=56cd60&amp;media=https%3A%2F%2Fi.imgur.com%2FZ67P7dl.jpg" class="media" title="https://i.imgur.com/Z67P7dl.jpg"><img src="/lib/exe/fetch.php?tok=56cd60&amp;media=https%3A%2F%2Fi.imgur.com%2FZ67P7dl.jpg" class="mediacenter" title="i.imgur.com_z67p7dl.jpg" alt="i.imgur.com_z67p7dl.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA1&quot;,&quot;hid&quot;:&quot;stepa1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;1010-1145&quot;} -->
+<h2 class="sectionedit4" id="stepa2">StepA2</h2>
+<div class="level2">
+
+<p>
+減色ツールが画面になります。<br/>
+<a href="/lib/exe/fetch.php?tok=984033&amp;media=https%3A%2F%2Fi.imgur.com%2FBJPm8DY.jpg" class="media" title="https://i.imgur.com/BJPm8DY.jpg"><img src="/lib/exe/fetch.php?tok=984033&amp;media=https%3A%2F%2Fi.imgur.com%2FBJPm8DY.jpg" class="mediacenter" title="i.imgur.com_bjpm8dy.jpg" alt="i.imgur.com_bjpm8dy.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA2&quot;,&quot;hid&quot;:&quot;stepa2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1146-1249&quot;} -->
+<h2 class="sectionedit5" id="stepa3">StepA3</h2>
+<div class="level2">
+
+<p>
+元ファイルと、変換した画像の保存先を設定します。<br/>
+<a href="/lib/exe/fetch.php?tok=34022a&amp;media=https%3A%2F%2Fi.imgur.com%2FvuCj783.jpg" class="media" title="https://i.imgur.com/vuCj783.jpg"><img src="/lib/exe/fetch.php?tok=34022a&amp;media=https%3A%2F%2Fi.imgur.com%2FvuCj783.jpg" class="mediacenter" title="i.imgur.com_vucj783.jpg" alt="i.imgur.com_vucj783.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA3&quot;,&quot;hid&quot;:&quot;stepa3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;1250-1383&quot;} -->
+<h2 class="sectionedit6" id="stepa4">StepA4</h2>
+<div class="level2">
+
+<p>
+開始ボタンをクリックします。<br/>
+これで減色処理が開始されます。<br/>
+<a href="/lib/exe/fetch.php?tok=4fb774&amp;media=https%3A%2F%2Fi.imgur.com%2Fx8xZZe5.jpg" class="media" title="https://i.imgur.com/x8xZZe5.jpg"><img src="/lib/exe/fetch.php?tok=4fb774&amp;media=https%3A%2F%2Fi.imgur.com%2Fx8xZZe5.jpg" class="mediacenter" title="i.imgur.com_x8xzze5.jpg" alt="i.imgur.com_x8xzze5.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA4&quot;,&quot;hid&quot;:&quot;stepa4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1384-1535&quot;} -->
+<h2 class="sectionedit7" id="stepa5">StepA5</h2>
+<div class="level2">
+
+<p>
+完成した画像をedgeで見てましょう。<br/>
+ちゃんと、パレットが割り振られています。<br/>
+<a href="/lib/exe/fetch.php?tok=51a825&amp;media=https%3A%2F%2Fi.imgur.com%2F4FmQtKx.jpg" class="media" title="https://i.imgur.com/4FmQtKx.jpg"><img src="/lib/exe/fetch.php?tok=51a825&amp;media=https%3A%2F%2Fi.imgur.com%2F4FmQtKx.jpg" class="mediacenter" title="i.imgur.com_4fmqtkx.jpg" alt="i.imgur.com_4fmqtkx.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA5&quot;,&quot;hid&quot;:&quot;stepa5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;1536-1709&quot;} -->
+<h2 class="sectionedit8" id="stepa6">StepA6</h2>
+<div class="level2">
+
+<p>
+とりあえず、この画像をBGに設定してみましょう。<br/>
+“画像設定”を押してください。<br/>
+<a href="/lib/exe/fetch.php?tok=ccb0d2&amp;media=https%3A%2F%2Fi.imgur.com%2FTmv5XFf.jpg" class="media" title="https://i.imgur.com/Tmv5XFf.jpg"><img src="/lib/exe/fetch.php?tok=ccb0d2&amp;media=https%3A%2F%2Fi.imgur.com%2FTmv5XFf.jpg" class="mediacenter" title="i.imgur.com_tmv5xff.jpg" alt="i.imgur.com_tmv5xff.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA6&quot;,&quot;hid&quot;:&quot;stepa6&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;1710-1883&quot;} -->
+<h2 class="sectionedit9" id="stepa7">StepA7</h2>
+<div class="level2">
+
+<p>
+“背景”を選択してください。<br/>
+<a href="/lib/exe/fetch.php?tok=7cc681&amp;media=https%3A%2F%2Fi.imgur.com%2FOrgiN87.jpg" class="media" title="https://i.imgur.com/OrgiN87.jpg"><img src="/lib/exe/fetch.php?tok=7cc681&amp;media=https%3A%2F%2Fi.imgur.com%2FOrgiN87.jpg" class="mediacenter" title="i.imgur.com_orgin87.jpg" alt="i.imgur.com_orgin87.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA7&quot;,&quot;hid&quot;:&quot;stepa7&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;1884-1983&quot;} -->
+<h2 class="sectionedit10" id="stepa8">StepA8</h2>
+<div class="level2">
+
+<p>
+背景画面がでるので・・・<br/>
+<a href="/lib/exe/fetch.php?tok=899894&amp;media=https%3A%2F%2Fi.imgur.com%2FSN90Uba.jpg" class="media" title="https://i.imgur.com/SN90Uba.jpg"><img src="/lib/exe/fetch.php?tok=899894&amp;media=https%3A%2F%2Fi.imgur.com%2FSN90Uba.jpg" class="mediacenter" title="i.imgur.com_sn90uba.jpg" alt="i.imgur.com_sn90uba.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA8&quot;,&quot;hid&quot;:&quot;stepa8&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;1984-2081&quot;} -->
+<h2 class="sectionedit11" id="stepa9">StepA9</h2>
+<div class="level2">
+
+<p>
+序章の背景を選択してください。<br/>
+FE8Jだと、ID:0x25です。(FE8UだとIDが違うので注意してください。)<br/>
+<a href="/lib/exe/fetch.php?tok=630074&amp;media=https%3A%2F%2Fi.imgur.com%2FS1kuArH.jpg" class="media" title="https://i.imgur.com/S1kuArH.jpg"><img src="/lib/exe/fetch.php?tok=630074&amp;media=https%3A%2F%2Fi.imgur.com%2FS1kuArH.jpg" class="mediacenter" title="i.imgur.com_s1kuarh.jpg" alt="i.imgur.com_s1kuarh.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA9&quot;,&quot;hid&quot;:&quot;stepa9&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;2082-2276&quot;} -->
+<h2 class="sectionedit12" id="stepa10">StepA10</h2>
+<div class="level2">
+
+<p>
+“画像読込”ボタンを押して、先ほど減色した画像を選択してください。<br/>
+<a href="/lib/exe/fetch.php?tok=3b78d6&amp;media=https%3A%2F%2Fi.imgur.com%2FKl1X5JP.jpg" class="media" title="https://i.imgur.com/Kl1X5JP.jpg"><img src="/lib/exe/fetch.php?tok=3b78d6&amp;media=https%3A%2F%2Fi.imgur.com%2FKl1X5JP.jpg" class="mediacenter" title="i.imgur.com_kl1x5jp.jpg" alt="i.imgur.com_kl1x5jp.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA10&quot;,&quot;hid&quot;:&quot;stepa10&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:12,&quot;range&quot;:&quot;2277-2434&quot;} -->
+<h2 class="sectionedit13" id="stepa11">StepA11</h2>
+<div class="level2">
+
+<p>
+画像が読み込まれます。<br/>
+<a href="/lib/exe/fetch.php?tok=2cb128&amp;media=https%3A%2F%2Fi.imgur.com%2FfpKCkUr.jpg" class="media" title="https://i.imgur.com/fpKCkUr.jpg"><img src="/lib/exe/fetch.php?tok=2cb128&amp;media=https%3A%2F%2Fi.imgur.com%2FfpKCkUr.jpg" class="mediacenter" title="i.imgur.com_fpkckur.jpg" alt="i.imgur.com_fpkckur.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA11&quot;,&quot;hid&quot;:&quot;stepa11&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:13,&quot;range&quot;:&quot;2435-2530&quot;} -->
+<h2 class="sectionedit14" id="stepa12">StepA12</h2>
+<div class="level2">
+
+<p>
+ゲームをスタートしてください。<br/>
+ラーメンを前に会話をする二人が出てくるはずです。<br/>
+<a href="/lib/exe/fetch.php?tok=d8242e&amp;media=https%3A%2F%2Fi.imgur.com%2FoQGFKE2.jpg" class="media" title="https://i.imgur.com/oQGFKE2.jpg"><img src="/lib/exe/fetch.php?tok=d8242e&amp;media=https%3A%2F%2Fi.imgur.com%2FoQGFKE2.jpg" class="mediacenter" title="i.imgur.com_oqgfke2.jpg" alt="i.imgur.com_oqgfke2.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA12&quot;,&quot;hid&quot;:&quot;stepa12&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:14,&quot;range&quot;:&quot;2531-2713&quot;} -->
+<h1 class="sectionedit15" id="弱点">弱点</h1>
+<div class="level1">
+
+<p>
+現在は、FEBuilderGBAは、K-means法を利用して減色していますが、このアルゴリズムはグラデーションに弱いです。<br/>
+<br/>
+ピラミッド 元画像<br/>
+<a href="/lib/exe/fetch.php?tok=7785ad&amp;media=https%3A%2F%2Fi.imgur.com%2FPdhdh2a.jpg" class="media" title="https://i.imgur.com/Pdhdh2a.jpg"><img src="/lib/exe/fetch.php?tok=7785ad&amp;media=https%3A%2F%2Fi.imgur.com%2FPdhdh2a.jpg" class="mediacenter" title="i.imgur.com_pdhdh2a.jpg" alt="i.imgur.com_pdhdh2a.jpg" /></a>
+</p>
+
+<p>
+<br/>
+16色減色<br/>
+<a href="/lib/exe/fetch.php?tok=f05a32&amp;media=https%3A%2F%2Fi.imgur.com%2Fk35ML0f.jpg" class="media" title="https://i.imgur.com/k35ML0f.jpg"><img src="/lib/exe/fetch.php?tok=f05a32&amp;media=https%3A%2F%2Fi.imgur.com%2Fk35ML0f.jpg" class="mediacenter" title="i.imgur.com_k35ml0f.jpg" alt="i.imgur.com_k35ml0f.jpg" /></a>
+</p>
+
+<p>
+<br/>
+FEBuilderGBAでTSAを考慮した減色<br/>
+<a href="https://i.imgur.com/rpE6AGN.png" class="urlextern" title="https://i.imgur.com/rpE6AGN.png" rel="nofollow">https://i.imgur.com/rpE6AGN.png</a>
+</p>
+
+<p>
+残念ながら、グラデーションの境目にある部分がきれいに出ませんでした。<br/>
+この場合は、FEBuilderGBAの画像をもとに自力で修正するか、 16色減色であきらめるしかありません。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5f31\u70b9&quot;,&quot;hid&quot;:&quot;\u5f31\u70b9&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:15,&quot;range&quot;:&quot;2714-&quot;} --></div>
+</body>
+</html>

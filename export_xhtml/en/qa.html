@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>en:qa</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="en,qa"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=en:qa&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=en"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=en:qa"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=en:qa"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=en:qa"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='en';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"en:qa","namespace":"en","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#where_are_mulder_and_vanessa">Where are Mulder and Vanessa?</a></div></li>
+<li class="level1"><div class="li"><a href="#when_trying_to_move_a_chapter_it_freezes">When trying to move a chapter, it freezes.</a></div></li>
+<li class="level1"><div class="li"><a href="#i_want_to_sound_midi">I want to sound midi.</a></div></li>
+<li class="level1"><div class="li"><a href="#i_want_to_display_images_of_16_colors_or_more_in_background_and_cg">I want to display images of 16 colors or more in background and CG.</a></div></li>
+<li class="level1"><div class="li"><a href="#i_do_not_know_the_information_on_the_japanese_site">I do not know the information on the Japanese site.</a></div></li>
+<li class="level1"><div class="li"><a href="#i_can_not_import_maps_even_though_they_are_in_tmx_format">I can not import maps even though they are in TMX format.</a></div></li>
+<li class="level1"><div class="li"><a href="#i_want_to_erase_the_tutorial_of_the_sword_of_the_fe7">I want to erase the tutorial of the sword of the FE7.</a></div></li>
+<li class="level1"><div class="li"><a href="#i_try_a_choice_instruction_with_fe8_in_a_conversation_with_a_background_image_but_it_will_not_work">I try a choice instruction with FE8 in a conversation with a background image,but it will not work.</a></div></li>
+<li class="level1"><div class="li"><a href="#what_is_plist">What is PLIST?</a></div></li>
+<li class="level1"><div class="li"><a href="#i_can_not_automatically_update_febuildergba">I can not automatically update FEBuilderGBA.</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#when_trying_to_update_version0_is_displayed">When trying to update, version: 0 is displayed.</a></div></li>
+<li class="level2"><div class="li"><a href="#when_using_version_earlier_than_2017_november">When using version earlier than 2017 / November.</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#battle_animation_troubleshooting">Battle animation troubleshooting.</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+It is a place to write question and answer which are likely to be frequent in modifying FE8<br/>
+<br />
+<br/>
+
+</p>
+
+<h1 class="sectionedit1" id="where_are_mulder_and_vanessa">Where are Mulder and Vanessa?</h1>
+<div class="level1">
+
+<p>
+Mulder and Vanessa are in Frelia Castle.<br/>
+Map ID 0x38 It is Frelia castle.<br/>
+Their unit arrangement is 0x8B43D0 (FE8U)<br/>
+In FE8J, it becomes 0x908958 (FE8J).<br/>
+<br/>
+Please recall the event of the process of making they join.<br/>
+<br/>
+Eirika escapes to Frelia Castle.<br/>
+Then, King Frelia gets money and Mulder and Vanessa join the group.<br/>
+They are in Frelia Castle.<br/>
+<br/>
+Frelia Castle is map ID 0x38.<br/>
+It is a map with only 1 tile on the meadow.<br/>
+<br />
+The starting event here is made special.<br/>
+(Because it is a new departure to visit again.).<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Where are Mulder and Vanessa?&quot;,&quot;hid&quot;:&quot;where_are_mulder_and_vanessa&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;99-685&quot;} -->
+<h1 class="sectionedit2" id="when_trying_to_move_a_chapter_it_freezes">When trying to move a chapter, it freezes.</h1>
+<div class="level1">
+
+<p>
+Please use the “Skip World Map Fix” patch.<br/>
+<br />
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;When trying to move a chapter, it freezes.&quot;,&quot;hid&quot;:&quot;when_trying_to_move_a_chapter_it_freezes&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;686-793&quot;} -->
+<h1 class="sectionedit3" id="i_want_to_sound_midi">I want to sound midi.</h1>
+<div class="level1">
+
+<p>
+Please use NIMAP sound source.<br/>
+The structure of FE&#039;s sound source is different from that of midi.<br/>
+Therefore, in order to sound midi, it is convenient to use NIMAP which rearranged instruments in order of midi&#039;s instruments.<br/>
+<br/>
+NIMAP can be easily installed from FEBuilderGBA.<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;I want to sound midi.&quot;,&quot;hid&quot;:&quot;i_want_to_sound_midi&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;794-1118&quot;} -->
+<h1 class="sectionedit4" id="i_want_to_display_images_of_16_colors_or_more_in_background_and_cg">I want to display images of 16 colors or more in background and CG.</h1>
+<div class="level1">
+
+<p>
+If you want to do it easily, please use FEBuilderGBA&#039;s tool → subtractive color tool.<br/>
+However, since it converts mechanically, some gradations may drop.<br/>
+<br/>
+Detailed commentary.<br/>
+The GBA processes the screen by dividing it into 8 * 8 dot tiles.<br/>
+With GBA, you can keep 16 colors on one palette.This palette is a bunch of 16 pieces.<br/>
+In GBA, you can switch the palette to use with tiles of 8 * 8 dots.<br/>
+Therefore, you can specify the palette containing the color you want to use with the tile you want to use.<br/>
+Also, to reduce the capacity, the same tiles can be combined into one tile.<br/>
+In this way, data that defines which tiles are displayed and which pallets to display is called TSA data.<br/>
+<br/>
+If you want to create data by hand without using the tool, first make an image using only 16 colors.<br/>
+And please color only the tiles that you want to specially color out with another palette.<br/>
+BG and CG can use 8 pallets.<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;I want to display images of 16 colors or more in background and CG.&quot;,&quot;hid&quot;:&quot;i_want_to_display_images_of_16_colors_or_more_in_background_and_cg&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1119-2138&quot;} -->
+<h1 class="sectionedit5" id="i_do_not_know_the_information_on_the_japanese_site">I do not know the information on the Japanese site.</h1>
+<div class="level1">
+
+<p>
+There is one summarizing the difference in terms used in both communities.<br/>
+After that, please do something with google translation.<br/>
+We are playing with the same FE game, so if we have patience and imagination, it will do something.<br/>
+<a href="/doku.php?id=column:fe%E3%81%A7%E5%AD%A6%E3%81%B6%E8%8B%B1%E8%AA%9E" class="wikilink1" title="column:feで学ぶ英語">FEで学ぶ英語</a>
+</p>
+
+<p>
+<br/>
+I will give you one point of advice.<br/>
+If you write to Japanese Communities, we recommend that you write in English.<br/>
+<br/>
+google translation will output very strange Japanese.<br/>
+Therefore, when written in translated Japanese, we can not understand the meaning.<br/>
+Therefore, you should write in English.<br/>
+<br/>
+We can read English a little.<br/>
+Multiple translation engines can also be used.<br/>
+However, when written in funny Japanese translated, they can not be used.<br/>
+We can not understand the meaning.<br/>
+<br/>
+So, you should write in English, whether it is a Japanese community.<br/>
+If you absolutely want to write in Japanese, please write both Japanese and English.<br/>
+That way, we can get many hints to understand the meaning.<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;I do not know the information on the Japanese site.&quot;,&quot;hid&quot;:&quot;i_do_not_know_the_information_on_the_japanese_site&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2139-3207&quot;} -->
+<h1 class="sectionedit6" id="i_can_not_import_maps_even_though_they_are_in_tmx_format">I can not import maps even though they are in TMX format.</h1>
+<div class="level1">
+
+<p>
+The TMX format has multiple internal formats with the same extension.<br />
+Please make sure your TMX format is the format that the tool is targeting.
+</p>
+
+<p>
+A. Format like TMX<br/>
+
+</p>
+<pre class="code">&lt;layer name=&quot;Map&quot; width=&quot;16&quot; height=&quot;24&quot;&gt;
+  &lt;properties&gt;
+   &lt;property name=&quot;Main&quot; value=&quot;&quot;/&gt;
+  &lt;/properties&gt;
+  &lt;data&gt;
+   &lt;tile gid=&quot;353&quot;/&gt;
+   &lt;tile gid=&quot;259&quot;/&gt;
+   &lt;tile gid=&quot;260&quot;/&gt;
+   ...
+  &lt;/data&gt;
+&lt;/layer&gt;</pre>
+
+<p>
+B.Format like CSV.
+</p>
+<pre class="code">&lt;layer name=&quot;Village closed&quot; width=&quot;28&quot; height=&quot;18&quot;&gt;
+  &lt;properties&gt;
+   &lt;property name=&quot;Height&quot; value=&quot;1&quot;/&gt;
+   &lt;property name=&quot;ID&quot; value=&quot;0&quot;/&gt;
+   &lt;property name=&quot;Width&quot; value=&quot;1&quot;/&gt;
+   &lt;property name=&quot;X&quot; value=&quot;1&quot;/&gt;
+   &lt;property name=&quot;Y&quot; value=&quot;2&quot;/&gt;
+  &lt;/properties&gt;
+  &lt;data encoding=&quot;csv&quot;&gt;
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  &lt;/data&gt;
+&lt;/layer&gt;</pre>
+
+<p>
+C.zlib + base64 format.
+</p>
+<pre class="code">&lt;layer name=&quot;Village Saved&quot; width=&quot;23&quot; height=&quot;18&quot; visible=&quot;0&quot;&gt;
+  &lt;properties&gt;
+   &lt;property name=&quot;Height&quot; value=&quot;1&quot;/&gt;
+   &lt;property name=&quot;ID&quot; value=&quot;1&quot;/&gt;
+   &lt;property name=&quot;Width&quot; value=&quot;1&quot;/&gt;
+   &lt;property name=&quot;X&quot; value=&quot;19&quot;/&gt;
+   &lt;property name=&quot;Y&quot; value=&quot;10&quot;/&gt;
+  &lt;/properties&gt;
+  &lt;data encoding=&quot;base64&quot; compression=&quot;zlib&quot;&gt;
+   eJxjYBgFo2AUDGegONAOGAWjAA0AAFuMACI=
+  &lt;/data&gt;
+&lt;/layer&gt;</pre>
+
+<p>
+FEBuilderGBA corresponds to A and B.
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;I can not import maps even though they are in TMX format.&quot;,&quot;hid&quot;:&quot;i_can_not_import_maps_even_though_they_are_in_tmx_format&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;3208-4588&quot;} -->
+<h1 class="sectionedit7" id="i_want_to_erase_the_tutorial_of_the_sword_of_the_fe7">I want to erase the tutorial of the sword of the FE7.</h1>
+<div class="level1">
+
+<p>
+It is not FE 8, but it seems likely, so write it.<br/>
+There are two ways to erase the FE 7 tutorial.<br/>
+<br/>
+1. How to remove the tutorial itself <br/>
+<br />
+Please use FEBuilderGBA menu tool → patch “Tutorial Disabler”.<br/>
+Fill the tutorial event with null and delete the tutorial judgment if statement.<br/>
+All the tutorials will disappear.<br/>
+<br/>
+2. Hard fixation difficulty ~\r\n<br />
+FEBuilderGBA menu tool → patch <br/>
+“Fixed Level”<br/>
+Etc to forcibly select the hard mode in which the tutorial itself is invalid.<br/>
+<br/>
+<br/>
+Please use whichever you like.<br />
+~\r\n
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;I want to erase the tutorial of the sword of the FE7.&quot;,&quot;hid&quot;:&quot;i_want_to_erase_the_tutorial_of_the_sword_of_the_fe7&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:7,&quot;range&quot;:&quot;4589-5201&quot;} -->
+<h1 class="sectionedit8" id="i_try_a_choice_instruction_with_fe8_in_a_conversation_with_a_background_image_but_it_will_not_work">I try a choice instruction with FE8 in a conversation with a background image,but it will not work.</h1>
+<div class="level1">
+
+<p>
+Using text using @0018 in a background with conversation does not work.<br/>
+Please use it with no background talk.<br/>
+<br />
+Ex: This will not work.
+</p>
+<pre class="code">4005020000000000400503008D090000400A000010E39E08	//Show conversation with BG(LOW) [Background:0x0][TEXT:0x98D]
+4005070001000000	//SVAL[Memory_Slot:0x7][Value_to_store:0x1]</pre>
+
+<p>
+Ex. This will work.
+</p>
+<pre class="code">201B8D09201D0000　[XXXX:TEXT:Conversation text]Background no conversation display (LOW)
+4005070001000000	//SVAL[Memory_Slot:0x7][Value_to_store:0x1]</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;I try a choice instruction with FE8 in a conversation with a background image,but it will not work.&quot;,&quot;hid&quot;:&quot;i_try_a_choice_instruction_with_fe8_in_a_conversation_with_a_background_image_but_it_will_not_work&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:8,&quot;range&quot;:&quot;5202-5832&quot;} -->
+<h1 class="sectionedit9" id="what_is_plist">What is PLIST?</h1>
+<div class="level1">
+
+<p>
+PLIST stands for MAP Pointer List ID.(Maybe).<br/>
+Map related values of GBAFE are managed with pointer list.<br/>
+In the map setting, you specify what value of the list to see.<br/>
+<br/>
+Please see this image.<br/>
+<a href="/lib/exe/detail.php?id=en%3Aqa&amp;media=qa:plist_event.jpg" class="media" title="qa:plist_event.jpg"><img src="/lib/exe/fetch.php?media=qa:plist_event.jpg" class="media" title="plist_event.jpg" alt="plist_event.jpg" /></a><br />
+<a href="/lib/exe/detail.php?id=en%3Aqa&amp;media=qa:plist_map.jpg" class="media" title="qa:plist_map.jpg"><img src="/lib/exe/fetch.php?media=qa:plist_map.jpg" class="media" title="plist_map.jpg" alt="plist_map.jpg" /></a><br />
+<a href="/lib/exe/detail.php?id=en%3Aqa&amp;media=qa:plist_style1.jpg" class="media" title="qa:plist_style1.jpg"><img src="/lib/exe/fetch.php?media=qa:plist_style1.jpg" class="media" title="plist_style1.jpg" alt="plist_style1.jpg" /></a><br />
+<a href="/lib/exe/detail.php?id=en%3Aqa&amp;media=qa:plist_style2.jpg" class="media" title="qa:plist_style2.jpg"><img src="/lib/exe/fetch.php?media=qa:plist_style2.jpg" class="media" title="plist_style2.jpg" alt="plist_style2.jpg" /></a><br />
+<br/>
+<br/>
+Since this value is a byte value, it can not exceed 255.<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;What is PLIST?&quot;,&quot;hid&quot;:&quot;what_is_plist&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:9,&quot;range&quot;:&quot;5833-6224&quot;} -->
+<h1 class="sectionedit10" id="i_can_not_automatically_update_febuildergba">I can not automatically update FEBuilderGBA.</h1>
+<div class="level1">
+
+<p>
+Two cases are conceivable.<br/>
+Together, the latest version has been fixed.<br/>
+Please re-download again.<br/>
+<a href="/doku.php?id=en:guide:febuildergba:how_to_download_febuildergba_en" class="wikilink1" title="en:guide:febuildergba:how_to_download_febuildergba_en">how_to_download_febuildergba_en</a> <br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;I can not automatically update FEBuilderGBA.&quot;,&quot;hid&quot;:&quot;i_can_not_automatically_update_febuildergba&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:10,&quot;range&quot;:&quot;6225-6453&quot;} -->
+<h2 class="sectionedit11" id="when_trying_to_update_version0_is_displayed">When trying to update, version: 0 is displayed.</h2>
+<div class="level2">
+
+<p>
+It occurs in the cultural area where the decimal point is represented by “,”.<br/>
+<br/>
+
+</p>
+<pre class="code">3.141592
+3,141592 //This case.</pre>
+
+<p>
+<br/>
+FEBuilderGBA uses the decimal point for the date part of the version number.<br/>
+In the case of a cultural zone where the decimal point is written with “,”, acquisition of the version number fails at the time of update.<br/>
+The Double.tryParse function will result in an error and will eventually return 0.<br/>
+As a result, the version number becomes 0, and the update fails.<br/>
+<br/>
+This problem has been fixed in the latest version.<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;When trying to update, version: 0 is displayed.&quot;,&quot;hid&quot;:&quot;when_trying_to_update_version0_is_displayed&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:11,&quot;range&quot;:&quot;6454-7076&quot;} -->
+<h2 class="sectionedit12" id="when_using_version_earlier_than_2017_november">When using version earlier than 2017 / November.</h2>
+<div class="level2">
+
+<p>
+Because the update mechanism has been changed, automatic update can not be done.<br/>
+Please download it manually,again.<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;When using version earlier than 2017 \/ November.&quot;,&quot;hid&quot;:&quot;when_using_version_earlier_than_2017_november&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:12,&quot;range&quot;:&quot;7077-7260&quot;} -->
+<h1 class="sectionedit13" id="battle_animation_troubleshooting">Battle animation troubleshooting.</h1>
+<div class="level1">
+
+<p>
+Basic is ported in text format.<br/>
+This is because animation editing is easier.<br/>
+<br/>
+If it does not work, use the BIN format.<br/>
+You can port animations that depend on OAM sheets.<br/>
+<br/>
+However, because the magic unit still has a mant command, it still does not work, so you have to give up or make a mantle command using C01 Hack yourself.<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Battle animation troubleshooting.&quot;,&quot;hid&quot;:&quot;battle_animation_troubleshooting&quot;,&quot;codeblockOffset&quot;:6,&quot;secid&quot;:13,&quot;range&quot;:&quot;7261-&quot;} --></div>
+</body>
+</html>

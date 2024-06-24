@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>guide:ワールドマップ画像の入れ替え</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="guide,ワールドマップ画像の入れ替え"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E7%94%BB%E5%83%8F%E3%81%AE%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='guide';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7\u753b\u50cf\u306e\u5165\u308c\u66ff\u3048","namespace":"guide","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#概要">概要</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#ワールドマップは4つある">ワールドマップは4つある</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#ゲーム中に下の方に表示されるminimap">ゲーム中に下の方に表示されるminimap</a></div></li>
+<li class="level3"><div class="li"><a href="#ゲーム中のフィールドとなるワールドマップ">ゲーム中のフィールドとなるワールドマップ</a></div></li>
+<li class="level3"><div class="li"><a href="#イベント等_序章のプロローグで表示されるワールドマップ">イベント等、序章のプロローグで表示されるワールドマップ</a></div></li>
+<li class="level3"><div class="li"><a href="#ゲームopで表示されるワールドマップ">ゲームOPで表示されるワールドマップ</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#色限定で話をします">16色限定で話をします。</a></div></li>
+<li class="level2"><div class="li"><a href="#ワールドマップのデータはどこにあるの">ワールドマップのデータはどこにあるの？</a></div></li>
+<li class="level2"><div class="li"><a href="#用意するもの">用意するもの</a></div></li>
+<li class="level2"><div class="li"><a href="#参考例">参考例</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#minimapを入れ替える">minimapを入れ替える</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#step_a01">step_a01</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a02">step_a02</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a03">step_a03</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a04">step_a04</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a05">step_a05</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a06">step_a06</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a07">step_a07</a></div></li>
+<li class="level2"><div class="li"><a href="#step_a08">step_a08</a></div></li>
+<li class="level2"><div class="li"><a href="#トラブルシューティング">トラブルシューティング</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#qnlz-gba_advanceが動かない">Q:NLZ-GBA Advanceが動かない</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#ゲーム中のフィールドとなるワールドマップを入れ替える">ゲーム中のフィールドとなるワールドマップを入れ替える。</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#step_b01">step_b01</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b02">step_b02</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b03">step_b03</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b04">step_b04</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b05">step_b05</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b06">step_b06</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b07">step_b07</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b08">step_b08</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b09">step_b09</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b10">step_b10</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b11">step_b11</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b12">step_b12</a></div></li>
+<li class="level2"><div class="li"><a href="#トラブルシューティング1">トラブルシューティング</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#q画像にブロックノイズみたいなのが乗った">Q:画像にブロックノイズみたいなのが乗った。</a></div></li>
+<li class="level3"><div class="li"><a href="#q16色以上のワールドマップを作りたい">Q:16色以上のワールドマップを作りたい</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#イベント等_序章のプロローグで表示されるワールドマップを入れ替える">イベント等、序章のプロローグで表示されるワールドマップを入れ替える</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#step_c01">step_c01</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c02">step_c02</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c03">step_c03</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c04">step_c04</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c05">step_c05</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c06">step_c06</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c07">step_c07</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c08">step_c08</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c09">step_c09</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c10">step_c10</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c11">step_c11</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c12">step_c12</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c13">step_c13</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c14">step_c14</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c15">step_c15</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c16">step_c16</a></div></li>
+<li class="level2"><div class="li"><a href="#step_c17">step_c17</a></div></li>
+<li class="level2"><div class="li"><a href="#トラブルシューティング2">トラブルシューティング</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#q画像がしましまになった">Q:画像がしましまになった。</a></div></li>
+<li class="level3"><div class="li"><a href="#q画面が淡色になりました">Q:画面が淡色になりました。</a></div></li>
+<li class="level3"><div class="li"><a href="#q16色を超える色を扱いたいです">Q:16色を超える色を扱いたいです。</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#ゲームopで表示されるワールドマップを入れ替える">ゲームOPで表示されるワールドマップを入れ替える</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#step_d01">step_d01</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d02">step_d02</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d03">step_d03</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d04">step_d04</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d05">step_d05</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d06">step_d06</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d07">step_d07</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d08">step_d08</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d09">step_d09</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d10">step_d10</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d11">step_d11</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d12">step_d12</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d13">step_d13</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b14">step_b14</a></div></li>
+<li class="level2"><div class="li"><a href="#step_b15">step_b15</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d16">step_d16</a></div></li>
+<li class="level2"><div class="li"><a href="#step_d17">step_d17</a></div></li>
+<li class="level2"><div class="li"><a href="#トラブルシューティング3">トラブルシューティング</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#q引き裂かれて崩れた画像が表示されました">Q:引き裂かれて崩れた画像が表示されました。</a></div></li>
+<li class="level3"><div class="li"><a href="#qリセットがかかって進まない">Q:リセットがかかって進まない</a></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+FE8ワールドマップの入れ替える方法について説明します。<br/>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="#la01d402" title="guide:ワールドマップ画像の入れ替え ↵" class="wikilink1">miniマップ</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#n521188d" title="guide:ワールドマップ画像の入れ替え ↵" class="wikilink1">フィールドマップ</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#ia724e5c" title="guide:ワールドマップ画像の入れ替え ↵" class="wikilink1">大陸全体マップ</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#b4332fd2" title="guide:ワールドマップ画像の入れ替え ↵" class="wikilink1">オープニングのマップ</a></div>
+</li>
+</ul>
+
+<p>
+マップ作成支援ツール<br/>
+<a href="http://fantasynamegenerators.com/map-creator.php#.VeI8cpdCYnI" class="urlextern" title="http://fantasynamegenerators.com/map-creator.php#.VeI8cpdCYnI" rel="nofollow">Map creator</a>
+</p>
+
+<h1 class="sectionedit1" id="概要">概要</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6982\u8981&quot;,&quot;hid&quot;:&quot;\u6982\u8981&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;360-381&quot;} -->
+<h2 class="sectionedit2" id="ワールドマップは4つある">ワールドマップは4つある</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7\u306f4\u3064\u3042\u308b&quot;,&quot;hid&quot;:&quot;\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7\u306f4\u3064\u3042\u308b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;382-429&quot;} -->
+<h3 class="sectionedit3" id="ゲーム中に下の方に表示されるminimap">ゲーム中に下の方に表示されるminimap</h3>
+<div class="level3">
+<div class="table sectionedit4"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">64&times;64</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">画像アドレス</td><td class="col1">0xB26A6C (圧縮)</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">パレット</td><td class="col1">0xB2715C</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:4,&quot;range&quot;:&quot;492-572&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30b2\u30fc\u30e0\u4e2d\u306b\u4e0b\u306e\u65b9\u306b\u8868\u793a\u3055\u308c\u308bminimap&quot;,&quot;hid&quot;:&quot;\u30b2\u30fc\u30e0\u4e2d\u306b\u4e0b\u306e\u65b9\u306b\u8868\u793a\u3055\u308c\u308bminimap&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;430-573&quot;} -->
+<h3 class="sectionedit5" id="ゲーム中のフィールドとなるワールドマップ">ゲーム中のフィールドとなるワールドマップ</h3>
+<div class="level3">
+<div class="table sectionedit6"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">480&times;320</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">画像アドレス</td><td class="col1">0xB085F8 (無圧縮)</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">パレット</td><td class="col1">0xB1B278,B1B298,B1B2B8,B1B2D8</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">暗パレット</td><td class="col1">0xB1B1F8,0xB1B218,0xB1B238,0xB1B258</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table1&quot;,&quot;secid&quot;:6,&quot;range&quot;:&quot;647-807&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30b2\u30fc\u30e0\u4e2d\u306e\u30d5\u30a3\u30fc\u30eb\u30c9\u3068\u306a\u308b\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7&quot;,&quot;hid&quot;:&quot;\u30b2\u30fc\u30e0\u4e2d\u306e\u30d5\u30a3\u30fc\u30eb\u30c9\u3068\u306a\u308b\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;574-808&quot;} -->
+<h3 class="sectionedit7" id="イベント等_序章のプロローグで表示されるワールドマップ">イベント等、序章のプロローグで表示されるワールドマップ</h3>
+<div class="level3">
+<div class="table sectionedit8"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">240&times;160</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">画像アドレス</td><td class="col1">0xB1E9B8 圧縮されてる</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">パレット</td><td class="col1">0xB23D3C,B23D5C,B23D7C,B23D9C</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">TSA</td><td class="col1">0xB237EC 圧縮されている</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table2&quot;,&quot;secid&quot;:8,&quot;range&quot;:&quot;903-1053&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a4\u30d9\u30f3\u30c8\u7b49\u3001\u5e8f\u7ae0\u306e\u30d7\u30ed\u30ed\u30fc\u30b0\u3067\u8868\u793a\u3055\u308c\u308b\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7&quot;,&quot;hid&quot;:&quot;\u30a4\u30d9\u30f3\u30c8\u7b49_\u5e8f\u7ae0\u306e\u30d7\u30ed\u30ed\u30fc\u30b0\u3067\u8868\u793a\u3055\u308c\u308b\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;809-1054&quot;} -->
+<h3 class="sectionedit9" id="ゲームopで表示されるワールドマップ">ゲームOPで表示されるワールドマップ</h3>
+<div class="level3">
+<div class="table sectionedit10"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">240&times;160</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">画像アドレス</td><td class="col1">0xB4BBA0 圧縮されている</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">パレット</td><td class="col1">0xB4FCD4</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">TSA</td><td class="col1">0xB4F758 圧縮されている</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table3&quot;,&quot;secid&quot;:10,&quot;range&quot;:&quot;1118-1250&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30b2\u30fc\u30e0OP\u3067\u8868\u793a\u3055\u308c\u308b\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7&quot;,&quot;hid&quot;:&quot;\u30b2\u30fc\u30e0op\u3067\u8868\u793a\u3055\u308c\u308b\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;1055-1252&quot;} -->
+<h2 class="sectionedit11" id="色限定で話をします">16色限定で話をします。</h2>
+<div class="level2">
+
+<p>
+FE8ではTSA等を利用して、16色以上色を作ることが出来ます。<br/>
+具体的には、GBAは、8*8のタイルから構成されたタイルデータを持ち、<br/>
+そのタイルごとにパレットを切り替えて、16色を超える画像を出せます。<br/>
+ただ、これはとても難しく、データを用意するのも大変なので、今回は利用しません。<br/>
+今回は、すべて16色に限定して、楽にワールドマップを定義する方法について説明します。<br/>
+(0番目を透過色にしないことをおすすめします。)<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;16\u8272\u9650\u5b9a\u3067\u8a71\u3092\u3057\u307e\u3059\u3002&quot;,&quot;hid&quot;:&quot;\u8272\u9650\u5b9a\u3067\u8a71\u3092\u3057\u307e\u3059&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;1253-1894&quot;} -->
+<h2 class="sectionedit12" id="ワールドマップのデータはどこにあるの">ワールドマップのデータはどこにあるの？</h2>
+<div class="level2">
+
+<p>
+laqieerさんの解析資料を見てください。<br/>
+アドレスとかいろいろ掲載されています。<br/>
+彼の解析のおかげで、いろいろな事実が判明しました。<br/>
+<br />
+[FE8] World Map Graphic Insertion<br/>
+<a href="http://feuniverse.us/t/fe8-world-map-graphic-insertion/1738/1" class="urlextern" title="http://feuniverse.us/t/fe8-world-map-graphic-insertion/1738/1" rel="nofollow">http://feuniverse.us/t/fe8-world-map-graphic-insertion/1738/1</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7\u306e\u30c7\u30fc\u30bf\u306f\u3069\u3053\u306b\u3042\u308b\u306e\uff1f&quot;,&quot;hid&quot;:&quot;\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7\u306e\u30c7\u30fc\u30bf\u306f\u3069\u3053\u306b\u3042\u308b\u306e&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:12,&quot;range&quot;:&quot;1895-2258&quot;} -->
+<h2 class="sectionedit13" id="用意するもの">用意するもの</h2>
+<div class="level2">
+
+<p>
+バイナリエディタ<br/>
+<a href="http://www.vector.co.jp/soft/win95/util/se079072.html" class="urlextern" title="http://www.vector.co.jp/soft/win95/util/se079072.html" rel="nofollow">http://www.vector.co.jp/soft/win95/util/se079072.html</a> <br/>
+<br/>
+NLZ-GBA Advance (または GBA Graphics Editor)<br/>
+<a href="http://www.romhacking.net/utilities/529/" class="urlextern" title="http://www.romhacking.net/utilities/529/" rel="nofollow">http://www.romhacking.net/utilities/529/</a> <br/>
+<br/>
+edge<br/>
+<a href="http://takabosoft.com/edge" class="urlextern" title="http://takabosoft.com/edge" rel="nofollow">http://takabosoft.com/edge</a> <br/>
+<br/>
+ワールドマップにしたいデータ<br/>
+今回は、wikipediaにあるオーストラリ大陸の画像を入れてみます。<br/>
+<a href="https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%BC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%AA%E3%82%A2#/media/File:Australia_satellite_plane.jpg" class="urlextern" title="https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%BC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%AA%E3%82%A2#/media/File:Australia_satellite_plane.jpg" rel="nofollow">https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%BC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%AA%E3%82%A2#/media/File:Australia_satellite_plane.jpg</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u7528\u610f\u3059\u308b\u3082\u306e&quot;,&quot;hid&quot;:&quot;\u7528\u610f\u3059\u308b\u3082\u306e&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:13,&quot;range&quot;:&quot;2259-2786&quot;} -->
+<h2 class="sectionedit14" id="参考例">参考例</h2>
+<div class="level2">
+
+<p>
+FE8_AU_PATCH 大陸を全部AUに置き換えただけのパッチです。<br/>
+参考にしてください。<br/>
+<a href="http://ux.getuploader.com/FE4/download/243/FE8_AU_PATCH.7z" class="urlextern" title="http://ux.getuploader.com/FE4/download/243/FE8_AU_PATCH.7z" rel="nofollow">http://ux.getuploader.com/FE4/download/243/FE8_AU_PATCH.7z</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u53c2\u8003\u4f8b&quot;,&quot;hid&quot;:&quot;\u53c2\u8003\u4f8b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:14,&quot;range&quot;:&quot;2787-2981&quot;} -->
+<h1 class="sectionedit15" id="minimapを入れ替える">minimapを入れ替える</h1>
+<div class="level1">
+
+<p>
+一番簡単なものからいきます。<br/>
+ゲーム中に下の方に表示されるminimapを入れ替えてみます。<br/>
+
+</p>
+<div class="table sectionedit16"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">64&times;64</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">画像アドレス</td><td class="col1">0xB26A6C (圧縮)</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">パレット</td><td class="col1">0xB2715C</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table4&quot;,&quot;secid&quot;:16,&quot;range&quot;:&quot;3152-3232&quot;} -->
+<p>
+サイズ 64&times;64の 16色 png画像を用意してください。<br/>
+今回はこの画像に差し替えてみます。<br/>
+<a href="https://i.imgur.com/qNopQuX.png" class="urlextern" title="https://i.imgur.com/qNopQuX.png" rel="nofollow">https://i.imgur.com/qNopQuX.png</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;minimap\u3092\u5165\u308c\u66ff\u3048\u308b&quot;,&quot;hid&quot;:&quot;minimap\u3092\u5165\u308c\u66ff\u3048\u308b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:15,&quot;range&quot;:&quot;2982-3388&quot;} -->
+<h2 class="sectionedit17" id="step_a01">step_a01</h2>
+<div class="level2">
+
+<p>
+NLZ-GBA Advance を立ち上げて、<br/>
+左上の File handling をクリックし、<br/>
+Load Rom で FE8聖魔のrom を読み込みます。<br/>
+<a href="/lib/exe/fetch.php?tok=48026e&amp;media=https%3A%2F%2Fi.imgur.com%2FpylinxN.jpg" class="media" title="https://i.imgur.com/pylinxN.jpg"><img src="/lib/exe/fetch.php?tok=48026e&amp;media=https%3A%2F%2Fi.imgur.com%2FpylinxN.jpg" class="mediacenter" title="i.imgur.com_pylinxn.jpg" alt="i.imgur.com_pylinxn.jpg" /></a>
+</p>
+
+<p>
+新規にromを読み込んだ場合は、<br />
+romをスキャンしてもいいかと聞かれるので、OKと答えます。<br/>
+ROMと同じ場所に romの名前.nlzというキャッシュが作られます。<br/>
+<a href="/lib/exe/fetch.php?tok=a53222&amp;media=https%3A%2F%2Fi.imgur.com%2FpHidTn5.jpg" class="media" title="https://i.imgur.com/pHidTn5.jpg"><img src="/lib/exe/fetch.php?tok=a53222&amp;media=https%3A%2F%2Fi.imgur.com%2FpHidTn5.jpg" class="mediacenter" title="i.imgur.com_phidtn5.jpg" alt="i.imgur.com_phidtn5.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a01&quot;,&quot;hid&quot;:&quot;step_a01&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:17,&quot;range&quot;:&quot;3389-3844&quot;} -->
+<h2 class="sectionedit18" id="step_a02">step_a02</h2>
+<div class="level2">
+
+<p>
+romを読み込んだから、このような画面になります。<br/>
+<a href="/lib/exe/fetch.php?tok=19c475&amp;media=https%3A%2F%2Fi.imgur.com%2FrTvuIi0.jpg" class="media" title="https://i.imgur.com/rTvuIi0.jpg"><img src="/lib/exe/fetch.php?tok=19c475&amp;media=https%3A%2F%2Fi.imgur.com%2FrTvuIi0.jpg" class="mediacenter" title="i.imgur.com_rtvuii0.jpg" alt="i.imgur.com_rtvuii0.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a02&quot;,&quot;hid&quot;:&quot;step_a02&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:18,&quot;range&quot;:&quot;3845-3977&quot;} -->
+<h2 class="sectionedit19" id="step_a03">step_a03</h2>
+<div class="level2">
+
+<p>
+赤枠で囲った Compressed graphics にチェックが入っていることを確認してください。<br/>
+緑枠で囲った Width に、8 と入力します。<br/>
+青枠で囲った Offset に、B26A6C と入力します。<br/>
+紫枠で囲った ROM Pallet offset に、 B2715C と入力します。<br/>
+そうすると、ウィンドウに minimapが表示されます。<br/>
+<a href="/lib/exe/fetch.php?tok=7e194c&amp;media=https%3A%2F%2Fi.imgur.com%2FIBHV3Lv.jpg" class="media" title="https://i.imgur.com/IBHV3Lv.jpg"><img src="/lib/exe/fetch.php?tok=7e194c&amp;media=https%3A%2F%2Fi.imgur.com%2FIBHV3Lv.jpg" class="mediacenter" title="i.imgur.com_ibhv3lv.jpg" alt="i.imgur.com_ibhv3lv.jpg" /></a>
+</p>
+
+<p>
+これらの設定は、変更するものの設定からきています。<br/>
+
+</p>
+<div class="table sectionedit20"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">64&times;64 → 64 / 8ドット単位 = 8</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">パレット</td><td class="col1">0xB2715C → 0xというのは16進数というマークなのでそれ以降を入れる</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">画像アドレス</td><td class="col1">0xB26A6C 圧縮 → 圧縮されているのでCompressed graphicsを有効にします</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table5&quot;,&quot;secid&quot;:20,&quot;range&quot;:&quot;4496-4757&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a03&quot;,&quot;hid&quot;:&quot;step_a03&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:19,&quot;range&quot;:&quot;3978-4759&quot;} -->
+<h2 class="sectionedit21" id="step_a04">step_a04</h2>
+<div class="level2">
+
+<p>
+Import a bitmapボタンをクリックします。<br/>
+<a href="/lib/exe/fetch.php?tok=3b2c6d&amp;media=https%3A%2F%2Fi.imgur.com%2FfUKIslr.jpg" class="media" title="https://i.imgur.com/fUKIslr.jpg"><img src="/lib/exe/fetch.php?tok=3b2c6d&amp;media=https%3A%2F%2Fi.imgur.com%2FfUKIslr.jpg" class="mediacenter" title="i.imgur.com_fukislr.jpg" alt="i.imgur.com_fukislr.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a04&quot;,&quot;hid&quot;:&quot;step_a04&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:21,&quot;range&quot;:&quot;4760-4874&quot;} -->
+<h2 class="sectionedit22" id="step_a05">step_a05</h2>
+<div class="level2">
+
+<p>
+パレットも設定するので Import palette to ROM にチェックを付けてください。<br/>
+OKを押して次へ進みます。<br/>
+<a href="/lib/exe/fetch.php?tok=b2086d&amp;media=https%3A%2F%2Fi.imgur.com%2Fr3EI0QI.jpg" class="media" title="https://i.imgur.com/r3EI0QI.jpg"><img src="/lib/exe/fetch.php?tok=b2086d&amp;media=https%3A%2F%2Fi.imgur.com%2Fr3EI0QI.jpg" class="mediacenter" title="i.imgur.com_r3ei0qi.jpg" alt="i.imgur.com_r3ei0qi.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a05&quot;,&quot;hid&quot;:&quot;step_a05&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:22,&quot;range&quot;:&quot;4875-5074&quot;} -->
+<h2 class="sectionedit23" id="step_a06">step_a06</h2>
+<div class="level2">
+
+<p>
+minimapが置き換わるはずです。<br/>
+<a href="/lib/exe/fetch.php?tok=41ea44&amp;media=https%3A%2F%2Fi.imgur.com%2F73NxyMa.jpg" class="media" title="https://i.imgur.com/73NxyMa.jpg"><img src="/lib/exe/fetch.php?tok=41ea44&amp;media=https%3A%2F%2Fi.imgur.com%2F73NxyMa.jpg" class="mediacenter" title="i.imgur.com_73nxyma.jpg" alt="i.imgur.com_73nxyma.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a06&quot;,&quot;hid&quot;:&quot;step_a06&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:23,&quot;range&quot;:&quot;5075-5178&quot;} -->
+<h2 class="sectionedit24" id="step_a07">step_a07</h2>
+<div class="level2">
+
+<p>
+Write to ROM で結果をROMに保存します。<br/>
+保存する前にromのバックアップは忘れずに<br/>
+<a href="/lib/exe/fetch.php?tok=fee230&amp;media=https%3A%2F%2Fi.imgur.com%2FSfIiwGP.jpg" class="media" title="https://i.imgur.com/SfIiwGP.jpg"><img src="/lib/exe/fetch.php?tok=fee230&amp;media=https%3A%2F%2Fi.imgur.com%2FSfIiwGP.jpg" class="mediacenter" title="i.imgur.com_sfiiwgp.jpg" alt="i.imgur.com_sfiiwgp.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a07&quot;,&quot;hid&quot;:&quot;step_a07&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:24,&quot;range&quot;:&quot;5179-5352&quot;} -->
+<h2 class="sectionedit25" id="step_a08">step_a08</h2>
+<div class="level2">
+
+<p>
+改造したromを読み込んでゲームを進めてみてください。<br/>
+minimapがオーストラリアになっているはずです。<br/>
+<br/>
+(長くなるので、次から一部説明を省きます。)<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=1a0e5a&amp;media=https%3A%2F%2Fi.imgur.com%2F4o1KlLU.jpg" class="media" title="https://i.imgur.com/4o1KlLU.jpg"><img src="/lib/exe/fetch.php?tok=1a0e5a&amp;media=https%3A%2F%2Fi.imgur.com%2F4o1KlLU.jpg" class="mediacenter" title="i.imgur.com_4o1kllu.jpg" alt="i.imgur.com_4o1kllu.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_a08&quot;,&quot;hid&quot;:&quot;step_a08&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:25,&quot;range&quot;:&quot;5353-5628&quot;} -->
+<h2 class="sectionedit26" id="トラブルシューティング">トラブルシューティング</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30c8\u30e9\u30d6\u30eb\u30b7\u30e5\u30fc\u30c6\u30a3\u30f3\u30b0&quot;,&quot;hid&quot;:&quot;\u30c8\u30e9\u30d6\u30eb\u30b7\u30e5\u30fc\u30c6\u30a3\u30f3\u30b0&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:26,&quot;range&quot;:&quot;5629-5675&quot;} -->
+<h3 class="sectionedit27" id="qnlz-gba_advanceが動かない">Q:NLZ-GBA Advanceが動かない</h3>
+<div class="level3">
+
+<p>
+A:romと同名.nlz ファイルがあれば削除してみてください。<br/>
+<a href="/lib/exe/fetch.php?tok=e834e5&amp;media=https%3A%2F%2Fi.imgur.com%2FmAVhU8g.jpg" class="media" title="https://i.imgur.com/mAVhU8g.jpg"><img src="/lib/exe/fetch.php?tok=e834e5&amp;media=https%3A%2F%2Fi.imgur.com%2FmAVhU8g.jpg" class="mediacenter" title="i.imgur.com_mavhu8g.jpg" alt="i.imgur.com_mavhu8g.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Q:NLZ-GBA Advance\u304c\u52d5\u304b\u306a\u3044&quot;,&quot;hid&quot;:&quot;qnlz-gba_advance\u304c\u52d5\u304b\u306a\u3044&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:27,&quot;range&quot;:&quot;5676-5839&quot;} -->
+<h1 class="sectionedit28" id="ゲーム中のフィールドとなるワールドマップを入れ替える">ゲーム中のフィールドとなるワールドマップを入れ替える。</h1>
+<div class="level1">
+
+<p>
+ゲーム中に操作することになるフィールドマップを入れ替えてみます。<br/>
+フィールドマップは pallet map構造になっており、<br/>
+4つのパレットを8*8タイルごとに切り替えて表示することができます。<br/>
+が、そうすると話がややこしくなるので、ここでは 16色限定で話をします。<br/>
+
+</p>
+<div class="table sectionedit29"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">480&times;320</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">画像アドレス</td><td class="col1">0xB085F8 (無圧縮)</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">パレット</td><td class="col1">0xB1B278 -</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">暗パレット</td><td class="col1">0xB1B1F8 -</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table6&quot;,&quot;secid&quot;:29,&quot;range&quot;:&quot;6308-6424&quot;} -->
+<p>
+サイズ 480&times;320の 16色 png画像を用意してください。<br/>
+注意:パレット 0番目の色を透過色にしてはいけません。絶対にダメです。<br/>
+注意:パレット 0番目に何を指定しても黒(RGB(0,0,0))になります。<br/>
+<br />
+今回は、この画像におきかえてみます。<br />
+<a href="https://i.imgur.com/nBlcdtE.png" class="urlextern" title="https://i.imgur.com/nBlcdtE.png" rel="nofollow">https://i.imgur.com/nBlcdtE.png</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30b2\u30fc\u30e0\u4e2d\u306e\u30d5\u30a3\u30fc\u30eb\u30c9\u3068\u306a\u308b\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7\u3092\u5165\u308c\u66ff\u3048\u308b\u3002&quot;,&quot;hid&quot;:&quot;\u30b2\u30fc\u30e0\u4e2d\u306e\u30d5\u30a3\u30fc\u30eb\u30c9\u3068\u306a\u308b\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7\u3092\u5165\u308c\u66ff\u3048\u308b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:28,&quot;range&quot;:&quot;5840-6772&quot;} -->
+<h2 class="sectionedit30" id="step_b01">step_b01</h2>
+<div class="level2">
+
+<p>
+NLZ-GBA Advance を立ち上げて、<br/>
+左上の File handling をクリックし、<br/>
+Load Rom で FE8聖魔のrom を読み込みます。<br/>
+<br/>
+赤枠で囲った Compressed graphics のチェックをオフにしてください。<br/>
+緑枠で囲った Width に、60 と入力します。<br/>
+青枠で囲った Offset に、B085F8 と入力します。<br/>
+紫枠で囲った ROM Pallet offset に、 B1B278 と入力します。<br/>
+そうすると、ウィンドウに ワールドマップが表示されます。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=1ecef8&amp;media=https%3A%2F%2Fi.imgur.com%2FgbFAqdK.jpg" class="media" title="https://i.imgur.com/gbFAqdK.jpg"><img src="/lib/exe/fetch.php?tok=1ecef8&amp;media=https%3A%2F%2Fi.imgur.com%2FgbFAqdK.jpg" class="mediacenter" title="i.imgur.com_gbfaqdk.jpg" alt="i.imgur.com_gbfaqdk.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b01&quot;,&quot;hid&quot;:&quot;step_b01&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:30,&quot;range&quot;:&quot;6773-7352&quot;} -->
+<h2 class="sectionedit31" id="step_b02">step_b02</h2>
+<div class="level2">
+
+<p>
+Import a bitmapをクリックします。<br/>
+<a href="/lib/exe/fetch.php?tok=bd5d54&amp;media=https%3A%2F%2Fi.imgur.com%2FbmTqUYC.jpg" class="media" title="https://i.imgur.com/bmTqUYC.jpg"><img src="/lib/exe/fetch.php?tok=bd5d54&amp;media=https%3A%2F%2Fi.imgur.com%2FbmTqUYC.jpg" class="mediacenter" title="i.imgur.com_bmtquyc.jpg" alt="i.imgur.com_bmtquyc.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b02&quot;,&quot;hid&quot;:&quot;step_b02&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:31,&quot;range&quot;:&quot;7353-7458&quot;} -->
+<h2 class="sectionedit32" id="step_b03">step_b03</h2>
+<div class="level2">
+
+<p>
+パレットも設定するので Import palette to ROM にチェックを付けてください。<br/>
+OKを押して次へ進みます。<br/>
+<a href="/lib/exe/fetch.php?tok=a70698&amp;media=https%3A%2F%2Fi.imgur.com%2FaJg9nV8.jpg" class="media" title="https://i.imgur.com/aJg9nV8.jpg"><img src="/lib/exe/fetch.php?tok=a70698&amp;media=https%3A%2F%2Fi.imgur.com%2FaJg9nV8.jpg" class="mediacenter" title="i.imgur.com_ajg9nv8.jpg" alt="i.imgur.com_ajg9nv8.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b03&quot;,&quot;hid&quot;:&quot;step_b03&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:32,&quot;range&quot;:&quot;7459-7658&quot;} -->
+<h2 class="sectionedit33" id="step_b04">step_b04</h2>
+<div class="level2">
+
+<p>
+ワールドマップが、置き換わっているはずです。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=1811b3&amp;media=https%3A%2F%2Fi.imgur.com%2F7jo0Wth.jpg" class="media" title="https://i.imgur.com/7jo0Wth.jpg"><img src="/lib/exe/fetch.php?tok=1811b3&amp;media=https%3A%2F%2Fi.imgur.com%2F7jo0Wth.jpg" class="mediacenter" title="i.imgur.com_7jo0wth.jpg" alt="i.imgur.com_7jo0wth.jpg" /></a>
+</p>
+
+<p>
+ここで、セーブ・・・するまえに、やることがあります。<br/>
+ワールドマップは、8*8のタイルで4つのパレットを切り替えることで16色を超える色がだせるのですが、<br/>
+今回これを利用しません。<br/>
+どのタイルが、どの色を使うのかをpallet mapというデータで定義されていますが、<br/>
+これを変更するのは少々やっかいなので、<br/>
+代わりに、4つのパレットを全部同じ色にすることで、この問題を強引に解決します。<br/>
+<br/>
+パレットは、0xB1B278 から、 0x20バイトずつ、4つあります。<br/>
+今回、0xB1B278を設定したので、残りの3つを設定します。<br/>
+
+</p>
+<div class="table sectionedit34"><table class="inline">
+	<tr class="row0">
+		<td class="col0">パレット一覧</td><td class="col1"></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">B1B278</td><td class="col1">(これはもう設定済み)</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">B1B298</td><td class="col1">これから設定する</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">B1B2B8</td><td class="col1">↓</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">B1B2D8</td><td class="col1">↓</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table7&quot;,&quot;secid&quot;:34,&quot;range&quot;:&quot;8506-8625&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b04&quot;,&quot;hid&quot;:&quot;step_b04&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:33,&quot;range&quot;:&quot;7659-8626&quot;} -->
+<h2 class="sectionedit35" id="step_b05">step_b05</h2>
+<div class="level2">
+
+<p>
+ROM Pallet offset を B1B2B8 に設定し、<br/>
+Import a bitmapをクリックします。<br/>
+<a href="/lib/exe/fetch.php?tok=47a5a3&amp;media=https%3A%2F%2Fi.imgur.com%2FwVtAVLe.jpg" class="media" title="https://i.imgur.com/wVtAVLe.jpg"><img src="/lib/exe/fetch.php?tok=47a5a3&amp;media=https%3A%2F%2Fi.imgur.com%2FwVtAVLe.jpg" class="mediacenter" title="i.imgur.com_wvtavle.jpg" alt="i.imgur.com_wvtavle.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b05&quot;,&quot;hid&quot;:&quot;step_b05&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:35,&quot;range&quot;:&quot;8627-8779&quot;} -->
+<h2 class="sectionedit36" id="step_b06">step_b06</h2>
+<div class="level2">
+
+<p>
+パレットも設定するので Import palette to ROM にチェックを付けてください。<br/>
+OKを押して次へ進みます。<br/>
+同様に、設定してください。<br/>
+<a href="/lib/exe/fetch.php?tok=358b0e&amp;media=https%3A%2F%2Fi.imgur.com%2Fssi0SgA.jpg" class="media" title="https://i.imgur.com/ssi0SgA.jpg"><img src="/lib/exe/fetch.php?tok=358b0e&amp;media=https%3A%2F%2Fi.imgur.com%2Fssi0SgA.jpg" class="mediacenter" title="i.imgur.com_ssi0sga.jpg" alt="i.imgur.com_ssi0sga.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b06&quot;,&quot;hid&quot;:&quot;step_b06&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:36,&quot;range&quot;:&quot;8780-9021&quot;} -->
+<h2 class="sectionedit37" id="step_b07">step_b07</h2>
+<div class="level2">
+
+<p>
+パレット B1B298 を設定できました。<br/>
+<a href="/lib/exe/fetch.php?tok=e6a19c&amp;media=https%3A%2F%2Fi.imgur.com%2FEWizrlk.jpg" class="media" title="https://i.imgur.com/EWizrlk.jpg"><img src="/lib/exe/fetch.php?tok=e6a19c&amp;media=https%3A%2F%2Fi.imgur.com%2FEWizrlk.jpg" class="mediacenter" title="i.imgur.com_ewizrlk.jpg" alt="i.imgur.com_ewizrlk.jpg" /></a>
+</p>
+
+<p>
+どうように、パレット B1B2B8 と B1B2D8も設定してください。<br/>
+<br/>
+
+</p>
+<div class="table sectionedit38"><table class="inline">
+	<tr class="row0">
+		<td class="col0">パレット一覧</td><td class="col1"></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">B1B278</td><td class="col1">(これはもう設定済み)</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">B1B298</td><td class="col1">(これはもう設定済み)</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">B1B2B8</td><td class="col1">これから設定する</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">B1B2D8</td><td class="col1">↓</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table8&quot;,&quot;secid&quot;:38,&quot;range&quot;:&quot;9219-9364&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b07&quot;,&quot;hid&quot;:&quot;step_b07&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:37,&quot;range&quot;:&quot;9022-9366&quot;} -->
+<h2 class="sectionedit39" id="step_b08">step_b08</h2>
+<div class="level2">
+
+<p>
+パレット B1B2B8 を設定します。<br/>
+<a href="/lib/exe/fetch.php?tok=efe456&amp;media=https%3A%2F%2Fi.imgur.com%2FDLFUp0O.jpg" class="media" title="https://i.imgur.com/DLFUp0O.jpg"><img src="/lib/exe/fetch.php?tok=efe456&amp;media=https%3A%2F%2Fi.imgur.com%2FDLFUp0O.jpg" class="mediacenter" title="i.imgur.com_dlfup0o.jpg" alt="i.imgur.com_dlfup0o.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b08&quot;,&quot;hid&quot;:&quot;step_b08&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:39,&quot;range&quot;:&quot;9367-9472&quot;} -->
+<h2 class="sectionedit40" id="step_b09">step_b09</h2>
+<div class="level2">
+
+<p>
+パレット B1B2D8 を設定します。<br/>
+<a href="/lib/exe/fetch.php?tok=b12024&amp;media=https%3A%2F%2Fi.imgur.com%2FdYHp7Gd.jpg" class="media" title="https://i.imgur.com/dYHp7Gd.jpg"><img src="/lib/exe/fetch.php?tok=b12024&amp;media=https%3A%2F%2Fi.imgur.com%2FdYHp7Gd.jpg" class="mediacenter" title="i.imgur.com_dyhp7gd.jpg" alt="i.imgur.com_dyhp7gd.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b09&quot;,&quot;hid&quot;:&quot;step_b09&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:40,&quot;range&quot;:&quot;9473-9578&quot;} -->
+<h2 class="sectionedit41" id="step_b10">step_b10</h2>
+<div class="level2">
+
+<p>
+4つのパレットを設定し終わったら、<br/>
+File → Save で結果をROMに保存します。<br/>
+保存する前にromのバックアップは忘れずに。<br/>
+<a href="/lib/exe/fetch.php?tok=c7bf3c&amp;media=https%3A%2F%2Fi.imgur.com%2F9vQyUk0.jpg" class="media" title="https://i.imgur.com/9vQyUk0.jpg"><img src="/lib/exe/fetch.php?tok=c7bf3c&amp;media=https%3A%2F%2Fi.imgur.com%2F9vQyUk0.jpg" class="mediacenter" title="i.imgur.com_9vqyuk0.jpg" alt="i.imgur.com_9vqyuk0.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b10&quot;,&quot;hid&quot;:&quot;step_b10&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:41,&quot;range&quot;:&quot;9579-9807&quot;} -->
+<h2 class="sectionedit42" id="step_b11">step_b11</h2>
+<div class="level2">
+
+<p>
+改造したromを読み込んでゲームを進めてみてください。<br/>
+ワールドマップが、オーストラリアになっているはずです。<br/>
+<a href="/lib/exe/fetch.php?tok=895cfd&amp;media=https%3A%2F%2Fi.imgur.com%2FdPrqkSe.jpg" class="media" title="https://i.imgur.com/dPrqkSe.jpg"><img src="/lib/exe/fetch.php?tok=895cfd&amp;media=https%3A%2F%2Fi.imgur.com%2FdPrqkSe.jpg" class="mediacenter" title="i.imgur.com_dprqkse.jpg" alt="i.imgur.com_dprqkse.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b11&quot;,&quot;hid&quot;:&quot;step_b11&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:42,&quot;range&quot;:&quot;9808-10030&quot;} -->
+<h2 class="sectionedit43" id="step_b12">step_b12</h2>
+<div class="level2">
+
+<p>
+追記<br />
+これ以外にもパレットがあるらしいです。<br/>
+拠点を選択した時、ワールドマップが少し暗くなって、<br/>
+台詞が始まりますが、このパレットは別の位置にあります。<br/>
+
+</p>
+<div class="table sectionedit44"><table class="inline">
+	<tr class="row0">
+		<td class="col0">暗くなるパレット一覧</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">B1B1F8</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">B1B218</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">B1B238</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">B1B258</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table9&quot;,&quot;secid&quot;:44,&quot;range&quot;:&quot;10284-10352&quot;} -->
+<p>
+これらにも、値を設定してあげてください。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=4c23d1&amp;media=https%3A%2F%2Fi.imgur.com%2FhwdCFOd.jpg" class="media" title="https://i.imgur.com/hwdCFOd.jpg"><img src="/lib/exe/fetch.php?tok=4c23d1&amp;media=https%3A%2F%2Fi.imgur.com%2FhwdCFOd.jpg" class="mediacenter" title="i.imgur.com_hwdcfod.jpg" alt="i.imgur.com_hwdcfod.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b12&quot;,&quot;hid&quot;:&quot;step_b12&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:43,&quot;range&quot;:&quot;10031-10457&quot;} -->
+<h2 class="sectionedit45" id="トラブルシューティング1">トラブルシューティング</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30c8\u30e9\u30d6\u30eb\u30b7\u30e5\u30fc\u30c6\u30a3\u30f3\u30b0&quot;,&quot;hid&quot;:&quot;\u30c8\u30e9\u30d6\u30eb\u30b7\u30e5\u30fc\u30c6\u30a3\u30f3\u30b01&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:45,&quot;range&quot;:&quot;10458-10504&quot;} -->
+<h3 class="sectionedit46" id="q画像にブロックノイズみたいなのが乗った">Q:画像にブロックノイズみたいなのが乗った。</h3>
+<div class="level3">
+
+<p>
+A:パレットを4種類同一にしましたか？<br/>
+step_b05あたりを見直してください。<br/>
+<a href="/lib/exe/fetch.php?tok=21b905&amp;media=https%3A%2F%2Fi.imgur.com%2FsKKKanD.jpg" class="media" title="https://i.imgur.com/sKKKanD.jpg"><img src="/lib/exe/fetch.php?tok=21b905&amp;media=https%3A%2F%2Fi.imgur.com%2FsKKKanD.jpg" class="mediacenter" title="i.imgur.com_skkkand.jpg" alt="i.imgur.com_skkkand.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Q:\u753b\u50cf\u306b\u30d6\u30ed\u30c3\u30af\u30ce\u30a4\u30ba\u307f\u305f\u3044\u306a\u306e\u304c\u4e57\u3063\u305f\u3002&quot;,&quot;hid&quot;:&quot;q\u753b\u50cf\u306b\u30d6\u30ed\u30c3\u30af\u30ce\u30a4\u30ba\u307f\u305f\u3044\u306a\u306e\u304c\u4e57\u3063\u305f&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:46,&quot;range&quot;:&quot;10505-10721&quot;} -->
+<h3 class="sectionedit47" id="q16色以上のワールドマップを作りたい">Q:16色以上のワールドマップを作りたい</h3>
+<div class="level3">
+
+<p>
+A:pallet mapを指定してください。<br />
+pallet mapは、lz77で圧縮されているので、解凍してください。<br/>
+解凍すると、 1200バイトのデータになります。<br/>
+<br/>
+解凍後の pallet map をバイナリエディタで開いて書き換えてください。<br/>
+mapを8*8のタイルに分割し、そのタイルが何番目のパレットを使うかを格納していきます。<br/>
+<br/>
+1バイトに2タイルの情報がはいっています。<br/>
+0x33 だった場合、 <br/>
+0x33 &amp; 0xf      == 1つ目のタイルは 0x3(つまり4番目のパレットを使う)<br/>
+(0x33»8) &amp; 0xf == 2つ目のタイルは 0x3(つまり4番目のパレットを使う)<br/>
+<br/>
+これを1200バイト定義することで、すべてのタイルのパレット割り当てを定義してます。<br/>
+1200バイト*2タイル=2400タイル <br/>
+(480&times;320 は、 (480/8)*(320/8)=2400タイル)<br/>
+<br/>
+修正後は、lz77で圧縮しromに書き戻してください。<br/>
+このとき、サイズが超えてしまう場合は、移さないとだめでしょうね。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Q:16\u8272\u4ee5\u4e0a\u306e\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7\u3092\u4f5c\u308a\u305f\u3044&quot;,&quot;hid&quot;:&quot;q16\u8272\u4ee5\u4e0a\u306e\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7\u3092\u4f5c\u308a\u305f\u3044&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:47,&quot;range&quot;:&quot;10722-11862&quot;} -->
+<h1 class="sectionedit48" id="イベント等_序章のプロローグで表示されるワールドマップを入れ替える">イベント等、序章のプロローグで表示されるワールドマップを入れ替える</h1>
+<div class="level1">
+
+<p>
+イベント等、序章のプロローグなどの、イベントで表示されるワールドマップを入れ替えます。<br/>
+このマップも、8*8タイルごとで4つのパレットを切り替えて表示していますが、<br/>
+フィールドのワールドマップとは違いTSAという方法で、切り替えを行っています。<br/>
+<br/>
+TSAを操作すると、話がとてもややこしくなるので、<br/>
+ここでも、4つとも同じパレットを設定することで話を進めます。<br/>
+
+</p>
+<div class="table sectionedit49"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">240&times;160</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">画像アドレス</td><td class="col1">0xB1E9B8 圧縮されてる</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">パレット</td><td class="col1">0xB23D3C -</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">TSA</td><td class="col1">0xB237EC 圧縮されている</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table10&quot;,&quot;secid&quot;:49,&quot;range&quot;:&quot;12502-12633&quot;} -->
+<p>
+240&times;160の16色pngを用意してください。<br/>
+(注意:パレット 0番目の色を透過色にしてはいけません。絶対にダメです。)<br/>
+<br />
+今回はこの画像に置き換えます。<br />
+<a href="https://i.imgur.com/4RM8NNO.png" class="urlextern" title="https://i.imgur.com/4RM8NNO.png" rel="nofollow">https://i.imgur.com/4RM8NNO.png</a>
+</p>
+
+<p>
+step_c01からstep_c06でやる加工前の元画像<br />
+<a href="https://i.imgur.com/tJSkuTa.png" class="urlextern" title="https://i.imgur.com/tJSkuTa.png" rel="nofollow">https://i.imgur.com/tJSkuTa.png</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a4\u30d9\u30f3\u30c8\u7b49\u3001\u5e8f\u7ae0\u306e\u30d7\u30ed\u30ed\u30fc\u30b0\u3067\u8868\u793a\u3055\u308c\u308b\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7\u3092\u5165\u308c\u66ff\u3048\u308b&quot;,&quot;hid&quot;:&quot;\u30a4\u30d9\u30f3\u30c8\u7b49_\u5e8f\u7ae0\u306e\u30d7\u30ed\u30ed\u30fc\u30b0\u3067\u8868\u793a\u3055\u308c\u308b\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7\u3092\u5165\u308c\u66ff\u3048\u308b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:48,&quot;range&quot;:&quot;11863-12956&quot;} -->
+<h2 class="sectionedit50" id="step_c01">step_c01</h2>
+<div class="level2">
+
+<p>
+まず最初にしないといけないことが一つあります。<br/>
+イベント等、序章のプロローグで表示されるワールドマップは、 240&times;160なのですが、<br/>
+そのまま、この画像を使うことができません。<br/>
+以下のように、先頭8&times;8のタイルを後方に移動しなくてはいません。<br/>
+そして、先頭の8&times;8をパレット0番で塗らないといけません。<br/>
+<a href="/lib/exe/fetch.php?tok=cb0476&amp;media=https%3A%2F%2Fi.imgur.com%2FwNLl7fX.jpg" class="media" title="https://i.imgur.com/wNLl7fX.jpg"><img src="/lib/exe/fetch.php?tok=cb0476&amp;media=https%3A%2F%2Fi.imgur.com%2FwNLl7fX.jpg" class="mediacenter" title="i.imgur.com_wnll7fx.jpg" alt="i.imgur.com_wnll7fx.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c01&quot;,&quot;hid&quot;:&quot;step_c01&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:50,&quot;range&quot;:&quot;12957-13447&quot;} -->
+<h2 class="sectionedit51" id="step_c02">step_c02</h2>
+<div class="level2">
+
+<p>
+画像の加工には、edgeを使います。<br/>
+edgeを立ち上げて、240&times;160の画像を読み込みます。<br/>
+<a href="/lib/exe/fetch.php?tok=5557c6&amp;media=https%3A%2F%2Fi.imgur.com%2FUQwSWNc.jpg" class="media" title="https://i.imgur.com/UQwSWNc.jpg"><img src="/lib/exe/fetch.php?tok=5557c6&amp;media=https%3A%2F%2Fi.imgur.com%2FUQwSWNc.jpg" class="mediacenter" title="i.imgur.com_uqwswnc.jpg" alt="i.imgur.com_uqwswnc.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c02&quot;,&quot;hid&quot;:&quot;step_c02&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:51,&quot;range&quot;:&quot;13448-13625&quot;} -->
+<h2 class="sectionedit52" id="step_c03">step_c03</h2>
+<div class="level2">
+
+<p>
+メニューから、<br/>
+設定 → キャンバスの大きさ変更 を選択します。<br/>
+<a href="/lib/exe/fetch.php?tok=d5844e&amp;media=https%3A%2F%2Fi.imgur.com%2FKJzwXjN.jpg" class="media" title="https://i.imgur.com/KJzwXjN.jpg"><img src="/lib/exe/fetch.php?tok=d5844e&amp;media=https%3A%2F%2Fi.imgur.com%2FKJzwXjN.jpg" class="mediacenter" title="i.imgur.com_kjzwxjn.jpg" alt="i.imgur.com_kjzwxjn.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c03&quot;,&quot;hid&quot;:&quot;step_c03&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:52,&quot;range&quot;:&quot;13626-13778&quot;} -->
+<h2 class="sectionedit53" id="step_c04">step_c04</h2>
+<div class="level2">
+
+<p>
+240&times;160 から、高さを増やして、 <br/>
+240&times;168 に、変更します。<br/>
+<a href="/lib/exe/fetch.php?tok=1196a8&amp;media=https%3A%2F%2Fi.imgur.com%2FqDLEYX7.jpg" class="media" title="https://i.imgur.com/qDLEYX7.jpg"><img src="/lib/exe/fetch.php?tok=1196a8&amp;media=https%3A%2F%2Fi.imgur.com%2FqDLEYX7.jpg" class="mediacenter" title="i.imgur.com_qdleyx7.jpg" alt="i.imgur.com_qdleyx7.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c04&quot;,&quot;hid&quot;:&quot;step_c04&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:53,&quot;range&quot;:&quot;13779-13919&quot;} -->
+<h2 class="sectionedit54" id="step_c05">step_c05</h2>
+<div class="level2">
+
+<p>
+拡大などをうまく使い、<br/>
+先頭の 8&times;8 ピクセルを切り取り・・・・<br/>
+<a href="/lib/exe/fetch.php?tok=99c054&amp;media=https%3A%2F%2Fi.imgur.com%2FEpGZrp8.jpg" class="media" title="https://i.imgur.com/EpGZrp8.jpg"><img src="/lib/exe/fetch.php?tok=99c054&amp;media=https%3A%2F%2Fi.imgur.com%2FEpGZrp8.jpg" class="mediacenter" title="i.imgur.com_epgzrp8.jpg" alt="i.imgur.com_epgzrp8.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c05&quot;,&quot;hid&quot;:&quot;step_c05&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:54,&quot;range&quot;:&quot;13920-14072&quot;} -->
+<h2 class="sectionedit55" id="step_c06">step_c06</h2>
+<div class="level2">
+
+<p>
+ファイル最後の行に移動させます。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=732243&amp;media=https%3A%2F%2Fi.imgur.com%2FR8tidLe.jpg" class="media" title="https://i.imgur.com/R8tidLe.jpg"><img src="/lib/exe/fetch.php?tok=732243&amp;media=https%3A%2F%2Fi.imgur.com%2FR8tidLe.jpg" class="mediacenter" title="i.imgur.com_r8tidle.jpg" alt="i.imgur.com_r8tidle.jpg" /></a>
+</p>
+
+<p>
+必ず、先頭 8&times;8の部分が、<br/>
+パレット0番の色で塗られていることを確認してください。<br/>
+<br/>
+以上の処理をした画像をこれです。<br/>
+もし、動作しない場合は、この画像と見比べてください。<br/>
+<br/>
+画像ができたら、<br/>
+次は、今までと同じように、NLZ-GBA Advanceで画像を入れます。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c06&quot;,&quot;hid&quot;:&quot;step_c06&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:55,&quot;range&quot;:&quot;14073-14555&quot;} -->
+<h2 class="sectionedit56" id="step_c07">step_c07</h2>
+<div class="level2">
+
+<p>
+NLZ-GBA Advance を立ち上げて、<br/>
+左上の File handling をクリックし、<br/>
+Load Rom で FE8聖魔のrom を読み込みます。<br/>
+<br/>
+赤枠で囲った Compressed graphics にチェックが入っていることを確認してください。<br/>
+緑枠で囲った Width に、30 と入力します。<br/>
+青枠で囲った Offset に、B1E9B8 と入力します。<br/>
+紫枠で囲った ROM Pallet offset に、 B23D3C と入力します。<br/>
+そうすると、ウィンドウに <br/>
+イベント等、序章のプロローグなどのイベントで表示されるワールドマップが表示されます。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=114fdd&amp;media=https%3A%2F%2Fi.imgur.com%2FbRmzce8.jpg" class="media" title="https://i.imgur.com/bRmzce8.jpg"><img src="/lib/exe/fetch.php?tok=114fdd&amp;media=https%3A%2F%2Fi.imgur.com%2FbRmzce8.jpg" class="mediacenter" title="i.imgur.com_brmzce8.jpg" alt="i.imgur.com_brmzce8.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c07&quot;,&quot;hid&quot;:&quot;step_c07&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:56,&quot;range&quot;:&quot;14556-15240&quot;} -->
+<h2 class="sectionedit57" id="step_c08">step_c08</h2>
+<div class="level2">
+
+<p>
+Import a bitmapをクリックします。<br/>
+<a href="/lib/exe/fetch.php?tok=1a2fd9&amp;media=https%3A%2F%2Fi.imgur.com%2FgqBofDf.jpg" class="media" title="https://i.imgur.com/gqBofDf.jpg"><img src="/lib/exe/fetch.php?tok=1a2fd9&amp;media=https%3A%2F%2Fi.imgur.com%2FgqBofDf.jpg" class="mediacenter" title="i.imgur.com_gqbofdf.jpg" alt="i.imgur.com_gqbofdf.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c08&quot;,&quot;hid&quot;:&quot;step_c08&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:57,&quot;range&quot;:&quot;15241-15346&quot;} -->
+<h2 class="sectionedit58" id="step_c09">step_c09</h2>
+<div class="level2">
+
+<p>
+パレットも設定するので Import palette to ROM にチェックを付けてください。<br/>
+OKを押して次へ進みます。<br/>
+<a href="/lib/exe/fetch.php?tok=84856d&amp;media=https%3A%2F%2Fi.imgur.com%2FliOvGhe.jpg" class="media" title="https://i.imgur.com/liOvGhe.jpg"><img src="/lib/exe/fetch.php?tok=84856d&amp;media=https%3A%2F%2Fi.imgur.com%2FliOvGhe.jpg" class="mediacenter" title="i.imgur.com_liovghe.jpg" alt="i.imgur.com_liovghe.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c09&quot;,&quot;hid&quot;:&quot;step_c09&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:58,&quot;range&quot;:&quot;15347-15546&quot;} -->
+<h2 class="sectionedit59" id="step_c10">step_c10</h2>
+<div class="level2">
+
+<p>
+画像が変更できました。<br/>
+<a href="/lib/exe/fetch.php?tok=250307&amp;media=https%3A%2F%2Fi.imgur.com%2FMemV39C.jpg" class="media" title="https://i.imgur.com/MemV39C.jpg"><img src="/lib/exe/fetch.php?tok=250307&amp;media=https%3A%2F%2Fi.imgur.com%2FMemV39C.jpg" class="mediacenter" title="i.imgur.com_memv39c.jpg" alt="i.imgur.com_memv39c.jpg" /></a>
+</p>
+
+<p>
+ここで・・・保存するまえに、やることがあります。<br/>
+<br/>
+イベント等、序章のプロローグなどのイベントで表示されるワールドマップは、<br/>
+TSAで、4つのパレットを8*8のタイルで切り替えて表示させています。<br/>
+TSAの変更はいろいろと大変なので、4つのパレットをすべて同じ色にすることで対応します。<br/>
+<br/>
+パレットは、0xB23D3C から、 0x20バイトずつ、4つあります。<br/>
+今回、0xB23D3Cを設定したので、残りの3つを設定します。<br/>
+
+</p>
+<div class="table sectionedit60"><table class="inline">
+	<tr class="row0">
+		<td class="col0">パレット一覧</td><td class="col1"></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">B23D3C</td><td class="col1">(これはもう設定済み)</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">B23D5C</td><td class="col1">これから設定する</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">B23D7C</td><td class="col1">↓</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">B23D9C</td><td class="col1">↓</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table11&quot;,&quot;secid&quot;:60,&quot;range&quot;:&quot;16218-16337&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c10&quot;,&quot;hid&quot;:&quot;step_c10&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:59,&quot;range&quot;:&quot;15547-16338&quot;} -->
+<h2 class="sectionedit61" id="step_c11">step_c11</h2>
+<div class="level2">
+
+<p>
+ROM Pallet offset を B23D5C に設定し、<br/>
+Import a bitmapをクリックします。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=cbac3e&amp;media=https%3A%2F%2Fi.imgur.com%2FzD10wjB.jpg" class="media" title="https://i.imgur.com/zD10wjB.jpg"><img src="/lib/exe/fetch.php?tok=cbac3e&amp;media=https%3A%2F%2Fi.imgur.com%2FzD10wjB.jpg" class="mediacenter" title="i.imgur.com_zd10wjb.jpg" alt="i.imgur.com_zd10wjb.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c11&quot;,&quot;hid&quot;:&quot;step_c11&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:61,&quot;range&quot;:&quot;16339-16492&quot;} -->
+<h2 class="sectionedit62" id="step_c12">step_c12</h2>
+<div class="level2">
+
+<p>
+パレットも設定するので Import palette to ROM にチェックを付けてください。<br/>
+OKを押して次へ進みます。<br/>
+同様に、設定してください。<br/>
+<br />
+<a href="/lib/exe/fetch.php?tok=b07cba&amp;media=https%3A%2F%2Fi.imgur.com%2FYMac00k.jpg" class="media" title="https://i.imgur.com/YMac00k.jpg"><img src="/lib/exe/fetch.php?tok=b07cba&amp;media=https%3A%2F%2Fi.imgur.com%2FYMac00k.jpg" class="mediacenter" title="i.imgur.com_ymac00k.jpg" alt="i.imgur.com_ymac00k.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c12&quot;,&quot;hid&quot;:&quot;step_c12&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:62,&quot;range&quot;:&quot;16493-16735&quot;} -->
+<h2 class="sectionedit63" id="step_c13">step_c13</h2>
+<div class="level2">
+
+<p>
+パレット B23D5C を設定できました。<br/>
+<a href="/lib/exe/fetch.php?tok=3d9fd0&amp;media=https%3A%2F%2Fi.imgur.com%2FtsDjUiz.jpg" class="media" title="https://i.imgur.com/tsDjUiz.jpg"><img src="/lib/exe/fetch.php?tok=3d9fd0&amp;media=https%3A%2F%2Fi.imgur.com%2FtsDjUiz.jpg" class="mediacenter" title="i.imgur.com_tsdjuiz.jpg" alt="i.imgur.com_tsdjuiz.jpg" /></a>
+</p>
+
+<p>
+<br/>
+どうように、パレット B23D7C と B23D9Cも設定してください。<br/>
+
+</p>
+<div class="table sectionedit64"><table class="inline">
+	<tr class="row0">
+		<td class="col0">パレット一覧</td><td class="col1"></td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">B23D3C</td><td class="col1">(これはもう設定済み)</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">B23D5C</td><td class="col1">(これはもう設定済み)</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">B23D7C</td><td class="col1">これから設定する</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">B23D9C</td><td class="col1">↓</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table12&quot;,&quot;secid&quot;:64,&quot;range&quot;:&quot;16933-17078&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c13&quot;,&quot;hid&quot;:&quot;step_c13&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:63,&quot;range&quot;:&quot;16736-17080&quot;} -->
+<h2 class="sectionedit65" id="step_c14">step_c14</h2>
+<div class="level2">
+
+<p>
+パレット B23D7C を設定します。<br/>
+<a href="/lib/exe/fetch.php?tok=f69c91&amp;media=https%3A%2F%2Fi.imgur.com%2FNJIeKgw.jpg" class="media" title="https://i.imgur.com/NJIeKgw.jpg"><img src="/lib/exe/fetch.php?tok=f69c91&amp;media=https%3A%2F%2Fi.imgur.com%2FNJIeKgw.jpg" class="mediacenter" title="i.imgur.com_njiekgw.jpg" alt="i.imgur.com_njiekgw.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c14&quot;,&quot;hid&quot;:&quot;step_c14&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:65,&quot;range&quot;:&quot;17081-17185&quot;} -->
+<h2 class="sectionedit66" id="step_c15">step_c15</h2>
+<div class="level2">
+
+<p>
+パレット B23D9C を設定します。<br/>
+<a href="/lib/exe/fetch.php?tok=3d4808&amp;media=https%3A%2F%2Fi.imgur.com%2FoihEbcg.jpg" class="media" title="https://i.imgur.com/oihEbcg.jpg"><img src="/lib/exe/fetch.php?tok=3d4808&amp;media=https%3A%2F%2Fi.imgur.com%2FoihEbcg.jpg" class="mediacenter" title="i.imgur.com_oihebcg.jpg" alt="i.imgur.com_oihebcg.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c15&quot;,&quot;hid&quot;:&quot;step_c15&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:66,&quot;range&quot;:&quot;17186-17290&quot;} -->
+<h2 class="sectionedit67" id="step_c16">step_c16</h2>
+<div class="level2">
+
+<p>
+4つのパレットを設定し終わったら、<br/>
+Write to ROM で結果をROMに保存します。<br/>
+保存する前にromのバックアップは忘れずに。<br/>
+<a href="/lib/exe/fetch.php?tok=7ade21&amp;media=https%3A%2F%2Fi.imgur.com%2FhywGWOb.jpg" class="media" title="https://i.imgur.com/hywGWOb.jpg"><img src="/lib/exe/fetch.php?tok=7ade21&amp;media=https%3A%2F%2Fi.imgur.com%2FhywGWOb.jpg" class="mediacenter" title="i.imgur.com_hywgwob.jpg" alt="i.imgur.com_hywgwob.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c16&quot;,&quot;hid&quot;:&quot;step_c16&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:67,&quot;range&quot;:&quot;17291-17518&quot;} -->
+<h2 class="sectionedit68" id="step_c17">step_c17</h2>
+<div class="level2">
+
+<p>
+改造したromを読み込んでゲームを進めてみてください。<br/>
+イベント等、序章のプロローグなどのイベントのワールドマップが、<br/>
+オーストラリアになっているはずです。<br/>
+<a href="/lib/exe/fetch.php?tok=53d4dd&amp;media=https%3A%2F%2Fi.imgur.com%2FihoWIxi.jpg" class="media" title="https://i.imgur.com/ihoWIxi.jpg"><img src="/lib/exe/fetch.php?tok=53d4dd&amp;media=https%3A%2F%2Fi.imgur.com%2FihoWIxi.jpg" class="mediacenter" title="i.imgur.com_ihowixi.jpg" alt="i.imgur.com_ihowixi.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_c17&quot;,&quot;hid&quot;:&quot;step_c17&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:68,&quot;range&quot;:&quot;17519-17811&quot;} -->
+<h2 class="sectionedit69" id="トラブルシューティング2">トラブルシューティング</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30c8\u30e9\u30d6\u30eb\u30b7\u30e5\u30fc\u30c6\u30a3\u30f3\u30b0&quot;,&quot;hid&quot;:&quot;\u30c8\u30e9\u30d6\u30eb\u30b7\u30e5\u30fc\u30c6\u30a3\u30f3\u30b02&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:69,&quot;range&quot;:&quot;17812-17858&quot;} -->
+<h3 class="sectionedit70" id="q画像がしましまになった">Q:画像がしましまになった。</h3>
+<div class="level3">
+
+<p>
+A:パレットを4種類同一にしましたか？<br/>
+step_c10あたりを見直してください。<br/>
+<a href="/lib/exe/fetch.php?tok=d4e4cf&amp;media=https%3A%2F%2Fi.imgur.com%2FsCc82cH.jpg" class="media" title="https://i.imgur.com/sCc82cH.jpg"><img src="/lib/exe/fetch.php?tok=d4e4cf&amp;media=https%3A%2F%2Fi.imgur.com%2FsCc82cH.jpg" class="mediacenter" title="i.imgur.com_scc82ch.jpg" alt="i.imgur.com_scc82ch.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Q:\u753b\u50cf\u304c\u3057\u307e\u3057\u307e\u306b\u306a\u3063\u305f\u3002&quot;,&quot;hid&quot;:&quot;q\u753b\u50cf\u304c\u3057\u307e\u3057\u307e\u306b\u306a\u3063\u305f&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:70,&quot;range&quot;:&quot;17859-18051&quot;} -->
+<h3 class="sectionedit71" id="q画面が淡色になりました">Q:画面が淡色になりました。</h3>
+<div class="level3">
+
+<p>
+A:先頭の8&times;8タイルを開け、パレット0番で塗っていますか？<br/>
+step_c01あたりからやり直してください<br/>
+<a href="/lib/exe/fetch.php?tok=d1b534&amp;media=https%3A%2F%2Fi.imgur.com%2FnSE360w.jpg" class="media" title="https://i.imgur.com/nSE360w.jpg"><img src="/lib/exe/fetch.php?tok=d1b534&amp;media=https%3A%2F%2Fi.imgur.com%2FnSE360w.jpg" class="mediacenter" title="i.imgur.com_nse360w.jpg" alt="i.imgur.com_nse360w.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Q:\u753b\u9762\u304c\u6de1\u8272\u306b\u306a\u308a\u307e\u3057\u305f\u3002&quot;,&quot;hid&quot;:&quot;q\u753b\u9762\u304c\u6de1\u8272\u306b\u306a\u308a\u307e\u3057\u305f&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:71,&quot;range&quot;:&quot;18052-18274&quot;} -->
+<h3 class="sectionedit72" id="q16色を超える色を扱いたいです">Q:16色を超える色を扱いたいです。</h3>
+<div class="level3">
+
+<p>
+A:がんばって、TSAを設定してください。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Q:16\u8272\u3092\u8d85\u3048\u308b\u8272\u3092\u6271\u3044\u305f\u3044\u3067\u3059\u3002&quot;,&quot;hid&quot;:&quot;q16\u8272\u3092\u8d85\u3048\u308b\u8272\u3092\u6271\u3044\u305f\u3044\u3067\u3059&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:72,&quot;range&quot;:&quot;18275-18390&quot;} -->
+<h1 class="sectionedit73" id="ゲームopで表示されるワールドマップを入れ替える">ゲームOPで表示されるワールドマップを入れ替える</h1>
+<div class="level1">
+
+<p>
+ゲームOPで一瞬だけ登場するワールドマップを入れ替えます。<br/>
+この変更が一番ややこしいです。<br/>
+難しい理由は、TSAを変更なくてはいけないためです。<br/>
+そして、このTSAは圧縮されています。<br/>
+<br/>
+OPをカットするパッチを使い、OPを消す予定の方は、<br/>
+どうせ表示されないので無理して変更する必要はありません。<br/>
+<br/>
+あえて、困難に挑みたい方は、がんばりましょう。<br/>
+
+</p>
+<div class="table sectionedit74"><table class="inline">
+	<tr class="row0">
+		<td class="col0">サイズ</td><td class="col1">240&times;160</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">画像アドレス</td><td class="col1">0xB4BBA0 圧縮されている</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">パレット</td><td class="col1">0xB4FCD4</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">TSA</td><td class="col1">0xB4F758 圧縮されている</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table13&quot;,&quot;secid&quot;:74,&quot;range&quot;:&quot;18979-19111&quot;} -->
+<p>
+今回は、この画像に置き換えます。<br/>
+<a href="https://i.imgur.com/DW4i8QL.png" class="urlextern" title="https://i.imgur.com/DW4i8QL.png" rel="nofollow">https://i.imgur.com/DW4i8QL.png</a>
+</p>
+
+<p>
+step_d01-step_d04でやる加工前の元画像<br/>
+<a href="https://i.imgur.com/I0qC9T5.png" class="urlextern" title="https://i.imgur.com/I0qC9T5.png" rel="nofollow">https://i.imgur.com/I0qC9T5.png</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30b2\u30fc\u30e0OP\u3067\u8868\u793a\u3055\u308c\u308b\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7\u3092\u5165\u308c\u66ff\u3048\u308b&quot;,&quot;hid&quot;:&quot;\u30b2\u30fc\u30e0op\u3067\u8868\u793a\u3055\u308c\u308b\u30ef\u30fc\u30eb\u30c9\u30de\u30c3\u30d7\u3092\u5165\u308c\u66ff\u3048\u308b&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:73,&quot;range&quot;:&quot;18391-19280&quot;} -->
+<h2 class="sectionedit75" id="step_d01">step_d01</h2>
+<div class="level2">
+
+<p>
+OPのマップは240&times;160の画像で表示されますが、<br/>
+インポートする画像は、 240&times;160ではダメです。<br/>
+今回は、幅を+16した、  256&times;160の画像が必要です。<br/>
+<a href="/lib/exe/fetch.php?tok=d3d8b8&amp;media=https%3A%2F%2Fi.imgur.com%2FhFztzRm.jpg" class="media" title="https://i.imgur.com/hFztzRm.jpg"><img src="/lib/exe/fetch.php?tok=d3d8b8&amp;media=https%3A%2F%2Fi.imgur.com%2FhFztzRm.jpg" class="mediacenter" title="i.imgur.com_hfztzrm.jpg" alt="i.imgur.com_hfztzrm.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_d01&quot;,&quot;hid&quot;:&quot;step_d01&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:75,&quot;range&quot;:&quot;19281-19538&quot;} -->
+<h2 class="sectionedit76" id="step_d02">step_d02</h2>
+<div class="level2">
+
+<p>
+edgeを立ちあがて、メニューから、<br/>
+設定 → キャンバスの大きさ変更<br/>
+を選択します。<br/>
+<a href="/lib/exe/fetch.php?tok=b6f3c9&amp;media=https%3A%2F%2Fi.imgur.com%2FgydeIxw.jpg" class="media" title="https://i.imgur.com/gydeIxw.jpg"><img src="/lib/exe/fetch.php?tok=b6f3c9&amp;media=https%3A%2F%2Fi.imgur.com%2FgydeIxw.jpg" class="mediacenter" title="i.imgur.com_gydeixw.jpg" alt="i.imgur.com_gydeixw.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_d02&quot;,&quot;hid&quot;:&quot;step_d02&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:76,&quot;range&quot;:&quot;19539-19718&quot;} -->
+<h2 class="sectionedit77" id="step_d03">step_d03</h2>
+<div class="level2">
+
+<p>
+幅を +16 して、<br/>
+256&times;160 とします。<br/>
+<a href="/lib/exe/fetch.php?tok=2a9003&amp;media=https%3A%2F%2Fi.imgur.com%2FSwjTQ7P.jpg" class="media" title="https://i.imgur.com/SwjTQ7P.jpg"><img src="/lib/exe/fetch.php?tok=2a9003&amp;media=https%3A%2F%2Fi.imgur.com%2FSwjTQ7P.jpg" class="mediacenter" title="i.imgur.com_swjtq7p.jpg" alt="i.imgur.com_swjtq7p.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_d03&quot;,&quot;hid&quot;:&quot;step_d03&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:77,&quot;range&quot;:&quot;19719-19828&quot;} -->
+<h2 class="sectionedit78" id="step_d04">step_d04</h2>
+<div class="level2">
+
+<p>
+幅を追加したら、そのまま何もせずに、<br/>
+保存して、edgeを終了します。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_d04&quot;,&quot;hid&quot;:&quot;step_d04&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:78,&quot;range&quot;:&quot;19829-19951&quot;} -->
+<h2 class="sectionedit79" id="step_d05">step_d05</h2>
+<div class="level2">
+
+<p>
+画像を追加する前に、まだやることがあります。<br/>
+TSAデータを更新する必要があります。<br/>
+このまま画像を追加しても、TSAによって崩れた画像になってしまいます。<br/>
+TSAには、8*8のタイルに画像を分割し、そのタイルがどこの位置で、どのパレットを利用しているか、反転などの操作をするかなどのい情報が格納されています。<br/>
+今回の利用するTSAはさらにそのデータがlz77で圧縮されているのでとてもやっかいです。<br/>
+私の方で、普通の画像を正しく表示する圧縮されたTSAを作成しておきましたので、これをご利用ください。<br/>
+<br/>
+これどう使うのか？<br/>
+バイナリエディタで、romに追加します。<br/>
+TSAは0xB4F758なので、この領域に上書きすればいい・・・というわけではありません。<br/>
+<br/>
+TSAデータは圧縮に不向きなデータ構造をしており、<br/>
+圧縮すると逆にデータ容量が増えてしまうことがあります。<br/>
+そして、今回作成したTSAは、運が悪いことに、もともとのTSAより大きいデータです。<br/>
+そのため、元の領域にいれてしまうと、romが壊れます。<br/>
+<br/>
+仕方ないので、romの末尾に追加します。<br/>
+今回は、無改造romなので、 0x01000000 に追加します。<br/>
+やり方を次に説明します。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_d05&quot;,&quot;hid&quot;:&quot;step_d05&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:79,&quot;range&quot;:&quot;19952-21417&quot;} -->
+<h2 class="sectionedit80" id="step_d06">step_d06</h2>
+<div class="level2">
+
+<p>
+tsa.lz77.bin をバイナリエディタで開き、<br/>
+全選択します。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=80540e&amp;media=https%3A%2F%2Fi.imgur.com%2Ftt4AKS7.jpg" class="media" title="https://i.imgur.com/tt4AKS7.jpg"><img src="/lib/exe/fetch.php?tok=80540e&amp;media=https%3A%2F%2Fi.imgur.com%2Ftt4AKS7.jpg" class="mediacenter" title="i.imgur.com_tt4aks7.jpg" alt="i.imgur.com_tt4aks7.jpg" /></a>
+</p>
+
+<p>
+tsa.lz77.bin は、FE8_AU_PATCHの中にはいっています。<br/>
+<a href="http://ux.getuploader.com/FE4/download/243/FE8_AU_PATCH.7z" class="urlextern" title="http://ux.getuploader.com/FE4/download/243/FE8_AU_PATCH.7z" rel="nofollow">http://ux.getuploader.com/FE4/download/243/FE8_AU_PATCH.7z</a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_d06&quot;,&quot;hid&quot;:&quot;step_d06&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:80,&quot;range&quot;:&quot;21418-21689&quot;} -->
+<h2 class="sectionedit81" id="step_d07">step_d07</h2>
+<div class="level2">
+
+<p>
+改造しているromの末尾 0x01000000 へコピーして追加しましょう。<br/>
+Ctrl + C / Ctrl + V が使えます。<br/>
+<a href="/lib/exe/fetch.php?tok=739ecd&amp;media=https%3A%2F%2Fi.imgur.com%2Fta7h4c4.jpg" class="media" title="https://i.imgur.com/ta7h4c4.jpg"><img src="/lib/exe/fetch.php?tok=739ecd&amp;media=https%3A%2F%2Fi.imgur.com%2Fta7h4c4.jpg" class="mediacenter" title="i.imgur.com_ta7h4c4.jpg" alt="i.imgur.com_ta7h4c4.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_d07&quot;,&quot;hid&quot;:&quot;step_d07&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:81,&quot;range&quot;:&quot;21690-21878&quot;} -->
+<h2 class="sectionedit82" id="step_d08">step_d08</h2>
+<div class="level2">
+
+<p>
+コピーできました。<br/>
+<a href="/lib/exe/fetch.php?tok=9600c2&amp;media=https%3A%2F%2Fi.imgur.com%2FR8FEDLs.jpg" class="media" title="https://i.imgur.com/R8FEDLs.jpg"><img src="/lib/exe/fetch.php?tok=9600c2&amp;media=https%3A%2F%2Fi.imgur.com%2FR8FEDLs.jpg" class="mediacenter" title="i.imgur.com_r8fedls.jpg" alt="i.imgur.com_r8fedls.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_d08&quot;,&quot;hid&quot;:&quot;step_d08&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:82,&quot;range&quot;:&quot;21879-21969&quot;} -->
+<h2 class="sectionedit83" id="step_d09">step_d09</h2>
+<div class="level2">
+
+<p>
+そして、追加したTSAを参照するように、プログラムを直します。<br/>
+TSAは0xB4F758ですので、<br/>
+これを参照している場所を探します。<br/>
+<br/>
+0xB4F758はポインタです。<br/>
+GBAはROMは0x08000000 以降に配置されるので、ポインタにするには 0x08000000 を足さないといけません。<br/>
+<br/>
+TSA 0xB4F758 + 0x08000000 = 0x08B4F758<br/>
+<br/>
+そして、GBAは、PCと同じく、リトルエンディアンなので、<br/>
+2バイトずつ逆順に記述しないといけません。<br/>
+
+</p>
+<pre class="code">0x08B4F758
+↓
+0x08 B4 F7 58
+↓
+0x58 
+0x58 F7
+0x58 F7 B4
+0x58 F7 B4 08
+↓
+0x58F7B408</pre>
+
+<p>
+よって、TSA 0xB4F758を参照するとき、<br/>
+0x58F7B408 という値を利用します。<br/>
+<br/>
+この値をromから検索してみると・・・<br/>
+<a href="/lib/exe/fetch.php?tok=7200c5&amp;media=https%3A%2F%2Fi.imgur.com%2FXXYhvRM.jpg" class="media" title="https://i.imgur.com/XXYhvRM.jpg"><img src="/lib/exe/fetch.php?tok=7200c5&amp;media=https%3A%2F%2Fi.imgur.com%2FXXYhvRM.jpg" class="mediacenter" title="i.imgur.com_xxyhvrm.jpg" alt="i.imgur.com_xxyhvrm.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_d09&quot;,&quot;hid&quot;:&quot;step_d09&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:83,&quot;range&quot;:&quot;21970-22828&quot;} -->
+<h2 class="sectionedit84" id="step_d10">step_d10</h2>
+<div class="level2">
+
+<p>
+見つかりました。<br/>
+0xCBCFC : 58 F7 B4 08 ここが、TSAの値です。<br/>
+これをROM末尾に増設した TSA のアドレスに置き換えます。<br/>
+<a href="/lib/exe/fetch.php?tok=9ba207&amp;media=https%3A%2F%2Fi.imgur.com%2FbMFh6eP.jpg" class="media" title="https://i.imgur.com/bMFh6eP.jpg"><img src="/lib/exe/fetch.php?tok=9ba207&amp;media=https%3A%2F%2Fi.imgur.com%2FbMFh6eP.jpg" class="mediacenter" title="i.imgur.com_bmfh6ep.jpg" alt="i.imgur.com_bmfh6ep.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_d10&quot;,&quot;hid&quot;:&quot;step_d10&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:84,&quot;range&quot;:&quot;22829-23051&quot;} -->
+<h2 class="sectionedit85" id="step_d11">step_d11</h2>
+<div class="level2">
+
+<p>
+ROM末尾のアドレスは、 0x01000000 です。<br/>
+ですが、参照するとは、ポインタにしないといけないので、<br/>
+0x08000000 を足して、0x09000000になります 。<br/>
+0x01000000 + 0x08000000 = 0x09000000<br/>
+<br />
+GBAは、リトルエンディアンなので、0x09000000を変換します。<br/>
+
+</p>
+<pre class="code">0x09000000
+↓
+0x00
+0x00 00
+0x00 00 00
+0x00 00 00 09
+↓
+0x00000009</pre>
+
+<p>
+このようになります。<br/>
+<br/>
+0xCBCFC を、58 F7 B4 08 から、 00 00 00 09 に変更します。<br/>
+<a href="/lib/exe/fetch.php?tok=089045&amp;media=https%3A%2F%2Fi.imgur.com%2FIn2Qmqy.jpg" class="media" title="https://i.imgur.com/In2Qmqy.jpg"><img src="/lib/exe/fetch.php?tok=089045&amp;media=https%3A%2F%2Fi.imgur.com%2FIn2Qmqy.jpg" class="mediacenter" title="i.imgur.com_in2qmqy.jpg" alt="i.imgur.com_in2qmqy.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_d11&quot;,&quot;hid&quot;:&quot;step_d11&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:85,&quot;range&quot;:&quot;23052-23621&quot;} -->
+<h2 class="sectionedit86" id="step_d12">step_d12</h2>
+<div class="level2">
+
+<p>
+TSAの追加と、参照の変更をしたら、一度ROMを保存します。<br/>
+(保存する前にバックアップを忘れずに。)<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_d12&quot;,&quot;hid&quot;:&quot;step_d12&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:86,&quot;range&quot;:&quot;23622-23785&quot;} -->
+<h2 class="sectionedit87" id="step_d13">step_d13</h2>
+<div class="level2">
+
+<p>
+やっと、画像を登録する準備ができした。<br/>
+<br/>
+NLZ-GBA Advance を立ち上げて、<br/>
+左上の File handling をクリックし、<br/>
+Load Rom で FE8聖魔のrom を読み込みます。<br/>
+<br/>
+赤枠で囲った Compressed graphics にチェックが入っていることを確認してください。<br/>
+緑枠で囲った Width に、32 と入力します。(256/8=32)<br/>
+青枠で囲った Offset に、B4BBA0 と入力します。<br/>
+紫枠で囲った ROM Pallet offset に、 B4FCD4 と入力します。<br/>
+そうすると、ウィンドウに<br/>
+かなり崩れていますがワールドマップぽいのが表示されます。<br/>
+崩れているのは、TSAを正しく設定していないためです。<br/>
+<a href="/lib/exe/fetch.php?tok=f12239&amp;media=https%3A%2F%2Fi.imgur.com%2FKhcYvF4.jpg" class="media" title="https://i.imgur.com/KhcYvF4.jpg"><img src="/lib/exe/fetch.php?tok=f12239&amp;media=https%3A%2F%2Fi.imgur.com%2FKhcYvF4.jpg" class="mediacenter" title="i.imgur.com_khcyvf4.jpg" alt="i.imgur.com_khcyvf4.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_d13&quot;,&quot;hid&quot;:&quot;step_d13&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:87,&quot;range&quot;:&quot;23786-24577&quot;} -->
+<h2 class="sectionedit88" id="step_b14">step_b14</h2>
+<div class="level2">
+
+<p>
+Import a bitmapをクリックします。<br/>
+<a href="/lib/exe/fetch.php?tok=7198b8&amp;media=https%3A%2F%2Fi.imgur.com%2FHBe1Uns.jpg" class="media" title="https://i.imgur.com/HBe1Uns.jpg"><img src="/lib/exe/fetch.php?tok=7198b8&amp;media=https%3A%2F%2Fi.imgur.com%2FHBe1Uns.jpg" class="mediacenter" title="i.imgur.com_hbe1uns.jpg" alt="i.imgur.com_hbe1uns.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b14&quot;,&quot;hid&quot;:&quot;step_b14&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:88,&quot;range&quot;:&quot;24578-24683&quot;} -->
+<h2 class="sectionedit89" id="step_b15">step_b15</h2>
+<div class="level2">
+
+<p>
+パレットも設定するので Import palette to ROM にチェックを付けてください。<br/>
+OKを押して次へ進みます。<br/>
+<a href="/lib/exe/fetch.php?tok=0cec32&amp;media=https%3A%2F%2Fi.imgur.com%2Fq1GrUk5.jpg" class="media" title="https://i.imgur.com/q1GrUk5.jpg"><img src="/lib/exe/fetch.php?tok=0cec32&amp;media=https%3A%2F%2Fi.imgur.com%2Fq1GrUk5.jpg" class="mediacenter" title="i.imgur.com_q1gruk5.jpg" alt="i.imgur.com_q1gruk5.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_b15&quot;,&quot;hid&quot;:&quot;step_b15&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:89,&quot;range&quot;:&quot;24684-24883&quot;} -->
+<h2 class="sectionedit90" id="step_d16">step_d16</h2>
+<div class="level2">
+
+<p>
+画像が変更できました。<br/>
+ROMを保存します。<br/>
+(保存する前にバックアップを忘れずに。)<br/>
+<a href="/lib/exe/fetch.php?tok=df7d99&amp;media=https%3A%2F%2Fi.imgur.com%2F5HZT8sP.jpg" class="media" title="https://i.imgur.com/5HZT8sP.jpg"><img src="/lib/exe/fetch.php?tok=df7d99&amp;media=https%3A%2F%2Fi.imgur.com%2F5HZT8sP.jpg" class="mediacenter" title="i.imgur.com_5hzt8sp.jpg" alt="i.imgur.com_5hzt8sp.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_d16&quot;,&quot;hid&quot;:&quot;step_d16&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:90,&quot;range&quot;:&quot;24884-25066&quot;} -->
+<h2 class="sectionedit91" id="step_d17">step_d17</h2>
+<div class="level2">
+
+<p>
+ROMを読み込んで実行すると、<br/>
+OPデモの最初に変更したオーストラリアが表示されます。<br/>
+<a href="/lib/exe/fetch.php?tok=eb32dd&amp;media=https%3A%2F%2Fi.imgur.com%2FYMBFFO5.jpg" class="media" title="https://i.imgur.com/YMBFFO5.jpg"><img src="/lib/exe/fetch.php?tok=eb32dd&amp;media=https%3A%2F%2Fi.imgur.com%2FYMBFFO5.jpg" class="mediacenter" title="i.imgur.com_ymbffo5.jpg" alt="i.imgur.com_ymbffo5.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;step_d17&quot;,&quot;hid&quot;:&quot;step_d17&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:91,&quot;range&quot;:&quot;25067-25249&quot;} -->
+<h2 class="sectionedit92" id="トラブルシューティング3">トラブルシューティング</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30c8\u30e9\u30d6\u30eb\u30b7\u30e5\u30fc\u30c6\u30a3\u30f3\u30b0&quot;,&quot;hid&quot;:&quot;\u30c8\u30e9\u30d6\u30eb\u30b7\u30e5\u30fc\u30c6\u30a3\u30f3\u30b03&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:92,&quot;range&quot;:&quot;25250-25296&quot;} -->
+<h3 class="sectionedit93" id="q引き裂かれて崩れた画像が表示されました">Q:引き裂かれて崩れた画像が表示されました。</h3>
+<div class="level3">
+
+<p>
+A:TSAデータを更新しましたか？<br/>
+step_d05当たりをよく確認してください。<br/>
+<a href="/lib/exe/fetch.php?tok=d551c4&amp;media=https%3A%2F%2Fi.imgur.com%2Fkn4H4UA.jpg" class="media" title="https://i.imgur.com/kn4H4UA.jpg"><img src="/lib/exe/fetch.php?tok=d551c4&amp;media=https%3A%2F%2Fi.imgur.com%2Fkn4H4UA.jpg" class="mediacenter" title="i.imgur.com_kn4h4ua.jpg" alt="i.imgur.com_kn4h4ua.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Q:\u5f15\u304d\u88c2\u304b\u308c\u3066\u5d29\u308c\u305f\u753b\u50cf\u304c\u8868\u793a\u3055\u308c\u307e\u3057\u305f\u3002&quot;,&quot;hid&quot;:&quot;q\u5f15\u304d\u88c2\u304b\u308c\u3066\u5d29\u308c\u305f\u753b\u50cf\u304c\u8868\u793a\u3055\u308c\u307e\u3057\u305f&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:93,&quot;range&quot;:&quot;25297-25509&quot;} -->
+<h3 class="sectionedit94" id="qリセットがかかって進まない">Q:リセットがかかって進まない</h3>
+<div class="level3">
+
+<p>
+A:正しいTSAデータを参照するようにしていますか？<br/>
+step_d05当たりをよく確認してください。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Q:\u30ea\u30bb\u30c3\u30c8\u304c\u304b\u304b\u3063\u3066\u9032\u307e\u306a\u3044&quot;,&quot;hid&quot;:&quot;q\u30ea\u30bb\u30c3\u30c8\u304c\u304b\u304b\u3063\u3066\u9032\u307e\u306a\u3044&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:94,&quot;range&quot;:&quot;25510-&quot;} --></div>
+</body>
+</html>

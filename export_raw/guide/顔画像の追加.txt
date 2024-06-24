@@ -1,0 +1,38 @@
+FE8JP 聖魔の光石 で、魔法を追加する方法について説明します。
+
+====== 顔画像変更について  ======
+FE GBAの顔画像変更の仕方を解説します。\\ 
+
+====== 用意するもの  ======
+
+FEditor Adv 7743 ver 5 で説明します。\\ http://ux.getuploader.com/FE4/download/244/FEditor+Adv+7743.05.7z
+
+
+===== サンプル画像  =====
+internal\Test Portrait.PNG\\ doc\Portrait Editor Examples\*.png\\ 
+
+====== 手順  ======
+===== step1.  =====
+ツールを立ち上げ、ROMを開き、\\ メニューから Tool -> Portrait Editor... を選択\\ {{ https://i.imgur.com/epGlA93.jpg }}
+
+===== step2.  =====
+Input Index: の数字を変えるキャラの顔ででくるので、\\ 変更したいキャラを選びます。\\ {{ https://i.imgur.com/SEIe82w.jpg }}
+
+===== step3.  =====
+Load From File で、変更する顔画像を選択します。\\ 今回は、　internal\Test Portrait.PNG　を利用します。\\ {{ https://i.imgur.com/YxtTCne.jpg }}
+
+===== step4.  =====
+目の位置と口の位置がおかしいときは、\\ 画像をマウスでドラッグすると直せます。\\ {{ https://i.imgur.com/UxHMm97.jpg }}
+
+===== step5.  =====
+save を押して結果を確定します(まだファイルには保存されていない)\\ {{ https://i.imgur.com/J2jUrpS.jpg }}
+
+===== step6.  =====
+メニューから File -> Save を押して保存します。\\ (romを上書きする前に、必ずバックアップは取ろう)\\ {{ https://i.imgur.com/UhfYaG6.jpg }}
+
+====== 別FEからの移植  ======
+別FEから顔画像を移植する場合は、\\ 移植した顔画像の Save To File を選択して、\\ ファイルに落としてください。\\ png 形式で保存されます。\\ png を変更しても問題ありません。16色を超えてはいけませんよ。\\ {{ https://i.imgur.com/WfIB13P.jpg }}
+
+====== 顔画像の作成について  ======
+(どこか解説となるページがあったら追加してください。)
+

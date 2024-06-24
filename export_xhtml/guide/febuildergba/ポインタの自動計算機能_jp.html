@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>guide:febuildergba:ポインタの自動計算機能_jp</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="guide,febuildergba,ポインタの自動計算機能_jp"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="FE改造wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php?id=guide:febuildergba:%E3%83%9D%E3%82%A4%E3%83%B3%E3%82%BF%E3%81%AE%E8%87%AA%E5%8B%95%E8%A8%88%E7%AE%97%E6%A9%9F%E8%83%BD_jp&amp;do=index" title="サイトマップ"/>
+<link rel="manifest" href="/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="最近の変更" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="現在の名前空間" href="/feed.php?mode=list&amp;ns=guide:febuildergba"/>
+<link rel="alternate" type="text/html" title="プレーンHTML" href="/doku.php?do=export_xhtml&amp;id=guide:febuildergba:%E3%83%9D%E3%82%A4%E3%83%B3%E3%82%BF%E3%81%AE%E8%87%AA%E5%8B%95%E8%A8%88%E7%AE%97%E6%A9%9F%E8%83%BD_jp"/>
+<link rel="alternate" type="text/plain" title="Wikiマークアップ" href="/doku.php?do=export_raw&amp;id=guide:febuildergba:%E3%83%9D%E3%82%A4%E3%83%B3%E3%82%BF%E3%81%AE%E8%87%AA%E5%8B%95%E8%A8%88%E7%AE%97%E6%A9%9F%E8%83%BD_jp"/>
+<link rel="canonical" href="https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:%E3%83%9D%E3%82%A4%E3%83%B3%E3%82%BF%E3%81%AE%E8%87%AA%E5%8B%95%E8%A8%88%E7%AE%97%E6%A9%9F%E8%83%BD_jp"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='guide:febuildergba';var JSINFO = {"isadmin":0,"isauth":0,"move_renameokay":false,"id":"guide:febuildergba:\u30dd\u30a4\u30f3\u30bf\u306e\u81ea\u52d5\u8a08\u7b97\u6a5f\u80fd_jp","namespace":"guide:febuildergba","ACT":"export_xhtml","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?t=dokuwiki&amp;tseed=aa47a2b95c30e9dd18cd50f1c3263767"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">目次</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#ポインタの自動計算機能_febuildergbaを利用したrom解析_hacker用">ポインタの自動計算機能 FEBuilderGBAを利用したROM解析(hacker用)</a></div></li>
+<li class="level1"><div class="li"><a href="#ポインタの自動計算機能">ポインタの自動計算機能</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepa01">StepA01</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa02">StepA02</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa03">StepA03</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa04">StepA04</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa05">StepA05</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa06">StepA06</a></div></li>
+<li class="level2"><div class="li"><a href="#stepa07">StepA07</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#魔法">魔法？</a></div></li>
+<li class="level1"><div class="li"><a href="#fe8jからfe6の関数を見つける">FE8JからFE6の関数を見つける</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepb01">StepB01</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb02">StepB02</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb03">StepB03</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb04">StepB04</a></div></li>
+<li class="level2"><div class="li"><a href="#stepb05">StepB05</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#データ追尾機能">データ追尾機能</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepc01">StepC01</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc02">StepC02</a></div></li>
+<li class="level2"><div class="li"><a href="#stepc03">StepC03</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#魔法1">魔法？</a></div></li>
+<li class="level1"><div class="li"><a href="#検索オプション">検索オプション</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#比較サイズ">比較サイズ</a></div></li>
+<li class="level2"><div class="li"><a href="#内容">内容</a></div></li>
+<li class="level2"><div class="li"><a href="#比較方法">比較方法</a></div></li>
+<li class="level2"><div class="li"><a href="#スライドして追加検索">スライドして追加検索</a></div></li>
+<li class="level2"><div class="li"><a href="#自動追跡システム">自動追跡システム</a></div></li>
+<li class="level2"><div class="li"><a href="#警告システム">警告システム</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#一括処理バッチ">一括処理バッチ</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stepd01">StepD01</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd02">StepD02</a></div></li>
+<li class="level2"><div class="li"><a href="#stepd03">StepD03</a></div></li>
+<li class="level2"><div class="li"><a href="#アドレスの種類判定">アドレスの種類判定</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="ポインタの自動計算機能_febuildergbaを利用したrom解析_hacker用">ポインタの自動計算機能 FEBuilderGBAを利用したROM解析(hacker用)</h1>
+<div class="level1">
+
+<p>
+<br/>
+FEBuilderGBAはGBAFEを簡単に改造するためのツールですが、<br/>
+本格的にコードを解析したい方を手助けすることもできます。<br/>
+<br/>
+今回は、FE8の関数アドレスをFE6の関数アドレスに自動的に変換したりすることができる、ポインタの自動計算機能を紹介します。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30dd\u30a4\u30f3\u30bf\u306e\u81ea\u52d5\u8a08\u7b97\u6a5f\u80fd FEBuilderGBA\u3092\u5229\u7528\u3057\u305fROM\u89e3\u6790(hacker\u7528)&quot;,&quot;hid&quot;:&quot;\u30dd\u30a4\u30f3\u30bf\u306e\u81ea\u52d5\u8a08\u7b97\u6a5f\u80fd_febuildergba\u3092\u5229\u7528\u3057\u305from\u89e3\u6790_hacker\u7528&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-445&quot;} -->
+<h1 class="sectionedit2" id="ポインタの自動計算機能">ポインタの自動計算機能</h1>
+<div class="level1">
+
+<p>
+FEBuilderGBAには、関数やデータアドレスの移植機能が搭載されています。<br/>
+この機能を使うと、FE8Jの関数アドレスから、FE7Uの関数アドレスを求めることができます。<br/>
+<br/>
+例えば、LZ77圧縮されたデータを解凍する関数を探してみましょう。<br/>
+先人たちの解析により、私たちは、この関数の場所が以下であることを知っています。<br/>
+FEBuiderGBAに自動的にやらせてみましょう。<br/>
+<br/>
+
+</p>
+<pre class="code">FE8
+08013008	LZ77圧縮されているデータの解凍AutoCopyOrDecompressImageToVRAM	void	r0:圧縮データ	r1:解凍場所	{J}
+08012f50	LZ77圧縮されているデータの解凍AutoCopyOrDecompressImageToVRAM	void	r0:圧縮データ	r1:解凍場所	{U}
+
+FE7
+08013688	LZ77圧縮されているデータの解凍AutoCopyOrDecompressImageToVRAM	void	r0:圧縮データ	r1:解凍場所	{J}
+08013168	LZ77圧縮されているデータの解凍AutoCopyOrDecompressImageToVRAM	void	r0:圧縮データ	r1:解凍場所	{U}
+
+FE6
+08013ca4	LZ77圧縮されているデータの解凍AutoCopyOrDecompressImageToVRAM	void	r0:圧縮データ	r1:解凍場所	{J}</pre>
+
+<p>
+<br/>
+まずは、小手調べということで、FE8JのLZ77解凍関数 08013008 から、 FE8UのLZ77解凍関数を求めてみましょう。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30dd\u30a4\u30f3\u30bf\u306e\u81ea\u52d5\u8a08\u7b97\u6a5f\u80fd&quot;,&quot;hid&quot;:&quot;\u30dd\u30a4\u30f3\u30bf\u306e\u81ea\u52d5\u8a08\u7b97\u6a5f\u80fd&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;446-1816&quot;} -->
+<h2 class="sectionedit3" id="stepa01">StepA01</h2>
+<div class="level2">
+
+<p>
+まずは、FE8JのROMを開きます。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA01&quot;,&quot;hid&quot;:&quot;stepa01&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:3,&quot;range&quot;:&quot;1817-1881&quot;} -->
+<h2 class="sectionedit4" id="stepa02">StepA02</h2>
+<div class="level2">
+
+<p>
+メニューから ツール→ポインタ計算ツール を選択してください。<br/>
+<a href="/lib/exe/fetch.php?tok=bca446&amp;media=https%3A%2F%2Fi.imgur.com%2FBGvcg4I.jpg" class="media" title="https://i.imgur.com/BGvcg4I.jpg"><img src="/lib/exe/fetch.php?tok=bca446&amp;media=https%3A%2F%2Fi.imgur.com%2FBGvcg4I.jpg" class="mediacenter" title="i.imgur.com_bgvcg4i.jpg" alt="i.imgur.com_bgvcg4i.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA02&quot;,&quot;hid&quot;:&quot;stepa02&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;1882-2033&quot;} -->
+<h2 class="sectionedit5" id="stepa03">StepA03</h2>
+<div class="level2">
+
+<p>
+ポインタ計算ツールが起動します。<br/>
+<a href="/lib/exe/fetch.php?tok=150903&amp;media=https%3A%2F%2Fi.imgur.com%2FF42b4fi.jpg" class="media" title="https://i.imgur.com/F42b4fi.jpg"><img src="/lib/exe/fetch.php?tok=150903&amp;media=https%3A%2F%2Fi.imgur.com%2FF42b4fi.jpg" class="mediacenter" title="i.imgur.com_f42b4fi.jpg" alt="i.imgur.com_f42b4fi.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA03&quot;,&quot;hid&quot;:&quot;stepa03&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:5,&quot;range&quot;:&quot;2034-2144&quot;} -->
+<h2 class="sectionedit6" id="stepa04">StepA04</h2>
+<div class="level2">
+
+<p>
+アドレスの部分に、 FE8JのLZ77解凍関数 08013008 を入れます。<br/>
+<a href="/lib/exe/fetch.php?tok=271837&amp;media=https%3A%2F%2Fi.imgur.com%2FTkx9MZe.jpg" class="media" title="https://i.imgur.com/Tkx9MZe.jpg"><img src="/lib/exe/fetch.php?tok=271837&amp;media=https%3A%2F%2Fi.imgur.com%2FTkx9MZe.jpg" class="mediacenter" title="i.imgur.com_tkx9mze.jpg" alt="i.imgur.com_tkx9mze.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA04&quot;,&quot;hid&quot;:&quot;stepa04&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:6,&quot;range&quot;:&quot;2145-2286&quot;} -->
+<h2 class="sectionedit7" id="stepa05">StepA05</h2>
+<div class="level2">
+
+<p>
+次に、“別ROM読込”ボタンをクリックして、FE8UのROMを開きます。<br/>
+<a href="/lib/exe/fetch.php?tok=1dc7e2&amp;media=https%3A%2F%2Fi.imgur.com%2FcK1ryMk.jpg" class="media" title="https://i.imgur.com/cK1ryMk.jpg"><img src="/lib/exe/fetch.php?tok=1dc7e2&amp;media=https%3A%2F%2Fi.imgur.com%2FcK1ryMk.jpg" class="mediacenter" title="i.imgur.com_ck1rymk.jpg" alt="i.imgur.com_ck1rymk.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA05&quot;,&quot;hid&quot;:&quot;stepa05&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:7,&quot;range&quot;:&quot;2287-2433&quot;} -->
+<h2 class="sectionedit8" id="stepa06">StepA06</h2>
+<div class="level2">
+
+<p>
+すると、自動的に比較が行われ・・・・<br/>
+<a href="/lib/exe/fetch.php?tok=e43755&amp;media=https%3A%2F%2Fi.imgur.com%2FZ4LbBb8.jpg" class="media" title="https://i.imgur.com/Z4LbBb8.jpg"><img src="/lib/exe/fetch.php?tok=e43755&amp;media=https%3A%2F%2Fi.imgur.com%2FZ4LbBb8.jpg" class="mediacenter" title="i.imgur.com_z4lbbb8.jpg" alt="i.imgur.com_z4lbbb8.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA06&quot;,&quot;hid&quot;:&quot;stepa06&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:8,&quot;range&quot;:&quot;2434-2550&quot;} -->
+<h2 class="sectionedit9" id="stepa07">StepA07</h2>
+<div class="level2">
+
+<p>
+08012F50 という数字が表示されました。<br/>
+この数字は、FE8UのLZ77解凍関数 08012F50 の値と同一です。<br/>
+<a href="/lib/exe/fetch.php?tok=43990d&amp;media=https%3A%2F%2Fi.imgur.com%2F3JkYdFf.jpg" class="media" title="https://i.imgur.com/3JkYdFf.jpg"><img src="/lib/exe/fetch.php?tok=43990d&amp;media=https%3A%2F%2Fi.imgur.com%2F3JkYdFf.jpg" class="mediacenter" title="i.imgur.com_3jkydff.jpg" alt="i.imgur.com_3jkydff.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepA07&quot;,&quot;hid&quot;:&quot;stepa07&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:9,&quot;range&quot;:&quot;2551-2743&quot;} -->
+<h1 class="sectionedit10" id="魔法">魔法？</h1>
+<div class="level1">
+
+<p>
+いったいどうやって実現しているのでしょうか？<br/>
+これはバイナリ比較を行うことで実現しています。<br/>
+その関数と似たような処理は似たようなアセンブリコードを持っているはずだという仮説から作られています。<br/>
+<br/>
+もちろん、たまに間違うこともあるのですが、かなりの精度で正解を言い当ててくれます。<br/>
+(当然ですが、バイナリ比較には、MAPファイルを利用していません。)<br/>
+<br/>
+再度検索したい場合は、アドレスの項目でエンターキーを押してください。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u9b54\u6cd5\uff1f&quot;,&quot;hid&quot;:&quot;\u9b54\u6cd5&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:10,&quot;range&quot;:&quot;2744-3396&quot;} -->
+<h1 class="sectionedit11" id="fe8jからfe6の関数を見つける">FE8JからFE6の関数を見つける</h1>
+<div class="level1">
+
+<p>
+それでは、今度は、FE6の同様の関数を見つけてみましょう。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;FE8J\u304b\u3089FE6\u306e\u95a2\u6570\u3092\u898b\u3064\u3051\u308b&quot;,&quot;hid&quot;:&quot;fe8j\u304b\u3089fe6\u306e\u95a2\u6570\u3092\u898b\u3064\u3051\u308b&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:11,&quot;range&quot;:&quot;3397-3536&quot;} -->
+<h2 class="sectionedit12" id="stepb01">StepB01</h2>
+<div class="level2">
+
+<p>
+“別ROM読込”ボタンを押して、FE6のROMを読みこみます。<br/>
+すると、自動的に比較が行われ・・・・<br/>
+<a href="/lib/exe/fetch.php?tok=317c1b&amp;media=https%3A%2F%2Fi.imgur.com%2F55CluzB.jpg" class="media" title="https://i.imgur.com/55CluzB.jpg"><img src="/lib/exe/fetch.php?tok=317c1b&amp;media=https%3A%2F%2Fi.imgur.com%2F55CluzB.jpg" class="mediacenter" title="i.imgur.com_55cluzb.jpg" alt="i.imgur.com_55cluzb.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB01&quot;,&quot;hid&quot;:&quot;stepb01&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:12,&quot;range&quot;:&quot;3537-3727&quot;} -->
+<h2 class="sectionedit13" id="stepb02">StepB02</h2>
+<div class="level2">
+
+<p>
+おや、今度はうまくいきませんでした。<br/>
+0xFFFFFFFF が表示されています。見つからなかったようです。<br/>
+<a href="/lib/exe/fetch.php?tok=59d650&amp;media=https%3A%2F%2Fi.imgur.com%2FvoJj0jV.jpg" class="media" title="https://i.imgur.com/voJj0jV.jpg"><img src="/lib/exe/fetch.php?tok=59d650&amp;media=https%3A%2F%2Fi.imgur.com%2FvoJj0jV.jpg" class="mediacenter" title="i.imgur.com_vojj0jv.jpg" alt="i.imgur.com_vojj0jv.jpg" /></a><br />
+<br/>
+これがこのツールの限界なのでしょうか？<br/>
+そんなことはありません。<br/>
+<br/>
+自動追跡システムのレベルを上げればよいのです。<br/>
+ディフォルトでは、正確さを重視しています。<br/>
+FE8J→FE8Uのような同世代のROMならば、これでもいいのですが、FE8J→FE6のような世代を超える場合は、バイナリが多少違います。<br/>
+そのため、多少の正確性を犠牲にして、自動追尾レベルを上げる必要があります。<br/>
+自動追尾レベルを上げると、曖昧でもマッチするようになります。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB02&quot;,&quot;hid&quot;:&quot;stepb02&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:13,&quot;range&quot;:&quot;3728-4549&quot;} -->
+<h2 class="sectionedit14" id="stepb03">StepB03</h2>
+<div class="level2">
+
+<p>
+とりあえず、早速やってみましょう。<br/>
+今回は、最大の追跡レベル7にしてしみましょう。<br/>
+<a href="/lib/exe/fetch.php?tok=820ce5&amp;media=https%3A%2F%2Fi.imgur.com%2FP9h21Rm.jpg" class="media" title="https://i.imgur.com/P9h21Rm.jpg"><img src="/lib/exe/fetch.php?tok=820ce5&amp;media=https%3A%2F%2Fi.imgur.com%2FP9h21Rm.jpg" class="mediacenter" title="i.imgur.com_p9h21rm.jpg" alt="i.imgur.com_p9h21rm.jpg" /></a>
+</p>
+
+<p>
+<br/>
+追跡レベルを変更したあとは、再検索をするために、アドレスのテキストボックスでエンターを押してください。<br/>
+<a href="/lib/exe/fetch.php?tok=cd7d6a&amp;media=https%3A%2F%2Fi.imgur.com%2FRGffwTx.jpg" class="media" title="https://i.imgur.com/RGffwTx.jpg"><img src="/lib/exe/fetch.php?tok=cd7d6a&amp;media=https%3A%2F%2Fi.imgur.com%2FRGffwTx.jpg" class="mediacenter" title="i.imgur.com_rgffwtx.jpg" alt="i.imgur.com_rgffwtx.jpg" /></a><br />
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB03&quot;,&quot;hid&quot;:&quot;stepb03&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:14,&quot;range&quot;:&quot;4550-4933&quot;} -->
+<h2 class="sectionedit15" id="stepb04">StepB04</h2>
+<div class="level2">
+
+<p>
+アドレスのテキストボックスでエンターキーを押すと、解析が開始されます。<br/>
+今回は、追跡レベルを上げたので、比較に少し時間がかかります。<br/>
+<a href="/lib/exe/fetch.php?tok=400420&amp;media=https%3A%2F%2Fi.imgur.com%2FwMgVEYh.jpg" class="media" title="https://i.imgur.com/wMgVEYh.jpg"><img src="/lib/exe/fetch.php?tok=400420&amp;media=https%3A%2F%2Fi.imgur.com%2FwMgVEYh.jpg" class="mediacenter" title="i.imgur.com_wmgveyh.jpg" alt="i.imgur.com_wmgveyh.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB04&quot;,&quot;hid&quot;:&quot;stepb04&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:15,&quot;range&quot;:&quot;4934-5194&quot;} -->
+<h2 class="sectionedit16" id="stepb05">StepB05</h2>
+<div class="level2">
+
+<p>
+今回は、08013CA4という数字が表示されました。<br/>
+この数字は、FE6のLZ77解凍関数の数字と一致しています。<br/>
+<br/>
+やりました。自動的に、FE8Jの関数から、FE6の関数のアドレスを見つけることができました。<br/>
+<a href="/lib/exe/fetch.php?tok=b77aa5&amp;media=https%3A%2F%2Fi.imgur.com%2F3kbgn7b.jpg" class="media" title="https://i.imgur.com/3kbgn7b.jpg"><img src="/lib/exe/fetch.php?tok=b77aa5&amp;media=https%3A%2F%2Fi.imgur.com%2F3kbgn7b.jpg" class="mediacenter" title="i.imgur.com_3kbgn7b.jpg" alt="i.imgur.com_3kbgn7b.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepB05&quot;,&quot;hid&quot;:&quot;stepb05&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:16,&quot;range&quot;:&quot;5195-5529&quot;} -->
+<h1 class="sectionedit17" id="データ追尾機能">データ追尾機能</h1>
+<div class="level1">
+
+<p>
+ROMのデータを自動的に追跡できることがわかりました。<br/>
+それでは、RAMのデータはどうでしょうか？<br/>
+<br/>
+
+</p>
+<pre class="code">FE8
+0202BCEC	ステージの領域	{J}
+0202BCF0	ステージの領域	{U}</pre>
+
+<p>
+<br/>
+今までは追跡でませんでしたが、新しく参照値から検索機能が実装されました。<br/>
+早速やってみましょう。<br/>
+<br/>
+FE8Jのステージの領域 0202BCEC から、FE8Uのステージの領域を検索してみましょう。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30c7\u30fc\u30bf\u8ffd\u5c3e\u6a5f\u80fd&quot;,&quot;hid&quot;:&quot;\u30c7\u30fc\u30bf\u8ffd\u5c3e\u6a5f\u80fd&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:17,&quot;range&quot;:&quot;5530-6061&quot;} -->
+<h2 class="sectionedit18" id="stepc01">StepC01</h2>
+<div class="level2">
+
+<p>
+アドレスのテキストボックスに、0202BCECと入力します。<br/>
+そして、“別ROM読込”でFE8UのROMを読みこみます。<br/>
+<a href="/lib/exe/fetch.php?tok=f5f788&amp;media=https%3A%2F%2Fi.imgur.com%2FSpv9eYV.jpg" class="media" title="https://i.imgur.com/Spv9eYV.jpg"><img src="/lib/exe/fetch.php?tok=f5f788&amp;media=https%3A%2F%2Fi.imgur.com%2FSpv9eYV.jpg" class="mediacenter" title="i.imgur.com_spv9eyv.jpg" alt="i.imgur.com_spv9eyv.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC01&quot;,&quot;hid&quot;:&quot;stepc01&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:18,&quot;range&quot;:&quot;6062-6264&quot;} -->
+<h2 class="sectionedit19" id="stepc02">StepC02</h2>
+<div class="level2">
+
+<p>
+すると、自動で検索が行われ・・・・<br/>
+<a href="/lib/exe/fetch.php?tok=0ef80e&amp;media=https%3A%2F%2Fi.imgur.com%2F7MYsqSr.jpg" class="media" title="https://i.imgur.com/7MYsqSr.jpg"><img src="/lib/exe/fetch.php?tok=0ef80e&amp;media=https%3A%2F%2Fi.imgur.com%2F7MYsqSr.jpg" class="mediacenter" title="i.imgur.com_7mysqsr.jpg" alt="i.imgur.com_7mysqsr.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC02&quot;,&quot;hid&quot;:&quot;stepc02&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:19,&quot;range&quot;:&quot;6265-6378&quot;} -->
+<h2 class="sectionedit20" id="stepc03">StepC03</h2>
+<div class="level2">
+
+<p>
+0202BCF0という数字が表示されました。<br/>
+これは、FE8Uのステージの領域の数字と一致しています。<br/>
+RAM領域も検索することできてしまいました。<br/>
+<a href="/lib/exe/fetch.php?tok=d773a3&amp;media=https%3A%2F%2Fi.imgur.com%2F1qa3zjh.jpg" class="media" title="https://i.imgur.com/1qa3zjh.jpg"><img src="/lib/exe/fetch.php?tok=d773a3&amp;media=https%3A%2F%2Fi.imgur.com%2F1qa3zjh.jpg" class="mediacenter" title="i.imgur.com_1qa3zjh.jpg" alt="i.imgur.com_1qa3zjh.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepC03&quot;,&quot;hid&quot;:&quot;stepc03&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:20,&quot;range&quot;:&quot;6379-6633&quot;} -->
+<h1 class="sectionedit21" id="魔法1">魔法？</h1>
+<div class="level1">
+
+<p>
+これはLDR参照を利用した技です。<br/>
+アルゴリズムは以下の通りです。<br/>
+<br/>
+
+</p>
+<pre class="code">1. 元ROMで指定された数字をLDR参照している部分を見つける
+↓
+2. そこから関数のプロローグまでさかのぼる。(検索する余地を増やすためです)
+↓
+3. さかのぼったバイト数を記録する.
+↓
+4. その関数が、相手ROMにあるかどうかを調べる
+↓
+5. 相手ROMに関数があった場合、そのアドレスに、先ほどさかのぼったバイト数をアドレス加算する。
+↓
+6. 加算した場所がLDR参照かどうかを見る
+↓
+7. LDR参照だった場合、その値を採用する.</pre>
+
+<p>
+<br/>
+これもまた、処理が似ているならソースコードも似ているだろうという仮説から由来するアルゴリズムです。<br/>
+LDR値はRAMポインタですから、検索することができませんが、<br/>
+それを呼び出しているコードはROMデータですから、検索することができます。<br/>
+そして、コードは処理が同じならたいてい似ているものです。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u9b54\u6cd5\uff1f&quot;,&quot;hid&quot;:&quot;\u9b54\u6cd51&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:21,&quot;range&quot;:&quot;6634-7780&quot;} -->
+<h1 class="sectionedit22" id="検索オプション">検索オプション</h1>
+<div class="level1">
+
+<p>
+<a href="/lib/exe/fetch.php?tok=432d8a&amp;media=https%3A%2F%2Fi.imgur.com%2FXrwRvpr.jpg" class="media" title="https://i.imgur.com/XrwRvpr.jpg"><img src="/lib/exe/fetch.php?tok=432d8a&amp;media=https%3A%2F%2Fi.imgur.com%2FXrwRvpr.jpg" class="mediacenter" title="i.imgur.com_xrwrvpr.jpg" alt="i.imgur.com_xrwrvpr.jpg" /></a><br />
+<br/>
+検索オプションを変更すると、手動でもっと細かい比較をすることができます。<br/>
+自動追跡では誤判定をさけるために、ある程度のところまでしか追跡しません。<br/>
+もっと深いレベルで追跡したい場合は、手動で設定を変えることができます。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u691c\u7d22\u30aa\u30d7\u30b7\u30e7\u30f3&quot;,&quot;hid&quot;:&quot;\u691c\u7d22\u30aa\u30d7\u30b7\u30e7\u30f3&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:22,&quot;range&quot;:&quot;7781-8189&quot;} -->
+<h2 class="sectionedit23" id="比較サイズ">比較サイズ</h2>
+<div class="level2">
+
+<p>
+比較するバイナリサイズを指定します。<br/>
+当然ですが、小さい方がマッチしやすいです。ただ、小さすぎると誤判定の可能性がより高まります。<br/>
+なるべく長い比較サイズを利用することが大切です。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6bd4\u8f03\u30b5\u30a4\u30ba&quot;,&quot;hid&quot;:&quot;\u6bd4\u8f03\u30b5\u30a4\u30ba&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:23,&quot;range&quot;:&quot;8190-8492&quot;} -->
+<h2 class="sectionedit24" id="内容">内容</h2>
+<div class="level2">
+
+<p>
+探したいものが、ASM関数なのか、データなのかを設定します。<br/>
+これは次のパターンマッチに利用されます。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u5185\u5bb9&quot;,&quot;hid&quot;:&quot;\u5185\u5bb9&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:24,&quot;range&quot;:&quot;8493-8663&quot;} -->
+<h2 class="sectionedit25" id="比較方法">比較方法</h2>
+<div class="level2">
+
+<p>
+完全一致の場合、 memcmp のように完全にマッチしたデータのみが検出されます。<br/>
+パターンマッチの場合、 一部に?ワイルドカードを利用したマッチを行います。<br/>
+<br/>
+パターンマッチデータは、“内容”で設定したもので変わります。<br/>
+データの場合、0x08000000 - 0x0A000000 までのポインタと思われる部分がワイルドカードに置き換われます。<br/>
+ポインタはROMが違えば違うので、ここを無視して比較することで、マッチする可能性を高めます。<br/>
+<br/>
+ASMの場合は、LDR参照やBL呼び出しがワイルドカードに置き換わります。<br/>
+ROMによって、LDR直値のデータや、BL呼び出しは違いますし、中には、構造体のオフセット値が違う場合があります。<br/>
+そのため、これらをワイルドカードに変換してマッチさせます。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6bd4\u8f03\u65b9\u6cd5&quot;,&quot;hid&quot;:&quot;\u6bd4\u8f03\u65b9\u6cd5&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:25,&quot;range&quot;:&quot;8664-9629&quot;} -->
+<h2 class="sectionedit26" id="スライドして追加検索">スライドして追加検索</h2>
+<div class="level2">
+
+<p>
+指定したバイトをジャンプし無視して検索します。<br/>
+コンパイラはアライメント調整のため、NOPを埋め込んだり、バージョンによってプロローグで生成される push時にpushされるレジスタの数が違ったりします。<br/>
+これらを無視して検索します。<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30b9\u30e9\u30a4\u30c9\u3057\u3066\u8ffd\u52a0\u691c\u7d22&quot;,&quot;hid&quot;:&quot;\u30b9\u30e9\u30a4\u30c9\u3057\u3066\u8ffd\u52a0\u691c\u7d22&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:26,&quot;range&quot;:&quot;9630-10007&quot;} -->
+<h2 class="sectionedit27" id="自動追跡システム">自動追跡システム</h2>
+<div class="level2">
+
+<p>
+これらの検索オプションを手でいちいち試すのは面倒なので、自動で勝手にオプションを調整して検索してくれるモードです。<br/>
+本来は手動で検索オプションを調整して、厳格な検査からスタートして、それでも見つからなければ曖昧な比較としていっていたのですが、面倒になったため開発されました。<br/>
+これを利用することで、エンターキー押すだけで自動的に比較してくれます。<br/>
+<br/>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u81ea\u52d5\u8ffd\u8de1\u30b7\u30b9\u30c6\u30e0&quot;,&quot;hid&quot;:&quot;\u81ea\u52d5\u8ffd\u8de1\u30b7\u30b9\u30c6\u30e0&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:27,&quot;range&quot;:&quot;10008-10573&quot;} -->
+<h2 class="sectionedit28" id="警告システム">警告システム</h2>
+<div class="level2">
+
+<p>
+新しく追加した機能です。<br/>
+ディフォルトは、真ん中のレベルの“参照あれば警告を無視する”です。<br/>
+間違ったマッチを避けるために、あまりに元ROMと異なるアドレスとマッチしたり、ゼロがたくさんある領域とマッチしたときは警告を表示します。<br/>
+自動追跡システムで検索したときに、この警告が出たマッチを、成功とみなすかどうかの設定です。<br/>
+マッチ成功とみなせば、それ以降の検索をしません。<br/>
+
+</p>
+<div class="table sectionedit29"><table class="inline">
+	<tr class="row0">
+		<td class="col0">警告をエラーにする</td><td class="col1">警告があれば、マッチしなかったものとします。</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">参照あれば警告を無視する</td><td class="col1">警告があったとしても、そのアドレスへの参照が取れれば、マッチしたとみなします。</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">警告を無視する</td><td class="col1">警告が出たとしても、マッチしたとみなします。</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:29,&quot;range&quot;:&quot;11159-11503&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u8b66\u544a\u30b7\u30b9\u30c6\u30e0&quot;,&quot;hid&quot;:&quot;\u8b66\u544a\u30b7\u30b9\u30c6\u30e0&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:28,&quot;range&quot;:&quot;10574-11504&quot;} -->
+<h1 class="sectionedit30" id="一括処理バッチ">一括処理バッチ</h1>
+<div class="level1">
+
+<p>
+まとめてアドレスの変換をやりたい場合、手でいちいちコピペするのは面倒です。<br/>
+そこで、tsv形式とかで張り付けると、関数アドレスぽいところを自動で検出して、アドレスを求めてくれる機能を作りました。<br/>
+これが、一括処理バッチ です。<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u4e00\u62ec\u51e6\u7406\u30d0\u30c3\u30c1&quot;,&quot;hid&quot;:&quot;\u4e00\u62ec\u51e6\u7406\u30d0\u30c3\u30c1&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:30,&quot;range&quot;:&quot;11505-11876&quot;} -->
+<h2 class="sectionedit31" id="stepd01">StepD01</h2>
+<div class="level2">
+
+<p>
+tsv形式とかでデータを作り、コピペしてボタンを押すだけです。<br/>
+<a href="/lib/exe/fetch.php?tok=5233e6&amp;media=https%3A%2F%2Fi.imgur.com%2FQnLn125.jpg" class="media" title="https://i.imgur.com/QnLn125.jpg"><img src="/lib/exe/fetch.php?tok=5233e6&amp;media=https%3A%2F%2Fi.imgur.com%2FQnLn125.jpg" class="mediacenter" title="i.imgur.com_qnln125.jpg" alt="i.imgur.com_qnln125.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD01&quot;,&quot;hid&quot;:&quot;stepd01&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:31,&quot;range&quot;:&quot;11877-12026&quot;} -->
+<h2 class="sectionedit32" id="stepd02">StepD02</h2>
+<div class="level2">
+
+<p>
+<a href="/lib/exe/fetch.php?tok=c8d670&amp;media=https%3A%2F%2Fi.imgur.com%2FR8n5rmd.jpg" class="media" title="https://i.imgur.com/R8n5rmd.jpg"><img src="/lib/exe/fetch.php?tok=c8d670&amp;media=https%3A%2F%2Fi.imgur.com%2FR8n5rmd.jpg" class="mediacenter" title="i.imgur.com_r8n5rmd.jpg" alt="i.imgur.com_r8n5rmd.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD02&quot;,&quot;hid&quot;:&quot;stepd02&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:32,&quot;range&quot;:&quot;12027-12086&quot;} -->
+<h2 class="sectionedit33" id="stepd03">StepD03</h2>
+<div class="level2">
+
+<p>
+<a href="/lib/exe/fetch.php?tok=77e711&amp;media=https%3A%2F%2Fi.imgur.com%2FPHnNVS3.jpg" class="media" title="https://i.imgur.com/PHnNVS3.jpg"><img src="/lib/exe/fetch.php?tok=77e711&amp;media=https%3A%2F%2Fi.imgur.com%2FPHnNVS3.jpg" class="mediacenter" title="i.imgur.com_phnnvs3.jpg" alt="i.imgur.com_phnnvs3.jpg" /></a>
+</p>
+<pre class="code">080D4E34	MPlayContinue	{J}
+080D4E50	MPlayFadeOut	{J}
+080D4E70	m4aSoundInit	{J}
+080D4EE8	m4aSoundMain	{J}
+080D4EF4	m4aSongNumStart	{J}
+↓↓↓↓変換結果↓↓↓↓
+080D4E34(FFFFFFFF-&gt;FFFFFFFF,FFFFFFFF-&gt;080D013C)	MPlayContinue	{J}
+080D4E50(FFFFFFFF-&gt;FFFFFFFF,FFFFFFFF-&gt;080D0158)	MPlayFadeOut	{J}
+080D4E70(FFFFFFFF-&gt;FFFFFFFF,FFFFFFFF-&gt;080D0178)	m4aSoundInit	{J}
+080D4EE8(FFFFFFFF-&gt;FFFFFFFF,0029B4C8-&gt;080D01F0)	m4aSoundMain	{J}
+080D4EF4(FFFFFFFF-&gt;FFFFFFFF,FFFFFFFF-&gt;080D01FC)	m4aSongNumStart	{J}
+</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;StepD03&quot;,&quot;hid&quot;:&quot;stepd03&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:33,&quot;range&quot;:&quot;12087-12662&quot;} -->
+<h2 class="sectionedit34" id="アドレスの種類判定">アドレスの種類判定</h2>
+<div class="level2">
+
+<p>
+アドレスマッチとは関係ない機能です。<br/>
+あなたがdebuggerでROM追いかけていると、よくわからない 0x085C5528 等のアドレスにであったとします。<br/>
+いったいこれは何のデータなのか？<br/>
+疑問に思うときがあります。<br/>
+<br/>
+そんなとき、いちいち資料を探すのは面倒です。<br/>
+<br/>
+アドレスの欄に、あなたが調べたいアドレスを入れて、“アドレスの種類判別”ボタンを押してください。<br/>
+FEBuilderGBAが知っている領域であれば、その領域の名前が表示されます。<br/>
+<br/>
+<a href="/lib/exe/fetch.php?tok=f628b6&amp;media=https%3A%2F%2Fi.imgur.com%2FcLePP7x.jpg" class="media" title="https://i.imgur.com/cLePP7x.jpg"><img src="/lib/exe/fetch.php?tok=f628b6&amp;media=https%3A%2F%2Fi.imgur.com%2FcLePP7x.jpg" class="mediacenter" title="i.imgur.com_clepp7x.jpg" alt="i.imgur.com_clepp7x.jpg" /></a>
+</p>
+
+<p>
+<br/>
+この名前は、repoint用機能のデバッグ用に持っているデータなので、簡素なものですが、ヒントにはなります。<br/>
+ちなみに、0x085C5528は、何かと問い合わると、MenuDef4だという答えを得られます。<br/>
+<br/>
+0x085C5528は、デバッグメニューの一部の領域のアドレスでした。<br/>
+上から4番目のメニューなので MenuDef4と表示されました。<br/>
+<a href="/lib/exe/fetch.php?tok=b360d4&amp;media=https%3A%2F%2Fi.imgur.com%2FSdX2ywz.jpg" class="media" title="https://i.imgur.com/SdX2ywz.jpg"><img src="/lib/exe/fetch.php?tok=b360d4&amp;media=https%3A%2F%2Fi.imgur.com%2FSdX2ywz.jpg" class="mediacenter" title="i.imgur.com_sdx2ywz.jpg" alt="i.imgur.com_sdx2ywz.jpg" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u30a2\u30c9\u30ec\u30b9\u306e\u7a2e\u985e\u5224\u5b9a&quot;,&quot;hid&quot;:&quot;\u30a2\u30c9\u30ec\u30b9\u306e\u7a2e\u985e\u5224\u5b9a&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:34,&quot;range&quot;:&quot;12663-&quot;} --></div>
+</body>
+</html>

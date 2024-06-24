@@ -1,0 +1,262 @@
+FE GBAとかでよく使われる音楽の構造について
+
+====== sappy で聞いた時の構造  ======
+sappy を使うと、gbaのrom内にある音楽ファイルを直接聞いたり、編集したりできます。\\ 
+http://i.imgur.com/wuiwcdI.jpg
+
+====== データ曲の構造  ======
+
+|table|曲のヘッダーなどを指定する部分|
+|header|曲の楽譜(track)や、楽器(voices)などを設定する部分|
+|track|*.sファイルから生成される楽譜|
+|voices|演奏に使う楽器データ|
+
+http://i.imgur.com/oT1Ss0j.jpg
+
+
+====== table  ======
+http://i.imgur.com/FIW87CG.jpg
+
+楽曲データの header がどこにあるのかなどの情報がはいっています。\\ 8byteデータの連続で、所定の場所に固まっています。\\ (FE8の場合 0x214120から存在します。 )\\ 
+<code>
+//曲テーブル 8byteデータの連続です。所定の場所に固まっています。
+struct table{
+	void* header; //ヘッダーへのポインタ
+ 	BYTE  is_filds1;//? フィールドで使う場合is_filds1とis_filds2の両方に1を入れる
+	BYTE  zero1;	//不明 常に 0
+	BYTE  is_filds2;//? フィールドで使う場合is_filds1とis_filds2の両方に1を入れる 
+	BYTE  zero2;	//不明 常に 0
+};
+//曲の数だけ連続して並ぶ
+//ProjectFEGBAでは、ソングテーブルとしてアクセスできる
+struct table songtable[...];
+</code>
+
+===== 実例  =====
+FE8の場合 0x214120から存在します。 \\ 0番めの曲は利用されないっぽい？ので、0x214120+0x8バイト=0x214128から1番目の曲が始まります。\\ 
+http://i.imgur.com/AivbGPE.jpg
+
+
+===== バイト割当例  =====
+http://i.imgur.com/vHR4B1D.jpg
+
+
+====== header  ======
+http://i.imgur.com/oJzUNaP.jpg
+
+曲の楽譜(track)や、楽器(voices)などを設定する部分です。
+曲毎に存在します。\\ 
+<code>
+//曲ヘッダー 曲毎に存在します。
+struct header{
+	BYTE  track_count;	//トラック数
+	BYTE  zero;			//常に0
+	BYTE  nazo1;			//??
+	BYTE  nazo2;			//??
+	void* voices; 		//voices(楽器データ)へのポインタ
+	
+	void* track[track_count];	//楽譜ポインタがトラック数分続く
+};
+</code>
+
+===== 実例  =====
+sappyのheaderを頼りにしてください。\\ http://i.imgur.com/rrfdITN.jpg
+
+===== バイト割当例  =====
+http://i.imgur.com/3hASPos.jpg
+
+====== 楽譜(track)  ======
+http://i.imgur.com/UDyykAT.jpg
+音楽の楽譜が格納されています。\\ .s から生成されるデータです。\\ \\ データは可変長で、1バイトの命令と可変長の引数(引数がない場合もある)から構成されています。\\ 
+<code>
+//楽譜データ
+struct track{
+	BYTE oprande;	//命令
+	variant args;	//引数  可変長
+};
+</code>
+
+
+===== バイト割当例  =====
+http://i.imgur.com/wlGkXtO.jpg
+
+====== 命令コード表  ======
+命令は 0xBx 0xCx と、 BかCから始まることが多いです。\\ 
+==== 0xB1 曲の終端  ====
+実例:
+0xB1
+
+引数:
+0xB1 なし
+
+その他:
+
+対応s命令:
+.byte	FINE
+
+==== 0xB2 ループ  ====
+実例:
+0xB2 0x29 0xF2 0x15 0x09
+
+引数:
+0x29 0xF2 0x15 0x09 ループ先のポインタ
+
+対応s命令:
+.byte	GOTO
+.word	loop
+
+==== 0xBB 楽器の選択  ====
+実例:
+0xBB 0x50
+
+引数:
+0x50 楽器コードを指定する。 1-127 まで
+
+対応s命令:
+.byte		VOICE , 80
+
+==== 0xBC 曲開始???  ====
+実例:
+0xBC 0x00
+
+引数:
+0x00 常に00らしい
+
+対応s命令:
+???
+
+==== ウェイト命令  ====
+
+
+|W96|0xB0|
+|W32|0x9B|
+|W24|0x98|
+
+
+===== 長さを知るには？  =====
+先頭から読んでいって、Bx Cx の命令がでたら、命令コード表に従い解釈していく。\\ 0xB1 が現れたら、終端です。\\ 
+<code>
+//header.trackに楽譜へポインタが書いてある
+void* pos = ROM[ header.track[0] ];
+while(1)
+{
+	if (*pos < 0x80)
+	{
+	  //音符
+	  pos++;
+	}
+	//0x80以上はコントロールコード
+	else if (*pos == 0xB1)
+	{//曲終端
+		pos++;
+	}
+	else if (*pos == 0xB2)
+	{//曲終端
+		//ループ 4バイトポインタ
+		pos += 4;
+	}
+	else if (*pos == 0xB3)
+	{//nazo
+		pos += 4;
+	}
+	else if (*pos == 0xBB)
+	{//nazo
+		pos += 2;
+	}
+	else if (*pos == 0xBC)
+	{//楽器
+		pos += 2;
+	}
+	else if (*pos == 0xBD)
+	{//ボリューム
+		pos += 2;
+	}
+	else if (*pos == 0xBE)
+	{//nazo
+		pos += 2;
+	}
+	else if (*pos == 0xBF)
+	{//nazo
+		pos += 2;
+	}
+	else if (*pos == 0xC0)
+	{//nazo
+		pos += 2;
+	}
+	else if (*pos == 0xC1)
+	{//nazo
+		pos += 2;
+	}
+	else 
+	{//未サポート命令
+		pos++;
+	}
+
+}
+</code>
+
+====== voices(楽器データ)  ======
+http://i.imgur.com/aK30dfk.jpg
+
+音を奏でる楽器について定義する部分です。\\ \\ とても長くなるのでページを分けます。\\ [[解説:楽器データ|楽器データ]]を参照ください。\\ 
+
+
+====== 参照図  ======
+<code>
+header[] -----> table[] -------> track 楽譜データ
+                   |                  |楽器番号で呼び出し
+                   |                  /
+                   ------------> voices 楽器データ[127]
+
+</code>
+
+
+
+====== ソングテーブルの先頭位置を見つける方法  ======
+
+FE8の場合 ソングテーブルは0x214120から存在しますが、\\ ゲーム毎に変わるソングテーブルを見つける方法として以下の様な方法があります。\\ 0x00 0xB5 0x00 0x04 0x07 0x4A 0x08 0x49 0x40 0x0B 0x40 0x18 0x83 0x88 0x59 0x000xC9 0x18 0x89 0x00 0x89 0x18 0x0A 0x680x01 0x68 0x10 0x1C 0x00 0xF0 (11bytes skip) [song table start address]\\ 
+もちろん、偶然一致してしまうことがあるので、それが本当にソングーブルぽいのか検証しなくてはけいませんが、\\ 上記のような感じで、ROMを検索すると ソングテーブルの開始位置を取得することが出来ます。\\ 具体的には、以下のようなコードになります。\\ 
+<code>
+def findsonglistoffset(ROM):
+	selectsong_code = [
+		0x00, 0xB5, 0x00, 0x04, 0x07, 0x4A, 0x08, 0x49,
+		0x40, 0x0B, 0x40, 0x18, 0x83, 0x88, 0x59, 0x00,
+		0xC9, 0x18, 0x89, 0x00, 0x89, 0x18, 0x0A, 0x68,
+		0x01, 0x68, 0x10, 0x1C, 0x00, 0xF0]
+ 	selectsong_code_len = len(selectsong_code)
+	
+	matchcount = 0
+	position = 0
+	position_max = len(ROM)
+	while position < position_max:
+		byte = ROM[position]
+		position += 1
+		if (byte != selectsong_code[matchcount] ):
+			matchcount = 0
+ 			continue
+		matchcount += 1
+		if (matchcount < selectsong_code_len):
+			continue
+
+		songlist = 10 + position
+		songlist_address = ROM.read_int(songlist)
+		
+		#this is song table
+		if ( not is_pointer(songlist_address) ):
+			matchcount = 0
+			continue
+
+		#checksong pointer
+		songlist_offset = as_offset(songlist_address)
+		songfirst_address = ROM.read_int(songlist_offset+8)
+		if ( not is_pointer(songfirst_address) ):
+			matchcount = 0
+			continue
+
+		#maybe songlist
+		return songlist_offset
+
+	return None;
+</code>
+
+
